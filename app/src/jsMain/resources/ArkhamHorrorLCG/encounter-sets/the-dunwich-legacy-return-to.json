@@ -1,0 +1,166 @@
+{
+    "name": "Return To The Dunwich Legacy",
+    "id": "2r",
+    "icon": "https://cf.geekdo-images.com/original/img/9AsAgcuMCQ_7tWTCN7KAWJGZe48=/0x0/pic4773025.png",
+    "arkhamDbEntry": "",
+    "returnTo": true,
+    "releaseDate": "2019-01-10",
+    "scenarios": [
+        {
+            "name": "Return To Extracurricular Activity",
+            "icon": "https://cf.geekdo-images.com/original/img/Ke8kelsoQcdg2N0fURh_RCqJg_k=/0x0/pic4773026.png",
+            "encounterSets": [
+                { "name": "Return To Extracurricular Activity", "conditional": false, "setAside": false },
+                { "name": "Sorcery",                            "conditional": false, "setAside": false },
+                { "name": "Bishop's Thralls",                   "conditional": false, "setAside": false },
+                { "name": "Whippoorwills",                      "conditional": false, "setAside": false },
+                { "name": "Beyond the Threshold",               "conditional": false, "setAside": false },
+                { "name": "Resurgent Evils",                    "conditional": false, "setAside": false },
+                { "name": "Secret Doors",                       "conditional": false, "setAside": false },
+                { "name": "Yog-Sothoth's Emissaries",           "conditional": false, "setAside": false }
+            ]
+        },
+        {
+            "name": "Return To The House Always Wins",
+            "icon": "https://cf.geekdo-images.com/original/img/qU5aUipSYk6n1jkW3L6wHrFtyo4=/0x0/pic4773027.png",
+            "encounterSets":  [
+                { "name": "Return To The House Always Wins", "conditional": false, "setAside": false },
+                { "name": "Rats",                            "conditional": false, "setAside": false },
+                { "name": "Bad Luck",                        "conditional": false, "setAside": false },
+                { "name": "Naomi's Crew",                    "conditional": false, "setAside": false },
+                { "name": "Hideous Abominations",            "conditional": false, "setAside": true  },
+                { "name": "Erratic Fear",                    "conditional": false, "setAside": true  }
+            ]
+        },
+        {
+            "name": "Return To The Miskatonic Museum",
+            "icon": "https://cf.geekdo-images.com/original/img/ayZAjbkKcpWN_g42H1Hx45kP33c=/0x0/pic4773028.png",
+            "encounterSets":  [
+                { "name": "Return To The Miskatonic Museum", "conditional": false, "setAside": false },
+                { "name": "Sorcery",                         "conditional": false, "setAside": false },
+                { "name": "Bad Luck",                        "conditional": false, "setAside": false },
+                { "name": "Beyond the Threshold",            "conditional": false, "setAside": false },
+                { "name": "Creeping Cold",                   "conditional": false, "setAside": false },
+                { "name": "Secret Doors",                    "conditional": false, "setAside": false }
+            ]
+        },
+        {
+            "name": "Return To The Essex County Express",
+            "icon": "https://cf.geekdo-images.com/original/img/YME06jTGPq2x9tWDSDgUFHEag68=/0x0/pic4773029.png",
+            "encounterSets":  [
+                { "name": "Return To The Essex County Express", "conditional": false, "setAside": false },
+                { "name": "Dark Cult",                          "conditional": false, "setAside": false },
+                { "name": "Beyond the Threshold",               "conditional": false, "setAside": false },
+                { "name": "Resurgent Evils",                    "conditional": false, "setAside": false },
+                { "name": "Erratic Fear",                       "conditional": false, "setAside": false }
+            ]
+        },
+        {
+            "name": "Return To Blood on the Altar",
+            "icon": "https://cf.geekdo-images.com/original/img/eSJ8TNE7-wIcjp_jmbhMMW4B46o=/0x0/pic4773030.png",
+            "encounterSets":  [
+                { "name": "Return To Blood on the Altar", "conditional": false, "setAside": false },
+                { "name": "Nightgaunts",                  "conditional": false, "setAside": false },
+                { "name": "Dunwich",                      "conditional": false, "setAside": false },
+                { "name": "Whippoorwills",                "conditional": false, "setAside": false },
+                { "name": "Naomi's Crew",                 "conditional": false, "setAside": true  },
+                { "name": "Resurgent Evils",              "conditional": false, "setAside": false }
+            ]
+        },
+        {
+            "name": "Return To Undimensioned and Unseen",
+            "icon": "https://cf.geekdo-images.com/original/img/e5YafDgERaMsIjL02UZtsNeYAB4=/0x0/pic4773031.png",
+            "encounterSets":  [
+                { "name": "Return To Undimensioned and Unseen", "conditional": false, "setAside": false },
+                { "name": "Dunwich",                            "conditional": false, "setAside": false },
+                { "name": "Whippoorwills",                      "conditional": false, "setAside": false },
+                { "name": "Beast Thralls",                      "conditional": false, "setAside": false },
+                { "name": "Erratic Fear",                       "conditional": false, "setAside": false }
+            ]
+        },
+        {
+            "name": "Return To Where Doom Awaits",
+            "icon": "https://cf.geekdo-images.com/original/img/gf_RXUhbEdav8Z7-ad_nktwKHwc=/0x0/pic4773032.png",
+            "encounterSets":  [
+                { "name": "Return To Where Doom Awaits", "conditional": false, "setAside": false },
+                { "name": "Sorcery",                     "conditional": false, "setAside": false },
+                { "name": "Bishop's Thralls",            "conditional": false, "setAside": false },
+                { "name": "Beast Thralls",               "conditional": false, "setAside": false },
+                { "name": "Hideous Abominations",        "conditional": false, "setAside": true  },
+                { "name": "Resurgent Evils",             "conditional": false, "setAside": false },
+                { "name": "Erratic Fear",                "conditional": false, "setAside": false },
+                { "name": "Creeping Cold",               "conditional": false, "setAside": false }
+            ]
+        },
+        {
+            "name": "Return To Lost in Time and Space",
+            "icon": "https://cf.geekdo-images.com/original/img/LexBV0cK3gcTDql1XxGBFpoLLDU=/0x0/pic4773033.png",
+            "encounterSets":  [
+                { "name": "Return To Lost in Time and Space", "conditional": false, "setAside": false },
+                { "name": "Sorcery",                          "conditional": false, "setAside": false },
+                { "name": "Beyond the Threshold",             "conditional": false, "setAside": false },
+                { "name": "Hideous Abominations",             "conditional": false, "setAside": false },
+                { "name": "Yog-Sothoth's Emissaries",         "conditional": false, "setAside": false }
+            ]
+        }
+    ],
+    "encounterSets": [
+        {
+            "name": "Return To Extracurricular Activity",
+            "icon": "https://cf.geekdo-images.com/original/img/Ke8kelsoQcdg2N0fURh_RCqJg_k=/0x0/pic4773026.png"
+        },
+        {
+            "name": "Return To the House Always Wins",
+            "icon": "https://cf.geekdo-images.com/original/img/qU5aUipSYk6n1jkW3L6wHrFtyo4=/0x0/pic4773027.png"
+        },
+        {
+            "name": "Return To The Miskatonic Museum",
+            "icon": "https://cf.geekdo-images.com/original/img/ayZAjbkKcpWN_g42H1Hx45kP33c=/0x0/pic4773028.png"
+        },
+        {
+            "name": "Return To The Essex County Express",
+            "icon": "https://cf.geekdo-images.com/original/img/YME06jTGPq2x9tWDSDgUFHEag68=/0x0/pic4773029.png"
+        },
+        {
+            "name": "Return To Blood on the Altar",
+            "icon": "https://cf.geekdo-images.com/original/img/eSJ8TNE7-wIcjp_jmbhMMW4B46o=/0x0/pic4773030.png"
+        },
+        {
+            "name": "Return To Undimensioned and Unseen",
+            "icon": "https://cf.geekdo-images.com/original/img/e5YafDgERaMsIjL02UZtsNeYAB4=/0x0/pic4773031.png"
+        },
+        {
+            "name": "Return To Where Doom Awaits",
+            "icon": "https://cf.geekdo-images.com/original/img/gf_RXUhbEdav8Z7-ad_nktwKHwc=/0x0/pic4773032.png"
+        },
+        {
+            "name": "Return To Lost in Time and Space",
+            "icon": "https://cf.geekdo-images.com/original/img/LexBV0cK3gcTDql1XxGBFpoLLDU=/0x0/pic4773033.png"
+        },
+        {
+            "name": "Beyond the Threshold",
+            "icon": "https://cf.geekdo-images.com/original/img/JYkQtmXmiydTZ0AddQTroWyHL0s=/0x0/pic4773034.png"
+        },
+        {
+            "name": "Resurgent Evils",
+            "icon": "https://cf.geekdo-images.com/original/img/fP7gnYdA94k8ziYIeIm5hqoV3LA=/0x0/pic4773035.png"
+        },
+        {
+            "name": "Erratic Fear",
+            "icon": "https://cf.geekdo-images.com/original/img/V3j9tnPY_uVDwIVa-S9Ckp423O8=/0x0/pic4773038.png"
+        },
+        {
+            "name": "Creeping Cold",
+            "icon": "https://cf.geekdo-images.com/original/img/tbn2Tig2KjsAdyVuXgeho5tyjlE=/0x0/pic4773037.png"
+        },
+        {
+            "name": "Secret Doors",
+            "icon": "https://cf.geekdo-images.com/original/img/qnLbekTh_J6hwTPBwguc5DXARaE=/0x0/pic4773036.png"
+        },
+        {
+            "name": "Yog-Sothoth's Emissaries",
+            "icon": "https://cf.geekdo-images.com/original/img/N1hgQs7FIipoogiX9eLIMZvMTIs=/0x0/pic4773039.png"
+        }
+    ],
+    "investigators": []
+}

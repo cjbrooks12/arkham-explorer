@@ -1,0 +1,140 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string"
+        },
+        "id": {
+            "type": "string"
+        },
+        "icon": {
+            "type": "string",
+            "format": "uri"
+        },
+        "arkhamDbEntry": {
+            "type": "string",
+            "format": "uri"
+        },
+        "releaseDate": {
+            "type": "string",
+            "format": "date"
+        },
+        "returnTo": {
+            "type": "boolean"
+        },
+        "scenarios": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "string"
+                    },
+                    "icon": {
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "arkhamDbEntry": {
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "encounterSets": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "uniqueItems": true,
+                            "properties": {
+                                "name": {
+                                    "type": "string"
+                                },
+                                "conditional": {
+                                    "type": "boolean"
+                                },
+                                "setAside": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "required": [
+                                "name",
+                                "conditional",
+                                "setAside"
+                            ],
+                            "additionalProperties": false
+                        }
+                    }
+                },
+                "required": [
+                    "name",
+                    "icon",
+                    "encounterSets"
+                ],
+                "additionalProperties": false
+            }
+        },
+        "encounterSets": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "icon": {
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "arkhamDbEntry": {
+                        "type": "string",
+                        "format": "uri"
+                    }
+                },
+                "required": [
+                    "name",
+                    "icon"
+                ],
+                "additionalProperties": false
+            }
+        },
+        "investigators": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "mainClass": {
+                        "type": "string",
+                        "enum": ["Guardian", "Rogue", "Seeker", "Survivor", "Mystic", "Neutral"]
+                    },
+                    "arkhamDbEntry": {
+                        "type": "string",
+                        "format": "uri"
+                    }
+                },
+                "required": [
+                    "name",
+                    "mainClass",
+                    "arkhamDbEntry"
+                ],
+                "additionalProperties": false
+            }
+        }
+    },
+    "required": [
+        "name",
+        "id",
+        "icon",
+        "arkhamDbEntry",
+        "releaseDate",
+        "returnTo",
+        "scenarios",
+        "encounterSets",
+        "investigators"
+    ],
+    "additionalProperties": false
+}

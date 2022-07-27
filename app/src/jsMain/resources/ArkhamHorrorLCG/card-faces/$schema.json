@@ -1,0 +1,59 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string"
+        },
+        "returnTo": {
+            "type": "boolean"
+        },
+        "encounterSets": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "returnTo": {
+                        "type": "boolean"
+                    }
+                },
+                "required": [
+                    "name",
+                    "returnTo"
+                ]
+            }
+        },
+        "investigators": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "parallel": {
+                        "type": "boolean"
+                    },
+                    "mainClass": {
+                        "type": "string",
+                        "enum": ["Guardian", "Rogue", "Seeker", "Survivor", "Mystic"]
+                    }
+                },
+                "required": [
+                    "name",
+                    "parallel",
+                    "mainClass"
+                ]
+            }
+        }
+    },
+    "required": [
+        "name",
+        "returnTo",
+        "encounterSets",
+        "investigators"
+    ]
+}
