@@ -10,7 +10,7 @@ object EncounterSetsContract {
 
     sealed class Inputs {
         object Initialize : Inputs()
-        data class EncounterSetsUpdated(val expansions: Cached<List<ArkhamHorrorExpansion>> = Cached.NotLoaded()): Inputs()
+        data class EncounterSetsUpdated(val expansions: Cached<List<ArkhamHorrorExpansion>> = Cached.NotLoaded()) : Inputs()
     }
 
     sealed class Events

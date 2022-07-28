@@ -9,8 +9,11 @@ import com.caseyjbrooks.arkham.di.ArkhamInjector
 import com.caseyjbrooks.arkham.ui.ArkhamApp
 import com.copperleaf.ballast.navigation.routing.directions
 import com.copperleaf.ballast.repository.cache.getCachedOrEmptyList
+import com.copperleaf.ballast.repository.cache.isLoading
 import org.jetbrains.compose.web.dom.A
+import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Li
+import org.jetbrains.compose.web.dom.Span
 import org.jetbrains.compose.web.dom.Text
 import org.jetbrains.compose.web.dom.Ul
 
@@ -27,12 +30,28 @@ object EncounterSetsUi {
     fun Content(state: EncounterSetsContract.State, postInput: (EncounterSetsContract.Inputs) -> Unit) {
         Text("EncounterSets")
 
-        Ul {
-            state.expansions.getCachedOrEmptyList().forEach { expansion ->
+        Div(attrs = { classes("content") }) {
+            Ul {
                 Li {
-                    A(
-                        href = "#${ArkhamApp.ExpansionDetails.directions(mapOf("expansionId" to listOf(expansion.name)))}"
-                    ) { Text(expansion.name) }
+                    A(href = "#${ArkhamApp.Home.directions()}") { Text("Home") }
+                }
+
+                if (state.expansions.isLoading()) {
+                    Li { Text("Loading") }
+                } else {
+                    state.expansions.getCachedOrEmptyList().forEach { expansion ->
+                        Li { Span { Text(expansion.name) } }
+                        Ul {
+                            expansion.encounterSets.forEach { encounterSet ->
+                                Li {
+                                    val directionsParams = mapOf("encounterSetId" to listOf(encounterSet.name))
+                                    A(href = "#${ArkhamApp.EncounterSetDetails.directions(directionsParams)}") {
+                                        Text(encounterSet.name)
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }

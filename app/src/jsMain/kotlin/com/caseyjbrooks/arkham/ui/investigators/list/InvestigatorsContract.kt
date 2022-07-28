@@ -1,7 +1,16 @@
 package com.caseyjbrooks.arkham.ui.investigators.list
 
+import com.caseyjbrooks.arkham.models.ArkhamHorrorExpansion
+import com.copperleaf.ballast.repository.cache.Cached
+
 object InvestigatorsContract {
-    class State
-    sealed class Inputs
+    data class State(
+        val expansions: Cached<List<ArkhamHorrorExpansion>> = Cached.NotLoaded()
+    )
+
+    sealed class Inputs {
+        object Initialize : Inputs()
+        data class InvestigatorsUpdated(val expansions: Cached<List<ArkhamHorrorExpansion>> = Cached.NotLoaded()): Inputs()
+    }
     sealed class Events
 }

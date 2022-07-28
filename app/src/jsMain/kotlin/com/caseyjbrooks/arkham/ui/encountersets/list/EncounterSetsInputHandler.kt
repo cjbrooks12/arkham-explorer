@@ -19,7 +19,7 @@ class EncounterSetsInputHandler(
     ) = when (input) {
         is EncounterSetsContract.Inputs.Initialize -> {
             observeFlows(
-                "Expansions",
+                "Encounter Sets",
                 repository
                     .getExpansions(false)
                     .map { EncounterSetsContract.Inputs.EncounterSetsUpdated(it) }
