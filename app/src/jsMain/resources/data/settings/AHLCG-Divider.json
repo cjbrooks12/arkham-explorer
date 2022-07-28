@@ -1,0 +1,51 @@
+{
+    "AHLCG": {
+        "DividerBack": {
+            "Name": {
+                "region": "28,90,307,30"
+            },
+            "Default": {
+                "template": "ArkhamHorrorLCG/templates/AHLCG-Divider.jp2"
+            }
+        },
+        "Divider": {
+            "Name": {
+                "region": "123,20,286,25",
+                "style": "FAMILY: {Eons.namedObjects.AHLCGObject.titleFamily}; SIZE: 12.5; WEIGHT: WEIGHT_REGULAR; WIDTH: 1.05; FOREGROUND: #000000"
+            },
+            "Encounter": {
+                "portrait": {
+                    "pany": "0",
+                    "clip": {
+                        "region": "476,11,40,40"
+                    },
+                    "template": "ArkhamHorrorLCG/images/empty1x1.png"
+                }
+            },
+            "Default": {
+                "template": "ArkhamHorrorLCG/templates/AHLCG-Divider.jp2"
+            },
+            "ReturnEncounter": {
+                "portrait": {
+                    "clip": {
+                        "region": "474,10,43,43"
+                    }
+                }
+            },
+            "Watermark": {
+                "portrait": {
+                    "clip": {
+                        "region": "80,46,380,380"
+                    }
+                }
+            },
+            "ReturnWatermark": {
+                "portrait": {
+                    "clip": {
+                        "region": "80,46,380,380"
+                    }
+                }
+            }
+        }
+    }
+}

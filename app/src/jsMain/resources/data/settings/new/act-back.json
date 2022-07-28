@@ -1,0 +1,47 @@
+{
+    "ScenarioIndex": {
+        "tightness": "0.1",
+        "alignment": "center, middle",
+        "style": "FAMILY: {Eons.namedObjects.AHLCGObject.bodyFamily}; SIZE: {Eons.namedObjects.AHLCGObject.scenarioIndexBackSize}; WEIGHT: WEIGHT_BOLD; WIDTH: WIDTH_REGULAR; FOREGROUND: #000000",
+        "region": "22,32,45,16"
+    },
+    "Default": {
+        "template": "ArkhamHorrorLCG/templates/AHLCG-ActBack.jp2"
+    },
+    "Story": {
+        "style": "FAMILY: {Eons.namedObjects.AHLCGObject.bodyFamily}; SIZE: {Eons.namedObjects.AHLCGObject.bodyFontSize}; WIDTH: {Eons.namedObjects.AHLCGObject.bodyFontSpacing}; POSTURE: OBLIQUE; FOREGROUND: #000000",
+        "region": "127,32,355,316",
+        "tightness": "1.0",
+        "alignment": "left"
+    },
+    "Header": {
+        "alignment": "left",
+        "style": "FAMILY: {Eons.namedObjects.AHLCGObject.bodyFamily}; SIZE: {Eons.namedObjects.AHLCGObject.bodyFontSize}; WIDTH: {Eons.namedObjects.AHLCGObject.bodyFontSpacing}; WEIGHT: WEIGHT_BOLD; FOREGROUND: #000000",
+        "tightness": "1.0"
+    },
+    "Body": {
+        "alignment": "left",
+        "region": "112,32,370,316",
+        "tightness": "1.0",
+        "style": "FAMILY: {Eons.namedObjects.AHLCGObject.bodyFamily}; SIZE: {Eons.namedObjects.AHLCGObject.bodyFontSize}; WEIGHT: WEIGHT_MEDIUM; WIDTH: {Eons.namedObjects.AHLCGObject.bodyFontSpacing}; FOREGROUND: #000000"
+    },
+    "Encounter": {
+        "portrait": {
+            "clip": {
+                "region": "27,57,36,36"
+            }
+        }
+    },
+    "Name": {
+        "alignment": "center, middle",
+        "style": "FAMILY: {Eons.namedObjects.AHLCGObject.titleFamily}; SIZE: 11.5; WEIGHT: WEIGHT_REGULAR; WIDTH: 1.05; FOREGROUND: #000000",
+        "region": "21,110,48,226"
+    },
+    "ReturnEncounter": {
+        "portrait": {
+            "clip": {
+                "region": "20,50,49,48"
+            }
+        }
+    }
+}

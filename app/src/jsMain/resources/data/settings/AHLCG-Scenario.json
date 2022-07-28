@@ -1,0 +1,66 @@
+{
+    "AHLCG": {
+        "Scenario": {
+            "Header": {
+                "alignment": "center",
+                "style": "FAMILY: {Eons.namedObjects.AHLCGObject.titleFamily}; SIZE: 10.0; WEIGHT: WEIGHT_REGULAR; WIDTH: 1.07; FOREGROUND: #000000",
+                "region": "105,53,170,35"
+            },
+            "BodyResolution": {
+                "region": "60,102,260,373"
+            },
+            "BackPortrait": {
+                "portrait": {
+                    "pany": "0",
+                    "template": "ArkhamHorrorLCG/default-portraits/DefaultTexture.jp2",
+                    "clip": {
+                        "region": "0,0,375,525"
+                    }
+                }
+            },
+            "Body": {
+                "style": "FAMILY: {Eons.namedObjects.AHLCGObject.bodyFamily}; SIZE: {Eons.namedObjects.AHLCGObject.bodyFontSize*1.03}; WEIGHT: WEIGHT_MEDIUM; WIDTH: 0.98; FOREGROUND: #000000",
+                "tightness": "1.05",
+                "alignment": "left, top",
+                "region": "60,52,260,423"
+            },
+            "Page": {
+                "style": "FAMILY: {Eons.namedObjects.AHLCGObject.skillFamily}; SIZE: 8.1; WEIGHT: WEIGHT_MEDIUM; WIDTH: 0.98; FOREGROUND: #000000",
+                "alignment": "center, middle"
+            },
+            "Portrait": {
+                "portrait": {
+                    "clip": {
+                        "region": "0,0,375,525"
+                    },
+                    "pany": "0",
+                    "template": "ArkhamHorrorLCG/default-portraits/DefaultTexture.jp2"
+                }
+            },
+            "Name": {
+                "region": "51,50,270,29",
+                "style": "FAMILY: {Eons.namedObjects.AHLCGObject.titleFamily}; SIZE: 12.3; WEIGHT: WEIGHT_REGULAR; WIDTH: 1.07; FOREGROUND: #000000"
+            },
+            "PageOdd": {
+                "region": "179,479,20,32"
+            },
+            "Default": {
+                "template": "ArkhamHorrorLCG/templates/AHLCG-Scenario.jp2"
+            },
+            "PageEven": {
+                "region": "179,479,20,32"
+            },
+            "BodyName": {
+                "region": "60,87,260,388"
+            }
+        },
+        "ScenarioBack": {
+            "Name": {
+                "region": "51,50,270,29"
+            },
+            "Default": {
+                "template": "ArkhamHorrorLCG/templates/AHLCG-Scenario.jp2"
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "type": "object",
+    "properties": {
+        "portrait" : {
+            "type": "string"
+        },
+        "clues" : {
+            "type": "integer"
+        },
+        "cluesPerInvestigator" : {
+            "type": "boolean"
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "type": "object",
+    "properties": {
+        "name" : { "type": "string" },
+        "actNumber" : { "type": "integer" },
+        "content" : { "type": "string" },
+        "clues" : { "type": "integer" },
+        "cluesPerInvestigator" : { "type": "boolean" },
+        "portrait" : { "type": "string" },
+        "collectionNumber" : { "type": "integer" }
+    },
+    "required": [
+        "name",
+        "actNumber",
+        "content",
+        "clues",
+        "cluesPerInvestigator",
+        "portrait",
+        "collectionNumber"
+    ]
+}

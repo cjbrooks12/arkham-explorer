@@ -1,0 +1,64 @@
+{
+    "AHLCG": {
+        "AgendaPortrait": {
+            "Body": {
+                "region": "19,283,493,58",
+                "style": "FAMILY: {Eons.namedObjects.AHLCGObject.bodyFamily}; SIZE: {Eons.namedObjects.AHLCGObject.bodyFontSize}; WEIGHT: WEIGHT_MEDIUM; WIDTH: {Eons.namedObjects.AHLCGObject.bodyFontSpacing*0.98}; FOREGROUND: #000000",
+                "alignment": "left",
+                "tightness": "1.00"
+            },
+            "Encounter": {
+                "portrait": {
+                    "clip": {
+                        "region": "33,235,38,38"
+                    }
+                }
+            },
+            "Artist": {
+                "region": "14,363,129,10"
+            },
+            "Copyright": {
+                "region": "208,363,80,10"
+            },
+            "CollectionNumber": {
+                "region": "472,363,37,10"
+            },
+            "EncounterNumber": {
+                "region": "402,363,55,10",
+                "alignment": "center, middle",
+                "style": "FAMILY: {Eons.namedObjects.AHLCGObject.bodyFamily}; SIZE: 4.5; WEIGHT: WEIGHT_ULTRABOLD; WIDTH: WIDTH_REGULAR; FOREGROUND: #FFFFFF"
+            },
+            "Name": {
+                "alignment": "center,middle",
+                "region": "87,249,330,28",
+                "style": "FAMILY: {Eons.namedObjects.AHLCGObject.titleFamily}; SIZE: 11.0; WEIGHT: WEIGHT_REGULAR; WIDTH: 1.03; FOREGROUND: #000000"
+            },
+            "BackPortrait": {
+                "portrait": {
+                    "template": "ArkhamHorrorLCG/default-portraits/DefaultTexture.jp2",
+                    "clip": {
+                        "region": "0,0,525,375"
+                    },
+                    "pany": "0"
+                }
+            },
+            "Collection": {
+                "portrait": {
+                    "clip": {
+                        "region": "471,360,13,13"
+                    }
+                }
+            },
+            "Default": {
+                "template": "ArkhamHorrorLCG/templates/AHLCG-AgendaPortrait.jp2"
+            },
+            "ReturnEncounter": {
+                "portrait": {
+                    "clip": {
+                        "region": "29,231,45,45"
+                    }
+                }
+            }
+        }
+    }
+}

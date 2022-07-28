@@ -1,0 +1,88 @@
+{
+    "AHLCG": {
+        "Guide75": {
+            "Body": {
+                "region": "65,65,993,1012",
+                "style": "FAMILY: {Eons.namedObjects.AHLCGObject.bodyFamily}; SIZE: {Eons.namedObjects.AHLCGObject.bodyFontSize*1.06}; WEIGHT: WEIGHT_MEDIUM; WIDTH: 1.00; FOREGROUND: #000000",
+                "alignment": "left, top",
+                "tightness": "1.65"
+            },
+            "Page": {
+                "alignment": "center, middle",
+                "style": "FAMILY: {Eons.namedObjects.AHLCGObject.skillFamily}; SIZE: 12.0; WEIGHT: WEIGHT_MEDIUM; WIDTH: 0.98; FOREGROUND: #000000"
+            },
+            "Portrait1": {
+                "portrait": {
+                    "template": "ArkhamHorrorLCG/default-portraits/DefaultTexture.jp2",
+                    "pany": "0",
+                    "panx": "0",
+                    "clip": {
+                        "region": "65,65,993,1000"
+                    }
+                }
+            },
+            "PageOdd": {
+                "region": "546,1075,30,32"
+            },
+            "Header": {
+                "alignment": "center"
+            },
+            "BodyLeftEmpty": {
+                "region": "65,65,472,1012"
+            },
+            "BodyRightTitle": {
+                "region": "572,378,472,701"
+            },
+            "KeyHeader": {
+                "style": "FAMILY: {Eons.namedObjects.AHLCGObject.titleFamily}; SIZE: 16.1; WEIGHT: WEIGHT_REGULAR; WIDTH: 1.07; FOREGROUND: #7e0607"
+            },
+            "BodySection": {
+                "tightness": "1.0"
+            },
+            "BodyResolution": {
+                "region": "56,98,268,375"
+            },
+            "Portrait2": {
+                "portrait": {
+                    "template": "ArkhamHorrorLCG/default-portraits/DefaultTexture.jp2",
+                    "clip": {
+                        "region": "65,65,993,1000"
+                    },
+                    "pany": "0",
+                    "panx": "0"
+                }
+            },
+            "BodyName": {
+                "region": "56,83,268,390"
+            },
+            "Name": {
+                "style": "FAMILY: {Eons.namedObjects.AHLCGObject.titleFamily}; SIZE: 20.0; WEIGHT: WEIGHT_REGULAR; WIDTH: 1.07; FOREGROUND: #FFFFFF",
+                "region": "340,283,445,42"
+            },
+            "ResHeader": {
+                "style": "FAMILY: {Eons.namedObjects.AHLCGObject.titleFamily}; SIZE: 16.1; WEIGHT: WEIGHT_REGULAR; WIDTH: 1.07; FOREGROUND: #63251d"
+            },
+            "Default": {
+                "template": "ArkhamHorrorLCG/templates/AHLCG-Guide75Empty.jp2"
+            },
+            "BodyRightEmpty": {
+                "region": "572,65,472,1012"
+            },
+            "SABullet": {
+                "style": "FOREGROUND: #3d534e"
+            },
+            "PageEven": {
+                "region": "548,1075,30,32"
+            },
+            "BodyLeftTitle": {
+                "region": "65,378,472,701"
+            },
+            "SAHeader": {
+                "style": "FAMILY: {Eons.namedObjects.AHLCGObject.titleFamily}; SIZE: 16.1; WEIGHT: WEIGHT_REGULAR; WIDTH: 1.07; FOREGROUND: #2d5b58"
+            },
+            "ResBullet": {
+                "style": "FOREGROUND: #492925"
+            }
+        }
+    }
+}
