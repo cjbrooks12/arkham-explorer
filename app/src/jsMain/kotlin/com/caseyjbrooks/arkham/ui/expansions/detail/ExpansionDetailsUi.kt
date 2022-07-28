@@ -6,7 +6,16 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import com.caseyjbrooks.arkham.di.ArkhamInjector
+import com.caseyjbrooks.arkham.ui.ArkhamApp
+import com.copperleaf.ballast.navigation.routing.directions
+import com.copperleaf.ballast.repository.cache.getCachedOrNull
+import com.copperleaf.ballast.repository.cache.isLoading
+import org.jetbrains.compose.web.dom.A
+import org.jetbrains.compose.web.dom.Div
+import org.jetbrains.compose.web.dom.Li
+import org.jetbrains.compose.web.dom.Span
 import org.jetbrains.compose.web.dom.Text
+import org.jetbrains.compose.web.dom.Ul
 
 object ExpansionDetailsUi {
     @Composable
@@ -19,6 +28,25 @@ object ExpansionDetailsUi {
 
     @Composable
     fun Content(state: ExpansionDetailsContract.State, postInput: (ExpansionDetailsContract.Inputs)->Unit) {
-        Text("Expansion Details: ${state.expansionId}")
+        Text("Expansion Details")
+
+        Div(attrs = { classes("content") }) {
+            Ul {
+                Li {
+                    A(href = "#${ArkhamApp.Home.directions()}") { Text("Home") }
+                }
+                Li {
+                    A(href = "#${ArkhamApp.Expansions.directions()}") { Text("Back") }
+                }
+
+                if (state.expansion.isLoading()) {
+                    Li { Text("Loading") }
+                } else {
+                    state.expansion.getCachedOrNull()?.let { expansion ->
+                        Li { Span { Text(expansion.name) } }
+                    }
+                }
+            }
+        }
     }
 }

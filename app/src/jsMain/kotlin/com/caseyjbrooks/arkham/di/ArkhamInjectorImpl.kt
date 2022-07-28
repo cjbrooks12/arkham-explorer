@@ -104,7 +104,9 @@ class ArkhamInjectorImpl(private val applicationCoroutineScope: CoroutineScope) 
                 .apply {
                     this += BootstrapInterceptor { ExpansionDetailsContract.Inputs.Initialize(expansionId) }
                 },
-            inputHandler = ExpansionDetailsInputHandler(),
+            inputHandler = ExpansionDetailsInputHandler(
+                repository = arkhamExplorerRepository
+            ),
         )
     }
 
@@ -133,7 +135,9 @@ class ArkhamInjectorImpl(private val applicationCoroutineScope: CoroutineScope) 
                 .apply {
                     this += BootstrapInterceptor { InvestigatorDetailsContract.Inputs.Initialize(investigatorId) }
                 },
-            inputHandler = InvestigatorDetailsInputHandler(),
+            inputHandler = InvestigatorDetailsInputHandler(
+                repository = arkhamExplorerRepository
+            ),
         )
     }
 
@@ -162,7 +166,9 @@ class ArkhamInjectorImpl(private val applicationCoroutineScope: CoroutineScope) 
                 .apply {
                     this += BootstrapInterceptor { ScenarioDetailsContract.Inputs.Initialize(scenarioId) }
                 },
-            inputHandler = ScenarioDetailsInputHandler(),
+            inputHandler = ScenarioDetailsInputHandler(
+                repository = arkhamExplorerRepository
+            ),
         )
     }
 
@@ -191,7 +197,9 @@ class ArkhamInjectorImpl(private val applicationCoroutineScope: CoroutineScope) 
                 .apply {
                     this += BootstrapInterceptor { EncounterSetDetailsContract.Inputs.Initialize(encounterSetId) }
                 },
-            inputHandler = EncounterSetDetailsInputHandler(),
+            inputHandler = EncounterSetDetailsInputHandler(
+                repository = arkhamExplorerRepository
+            ),
         )
     }
 

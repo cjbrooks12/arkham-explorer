@@ -9,24 +9,24 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class ArkhamHorrorExpansion(
     val arkhamDbEntry: String = "",
-    val encounterSets: List<EncounterSets> = listOf(),
+    val encounterSets: List<EncounterSet> = listOf(),
     val icon: String = "",
     val id: String = "",
-    val investigators: List<Investigators> = listOf(),
+    val investigators: List<Investigator> = listOf(),
     val name: String = "",
     val releaseDate: LocalDate = Clock.System.todayIn(TimeZone.currentSystemDefault()),
     val returnTo: Boolean = false,
-    val scenarios: List<Scenarios> = listOf()
+    val scenarios: List<Scenario> = listOf()
 ) {
     @Serializable
-    data class EncounterSets(
+    data class EncounterSet(
         val arkhamDbEntry: String = "",
         val icon: String = "",
         val name: String = ""
     )
 
     @Serializable
-    data class Investigators(
+    data class Investigator(
         val arkhamDbEntry: String = "",
         val mainClass: MainClass = MainClass.Guardian,
         val name: String = ""
@@ -47,15 +47,15 @@ data class ArkhamHorrorExpansion(
     }
 
     @Serializable
-    data class Scenarios(
+    data class Scenario(
         val arkhamDbEntry: String = "",
-        val encounterSets: List<EncounterSets> = listOf(),
+        val encounterSets: List<ScenarioEncounterSet> = listOf(),
         val id: String = "",
         val name: String = "",
         val icon: String = ""
     ) {
         @Serializable
-        data class EncounterSets(
+        data class ScenarioEncounterSet(
             val conditional: Boolean = false,
             val name: String = "",
             val setAside: Boolean = false

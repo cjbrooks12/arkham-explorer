@@ -28,7 +28,7 @@ object EncounterSetsUi {
 
     @Composable
     fun Content(state: EncounterSetsContract.State, postInput: (EncounterSetsContract.Inputs) -> Unit) {
-        Text("EncounterSets")
+        Text("Encounter Sets")
 
         Div(attrs = { classes("content") }) {
             Ul {
