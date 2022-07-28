@@ -40,12 +40,16 @@ kotlin {
                 implementation("io.github.copper-leaf:ballast-core:2.0.0-SNAPSHOT")
                 implementation("io.github.copper-leaf:ballast-repository:2.0.0-SNAPSHOT")
                 implementation("io.github.copper-leaf:ballast-saved-state:2.0.0-SNAPSHOT")
-//                implementation("io.github.copper-leaf:ballast-debugger:2.0.0-SNAPSHOT")
                 implementation("io.github.copper-leaf:ballast-navigation:2.0.0-SNAPSHOT")
-//                implementation("io.github.copper-leaf:ballast-sync:2.0.0-SNAPSHOT")
+
+                implementation("io.github.copper-leaf:trellis-core:3.0.0")
+                implementation("io.github.copper-leaf:trellis-dsl:3.0.0")
+//                implementation("io.github.copper-leaf:thistle-core:3.1.0")
 
                 implementation(libs.ktor.client.core)
                 implementation(libs.ktor.client.logging)
+                implementation(libs.ktor.client.serialization)
+                implementation(libs.ktor.client.serialization.json)
                 implementation(libs.kotlinx.serialization.json)
                 implementation(libs.kotlinx.datetime)
                 implementation(libs.multiplatformSettings.core)

@@ -1,40 +1,57 @@
 package com.caseyjbrooks.arkham.repository.main
 
-import com.caseyjbrooks.arkham.config.ArkhamConfig
-import com.caseyjbrooks.arkham.models.ArkhamHorrorExpansion
-import com.caseyjbrooks.arkham.utils.resourceloader.ResourceLoader
+import com.caseyjbrooks.arkham.api.ArkhamExplorerApi
 import com.copperleaf.ballast.InputHandler
 import com.copperleaf.ballast.InputHandlerScope
-import kotlinx.serialization.json.Json
+import com.copperleaf.ballast.observeFlows
+import com.copperleaf.ballast.repository.bus.EventBus
+import com.copperleaf.ballast.repository.bus.observeInputsFromBus
+import com.copperleaf.ballast.repository.cache.fetchWithCache
 
 class ArkhamExplorerInputHandler(
-    private val config: ArkhamConfig,
-    private val resourceLoader: ResourceLoader,
+    private val api: ArkhamExplorerApi,
+    private val eventBus: EventBus,
 ) : InputHandler<
     ArkhamExplorerContract.Inputs,
-    ArkhamExplorerContract.Events,
+    Any,
     ArkhamExplorerContract.State> {
     override suspend fun InputHandlerScope<
         ArkhamExplorerContract.Inputs,
-        ArkhamExplorerContract.Events,
+        Any,
         ArkhamExplorerContract.State>.handleInput(
         input: ArkhamExplorerContract.Inputs
     ) = when (input) {
         is ArkhamExplorerContract.Inputs.Initialize -> {
-            sideJob("load expansions") {
-                val loadedExpansions = config.getExpansions().map { expansionFileName ->
-                    Json.decodeFromString(
-                        ArkhamHorrorExpansion.serializer(),
-                        resourceLoader.load(expansionFileName)
-                    )
-                }
-                postInput(
-                    ArkhamExplorerContract.Inputs.ExpansionsLoaded(loadedExpansions)
+            val previousState = getCurrentState()
+
+            if (!previousState.initialized) {
+                updateState { it.copy(initialized = true) }
+                // start observing flows here
+                logger.debug("initializing")
+                observeFlows(
+                    key = "Observe account changes",
+                    eventBus
+                        .observeInputsFromBus<ArkhamExplorerContract.Inputs>(),
                 )
+            } else {
+                logger.debug("already initialized")
+                noOp()
             }
         }
-        is ArkhamExplorerContract.Inputs.ExpansionsLoaded -> {
-            updateState { it.copy(ready = true, expansions = input.expansions) }
+
+        is ArkhamExplorerContract.Inputs.RefreshExpansions -> {
+            updateState { it.copy(expansionsInitialized = true) }
+            fetchWithCache(
+                input = input,
+                forceRefresh = input.forceRefresh,
+                getValue = { it.expansions },
+                updateState = { ArkhamExplorerContract.Inputs.ExpansionsUpdated(it) },
+                doFetch = { api.getExpansions() },
+            )
+        }
+
+        is ArkhamExplorerContract.Inputs.ExpansionsUpdated -> {
+            updateState { it.copy(expansions = input.expansions) }
         }
     }
 }

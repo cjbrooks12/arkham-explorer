@@ -5,43 +5,82 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import com.caseyjbrooks.arkham.di.ArkhamInjector
-import com.caseyjbrooks.arkham.ui.encountersets.EncounterSetsScreen
-import com.caseyjbrooks.arkham.ui.expansions.ExpansionsScreen
+import com.caseyjbrooks.arkham.ui.encountersets.list.EncounterSetsUi
+import com.caseyjbrooks.arkham.ui.expansions.detail.ExpansionDetailsUi
+import com.caseyjbrooks.arkham.ui.expansions.list.ExpansionsUi
+import com.caseyjbrooks.arkham.ui.home.HomeUi
+import com.caseyjbrooks.arkham.ui.investigators.detail.InvestigatorDetailsUi
+import com.caseyjbrooks.arkham.ui.investigators.list.InvestigatorsUi
+import com.caseyjbrooks.arkham.ui.scenarios.detail.ScenarioDetailsUi
+import com.caseyjbrooks.arkham.ui.scenarios.list.ScenariosUi
 import com.copperleaf.ballast.navigation.routing.Destination
+import com.copperleaf.ballast.navigation.routing.MissingDestination
 import com.copperleaf.ballast.navigation.routing.currentDestinationOrNotFound
-import org.jetbrains.compose.web.dom.Text
 
 @Composable
 fun MainApplication(injector: ArkhamInjector) {
     val routerVm = remember { injector.routerViewModel() }
     val routerVmState by routerVm.observeStates().collectAsState()
 
-    when(val destination = routerVmState.currentDestinationOrNotFound) {
+    when (val destination = routerVmState.currentDestinationOrNotFound) {
         is Destination -> {
             when (destination.originalRoute) {
-                ArkhamApp.Main -> {
-                    Text("Main")
+                ArkhamApp.Home -> {
+                    HomeUi.Content()
                 }
+
                 ArkhamApp.Expansions -> {
-                    ExpansionsScreen()
+                    ExpansionsUi.Content(injector)
                 }
+
                 ArkhamApp.ExpansionDetails -> {
-                    Text("Expansion Details")
-                    val expansionName = destination.pathParameters["expansionName"]!!
-                    Text("expansionName: $expansionName")
+                    ExpansionDetailsUi.Content(
+                        injector,
+                        destination.pathParameters["expansionId"]!!.single(),
+                    )
                 }
+
+                ArkhamApp.Investigators -> {
+                    InvestigatorsUi.Content(injector)
+                }
+
+                ArkhamApp.InvestigatorDetails -> {
+                    InvestigatorDetailsUi.Content(
+                        injector,
+                        destination.pathParameters["investigatorId"]!!.single(),
+                    )
+                }
+
+                ArkhamApp.Scenarios -> {
+                    ScenariosUi.Content(injector)
+                }
+
+                ArkhamApp.ScenarioDetails -> {
+                    ScenarioDetailsUi.Content(
+                        injector,
+                        destination.pathParameters["scenarioId"]!!.single(),
+                    )
+                }
+
                 ArkhamApp.EncounterSets -> {
-                    EncounterSetsScreen()
+                    EncounterSetsUi.Content(injector)
                 }
+
                 ArkhamApp.EncounterSetDetails -> {
-                    Text("Encounter Set Details")
-                    val encounterSetName = destination.pathParameters["encounterSetName"]!!
-                    Text("encounterSetName: $encounterSetName")
+                    ExpansionDetailsUi.Content(
+                        injector,
+                        destination.pathParameters["encounterSetId"]!!.single(),
+                    )
                 }
             }
         }
+
+        is MissingDestination -> {
+            HomeUi.NotFound(destination.originalUrl)
+        }
+
         else -> {
-            Text("Route not found")
+            HomeUi.UnknownError()
         }
     }
 }
