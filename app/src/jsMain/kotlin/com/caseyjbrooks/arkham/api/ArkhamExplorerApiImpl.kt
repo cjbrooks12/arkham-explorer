@@ -12,10 +12,10 @@ class ArkhamExplorerApiImpl(
     private val httpClient: HttpClient,
 ) : ArkhamExplorerApi {
     override suspend fun getExpansions(): List<ArkhamHorrorExpansion> {
-        val expansions: ArkhamHorrorExpansionsIndex = httpClient.get("/assets/expansions/index.json").body()
+        val expansions: ArkhamHorrorExpansionsIndex = httpClient.get("assets/expansions/index.json").body()
         return expansions.expansions
             .map { expansionId ->
-                httpClient.get("/assets/expansions/$expansionId/data.json").body<ArkhamHorrorExpansion>()
+                httpClient.get("assets/expansions/$expansionId/data.json").body<ArkhamHorrorExpansion>()
             }
     }
 }
