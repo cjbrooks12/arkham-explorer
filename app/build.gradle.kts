@@ -9,9 +9,10 @@ group = "com.caseyjbrooks.arkham"
 version = "1.0.0"
 
 repositories {
-    mavenLocal()
+//    mavenLocal()
     mavenCentral()
     maven(url = "https://maven.pkg.jetbrains.space/public/p/compose/dev")
+    maven(url = "https://s01.oss.sonatype.org/content/repositories/snapshots")
 }
 
 kotlin {
