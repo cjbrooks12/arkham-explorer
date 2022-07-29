@@ -5,7 +5,7 @@ plugins {
     id("com.github.gmazzo.buildconfig")
 }
 
-group = "com.caseyjbrooks.arkham"
+group = "com.caseyjbrooks.arkham.app"
 version = "1.0.0"
 
 repositories {
@@ -68,5 +68,15 @@ kotlin {
                 implementation(libs.ktor.client.js)
             }
         }
+    }
+}
+
+buildConfig {
+    packageName(project.group.toString())
+
+    if(project.hasProperty("release")) {
+        buildConfigField("String", "BASE_URL", "\"https://cjbrooks12.github.io/arkham-explorer/\"")
+    } else {
+        buildConfigField("String", "BASE_URL", "\"http://localhost:8080/\"")
     }
 }

@@ -7,6 +7,11 @@ import kotlinx.datetime.todayIn
 import kotlinx.serialization.Serializable
 
 @Serializable
+data class ArkhamHorrorExpansionsIndex(
+    val expansions: List<String>
+)
+
+@Serializable
 data class ArkhamHorrorExpansion(
     val arkhamDbEntry: String = "",
     val encounterSets: List<EncounterSet> = listOf(),

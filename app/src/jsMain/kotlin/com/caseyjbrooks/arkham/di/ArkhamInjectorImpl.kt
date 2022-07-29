@@ -40,6 +40,7 @@ import com.copperleaf.ballast.repository.bus.EventBusImpl
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.js.Js
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
+import io.ktor.client.plugins.defaultRequest
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.serialization.json.Json
@@ -50,6 +51,9 @@ class ArkhamInjectorImpl(private val applicationCoroutineScope: CoroutineScope) 
     private val httpClient = HttpClient(Js) {
         install(ContentNegotiation) {
             json(Json)
+        }
+        defaultRequest {
+            url(config.baseUrl)
         }
     }
 
