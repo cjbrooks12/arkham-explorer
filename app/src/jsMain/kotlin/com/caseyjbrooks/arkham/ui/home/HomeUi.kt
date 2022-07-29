@@ -12,7 +12,6 @@ import org.jetbrains.compose.web.dom.Ul
 object HomeUi {
     @Composable
     fun Content() {
-
         Div(attrs = { classes("content") }) {
             Ul {
                 listOf(

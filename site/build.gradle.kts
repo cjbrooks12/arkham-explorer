@@ -1,6 +1,8 @@
 plugins {
+    java
     kotlin("jvm")
     id("com.github.gmazzo.buildconfig")
+    application
 }
 
 repositories {
@@ -18,4 +20,8 @@ dependencies {
     implementation(libs.kotlinx.datetime)
     implementation(libs.multiplatformSettings.core)
     implementation(libs.multiplatformSettings.noArg)
+}
+
+application {
+    mainClass.set("com.caseyjbrooks.arkham.MainKt")
 }

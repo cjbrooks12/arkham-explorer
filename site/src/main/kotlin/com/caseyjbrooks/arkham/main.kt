@@ -1,51 +1,43 @@
 package com.caseyjbrooks.arkham
 
-import com.copperleaf.json.pointer.JsonPointer
-import com.copperleaf.json.pointer.JsonPointerAction
-import com.copperleaf.json.pointer.mutate
-import com.copperleaf.json.utils.toJsonString
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
-import kotlinx.serialization.json.JsonElement
-import kotlinx.serialization.json.JsonObject
 import java.nio.file.Files
-import java.util.Properties
+import java.nio.file.Path
+import java.nio.file.StandardCopyOption
 import kotlin.io.path.Path
-import kotlin.io.path.createFile
-import kotlin.io.path.deleteIfExists
+import kotlin.io.path.createDirectories
 import kotlin.io.path.div
-import kotlin.io.path.name
+import kotlin.io.path.exists
 
-fun main() = runBlocking {
+fun main(): Unit = runBlocking {
     withContext(Dispatchers.IO) {
-        val repoRoot = Path(".")
-        val appResources = repoRoot / "app/src/jsMain/resources"
-        val ahLcgSettingsInput = appResources / "ArkhamHorrorLCG/settings"
-        val ahLcgSettingsOutput = appResources / "data/settings"
+        val repoRoot = Path("./../")
 
-        Files.list(ahLcgSettingsInput).use { fileStream ->
-            fileStream.forEach { path ->
-                val inputAsProperties = Properties().apply { load(Files.newInputStream(path)) }
+        val destination = repoRoot / "build/dist"
+        if (destination.exists()) {
+            destination.toFile().deleteRecursively()
+        }
+        destination.createDirectories()
 
-                var sourceObject: JsonElement = JsonObject(emptyMap())
+        copyRecursively(
+            repoRoot / "app/build/distributions",
+            destination
+        )
+        copyRecursively(
+            repoRoot / "site/src/main/resources",
+            destination
+        )
+    }
+}
 
-                inputAsProperties.entries.forEach { (key, value) ->
-                    val pointer = JsonPointer.parse("#/${key.toString().replace('-', '/')}")
+private suspend fun copyRecursively(src: Path, dest: Path) = withContext(Dispatchers.IO) {
+    Files.walk(src).forEach { source ->
+        val destination = dest.resolve(src.relativize(source))
 
-                    try {
-                        sourceObject = sourceObject.mutate(pointer, JsonPointerAction.SetValue(value))
-                    } catch (e: Exception) {
-                        e.printStackTrace()
-                    }
-                }
-
-                val outputFile = ahLcgSettingsOutput / path.name.replace(".settings", ".json")
-                outputFile.deleteIfExists()
-                outputFile.createFile()
-
-                Files.write(outputFile, sourceObject.toJsonString(prettyPrint = true).toByteArray())
-            }
+        if(destination != dest) {
+            Files.copy(source, dest.resolve(src.relativize(source)), StandardCopyOption.REPLACE_EXISTING)
         }
     }
 }
