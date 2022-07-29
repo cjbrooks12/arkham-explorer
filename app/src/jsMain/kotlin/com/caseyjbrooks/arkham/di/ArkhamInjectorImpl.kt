@@ -19,6 +19,9 @@ import com.caseyjbrooks.arkham.ui.expansions.detail.ExpansionDetailsViewModel
 import com.caseyjbrooks.arkham.ui.expansions.list.ExpansionsContract
 import com.caseyjbrooks.arkham.ui.expansions.list.ExpansionsInputHandler
 import com.caseyjbrooks.arkham.ui.expansions.list.ExpansionsViewModel
+import com.caseyjbrooks.arkham.ui.home.HomeContract
+import com.caseyjbrooks.arkham.ui.home.HomeInputHandler
+import com.caseyjbrooks.arkham.ui.home.HomeViewModel
 import com.caseyjbrooks.arkham.ui.investigators.detail.InvestigatorDetailsContract
 import com.caseyjbrooks.arkham.ui.investigators.detail.InvestigatorDetailsInputHandler
 import com.caseyjbrooks.arkham.ui.investigators.detail.InvestigatorDetailsViewModel
@@ -81,6 +84,21 @@ class ArkhamInjectorImpl(private val applicationCoroutineScope: CoroutineScope) 
 
     override fun arkhamExplorerRepository(): ArkhamExplorerRepository {
         return arkhamExplorerRepository
+    }
+
+    override fun homeViewModel(
+        coroutineScope: CoroutineScope
+    ): HomeViewModel {
+        return HomeViewModel(
+            coroutineScope = coroutineScope,
+            configBuilder = defaultConfigBuilder()
+                .apply {
+                    this += BootstrapInterceptor { HomeContract.Inputs.Initialize }
+                },
+            inputHandler = HomeInputHandler(
+                repository = arkhamExplorerRepository
+            ),
+        )
     }
 
     override fun expansionsViewModel(

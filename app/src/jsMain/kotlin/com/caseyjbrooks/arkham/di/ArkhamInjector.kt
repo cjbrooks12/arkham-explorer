@@ -6,6 +6,7 @@ import com.caseyjbrooks.arkham.ui.encountersets.detail.EncounterSetDetailsViewMo
 import com.caseyjbrooks.arkham.ui.encountersets.list.EncounterSetsViewModel
 import com.caseyjbrooks.arkham.ui.expansions.detail.ExpansionDetailsViewModel
 import com.caseyjbrooks.arkham.ui.expansions.list.ExpansionsViewModel
+import com.caseyjbrooks.arkham.ui.home.HomeViewModel
 import com.caseyjbrooks.arkham.ui.investigators.detail.InvestigatorDetailsViewModel
 import com.caseyjbrooks.arkham.ui.investigators.list.InvestigatorsViewModel
 import com.caseyjbrooks.arkham.ui.scenarios.detail.ScenarioDetailsViewModel
@@ -15,6 +16,8 @@ import kotlinx.coroutines.CoroutineScope
 interface ArkhamInjector {
     fun routerViewModel(): RouterViewModel
     fun arkhamExplorerRepository(): ArkhamExplorerRepository
+
+    fun homeViewModel(coroutineScope: CoroutineScope): HomeViewModel
 
     fun expansionsViewModel(coroutineScope: CoroutineScope): ExpansionsViewModel
     fun expansionDetailsViewModel(coroutineScope: CoroutineScope, expansionId: String): ExpansionDetailsViewModel

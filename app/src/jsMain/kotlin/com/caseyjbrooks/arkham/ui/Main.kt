@@ -26,7 +26,7 @@ fun MainApplication(injector: ArkhamInjector) {
         is Destination -> {
             when (destination.originalRoute) {
                 ArkhamApp.Home -> {
-                    HomeUi.Content()
+                    HomeUi.Content(injector)
                 }
 
                 ArkhamApp.Expansions -> {
