@@ -36,8 +36,9 @@ fun NavigationLink(
     val injector = LocalInjector.current
     val router = remember(injector) { injector.routerViewModel() }
     val navLink = remember(injector) { injector.navigationLinkStrategy.createLink(route, *pathParameters) }
+
     A(
-        href = navLink,
+        href = "${injector.config.baseUrl.trimEnd('/')}$navLink",
         attrs = {
             onClick {
                 if (it.ctrlKey || it.metaKey) {
@@ -64,7 +65,7 @@ fun NavigationLinkBack(
         onClick {
             it.preventDefault()
             it.stopPropagation()
-            router.trySend(RouterContract.Inputs.GoBack)
+            router.trySend(RouterContract.Inputs.GoBack())
         }
     }) { content() }
 }

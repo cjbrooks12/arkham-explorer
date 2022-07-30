@@ -38,9 +38,10 @@ import com.caseyjbrooks.arkham.ui.scenarios.list.ScenariosViewModel
 import com.caseyjbrooks.arkham.utils.navigation.HashNavigationLinkStrategy
 import com.caseyjbrooks.arkham.utils.navigation.HistoryNavigationLinkStrategy
 import com.caseyjbrooks.arkham.utils.navigation.NavigationLinkStrategy
+import com.copperleaf.ballast.BallastLogger
 import com.copperleaf.ballast.BallastViewModelConfiguration
 import com.copperleaf.ballast.core.BootstrapInterceptor
-import com.copperleaf.ballast.core.PrintlnLogger
+import com.copperleaf.ballast.core.LoggingInterceptor
 import com.copperleaf.ballast.navigation.routing.BrowserHashNavigationInterceptor
 import com.copperleaf.ballast.navigation.routing.BrowserHistoryNavigationInterceptor
 import com.copperleaf.ballast.navigation.routing.withRouter
@@ -55,7 +56,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.serialization.json.Json
 
 class ArkhamInjectorImpl(private val applicationCoroutineScope: CoroutineScope) : ArkhamInjector {
-    private val config: ArkhamConfig = ArkhamConfigImpl()
+    override val config: ArkhamConfig = ArkhamConfigImpl()
     private val eventBus = EventBusImpl()
     private val httpClient = HttpClient(Js) {
         install(ContentNegotiation) {
@@ -66,7 +67,7 @@ class ArkhamInjectorImpl(private val applicationCoroutineScope: CoroutineScope) 
         }
     }
 
-    override val navigationLinkStrategy: NavigationLinkStrategy = if (!config.debug || config.useHistoryApi) {
+    override val navigationLinkStrategy: NavigationLinkStrategy = if (config.useHistoryApi) {
         HistoryNavigationLinkStrategy
     } else {
         HashNavigationLinkStrategy
@@ -75,8 +76,8 @@ class ArkhamInjectorImpl(private val applicationCoroutineScope: CoroutineScope) 
         config = defaultConfigBuilder()
             .withRouter(ArkhamApp)
             .apply {
-                if (!config.debug || config.useHistoryApi) {
-                    this += BrowserHistoryNavigationInterceptor(config.baseUrl)
+                if (config.useHistoryApi) {
+                    this += BrowserHistoryNavigationInterceptor(config.basePath)
                 } else {
                     this += BrowserHashNavigationInterceptor()
                 }
@@ -250,8 +251,17 @@ class ArkhamInjectorImpl(private val applicationCoroutineScope: CoroutineScope) 
     private fun defaultConfigBuilder(): BallastViewModelConfiguration.Builder {
         return BallastViewModelConfiguration.Builder()
             .apply {
-                logger = ::PrintlnLogger
-//                this += LoggingInterceptor()
+                logger = {
+                    object : BallastLogger {
+                        override fun debug(message: String) {}
+                        override fun info(message: String) {}
+                        override fun error(throwable: Throwable) {
+                            console.error(throwable)
+                        }
+                    }
+                }
+                this += LoggingInterceptor()
             }
     }
 }
+

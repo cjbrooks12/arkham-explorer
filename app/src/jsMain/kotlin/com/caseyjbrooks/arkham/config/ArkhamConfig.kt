@@ -5,4 +5,5 @@ interface ArkhamConfig {
     val debug: Boolean
     val useHistoryApi: Boolean
     val baseUrl: String
+    val basePath: String?
 }

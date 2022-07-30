@@ -22,6 +22,7 @@ object HashNavigationLinkStrategy : NavigationLinkStrategy {
 }
 
 object HistoryNavigationLinkStrategy : NavigationLinkStrategy {
+
     override fun createLink(
         route: Route,
         pathParameters: Map<String, List<String>>,

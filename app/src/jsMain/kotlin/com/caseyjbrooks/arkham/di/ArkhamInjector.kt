@@ -1,5 +1,6 @@
 package com.caseyjbrooks.arkham.di
 
+import com.caseyjbrooks.arkham.config.ArkhamConfig
 import com.caseyjbrooks.arkham.repository.main.ArkhamExplorerRepository
 import com.caseyjbrooks.arkham.ui.RouterViewModel
 import com.caseyjbrooks.arkham.ui.encountersets.detail.EncounterSetDetailsViewModel
@@ -15,6 +16,7 @@ import com.caseyjbrooks.arkham.utils.navigation.NavigationLinkStrategy
 import kotlinx.coroutines.CoroutineScope
 
 interface ArkhamInjector {
+    val config: ArkhamConfig
     val navigationLinkStrategy: NavigationLinkStrategy
 
     fun routerViewModel(): RouterViewModel

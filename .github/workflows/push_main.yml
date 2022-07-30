@@ -29,3 +29,5 @@ jobs:
         uses: 'JamesIves/github-pages-deploy-action@v4.4.0'
         with:
           folder: 'build/dist'
+          single-commit: true
+          force: true

@@ -1,5 +1,6 @@
 package com.caseyjbrooks.arkham
 
+import com.caseyjbrooks.arkham.site.BuildConfig
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
@@ -7,9 +8,13 @@ import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.StandardCopyOption
 import kotlin.io.path.Path
+import kotlin.io.path.bufferedReader
 import kotlin.io.path.createDirectories
+import kotlin.io.path.createFile
+import kotlin.io.path.deleteIfExists
 import kotlin.io.path.div
 import kotlin.io.path.exists
+import kotlin.io.path.writeText
 
 fun main(): Unit = runBlocking {
     withContext(Dispatchers.IO) {
@@ -28,6 +33,19 @@ fun main(): Unit = runBlocking {
         copyRecursively(
             repoRoot / "site/src/main/resources",
             destination
+        )
+
+        // rewrite index file to have the actual base URL in the scripts
+        val indexFile = repoRoot / "app/src/jsMain/resources/index.html"
+        val outputIndexFile = destination / "index.html"
+        outputIndexFile.deleteIfExists()
+        outputIndexFile.createFile()
+
+        outputIndexFile.writeText(
+            indexFile
+                .bufferedReader()
+                .readText()
+                .replace("<script src=\"/app.js\"></script>", "<script src=\"${BuildConfig.BASE_URL}app.js\"></script>")
         )
     }
 }
