@@ -1,26 +1,25 @@
 
-This is the source for the www.caseyjbrooks.com website, as well as api.caseyjbrooks.com and its related services. Read
-below to get started. It requires the following tools to be installed on your system:
+This is the source code and data for the Arkham Explorer website. This is a fully-static website and Single-Page 
+Application, hosted on GitHub Pages. 
 
-- Java 8+
-- Docker Compose
-- NPM/Yarn
+- Java 11+
 
-## Running Frontend Website
+## Single-Page Application
 
-- Serve locally: `./gradlew :lib:browserBrowserWebpack :site:orchidServe`
-- Build for production: `./gradlew :lib:browserBrowserProductionWebpack :site:orchidBuild -Penv=prod`
+The SPA portion of the website is built with [Kotlin Compose for Web](https://github.com/JetBrains/compose-jb/tree/master/tutorials/Web),
+using [Bulma](https://bulma.io/) for styling.
 
-* [Orchid documentation](https://orchid.run/)
+- Serve locally: `./gradlew :app:jsBrowserDevelopentRun`
+  - This will run the site via WebPack on `http://localhost:8080`
+- Build for production: `./gradlew :app:build -Prelease`
+  - This will generate all the files needed to deploy into `app/build/distributions`. This entire folder should be 
+    deployed to the webserver
 
-## Running Backend API
+## Static Website
 
-- Serve API-only locally: `./gradlew :lib:run`
-- Build API-only for production: `./gradlew :lib:shadowJar`
-- start all services: `docker-compose up -d`
-- stop all services: `docker-compose down`
-- stop all services and delete all data: `docker-compose down -v`
-- access Hasura admin console: `cd ./lib/src/hasura && hasura console`
+The static website portion is a custom Kotlin CLI application which copies files from multiple directories into a single
+one, suitable for deploying to GitHub Pages.
 
-* [Ktor documentation](https://ktor.io/servers)
-
+- Build for production: `./gradlew :site:run -Prelease`
+  - This will generate all the files needed to deploy into `build/dist`. This entire folder should be
+    deployed to the webserver
