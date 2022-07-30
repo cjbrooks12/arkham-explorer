@@ -7,10 +7,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import com.caseyjbrooks.arkham.di.ArkhamInjector
 import com.caseyjbrooks.arkham.ui.ArkhamApp
-import com.copperleaf.ballast.navigation.routing.directions
+import com.caseyjbrooks.arkham.utils.navigation.NavigationLink
+import com.caseyjbrooks.arkham.utils.navigation.NavigationLinkBack
 import com.copperleaf.ballast.repository.cache.getCachedOrEmptyList
 import com.copperleaf.ballast.repository.cache.isLoading
-import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Li
 import org.jetbrains.compose.web.dom.Span
@@ -33,7 +33,10 @@ object InvestigatorsUi {
         Div(attrs = { classes("content") }) {
             Ul {
                 Li {
-                    A(href = "#${ArkhamApp.Home.directions()}") { Text("Home") }
+                    NavigationLink(ArkhamApp.Home) { Text("Home") }
+                }
+                Li {
+                    NavigationLinkBack { Text("Back") }
                 }
 
                 if (state.expansions.isLoading()) {
@@ -43,12 +46,7 @@ object InvestigatorsUi {
                         Li { Span { Text(expansion.name) } }
                         Ul {
                             expansion.investigators.forEach { investigator ->
-                                Li {
-                                    val directionsParams = mapOf("investigatorId" to listOf(investigator.name))
-                                    A(href = "#${ArkhamApp.InvestigatorDetails.directions(directionsParams)}") {
-                                        Text(investigator.name)
-                                    }
-                                }
+                                Li { NavigationLink(ArkhamApp.InvestigatorDetails, investigator.name) { Text(investigator.name) } }
                             }
                         }
                     }

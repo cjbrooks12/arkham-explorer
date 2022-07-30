@@ -6,6 +6,7 @@ import com.caseyjbrooks.arkham.config.ArkhamConfigImpl
 import com.caseyjbrooks.arkham.repository.main.ArkhamExplorerInputHandler
 import com.caseyjbrooks.arkham.repository.main.ArkhamExplorerRepository
 import com.caseyjbrooks.arkham.repository.main.ArkhamExplorerRepositoryImpl
+import com.caseyjbrooks.arkham.ui.ArkhamApp
 import com.caseyjbrooks.arkham.ui.RouterViewModel
 import com.caseyjbrooks.arkham.ui.encountersets.detail.EncounterSetDetailsContract
 import com.caseyjbrooks.arkham.ui.encountersets.detail.EncounterSetDetailsInputHandler
@@ -34,10 +35,15 @@ import com.caseyjbrooks.arkham.ui.scenarios.detail.ScenarioDetailsViewModel
 import com.caseyjbrooks.arkham.ui.scenarios.list.ScenariosContract
 import com.caseyjbrooks.arkham.ui.scenarios.list.ScenariosInputHandler
 import com.caseyjbrooks.arkham.ui.scenarios.list.ScenariosViewModel
+import com.caseyjbrooks.arkham.utils.navigation.HashNavigationLinkStrategy
+import com.caseyjbrooks.arkham.utils.navigation.HistoryNavigationLinkStrategy
+import com.caseyjbrooks.arkham.utils.navigation.NavigationLinkStrategy
 import com.copperleaf.ballast.BallastViewModelConfiguration
 import com.copperleaf.ballast.core.BootstrapInterceptor
-import com.copperleaf.ballast.core.LoggingInterceptor
 import com.copperleaf.ballast.core.PrintlnLogger
+import com.copperleaf.ballast.navigation.routing.BrowserHashNavigationInterceptor
+import com.copperleaf.ballast.navigation.routing.BrowserHistoryNavigationInterceptor
+import com.copperleaf.ballast.navigation.routing.withRouter
 import com.copperleaf.ballast.plusAssign
 import com.copperleaf.ballast.repository.bus.EventBusImpl
 import io.ktor.client.HttpClient
@@ -60,8 +66,21 @@ class ArkhamInjectorImpl(private val applicationCoroutineScope: CoroutineScope) 
         }
     }
 
+    override val navigationLinkStrategy: NavigationLinkStrategy = if (!config.debug || config.useHistoryApi) {
+        HistoryNavigationLinkStrategy
+    } else {
+        HashNavigationLinkStrategy
+    }
     private val router: RouterViewModel = RouterViewModel(
-        config = defaultConfigBuilder(),
+        config = defaultConfigBuilder()
+            .withRouter(ArkhamApp)
+            .apply {
+                if (!config.debug || config.useHistoryApi) {
+                    this += BrowserHistoryNavigationInterceptor(config.baseUrl)
+                } else {
+                    this += BrowserHashNavigationInterceptor()
+                }
+            },
         coroutineScope = applicationCoroutineScope,
     )
 
@@ -232,7 +251,7 @@ class ArkhamInjectorImpl(private val applicationCoroutineScope: CoroutineScope) 
         return BallastViewModelConfiguration.Builder()
             .apply {
                 logger = ::PrintlnLogger
-                this += LoggingInterceptor()
+//                this += LoggingInterceptor()
             }
     }
 }

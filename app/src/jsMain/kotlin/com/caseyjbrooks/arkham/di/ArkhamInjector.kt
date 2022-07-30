@@ -11,9 +11,12 @@ import com.caseyjbrooks.arkham.ui.investigators.detail.InvestigatorDetailsViewMo
 import com.caseyjbrooks.arkham.ui.investigators.list.InvestigatorsViewModel
 import com.caseyjbrooks.arkham.ui.scenarios.detail.ScenarioDetailsViewModel
 import com.caseyjbrooks.arkham.ui.scenarios.list.ScenariosViewModel
+import com.caseyjbrooks.arkham.utils.navigation.NavigationLinkStrategy
 import kotlinx.coroutines.CoroutineScope
 
 interface ArkhamInjector {
+    val navigationLinkStrategy: NavigationLinkStrategy
+
     fun routerViewModel(): RouterViewModel
     fun arkhamExplorerRepository(): ArkhamExplorerRepository
 

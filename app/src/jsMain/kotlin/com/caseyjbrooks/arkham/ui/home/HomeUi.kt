@@ -7,8 +7,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import com.caseyjbrooks.arkham.di.ArkhamInjector
 import com.caseyjbrooks.arkham.ui.ArkhamApp
-import com.copperleaf.ballast.navigation.routing.directions
-import org.jetbrains.compose.web.dom.A
+import com.caseyjbrooks.arkham.utils.navigation.NavigationLink
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Li
 import org.jetbrains.compose.web.dom.Text
@@ -34,7 +33,9 @@ object HomeUi {
                     ArkhamApp.Scenarios to "Scenarios",
                     ArkhamApp.EncounterSets to "Encounter Sets",
                 ).forEach { (route, name) ->
-                    Li { A(href = "#${route.directions()}") { Text(name) } }
+                    Li {
+                        NavigationLink(route) { Text(name) }
+                    }
                 }
             }
         }

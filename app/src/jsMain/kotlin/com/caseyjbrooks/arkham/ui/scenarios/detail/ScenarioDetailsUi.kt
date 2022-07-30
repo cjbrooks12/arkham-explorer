@@ -7,10 +7,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import com.caseyjbrooks.arkham.di.ArkhamInjector
 import com.caseyjbrooks.arkham.ui.ArkhamApp
-import com.copperleaf.ballast.navigation.routing.directions
+import com.caseyjbrooks.arkham.utils.navigation.NavigationLink
+import com.caseyjbrooks.arkham.utils.navigation.NavigationLinkBack
 import com.copperleaf.ballast.repository.cache.getCachedOrNull
 import com.copperleaf.ballast.repository.cache.isLoading
-import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Li
 import org.jetbrains.compose.web.dom.Span
@@ -33,10 +33,13 @@ object ScenarioDetailsUi {
         Div(attrs = { classes("content") }) {
             Ul {
                 Li {
-                    A(href = "#${ArkhamApp.Home.directions()}") { Text("Home") }
+                    NavigationLink(ArkhamApp.Home) { Text("Home") }
                 }
                 Li {
-                    A(href = "#${ArkhamApp.Scenarios.directions()}") { Text("Back") }
+                    NavigationLink(ArkhamApp.Scenarios) { Text("Up") }
+                }
+                Li {
+                    NavigationLinkBack { Text("Back") }
                 }
 
                 if (state.scenario.isLoading()) {
@@ -44,10 +47,7 @@ object ScenarioDetailsUi {
                 } else {
                     state.scenario.getCachedOrNull()?.let { (expansion, scenario) ->
                         Li {
-                            val directionsParams = mapOf("expansionId" to listOf(expansion.name))
-                            A(href = "#${ArkhamApp.ExpansionDetails.directions(directionsParams)}") {
-                                Text(expansion.name)
-                            }
+                            Li { NavigationLink(ArkhamApp.ExpansionDetails, expansion.name) { Text(expansion.name) } }
                         }
                         Li { Span { Text(scenario.name) } }
                     }

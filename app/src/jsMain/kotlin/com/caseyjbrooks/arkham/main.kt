@@ -13,7 +13,7 @@ fun main() {
         val applicationScope = rememberCoroutineScope()
         val injector: ArkhamInjector = remember(applicationScope) { ArkhamInjectorImpl(applicationScope) }
 
-        ArkhamTheme {
+        ArkhamTheme(injector) {
             MainApplication(injector)
         }
     }

@@ -7,10 +7,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import com.caseyjbrooks.arkham.di.ArkhamInjector
 import com.caseyjbrooks.arkham.ui.ArkhamApp
-import com.copperleaf.ballast.navigation.routing.directions
+import com.caseyjbrooks.arkham.utils.navigation.NavigationLink
+import com.caseyjbrooks.arkham.utils.navigation.NavigationLinkBack
 import com.copperleaf.ballast.repository.cache.getCachedOrEmptyList
 import com.copperleaf.ballast.repository.cache.isLoading
-import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Li
 import org.jetbrains.compose.web.dom.Span
@@ -33,7 +33,10 @@ object EncounterSetsUi {
         Div(attrs = { classes("content") }) {
             Ul {
                 Li {
-                    A(href = "#${ArkhamApp.Home.directions()}") { Text("Home") }
+                    NavigationLink(ArkhamApp.Home) { Text("Home") }
+                }
+                Li {
+                    NavigationLinkBack { Text("Back") }
                 }
 
                 if (state.expansions.isLoading()) {
@@ -44,10 +47,7 @@ object EncounterSetsUi {
                         Ul {
                             expansion.encounterSets.forEach { encounterSet ->
                                 Li {
-                                    val directionsParams = mapOf("encounterSetId" to listOf(encounterSet.name))
-                                    A(href = "#${ArkhamApp.EncounterSetDetails.directions(directionsParams)}") {
-                                        Text(encounterSet.name)
-                                    }
+                                    Li { NavigationLink(ArkhamApp.EncounterSetDetails, encounterSet.name) { Text(encounterSet.name) } }
                                 }
                             }
                         }

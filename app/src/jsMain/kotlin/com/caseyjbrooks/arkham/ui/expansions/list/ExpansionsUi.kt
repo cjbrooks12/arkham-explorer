@@ -7,10 +7,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import com.caseyjbrooks.arkham.di.ArkhamInjector
 import com.caseyjbrooks.arkham.ui.ArkhamApp
-import com.copperleaf.ballast.navigation.routing.directions
+import com.caseyjbrooks.arkham.utils.navigation.NavigationLink
+import com.caseyjbrooks.arkham.utils.navigation.NavigationLinkBack
 import com.copperleaf.ballast.repository.cache.getCachedOrEmptyList
 import com.copperleaf.ballast.repository.cache.isLoading
-import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Li
 import org.jetbrains.compose.web.dom.Text
@@ -32,7 +32,10 @@ object ExpansionsUi {
         Div(attrs = { classes("content") }) {
             Ul {
                 Li {
-                    A(href = "#${ArkhamApp.Home.directions()}") { Text("Home") }
+                    NavigationLink(ArkhamApp.Home) { Text("Home") }
+                }
+                Li {
+                    NavigationLinkBack { Text("Back") }
                 }
 
                 if (state.expansions.isLoading()) {
@@ -40,10 +43,7 @@ object ExpansionsUi {
                 } else {
                     state.expansions.getCachedOrEmptyList().forEach { expansion ->
                         Li {
-                            val directionsParams = mapOf("expansionId" to listOf(expansion.name))
-                            A(href = "#${ArkhamApp.ExpansionDetails.directions(directionsParams)}") {
-                                Text(expansion.name)
-                            }
+                            Li { NavigationLink(ArkhamApp.ExpansionDetails, expansion.name) { Text(expansion.name) } }
                         }
                     }
                 }

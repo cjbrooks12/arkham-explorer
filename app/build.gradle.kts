@@ -9,7 +9,7 @@ group = "com.caseyjbrooks.arkham.app"
 version = "1.0.0"
 
 repositories {
-//    mavenLocal()
+    mavenLocal()
     mavenCentral()
     maven(url = "https://maven.pkg.jetbrains.space/public/p/compose/dev")
     maven(url = "https://s01.oss.sonatype.org/content/repositories/snapshots")
@@ -22,8 +22,8 @@ kotlin {
             testTask {
                 enabled = false
             }
+            binaries.executable()
         }
-        binaries.executable()
     }
 
     // sourcesets
@@ -74,9 +74,11 @@ kotlin {
 buildConfig {
     packageName(project.group.toString())
 
-    if(project.hasProperty("release")) {
+    if (project.hasProperty("release")) {
+        buildConfigField("Boolean", "DEBUG", "false")
         buildConfigField("String", "BASE_URL", "\"https://cjbrooks12.github.io/arkham-explorer/\"")
     } else {
+        buildConfigField("Boolean", "DEBUG", "true")
         buildConfigField("String", "BASE_URL", "\"http://localhost:8080/\"")
     }
 }
