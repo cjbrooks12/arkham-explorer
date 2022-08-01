@@ -15,7 +15,7 @@ class ArkhamExplorerApiImpl(
         val expansions: ArkhamHorrorExpansionsIndex = httpClient.get("assets/expansions/index.json").body()
         return expansions.expansions
             .map { expansionId ->
-                httpClient.get("assets/expansions/$expansionId/data.json").body<ArkhamHorrorExpansion>()
+                httpClient.get("assets/expansions/$expansionId/expansion_data.json").body<ArkhamHorrorExpansion>()
             }
     }
 }

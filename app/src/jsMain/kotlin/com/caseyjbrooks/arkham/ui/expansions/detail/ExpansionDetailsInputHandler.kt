@@ -32,13 +32,13 @@ class ExpansionDetailsInputHandler(
 
                                 expansionMatch!!
                             }
-                            .let { ExpansionDetailsContract.Inputs.ExpansionUpdated(it) }
+                            .let { ExpansionDetailsContract.Inputs.ExpansionUpdated(cached, it) }
                     }
             )
         }
 
         is ExpansionDetailsContract.Inputs.ExpansionUpdated -> {
-            updateState { it.copy(expansion = input.expansion) }
+            updateState { it.copy(allExpansions = input.allExpansions, expansion = input.expansion) }
         }
     }
 }

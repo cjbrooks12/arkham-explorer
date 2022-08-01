@@ -1,0 +1,225 @@
+{
+    "name": "The Dunwich Legacy",
+    "id": "2",
+    "icon": "/assets/expansions/the-dunwich-legacy/expansion_icon.svg",
+    "arkhamDbEntry": "https://arkhamdb.com/cycle/dwl",
+    "releaseDate": "2017-01-12",
+    "returnTo": false,
+    "scenarios": [
+        {
+            "name": "Extracurricular Activity",
+            "id": "2-1A",
+            "icon": "/assets/expansions/the-dunwich-legacy/extracurricular_activity.svg",
+            "encounterSets": [
+                { "name": "Extracurricular Activity", "conditional": false, "setAside": false },
+                { "name": "Ancient Evils",            "conditional": false, "setAside": false },
+                { "name": "Locked Doors",             "conditional": false, "setAside": false },
+                { "name": "Agents of Yog-Sothoth",    "conditional": false, "setAside": false },
+                { "name": "Sorcery",                  "conditional": false, "setAside": false },
+                { "name": "Bishop's Thralls",         "conditional": false, "setAside": false },
+                { "name": "Whippoorwills",            "conditional": false, "setAside": false },
+                { "name": "The Beyond",               "conditional": false, "setAside": false }
+            ]
+        },
+        {
+            "name": "The House Always Wins",
+            "id": "2-1B",
+            "icon": "/assets/expansions/the-dunwich-legacy/the_house_always_wins.svg",
+            "encounterSets":  [
+                { "name": "The House Always Wins", "conditional": false, "setAside": false },
+                { "name": "Rats",                  "conditional": false, "setAside": false },
+                { "name": "Striking Fear",         "conditional": false, "setAside": true  },
+                { "name": "Bad Luck",              "conditional": false, "setAside": false },
+                { "name": "Naomi's Crew",          "conditional": false, "setAside": false },
+                { "name": "Hideous Abominations",  "conditional": false, "setAside": true  }
+            ]
+        },
+        {
+            "name": "The Miskatonic Museum",
+            "id": "2-2",
+            "icon": "/assets/expansions/the-dunwich-legacy/the_miskatonic_museum.svg",
+            "encounterSets":  [
+                { "name": "The Miskatonic Museum", "conditional": false, "setAside": false },
+                { "name": "Chilling Cold",         "conditional": false, "setAside": false },
+                { "name": "Locked Doors",          "conditional": false, "setAside": false },
+                { "name": "Sorcery",               "conditional": false, "setAside": false },
+                { "name": "Bad Luck",              "conditional": false, "setAside": false },
+                { "name": "The Beyond",            "conditional": false, "setAside": false }
+            ]
+        },
+        {
+            "name": "The Essex County Express",
+            "id": "2-3",
+            "icon": "/assets/expansions/the-dunwich-legacy/the_essex_county_express.svg",
+            "encounterSets":  [
+                { "name": "The Essex County Express", "conditional": false, "setAside": false },
+                { "name": "Striking Fear",            "conditional": false, "setAside": false },
+                { "name": "Ancient Evils",            "conditional": false, "setAside": false },
+                { "name": "Dark Cult",                "conditional": false, "setAside": false },
+                { "name": "The Beyond",               "conditional": false, "setAside": false }
+            ]
+        },
+        {
+            "name": "Blood on the Altar",
+            "id": "2-4",
+            "icon": "/assets/expansions/the-dunwich-legacy/blood_on_the_altar.svg",
+            "encounterSets":  [
+                { "name": "Blood on the Altar", "conditional": false, "setAside": false },
+                { "name": "Ancient Evils",      "conditional": false, "setAside": false },
+                { "name": "Nightgaunts",        "conditional": false, "setAside": false },
+                { "name": "Dunwich",            "conditional": false, "setAside": false },
+                { "name": "Whippoorwills",      "conditional": false, "setAside": false },
+                { "name": "Naomi's Crew",       "conditional": false, "setAside": true  }
+            ]
+        },
+        {
+            "name": "Undimensioned and Unseen",
+            "id": "2-5",
+            "icon": "/assets/expansions/the-dunwich-legacy/undimensioned_and_unseen.svg",
+            "encounterSets":  [
+                { "name": "Undimensioned and Unseen", "conditional": false, "setAside": false },
+                { "name": "Striking Fear",            "conditional": false, "setAside": false },
+                { "name": "Dunwich",                  "conditional": false, "setAside": false },
+                { "name": "Whippoorwills",            "conditional": false, "setAside": false },
+                { "name": "Beast Thralls",            "conditional": false, "setAside": false }
+            ]
+        },
+        {
+            "name": "Where Doom Awaits",
+            "id": "2-6",
+            "icon": "/assets/expansions/the-dunwich-legacy/where_doom_awaits.svg",
+            "encounterSets":  [
+                { "name": "Where Doom Awaits",    "conditional": false, "setAside": false },
+                { "name": "Striking Fear",        "conditional": false, "setAside": false },
+                { "name": "Ancient Evils",        "conditional": false, "setAside": false },
+                { "name": "Chilling Cold",        "conditional": false, "setAside": false },
+                { "name": "Sorcery",              "conditional": false, "setAside": false },
+                { "name": "Bishop's Thralls",     "conditional": false, "setAside": false },
+                { "name": "Beast Thralls",        "conditional": false, "setAside": false },
+                { "name": "Hideous Abominations", "conditional": false, "setAside": true  }
+            ]
+        },
+        {
+            "name": "Lost in Time and Space",
+            "id": "2-7",
+            "icon": "/assets/expansions/the-dunwich-legacy/lost_in_time_and_space.svg",
+            "encounterSets":  [
+                { "name": "Lost in Time and Space", "conditional": false, "setAside": false },
+                { "name": "Agents of Yog-Sothoth",  "conditional": false, "setAside": false },
+                { "name": "Sorcery",                "conditional": false, "setAside": false },
+                { "name": "The Beyond",             "conditional": false, "setAside": false },
+                { "name": "Hideous Abominations",   "conditional": false, "setAside": false }
+            ]
+        }
+    ],
+    "encounterSets": [
+        {
+            "name": "Extracurricular Activity",
+            "icon": "/assets/expansions/the-dunwich-legacy/extracurricular_activity.svg",
+            "arkhamDbEntry": "https://arkhamdb.com/find?q=m:extracurricular_activity"
+        },
+        {
+            "name": "The House Always Wins",
+            "icon": "/assets/expansions/the-dunwich-legacy/the_house_always_wins.svg",
+            "arkhamDbEntry": "https://arkhamdb.com/find?q=m:the_house_always_wins"
+        },
+        {
+            "name": "Armitage's Fate",
+            "icon": "/assets/expansions/the-dunwich-legacy/armitages_fate.svg",
+            "arkhamDbEntry": "https://arkhamdb.com/find?q=m:armitages_fate"
+        },
+        {
+            "name": "The Miskatonic Museum",
+            "icon": "/assets/expansions/the-dunwich-legacy/the_miskatonic_museum.svg",
+            "arkhamDbEntry": "https://arkhamdb.com/find?q=m:the_miskatonic_museum"
+        },
+        {
+            "name": "The Essex County Express",
+            "icon": "/assets/expansions/the-dunwich-legacy/the_essex_county_express.svg",
+            "arkhamDbEntry": "https://arkhamdb.com/find?q=m:essex_county_express"
+        },
+        {
+            "name": "Blood on the Altar",
+            "icon": "/assets/expansions/the-dunwich-legacy/blood_on_the_altar.svg",
+            "arkhamDbEntry": "https://arkhamdb.com/find?q=m:blood_on_the_altar"
+        },
+        {
+            "name": "Undimensioned and Unseen",
+            "icon": "/assets/expansions/the-dunwich-legacy/undimensioned_and_unseen.svg",
+            "arkhamDbEntry": "https://arkhamdb.com/find?q=m:undimensioned_and_unseen"
+        },
+        {
+            "name": "Where Doom Awaits",
+            "icon": "/assets/expansions/the-dunwich-legacy/where_doom_awaits.svg",
+            "arkhamDbEntry": "https://arkhamdb.com/find?q=m:where_doom_awaits"
+        },
+        {
+            "name": "Lost in Time and Space",
+            "icon": "/assets/expansions/the-dunwich-legacy/lost_in_time_and_space.svg",
+            "arkhamDbEntry": "https://arkhamdb.com/find?q=m:lost_in_time_and_space"
+        },
+        {
+            "name": "Sorcery",
+            "icon": "/assets/expansions/the-dunwich-legacy/sorcery.svg"
+        },
+        {
+            "name": "Bishop's Thralls",
+            "icon": "/assets/expansions/the-dunwich-legacy/bishops_thralls.svg"
+        },
+        {
+            "name": "Dunwich",
+            "icon": "/assets/expansions/the-dunwich-legacy/dunwich.svg"
+        },
+        {
+            "name": "Whippoorwills",
+            "icon": "/assets/expansions/the-dunwich-legacy/whippoorwills.svg"
+        },
+        {
+            "name": "Bad Luck",
+            "icon": "/assets/expansions/the-dunwich-legacy/bad_luck.svg"
+        },
+        {
+            "name": "Beast Thralls",
+            "icon": "/assets/expansions/the-dunwich-legacy/beast_thralls.svg"
+        },
+        {
+            "name": "Naomi's Crew",
+            "icon": "/assets/expansions/the-dunwich-legacy/naomis_crew.svg"
+        },
+        {
+            "name": "The Beyond",
+            "icon": "/assets/expansions/the-dunwich-legacy/the_beyond.svg"
+        },
+        {
+            "name": "Hideous Abominations",
+            "icon": "/assets/expansions/the-dunwich-legacy/hideous_abominations.svg"
+        }
+    ],
+    "investigators": [
+        {
+            "name": "Zoey Samaras",
+            "mainClass": "Guardian",
+            "arkhamDbEntry": "https://arkhamdb.com/card/02001"
+        },
+        {
+            "name": "Rex Murphy",
+            "mainClass": "Seeker",
+            "arkhamDbEntry": "https://arkhamdb.com/card/02002"
+        },
+        {
+            "name": "Jenny Barnes",
+            "mainClass": "Rogue",
+            "arkhamDbEntry": "https://arkhamdb.com/card/02003"
+        },
+        {
+            "name": "Jim Culver",
+            "mainClass": "Mystic",
+            "arkhamDbEntry": "https://arkhamdb.com/card/02004"
+        },
+        {
+            "name": "\"Ashcan\" Pete",
+            "mainClass": "Survivor",
+            "arkhamDbEntry": "https://arkhamdb.com/card/02005"
+        }
+    ]
+}

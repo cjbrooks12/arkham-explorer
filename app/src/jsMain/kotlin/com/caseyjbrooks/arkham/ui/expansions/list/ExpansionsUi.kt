@@ -7,6 +7,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import com.caseyjbrooks.arkham.di.ArkhamInjector
 import com.caseyjbrooks.arkham.ui.ArkhamApp
+import com.caseyjbrooks.arkham.utils.navigation.Icon
 import com.caseyjbrooks.arkham.utils.navigation.NavigationLink
 import com.caseyjbrooks.arkham.utils.navigation.NavigationLinkBack
 import com.copperleaf.ballast.repository.cache.getCachedOrEmptyList
@@ -43,7 +44,10 @@ object ExpansionsUi {
                 } else {
                     state.expansions.getCachedOrEmptyList().forEach { expansion ->
                         Li {
-                            Li { NavigationLink(ArkhamApp.ExpansionDetails, expansion.name) { Text(expansion.name) } }
+                            Li {
+                                Icon(src = expansion.icon, alt = expansion.name)
+                                NavigationLink(ArkhamApp.ExpansionDetails, expansion.name) { Text(expansion.name) }
+                            }
                         }
                     }
                 }
