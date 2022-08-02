@@ -1,6 +1,7 @@
 package com.caseyjbrooks.arkham
 
 import com.caseyjbrooks.arkham.stages.copyscripts.CopyScripts
+import com.caseyjbrooks.arkham.stages.expansiondata.FetchExpansionData
 import com.caseyjbrooks.arkham.stages.mainpages.GenerateMainPages
 import com.caseyjbrooks.arkham.stages.processimages.ProcessImages
 import kotlinx.coroutines.Dispatchers
@@ -23,6 +24,7 @@ fun main(): Unit = runBlocking {
         destination.createDirectories()
 
         val stages = listOf(
+            FetchExpansionData(),
             CopyScripts(),
             ProcessImages(),
             GenerateMainPages(),
