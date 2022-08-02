@@ -2,14 +2,16 @@
     "name": "Return To Night of the Zealot",
     "id": "1r",
     "icon": "/assets/expansions/return-to-night-of-the-zealot/expansion_icon.svg",
-    "arkhamDbEntry": "https://arkhamdb.com/set/rtnotz",
     "returnTo": true,
+    "arkhamDbEntry": "https://arkhamdb.com/set/rtnotz",
     "releaseDate": "2018-06-28",
     "scenarios": [
         {
             "name": "Return To The Gathering",
             "id": "1-1r",
             "icon": "/assets/expansions/return-to-night-of-the-zealot/return_to_the_gathering.svg",
+            "arkhamDbEntry": "https://arkhamdb.com/set/rtnotz",
+            "releaseDate": "2018-06-28",
             "encounterSets": [
                 { "name": "Return To The Gathering", "conditional": false, "setAside": false },
                 { "name": "Rats",                    "conditional": false, "setAside": false },
@@ -23,6 +25,8 @@
             "name": "Return To The Midnight Masks",
             "id": "1-2r",
             "icon": "/assets/expansions/return-to-night-of-the-zealot/return_to_the_midnight_masks.svg",
+            "arkhamDbEntry": "https://arkhamdb.com/set/rtnotz",
+            "releaseDate": "2018-06-28",
             "encounterSets": [
                 { "name": "Return To The Midnight Masks", "conditional": false, "setAside": false },
                 { "name": "Chilling Cold",                "conditional": false, "setAside": false },
@@ -36,6 +40,8 @@
             "name": "Return To The Devourer Below",
             "id": "1-3r",
             "icon": "/assets/expansions/return-to-night-of-the-zealot/return_to_the_devourer_below.svg",
+            "arkhamDbEntry": "https://arkhamdb.com/set/rtnotz",
+            "releaseDate": "2018-06-28",
             "encounterSets": [
                 { "name": "Return To The Devourer Below", "conditional": false, "setAside": false },
                 { "name": "Ghouls of Umôrdhoth",          "conditional": false, "setAside": false },

@@ -2,7 +2,7 @@
     "name": "The Dunwich Legacy",
     "id": "2",
     "icon": "/assets/expansions/the-dunwich-legacy/expansion_icon.svg",
-    "arkhamDbEntry": "https://arkhamdb.com/cycle/dwl",
+    "arkhamDbEntry": "https://arkhamdb.com/set/dwl",
     "releaseDate": "2017-01-12",
     "returnTo": false,
     "scenarios": [
@@ -10,6 +10,8 @@
             "name": "Extracurricular Activity",
             "id": "2-1A",
             "icon": "/assets/expansions/the-dunwich-legacy/extracurricular_activity.svg",
+            "arkhamDbEntry": "https://arkhamdb.com/set/dwl",
+            "releaseDate": "2017-01-12",
             "encounterSets": [
                 { "name": "Extracurricular Activity", "conditional": false, "setAside": false },
                 { "name": "Ancient Evils",            "conditional": false, "setAside": false },
@@ -25,6 +27,8 @@
             "name": "The House Always Wins",
             "id": "2-1B",
             "icon": "/assets/expansions/the-dunwich-legacy/the_house_always_wins.svg",
+            "arkhamDbEntry": "https://arkhamdb.com/set/dwl",
+            "releaseDate": "2017-01-12",
             "encounterSets":  [
                 { "name": "The House Always Wins", "conditional": false, "setAside": false },
                 { "name": "Rats",                  "conditional": false, "setAside": false },
@@ -38,6 +42,8 @@
             "name": "The Miskatonic Museum",
             "id": "2-2",
             "icon": "/assets/expansions/the-dunwich-legacy/the_miskatonic_museum.svg",
+            "arkhamDbEntry": "https://arkhamdb.com/set/tmm",
+            "releaseDate": "2017-02-16",
             "encounterSets":  [
                 { "name": "The Miskatonic Museum", "conditional": false, "setAside": false },
                 { "name": "Chilling Cold",         "conditional": false, "setAside": false },
@@ -51,6 +57,8 @@
             "name": "The Essex County Express",
             "id": "2-3",
             "icon": "/assets/expansions/the-dunwich-legacy/the_essex_county_express.svg",
+            "arkhamDbEntry": "https://arkhamdb.com/set/tece",
+            "releaseDate": "2017-03-16",
             "encounterSets":  [
                 { "name": "The Essex County Express", "conditional": false, "setAside": false },
                 { "name": "Striking Fear",            "conditional": false, "setAside": false },
@@ -63,6 +71,8 @@
             "name": "Blood on the Altar",
             "id": "2-4",
             "icon": "/assets/expansions/the-dunwich-legacy/blood_on_the_altar.svg",
+            "arkhamDbEntry": "https://arkhamdb.com/set/bota",
+            "releaseDate": "2017-04-13",
             "encounterSets":  [
                 { "name": "Blood on the Altar", "conditional": false, "setAside": false },
                 { "name": "Ancient Evils",      "conditional": false, "setAside": false },
@@ -76,6 +86,8 @@
             "name": "Undimensioned and Unseen",
             "id": "2-5",
             "icon": "/assets/expansions/the-dunwich-legacy/undimensioned_and_unseen.svg",
+            "arkhamDbEntry": "https://arkhamdb.com/set/uau",
+            "releaseDate": "2017-05-11",
             "encounterSets":  [
                 { "name": "Undimensioned and Unseen", "conditional": false, "setAside": false },
                 { "name": "Striking Fear",            "conditional": false, "setAside": false },
@@ -88,6 +100,8 @@
             "name": "Where Doom Awaits",
             "id": "2-6",
             "icon": "/assets/expansions/the-dunwich-legacy/where_doom_awaits.svg",
+            "arkhamDbEntry": "https://arkhamdb.com/set/wda",
+            "releaseDate": "2017-06-08",
             "encounterSets":  [
                 { "name": "Where Doom Awaits",    "conditional": false, "setAside": false },
                 { "name": "Striking Fear",        "conditional": false, "setAside": false },
@@ -103,6 +117,8 @@
             "name": "Lost in Time and Space",
             "id": "2-7",
             "icon": "/assets/expansions/the-dunwich-legacy/lost_in_time_and_space.svg",
+            "arkhamDbEntry": "https://arkhamdb.com/set/litas",
+            "releaseDate": "2017-07-06",
             "encounterSets":  [
                 { "name": "Lost in Time and Space", "conditional": false, "setAside": false },
                 { "name": "Agents of Yog-Sothoth",  "conditional": false, "setAside": false },

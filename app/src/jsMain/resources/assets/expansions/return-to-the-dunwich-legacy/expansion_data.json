@@ -2,13 +2,15 @@
     "name": "Return To The Dunwich Legacy",
     "id": "2r",
     "icon": "/assets/expansions/return-to-the-dunwich-legacy/expansion_icon.svg",
-    "arkhamDbEntry": "",
     "returnTo": true,
+    "arkhamDbEntry": "https://arkhamdb.com/set/rtdwl",
     "releaseDate": "2019-01-10",
     "scenarios": [
         {
             "name": "Return To Extracurricular Activity",
             "icon": "/assets/expansions/return-to-the-dunwich-legacy/return_to_extracurricular_activity.svg",
+            "arkhamDbEntry": "https://arkhamdb.com/set/rtdwl",
+            "releaseDate": "2019-01-10",
             "encounterSets": [
                 { "name": "Return To Extracurricular Activity", "conditional": false, "setAside": false },
                 { "name": "Sorcery",                            "conditional": false, "setAside": false },
@@ -23,6 +25,8 @@
         {
             "name": "Return To The House Always Wins",
             "icon": "/assets/expansions/return-to-the-dunwich-legacy/return_to_the_house_always_wins.svg",
+            "arkhamDbEntry": "https://arkhamdb.com/set/rtdwl",
+            "releaseDate": "2019-01-10",
             "encounterSets":  [
                 { "name": "Return To The House Always Wins", "conditional": false, "setAside": false },
                 { "name": "Rats",                            "conditional": false, "setAside": false },
@@ -35,6 +39,8 @@
         {
             "name": "Return To The Miskatonic Museum",
             "icon": "/assets/expansions/return-to-the-dunwich-legacy/return_to_the_miskatonic_museum.svg",
+            "arkhamDbEntry": "https://arkhamdb.com/set/rtdwl",
+            "releaseDate": "2019-01-10",
             "encounterSets":  [
                 { "name": "Return To The Miskatonic Museum", "conditional": false, "setAside": false },
                 { "name": "Sorcery",                         "conditional": false, "setAside": false },
@@ -47,6 +53,8 @@
         {
             "name": "Return To The Essex County Express",
             "icon": "/assets/expansions/return-to-the-dunwich-legacy/return_to_the_essex_county_express.svg",
+            "arkhamDbEntry": "https://arkhamdb.com/set/rtdwl",
+            "releaseDate": "2019-01-10",
             "encounterSets":  [
                 { "name": "Return To The Essex County Express", "conditional": false, "setAside": false },
                 { "name": "Dark Cult",                          "conditional": false, "setAside": false },
@@ -58,6 +66,8 @@
         {
             "name": "Return To Blood on the Altar",
             "icon": "/assets/expansions/return-to-the-dunwich-legacy/return_to_blood_on_the_altar.svg",
+            "arkhamDbEntry": "https://arkhamdb.com/set/rtdwl",
+            "releaseDate": "2019-01-10",
             "encounterSets":  [
                 { "name": "Return To Blood on the Altar", "conditional": false, "setAside": false },
                 { "name": "Nightgaunts",                  "conditional": false, "setAside": false },
@@ -70,6 +80,8 @@
         {
             "name": "Return To Undimensioned and Unseen",
             "icon": "/assets/expansions/return-to-the-dunwich-legacy/return_to_undimensioned_and_unseen.svg",
+            "arkhamDbEntry": "https://arkhamdb.com/set/rtdwl",
+            "releaseDate": "2019-01-10",
             "encounterSets":  [
                 { "name": "Return To Undimensioned and Unseen", "conditional": false, "setAside": false },
                 { "name": "Dunwich",                            "conditional": false, "setAside": false },
@@ -81,6 +93,8 @@
         {
             "name": "Return To Where Doom Awaits",
             "icon": "/assets/expansions/return-to-the-dunwich-legacy/return_to_where_doom_awaits.svg",
+            "arkhamDbEntry": "https://arkhamdb.com/set/rtdwl",
+            "releaseDate": "2019-01-10",
             "encounterSets":  [
                 { "name": "Return To Where Doom Awaits", "conditional": false, "setAside": false },
                 { "name": "Sorcery",                     "conditional": false, "setAside": false },
@@ -95,6 +109,8 @@
         {
             "name": "Return To Lost in Time and Space",
             "icon": "/assets/expansions/return-to-the-dunwich-legacy/return_to_lost_in_time_and_space.svg",
+            "arkhamDbEntry": "https://arkhamdb.com/set/rtdwl",
+            "releaseDate": "2019-01-10",
             "encounterSets":  [
                 { "name": "Return To Lost in Time and Space", "conditional": false, "setAside": false },
                 { "name": "Sorcery",                          "conditional": false, "setAside": false },

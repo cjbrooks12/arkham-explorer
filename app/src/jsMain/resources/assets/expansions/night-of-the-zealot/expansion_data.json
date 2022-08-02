@@ -10,6 +10,8 @@
             "name": "The Gathering",
             "id": "1-1",
             "icon": "/assets/expansions/night-of-the-zealot/the_gathering.svg",
+            "arkhamDbEntry": "https://arkhamdb.com/set/core",
+            "releaseDate": "2016-11-10",
             "encounterSets": [
                 { "name": "The Gathering", "conditional": false, "setAside": false },
                 { "name": "Rats",          "conditional": false, "setAside": false },
@@ -23,6 +25,8 @@
             "name": "The Midnight Masks",
             "id": "1-2",
             "icon": "/assets/expansions/night-of-the-zealot/the_midnight_masks.svg",
+            "arkhamDbEntry": "https://arkhamdb.com/set/core",
+            "releaseDate": "2016-11-10",
             "encounterSets": [
                 { "name": "The Midnight Masks", "conditional": false, "setAside": false },
                 { "name": "Chilling Cold",      "conditional": false, "setAside": false },
@@ -36,6 +40,8 @@
             "name": "The Devourer Below",
             "id": "1-3",
             "icon": "/assets/expansions/night-of-the-zealot/the_devourer_below.svg",
+            "arkhamDbEntry": "https://arkhamdb.com/set/core",
+            "releaseDate": "2016-11-10",
             "encounterSets": [
                 { "name": "The Devourer Below",       "conditional": false, "setAside": false },
                 { "name": "Ghouls",                   "conditional": false, "setAside": false },
