@@ -2,9 +2,9 @@ package com.caseyjbrooks.arkham.stages.mainpages
 
 import com.caseyjbrooks.arkham.site.BuildConfig
 import com.caseyjbrooks.arkham.stages.ProcessingStage
-import com.caseyjbrooks.arkham.utils.asIndexHtml
 import com.caseyjbrooks.arkham.utils.cache.CacheService
 import com.caseyjbrooks.arkham.utils.cache.Cacheable
+import com.caseyjbrooks.arkham.utils.withExtension
 import java.nio.file.Paths
 import kotlin.io.path.extension
 import kotlin.io.path.readText
@@ -36,7 +36,7 @@ class GenerateMainPages(
                         listOf(
                             Cacheable.Output.CachedPath(
                                 outputDir = cacheService.outputDir,
-                                outputPath = relativeInputPath.asIndexHtml(),
+                                outputPath = relativeInputPath.withExtension("html"),
                                 render = { input, os ->
                                     os.use {
                                         val originalText = input.realInput.readText()

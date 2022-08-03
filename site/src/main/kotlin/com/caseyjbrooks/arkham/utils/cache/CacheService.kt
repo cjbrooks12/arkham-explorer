@@ -8,8 +8,10 @@ import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
+import java.io.OutputStream
 import java.nio.file.Files
 import java.nio.file.Path
+import java.nio.file.Paths
 import kotlin.io.path.bufferedReader
 import kotlin.io.path.createDirectories
 import kotlin.io.path.createFile
@@ -45,7 +47,11 @@ class CacheService(
         val dirty: Boolean,
     ) {
         suspend fun renderSelf() {
-            output.realOutput.outputStream().use { os ->
+            renderToStream(output.realOutput.outputStream())
+        }
+
+        suspend fun renderToStream(outputStream: OutputStream) {
+            outputStream.use { os ->
                 output.render(input as T, os)
             }
         }
@@ -173,6 +179,16 @@ class CacheService(
                 }
             }
             .awaitAll()
+    }
+
+    suspend fun renderFilePathExternally(path: String, os: OutputStream) {
+        val comparePath = Paths.get(path)
+        index
+            .single {
+                it.output.outputPath == comparePath
+            }
+            .also { println("Returning $path") }
+            .renderToStream(os)
     }
 
     private val Cacheable.Input<*, *>.hashFile: Path get() = hashesDir / hash.substring(0, 2) / hash.substring(2, 4) / "$hash-$processor"

@@ -36,6 +36,9 @@ dependencies {
     implementation("com.twelvemonkeys.imageio:imageio-jpeg:3.8.2")
     implementation("org.jsoup:jsoup:1.15.2")
     implementation("commons-codec:commons-codec:1.15")
+
+    implementation("io.ktor:ktor-server-core:2.0.3")
+    implementation("io.ktor:ktor-server-cio:2.0.3")
 }
 
 application {
@@ -52,7 +55,7 @@ buildConfig {
         buildConfigField("String?", "BASE_PATH", "\"/arkham-explorer\"")
     } else {
         buildConfigField("Boolean", "DEBUG", "true")
-        buildConfigField("String", "SITE_BASE_URL", "\"http://localhost:8081/\"")
+        buildConfigField("String", "SITE_BASE_URL", "\"http://localhost:8080/\"")
         buildConfigField("String", "API_BASE_URL", "\"http://localhost:8080/\"")
         buildConfigField("String?", "BASE_PATH", "\"/arkham-explorer\"")
     }
