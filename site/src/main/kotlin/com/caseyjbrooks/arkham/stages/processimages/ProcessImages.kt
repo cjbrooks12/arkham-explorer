@@ -1,87 +1,69 @@
 package com.caseyjbrooks.arkham.stages.processimages
 
 import com.caseyjbrooks.arkham.stages.ProcessingStage
-import com.caseyjbrooks.arkham.utils.ProcessUpdatedFile
-import com.caseyjbrooks.arkham.utils.copyRecursively
-import com.caseyjbrooks.arkham.utils.processCopiesRecursively
-import org.apache.batik.transcoder.SVGAbstractTranscoder
-import org.apache.batik.transcoder.TranscoderInput
-import org.apache.batik.transcoder.TranscoderOutput
-import org.apache.batik.transcoder.image.ImageTranscoder
-import org.apache.batik.transcoder.image.PNGTranscoder
-import java.io.ByteArrayOutputStream
-import java.io.OutputStream
-import java.nio.file.Path
+import com.caseyjbrooks.arkham.utils.cache.CacheService
+import com.caseyjbrooks.arkham.utils.cache.Cacheable
+import com.caseyjbrooks.arkham.utils.rasterizeSvg
+import com.caseyjbrooks.arkham.utils.withExtension
+import com.caseyjbrooks.arkham.utils.withSuffix
+import java.nio.file.Paths
 import javax.imageio.ImageIO
-import kotlin.io.path.div
 import kotlin.io.path.extension
-import kotlin.io.path.nameWithoutExtension
 
-
-class ProcessImages : ProcessingStage {
-    override suspend fun process(repoRoot: Path, destination: Path) {
-        // copy all assets normally
-        copyRecursively(
-            repoRoot / "app/build/distributions",
-            destination,
-        )
-
-        // create a default PNG from each SVG
-        processCopiesRecursively(
-            repoRoot / "app/build/distributions",
-            destination,
-            matcher = { it.extension == "svg" },
-            // copy with default size
-            ProcessUpdatedFile(
-                getUpdatedName = {
-                    it.resolveSibling("${it.nameWithoutExtension}.png")
-                },
-                processFile = { path, os ->
-                    val inputImage = ImageIO.read(path.toFile())
-                    ImageIO.write(inputImage, "PNG", os)
-                }
-            ),
-            // copy at 48, 64, 128, 256, 512, 1024 sizes for PNG
-            *listOf(24, 48, 64, 128, 256, 512, 1024)
-                .flatMap { newHeight ->
-                    listOf(ImageConverter("PNG", "png", PNGTranscoder())).map { format ->
-                        ProcessUpdatedFile(
-                            getUpdatedName = {
-                                it.resolveSibling("${it.nameWithoutExtension}_${newHeight}px.${format.outputFileExtension}")
-                            },
-                            processFile = { path, os ->
-                                rasterizeSvg(path, newHeight, format, os)
-                            }
-                        )
-                    }
-                }
-                .toTypedArray()
-        )
+class ProcessImages(
+    private val cacheService: CacheService
+) : ProcessingStage {
+    companion object {
+        private const val VERSION = 1L
     }
 
-    data class ImageConverter(
-        val imageIoFormat: String,
-        val outputFileExtension: String,
-        val transcoder: ImageTranscoder,
-    )
+    override suspend fun process(): Iterable<Cacheable.Input<*, *>> {
+        return cacheService
+            .getFilesInDirs("data")
+            .filter { it.extension == "svg" }
+            .map { inputPath ->
+                val relativeInputPath = Paths.get("data").relativize(inputPath)
 
-    private fun rasterizeSvg(input: Path, newHeight: Int, converter: ImageConverter, os: OutputStream) {
-        val inputImage = ImageIO.read(input.toFile())
-        val originalWidth = inputImage.width
-        val originalHeight = inputImage.height
-        val newWidth = (originalWidth * (newHeight.toDouble() / originalHeight))
+                Cacheable.Input.CachedPath(
+                    processor = "ProcessImages",
+                    version = ProcessImages.VERSION,
+                    inputPath = inputPath,
+                    rootDir = cacheService.rootDir,
+                    outputs = {
+                        buildList<Cacheable.Output.CachedPath> {
+                            // copy over the SVG as-is
+                            this += Cacheable.Output.CachedPath(
+                                outputDir = cacheService.outputDir,
+                                outputPath = relativeInputPath,
+                            )
 
-        val scaledImage = ByteArrayOutputStream()
-            .apply {
-                converter.transcoder.addTranscodingHint(SVGAbstractTranscoder.KEY_WIDTH, newWidth.toFloat())
-                converter.transcoder.addTranscodingHint(SVGAbstractTranscoder.KEY_HEIGHT, newHeight.toFloat())
-                converter.transcoder.transcode(TranscoderInput(input.toFile().inputStream()), TranscoderOutput(this))
-                flush()
+                            // Convert the SVG to its default PNG form, using whatever size was in the original SVG
+                            this += Cacheable.Output.CachedPath(
+                                outputDir = cacheService.outputDir,
+                                outputPath = relativeInputPath.withExtension("png"),
+                                render = { input, os ->
+                                    os.use {
+                                        val inputImage = ImageIO.read(input.realInput.toFile())
+                                        ImageIO.write(inputImage, "PNG", os)
+                                    }
+                                }
+                            )
+
+                            // Resize the SVG into various sizes and render them each as PNGs
+                            listOf(24, 48, 64, 128, 256, 512, 1024).forEach { newHeight ->
+                                this += Cacheable.Output.CachedPath(
+                                    outputDir = cacheService.outputDir,
+                                    outputPath = relativeInputPath.withSuffix("_${newHeight}px").withExtension("png"),
+                                    render = { input, os ->
+                                        os.use {
+                                            rasterizeSvg(input.realInput, newHeight, os)
+                                        }
+                                    }
+                                )
+                            }
+                        }
+                    }
+                )
             }
-            .toByteArray()
-            .inputStream()
-            .let { ImageIO.read(it) }
-
-        ImageIO.write(scaledImage, converter.imageIoFormat, os)
     }
 }

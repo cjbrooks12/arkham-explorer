@@ -1,8 +1,8 @@
 package com.caseyjbrooks.arkham.stages
 
-import java.nio.file.Path
+import com.caseyjbrooks.arkham.utils.cache.Cacheable
 
 interface ProcessingStage {
 
-    suspend fun process(repoRoot: Path, destination: Path)
+    suspend fun process(): Iterable<Cacheable.Input<*, *>>
 }
