@@ -23,3 +23,11 @@ one, suitable for deploying to GitHub Pages.
 - Build for production: `./gradlew :site:run -Prelease`
   - This will generate all the files needed to deploy into `build/dist`. This entire folder should be
     deployed to the webserver
+
+
+
+- 11am: Get to office
+- 10am: leave house
+- 6am: wrap brisket
+- midnight: put brisket on smoker
+- 11:30pm: start resting sea

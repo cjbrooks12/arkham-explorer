@@ -24,9 +24,9 @@ fun main(): Unit = runBlocking {
         destination.createDirectories()
 
         val stages = listOf(
+            ProcessImages(),
             FetchExpansionData(),
             CopyScripts(),
-            ProcessImages(),
             GenerateMainPages(),
         )
 

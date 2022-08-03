@@ -29,8 +29,9 @@ dependencies {
     implementation(libs.multiplatformSettings.core)
     implementation(libs.multiplatformSettings.noArg)
 
-    implementation("org.apache.xmlgraphics:batik-transcoder:1.14")
     implementation("org.apache.xmlgraphics:batik:1.14")
+    implementation("org.apache.xmlgraphics:batik-transcoder:1.14")
+    implementation("org.apache.xmlgraphics:batik-codec:1.14")
     implementation("com.twelvemonkeys.imageio:imageio-batik:3.8.2")
     implementation("com.twelvemonkeys.imageio:imageio-jpeg:3.8.2")
     implementation("org.jsoup:jsoup:1.15.2")
