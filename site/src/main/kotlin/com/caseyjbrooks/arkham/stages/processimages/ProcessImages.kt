@@ -4,6 +4,7 @@ import com.caseyjbrooks.arkham.stages.ProcessingStage
 import com.caseyjbrooks.arkham.utils.cache.CacheService
 import com.caseyjbrooks.arkham.utils.cache.Cacheable
 import com.caseyjbrooks.arkham.utils.rasterizeSvg
+import com.caseyjbrooks.arkham.utils.resources.ResourceService
 import com.caseyjbrooks.arkham.utils.withExtension
 import com.caseyjbrooks.arkham.utils.withSuffix
 import java.nio.file.Paths
@@ -11,14 +12,15 @@ import javax.imageio.ImageIO
 import kotlin.io.path.extension
 
 class ProcessImages(
-    private val cacheService: CacheService
+    private val cacheService: CacheService,
+    private val resourceService: ResourceService,
 ) : ProcessingStage {
     companion object {
         private const val VERSION = 1L
     }
 
     override suspend fun process(): Iterable<Cacheable.Input<*, *>> {
-        return cacheService
+        return resourceService
             .getFilesInDirs("data")
             .filter { it.extension == "svg" }
             .map { inputPath ->

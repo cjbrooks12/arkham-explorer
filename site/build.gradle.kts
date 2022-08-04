@@ -39,6 +39,8 @@ dependencies {
 
     implementation("io.ktor:ktor-server-core:2.0.3")
     implementation("io.ktor:ktor-server-cio:2.0.3")
+    implementation("io.ktor:ktor-server-call-logging:2.0.3")
+    implementation("org.slf4j:slf4j-simple:1.7.36")
 }
 
 application {
@@ -47,6 +49,8 @@ application {
 
 buildConfig {
     packageName(project.group.toString())
+
+    buildConfigField("Int", "PORT", "8080")
 
     if (project.hasProperty("release")) {
         buildConfigField("Boolean", "DEBUG", "false")

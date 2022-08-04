@@ -1,7 +1,9 @@
 package com.caseyjbrooks.arkham.stages.expansiondata
 
 import com.caseyjbrooks.arkham.stages.ProcessingStage
+import com.caseyjbrooks.arkham.utils.cache.CacheService
 import com.caseyjbrooks.arkham.utils.cache.Cacheable
+import com.caseyjbrooks.arkham.utils.resources.ResourceService
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.cio.CIO
 import io.ktor.client.plugins.cache.HttpCache
@@ -13,7 +15,10 @@ import io.ktor.client.plugins.logging.SIMPLE
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
 
-class FetchExpansionData : ProcessingStage {
+class FetchExpansionData(
+    private val cacheService: CacheService,
+    private val resourceService: ResourceService,
+) : ProcessingStage {
     private val http = HttpClient(CIO) {
         install(ContentNegotiation) {
             json(Json {
