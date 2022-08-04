@@ -27,14 +27,14 @@ class GenerateMainPages(
             .map { inputPath ->
                 val relativeInputPath = Paths.get("content").relativize(inputPath)
 
-                Cacheable.Input.CachedPath(
+                Cacheable.InputPath(
                     processor = "GenerateMainPages",
                     version = GenerateMainPages.VERSION,
                     inputPath = inputPath,
                     rootDir = cacheService.rootDir,
                     outputs = {
                         listOf(
-                            Cacheable.Output.CachedPath(
+                            Cacheable.OutputFromPath(
                                 outputDir = cacheService.outputDir,
                                 outputPath = relativeInputPath.withExtension("html"),
                                 render = { input, os ->

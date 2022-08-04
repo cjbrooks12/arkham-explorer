@@ -28,6 +28,11 @@ one, suitable for deploying to GitHub Pages.
 
 - 11am: Get to office
 - 10am: leave house
-- 6am: wrap brisket
-- midnight: put brisket on smoker
-- 11:30pm: start resting sea
+- 9-10am: get brisket out of smoker
+- 5am: wrap brisket
+- 10:30-11pm: put brisket on smoker
+- 9:30: start trimming and seasoning brisket
+
+- 9:30am: get ribs out of smoker
+- 7:30am: wrap ribs (brown sugar, butter, honey, seasoning, apple juice)
+- 5am: put ribs on smoker (just rub, spritz with apple juice every hour)

@@ -18,14 +18,14 @@ class CopyScripts(
             .getFilesInDir("app/build/distributions")
             .filterNot { it.name == "index.html" }
             .map { inputPath ->
-                Cacheable.Input.CachedPath(
+                Cacheable.InputPath(
                     processor = "CopyScripts",
-                    version = CopyScripts.VERSION,
+                    version = VERSION,
                     inputPath = inputPath,
                     rootDir = cacheService.rootDir,
                     outputs = {
                         listOf(
-                            Cacheable.Output.CachedPath(
+                            Cacheable.OutputFromPath(
                                 outputDir = cacheService.outputDir,
                                 outputPath = Paths.get("app/build/distributions").relativize(inputPath),
                             )

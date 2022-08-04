@@ -12,15 +12,12 @@ import java.io.OutputStream
 import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.Paths
-import kotlin.io.path.bufferedReader
 import kotlin.io.path.createDirectories
 import kotlin.io.path.createFile
 import kotlin.io.path.deleteIfExists
 import kotlin.io.path.div
-import kotlin.io.path.exists
 import kotlin.io.path.isRegularFile
 import kotlin.io.path.outputStream
-import kotlin.io.path.writeText
 import kotlin.streams.toList
 
 /**
@@ -58,14 +55,13 @@ class CacheService(
     }
 
     private suspend fun Cacheable.Input<*, *>.createIndexEntries(
-        dirty: Boolean
     ): List<IndexEntry<*, *>> {
-        return createRealIndexEntries(dirty)
+        return createRealIndexEntries()
     }
 
     private suspend fun <T : Cacheable.Input<T, U>, U : Cacheable.Output<T, U>> Cacheable.Input<T, U>.createRealIndexEntries(
-        dirty: Boolean
     ): List<IndexEntry<T, U>> {
+        val dirty = dirty(hashesDir)
         return outputs().map { output ->
             IndexEntry(
                 input = this,
@@ -104,23 +100,7 @@ class CacheService(
     suspend fun createIndex(allInputs: Iterable<Cacheable.Input<*, *>>) {
         index = allInputs
             .flatMap { input ->
-
-                val dirty = if (input.hashFile.exists()) {
-                    // the file hasn't changed, but check the version in that file
-                    val cachedVersion = input.hashFile.bufferedReader().readText()
-                    if (cachedVersion.toLong() == input.version) {
-                        // the cache is fine, no need to re-render anything from this file
-                        false
-                    } else {
-                        // the input hasn't changed, but the generator code has. We want to re-render it
-                        true
-                    }
-                } else {
-                    // the hash changed, we want to re-render it
-                    true
-                }
-
-                input.createIndexEntries(dirty)
+                input.createIndexEntries()
             }
     }
 
@@ -154,27 +134,7 @@ class CacheService(
                     indexEntry.renderSelf()
 
                     mutex.withLock {
-                        // write the hash and version to file to skip this file next run
-                        val hashFile = indexEntry.input.hashFile
-
-                        val shouldWriteHashFile = if (hashFile.exists()) {
-                            val cachedVersion = hashFile.bufferedReader().readText()
-
-                            if (cachedVersion.toLong() == indexEntry.input.version) {
-                                false
-                            } else {
-                                true
-                            }
-                        } else {
-                            true
-                        }
-
-                        if (shouldWriteHashFile) {
-                            hashFile.parent.createDirectories()
-                            hashFile.deleteIfExists()
-                            hashFile.createFile()
-                            hashFile.writeText(indexEntry.input.version.toString())
-                        }
+                        indexEntry.input.writeHash(hashesDir)
                     }
                 }
             }
@@ -184,12 +144,8 @@ class CacheService(
     suspend fun renderFilePathExternally(path: String, os: OutputStream) {
         val comparePath = Paths.get(path)
         index
-            .single {
-                it.output.outputPath == comparePath
-            }
+            .single { it.output.outputPath == comparePath }
             .also { println("Returning $path") }
             .renderToStream(os)
     }
-
-    private val Cacheable.Input<*, *>.hashFile: Path get() = hashesDir / hash.substring(0, 2) / hash.substring(2, 4) / "$hash-$processor"
 }

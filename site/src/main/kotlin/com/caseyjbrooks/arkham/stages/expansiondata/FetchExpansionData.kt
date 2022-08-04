@@ -4,6 +4,7 @@ import com.caseyjbrooks.arkham.stages.ProcessingStage
 import com.caseyjbrooks.arkham.utils.cache.Cacheable
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.cio.CIO
+import io.ktor.client.plugins.cache.HttpCache
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.client.plugins.defaultRequest
 import io.ktor.client.plugins.logging.Logger
@@ -20,6 +21,9 @@ class FetchExpansionData : ProcessingStage {
                 this.encodeDefaults
             })
         }
+        install(HttpCache) {
+            this.privateStorage
+        }
         defaultRequest {
             url("https://arkhamdb.com/api/")
         }
@@ -27,6 +31,8 @@ class FetchExpansionData : ProcessingStage {
     }
 
     override suspend fun process(): Iterable<Cacheable.Input<*, *>> {
+
+
 //        val packs: List<ArkhamDbProductSummary> = http.get("public/packs/").body()
 //        val groupedPacks = packs.groupBy { it.cyclePosition }
 //
