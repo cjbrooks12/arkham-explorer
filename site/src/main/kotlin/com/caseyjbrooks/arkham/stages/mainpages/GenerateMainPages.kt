@@ -4,6 +4,8 @@ import com.caseyjbrooks.arkham.site.BuildConfig
 import com.caseyjbrooks.arkham.stages.ProcessingStage
 import com.caseyjbrooks.arkham.utils.cache.CacheService
 import com.caseyjbrooks.arkham.utils.cache.Cacheable
+import com.caseyjbrooks.arkham.utils.cache.InputPath
+import com.caseyjbrooks.arkham.utils.cache.OutputFromPath
 import com.caseyjbrooks.arkham.utils.resources.ResourceService
 import com.caseyjbrooks.arkham.utils.withExtension
 import java.nio.file.Paths
@@ -29,14 +31,14 @@ class GenerateMainPages(
             .map { inputPath ->
                 val relativeInputPath = Paths.get("content").relativize(inputPath)
 
-                Cacheable.InputPath(
+                InputPath(
                     processor = "GenerateMainPages",
-                    version = GenerateMainPages.VERSION,
+                    version = VERSION,
                     inputPath = inputPath,
                     rootDir = cacheService.rootDir,
                     outputs = {
                         listOf(
-                            Cacheable.OutputFromPath(
+                            OutputFromPath(
                                 outputDir = cacheService.outputDir,
                                 outputPath = relativeInputPath.withExtension("html"),
                                 render = { input, os ->
@@ -55,7 +57,7 @@ class GenerateMainPages(
 
     private fun processByExtension(originalText: String, extension: String): String {
         val proprocessedText = preprocessContent(originalText)
-        return when(extension) {
+        return when (extension) {
             "html" -> processHtml(proprocessedText)
             "md" -> processMarkdown(proprocessedText)
             else -> error("Unknown file extension in site content")

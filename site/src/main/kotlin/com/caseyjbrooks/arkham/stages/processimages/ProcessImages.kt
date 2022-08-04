@@ -3,6 +3,8 @@ package com.caseyjbrooks.arkham.stages.processimages
 import com.caseyjbrooks.arkham.stages.ProcessingStage
 import com.caseyjbrooks.arkham.utils.cache.CacheService
 import com.caseyjbrooks.arkham.utils.cache.Cacheable
+import com.caseyjbrooks.arkham.utils.cache.InputPath
+import com.caseyjbrooks.arkham.utils.cache.OutputFromPath
 import com.caseyjbrooks.arkham.utils.rasterizeSvg
 import com.caseyjbrooks.arkham.utils.resources.ResourceService
 import com.caseyjbrooks.arkham.utils.withExtension
@@ -26,21 +28,21 @@ class ProcessImages(
             .map { inputPath ->
                 val relativeInputPath = Paths.get("data").relativize(inputPath)
 
-                Cacheable.InputPath(
+                InputPath(
                     processor = "ProcessImages",
-                    version = ProcessImages.VERSION,
+                    version = VERSION,
                     inputPath = inputPath,
                     rootDir = cacheService.rootDir,
                     outputs = {
-                        buildList<Cacheable.OutputFromPath> {
+                        buildList<OutputFromPath> {
                             // copy over the SVG as-is
-                            this += Cacheable.OutputFromPath(
+                            this += OutputFromPath(
                                 outputDir = cacheService.outputDir,
                                 outputPath = relativeInputPath,
                             )
 
                             // Convert the SVG to its default PNG form, using whatever size was in the original SVG
-                            this += Cacheable.OutputFromPath(
+                            this += OutputFromPath(
                                 outputDir = cacheService.outputDir,
                                 outputPath = relativeInputPath.withExtension("png"),
                                 render = { input, os ->
@@ -53,7 +55,7 @@ class ProcessImages(
 
                             // Resize the SVG into various sizes and render them each as PNGs
                             listOf(24, 48, 64, 128, 256, 512, 1024).forEach { newHeight ->
-                                this += Cacheable.OutputFromPath(
+                                this += OutputFromPath(
                                     outputDir = cacheService.outputDir,
                                     outputPath = relativeInputPath.withSuffix("_${newHeight}px").withExtension("png"),
                                     render = { input, os ->
