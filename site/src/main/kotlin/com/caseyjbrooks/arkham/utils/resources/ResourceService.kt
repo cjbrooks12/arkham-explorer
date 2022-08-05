@@ -1,6 +1,6 @@
 package com.caseyjbrooks.arkham.utils.resources
 
-import com.caseyjbrooks.arkham.utils.cache.CacheService
+import com.caseyjbrooks.arkham.utils.SiteConfiguration
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.nio.file.Files
@@ -9,7 +9,7 @@ import kotlin.io.path.div
 import kotlin.io.path.isRegularFile
 import kotlin.streams.toList
 
-class ResourceService(private val cacheService: CacheService) {
+class ResourceService(private val config: SiteConfiguration) {
 
     /**
      * List files in the directory non-recursively. The returned paths are relative to the repo root. Only regular files
@@ -17,10 +17,12 @@ class ResourceService(private val cacheService: CacheService) {
      */
     suspend fun getFilesInDir(path: String): List<Path> = withContext(Dispatchers.IO) {
         Files
-            .list(cacheService.rootDir / path)
-            .filter { it.isRegularFile() }
-            .map { cacheService.rootDir.relativize(it) }
-            .toList()
+            .list(config.rootDir / path)
+            .use {
+                it.filter { it.isRegularFile() }
+                    .map { config.rootDir.relativize(it) }
+                    .toList()
+            }
     }
 
     /**
@@ -29,9 +31,12 @@ class ResourceService(private val cacheService: CacheService) {
      */
     suspend fun getFilesInDirs(path: String): List<Path> = withContext(Dispatchers.IO) {
         Files
-            .walk(cacheService.rootDir / path)
-            .filter { it.isRegularFile() }
-            .map { cacheService.rootDir.relativize(it) }
-            .toList()
+            .walk(config.rootDir / path)
+            .use {
+                it
+                    .filter { it.isRegularFile() }
+                    .map { config.rootDir.relativize(it) }
+                    .toList()
+            }
     }
 }

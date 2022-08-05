@@ -1,56 +1,78 @@
 package com.caseyjbrooks.arkham.stages.mainpages
 
+import com.caseyjbrooks.arkham.dag.DependencyGraphBuilder
+import com.caseyjbrooks.arkham.dag.Node
+import com.caseyjbrooks.arkham.dag.path.InputPathNode
+import com.caseyjbrooks.arkham.dag.path.StartPathNode
+import com.caseyjbrooks.arkham.dag.path.TerminalPathNode
 import com.caseyjbrooks.arkham.site.BuildConfig
-import com.caseyjbrooks.arkham.stages.ProcessingStage
-import com.caseyjbrooks.arkham.utils.cache.CacheService
-import com.caseyjbrooks.arkham.utils.cache.Cacheable
-import com.caseyjbrooks.arkham.utils.cache.InputPath
-import com.caseyjbrooks.arkham.utils.cache.OutputFromPath
-import com.caseyjbrooks.arkham.utils.resources.ResourceService
+import com.caseyjbrooks.arkham.stages.config.SiteConfigNode
+import com.caseyjbrooks.arkham.utils.destruct1
 import com.caseyjbrooks.arkham.utils.withExtension
 import java.nio.file.Paths
-import kotlin.io.path.extension
-import kotlin.io.path.readText
+import kotlin.io.path.invariantSeparatorsPathString
+import kotlin.io.path.readBytes
 
-class GenerateMainPages(
-    private val cacheService: CacheService,
-    private val resourceService: ResourceService,
-) : ProcessingStage {
-    companion object {
-        private const val VERSION = 1L
-    }
-
+@Suppress("BlockingMethodInNonBlockingContext")
+class GenerateMainPages : DependencyGraphBuilder {
     private val replacements = listOf(
         "siteBaseUrl" to BuildConfig.SITE_BASE_URL,
         "apiBaseUrl" to BuildConfig.API_BASE_URL,
     )
 
-    override suspend fun process(): Iterable<Cacheable.Input<*, *>> {
-        return resourceService
-            .getFilesInDirs("content")
-            .map { inputPath ->
-                val relativeInputPath = Paths.get("content").relativize(inputPath)
+    private var startIteration = Int.MIN_VALUE
+    override suspend fun DependencyGraphBuilder.Scope.buildGraph() {
+        if (graph.containsNode { it is SiteConfigNode } && startIteration == Int.MIN_VALUE) {
+            startIteration = graph.currentIteration
+        }
 
-                InputPath(
-                    processor = "GenerateMainPages",
-                    version = VERSION,
-                    inputPath = inputPath,
-                    rootDir = cacheService.rootDir,
-                    outputs = {
-                        listOf(
-                            OutputFromPath(
-                                outputDir = cacheService.outputDir,
-                                outputPath = relativeInputPath.withExtension("html"),
-                                render = { input, os ->
-                                    os.use {
-                                        val originalText = input.realInput.readText()
-                                        val processedText = processByExtension(originalText, input.realInput.extension)
-                                        it.write(processedText.toByteArray())
-                                    }
-                                }
-                            )
-                        )
-                    }
+        when (graph.currentIteration) {
+            startIteration -> loadInputContentFiles()
+            startIteration + 1 -> createOutputFiles()
+        }
+    }
+
+    private suspend fun DependencyGraphBuilder.Scope.loadInputContentFiles() {
+        val siteConfigNode = graph.getNodeOfType<SiteConfigNode>()
+
+        graph
+            .resourceService
+            .getFilesInDirs("content")
+            .forEach { inputPath ->
+                addNodeAndEdge(
+                    start = siteConfigNode,
+                    newEndNode = StartPathNode(
+                        meta = Node.Meta(
+                            name = inputPath.invariantSeparatorsPathString,
+                            tags = listOf("GenerateMainPages", "input"),
+                        ),
+                        inputPath = inputPath,
+                    )
+                )
+            }
+    }
+
+    private suspend fun DependencyGraphBuilder.Scope.createOutputFiles() {
+        graph
+            .getNodesOfType<InputPathNode> {
+                it.meta.tags == listOf("GenerateMainPages", "input")
+            }
+            .forEach { inputNodeQuery ->
+                val relativeOutputPath = Paths.get("content").relativize(inputNodeQuery.inputPath)
+                val outputPath = relativeOutputPath.withExtension("html")
+                addNodeAndEdge(
+                    start = inputNodeQuery,
+                    newEndNode = TerminalPathNode(
+                        meta = Node.Meta(
+                            name = outputPath.invariantSeparatorsPathString,
+                            tags = listOf("ProcessImages", "output"),
+                        ),
+                        outputPath = outputPath,
+                        renderOutput = { inputNodes, os ->
+                            val (sourceContentFile) = inputNodes.destruct1<InputPathNode>()
+                            os.write(sourceContentFile.realInputFile(graph).readBytes())
+                        },
+                    ),
                 )
             }
     }
@@ -80,3 +102,39 @@ class GenerateMainPages(
     }
 }
 
+
+//
+//    override suspend fun process(): Iterable<Cacheable.Input<*, *>> {
+//        return resourceService
+//            .getFilesInDirs("content")
+//            .map { inputPath ->
+//                val relativeInputPath = Paths.get("content").relativize(inputPath)
+//
+//                InputPath(
+//                    processor = "GenerateMainPages",
+//                    version = VERSION,
+//                    inputPath = inputPath,
+//                    rootDir = cacheService.rootDir,
+//                    hashesDir = cacheService.hashesDir,
+//                    outputs = {
+//                        listOf(
+//                            OutputFromPath(
+//                                outputDir = cacheService.outputDir,
+//                                outputPath = relativeInputPath.withExtension("html"),
+//                                render = { input, os ->
+//                                    os.use {
+//                                        val originalText = input.realInput.readText()
+//                                        val processedText = processByExtension(originalText, input.realInput.extension)
+//                                        it.write(processedText.toByteArray())
+//                                    }
+//                                }
+//                            )
+//                        )
+//                    }
+//                )
+//            }
+//    }
+//
+
+//}
+//

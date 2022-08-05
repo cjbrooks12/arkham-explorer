@@ -1,9 +1,7 @@
 package com.caseyjbrooks.arkham.stages.expansiondata
 
-import com.caseyjbrooks.arkham.stages.ProcessingStage
-import com.caseyjbrooks.arkham.utils.cache.CacheService
-import com.caseyjbrooks.arkham.utils.cache.Cacheable
-import com.caseyjbrooks.arkham.utils.resources.ResourceService
+import com.caseyjbrooks.arkham.dag.DependencyGraphBuilder
+import com.caseyjbrooks.arkham.stages.config.SiteConfigNode
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.cio.CIO
 import io.ktor.client.plugins.cache.HttpCache
@@ -15,29 +13,69 @@ import io.ktor.client.plugins.logging.SIMPLE
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
 
-class FetchExpansionData(
-    private val cacheService: CacheService,
-    private val resourceService: ResourceService,
-) : ProcessingStage {
+class FetchExpansionData : DependencyGraphBuilder {
     private val http = HttpClient(CIO) {
         install(ContentNegotiation) {
             json(Json {
                 isLenient = true
-                this.encodeDefaults
             })
         }
-        install(HttpCache) {
-            this.privateStorage
-        }
+        install(HttpCache) {}
         defaultRequest {
             url("https://arkhamdb.com/api/")
         }
         Logging { this.logger = Logger.SIMPLE }
     }
 
-    override suspend fun process(): Iterable<Cacheable.Input<*, *>> {
+    private var startIteration = Int.MIN_VALUE
+    override suspend fun DependencyGraphBuilder.Scope.buildGraph() {
+        if (graph.containsNode { it is SiteConfigNode } && startIteration == Int.MIN_VALUE) {
+            startIteration = graph.currentIteration
+        }
 
+        when (graph.currentIteration) {
+            startIteration -> loadPacksIndex()
+            startIteration + 1 -> loadEachPack()
+            startIteration + 2 -> createOutputFiles()
+        }
+    }
 
+    private suspend fun DependencyGraphBuilder.Scope.loadPacksIndex() {
+
+    }
+
+    private suspend fun DependencyGraphBuilder.Scope.loadEachPack() {
+
+    }
+
+    private suspend fun DependencyGraphBuilder.Scope.createOutputFiles() {
+
+    }
+}
+
+//class FetchExpansionData(
+//    private val cacheService: CacheService,
+//    private val resourceService: ResourceService,
+//) : ProcessingStage {
+//    private val http = HttpClient(CIO) {
+//        install(ContentNegotiation) {
+//            json(Json {
+//                isLenient = true
+//                this.encodeDefaults
+//            })
+//        }
+//        install(HttpCache) {}
+//        defaultRequest {
+//            url("https://arkhamdb.com/api/")
+//        }
+//        Logging { this.logger = Logger.SIMPLE }
+//    }
+//
+//    override suspend fun process(): Iterable<Cacheable.Input<*, *>> = coroutineScope {
+//        http.request()
+//
+//
+//
 //        val packs: List<ArkhamDbProductSummary> = http.get("public/packs/").body()
 //        val groupedPacks = packs.groupBy { it.cyclePosition }
 //
@@ -80,7 +118,22 @@ class FetchExpansionData(
 //            }
 //            .awaitAll()
 //
-//        val asdf = productsWithCards
-        return emptyList()
-    }
-}
+//        productsWithCards.map { packDetails ->
+//            UncacheableInput(
+//                rootDir = cacheService.rootDir,
+//                data = packDetails,
+//                outputs = {
+//                    listOf(
+//                        OutputFromUncacheableInput(
+//                            outputDir = cacheService.outputDir,
+//                            outputPath = Paths.get("expansions/${packDetails.name}.json"),
+//                            renderContent = {
+//                                Json.encodeToString(ArkhamDbPackDetails.serializer(), packDetails)
+//                            }
+//                        )
+//                    )
+//                }
+//            )
+//        }
+//    }
+//}

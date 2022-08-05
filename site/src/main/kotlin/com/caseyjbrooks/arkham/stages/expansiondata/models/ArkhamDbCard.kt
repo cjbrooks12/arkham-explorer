@@ -177,7 +177,7 @@ object DeckOptionsSerializer : KSerializer<List<ArkhamDbCard.DeckOptions>> {
     }
 
     override fun serialize(encoder: Encoder, value: List<ArkhamDbCard.DeckOptions>) {
-        TODO("Not yet implemented")
+        encoder.encodeSerializableValue(realSerializer, value)
     }
 
 }
