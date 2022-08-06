@@ -1,4 +1,5 @@
 rootProject.name = "arkham-explorer"
 
-include(":app")
-include(":site")
+include(":site:shared")
+include(":site:spa")
+include(":site:ssg")

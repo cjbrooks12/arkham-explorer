@@ -1,0 +1,72 @@
+{
+    "name": "Return To Night of the Zealot",
+    "icon": "{{baseUrl}}/assets/return-to-night-of-the-zealot.svg",
+    "scenarios": [
+        {
+            "name": "Return To The Gathering",
+            "icon": "{{baseUrl}}/assets/return-to-night-of-the-zealot/return-to-the-gathering.svg",
+            "encounterSets": [
+                { "name": "Return To The Gathering", "conditional": false, "setAside": false },
+                { "name": "Rats",                    "conditional": false, "setAside": false },
+                { "name": "Ghouls of Umôrdhoth",     "conditional": false, "setAside": false },
+                { "name": "Striking Fear",           "conditional": false, "setAside": false },
+                { "name": "Ancient Evils",           "conditional": false, "setAside": false },
+                { "name": "Chilling Cold",           "conditional": false, "setAside": false }
+            ]
+        },
+        {
+            "name": "Return To The Midnight Masks",
+            "icon": "{{baseUrl}}/assets/return-to-night-of-the-zealot/return-to-the-midnight-masks.svg",
+            "encounterSets": [
+                { "name": "Return To The Midnight Masks", "conditional": false, "setAside": false },
+                { "name": "Chilling Cold",                "conditional": false, "setAside": false },
+                { "name": "The Devourer's Cult",          "conditional": false, "setAside": false },
+                { "name": "Nightgaunts",                  "conditional": false, "setAside": false },
+                { "name": "Locked Doors",                 "conditional": false, "setAside": false },
+                { "name": "Return Cult of Umôrdhoth",      "conditional": false, "setAside": true  }
+            ]
+        },
+        {
+            "name": "Return To The Devourer Below",
+            "icon": "{{baseUrl}}/assets/return-to-night-of-the-zealot/return-to-the-devourer-below.svg",
+            "encounterSets": [
+                { "name": "Return To The Devourer Below", "conditional": false, "setAside": false },
+                { "name": "Ghouls of Umôrdhoth",          "conditional": false, "setAside": false },
+                { "name": "Striking Fear",                "conditional": false, "setAside": false },
+                { "name": "Ancient Evils",                "conditional": false, "setAside": false },
+                { "name": "The Devourer's Cult",          "conditional": false, "setAside": false },
+                { "name": "Agents of Hastur",             "conditional": true,  "setAside": false },
+                { "name": "Agents of Yog-Sothoth",        "conditional": true,  "setAside": false },
+                { "name": "Agents of Shub Niggurath",     "conditional": true,  "setAside": false },
+                { "name": "Agenths of Cthulhu",           "conditional": true,  "setAside": false }
+            ]
+        }
+    ],
+    "encounterSets": [
+        {
+            "name": "Return To The Gathering",
+            "icon": "{{baseUrl}}/assets/return-to-night-of-the-zealot/return-to-the-gathering.svg"
+        },
+        {
+            "name": "Return To The Midnight Masks",
+            "icon": "{{baseUrl}}/assets/return-to-night-of-the-zealot/return-to-the-midnight-masks.svg"
+        },
+        {
+            "name": "Return To The Devourer Below",
+            "icon": "{{baseUrl}}/assets/return-to-night-of-the-zealot/return-to-the-devourer-below.svg"
+        },
+        {
+            "name": "Return Cult of Umôrdhoth",
+            "icon": "{{baseUrl}}/assets/return-to-night-of-the-zealot/return-cult-of-umordhoth.svg"
+        },
+        {
+            "name": "Ghouls of Umôrdhoth",
+            "icon": "{{baseUrl}}/assets/return-to-night-of-the-zealot/ghouls-of-umordhoth.svg"
+        },
+        {
+            "name": "The Devourer's Cult",
+            "icon": "{{baseUrl}}/assets/return-to-night-of-the-zealot/the-devourers-cult.svg"
+        }
+    ],
+    "investigators": []
+}

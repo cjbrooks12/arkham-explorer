@@ -22,9 +22,9 @@ jobs:
           distribution: 'temurin'
           java-version: 11
       - name: 'Build Kotlin Compose/Web SPA'
-        run: './gradlew :app:build -Prelease'
+        run: './gradlew :site:spa:build -Prelease'
       - name: 'Build the rest of the static site'
-        run: './gradlew :site:run -Prelease'
+        run: './gradlew :site:ssg:run -Prelease'
       - name: 'Deploy to GitHub Pages'
         uses: 'JamesIves/github-pages-deploy-action@v4.4.0'
         with:
