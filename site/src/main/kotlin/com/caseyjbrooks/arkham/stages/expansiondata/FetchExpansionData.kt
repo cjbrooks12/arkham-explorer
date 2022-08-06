@@ -1,28 +1,33 @@
 package com.caseyjbrooks.arkham.stages.expansiondata
 
 import com.caseyjbrooks.arkham.dag.DependencyGraphBuilder
+import com.caseyjbrooks.arkham.dag.Node
+import com.caseyjbrooks.arkham.dag.http.StartHttpNode
+import com.caseyjbrooks.arkham.dag.http.prettyJson
+import com.caseyjbrooks.arkham.dag.path.TerminalPathNode
 import com.caseyjbrooks.arkham.stages.config.SiteConfigNode
+import com.caseyjbrooks.arkham.stages.expansiondata.models.ArkhamDbPackSummary
+import com.caseyjbrooks.arkham.stages.expansiondata.models.ArkhamDbProductSummary
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.cio.CIO
-import io.ktor.client.plugins.cache.HttpCache
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
-import io.ktor.client.plugins.defaultRequest
 import io.ktor.client.plugins.logging.Logger
 import io.ktor.client.plugins.logging.Logging
 import io.ktor.client.plugins.logging.SIMPLE
 import io.ktor.serialization.kotlinx.json.json
-import kotlinx.serialization.json.Json
+import kotlinx.serialization.builtins.ListSerializer
+import java.nio.file.Paths
+import kotlin.io.path.invariantSeparatorsPathString
 
 class FetchExpansionData : DependencyGraphBuilder {
+    companion object {
+        val packs: String = "https://arkhamdb.com/api/public/packs"
+        fun cards(packName: String): String = "https://arkhamdb.com/api/public/cards/${packName}.json"
+    }
+
     private val http = HttpClient(CIO) {
         install(ContentNegotiation) {
-            json(Json {
-                isLenient = true
-            })
-        }
-        install(HttpCache) {}
-        defaultRequest {
-            url("https://arkhamdb.com/api/")
+            json(prettyJson)
         }
         Logging { this.logger = Logger.SIMPLE }
     }
@@ -41,99 +46,107 @@ class FetchExpansionData : DependencyGraphBuilder {
     }
 
     private suspend fun DependencyGraphBuilder.Scope.loadPacksIndex() {
+        val siteConfigNode = graph.getNodeOfType<SiteConfigNode>()
+        addNodeAndEdge(
+            start = siteConfigNode,
+            newEndNode = StartHttpNode(
+                meta = Node.Meta(
+                    name = packs,
+                    tags = listOf("FetchExpansionData", "packs"),
+                ),
+                httpClient = http,
+                url = packs
+            )
+        )
+    }
 
+    private suspend fun DependencyGraphBuilder.Scope.getPackSummary(): Pair<StartHttpNode, List<ArkhamDbPackSummary>> {
+        val packsNode = graph.getNodeOfType<StartHttpNode> { it.meta.tags == listOf("FetchExpansionData", "packs") }
+
+        val packs: List<ArkhamDbProductSummary> = packsNode.getResponse(
+            graph,
+            ListSerializer(ArkhamDbProductSummary.serializer()),
+        )
+        val groupedPacks = packs.groupBy { it.cyclePosition }
+
+        return packsNode to listOf(
+            ArkhamDbPackSummary(1, "coreSet", groupedPacks.getValue(1)),
+            ArkhamDbPackSummary(2, "theDunwichLegacy", groupedPacks.getValue(2)),
+            ArkhamDbPackSummary(3, "thePathToCarcosa", groupedPacks.getValue(3)),
+            ArkhamDbPackSummary(4, "theForgottenAge", groupedPacks.getValue(4)),
+            ArkhamDbPackSummary(5, "theCircleUndone", groupedPacks.getValue(5)),
+            ArkhamDbPackSummary(6, "theDreamEaters", groupedPacks.getValue(6)),
+            ArkhamDbPackSummary(7, "theTheInnsmouthConspiracy", groupedPacks.getValue(7)),
+            ArkhamDbPackSummary(8, "edgeOfTheEarth", groupedPacks.getValue(8)),
+            ArkhamDbPackSummary(9, "theScarletKeys", groupedPacks.getValue(9)),
+            ArkhamDbPackSummary(50, "returnTos", groupedPacks.getValue(50)),
+            ArkhamDbPackSummary(60, "standaloneInvestigators", groupedPacks.getValue(60)),
+            ArkhamDbPackSummary(70, "standaloneScenarios", groupedPacks.getValue(70)),
+            ArkhamDbPackSummary(80, "books", groupedPacks.getValue(80)),
+            ArkhamDbPackSummary(90, "challengeScenarios", groupedPacks.getValue(90)),
+        )
     }
 
     private suspend fun DependencyGraphBuilder.Scope.loadEachPack() {
+        val (packsNode, packSummaries) = getPackSummary()
 
+        packSummaries.forEach { packSummary ->
+            packSummary
+                .products
+                .forEach { productSummary ->
+                    addNodeAndEdge(
+                        start = packsNode,
+                        newEndNode = StartHttpNode(
+                            meta = Node.Meta(
+                                name = Companion.cards(productSummary.code),
+                                tags = listOf(
+                                    "FetchExpansionData",
+                                    "pack cards",
+                                    packSummary.name,
+                                    productSummary.code
+                                ),
+                            ),
+                            httpClient = http,
+                            url = Companion.cards(productSummary.code),
+                        )
+                    )
+                }
+        }
     }
 
     private suspend fun DependencyGraphBuilder.Scope.createOutputFiles() {
+        val (packsNode, packSummaries) = getPackSummary()
 
+        packSummaries.forEach { packSummary ->
+            val outputPath = Paths.get("expansions/${packSummary.name}.json")
+            val packNodes = graph.getNodesOfType<StartHttpNode> {
+                it.meta.tags.containsAll(
+                    listOf(
+                        "FetchExpansionData",
+                        "pack cards",
+                        packSummary.name,
+                    )
+                )
+            }
+
+            val outputNode = TerminalPathNode(
+                meta = Node.Meta(
+                    name = outputPath.invariantSeparatorsPathString,
+                    tags = listOf("FetchExpansionData", "output", packSummary.name),
+                ),
+                outputPath = outputPath,
+                renderOutput = { nodes, os ->
+
+                    os.write("{}".toByteArray())
+                }
+            )
+
+            addNode(outputNode)
+
+            addEdge(packsNode, outputNode)
+            packNodes.forEach { packNode ->
+                addEdge(packNode, outputNode)
+            }
+        }
     }
 }
-
-//class FetchExpansionData(
-//    private val cacheService: CacheService,
-//    private val resourceService: ResourceService,
-//) : ProcessingStage {
-//    private val http = HttpClient(CIO) {
-//        install(ContentNegotiation) {
-//            json(Json {
-//                isLenient = true
-//                this.encodeDefaults
-//            })
-//        }
-//        install(HttpCache) {}
-//        defaultRequest {
-//            url("https://arkhamdb.com/api/")
-//        }
-//        Logging { this.logger = Logger.SIMPLE }
-//    }
-//
-//    override suspend fun process(): Iterable<Cacheable.Input<*, *>> = coroutineScope {
-//        http.request()
-//
-//
-//
-//        val packs: List<ArkhamDbProductSummary> = http.get("public/packs/").body()
-//        val groupedPacks = packs.groupBy { it.cyclePosition }
-//
-//        val products = listOf(
-//            ArkhamDbPackSummary(1, "coreSet", groupedPacks.getValue(1)),
-//            ArkhamDbPackSummary(2, "theDunwichLegacy", groupedPacks.getValue(2)),
-//            ArkhamDbPackSummary(3, "thePathToCarcosa", groupedPacks.getValue(3)),
-//            ArkhamDbPackSummary(4, "theForgottenAge", groupedPacks.getValue(4)),
-//            ArkhamDbPackSummary(5, "theCircleUndone", groupedPacks.getValue(5)),
-//            ArkhamDbPackSummary(6, "theDreamEaters", groupedPacks.getValue(6)),
-//            ArkhamDbPackSummary(7, "theTheInnsmouthConspiracy", groupedPacks.getValue(7)),
-//            ArkhamDbPackSummary(8, "edgeOfTheEarth", groupedPacks.getValue(8)),
-//            ArkhamDbPackSummary(9, "theScarletKeys", groupedPacks.getValue(9)),
-//            ArkhamDbPackSummary(50, "returnTos", groupedPacks.getValue(50)),
-//            ArkhamDbPackSummary(60, "standaloneInvestigators", groupedPacks.getValue(60)),
-//            ArkhamDbPackSummary(70, "standaloneScenarios", groupedPacks.getValue(70)),
-//            ArkhamDbPackSummary(80, "books", groupedPacks.getValue(80)),
-//            ArkhamDbPackSummary(90, "challengeScenarios", groupedPacks.getValue(90)),
-//        )
-//
-//        val productsWithCards: List<ArkhamDbPackDetails> = products
-//            .map { packSummary ->
-//                async {
-//                    ArkhamDbPackDetails(
-//                        cyclePosition = packSummary.cyclePosition,
-//                        name = packSummary.name,
-//                        products = packSummary
-//                            .products
-//                            .map { productSummary ->
-//                                async {
-//                                    ArkhamDbProductDetails(
-//                                        summary = productSummary,
-//                                        cards = http.get("public/cards/${productSummary.code}.json").body()
-//                                    )
-//                                }
-//                            }
-//                            .awaitAll()
-//                    )
-//                }
-//            }
-//            .awaitAll()
-//
-//        productsWithCards.map { packDetails ->
-//            UncacheableInput(
-//                rootDir = cacheService.rootDir,
-//                data = packDetails,
-//                outputs = {
-//                    listOf(
-//                        OutputFromUncacheableInput(
-//                            outputDir = cacheService.outputDir,
-//                            outputPath = Paths.get("expansions/${packDetails.name}.json"),
-//                            renderContent = {
-//                                Json.encodeToString(ArkhamDbPackDetails.serializer(), packDetails)
-//                            }
-//                        )
-//                    )
-//                }
-//            )
-//        }
-//    }
-//}

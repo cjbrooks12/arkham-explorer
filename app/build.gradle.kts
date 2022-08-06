@@ -76,13 +76,11 @@ buildConfig {
 
     if (project.hasProperty("release")) {
         buildConfigField("Boolean", "DEBUG", "false")
-        buildConfigField("String", "SITE_BASE_URL", "\"https://cjbrooks12.github.io/arkham-explorer/\"")
-        buildConfigField("String", "API_BASE_URL", "\"https://cjbrooks12.github.io/arkham-explorer/\"")
+        buildConfigField("String", "BASE_URL", "\"https://cjbrooks12.github.io/arkham-explorer\"")
         buildConfigField("String?", "BASE_PATH", "\"/arkham-explorer\"")
     } else {
         buildConfigField("Boolean", "DEBUG", "true")
-        buildConfigField("String", "SITE_BASE_URL", "\"http://localhost:8081/\"")
-        buildConfigField("String", "API_BASE_URL", "\"http://localhost:8080/\"")
+        buildConfigField("String", "BASE_URL", "\"http://localhost:8080\"")
         buildConfigField("String?", "BASE_PATH", "\"/arkham-explorer\"")
     }
 }

@@ -17,7 +17,7 @@ interface OutputPathNode : Node.Output {
      */
     val outputPath: Path
 
-    val renderOutput: (List<Node>, OutputStream) -> Unit
+    val doRender: (List<Node>, OutputStream) -> Unit
 
     fun realOutputFile(graph: DependencyGraph): Path {
         return graph.config.outputDir / outputPath
@@ -27,7 +27,7 @@ interface OutputPathNode : Node.Output {
         return realOutputFile(graph).exists()
     }
 
-    override fun prepareOutput(graph: DependencyGraph) {
+    override suspend fun prepareOutput(graph: DependencyGraph) {
         realOutputFile(graph).apply {
             parent.createDirectories()
             if (!exists()) {
@@ -36,11 +36,18 @@ interface OutputPathNode : Node.Output {
         }
     }
 
-    override fun renderOutput(graph: DependencyGraph) {
-//        println("rendering output file: ${this.meta.name}")
+    override suspend fun renderOutput(graph: DependencyGraph) {
         realOutputFile(graph).apply {
             this.outputStream().use {
-                renderOutput(meta.edges.map { edge -> edge.start }, it)
+                doRender(meta.edges.map { edge -> edge.start }, it)
+            }
+        }
+    }
+
+    override suspend fun renderOutput(graph: DependencyGraph, outputStream: OutputStream) {
+        realOutputFile(graph).apply {
+            outputStream.use {
+                doRender(meta.edges.map { edge -> edge.start }, it)
             }
         }
     }

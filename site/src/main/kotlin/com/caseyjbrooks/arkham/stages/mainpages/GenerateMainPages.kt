@@ -10,14 +10,14 @@ import com.caseyjbrooks.arkham.stages.config.SiteConfigNode
 import com.caseyjbrooks.arkham.utils.destruct1
 import com.caseyjbrooks.arkham.utils.withExtension
 import java.nio.file.Paths
+import kotlin.io.path.extension
 import kotlin.io.path.invariantSeparatorsPathString
-import kotlin.io.path.readBytes
+import kotlin.io.path.readText
 
 @Suppress("BlockingMethodInNonBlockingContext")
 class GenerateMainPages : DependencyGraphBuilder {
     private val replacements = listOf(
-        "siteBaseUrl" to BuildConfig.SITE_BASE_URL,
-        "apiBaseUrl" to BuildConfig.API_BASE_URL,
+        "baseUrl" to BuildConfig.BASE_URL,
     )
 
     private var startIteration = Int.MIN_VALUE
@@ -68,9 +68,11 @@ class GenerateMainPages : DependencyGraphBuilder {
                             tags = listOf("ProcessImages", "output"),
                         ),
                         outputPath = outputPath,
-                        renderOutput = { inputNodes, os ->
+                        doRender = { inputNodes, os ->
                             val (sourceContentFile) = inputNodes.destruct1<InputPathNode>()
-                            os.write(sourceContentFile.realInputFile(graph).readBytes())
+                            val sourceText = sourceContentFile.realInputFile(graph).readText()
+                            val outputText = processByExtension(sourceText, sourceContentFile.inputPath.extension)
+                            os.write(outputText.toByteArray())
                         },
                     ),
                 )

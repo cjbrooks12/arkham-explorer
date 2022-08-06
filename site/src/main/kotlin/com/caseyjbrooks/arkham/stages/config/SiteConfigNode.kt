@@ -18,7 +18,7 @@ data class SiteConfigNode(
         tags = listOf("ConfigStage", "v$version")
     )
 
-    override fun dirty(graph: DependencyGraph): Boolean {
+    override suspend fun dirty(graph: DependencyGraph): Boolean {
         val versionFile = graph.config.hashesDir / "siteVersion.txt"
         return if (versionFile.exists()) {
             // we have a site version file, check what version the previous render was in
@@ -33,7 +33,7 @@ data class SiteConfigNode(
         }
     }
 
-    override fun markClean(graph: DependencyGraph) {
+    override suspend fun markClean(graph: DependencyGraph) {
         (graph.config.hashesDir / "siteVersion.txt").apply {
             parent.createDirectories()
             if(!exists()) {

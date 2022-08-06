@@ -2,7 +2,7 @@ package com.caseyjbrooks.arkham.dag
 
 import com.caseyjbrooks.arkham.dag.renderer.Renderer
 import com.caseyjbrooks.arkham.dag.renderer.StaticOutputRenderer
-import com.caseyjbrooks.arkham.dag.updater.ConstantUpdaterService
+import com.caseyjbrooks.arkham.dag.updater.ImmediateUpdaterService
 import com.caseyjbrooks.arkham.dag.updater.UpdaterService
 import com.caseyjbrooks.arkham.utils.SiteConfiguration
 import com.caseyjbrooks.arkham.utils.resources.ResourceService
@@ -18,7 +18,6 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import kotlin.time.Duration.Companion.seconds
 import kotlin.time.ExperimentalTime
 import kotlin.time.measureTime
 
@@ -30,7 +29,7 @@ class DependencyGraph(
     private vararg val builders: DependencyGraphBuilder,
 
     private val renderer: Renderer = StaticOutputRenderer(),
-    private val updater: UpdaterService = ConstantUpdaterService(10.seconds),
+    private val updater: UpdaterService = ImmediateUpdaterService(),
     public val resourceService: ResourceService = ResourceService(config),
 
     /**
@@ -117,7 +116,7 @@ class DependencyGraph(
             markAllNodesClean()
         }
 
-        _state.value = State.Building
+        _state.value = State.Ready
         println("Site completed after $time")
         println("  - ${currentIteration - 1}/$maxIterations iterations")
         println("  - Skipped $outputsSkipped out of ${outputsRendered + outputsSkipped} outputs")
@@ -184,7 +183,7 @@ class DependencyGraph(
         }
     }
 
-    private fun Node.Output.isDirty(): Boolean {
+    private suspend fun Node.Output.isDirty(): Boolean {
         return if (!this.exists(this@DependencyGraph)) {
             true
         } else if (this.rendered) {

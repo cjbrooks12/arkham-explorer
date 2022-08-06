@@ -1,5 +1,7 @@
 package com.caseyjbrooks.arkham.dag
 
+import java.io.OutputStream
+
 /**
  * A Node within the Dependency graph represents discrete documents or sources of data, and can be both Inputs and
  * Outputs to the graph. Specifically, all Nodes which only have edges ending at themselves would be considered pure
@@ -52,16 +54,17 @@ sealed interface Node {
     val meta: Node.Meta
 
     interface Input : Node {
-        fun dirty(graph: DependencyGraph): Boolean
-        fun markClean(graph: DependencyGraph)
+        suspend fun dirty(graph: DependencyGraph): Boolean
+        suspend fun markClean(graph: DependencyGraph)
     }
 
     interface Output : Node {
         var rendered: Boolean
 
         fun exists(graph: DependencyGraph): Boolean
-        fun prepareOutput(graph: DependencyGraph)
-        fun renderOutput(graph: DependencyGraph)
+        suspend fun prepareOutput(graph: DependencyGraph)
+        suspend fun renderOutput(graph: DependencyGraph)
+        suspend fun renderOutput(graph: DependencyGraph, outputStream: OutputStream)
     }
 }
 

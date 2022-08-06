@@ -7,7 +7,7 @@ import java.nio.file.Path
 class TerminalPathNode(
     override val outputPath: Path,
     override val meta: Node.Meta,
-    override val renderOutput: (List<Node>, OutputStream) -> Unit,
+    override val doRender: (List<Node>, OutputStream) -> Unit,
 ) : OutputPathNode {
     override var rendered: Boolean = false
 

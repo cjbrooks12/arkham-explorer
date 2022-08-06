@@ -26,11 +26,11 @@ interface InputPathNode : Node.Input {
         return graph.config.hashesDir / hash.substring(0, 2) / hash.substring(2, 4) / hash
     }
 
-    override fun dirty(graph: DependencyGraph): Boolean {
+    override suspend fun dirty(graph: DependencyGraph): Boolean {
         return !hashFile(graph).exists()
     }
 
-    override fun markClean(graph: DependencyGraph) {
+    override suspend fun markClean(graph: DependencyGraph) {
         hashFile(graph).apply {
             parent.createDirectories()
             deleteIfExists()
