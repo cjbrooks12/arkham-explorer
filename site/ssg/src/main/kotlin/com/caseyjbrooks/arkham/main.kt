@@ -10,6 +10,10 @@ import com.caseyjbrooks.arkham.stages.config.ConfigStage
 import com.caseyjbrooks.arkham.stages.copyscripts.CopyScripts
 import com.caseyjbrooks.arkham.stages.expansiondata.FetchExpansionData
 import com.caseyjbrooks.arkham.stages.mainpages.GenerateMainPages
+import com.caseyjbrooks.arkham.stages.meta.Favicons
+import com.caseyjbrooks.arkham.stages.meta.PwaManifest
+import com.caseyjbrooks.arkham.stages.meta.RobotsTxt
+import com.caseyjbrooks.arkham.stages.meta.Sitemap
 import com.caseyjbrooks.arkham.utils.SiteConfiguration
 import kotlinx.coroutines.runBlocking
 import kotlin.io.path.Path
@@ -22,6 +26,10 @@ fun main(): Unit = runBlocking {
         ),
 
         ConfigStage(1),
+        Favicons(),
+        PwaManifest(),
+        RobotsTxt(),
+        Sitemap(),
         GenerateMainPages(),
         RasterizeSvgs(),
         CopyOtherAssets(),

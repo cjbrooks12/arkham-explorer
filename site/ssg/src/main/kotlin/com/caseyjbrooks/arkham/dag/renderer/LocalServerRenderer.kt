@@ -10,6 +10,7 @@ import io.ktor.server.application.install
 import io.ktor.server.cio.CIO
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.plugins.callloging.CallLogging
+import io.ktor.server.request.path
 import io.ktor.server.response.respondOutputStream
 import io.ktor.server.response.respondText
 import io.ktor.server.routing.get
@@ -31,25 +32,22 @@ class LocalServerRenderer(val port: Int) : Renderer {
     override suspend fun start(graph: DependencyGraph): Unit = coroutineScope {
         graph
             .state
-            .mapLatest {
-                if (it == DependencyGraph.State.Ready) {
+            .mapLatest { state ->
+                if (state == DependencyGraph.State.Ready) {
                     val entries = graph.nodes.filterIsInstance<OutputPathNode>()
 
                     println("Starting running on http://localhost:$port/")
                     embeddedServer(CIO, port = port) {
                         install(CallLogging)
                         routing {
-                            get("/{fullPath...}") {
-                                val path = call.parameters["fullPath"] ?: ""
-
-                                val theseEntries = entries
-                                theseEntries.also { println() }
+                            get("/{...}") {
+                                val path = call.request.path().trimStart('/')
 
                                 val exactPath = Paths.get(path)
                                 val pathAsIndexHtml = Paths.get(path) / "index.html"
 
-                                val entryWithExactName = entries.singleOrNull { it.outputPath == exactPath }
-                                val entryAsIndexHtml = entries.singleOrNull { it.outputPath == pathAsIndexHtml }
+                                val entryWithExactName = entries.singleOrNull { graph.config.outputDir.relativize(it.realOutputFile()) == exactPath }
+                                val entryAsIndexHtml = entries.singleOrNull { graph.config.outputDir.relativize(it.realOutputFile()) == pathAsIndexHtml }
 
                                 val entry = entryWithExactName ?: entryAsIndexHtml
                                 val contentType = guessContentType(path, entry)
@@ -90,6 +88,8 @@ class LocalServerRenderer(val port: Int) : Renderer {
             extension == "svg" -> ContentType.Image.SVG
             extension == "json" -> ContentType.Application.Json
             extension == "js" -> ContentType.Text.JavaScript
+            extension == "txt" -> ContentType.Text.Any
+            extension == "xml" -> ContentType.Text.Xml
             else -> null
         }
     }
