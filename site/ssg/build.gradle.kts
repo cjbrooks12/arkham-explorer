@@ -37,6 +37,7 @@ dependencies {
     implementation("com.twelvemonkeys.imageio:imageio-batik:3.8.2")
     implementation("com.twelvemonkeys.imageio:imageio-jpeg:3.8.2")
     implementation("com.twelvemonkeys.imageio:imageio-icns:3.8.2")
+    implementation("com.twelvemonkeys.imageio:imageio-bmp:3.8.2")
     implementation("org.jsoup:jsoup:1.15.2")
     implementation("commons-codec:commons-codec:1.15")
 

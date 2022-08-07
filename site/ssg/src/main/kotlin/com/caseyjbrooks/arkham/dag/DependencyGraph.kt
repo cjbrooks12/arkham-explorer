@@ -28,7 +28,7 @@ class DependencyGraph(
      */
     private vararg val builders: DependencyGraphBuilder,
 
-    private val renderer: Renderer = StaticOutputRenderer(),
+    private val renderers: List<Renderer> = listOf(StaticOutputRenderer()),
     private val updater: UpdaterService = ImmediateUpdaterService(),
     public val resourceService: ResourceService = ResourceService(),
 
@@ -61,7 +61,9 @@ class DependencyGraph(
 // ---------------------------------------------------------------------------------------------------------------------
 
     suspend fun executeGraph() = withContext(Dispatchers.IO) {
-        launch { with(renderer) { start(this@DependencyGraph) } }
+        renderers.forEach { renderer ->
+            launch { with(renderer) { start(this@DependencyGraph) } }
+        }
 
         launch {
             updater
@@ -174,7 +176,9 @@ class DependencyGraph(
         outputsSkipped += cleanOutputs.size
         outputsRendered += dirtyOutputs.size
 
-        renderer.renderDirtyOutputs(this@DependencyGraph, dirtyOutputs)
+        renderers.forEach { renderer ->
+            renderer.renderDirtyOutputs(this@DependencyGraph, dirtyOutputs)
+        }
     }
 
     private suspend fun markAllNodesClean() {

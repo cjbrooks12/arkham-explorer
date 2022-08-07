@@ -44,11 +44,11 @@ object InvestigatorsUi {
                 } else {
                     state.expansions.getCachedOrEmptyList().forEach { expansion ->
                         Li { Span { Text(expansion.name) } }
-                        Ul {
-                            expansion.investigators.forEach { investigator ->
-                                Li { NavigationLink(ArkhamApp.InvestigatorDetails, investigator.name) { Text(investigator.name) } }
-                            }
-                        }
+//                        Ul {
+//                            expansion.investigators.forEach { investigator ->
+//                                Li { NavigationLink(ArkhamApp.InvestigatorDetails, investigator.name) { Text(investigator.name) } }
+//                            }
+//                        }
                     }
                 }
             }

@@ -55,15 +55,22 @@ import io.ktor.serialization.kotlinx.json.json
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.serialization.json.Json
 
-class ArkhamInjectorImpl(private val applicationCoroutineScope: CoroutineScope) : ArkhamInjector {
+class ArkhamInjectorImpl(
+    private val applicationCoroutineScope: CoroutineScope,
+    private val isPwa: Boolean,
+) : ArkhamInjector {
     override val config: ArkhamConfig = ArkhamConfigImpl()
     private val eventBus = EventBusImpl()
     private val httpClient = HttpClient(Js) {
         install(ContentNegotiation) {
-            json(Json)
+            json(Json {
+                prettyPrint = true
+                isLenient = true
+                ignoreUnknownKeys = true
+            })
         }
         defaultRequest {
-            url(config.baseUrl)
+            url("${config.baseUrl}/")
         }
     }
 

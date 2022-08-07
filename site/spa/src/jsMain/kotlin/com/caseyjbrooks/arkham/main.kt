@@ -1,25 +1,27 @@
 package com.caseyjbrooks.arkham
 
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
-import com.caseyjbrooks.arkham.di.ArkhamInjector
-import com.caseyjbrooks.arkham.di.ArkhamInjectorImpl
-import com.caseyjbrooks.arkham.ui.MainApplication
-import com.caseyjbrooks.arkham.utils.theme.ArkhamTheme
+import com.caseyjbrooks.arkham.app.BuildConfig
 import kotlinx.browser.window
-import org.jetbrains.compose.web.renderComposable
-import org.w3c.workers.ServiceWorkerGlobalScope
+import org.w3c.dom.url.URLSearchParams
 
-
-external val self: ServiceWorkerGlobalScope
 
 fun main() {
     try {
         window.addEventListener("load", {
-            window.navigator.serviceWorker.register("/spa.js")
+            window.navigator.serviceWorker
+                .register("${BuildConfig.BASE_URL}/spa.js")
+                .then { res -> console.log("service worker registered") }
+                .catch { err -> console.log("service worker not registered", err) }
         })
 
-        browserMain()
+        val params = URLSearchParams(window.location.search)
+        val source = params.get("source")
+
+        if (source == "pwa") {
+            pwaMain()
+        } else {
+            browserMain()
+        }
     } catch (t: Throwable) {
         self.addEventListener("install", { event ->
             console.log("Service Worker installed!")
@@ -30,19 +32,4 @@ fun main() {
 
         serviceWorkerMain()
     }
-}
-
-fun browserMain() {
-    renderComposable(rootElementId = "root") {
-        val applicationScope = rememberCoroutineScope()
-        val injector: ArkhamInjector = remember(applicationScope) { ArkhamInjectorImpl(applicationScope) }
-
-        ArkhamTheme(injector) {
-            MainApplication(injector)
-        }
-    }
-}
-
-fun serviceWorkerMain() {
-
 }

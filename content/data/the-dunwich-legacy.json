@@ -1,6 +1,7 @@
 {
     "name": "The Dunwich Legacy",
-    "icon": "{{baseUrl}}/assets/the-dunwich-legacy/expansion-icon.svg",
+    "icon": "{{baseUrl}}/assets/the-dunwich-legacy.svg",
+    "productCodes": [],
     "scenarios": [
         {
             "name": "Extracurricular Activity",

@@ -9,16 +9,16 @@ import java.io.OutputStream
 import java.nio.file.Path
 import javax.imageio.ImageIO
 
-fun rasterizeSvg(input: Path, newHeight: Int, os: OutputStream) {
+fun rasterizeSvg(input: Path, newHeight: Int, os: OutputStream, newWidth: Int? = null) {
     val inputImage = ImageIO.read(input.toFile())
     val originalWidth = inputImage.width
     val originalHeight = inputImage.height
-    val newWidth = (originalWidth * (newHeight.toDouble() / originalHeight))
+    val actualNewWidth = newWidth ?: (originalWidth * (newHeight.toDouble() / originalHeight))
 
     val scaledImage = ByteArrayOutputStream()
         .apply {
             val transcoder = PNGTranscoder()
-            transcoder.addTranscodingHint(SVGAbstractTranscoder.KEY_WIDTH, newWidth.toFloat())
+            transcoder.addTranscodingHint(SVGAbstractTranscoder.KEY_WIDTH, actualNewWidth.toFloat())
             transcoder.addTranscodingHint(SVGAbstractTranscoder.KEY_HEIGHT, newHeight.toFloat())
             transcoder.transcode(TranscoderInput(input.toFile().inputStream()), TranscoderOutput(this))
             flush()

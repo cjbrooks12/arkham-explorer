@@ -4,5 +4,11 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class ArkhamHorrorExpansionsIndex(
-    val expansions: List<String>
-)
+    val expansions: List<ArkhamHorrorExpansionIndex>
+) {
+    @Serializable
+    data class ArkhamHorrorExpansionIndex(
+        val slug: String,
+        val cyclePosition: Int,
+    )
+}

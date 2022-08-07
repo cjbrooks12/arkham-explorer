@@ -89,15 +89,15 @@ object ExpansionDetailsUi {
                         }
                         Ul {
                             Li { Text("Investigators") }
-                            Ul {
-                                expansion.investigators.forEach { investigator ->
-                                    Li {
-                                        NavigationLink(ArkhamApp.InvestigatorDetails, investigator.name) {
-                                            Text(investigator.name)
-                                        }
-                                    }
-                                }
-                            }
+//                            Ul {
+//                                expansion.investigators.forEach { investigator ->
+//                                    Li {
+//                                        NavigationLink(ArkhamApp.InvestigatorDetails, investigator.name) {
+//                                            Text(investigator.name)
+//                                        }
+//                                    }
+//                                }
+//                            }
                         }
                     }
                 }

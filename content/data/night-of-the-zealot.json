@@ -1,8 +1,7 @@
-
 {
     "name": "Night of the Zealot",
-    "productCodes": ["core", "rcore"],
     "icon": "{{baseUrl}}/assets/night-of-the-zealot.svg",
+    "productCodes": ["core", "rcore"],
     "scenarios": [
         {
             "name": "The Gathering",
@@ -30,7 +29,7 @@
         },
         {
             "name": "The Devourer Below",
-            "icon": "/assets/expansions/night-of-the-zealot/the-devourer-below.svg",
+            "icon": "{{baseUrl}}/assets/night-of-the-zealot/the-devourer-below.svg",
             "encounterSets": [
                 { "name": "The Devourer Below",       "conditional": false, "setAside": false },
                 { "name": "Ghouls",                   "conditional": false, "setAside": false },

@@ -9,11 +9,9 @@ import com.caseyjbrooks.arkham.di.ArkhamInjector
 import com.caseyjbrooks.arkham.ui.ArkhamApp
 import com.caseyjbrooks.arkham.utils.navigation.NavigationLink
 import com.caseyjbrooks.arkham.utils.navigation.NavigationLinkBack
-import com.copperleaf.ballast.repository.cache.getCachedOrNull
 import com.copperleaf.ballast.repository.cache.isLoading
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Li
-import org.jetbrains.compose.web.dom.Span
 import org.jetbrains.compose.web.dom.Text
 import org.jetbrains.compose.web.dom.Ul
 
@@ -45,12 +43,12 @@ object InvestigatorDetailsUi {
                 if (state.investigator.isLoading()) {
                     Li { Text("Loading") }
                 } else {
-                    state.investigator.getCachedOrNull()?.let { (expansion, investigator) ->
-                        Li {
-                            Li { NavigationLink(ArkhamApp.ExpansionDetails, expansion.name) { Text(expansion.name) } }
-                        }
-                        Li { Span { Text(investigator.name) } }
-                    }
+//                    state.investigator.getCachedOrNull()?.let { (expansion, investigator) ->
+//                        Li {
+//                            Li { NavigationLink(ArkhamApp.ExpansionDetails, expansion.name) { Text(expansion.name) } }
+//                        }
+//                        Li { Span { Text(investigator.name) } }
+//                    }
                 }
             }
         }

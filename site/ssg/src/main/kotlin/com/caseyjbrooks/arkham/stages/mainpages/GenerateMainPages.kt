@@ -8,13 +8,14 @@ import com.caseyjbrooks.arkham.site.BuildConfig
 import com.caseyjbrooks.arkham.stages.config.SiteConfigNode
 import com.caseyjbrooks.arkham.utils.destruct1
 import com.caseyjbrooks.arkham.utils.withExtension
+import kotlinx.datetime.Clock
 import kotlin.io.path.extension
 import kotlin.io.path.readText
 
-@Suppress("BlockingMethodInNonBlockingContext")
 class GenerateMainPages : DependencyGraphBuilder {
     private val replacements = listOf(
         "baseUrl" to BuildConfig.BASE_URL,
+        "now" to Clock.System.now().toEpochMilliseconds().toString(),
     )
 
     private var startIteration = Int.MIN_VALUE
@@ -53,7 +54,9 @@ class GenerateMainPages : DependencyGraphBuilder {
                 it.meta.tags == listOf("GenerateMainPages", "input")
             }
             .forEach { inputNodeQuery ->
-                val outputPath = inputNodeQuery.inputPath.withExtension("html")
+                val outputPath = inputNodeQuery.inputPath.withExtension(
+                    getOutputExtension(inputNodeQuery.inputPath.extension)
+                )
                 addNodeAndEdge(
                     start = inputNodeQuery,
                     newEndNode = TerminalPathNode(
@@ -71,12 +74,18 @@ class GenerateMainPages : DependencyGraphBuilder {
             }
     }
 
-    private fun processByExtension(originalText: String, extension: String): String {
-        val proprocessedText = preprocessContent(originalText)
+    private fun getOutputExtension(extension: String): String {
         return when (extension) {
-            "html" -> processHtml(proprocessedText)
-            "md" -> processMarkdown(proprocessedText)
-            else -> error("Unknown file extension in site content")
+            "md" -> "html"
+            else -> extension
+        }
+    }
+
+    private fun processByExtension(originalText: String, extension: String): String {
+        val preprocessedText = preprocessContent(originalText)
+        return when (extension) {
+            "md" -> processMarkdown(preprocessedText)
+            else -> processText(preprocessedText)
         }
     }
 
@@ -87,7 +96,7 @@ class GenerateMainPages : DependencyGraphBuilder {
             }
     }
 
-    private fun processHtml(inputText: String): String {
+    private fun processText(inputText: String): String {
         return inputText
     }
 
@@ -95,4 +104,3 @@ class GenerateMainPages : DependencyGraphBuilder {
         return inputText
     }
 }
-

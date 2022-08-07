@@ -4,10 +4,20 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.nio.file.Files
 import java.nio.file.Path
+import kotlin.io.path.div
 import kotlin.io.path.isRegularFile
 import kotlin.streams.toList
 
 class ResourceService {
+
+    /**
+     * List files in the directory non-recursively. The returned paths are relative to the [baseDir]. Only regular files
+     * will be returned (no directories).
+     */
+    suspend fun getFile(baseDir: Path, fileName: Path): Path = withContext(Dispatchers.IO) {
+        val actualPath = baseDir / fileName
+        baseDir.relativize(actualPath)
+    }
 
     /**
      * List files in the directory non-recursively. The returned paths are relative to the [baseDir]. Only regular files
