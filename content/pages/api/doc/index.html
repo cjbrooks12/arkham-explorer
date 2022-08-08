@@ -1,0 +1,53 @@
+<!-- HTML for static distribution bundle build -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Swagger UI</title>
+    <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@4.5.0/swagger-ui.css" />
+
+    <link rel="icon" type="image/png" href="{{baseUrl}}/favicon-32x32.png" sizes="32x32"/>
+    <link rel="icon" type="image/png" href="{{baseUrl}}/favicon-16x16.png" sizes="16x16"/>
+    <link rel="shortcut icon" type="image/x-icon" href="{{baseUrl}}/favicon.ico"/>
+    <link rel="apple-touch-icon" href="{{baseUrl}}/favicon-192x192.png">
+
+    <style>
+        html {
+            box-sizing: border-box;
+            overflow: -moz-scrollbars-vertical;
+            overflow-y: scroll;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        body {
+            margin: 0;
+            background: #fafafa;
+        }
+    </style>
+  </head>
+
+  <body>
+    <div id="swagger-ui" class="swagger-ui"></div>
+
+    <script src="https://unpkg.com/swagger-ui-dist@4.5.0/swagger-ui-bundle.js" crossorigin></script>
+    <script src="https://unpkg.com/swagger-ui-dist@4.5.0/swagger-ui-standalone-preset.js" crossorigin></script>
+    <script>
+        window.onload = () => {
+            window.ui = SwaggerUIBundle({
+                url: '{{baseUrl}}/api/openapi.json',
+                dom_id: '#swagger-ui',
+                presets: [
+                    SwaggerUIBundle.presets.apis,
+                    SwaggerUIStandalonePreset
+                ],
+                layout: "StandaloneLayout",
+            });
+        };
+    </script>
+  </body>
+</html>

@@ -8,32 +8,32 @@
             "sizes": "24x24"
         },
         {
-            "src": "{{baseUrl}}/assets/night-of-the-zealot-48px.png",
+            "src": "{{baseUrl}}/assets/48/night-of-the-zealot.png",
             "type": "image/png",
             "sizes": "48x48"
         },
         {
-            "src": "{{baseUrl}}/assets/night-of-the-zealot-64px.png",
+            "src": "{{baseUrl}}/assets/64/night-of-the-zealot.png",
             "type": "image/png",
             "sizes": "64x64"
         },
         {
-            "src": "{{baseUrl}}/assets/night-of-the-zealot-128px.png",
+            "src": "{{baseUrl}}/assets/128/night-of-the-zealot.png",
             "type": "image/png",
             "sizes": "128x128"
         },
         {
-            "src": "{{baseUrl}}/assets/night-of-the-zealot-256px.png",
+            "src": "{{baseUrl}}/assets/256/night-of-the-zealot.png",
             "type": "image/png",
             "sizes": "256x256"
         },
         {
-            "src": "{{baseUrl}}/assets/night-of-the-zealot-512px.png",
+            "src": "{{baseUrl}}/assets/512/night-of-the-zealot.png",
             "type": "image/png",
             "sizes": "512x512"
         },
         {
-            "src": "{{baseUrl}}/assets/night-of-the-zealot-1024px.png",
+            "src": "{{baseUrl}}/assets/1024/night-of-the-zealot.png",
             "type": "image/png",
             "sizes": "1024x1024"
         }

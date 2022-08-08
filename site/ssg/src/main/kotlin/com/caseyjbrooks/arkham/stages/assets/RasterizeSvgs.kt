@@ -9,7 +9,7 @@ import com.caseyjbrooks.arkham.stages.config.SiteConfigNode
 import com.caseyjbrooks.arkham.utils.destruct1
 import com.caseyjbrooks.arkham.utils.rasterizeSvg
 import com.caseyjbrooks.arkham.utils.withExtension
-import com.caseyjbrooks.arkham.utils.withSuffix
+import com.caseyjbrooks.arkham.utils.withPrefix
 import java.io.OutputStream
 import java.nio.file.Path
 import javax.imageio.ImageIO
@@ -79,7 +79,7 @@ class RasterizeSvgs : DependencyGraphBuilder {
                     createOutputFile(
                         inputNode = inputNodeQuery,
                         tags = listOf("png", "${newHeight}px"),
-                        getOutputPath = { it.withSuffix("-${newHeight}px").withExtension("png") }
+                        getOutputPath = { it.withPrefix("${newHeight}/").withExtension("png") }
                     ) { inputNodes, os ->
                         val (sourceSvg) = inputNodes.destruct1<InputPathNode>()
                         rasterizeSvg(sourceSvg.realInputFile(), newHeight, os)

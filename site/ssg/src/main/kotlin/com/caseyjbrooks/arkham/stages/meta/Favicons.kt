@@ -31,6 +31,7 @@ class Favicons : DependencyGraphBuilder {
                 val formats = ImageIO.getWriterFormatNames()
                 formats.also { println() }
 
+                // default favicon
                 addNodeAndEdge(
                     start = nightOfTheZealotSvgInputNode,
                     newEndNode = TerminalPathNode(
@@ -39,7 +40,7 @@ class Favicons : DependencyGraphBuilder {
                         doRender = { nodes, os ->
                             val (svg) = nodes.destruct1<InputPathNode>()
 
-                            // TwelveMonkeys doesnt seem to like converting directly from SVG to ICO, so we rasterize
+                            // TwelveMonkeys doesn't seem to like converting directly from SVG to ICO, so we rasterize
                             // it in-memory first to a ByteArrayOutputStream
                             val bos = ByteArrayOutputStream().also { bos ->
                                 bos.use {
@@ -53,6 +54,20 @@ class Favicons : DependencyGraphBuilder {
                         }
                     )
                 )
+                // PNG favicons
+                listOf(16, 32, 192).forEach { size ->
+                    addNodeAndEdge(
+                        start = nightOfTheZealotSvgInputNode,
+                        newEndNode = TerminalPathNode(
+                            baseOutputDir = graph.config.outputDir,
+                            outputPath = Paths.get("favicon-${size}x${size}.png"),
+                            doRender = { nodes, os ->
+                                val (svg) = nodes.destruct1<InputPathNode>()
+                                rasterizeSvg(svg.realInputFile(), size, os, size)
+                            }
+                        )
+                    )
+                }
             }
         }
     }

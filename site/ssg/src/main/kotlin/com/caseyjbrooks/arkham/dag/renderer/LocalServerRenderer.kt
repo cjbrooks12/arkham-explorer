@@ -5,6 +5,7 @@ import com.caseyjbrooks.arkham.dag.Node
 import com.caseyjbrooks.arkham.dag.path.OutputPathNode
 import io.ktor.http.ContentType
 import io.ktor.http.HttpStatusCode
+import io.ktor.server.application.ApplicationCall
 import io.ktor.server.application.call
 import io.ktor.server.application.install
 import io.ktor.server.cio.CIO
@@ -15,6 +16,7 @@ import io.ktor.server.response.respondOutputStream
 import io.ktor.server.response.respondText
 import io.ktor.server.routing.get
 import io.ktor.server.routing.routing
+import io.ktor.util.pipeline.PipelineInterceptor
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.flow.launchIn
@@ -40,36 +42,47 @@ class LocalServerRenderer(val port: Int) : Renderer {
                     embeddedServer(CIO, port = port) {
                         install(CallLogging)
                         routing {
-                            get("/{...}") {
-                                val path = call.request.path().trimStart('/')
-
-                                val exactPath = Paths.get(path)
-                                val pathAsIndexHtml = Paths.get(path) / "index.html"
-
-                                val entryWithExactName = entries.singleOrNull { graph.config.outputDir.relativize(it.realOutputFile()) == exactPath }
-                                val entryAsIndexHtml = entries.singleOrNull { graph.config.outputDir.relativize(it.realOutputFile()) == pathAsIndexHtml }
-
-                                val entry = entryWithExactName ?: entryAsIndexHtml
-                                val contentType = guessContentType(path, entry)
-
-                                if (entry == null) {
-                                    call.respondText(
-                                        status = HttpStatusCode.NotFound,
-                                        contentType = ContentType.Text.Html
-                                    ) {
-                                        "$path not found"
-                                    }
-                                } else {
-                                    call.respondOutputStream(status = HttpStatusCode.OK, contentType = contentType) {
-                                        entry.renderOutput(graph, this)
-                                    }
-                                }
-                            }
+                            get("/{...}", render(graph, entries))
+                            get("/{...}/", render(graph, entries))
                         }
                     }.start(wait = true)
                 }
             }
             .launchIn(this)
+    }
+
+    private fun render(
+        graph: DependencyGraph,
+        entries: List<OutputPathNode>
+    ): PipelineInterceptor<Unit, ApplicationCall> = {
+        val path = call.request.path().trim().trim('/')
+
+        val exactPath = Paths.get(path)
+        val pathAsIndexHtml = Paths.get(path) / "index.html"
+
+        println("exactPath=$exactPath")
+        println("pathAsIndexHtml=$pathAsIndexHtml")
+
+        val entryWithExactName =
+            entries.singleOrNull { graph.config.outputDir.relativize(it.realOutputFile()) == exactPath }
+        val entryAsIndexHtml =
+            entries.singleOrNull { graph.config.outputDir.relativize(it.realOutputFile()) == pathAsIndexHtml }
+
+        val entry = entryWithExactName ?: entryAsIndexHtml
+        val contentType = guessContentType(path, entry)
+
+        if (entry == null) {
+            call.respondText(
+                status = HttpStatusCode.NotFound,
+                contentType = ContentType.Text.Html
+            ) {
+                "$path not found"
+            }
+        } else {
+            call.respondOutputStream(status = HttpStatusCode.OK, contentType = contentType) {
+                entry.renderOutput(graph, this)
+            }
+        }
     }
 
     override suspend fun renderDirtyOutputs(graph: DependencyGraph, dirtyOutputs: List<Node.Output>) {
