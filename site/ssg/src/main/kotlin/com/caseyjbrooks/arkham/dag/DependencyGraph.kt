@@ -39,10 +39,10 @@ class DependencyGraph(
 ) {
 
     private val _nodes: MutableList<Node> = mutableListOf()
-    public val nodes: List<Node> get() = _nodes
+    public val nodes: List<Node> get() = _nodes.toList()
 
     private val _edges: MutableList<Edge> = mutableListOf()
-    public val edges: List<Edge> get() = _edges
+    public val edges: List<Edge> get() = _edges.toList()
 
     private var _currentIteration = 0
     public val currentIteration get() = _currentIteration

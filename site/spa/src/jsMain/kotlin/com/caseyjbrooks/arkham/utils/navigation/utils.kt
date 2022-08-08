@@ -31,6 +31,7 @@ fun NavigationLinkStrategy.createLink(
 fun NavigationLink(
     route: Route,
     vararg pathParameters: String,
+    classes: List<String> = emptyList(),
     content: @Composable () -> Unit
 ) {
     val injector = LocalInjector.current
@@ -49,6 +50,7 @@ fun NavigationLink(
                     router.trySend(RouterContract.Inputs.GoToDestination(navLink))
                 }
             }
+            classes(classes)
         }
     ) {
         content()

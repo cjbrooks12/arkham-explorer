@@ -35,16 +35,35 @@
     </script>
     <!-- End Single Page Apps for GitHub Pages -->
 
+    <style>
+        html {
+            box-sizing: border-box;
+            overflow: -moz-scrollbars-vertical;
+            overflow-y: scroll;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        body {
+            margin: 0;
+            background: #fafafa;
+        }
+    </style>
+
     <link rel="manifest" href="{{baseUrl}}/manifest.json" />
 </head>
 <body>
-<div class="columns p-5">
-    <div class="column">
-        <div class="columns is-desktop">
-            <div id="root"></div>
-        </div>
-    </div>
-</div>
+<div id="root"></div>
+<!--<div class="columns p-5">-->
+<!--    <div class="column">-->
+<!--        <div class="columns is-desktop">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 <script src="{{baseUrl}}/spa.js"></script>
 </body>
 </html>
