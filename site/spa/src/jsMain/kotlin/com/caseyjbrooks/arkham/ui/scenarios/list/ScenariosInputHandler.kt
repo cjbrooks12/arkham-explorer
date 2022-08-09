@@ -1,6 +1,7 @@
 package com.caseyjbrooks.arkham.ui.scenarios.list
 
 import com.caseyjbrooks.arkham.repository.main.ArkhamExplorerRepository
+import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayoutState
 import com.copperleaf.ballast.InputHandler
 import com.copperleaf.ballast.InputHandlerScope
 import com.copperleaf.ballast.observeFlows
@@ -12,10 +13,10 @@ class ScenariosInputHandler(
     ScenariosContract.Inputs,
     ScenariosContract.Events,
     ScenariosContract.State,
-    >  {
+    > {
     override suspend fun InputHandlerScope<ScenariosContract.Inputs, ScenariosContract.Events, ScenariosContract.State>.handleInput(
         input: ScenariosContract.Inputs
-    ) = when(input) {
+    ) = when (input) {
         is ScenariosContract.Inputs.Initialize -> {
             observeFlows(
                 "Scenarios",
@@ -24,8 +25,13 @@ class ScenariosInputHandler(
                     .map { ScenariosContract.Inputs.ScenariosUpdated(it) }
             )
         }
+
         is ScenariosContract.Inputs.ScenariosUpdated -> {
-            updateState { it.copy(expansions = input.expansions) }
+            updateState {
+                it.copy(
+                    layout = MainLayoutState.fromCached(input.expansions),
+                )
+            }
         }
     }
 }

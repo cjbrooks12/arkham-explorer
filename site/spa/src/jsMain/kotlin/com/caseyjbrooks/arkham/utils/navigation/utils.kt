@@ -7,6 +7,8 @@ import com.copperleaf.ballast.navigation.routing.PathSegment
 import com.copperleaf.ballast.navigation.routing.Route
 import com.copperleaf.ballast.navigation.routing.RouterContract
 import org.jetbrains.compose.web.dom.A
+import org.jetbrains.compose.web.dom.AttrBuilderContext
+import org.w3c.dom.HTMLAnchorElement
 
 fun NavigationLinkStrategy.createLink(
     route: Route,
@@ -15,7 +17,7 @@ fun NavigationLinkStrategy.createLink(
     val parameterPiecesInRoute = route.matcher.path.filterIsInstance<PathSegment.Parameter>()
 
     check(pathParameters.size == parameterPiecesInRoute.size) {
-        "Must have exactly ${pathParameters.size} to create link for route '${route.originalRoute}'"
+        "Must have exactly ${parameterPiecesInRoute.size} path parameters to create link for route '${route.originalRoute}', had ${pathParameters.size} ($pathParameters)"
     }
 
     val pathParams = parameterPiecesInRoute
@@ -32,6 +34,7 @@ fun NavigationLink(
     route: Route,
     vararg pathParameters: String,
     classes: List<String> = emptyList(),
+    attrs: AttrBuilderContext<HTMLAnchorElement>? = null,
     content: @Composable () -> Unit
 ) {
     val injector = LocalInjector.current
@@ -51,6 +54,7 @@ fun NavigationLink(
                 }
             }
             classes(classes)
+            attrs?.invoke(this)
         }
     ) {
         content()

@@ -7,15 +7,14 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import com.caseyjbrooks.arkham.di.ArkhamInjector
 import com.caseyjbrooks.arkham.ui.ArkhamApp
-import com.caseyjbrooks.arkham.utils.navigation.NavigationLink
-import com.caseyjbrooks.arkham.utils.navigation.NavigationLinkBack
+import com.caseyjbrooks.arkham.utils.theme.bulma.Breadcrumbs
+import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaSection
+import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaSize
+import com.caseyjbrooks.arkham.utils.theme.bulma.Hero
+import com.caseyjbrooks.arkham.utils.theme.bulma.NavigationRoute
+import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayout
 import com.copperleaf.ballast.repository.cache.getCachedOrNull
-import com.copperleaf.ballast.repository.cache.isLoading
-import org.jetbrains.compose.web.dom.Div
-import org.jetbrains.compose.web.dom.Li
-import org.jetbrains.compose.web.dom.Span
 import org.jetbrains.compose.web.dom.Text
-import org.jetbrains.compose.web.dom.Ul
 
 object ScenarioDetailsUi {
     @Composable
@@ -27,30 +26,22 @@ object ScenarioDetailsUi {
     }
 
     @Composable
-    fun Content(state: ScenarioDetailsContract.State, postInput: (ScenarioDetailsContract.Inputs)->Unit) {
-        Text("Scenario Details")
-
-        Div(attrs = { classes("content") }) {
-            Ul {
-                Li {
-                    NavigationLink(ArkhamApp.Home) { Text("Home") }
-                }
-                Li {
-                    NavigationLink(ArkhamApp.Scenarios) { Text("Up") }
-                }
-                Li {
-                    NavigationLinkBack { Text("Back") }
-                }
-
-                if (state.scenario.isLoading()) {
-                    Li { Text("Loading") }
-                } else {
-                    state.scenario.getCachedOrNull()?.let { (expansion, scenario) ->
-                        Li {
-                            Li { NavigationLink(ArkhamApp.ExpansionDetails, expansion.name) { Text(expansion.name) } }
-                        }
-                        Li { Span { Text(scenario.name) } }
-                    }
+    fun Content(state: ScenarioDetailsContract.State, postInput: (ScenarioDetailsContract.Inputs) -> Unit) {
+        MainLayout(state.layout) {
+            state.scenario.getCachedOrNull()?.let { (expansion, scenario) ->
+                Hero(
+                    title = { Text(scenario.name) },
+                    subtitle = { Text(expansion.name) },
+                    size = BulmaSize.Small,
+                    classes = listOf("special"),
+                )
+                BulmaSection {
+                    Breadcrumbs(
+                        NavigationRoute("Home", null, ArkhamApp.Home),
+                        NavigationRoute("Expansions", null, ArkhamApp.Expansions),
+                        NavigationRoute(expansion.name, expansion.icon, ArkhamApp.ExpansionDetails, expansion.name),
+                        NavigationRoute(scenario.name, scenario.icon, ArkhamApp.ScenarioDetails, scenario.name),
+                    )
                 }
             }
         }

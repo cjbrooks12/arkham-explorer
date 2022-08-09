@@ -1,6 +1,7 @@
 package com.caseyjbrooks.arkham.ui.encountersets.detail
 
 import com.caseyjbrooks.arkham.repository.main.ArkhamExplorerRepository
+import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayoutState
 import com.copperleaf.ballast.InputHandler
 import com.copperleaf.ballast.InputHandlerScope
 import com.copperleaf.ballast.observeFlows
@@ -33,13 +34,18 @@ class EncounterSetDetailsInputHandler(
 
                                 encounterSetMatch!!
                             }
-                            .let { EncounterSetDetailsContract.Inputs.EncounterSetUpdated(it) }
+                            .let { EncounterSetDetailsContract.Inputs.EncounterSetUpdated(cached, it) }
                     }
             )
         }
 
         is EncounterSetDetailsContract.Inputs.EncounterSetUpdated -> {
-            updateState { it.copy(encounterSet = input.encounterSet) }
+            updateState {
+                it.copy(
+                    layout = MainLayoutState.fromCached(input.expansions),
+                    encounterSet = input.encounterSet,
+                )
+            }
         }
     }
 }

@@ -1,6 +1,7 @@
 package com.caseyjbrooks.arkham.ui.investigators.detail
 
 import com.caseyjbrooks.arkham.repository.main.ArkhamExplorerRepository
+import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayoutState
 import com.copperleaf.ballast.InputHandler
 import com.copperleaf.ballast.InputHandlerScope
 
@@ -10,10 +11,10 @@ class InvestigatorDetailsInputHandler(
     InvestigatorDetailsContract.Inputs,
     InvestigatorDetailsContract.Events,
     InvestigatorDetailsContract.State,
-    >  {
+    > {
     override suspend fun InputHandlerScope<InvestigatorDetailsContract.Inputs, InvestigatorDetailsContract.Events, InvestigatorDetailsContract.State>.handleInput(
         input: InvestigatorDetailsContract.Inputs
-    ) = when(input) {
+    ) = when (input) {
         is InvestigatorDetailsContract.Inputs.Initialize -> {
             updateState { it.copy(investigatorId = input.investigatorId) }
 //            observeFlows(
@@ -36,7 +37,12 @@ class InvestigatorDetailsInputHandler(
         }
 
         is InvestigatorDetailsContract.Inputs.InvestigatorUpdated -> {
-            updateState { it.copy(investigator = input.investigator) }
+            updateState {
+                it.copy(
+                    layout = MainLayoutState.fromCached(input.expansions),
+                    investigator = input.investigator,
+                )
+            }
         }
     }
 }

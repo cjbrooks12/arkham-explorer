@@ -1,6 +1,7 @@
 package com.caseyjbrooks.arkham.ui.expansions.detail
 
 import com.caseyjbrooks.arkham.repository.main.ArkhamExplorerRepository
+import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayoutState
 import com.copperleaf.ballast.InputHandler
 import com.copperleaf.ballast.InputHandlerScope
 import com.copperleaf.ballast.observeFlows
@@ -13,7 +14,7 @@ class ExpansionDetailsInputHandler(
     ExpansionDetailsContract.Inputs,
     ExpansionDetailsContract.Events,
     ExpansionDetailsContract.State,
-    >  {
+    > {
     override suspend fun InputHandlerScope<ExpansionDetailsContract.Inputs, ExpansionDetailsContract.Events, ExpansionDetailsContract.State>.handleInput(
         input: ExpansionDetailsContract.Inputs
     ) = when (input) {
@@ -38,7 +39,12 @@ class ExpansionDetailsInputHandler(
         }
 
         is ExpansionDetailsContract.Inputs.ExpansionUpdated -> {
-            updateState { it.copy(allExpansions = input.allExpansions, expansion = input.expansion) }
+            updateState {
+                it.copy(
+                    layout = MainLayoutState.fromCached(input.expansions),
+                    expansion = input.expansion
+                )
+            }
         }
     }
 }

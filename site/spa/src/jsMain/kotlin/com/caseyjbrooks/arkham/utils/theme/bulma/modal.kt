@@ -1,4 +1,4 @@
-package com.caseyjbrooks.arkham.ui.bulma
+package com.caseyjbrooks.arkham.utils.theme.bulma
 
 import androidx.compose.runtime.Composable
 import com.caseyjbrooks.arkham.utils.theme.El

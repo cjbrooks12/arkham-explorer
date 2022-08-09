@@ -7,15 +7,14 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import com.caseyjbrooks.arkham.di.ArkhamInjector
 import com.caseyjbrooks.arkham.ui.ArkhamApp
-import com.caseyjbrooks.arkham.utils.navigation.NavigationLink
-import com.caseyjbrooks.arkham.utils.navigation.NavigationLinkBack
+import com.caseyjbrooks.arkham.utils.theme.bulma.Breadcrumbs
+import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaSection
+import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaSize
+import com.caseyjbrooks.arkham.utils.theme.bulma.Hero
+import com.caseyjbrooks.arkham.utils.theme.bulma.NavigationRoute
+import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayout
 import com.copperleaf.ballast.repository.cache.getCachedOrNull
-import com.copperleaf.ballast.repository.cache.isLoading
-import org.jetbrains.compose.web.dom.Div
-import org.jetbrains.compose.web.dom.Li
-import org.jetbrains.compose.web.dom.Span
 import org.jetbrains.compose.web.dom.Text
-import org.jetbrains.compose.web.dom.Ul
 
 object EncounterSetDetailsUi {
     @Composable
@@ -29,27 +28,21 @@ object EncounterSetDetailsUi {
 
     @Composable
     fun Content(state: EncounterSetDetailsContract.State, postInput: (EncounterSetDetailsContract.Inputs) -> Unit) {
-        Text("Encounter Set Details")
-
-        Div(attrs = { classes("content") }) {
-            Ul {
-                Li {
-                    NavigationLink(ArkhamApp.Home) { Text("Home") }
-                }
-                Li {
-                    NavigationLink(ArkhamApp.EncounterSets) { Text("Up") }
-                }
-                Li {
-                    NavigationLinkBack { Text("Back") }
-                }
-
-                if (state.encounterSet.isLoading()) {
-                    Li { Text("Loading") }
-                } else {
-                    state.encounterSet.getCachedOrNull()?.let { (expansion, encounterSet) ->
-                        Li { NavigationLink(ArkhamApp.ExpansionDetails, expansion.name) { Text(expansion.name) } }
-                        Li { Span { Text(encounterSet.name) } }
-                    }
+        MainLayout(state.layout) {
+            state.encounterSet.getCachedOrNull()?.let { (expansion, encounterSet) ->
+                Hero(
+                    title = { Text(encounterSet.name) },
+                    subtitle = { Text(expansion.name) },
+                    size = BulmaSize.Small,
+                    classes = listOf("special"),
+                )
+                BulmaSection {
+                    Breadcrumbs(
+                        NavigationRoute("Home", null, ArkhamApp.Home),
+                        NavigationRoute("Expansions", null, ArkhamApp.Expansions),
+                        NavigationRoute(expansion.name, expansion.icon, ArkhamApp.ExpansionDetails, expansion.name),
+                        NavigationRoute(encounterSet.name, encounterSet.icon, ArkhamApp.EncounterSetDetails, encounterSet.name),
+                    )
                 }
             }
         }

@@ -1,14 +1,12 @@
 package com.caseyjbrooks.arkham.ui.home
 
-import com.caseyjbrooks.arkham.models.NavigationSection
+import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayoutState
 import com.copperleaf.arkham.models.ArkhamHorrorExpansion
 import com.copperleaf.ballast.repository.cache.Cached
 
 object HomeContract {
     data class State(
-        val expansions: Cached<List<ArkhamHorrorExpansion>> = Cached.NotLoaded(),
-        val startNavigation: Cached<List<NavigationSection>> = Cached.NotLoaded(),
-        val endNavigation: Cached<List<NavigationSection>> = Cached.NotLoaded(),
+        val layout: Cached<MainLayoutState> = Cached.NotLoaded(),
     )
 
     sealed class Inputs {

@@ -1,11 +1,12 @@
 package com.caseyjbrooks.arkham.ui.scenarios.list
 
+import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayoutState
 import com.copperleaf.arkham.models.ArkhamHorrorExpansion
 import com.copperleaf.ballast.repository.cache.Cached
 
 object ScenariosContract {
     data class State(
-        val expansions: Cached<List<ArkhamHorrorExpansion>> = Cached.NotLoaded()
+        val layout: Cached<MainLayoutState> = Cached.NotLoaded(),
     )
 
     sealed class Inputs {

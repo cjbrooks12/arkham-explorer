@@ -1,18 +1,20 @@
 package com.caseyjbrooks.arkham.ui.expansions.detail
 
+import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayoutState
 import com.copperleaf.arkham.models.ArkhamHorrorExpansion
 import com.copperleaf.ballast.repository.cache.Cached
 import com.copperleaf.ballast.repository.cache.getCachedOrNull
 
 object ExpansionDetailsContract {
     data class State(
+        val layout: Cached<MainLayoutState> = Cached.NotLoaded(),
         val expansionId: String = "",
-        val allExpansions: Cached<List<ArkhamHorrorExpansion>> = Cached.NotLoaded(),
         val expansion: Cached<ArkhamHorrorExpansion> = Cached.NotLoaded(),
     ) {
         fun getEncounterSetByName(name: String): ArkhamHorrorExpansion.EncounterSet {
-            return allExpansions
+            return layout
                 .getCachedOrNull()
+                ?.expansions
                 ?.asSequence()
                 ?.flatMap { it.encounterSets }
                 ?.filter { it.name == name }
@@ -24,8 +26,8 @@ object ExpansionDetailsContract {
     sealed class Inputs {
         data class Initialize(val expansionId: String) : Inputs()
         data class ExpansionUpdated(
-            val allExpansions: Cached<List<ArkhamHorrorExpansion>>,
-            val expansion: Cached<ArkhamHorrorExpansion>
+            val expansions: Cached<List<ArkhamHorrorExpansion>>,
+            val expansion: Cached<ArkhamHorrorExpansion>,
         ) : Inputs()
     }
 

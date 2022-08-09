@@ -17,5 +17,5 @@ object ArkhamApp : RoutingTable() {
     val EncounterSets = route("/encounter-sets")
     val EncounterSetDetails = route("/encounter-sets/{encounterSetId}")
 
-    val Resources = route("/resources")
+    val StaticPage = route("/pages/{slug}")
 }

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fafafa">
+  <link rel="manifest" href="{{baseUrl}}/manifest.json"/>
+
+  <link rel="stylesheet" href="{{baseUrl}}/bulmaswatch-lux.min.css">
+
+  <link rel="icon" type="image/png" href="{{baseUrl}}/favicon-32x32.png" sizes="32x32"/>
+  <link rel="icon" type="image/png" href="{{baseUrl}}/favicon-32x32.png" sizes="32x32"/>
+  <link rel="icon" type="image/png" href="{{baseUrl}}/favicon-16x16.png" sizes="16x16"/>
+  <link rel="shortcut icon" type="image/x-icon" href="{{baseUrl}}/favicon.ico"/>
+  <link rel="apple-touch-icon" href="{{baseUrl}}/favicon-192x192.png">
+
+  <!-- Start Single Page Apps for GitHub Pages -->
+  <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // MIT License
+      // https://github.com/rafgraph/spa-github-pages
+      // This script checks to see if a redirect is present in the query string,
+      // converts it back into the correct url and adds it to the
+      // browser's history using window.history.replaceState(...),
+      // which won't cause the browser to attempt to load the new url.
+      // When the single page app is loaded further down in this file,
+      // the correct url will be waiting in the browser's history for
+      // the single page app to route accordingly.
+      (function (l) {
+          if (l.search[1] === '/') {
+              var decoded = l.search.slice(1).split('&').map(function (s) {
+                  return s.replace(/~and~/g, '&')
+              }).join('?');
+              window.history.replaceState(null, null,
+                  l.pathname.slice(0, -1) + decoded + l.hash
+              );
+          }
+      }(window.location))
+  </script>
+  <!-- End Single Page Apps for GitHub Pages -->
+
+  <style>
+      html {
+          box-sizing: border-box;
+          overflow: -moz-scrollbars-vertical;
+          overflow-y: scroll;
+      }
+
+      *,
+      *:before,
+      *:after {
+          box-sizing: inherit;
+      }
+
+      body {
+          margin: 0;
+          background: #fafafa;
+      }
+
+      @font-face {
+          font-family: "Bolton";
+          src: url("{{baseUrl}}/assets/fonts/Bolton.ttf") format("truetype");
+          font-weight: normal;
+          font-style: normal;
+      }
+
+      @font-face {
+          font-family: "Bolton";
+          src: url("{{baseUrl}}/assets/fonts/BoltonBold.ttf") format("truetype");
+          font-weight: bold;
+          font-style: normal;
+      }
+
+      @font-face {
+          font-family: "Bolton";
+          src: url("{{baseUrl}}/assets/fonts/BoltonElongated.ttf") format("truetype");
+          font-weight: 100;
+          font-style: normal;
+      }
+
+      @font-face {
+          font-family: "Teutonic";
+          src: url("{{baseUrl}}/assets/fonts/Teutonic.ttf") format("truetype");
+          font-weight: normal;
+          font-style: normal;
+      }
+
+      .hero.special .title {
+          font-family: 'Teutonic', "Nunito Sans", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      }
+
+      .hero.special .subtitle {
+          font-family: 'Bolton', "Nunito Sans", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      }
+
+      .box.cta {
+          border-radius: 0;
+      }
+
+      .dynamic-svg.has-text-white * {
+          fill: #fff !important;
+      }
+
+      .dynamic-svg.has-text-success * {
+          fill: #4bbf73 !important;
+      }
+  </style>
+
+  <title>Arkham Explorer</title>
+</head>
+<body class="has-background-dark">
+<script src="{{baseUrl}}/spa.js"></script>
+</body>
+</html>

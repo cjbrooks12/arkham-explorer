@@ -22,6 +22,6 @@ fun Path.withFilenamePrefix(suffix: String): Path {
     return this.resolveSibling("$suffix$nameWithoutExtension.$extension")
 }
 
-fun Path.withPrefix(suffix: String): Path {
-    return Paths.get(suffix) / this
+fun Path.withPrefix(prefix: String): Path {
+    return Paths.get(prefix) / this
 }

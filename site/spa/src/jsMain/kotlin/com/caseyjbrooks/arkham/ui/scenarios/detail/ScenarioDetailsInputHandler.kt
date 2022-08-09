@@ -1,6 +1,7 @@
 package com.caseyjbrooks.arkham.ui.scenarios.detail
 
 import com.caseyjbrooks.arkham.repository.main.ArkhamExplorerRepository
+import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayoutState
 import com.copperleaf.ballast.InputHandler
 import com.copperleaf.ballast.InputHandlerScope
 import com.copperleaf.ballast.observeFlows
@@ -33,13 +34,18 @@ class ScenarioDetailsInputHandler(
 
                                 scenarioMatch!!
                             }
-                            .let { ScenarioDetailsContract.Inputs.ScenarioUpdated(it) }
+                            .let { ScenarioDetailsContract.Inputs.ScenarioUpdated(cached, it) }
                     }
             )
         }
 
         is ScenarioDetailsContract.Inputs.ScenarioUpdated -> {
-            updateState { it.copy(scenario = input.scenario) }
+            updateState {
+                it.copy(
+                    layout = MainLayoutState.fromCached(input.expansions),
+                    scenario = input.scenario,
+                )
+            }
         }
     }
 }

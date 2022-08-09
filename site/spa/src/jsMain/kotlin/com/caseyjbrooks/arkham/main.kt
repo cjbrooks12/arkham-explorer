@@ -10,8 +10,6 @@ fun main() {
         window.addEventListener("load", {
             window.navigator.serviceWorker
                 .register("${BuildConfig.BASE_URL}/spa.js")
-                .then { res -> console.log("service worker registered") }
-                .catch { err -> console.log("service worker not registered", err) }
         })
 
         val params = URLSearchParams(window.location.search)
@@ -24,10 +22,8 @@ fun main() {
         }
     } catch (t: Throwable) {
         self.addEventListener("install", { event ->
-            console.log("Service Worker installed!")
         })
         self.addEventListener("activate", { event ->
-            console.log("Service Worker is now active!")
         })
 
         serviceWorkerMain()

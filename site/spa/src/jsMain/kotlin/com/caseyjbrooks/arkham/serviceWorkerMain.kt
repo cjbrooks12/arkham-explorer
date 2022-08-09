@@ -13,7 +13,6 @@ fun serviceWorkerMain() {
     val CACHE_NAME = "arkham-explorer-v1"
 
     self.oninstall = { event ->
-        console.log("service worker: install")
         val installEvent = event as InstallEvent
         installEvent.waitUntil(
             self
@@ -31,14 +30,9 @@ fun serviceWorkerMain() {
                         )
                     )
                 }
-                .then(
-                    onFulfilled = { console.log("install complete"); return@then it },
-                    onRejected = { err -> console.log("failed to open cache", err) }
-                )
         )
     }
     self.onactivate = { event ->
-        console.log("service worker: activate")
         val activateEvent = event as ExtendableEvent
 
         activateEvent
@@ -55,10 +49,6 @@ fun serviceWorkerMain() {
                                 }
                             }
                     }
-                    .then(
-                        onFulfilled = { console.log("activate complete"); return@then it },
-                        onRejected = { err -> console.log("failed to clear caches on activate", err) }
-                    )
             )
 
         Unit
@@ -77,10 +67,7 @@ fun serviceWorkerMain() {
                     cache
                         .match(request)
                         .then { cachedResponse ->
-                            (cachedResponse as Response?)?.also {
-                                console.log("serving ${request.url} from cache")
-                            } ?: run {
-                                console.log("fetching ${request.url} from network")
+                            (cachedResponse as Response?) ?: run {
                                 self
                                     .fetch(request)
                                     .then { fetchedResponse ->
@@ -90,10 +77,6 @@ fun serviceWorkerMain() {
                             }
                         }
                 }
-                .then(
-                    onFulfilled = { return@then it },
-                    onRejected = { err -> console.log("failed to fetch response", err) }
-                )
         }
     }
 }

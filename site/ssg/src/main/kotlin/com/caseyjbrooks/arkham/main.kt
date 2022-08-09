@@ -9,9 +9,9 @@ import com.caseyjbrooks.arkham.site.BuildConfig
 import com.caseyjbrooks.arkham.stages.assets.CopyOtherAssets
 import com.caseyjbrooks.arkham.stages.assets.RasterizeSvgs
 import com.caseyjbrooks.arkham.stages.config.ConfigStage
+import com.caseyjbrooks.arkham.stages.content.StaticContent
 import com.caseyjbrooks.arkham.stages.copyscripts.CopyScripts
 import com.caseyjbrooks.arkham.stages.expansiondata.FetchExpansionData
-import com.caseyjbrooks.arkham.stages.mainpages.GenerateMainPages
 import com.caseyjbrooks.arkham.stages.meta.Favicons
 import com.caseyjbrooks.arkham.stages.meta.RobotsTxt
 import com.caseyjbrooks.arkham.stages.meta.Sitemap
@@ -33,7 +33,7 @@ fun main(): Unit = runBlocking {
         Favicons(),
         RobotsTxt(),
         Sitemap(),
-        GenerateMainPages(),
+        StaticContent(),
         RasterizeSvgs(),
         CopyOtherAssets(),
         CopyScripts(),
