@@ -64,6 +64,10 @@ class HomeInputHandler(
                                 "Resources",
                                 NavigationRoute("Resources", ArkhamApp.Resources),
                             ),
+                            NavigationSection(
+                                "API",
+                                NavigationRoute("API", ArkhamApp.Resources),
+                            ),
                         )
                     }
                 )

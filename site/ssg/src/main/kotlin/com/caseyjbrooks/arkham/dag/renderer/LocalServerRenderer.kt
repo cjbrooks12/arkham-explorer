@@ -103,6 +103,7 @@ class LocalServerRenderer(val port: Int) : Renderer {
             extension == "js" -> ContentType.Text.JavaScript
             extension == "txt" -> ContentType.Text.Any
             extension == "xml" -> ContentType.Text.Xml
+            extension == "css" -> ContentType.Text.CSS
             else -> null
         }
     }

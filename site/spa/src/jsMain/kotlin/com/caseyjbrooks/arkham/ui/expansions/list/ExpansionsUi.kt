@@ -19,6 +19,11 @@ import org.jetbrains.compose.web.dom.Ul
 
 object ExpansionsUi {
     @Composable
+    fun Head(injector: ArkhamInjector) {
+
+    }
+
+    @Composable
     fun Content(injector: ArkhamInjector) {
         val coroutineScope = rememberCoroutineScope()
         val vm = remember(coroutineScope, injector) { injector.expansionsViewModel(coroutineScope) }

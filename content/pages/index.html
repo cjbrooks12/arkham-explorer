@@ -2,9 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Arkham Explorer</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fafafa">
+    <link rel="manifest" href="{{baseUrl}}/manifest.json" />
 
+    <link rel="stylesheet" href="{{baseUrl}}/bulmaswatch-lux.min.css">
+
+    <link rel="icon" type="image/png" href="{{baseUrl}}/favicon-32x32.png" sizes="32x32"/>
     <link rel="icon" type="image/png" href="{{baseUrl}}/favicon-32x32.png" sizes="32x32"/>
     <link rel="icon" type="image/png" href="{{baseUrl}}/favicon-16x16.png" sizes="16x16"/>
     <link rel="shortcut icon" type="image/x-icon" href="{{baseUrl}}/favicon.ico"/>
@@ -52,18 +56,37 @@
             margin: 0;
             background: #fafafa;
         }
+
+        @font-face {
+            font-family: "Bolton";
+            src: url("{{baseUrl}}/assets/fonts/Bolton.ttf") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: "Bolton";
+            src: url("{{baseUrl}}/assets/fonts/BoltonBold.ttf") format("truetype");
+            font-weight: bold;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: "Bolton";
+            src: url("{{baseUrl}}/assets/fonts/BoltonElongated.ttf") format("truetype");
+            font-weight: 100;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: "Teutonic";
+            src: url("{{baseUrl}}/assets/fonts/Teutonic.ttf") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+        }
     </style>
 
-    <link rel="manifest" href="{{baseUrl}}/manifest.json" />
+    <title>Arkham Explorer</title>
 </head>
 <body>
-<div id="root"></div>
-<!--<div class="columns p-5">-->
-<!--    <div class="column">-->
-<!--        <div class="columns is-desktop">-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
 <script src="{{baseUrl}}/spa.js"></script>
 </body>
 </html>
