@@ -10,8 +10,11 @@ import com.caseyjbrooks.arkham.ui.ArkhamApp
 import com.caseyjbrooks.arkham.utils.theme.bulma.Breadcrumbs
 import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaSection
 import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaSize
+import com.caseyjbrooks.arkham.utils.theme.bulma.Column
 import com.caseyjbrooks.arkham.utils.theme.bulma.Hero
 import com.caseyjbrooks.arkham.utils.theme.bulma.NavigationRoute
+import com.caseyjbrooks.arkham.utils.theme.bulma.Panel
+import com.caseyjbrooks.arkham.utils.theme.bulma.Row
 import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayout
 import com.copperleaf.ballast.repository.cache.getCachedOrNull
 import org.jetbrains.compose.web.dom.Text
@@ -20,7 +23,12 @@ object ExpansionDetailsUi {
     @Composable
     fun Content(injector: ArkhamInjector, expansionId: String) {
         val coroutineScope = rememberCoroutineScope()
-        val vm = remember(coroutineScope, injector) { injector.expansionDetailsViewModel(coroutineScope, expansionId) }
+        val vm = remember(coroutineScope, injector, expansionId) {
+            injector.expansionDetailsViewModel(
+                coroutineScope,
+                expansionId
+            )
+        }
         val vmState by vm.observeStates().collectAsState()
         Content(vmState) { vm.trySend(it) }
     }
@@ -41,6 +49,60 @@ object ExpansionDetailsUi {
                         NavigationRoute("Expansions", null, ArkhamApp.Expansions),
                         NavigationRoute(expansion.name, expansion.icon, ArkhamApp.ExpansionDetails, expansion.name),
                     )
+                }
+
+                BulmaSection {
+                    Row {
+                        Column {
+                            Panel(
+                                title = "Scenarios",
+                                *expansion
+                                    .scenarios
+                                    .map { scenario ->
+                                        NavigationRoute(
+                                            name = scenario.name,
+                                            iconUrl = scenario.icon,
+                                            route = ArkhamApp.ScenarioDetails,
+                                            params = arrayOf(scenario.name)
+                                        )
+                                    }
+                                    .toTypedArray()
+                            )
+                        }
+                        Column {
+                            Panel(
+                                title = "Encounter Sets",
+                                *expansion
+                                    .encounterSets
+                                    .map { encounterSet ->
+                                        NavigationRoute(
+                                            name = encounterSet.name,
+                                            iconUrl = encounterSet.icon,
+                                            route = ArkhamApp.EncounterSetDetails,
+                                            params = arrayOf(encounterSet.name)
+                                        )
+                                    }
+                                    .toTypedArray()
+                            )
+                        }
+                    }
+                    Row {
+                        Column {
+                            Panel(
+                                title = "Investigators",
+                            )
+                        }
+                        Column {
+                            Panel(
+                                title = "Products",
+                            )
+                        }
+                        Column {
+                            Panel(
+                                title = "Tools",
+                            )
+                        }
+                    }
                 }
             }
         }

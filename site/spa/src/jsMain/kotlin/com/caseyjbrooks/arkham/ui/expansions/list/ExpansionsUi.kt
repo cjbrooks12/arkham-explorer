@@ -16,10 +16,6 @@ import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayout
 import org.jetbrains.compose.web.dom.Text
 
 object ExpansionsUi {
-    @Composable
-    fun Head(injector: ArkhamInjector) {
-
-    }
 
     @Composable
     fun Content(injector: ArkhamInjector) {

@@ -21,7 +21,7 @@ object InvestigatorDetailsUi {
     fun Content(injector: ArkhamInjector, investigatorId: String) {
         val coroutineScope = rememberCoroutineScope()
         val vm =
-            remember(coroutineScope, injector) { injector.investigatorDetailsViewModel(coroutineScope, investigatorId) }
+            remember(coroutineScope, injector, investigatorId) { injector.investigatorDetailsViewModel(coroutineScope, investigatorId) }
         val vmState by vm.observeStates().collectAsState()
         Content(vmState) { vm.trySend(it) }
     }

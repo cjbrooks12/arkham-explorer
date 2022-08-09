@@ -20,8 +20,7 @@ object EncounterSetDetailsUi {
     @Composable
     fun Content(injector: ArkhamInjector, encounterSetId: String) {
         val coroutineScope = rememberCoroutineScope()
-        val vm =
-            remember(coroutineScope, injector) { injector.encounterSetDetailsViewModel(coroutineScope, encounterSetId) }
+        val vm = remember(coroutineScope, injector, encounterSetId) { injector.encounterSetDetailsViewModel(coroutineScope, encounterSetId) }
         val vmState by vm.observeStates().collectAsState()
         Content(vmState) { vm.trySend(it) }
     }

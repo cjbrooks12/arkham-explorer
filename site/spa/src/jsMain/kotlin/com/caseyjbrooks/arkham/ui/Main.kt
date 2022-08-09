@@ -1,10 +1,10 @@
 package com.caseyjbrooks.arkham.ui
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.staticCompositionLocalOf
 import com.caseyjbrooks.arkham.di.ArkhamInjector
 import com.caseyjbrooks.arkham.ui.cards.CustomCardsDesignerUi
@@ -33,15 +33,19 @@ fun MainApplication(injector: ArkhamInjector) {
     val routerVm = remember { injector.routerViewModel() }
     val routerVmState by routerVm.observeStates().collectAsState()
 
-    val coroutineScope = rememberCoroutineScope()
-    val vm = remember(coroutineScope, injector) { injector.homeViewModel(coroutineScope) }
-    val vmState by vm.observeStates().collectAsState()
+    LaunchedEffect(routerVmState) {
+        println("router state changed")
+    }
+    val destination = routerVmState.currentDestinationOrNotFound
+    LaunchedEffect(destination) {
+        println("destination changed")
+    }
 
-    when (val destination = routerVmState.currentDestinationOrNotFound) {
+    when (destination) {
         is Destination -> {
             when (destination.originalRoute) {
                 ArkhamApp.Home -> {
-                    HomeUi.Content(vmState) { vm.trySend(it) }
+                    HomeUi.Content(injector)
                 }
 
                 ArkhamApp.Expansions -> {
@@ -98,15 +102,19 @@ fun MainApplication(injector: ArkhamInjector) {
                 ArkhamApp.Tools -> {
                     ToolsUi.Content(injector)
                 }
+
                 ArkhamApp.ChaosBagSimulator -> {
                     ChaosBagSimulatorUi.Content(injector)
                 }
+
                 ArkhamApp.DividersGenerator -> {
                     DividersGeneratorUi.Content(injector)
                 }
+
                 ArkhamApp.TuckboxGenerator -> {
                     TuckboxGeneratorUi.Content(injector)
                 }
+
                 ArkhamApp.CustomCards -> {
                     CustomCardsDesignerUi.Content(injector)
                 }

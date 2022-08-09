@@ -20,7 +20,7 @@ object ScenarioDetailsUi {
     @Composable
     fun Content(injector: ArkhamInjector, scenarioId: String) {
         val coroutineScope = rememberCoroutineScope()
-        val vm = remember(coroutineScope, injector) { injector.scenarioDetailsViewModel(coroutineScope, scenarioId) }
+        val vm = remember(coroutineScope, injector, scenarioId) { injector.scenarioDetailsViewModel(coroutineScope, scenarioId) }
         val vmState by vm.observeStates().collectAsState()
         Content(vmState) { vm.trySend(it) }
     }

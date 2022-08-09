@@ -35,6 +35,7 @@ fun NavigationLink(
     vararg pathParameters: String,
     classes: List<String> = emptyList(),
     attrs: AttrBuilderContext<HTMLAnchorElement>? = null,
+    onClicked: ()->Unit = { },
     content: @Composable () -> Unit
 ) {
     val injector = LocalInjector.current
@@ -52,6 +53,7 @@ fun NavigationLink(
                     it.stopPropagation()
                     router.trySend(RouterContract.Inputs.GoToDestination(navLink))
                 }
+                onClicked()
             }
             classes(classes)
             attrs?.invoke(this)

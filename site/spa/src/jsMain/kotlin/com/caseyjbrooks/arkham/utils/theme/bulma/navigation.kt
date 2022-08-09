@@ -52,7 +52,11 @@ fun MainNavBar(
             Div(attrs = {
                 classes("navbar-brand")
             }) {
-                NavigationLink(homeRoute, classes = listOf("navbar-item")) {
+                NavigationLink(
+                    homeRoute,
+                    classes = listOf("navbar-item"),
+                    onClicked = { mobileNavbarOpen = false },
+                ) {
                     Img(
                         attrs = {
                             attr("height", "28")
@@ -72,7 +76,9 @@ fun MainNavBar(
                         attr("aria-label", "menu")
                         attr("aria-expanded", "false")
                         attr("data-target", "navbarMain")
-                        onClick { mobileNavbarOpen = !mobileNavbarOpen }
+                        onClick {
+                            mobileNavbarOpen = !mobileNavbarOpen
+                        }
                     }
                 ) {
                     Span(attrs = { attr("aria-hidden", "true") })
@@ -92,12 +98,12 @@ fun MainNavBar(
                 Div(attrs = {
                     classes("navbar-start")
                 }) {
-                    NavbarSection(startNavigation)
+                    NavbarSection(startNavigation) { mobileNavbarOpen = false }
                 }
                 Div(attrs = {
                     classes("navbar-end")
                 }) {
-                    NavbarSection(endNavigation)
+                    NavbarSection(endNavigation) { mobileNavbarOpen = false }
                 }
             }
         }
@@ -107,6 +113,7 @@ fun MainNavBar(
 @Composable
 fun NavbarSection(
     sections: List<NavigationSection>,
+    onLinkClicked: ()->Unit,
 ) {
     sections.forEach { section ->
         if (section.routes.size == 1) {
@@ -115,6 +122,7 @@ fun NavbarSection(
                 route = navigationRoute.route,
                 pathParameters = navigationRoute.params,
                 classes = listOf("navbar-item"),
+                onClicked = onLinkClicked,
             ) {
 //                if (navigationRoute.iconUrl != null) {
 //                    Span({ classes("icon", "is-small") }) {
@@ -147,16 +155,11 @@ fun NavbarSection(
                             route = navigationRoute.route,
                             pathParameters = navigationRoute.params,
                             classes = listOf("navbar-item"),
+                            onClicked = {
+                                isExpanded = false
+                                onLinkClicked()
+                            },
                         ) {
-//                            if (navigationRoute.iconUrl != null) {
-//                                Span({
-//                                    classes("icon", "is-small")
-//                                }) {
-//                                    Icon(navigationRoute.iconUrl) {
-//                                        classes("has-text-white")
-//                                    }
-//                                }
-//                            }
                             Text(navigationRoute.name)
                         }
                     }
@@ -182,7 +185,7 @@ fun Breadcrumbs(
                             route = navigationRoute.route,
                             pathParameters = navigationRoute.params,
                             attrs = { attr("aria-current", "page") },
-                            classes = listOf("has-text-white")
+                            classes = listOf("has-text-white"),
                         ) {
                             if (navigationRoute.iconUrl != null) {
                                 Span({ classes("icon", "is-small"); style { width(auto) } }) {

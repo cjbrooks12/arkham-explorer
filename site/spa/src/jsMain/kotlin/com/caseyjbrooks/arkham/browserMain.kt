@@ -22,53 +22,7 @@ import org.w3c.dom.HTMLDivElement
 import org.w3c.dom.HTMLHeadElement
 import org.w3c.dom.get
 
-
-/**
- * Use this method to mount the composition at the [HTMLBodyElement] of the current document
- *
- * @param content - the Composable lambda that defines the composition content
- *
- * @return the instance of the [Composition]
- */
-fun renderComposableInHead(
-    content: @Composable DOMScope<HTMLHeadElement>.() -> Unit
-): Composition = renderComposable(
-    root = document.getElementsByTagName("head")[0] as HTMLHeadElement,
-    content = content
-)
-
-private val Title: ElementBuilder<HTMLDivElement> = ElementBuilderImplementation2("title")
-
-private open class ElementBuilderImplementation2<TElement : Element>(private val tagName: String) :
-    ElementBuilder<TElement> {
-    private val el: Element by lazy { document.createElement(tagName) }
-
-    @Suppress("UNCHECKED_CAST")
-    override fun create(): TElement = el.cloneNode() as TElement
-}
-
-@Composable
-fun Title(
-    attrs: AttrBuilderContext<HTMLDivElement>? = null,
-    content: ContentBuilder<HTMLDivElement>? = null
-) {
-    TagElement(
-        elementBuilder = Title,
-        applyAttrs = attrs,
-        content = content
-    )
-}
-
 fun browserMain(isPwa: Boolean) {
-    renderComposableInHead {
-        val applicationScope = rememberCoroutineScope()
-        val injector: ArkhamInjector = remember(applicationScope, isPwa) { ArkhamInjectorImpl(applicationScope, isPwa) }
-
-        ArkhamTheme(injector) {
-
-        }
-    }
-
     renderComposableInBody {
         val applicationScope = rememberCoroutineScope()
         val injector: ArkhamInjector = remember(applicationScope, isPwa) { ArkhamInjectorImpl(applicationScope, isPwa) }

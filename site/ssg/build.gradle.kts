@@ -64,6 +64,6 @@ buildConfig {
     } else {
         buildConfigField("Boolean", "DEBUG", "true")
         buildConfigField("String", "BASE_URL", "\"http://localhost:8080\"")
-        buildConfigField("String?", "BASE_PATH", "\"/arkham-explorer\"")
+        buildConfigField("String?", "BASE_PATH", "null")
     }
 }

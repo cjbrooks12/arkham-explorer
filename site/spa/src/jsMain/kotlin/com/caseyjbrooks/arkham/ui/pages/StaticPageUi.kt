@@ -22,7 +22,7 @@ object StaticPageUi {
     @Composable
     fun Content(injector: ArkhamInjector, slug: String) {
         val coroutineScope = rememberCoroutineScope()
-        val vm = remember(coroutineScope, injector) { injector.staticPageViewModel(coroutineScope, slug) }
+        val vm = remember(coroutineScope, injector, slug) { injector.staticPageViewModel(coroutineScope, slug) }
         val vmState by vm.observeStates().collectAsState()
         Content(vmState) { vm.trySend(it) }
     }
