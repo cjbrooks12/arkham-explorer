@@ -1,5 +1,6 @@
 package com.caseyjbrooks.arkham.repository.main
 
+import com.copperleaf.arkham.models.ArkhamExplorerStaticPage
 import com.copperleaf.arkham.models.ArkhamHorrorExpansion
 import com.copperleaf.ballast.repository.cache.Cached
 
@@ -8,23 +9,18 @@ object ArkhamExplorerContract {
         val initialized: Boolean = false,
 
         val expansionsInitialized: Boolean = false,
-        val expansions: Cached<List<ArkhamHorrorExpansion>> = Cached.NotLoaded()
+        val expansions: Cached<List<ArkhamHorrorExpansion>> = Cached.NotLoaded(),
+
+        val staticPageContentInitialized: Map<String, Boolean> = emptyMap(),
+        val staticPageContent: Map<String, Cached<ArkhamExplorerStaticPage>> = emptyMap()
     )
-//    {
-//        val encounterSets: List<Pair<ArkhamHorrorExpansion.EncounterSets, List<ArkhamHorrorExpansion.Scenarios>>> =
-//            expansions
-//                .flatMap { expansion ->
-//                    expansion.encounterSets.map { encounterSet ->
-//                        encounterSet to expansions
-//                            .flatMap { it.scenarios }
-//                            .filter { scenario -> scenario.encounterSets.any { it.name == encounterSet.name } }
-//                    }
-//                }
-//    }
 
     sealed class Inputs {
         object Initialize : Inputs()
         data class RefreshExpansions(val forceRefresh: Boolean) : Inputs()
         data class ExpansionsUpdated(val expansions: Cached<List<ArkhamHorrorExpansion>>) : Inputs()
+
+        data class RefreshStaticPageContent(val forceRefresh: Boolean, val slug: String) : Inputs()
+        data class StaticPageContentUpdated(val slug: String, val content: Cached<ArkhamExplorerStaticPage>) : Inputs()
     }
 }

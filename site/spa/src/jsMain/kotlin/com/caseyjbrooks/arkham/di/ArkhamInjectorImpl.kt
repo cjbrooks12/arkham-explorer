@@ -29,6 +29,9 @@ import com.caseyjbrooks.arkham.ui.investigators.detail.InvestigatorDetailsViewMo
 import com.caseyjbrooks.arkham.ui.investigators.list.InvestigatorsContract
 import com.caseyjbrooks.arkham.ui.investigators.list.InvestigatorsInputHandler
 import com.caseyjbrooks.arkham.ui.investigators.list.InvestigatorsViewModel
+import com.caseyjbrooks.arkham.ui.pages.StaticPageContract
+import com.caseyjbrooks.arkham.ui.pages.StaticPageInputHandler
+import com.caseyjbrooks.arkham.ui.pages.StaticPageViewModel
 import com.caseyjbrooks.arkham.ui.scenarios.detail.ScenarioDetailsContract
 import com.caseyjbrooks.arkham.ui.scenarios.detail.ScenarioDetailsInputHandler
 import com.caseyjbrooks.arkham.ui.scenarios.detail.ScenarioDetailsViewModel
@@ -247,6 +250,22 @@ class ArkhamInjectorImpl(
                     this += BootstrapInterceptor { EncounterSetDetailsContract.Inputs.Initialize(encounterSetId) }
                 },
             inputHandler = EncounterSetDetailsInputHandler(
+                repository = arkhamExplorerRepository
+            ),
+        )
+    }
+
+    override fun staticPageViewModel(
+        coroutineScope: CoroutineScope,
+        slug: String,
+    ): StaticPageViewModel {
+        return StaticPageViewModel(
+            coroutineScope = coroutineScope,
+            configBuilder = defaultConfigBuilder()
+                .apply {
+                    this += BootstrapInterceptor { StaticPageContract.Inputs.Initialize(slug) }
+                },
+            inputHandler = StaticPageInputHandler(
                 repository = arkhamExplorerRepository
             ),
         )

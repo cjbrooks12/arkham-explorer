@@ -116,11 +116,13 @@ fun NavbarSection(
                 pathParameters = navigationRoute.params,
                 classes = listOf("navbar-item"),
             ) {
-                if (navigationRoute.iconUrl != null) {
-                    Span({ classes("icon", "is-small") }) {
-                        Icon(navigationRoute.iconUrl)
-                    }
-                }
+//                if (navigationRoute.iconUrl != null) {
+//                    Span({ classes("icon", "is-small") }) {
+//                        Icon(navigationRoute.iconUrl) {
+//                            classes("has-text-white")
+//                        }
+//                    }
+//                }
                 Text(section.name)
             }
         } else {
@@ -146,13 +148,15 @@ fun NavbarSection(
                             pathParameters = navigationRoute.params,
                             classes = listOf("navbar-item"),
                         ) {
-                            if (navigationRoute.iconUrl != null) {
-                                Span({
-                                    classes("icon", "is-small")
-                                }) {
-                                    Icon(navigationRoute.iconUrl)
-                                }
-                            }
+//                            if (navigationRoute.iconUrl != null) {
+//                                Span({
+//                                    classes("icon", "is-small")
+//                                }) {
+//                                    Icon(navigationRoute.iconUrl) {
+//                                        classes("has-text-white")
+//                                    }
+//                                }
+//                            }
                             Text(navigationRoute.name)
                         }
                     }

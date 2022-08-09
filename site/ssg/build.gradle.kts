@@ -40,6 +40,7 @@ dependencies {
     implementation("com.twelvemonkeys.imageio:imageio-bmp:3.8.2")
     implementation("org.jsoup:jsoup:1.15.2")
     implementation("commons-codec:commons-codec:1.15")
+    implementation("com.vladsch.flexmark:flexmark-all:0.64.0")
 
     implementation("io.ktor:ktor-server-core:2.0.3")
     implementation("io.ktor:ktor-server-cio:2.0.3")

@@ -10,6 +10,7 @@ import com.caseyjbrooks.arkham.ui.expansions.list.ExpansionsViewModel
 import com.caseyjbrooks.arkham.ui.home.HomeViewModel
 import com.caseyjbrooks.arkham.ui.investigators.detail.InvestigatorDetailsViewModel
 import com.caseyjbrooks.arkham.ui.investigators.list.InvestigatorsViewModel
+import com.caseyjbrooks.arkham.ui.pages.StaticPageViewModel
 import com.caseyjbrooks.arkham.ui.scenarios.detail.ScenarioDetailsViewModel
 import com.caseyjbrooks.arkham.ui.scenarios.list.ScenariosViewModel
 import com.caseyjbrooks.arkham.utils.navigation.NavigationLinkStrategy
@@ -35,4 +36,6 @@ interface ArkhamInjector {
 
     fun encounterSetsViewModel(coroutineScope: CoroutineScope): EncounterSetsViewModel
     fun encounterSetDetailsViewModel(coroutineScope: CoroutineScope, encounterSetId: String): EncounterSetDetailsViewModel
+
+    fun staticPageViewModel(coroutineScope: CoroutineScope, slug: String): StaticPageViewModel
 }

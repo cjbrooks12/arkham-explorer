@@ -59,10 +59,10 @@ fun Title(
     )
 }
 
-fun browserMain() {
+fun browserMain(isPwa: Boolean) {
     renderComposableInHead {
         val applicationScope = rememberCoroutineScope()
-        val injector: ArkhamInjector = remember(applicationScope) { ArkhamInjectorImpl(applicationScope, false) }
+        val injector: ArkhamInjector = remember(applicationScope, isPwa) { ArkhamInjectorImpl(applicationScope, isPwa) }
 
         ArkhamTheme(injector) {
 
@@ -71,7 +71,7 @@ fun browserMain() {
 
     renderComposableInBody {
         val applicationScope = rememberCoroutineScope()
-        val injector: ArkhamInjector = remember(applicationScope) { ArkhamInjectorImpl(applicationScope, false) }
+        val injector: ArkhamInjector = remember(applicationScope, isPwa) { ArkhamInjectorImpl(applicationScope, isPwa) }
 
         ArkhamTheme(injector) {
             MainApplication(injector)

@@ -1,6 +1,7 @@
 package com.caseyjbrooks.arkham.stages.content
 
 import com.caseyjbrooks.arkham.dag.DependencyGraphBuilder
+import com.caseyjbrooks.arkham.dag.http.prettyJson
 import com.caseyjbrooks.arkham.dag.path.InputPathNode
 import com.caseyjbrooks.arkham.dag.path.StartPathNode
 import com.caseyjbrooks.arkham.dag.path.TerminalPathNode
@@ -9,10 +10,15 @@ import com.caseyjbrooks.arkham.utils.destruct1
 import com.caseyjbrooks.arkham.utils.getOutputExtension
 import com.caseyjbrooks.arkham.utils.processByExtension
 import com.caseyjbrooks.arkham.utils.withExtension
+import com.caseyjbrooks.arkham.utils.withPrefix
+import com.copperleaf.arkham.models.ArkhamExplorerStaticPage
+import kotlinx.serialization.ExperimentalSerializationApi
+import kotlinx.serialization.json.encodeToStream
 import kotlin.io.path.extension
+import kotlin.io.path.nameWithoutExtension
 import kotlin.io.path.readText
 
-class StaticContent : DependencyGraphBuilder {
+class StaticPages : DependencyGraphBuilder {
     private var startIteration = Int.MIN_VALUE
     override suspend fun DependencyGraphBuilder.Scope.buildGraph() {
         if (graph.containsNode { it is SiteConfigNode } && startIteration == Int.MIN_VALUE) {
@@ -29,23 +35,24 @@ class StaticContent : DependencyGraphBuilder {
         val siteConfigNode = graph.getNodeOfType<SiteConfigNode>()
         graph
             .resourceService
-            .getFilesInDirs(graph.config.staticDir)
+            .getFilesInDirs(graph.config.pagesDir)
             .forEach { inputPath ->
                 addNodeAndEdge(
                     start = siteConfigNode,
                     newEndNode = StartPathNode(
-                        baseInputDir = graph.config.staticDir,
+                        baseInputDir = graph.config.pagesDir,
                         inputPath = inputPath,
-                        tags = listOf("StaticContent", "input"),
+                        tags = listOf("StaticPages", "input"),
                     )
                 )
             }
     }
 
+    @OptIn(ExperimentalSerializationApi::class)
     private suspend fun DependencyGraphBuilder.Scope.createOutputFiles() {
         graph
             .getNodesOfType<InputPathNode> {
-                it.meta.tags == listOf("StaticContent", "input")
+                it.meta.tags == listOf("StaticPages", "input")
             }
             .forEach { inputNodeQuery ->
                 val outputPath = inputNodeQuery.inputPath.withExtension(
@@ -55,13 +62,20 @@ class StaticContent : DependencyGraphBuilder {
                     start = inputNodeQuery,
                     newEndNode = TerminalPathNode(
                         baseOutputDir = graph.config.outputDir,
-                        outputPath = outputPath,
-                        tags = listOf("StaticContent", "output"),
+                        outputPath = outputPath.withPrefix("pages").withExtension("json"),
+                        tags = listOf("StaticPages", "output"),
                         doRender = { inputNodes, os ->
                             val (sourceContentFile) = inputNodes.destruct1<InputPathNode>()
                             val sourceText = sourceContentFile.realInputFile().readText()
                             val outputText = processByExtension(sourceText, sourceContentFile.inputPath.extension)
-                            os.write(outputText.toByteArray())
+
+                            val staticPageJson = ArkhamExplorerStaticPage(
+                                title = sourceContentFile.inputPath.nameWithoutExtension,
+                                slug = sourceContentFile.inputPath.nameWithoutExtension,
+                                content = outputText,
+                            )
+
+                            prettyJson.encodeToStream(ArkhamExplorerStaticPage.serializer(), staticPageJson, os)
                         },
                     ),
                 )

@@ -6,6 +6,7 @@ import com.copperleaf.ballast.InputHandlerScope
 import com.copperleaf.ballast.observeFlows
 import com.copperleaf.ballast.repository.bus.EventBus
 import com.copperleaf.ballast.repository.bus.observeInputsFromBus
+import com.copperleaf.ballast.repository.cache.Cached
 import com.copperleaf.ballast.repository.cache.fetchWithCache
 
 class ArkhamExplorerInputHandler(
@@ -52,6 +53,21 @@ class ArkhamExplorerInputHandler(
 
         is ArkhamExplorerContract.Inputs.ExpansionsUpdated -> {
             updateState { it.copy(expansions = input.expansions) }
+        }
+
+        is ArkhamExplorerContract.Inputs.RefreshStaticPageContent -> {
+            updateState { it.copy(staticPageContentInitialized = it.staticPageContentInitialized + (input.slug to true)) }
+            fetchWithCache(
+                input = input,
+                forceRefresh = input.forceRefresh,
+                getValue = { it.staticPageContent[input.slug] ?: Cached.NotLoaded() },
+                updateState = { ArkhamExplorerContract.Inputs.StaticPageContentUpdated(input.slug, it) },
+                doFetch = { api.getStaticPageContent(input.slug) },
+            )
+        }
+
+        is ArkhamExplorerContract.Inputs.StaticPageContentUpdated -> {
+            updateState { it.copy(staticPageContent = it.staticPageContent + (input.slug to input.content)) }
         }
     }
 }

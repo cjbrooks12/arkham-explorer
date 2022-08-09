@@ -15,11 +15,7 @@ fun main() {
         val params = URLSearchParams(window.location.search)
         val source = params.get("source")
 
-        if (source == "pwa") {
-            pwaMain()
-        } else {
-            browserMain()
-        }
+        browserMain(isPwa = source == "pwa")
     } catch (t: Throwable) {
         self.addEventListener("install", { event ->
         })

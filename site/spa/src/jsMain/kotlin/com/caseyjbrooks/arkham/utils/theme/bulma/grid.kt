@@ -60,3 +60,14 @@ fun Box(
         content()
     }
 }
+
+
+@Composable
+fun Content(
+    vararg classes: String,
+    content: ContentBuilder<HTMLDivElement>,
+) {
+    Div({ classes("content", *classes) }) {
+        content()
+    }
+}

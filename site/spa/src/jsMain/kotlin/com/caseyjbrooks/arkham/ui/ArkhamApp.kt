@@ -18,4 +18,10 @@ object ArkhamApp : RoutingTable() {
     val EncounterSetDetails = route("/encounter-sets/{encounterSetId}")
 
     val StaticPage = route("/pages/{slug}")
+
+    val Tools = route("/tools")
+    val ChaosBagSimulator = route("/tools/chaos")
+    val DividersGenerator = route("/tools/dividers")
+    val TuckboxGenerator = route("/tools/tuckbox")
+    val CustomCards = route("/tools/cards")
 }

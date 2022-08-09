@@ -1,6 +1,7 @@
 package com.caseyjbrooks.arkham.api
 
 import com.caseyjbrooks.arkham.config.ArkhamConfig
+import com.copperleaf.arkham.models.ArkhamExplorerStaticPage
 import com.copperleaf.arkham.models.ArkhamHorrorExpansion
 import com.copperleaf.arkham.models.ArkhamHorrorExpansionsIndex
 import io.ktor.client.HttpClient
@@ -12,10 +13,18 @@ class ArkhamExplorerApiImpl(
     private val httpClient: HttpClient,
 ) : ArkhamExplorerApi {
     override suspend fun getExpansions(): List<ArkhamHorrorExpansion> {
-        val expansions: ArkhamHorrorExpansionsIndex = httpClient.get("api/expansions.json").body()
-        return expansions.expansions
+        return httpClient
+            .get("api/expansions.json")
+            .body<ArkhamHorrorExpansionsIndex>()
+            .expansions
             .map { expansion ->
                 httpClient.get("api/expansions/${expansion.slug}.json").body<ArkhamHorrorExpansion>()
             }
+    }
+
+    override suspend fun getStaticPageContent(slug: String): ArkhamExplorerStaticPage {
+        return httpClient
+            .get("pages/$slug.json")
+            .body<ArkhamExplorerStaticPage>()
     }
 }

@@ -7,6 +7,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.staticCompositionLocalOf
 import com.caseyjbrooks.arkham.di.ArkhamInjector
+import com.caseyjbrooks.arkham.ui.cards.CustomCardsDesignerUi
+import com.caseyjbrooks.arkham.ui.chaosbag.ChaosBagSimulatorUi
+import com.caseyjbrooks.arkham.ui.dividers.DividersGeneratorUi
 import com.caseyjbrooks.arkham.ui.encountersets.detail.EncounterSetDetailsUi
 import com.caseyjbrooks.arkham.ui.encountersets.list.EncounterSetsUi
 import com.caseyjbrooks.arkham.ui.expansions.detail.ExpansionDetailsUi
@@ -14,12 +17,14 @@ import com.caseyjbrooks.arkham.ui.expansions.list.ExpansionsUi
 import com.caseyjbrooks.arkham.ui.home.HomeUi
 import com.caseyjbrooks.arkham.ui.investigators.detail.InvestigatorDetailsUi
 import com.caseyjbrooks.arkham.ui.investigators.list.InvestigatorsUi
+import com.caseyjbrooks.arkham.ui.pages.StaticPageUi
 import com.caseyjbrooks.arkham.ui.scenarios.detail.ScenarioDetailsUi
 import com.caseyjbrooks.arkham.ui.scenarios.list.ScenariosUi
+import com.caseyjbrooks.arkham.ui.tools.ToolsUi
+import com.caseyjbrooks.arkham.ui.tuckbox.TuckboxGeneratorUi
 import com.copperleaf.ballast.navigation.routing.Destination
 import com.copperleaf.ballast.navigation.routing.MissingDestination
 import com.copperleaf.ballast.navigation.routing.currentDestinationOrNotFound
-import org.jetbrains.compose.web.dom.Text
 
 val LocalInjector = staticCompositionLocalOf<ArkhamInjector> { error("LocalInjector not provided") }
 
@@ -42,6 +47,7 @@ fun MainApplication(injector: ArkhamInjector) {
                 ArkhamApp.Expansions -> {
                     ExpansionsUi.Content(injector)
                 }
+
                 ArkhamApp.ExpansionDetails -> {
                     ExpansionDetailsUi.Content(
                         injector,
@@ -52,6 +58,7 @@ fun MainApplication(injector: ArkhamInjector) {
                 ArkhamApp.Investigators -> {
                     InvestigatorsUi.Content(injector)
                 }
+
                 ArkhamApp.InvestigatorDetails -> {
                     InvestigatorDetailsUi.Content(
                         injector,
@@ -62,6 +69,7 @@ fun MainApplication(injector: ArkhamInjector) {
                 ArkhamApp.Scenarios -> {
                     ScenariosUi.Content(injector)
                 }
+
                 ArkhamApp.ScenarioDetails -> {
                     ScenarioDetailsUi.Content(
                         injector,
@@ -72,6 +80,7 @@ fun MainApplication(injector: ArkhamInjector) {
                 ArkhamApp.EncounterSets -> {
                     EncounterSetsUi.Content(injector)
                 }
+
                 ArkhamApp.EncounterSetDetails -> {
                     EncounterSetDetailsUi.Content(
                         injector,
@@ -80,7 +89,26 @@ fun MainApplication(injector: ArkhamInjector) {
                 }
 
                 ArkhamApp.StaticPage -> {
-                    Text("Static Page")
+                    StaticPageUi.Content(
+                        injector,
+                        destination.pathParameters["slug"]!!.single(),
+                    )
+                }
+
+                ArkhamApp.Tools -> {
+                    ToolsUi.Content(injector)
+                }
+                ArkhamApp.ChaosBagSimulator -> {
+                    ChaosBagSimulatorUi.Content(injector)
+                }
+                ArkhamApp.DividersGenerator -> {
+                    DividersGeneratorUi.Content(injector)
+                }
+                ArkhamApp.TuckboxGenerator -> {
+                    TuckboxGeneratorUi.Content(injector)
+                }
+                ArkhamApp.CustomCards -> {
+                    CustomCardsDesignerUi.Content(injector)
                 }
             }
         }

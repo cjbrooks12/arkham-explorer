@@ -1,5 +1,6 @@
 package com.caseyjbrooks.arkham.repository.main
 
+import com.copperleaf.arkham.models.ArkhamExplorerStaticPage
 import com.copperleaf.arkham.models.ArkhamHorrorExpansion
 import com.copperleaf.ballast.BallastViewModelConfiguration
 import com.copperleaf.ballast.core.BootstrapInterceptor
@@ -40,5 +41,12 @@ class ArkhamExplorerRepositoryImpl(
 
         return observeStates()
             .map { it.expansions }
+    }
+
+    override fun getStaticPageContent(forceRefresh: Boolean, slug: String): Flow<Cached<ArkhamExplorerStaticPage>> {
+        trySend(ArkhamExplorerContract.Inputs.RefreshStaticPageContent(forceRefresh, slug))
+
+        return observeStates()
+            .map { it.staticPageContent[slug] ?: Cached.NotLoaded() }
     }
 }
