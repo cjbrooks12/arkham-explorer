@@ -1,0 +1,35 @@
+package com.caseyjbrooks.arkham.stages.expansiondata.inputs
+
+import com.caseyjbrooks.arkham.dag.DependencyGraphBuilder
+import com.caseyjbrooks.arkham.dag.http.StartHttpNode
+import com.caseyjbrooks.arkham.stages.config.SiteConfigNode
+import io.ktor.client.HttpClient
+
+object ArkhamDbPacksApi {
+    public val tags = listOf("FetchExpansionData", "input", "packs", "api")
+
+    /**
+     * GET https://arkhamdb.com/api/public/packs, to mix additional information for each cycle/pack into those
+     * manually configured.
+     */
+    public suspend fun loadPacksList(
+        scope: DependencyGraphBuilder.Scope,
+        siteConfigNode: SiteConfigNode,
+        http: HttpClient,
+    ): StartHttpNode = with(scope) {
+        addNodeAndEdge(
+            start = siteConfigNode,
+            newEndNode = StartHttpNode(
+                httpClient = http,
+                url = "https://arkhamdb.com/api/public/packs",
+                tags = tags,
+            )
+        )
+    }
+
+    public suspend fun getNode(
+        scope: DependencyGraphBuilder.Scope,
+    ): StartHttpNode = with(scope) {
+        return graph.getNodeOfType<StartHttpNode> { it.meta.tags == tags }
+    }
+}

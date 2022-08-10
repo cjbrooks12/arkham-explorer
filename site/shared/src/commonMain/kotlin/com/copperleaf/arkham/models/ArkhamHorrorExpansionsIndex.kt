@@ -9,6 +9,6 @@ data class ArkhamHorrorExpansionsIndex(
     @Serializable
     data class ArkhamHorrorExpansionIndex(
         val slug: String,
-        val cyclePosition: Int,
+        val productCodes: List<String>,
     )
 }

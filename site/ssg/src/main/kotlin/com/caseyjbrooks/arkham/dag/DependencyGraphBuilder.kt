@@ -7,8 +7,9 @@ interface DependencyGraphBuilder {
         internal val _temporaryNodes: MutableList<Node> = mutableListOf()
         internal val _temporaryEdges: MutableList<Edge> = mutableListOf()
 
-        suspend fun addNode(node: Node) {
+        suspend fun <T : Node> addNode(node: T): T {
             _temporaryNodes.add(node)
+            return node
         }
 
         suspend fun addEdge(start: Node, end: Node, weight: Double = 1.0) {
@@ -20,9 +21,10 @@ interface DependencyGraphBuilder {
             _temporaryEdges.add(edge)
         }
 
-        suspend fun addNodeAndEdge(start: Node, newEndNode: Node, weight: Double = 1.0) {
+        suspend fun <T : Node> addNodeAndEdge(start: Node, newEndNode: T, weight: Double = 1.0): T {
             addNode(newEndNode)
             addEdge(start, newEndNode, weight)
+            return newEndNode
         }
 
     }

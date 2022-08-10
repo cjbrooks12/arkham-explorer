@@ -2,11 +2,11 @@
     "expansions": [
         {
             "slug": "night-of-the-zealot",
-            "cyclePosition": 1
+            "productCodes": []
         },
         {
             "slug": "the-dunwich-legacy",
-            "cyclePosition": 2
+            "productCodes": []
         }
     ]
 }
