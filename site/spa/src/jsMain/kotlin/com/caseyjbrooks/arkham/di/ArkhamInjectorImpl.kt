@@ -41,6 +41,9 @@ import com.caseyjbrooks.arkham.ui.scenarios.list.ScenariosViewModel
 import com.caseyjbrooks.arkham.utils.navigation.HashNavigationLinkStrategy
 import com.caseyjbrooks.arkham.utils.navigation.HistoryNavigationLinkStrategy
 import com.caseyjbrooks.arkham.utils.navigation.NavigationLinkStrategy
+import com.copperleaf.arkham.models.api.EncounterSetId
+import com.copperleaf.arkham.models.api.InvestigatorId
+import com.copperleaf.arkham.models.api.ScenarioId
 import com.copperleaf.ballast.BallastLogger
 import com.copperleaf.ballast.BallastViewModelConfiguration
 import com.copperleaf.ballast.core.BootstrapInterceptor
@@ -98,14 +101,12 @@ class ArkhamInjectorImpl(
     private val arkhamExplorerRepository: ArkhamExplorerRepository = ArkhamExplorerRepositoryImpl(
         coroutineScope = applicationCoroutineScope,
         configBuilder = defaultConfigBuilder(),
-        inputHandler = ArkhamExplorerInputHandler(
-            api = ArkhamExplorerApiImpl(
-                config = config,
-                httpClient = httpClient,
-            ),
-            eventBus = eventBus,
-        ),
+        inputHandler = ArkhamExplorerInputHandler(),
         eventBus = eventBus,
+        api = ArkhamExplorerApiImpl(
+            config = config,
+            httpClient = httpClient,
+        ),
     )
 
     override fun routerViewModel(): RouterViewModel {
@@ -148,13 +149,13 @@ class ArkhamInjectorImpl(
 
     override fun expansionDetailsViewModel(
         coroutineScope: CoroutineScope,
-        expansionId: String
+        expansionCode: String
     ): ExpansionDetailsViewModel {
         return ExpansionDetailsViewModel(
             coroutineScope = coroutineScope,
             configBuilder = defaultConfigBuilder()
                 .apply {
-                    this += BootstrapInterceptor { ExpansionDetailsContract.Inputs.Initialize(expansionId) }
+                    this += BootstrapInterceptor { ExpansionDetailsContract.Inputs.Initialize(expansionCode) }
                 },
             inputHandler = ExpansionDetailsInputHandler(
                 repository = arkhamExplorerRepository
@@ -179,7 +180,7 @@ class ArkhamInjectorImpl(
 
     override fun investigatorDetailsViewModel(
         coroutineScope: CoroutineScope,
-        investigatorId: String
+        investigatorId: InvestigatorId
     ): InvestigatorDetailsViewModel {
         return InvestigatorDetailsViewModel(
             coroutineScope = coroutineScope,
@@ -210,7 +211,7 @@ class ArkhamInjectorImpl(
 
     override fun scenarioDetailsViewModel(
         coroutineScope: CoroutineScope,
-        scenarioId: String
+        scenarioId: ScenarioId,
     ): ScenarioDetailsViewModel {
         return ScenarioDetailsViewModel(
             coroutineScope = coroutineScope,
@@ -241,7 +242,7 @@ class ArkhamInjectorImpl(
 
     override fun encounterSetDetailsViewModel(
         coroutineScope: CoroutineScope,
-        encounterSetId: String
+        encounterSetId: EncounterSetId
     ): EncounterSetDetailsViewModel {
         return EncounterSetDetailsViewModel(
             coroutineScope = coroutineScope,

@@ -23,16 +23,19 @@ class EncounterSetsInputHandler(
                 "Encounter Sets",
                 repository
                     .getExpansions(false)
+                    .map { EncounterSetsContract.Inputs.ExpansionsUpdated(it) },
+                repository
+                    .getEncounterSets(false)
                     .map { EncounterSetsContract.Inputs.EncounterSetsUpdated(it) }
             )
         }
 
+        is EncounterSetsContract.Inputs.ExpansionsUpdated -> {
+            updateState { it.copy(layout = MainLayoutState.fromCached(input.expansions)) }
+        }
+
         is EncounterSetsContract.Inputs.EncounterSetsUpdated -> {
-            updateState {
-                it.copy(
-                    layout = MainLayoutState.fromCached(input.expansions),
-                )
-            }
+            updateState { it.copy(encounterSets = input.encounterSets) }
         }
     }
 }

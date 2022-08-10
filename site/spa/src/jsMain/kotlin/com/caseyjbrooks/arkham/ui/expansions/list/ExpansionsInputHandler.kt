@@ -22,16 +22,12 @@ class ExpansionsInputHandler(
                 "Expansions",
                 repository
                     .getExpansions(false)
-                    .map { ExpansionsContract.Inputs.ExpansionsUpdated(it) }
+                    .map { ExpansionsContract.Inputs.ExpansionsUpdated(it) },
             )
         }
 
         is ExpansionsContract.Inputs.ExpansionsUpdated -> {
-            updateState {
-                it.copy(
-                    layout = MainLayoutState.fromCached(input.expansions),
-                )
-            }
+            updateState { it.copy(layout = MainLayoutState.fromCached(input.expansions)) }
         }
     }
 }

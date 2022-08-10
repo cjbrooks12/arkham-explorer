@@ -1,7 +1,7 @@
 package com.caseyjbrooks.arkham.ui.home
 
 import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayoutState
-import com.copperleaf.arkham.models.ArkhamHorrorExpansion
+import com.copperleaf.arkham.models.api.ExpansionList
 import com.copperleaf.ballast.repository.cache.Cached
 
 object HomeContract {
@@ -11,7 +11,7 @@ object HomeContract {
 
     sealed class Inputs {
         object Initialize : Inputs()
-        data class ExpansionsUpdated(val expansions: Cached<List<ArkhamHorrorExpansion>>) : Inputs()
+        data class ExpansionsUpdated(val expansions: Cached<ExpansionList>) : Inputs()
     }
 
     sealed class Events

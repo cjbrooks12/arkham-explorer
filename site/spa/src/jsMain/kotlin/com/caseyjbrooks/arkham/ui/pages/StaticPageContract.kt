@@ -2,7 +2,7 @@ package com.caseyjbrooks.arkham.ui.pages
 
 import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayoutState
 import com.copperleaf.arkham.models.ArkhamExplorerStaticPage
-import com.copperleaf.arkham.models.ArkhamHorrorExpansion
+import com.copperleaf.arkham.models.api.ExpansionList
 import com.copperleaf.ballast.repository.cache.Cached
 
 object StaticPageContract {
@@ -14,8 +14,8 @@ object StaticPageContract {
 
     sealed class Inputs {
         data class Initialize(val slug: String) : Inputs()
-        data class ExpansionsLoaded(val expansions: Cached<List<ArkhamHorrorExpansion>>) : Inputs()
-        data class StaticPageContentLoaded(val content: Cached<ArkhamExplorerStaticPage>) : Inputs()
+        data class ExpansionsUpdated(val expansions: Cached<ExpansionList>) : Inputs()
+        data class StaticPageContentUpdated(val content: Cached<ArkhamExplorerStaticPage>) : Inputs()
     }
 
     sealed class Events

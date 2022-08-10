@@ -1,32 +1,43 @@
 package com.caseyjbrooks.arkham.repository.main
 
+import com.caseyjbrooks.arkham.api.ArkhamExplorerApi
 import com.copperleaf.arkham.models.ArkhamExplorerStaticPage
-import com.copperleaf.arkham.models.ArkhamHorrorExpansion
+import com.copperleaf.arkham.models.api.EncounterSet
+import com.copperleaf.arkham.models.api.EncounterSetId
+import com.copperleaf.arkham.models.api.EncounterSetList
+import com.copperleaf.arkham.models.api.Expansion
+import com.copperleaf.arkham.models.api.ExpansionList
+import com.copperleaf.arkham.models.api.Investigator
+import com.copperleaf.arkham.models.api.InvestigatorId
+import com.copperleaf.arkham.models.api.InvestigatorList
+import com.copperleaf.arkham.models.api.Product
+import com.copperleaf.arkham.models.api.ProductId
+import com.copperleaf.arkham.models.api.ProductList
+import com.copperleaf.arkham.models.api.Scenario
+import com.copperleaf.arkham.models.api.ScenarioId
+import com.copperleaf.arkham.models.api.ScenarioList
 import com.copperleaf.ballast.BallastViewModelConfiguration
-import com.copperleaf.ballast.core.BootstrapInterceptor
 import com.copperleaf.ballast.forViewModel
-import com.copperleaf.ballast.plusAssign
 import com.copperleaf.ballast.repository.BallastRepository
 import com.copperleaf.ballast.repository.bus.EventBus
 import com.copperleaf.ballast.repository.cache.Cached
 import com.copperleaf.ballast.repository.withRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.emptyFlow
+import kotlinx.coroutines.flow.flatMapLatest
 
 class ArkhamExplorerRepositoryImpl(
     coroutineScope: CoroutineScope,
     configBuilder: BallastViewModelConfiguration.Builder,
     inputHandler: ArkhamExplorerInputHandler,
     eventBus: EventBus,
+    private val api: ArkhamExplorerApi,
 ) : BallastRepository<
     ArkhamExplorerContract.Inputs,
     ArkhamExplorerContract.State>(
     coroutineScope = coroutineScope,
     config = configBuilder
-        .apply {
-            this += BootstrapInterceptor { ArkhamExplorerContract.Inputs.Initialize }
-        }
         .withRepository()
         .forViewModel(
             inputHandler = inputHandler,
@@ -36,17 +47,96 @@ class ArkhamExplorerRepositoryImpl(
     eventBus = eventBus,
 ), ArkhamExplorerRepository {
 
-    override fun getExpansions(forceRefresh: Boolean): Flow<Cached<List<ArkhamHorrorExpansion>>> {
-        trySend(ArkhamExplorerContract.Inputs.RefreshExpansions(forceRefresh))
+    override fun getExpansions(forceRefresh: Boolean): Flow<Cached<ExpansionList>> {
+        return flowOfKey(
+            forceRefresh,
+            SimpleCachedValue.Key("ExpansionList", null)
+        ) { api.getExpansions() }
+    }
 
-        return observeStates()
-            .map { it.expansions }
+    override fun getExpansion(forceRefresh: Boolean, code: String): Flow<Cached<Expansion>> {
+        return flowOfKey(
+            forceRefresh,
+            SimpleCachedValue.Key("ExpansionList", code)
+        ) { api.getExpansion(code) }
+    }
+
+    override fun getScenarios(forceRefresh: Boolean): Flow<Cached<ScenarioList>> {
+        return flowOfKey(
+            forceRefresh,
+            SimpleCachedValue.Key("ScenarioList", null)
+        ) { api.getScenarios() }
+    }
+
+    override fun getScenario(forceRefresh: Boolean, scenarioId: ScenarioId): Flow<Cached<Scenario>> {
+        return flowOfKey(
+            forceRefresh,
+            SimpleCachedValue.Key("ScenarioList", scenarioId.id)
+        ) { api.getScenario(scenarioId) }
+    }
+
+    override fun getEncounterSets(forceRefresh: Boolean): Flow<Cached<EncounterSetList>> {
+        return flowOfKey(
+            forceRefresh,
+            SimpleCachedValue.Key("EncounterSetList", null)
+        ) { api.getEncounterSets() }
+    }
+
+    override fun getEncounterSet(forceRefresh: Boolean, encounterSetId: EncounterSetId): Flow<Cached<EncounterSet>> {
+        return flowOfKey(
+            forceRefresh,
+            SimpleCachedValue.Key("EncounterSetList", encounterSetId.id)
+        ) { api.getEncounterSet(encounterSetId) }
+    }
+
+    override fun getInvestigators(forceRefresh: Boolean): Flow<Cached<InvestigatorList>> {
+        return flowOfKey(
+            forceRefresh,
+            SimpleCachedValue.Key("InvestigatorList", null)
+        ) { api.getInvestigators() }
+    }
+
+    override fun getInvestigator(forceRefresh: Boolean, investigatorId: InvestigatorId): Flow<Cached<Investigator>> {
+        return flowOfKey(
+            forceRefresh,
+            SimpleCachedValue.Key("InvestigatorList", investigatorId.id)
+        ) { api.getInvestigator(investigatorId) }
+    }
+
+    override fun getProducts(forceRefresh: Boolean): Flow<Cached<ProductList>> {
+        return flowOfKey(
+            forceRefresh,
+            SimpleCachedValue.Key("ProductList", null)
+        ) { api.getProducts() }
+    }
+
+    override fun getProduct(forceRefresh: Boolean, productId: ProductId): Flow<Cached<Product>> {
+        return flowOfKey(
+            forceRefresh,
+            SimpleCachedValue.Key("ProductList", productId.id)
+        ) { api.getProduct(productId) }
     }
 
     override fun getStaticPageContent(forceRefresh: Boolean, slug: String): Flow<Cached<ArkhamExplorerStaticPage>> {
-        trySend(ArkhamExplorerContract.Inputs.RefreshStaticPageContent(forceRefresh, slug))
+        return flowOfKey(
+            forceRefresh,
+            SimpleCachedValue.Key("StaticPage", slug)
+        ) { api.getStaticPageContent(slug) }
+    }
+
+    private fun <T : Any> flowOfKey(
+        forceRefresh: Boolean,
+        key: SimpleCachedValue.Key<T>,
+        doFetch: suspend () -> T
+    ): Flow<Cached<T>> {
+        trySend(ArkhamExplorerContract.Inputs.FetchCachedValue(forceRefresh, key, doFetch))
 
         return observeStates()
-            .map { it.staticPageContent[slug] ?: Cached.NotLoaded() }
+            .flatMapLatest {
+                it.caches.singleOrNull { it.key == key }
+                    ?.asFlow()
+                    ?: emptyFlow()
+            }
     }
+
 }

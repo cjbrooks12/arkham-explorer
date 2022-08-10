@@ -22,16 +22,19 @@ class InvestigatorsInputHandler(
                 "Investigators",
                 repository
                     .getExpansions(false)
+                    .map { InvestigatorsContract.Inputs.ExpansionsUpdated(it) },
+                repository
+                    .getInvestigators(false)
                     .map { InvestigatorsContract.Inputs.InvestigatorsUpdated(it) }
             )
         }
 
+        is InvestigatorsContract.Inputs.ExpansionsUpdated -> {
+            updateState { it.copy(layout = MainLayoutState.fromCached(input.expansions)) }
+        }
+
         is InvestigatorsContract.Inputs.InvestigatorsUpdated -> {
-            updateState {
-                it.copy(
-                    layout = MainLayoutState.fromCached(input.expansions),
-                )
-            }
+            updateState { it.copy(investigators = input.investigators) }
         }
     }
 }

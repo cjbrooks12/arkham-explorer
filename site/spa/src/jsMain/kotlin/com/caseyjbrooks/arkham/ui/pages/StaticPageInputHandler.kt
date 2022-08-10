@@ -23,21 +23,18 @@ class StaticPageInputHandler(
                 "Static Page Expansions",
                 repository
                     .getExpansions(false)
-                    .map { cached -> StaticPageContract.Inputs.ExpansionsLoaded(cached) }
-            )
-            observeFlows(
-                "Static Page Content",
+                    .map { cached -> StaticPageContract.Inputs.ExpansionsUpdated(cached) },
                 repository
                     .getStaticPageContent(false, input.slug)
-                    .map { cached -> StaticPageContract.Inputs.StaticPageContentLoaded(cached) }
+                    .map { cached -> StaticPageContract.Inputs.StaticPageContentUpdated(cached) }
             )
         }
 
-        is StaticPageContract.Inputs.ExpansionsLoaded -> {
+        is StaticPageContract.Inputs.ExpansionsUpdated -> {
             updateState { it.copy(layout = MainLayoutState.fromCached(input.expansions)) }
         }
 
-        is StaticPageContract.Inputs.StaticPageContentLoaded -> {
+        is StaticPageContract.Inputs.StaticPageContentUpdated -> {
             updateState { it.copy(content = input.content) }
         }
     }

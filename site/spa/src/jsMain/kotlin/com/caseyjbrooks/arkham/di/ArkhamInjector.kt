@@ -14,6 +14,9 @@ import com.caseyjbrooks.arkham.ui.pages.StaticPageViewModel
 import com.caseyjbrooks.arkham.ui.scenarios.detail.ScenarioDetailsViewModel
 import com.caseyjbrooks.arkham.ui.scenarios.list.ScenariosViewModel
 import com.caseyjbrooks.arkham.utils.navigation.NavigationLinkStrategy
+import com.copperleaf.arkham.models.api.EncounterSetId
+import com.copperleaf.arkham.models.api.InvestigatorId
+import com.copperleaf.arkham.models.api.ScenarioId
 import kotlinx.coroutines.CoroutineScope
 
 interface ArkhamInjector {
@@ -26,16 +29,16 @@ interface ArkhamInjector {
     fun homeViewModel(coroutineScope: CoroutineScope): HomeViewModel
 
     fun expansionsViewModel(coroutineScope: CoroutineScope): ExpansionsViewModel
-    fun expansionDetailsViewModel(coroutineScope: CoroutineScope, expansionId: String): ExpansionDetailsViewModel
+    fun expansionDetailsViewModel(coroutineScope: CoroutineScope, expansionCode: String): ExpansionDetailsViewModel
 
     fun investigatorsViewModel(coroutineScope: CoroutineScope): InvestigatorsViewModel
-    fun investigatorDetailsViewModel(coroutineScope: CoroutineScope, investigatorId: String): InvestigatorDetailsViewModel
+    fun investigatorDetailsViewModel(coroutineScope: CoroutineScope, investigatorId: InvestigatorId): InvestigatorDetailsViewModel
 
     fun scenariosViewModel(coroutineScope: CoroutineScope): ScenariosViewModel
-    fun scenarioDetailsViewModel(coroutineScope: CoroutineScope, scenarioId: String): ScenarioDetailsViewModel
+    fun scenarioDetailsViewModel(coroutineScope: CoroutineScope, scenarioId: ScenarioId): ScenarioDetailsViewModel
 
     fun encounterSetsViewModel(coroutineScope: CoroutineScope): EncounterSetsViewModel
-    fun encounterSetDetailsViewModel(coroutineScope: CoroutineScope, encounterSetId: String): EncounterSetDetailsViewModel
+    fun encounterSetDetailsViewModel(coroutineScope: CoroutineScope, encounterSetId: EncounterSetId): EncounterSetDetailsViewModel
 
     fun staticPageViewModel(coroutineScope: CoroutineScope, slug: String): StaticPageViewModel
 }

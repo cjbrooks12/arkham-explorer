@@ -5,7 +5,6 @@ import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayoutState
 import com.copperleaf.ballast.InputHandler
 import com.copperleaf.ballast.InputHandlerScope
 import com.copperleaf.ballast.observeFlows
-import com.copperleaf.ballast.repository.cache.map
 import kotlinx.coroutines.flow.map
 
 class ExpansionDetailsInputHandler(
@@ -19,30 +18,30 @@ class ExpansionDetailsInputHandler(
         input: ExpansionDetailsContract.Inputs
     ) = when (input) {
         is ExpansionDetailsContract.Inputs.Initialize -> {
-            updateState { it.copy(expansionId = input.expansionId) }
+            updateState { it.copy(expansionCode = input.expansionCode) }
             observeFlows(
-                "Encounter Sets",
+                "Expansion Details",
                 repository
                     .getExpansions(false)
-                    .map { cached ->
-                        cached
-                            .map { expansions ->
-                                val expansionMatch = expansions
-                                    .asSequence()
-                                    .firstOrNull { expansion -> expansion.name == input.expansionId }
-
-                                expansionMatch!!
-                            }
-                            .let { ExpansionDetailsContract.Inputs.ExpansionUpdated(cached, it) }
-                    }
+                    .map { ExpansionDetailsContract.Inputs.ExpansionsUpdated(it) },
+                repository
+                    .getExpansion(false, input.expansionCode)
+                    .map { ExpansionDetailsContract.Inputs.ExpansionUpdated(it) }
             )
+        }
+
+        is ExpansionDetailsContract.Inputs.ExpansionsUpdated -> {
+            updateState {
+                it.copy(
+                    layout = MainLayoutState.fromCached(input.expansions),
+                )
+            }
         }
 
         is ExpansionDetailsContract.Inputs.ExpansionUpdated -> {
             updateState {
                 it.copy(
-                    layout = MainLayoutState.fromCached(input.expansions),
-                    expansion = input.expansion
+                    expansion = input.expansion,
                 )
             }
         }

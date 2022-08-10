@@ -21,31 +21,31 @@ class EncounterSetDetailsInputHandler(
         is EncounterSetDetailsContract.Inputs.Initialize -> {
             updateState { it.copy(encounterSetId = input.encounterSetId) }
             observeFlows(
-                "Encounter Sets",
+                "Encounter Set Details",
                 repository
                     .getExpansions(false)
-                    .map { cached ->
-                        cached
-                            .map { expansions ->
-                                val encounterSetMatch = expansions
-                                    .asSequence()
-                                    .flatMap { expansion -> expansion.encounterSets.map { encounterSet -> expansion to encounterSet } }
-                                    .firstOrNull { (expansion, encounterSet) -> encounterSet.name == input.encounterSetId }
-
-                                encounterSetMatch!!
-                            }
-                            .let { EncounterSetDetailsContract.Inputs.EncounterSetUpdated(cached, it) }
-                    }
+                    .map { EncounterSetDetailsContract.Inputs.ExpansionsUpdated(it) },
+                repository
+                    .getEncounterSet(false, input.encounterSetId)
+                    .map { EncounterSetDetailsContract.Inputs.EncounterSetUpdated(it) }
             )
         }
 
-        is EncounterSetDetailsContract.Inputs.EncounterSetUpdated -> {
-            updateState {
-                it.copy(
+        is EncounterSetDetailsContract.Inputs.ExpansionsUpdated -> {
+            updateState { state ->
+                state.copy(
                     layout = MainLayoutState.fromCached(input.expansions),
-                    encounterSet = input.encounterSet,
+                    parentExpansion = input.expansions.map { expansions ->
+                        expansions.expansions.single { expansion ->
+                            expansion.encounterSets.any { it == state.encounterSetId }
+                        }
+                    }
                 )
             }
+        }
+
+        is EncounterSetDetailsContract.Inputs.EncounterSetUpdated -> {
+            updateState { it.copy(encounterSet = input.encounterSet) }
         }
     }
 }

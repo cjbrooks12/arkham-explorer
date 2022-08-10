@@ -7,20 +7,26 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import com.caseyjbrooks.arkham.di.ArkhamInjector
 import com.caseyjbrooks.arkham.ui.ArkhamApp
+import com.caseyjbrooks.arkham.utils.CacheReady
 import com.caseyjbrooks.arkham.utils.theme.bulma.Breadcrumbs
 import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaSection
 import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaSize
 import com.caseyjbrooks.arkham.utils.theme.bulma.Hero
 import com.caseyjbrooks.arkham.utils.theme.bulma.NavigationRoute
 import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayout
-import com.copperleaf.ballast.repository.cache.getCachedOrNull
+import com.copperleaf.arkham.models.api.ScenarioId
 import org.jetbrains.compose.web.dom.Text
 
 object ScenarioDetailsUi {
     @Composable
-    fun Content(injector: ArkhamInjector, scenarioId: String) {
+    fun Content(injector: ArkhamInjector, scenarioId: ScenarioId) {
         val coroutineScope = rememberCoroutineScope()
-        val vm = remember(coroutineScope, injector, scenarioId) { injector.scenarioDetailsViewModel(coroutineScope, scenarioId) }
+        val vm = remember(coroutineScope, injector, scenarioId) {
+            injector.scenarioDetailsViewModel(
+                coroutineScope,
+                scenarioId
+            )
+        }
         val vmState by vm.observeStates().collectAsState()
         Content(vmState) { vm.trySend(it) }
     }
@@ -28,7 +34,10 @@ object ScenarioDetailsUi {
     @Composable
     fun Content(state: ScenarioDetailsContract.State, postInput: (ScenarioDetailsContract.Inputs) -> Unit) {
         MainLayout(state.layout) {
-            state.scenario.getCachedOrNull()?.let { (expansion, scenario) ->
+            CacheReady(
+                state.parentExpansion,
+                state.scenario,
+            ) { expansion, scenario ->
                 Hero(
                     title = { Text(scenario.name) },
                     subtitle = { Text(expansion.name) },
@@ -39,8 +48,8 @@ object ScenarioDetailsUi {
                     Breadcrumbs(
                         NavigationRoute("Home", null, ArkhamApp.Home),
                         NavigationRoute("Expansions", null, ArkhamApp.Expansions),
-                        NavigationRoute(expansion.name, expansion.icon, ArkhamApp.ExpansionDetails, expansion.name),
-                        NavigationRoute(scenario.name, scenario.icon, ArkhamApp.ScenarioDetails, scenario.name),
+                        NavigationRoute(expansion.name, expansion.icon, ArkhamApp.ExpansionDetails, expansion.code),
+                        NavigationRoute(scenario.name, scenario.icon, ArkhamApp.ScenarioDetails, scenario.id.id),
                     )
                 }
             }

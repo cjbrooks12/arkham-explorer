@@ -21,31 +21,31 @@ class ScenarioDetailsInputHandler(
         is ScenarioDetailsContract.Inputs.Initialize -> {
             updateState { it.copy(scenarioId = input.scenarioId) }
             observeFlows(
-                "Encounter Sets",
+                "Scenario Details",
                 repository
                     .getExpansions(false)
-                    .map { cached ->
-                        cached
-                            .map { expansions ->
-                                val scenarioMatch = expansions
-                                    .asSequence()
-                                    .flatMap { expansion -> expansion.scenarios.map { scenario -> expansion to scenario } }
-                                    .firstOrNull { (expansion, scenario) -> scenario.name == input.scenarioId }
-
-                                scenarioMatch!!
-                            }
-                            .let { ScenarioDetailsContract.Inputs.ScenarioUpdated(cached, it) }
-                    }
+                    .map { ScenarioDetailsContract.Inputs.ExpansionsUpdated(it) },
+                repository
+                    .getScenario(false, input.scenarioId)
+                    .map { ScenarioDetailsContract.Inputs.ScenarioUpdated(it) }
             )
         }
 
-        is ScenarioDetailsContract.Inputs.ScenarioUpdated -> {
-            updateState {
-                it.copy(
+        is ScenarioDetailsContract.Inputs.ExpansionsUpdated -> {
+            updateState { state ->
+                state.copy(
                     layout = MainLayoutState.fromCached(input.expansions),
-                    scenario = input.scenario,
+                    parentExpansion = input.expansions.map { expansions ->
+                        expansions.expansions.single { expansion ->
+                            expansion.scenarios.any { it == state.scenarioId }
+                        }
+                    }
                 )
             }
+        }
+
+        is ScenarioDetailsContract.Inputs.ScenarioUpdated -> {
+            updateState { it.copy(scenario = input.scenario) }
         }
     }
 }

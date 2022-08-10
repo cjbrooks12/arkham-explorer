@@ -6,7 +6,8 @@ import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaFooter
 import com.caseyjbrooks.arkham.utils.theme.bulma.MainNavBar
 import com.caseyjbrooks.arkham.utils.theme.bulma.NavigationRoute
 import com.caseyjbrooks.arkham.utils.theme.bulma.NavigationSection
-import com.copperleaf.arkham.models.ArkhamHorrorExpansion
+import com.copperleaf.arkham.models.api.ExpansionList
+import com.copperleaf.arkham.models.api.ExpansionLite
 import com.copperleaf.ballast.repository.cache.Cached
 import com.copperleaf.ballast.repository.cache.getCachedOrThrow
 import com.copperleaf.ballast.repository.cache.isLoading
@@ -15,30 +16,31 @@ import org.jetbrains.compose.web.dom.Text
 
 data class MainLayoutState(
     val brandImage: String,
-    val expansions: List<ArkhamHorrorExpansion>,
+    val expansions: List<ExpansionLite>,
     val startNavigation: List<NavigationSection>,
     val endNavigation: List<NavigationSection>,
 ) {
     companion object {
-        fun fromCached(expansions: Cached<List<ArkhamHorrorExpansion>>): Cached<MainLayoutState> {
+        fun fromCached(expansions: Cached<ExpansionList>): Cached<MainLayoutState> {
             return expansions.map { fromValue(it) }
         }
 
-        fun fromValue(expansions: List<ArkhamHorrorExpansion>): MainLayoutState {
+        fun fromValue(expansions: ExpansionList): MainLayoutState {
             return MainLayoutState(
                 brandImage = "http://arkhamcentral.com/wp-content/uploads/2017/05/ArkhamHorrorlogo.png",
-                expansions = expansions,
+                expansions = expansions.expansions,
                 startNavigation = listOf(
                     NavigationSection(
                         "Expansions",
                         NavigationRoute("All Expansions", null, ArkhamApp.Expansions),
                         *expansions
+                            .expansions
                             .map { expansion ->
                                 NavigationRoute(
                                     expansion.name,
                                     expansion.icon,
                                     ArkhamApp.ExpansionDetails,
-                                    expansion.name
+                                    expansion.code,
                                 )
                             }
                             .toTypedArray()

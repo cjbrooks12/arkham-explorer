@@ -22,6 +22,9 @@ import com.caseyjbrooks.arkham.ui.scenarios.detail.ScenarioDetailsUi
 import com.caseyjbrooks.arkham.ui.scenarios.list.ScenariosUi
 import com.caseyjbrooks.arkham.ui.tools.ToolsUi
 import com.caseyjbrooks.arkham.ui.tuckbox.TuckboxGeneratorUi
+import com.copperleaf.arkham.models.api.EncounterSetId
+import com.copperleaf.arkham.models.api.InvestigatorId
+import com.copperleaf.arkham.models.api.ScenarioId
 import com.copperleaf.ballast.navigation.routing.Destination
 import com.copperleaf.ballast.navigation.routing.MissingDestination
 import com.copperleaf.ballast.navigation.routing.currentDestinationOrNotFound
@@ -59,17 +62,6 @@ fun MainApplication(injector: ArkhamInjector) {
                     )
                 }
 
-                ArkhamApp.Investigators -> {
-                    InvestigatorsUi.Content(injector)
-                }
-
-                ArkhamApp.InvestigatorDetails -> {
-                    InvestigatorDetailsUi.Content(
-                        injector,
-                        destination.pathParameters["investigatorId"]!!.single(),
-                    )
-                }
-
                 ArkhamApp.Scenarios -> {
                     ScenariosUi.Content(injector)
                 }
@@ -77,7 +69,9 @@ fun MainApplication(injector: ArkhamInjector) {
                 ArkhamApp.ScenarioDetails -> {
                     ScenarioDetailsUi.Content(
                         injector,
-                        destination.pathParameters["scenarioId"]!!.single(),
+                        ScenarioId(
+                            destination.pathParameters["scenarioId"]!!.single(),
+                        )
                     )
                 }
 
@@ -88,7 +82,22 @@ fun MainApplication(injector: ArkhamInjector) {
                 ArkhamApp.EncounterSetDetails -> {
                     EncounterSetDetailsUi.Content(
                         injector,
-                        destination.pathParameters["encounterSetId"]!!.single(),
+                        EncounterSetId(
+                            destination.pathParameters["encounterSetId"]!!.single()
+                        ),
+                    )
+                }
+
+                ArkhamApp.Investigators -> {
+                    InvestigatorsUi.Content(injector)
+                }
+
+                ArkhamApp.InvestigatorDetails -> {
+                    InvestigatorDetailsUi.Content(
+                        injector,
+                        InvestigatorId(
+                            destination.pathParameters["investigatorId"]!!.single(),
+                        )
                     )
                 }
 

@@ -22,16 +22,19 @@ class ScenariosInputHandler(
                 "Scenarios",
                 repository
                     .getExpansions(false)
+                    .map { ScenariosContract.Inputs.ExpansionsUpdated(it) },
+                repository
+                    .getScenarios(false)
                     .map { ScenariosContract.Inputs.ScenariosUpdated(it) }
             )
         }
 
+        is ScenariosContract.Inputs.ExpansionsUpdated -> {
+            updateState { it.copy(layout = MainLayoutState.fromCached(input.expansions)) }
+        }
+
         is ScenariosContract.Inputs.ScenariosUpdated -> {
-            updateState {
-                it.copy(
-                    layout = MainLayoutState.fromCached(input.expansions),
-                )
-            }
+            updateState { it.copy(scenarios = input.scenarios) }
         }
     }
 }
