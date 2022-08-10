@@ -1,43 +1,64 @@
 package com.caseyjbrooks.arkham.stages.expansiondata.inputs
 
 import com.caseyjbrooks.arkham.dag.DependencyGraphBuilder
+import com.caseyjbrooks.arkham.dag.Node
+import com.caseyjbrooks.arkham.dag.http.InputHttpNode
 import com.caseyjbrooks.arkham.dag.http.StartHttpNode
-import com.caseyjbrooks.arkham.dag.path.StartPathNode
-import com.copperleaf.arkham.models.ArkhamHorrorExpansionsIndex
+import com.caseyjbrooks.arkham.stages.expansiondata.inputs.models.ArkhamDbCard
 import io.ktor.client.HttpClient
+import kotlinx.serialization.builtins.ListSerializer
 
 object ArkhamDbPackCardsApi {
     public val tags = listOf("FetchExpansionData", "input", "cards", "api")
 
-    /**
-     * GET https://arkhamdb.com/api/public/packs, to mix additional information for each cycle/pack into those
-     * manually configured.
-     */
     public suspend fun loadPacksCards(
         scope: DependencyGraphBuilder.Scope,
-        packsConfigNode: StartPathNode,
-        packsHttpNode: StartHttpNode,
-        packConfig: ArkhamHorrorExpansionsIndex.ArkhamHorrorExpansionIndex,
+        packsApiNode: InputHttpNode, // https://arkhamdb.com/api/public/packs response
         packCode: String,
         http: HttpClient,
-    ): StartHttpNode = with(scope) {
+    ): InputHttpNode = with(scope) {
         val packCards = StartHttpNode(
             httpClient = http,
             url = "https://arkhamdb.com/api/public/cards/${packCode}.json",
-            tags = tags + listOf(packConfig.slug, packCode),
+            tags = tags + packCode,
         )
         addNode(packCards)
-        addEdge(packsConfigNode, packCards)
-        addEdge(packsHttpNode, packCards)
+        addEdge(packsApiNode, packCards)
 
         return packCards
     }
 
     public suspend fun getNode(
         scope: DependencyGraphBuilder.Scope,
-        packConfig: ArkhamHorrorExpansionsIndex.ArkhamHorrorExpansionIndex,
         packCode: String,
-    ): StartHttpNode = with(scope) {
-        return graph.getNodeOfType<StartHttpNode> { it.meta.tags == (tags + listOf(packConfig.slug, packCode)) }
+    ): InputHttpNode = with(scope) {
+        return graph.getNodeOfType<StartHttpNode> { it.meta.tags == (tags + packCode) }
+    }
+
+    public suspend fun getNodes(
+        scope: DependencyGraphBuilder.Scope,
+    ): List<InputHttpNode> = with(scope) {
+        return graph.getNodesOfType<StartHttpNode> { it.meta.tags.containsAll(tags) }
+    }
+
+    public suspend fun getNodesForOutput(
+        nodes: List<Node>,
+    ): List<InputHttpNode> {
+        return nodes.filterIsInstance<StartHttpNode>().filter { it.meta.tags.containsAll(tags) }
+    }
+
+    public suspend fun getBody(
+        scope: DependencyGraphBuilder.Scope,
+        node: InputHttpNode,
+    ): List<ArkhamDbCard> {
+        return node.getResponse(scope.graph, ListSerializer(ArkhamDbCard.serializer()))
+    }
+
+    public suspend fun getCachedBody(
+        scope: DependencyGraphBuilder.Scope,
+        packCode: String,
+    ): Pair<InputHttpNode, List<ArkhamDbCard>> {
+        val node = getNode(scope, packCode)
+        return node to getBody(scope, node)
     }
 }

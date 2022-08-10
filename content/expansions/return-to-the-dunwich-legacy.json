@@ -1,0 +1,395 @@
+{
+    "id": "2r",
+    "name": "Return To The Dunwich Legacy",
+    "icon": "{{baseUrl}}/assets/return-to-the-dunwich-legacy/expansion-icon.svg",
+    "scenarios": [
+        {
+            "id": "2-1r",
+            "name": "Return To Extracurricular Activity",
+            "icon": "{{baseUrl}}/assets/return-to-the-dunwich-legacy/return-to-extracurricular-activity.svg",
+            "encounterSets": [
+                {
+                    "name": "Return To Extracurricular Activity",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Sorcery",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Bishop's Thralls",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Whippoorwills",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Beyond the Threshold",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Resurgent Evils",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Secret Doors",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Yog-Sothoth's Emissaries",
+                    "conditional": false,
+                    "setAside": false
+                }
+            ]
+        },
+        {
+            "id": "2-2r",
+            "name": "Return To The House Always Wins",
+            "icon": "{{baseUrl}}/assets/return-to-the-dunwich-legacy/return-to-the-house-always-wins.svg",
+            "encounterSets": [
+                {
+                    "name": "Return To The House Always Wins",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Rats",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Bad Luck",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Naomi's Crew",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Hideous Abominations",
+                    "conditional": false,
+                    "setAside": true
+                },
+                {
+                    "name": "Erratic Fear",
+                    "conditional": false,
+                    "setAside": true
+                }
+            ]
+        },
+        {
+            "id": "2-3r",
+            "name": "Return To The Miskatonic Museum",
+            "icon": "{{baseUrl}}/assets/return-to-the-dunwich-legacy/return-to-the-miskatonic-museum.svg",
+            "encounterSets": [
+                {
+                    "name": "Return To The Miskatonic Museum",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Sorcery",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Bad Luck",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Beyond the Threshold",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Creeping Cold",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Secret Doors",
+                    "conditional": false,
+                    "setAside": false
+                }
+            ]
+        },
+        {
+            "id": "2-4r",
+            "name": "Return To The Essex County Express",
+            "icon": "{{baseUrl}}/assets/return-to-the-dunwich-legacy/return-to-the-essex-county-express.svg",
+            "encounterSets": [
+                {
+                    "name": "Return To The Essex County Express",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Dark Cult",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Beyond the Threshold",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Resurgent Evils",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Erratic Fear",
+                    "conditional": false,
+                    "setAside": false
+                }
+            ]
+        },
+        {
+            "id": "2-5r",
+            "name": "Return To Blood on the Altar",
+            "icon": "{{baseUrl}}/assets/return-to-the-dunwich-legacy/return-to-blood-on-the-altar.svg",
+            "encounterSets": [
+                {
+                    "name": "Return To Blood on the Altar",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Nightgaunts",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Dunwich",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Whippoorwills",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Naomi's Crew",
+                    "conditional": false,
+                    "setAside": true
+                },
+                {
+                    "name": "Resurgent Evils",
+                    "conditional": false,
+                    "setAside": false
+                }
+            ]
+        },
+        {
+            "id": "2-6r",
+            "name": "Return To Undimensioned and Unseen",
+            "icon": "{{baseUrl}}/assets/return-to-the-dunwich-legacy/return-to-undimensioned-and-unseen.svg",
+            "encounterSets": [
+                {
+                    "name": "Return To Undimensioned and Unseen",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Dunwich",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Whippoorwills",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Beast Thralls",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Erratic Fear",
+                    "conditional": false,
+                    "setAside": false
+                }
+            ]
+        },
+        {
+            "id": "2-7r",
+            "name": "Return To Where Doom Awaits",
+            "icon": "{{baseUrl}}/assets/return-to-the-dunwich-legacy/return-to-where-doom-awaits.svg",
+            "encounterSets": [
+                {
+                    "name": "Return To Where Doom Awaits",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Sorcery",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Bishop's Thralls",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Beast Thralls",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Hideous Abominations",
+                    "conditional": false,
+                    "setAside": true
+                },
+                {
+                    "name": "Resurgent Evils",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Erratic Fear",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Creeping Cold",
+                    "conditional": false,
+                    "setAside": false
+                }
+            ]
+        },
+        {
+            "id": "2-8r",
+            "name": "Return To Lost in Time and Space",
+            "icon": "{{baseUrl}}/assets/return-to-the-dunwich-legacy/return-to-lost-in-time-and-space.svg",
+            "encounterSets": [
+                {
+                    "name": "Return To Lost in Time and Space",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Sorcery",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Beyond the Threshold",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Hideous Abominations",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Yog-Sothoth's Emissaries",
+                    "conditional": false,
+                    "setAside": false
+                }
+            ]
+        }
+    ],
+    "encounterSets": [
+        {
+            "id": "2-1r",
+            "name": "Return To Extracurricular Activity",
+            "icon": "{{baseUrl}}/assets/return-to-the-dunwich-legacy/return-to-extracurricular-activity.svg",
+            "replaces": "Extracurricular Activity"
+        },
+        {
+            "id": "2-2r",
+            "name": "Return To The House Always Wins",
+            "icon": "{{baseUrl}}/assets/return-to-the-dunwich-legacy/return-to-the-house-always-wins.svg",
+            "replaces": "The House Always Wins"
+        },
+        {
+            "id": "2-3r",
+            "name": "Return To The Miskatonic Museum",
+            "icon": "{{baseUrl}}/assets/return-to-the-dunwich-legacy/return-to-the-miskatonic-museum.svg",
+            "replaces": "The Miskatonic Museum"
+        },
+        {
+            "id": "2-4r",
+            "name": "Return To The Essex County Express",
+            "icon": "{{baseUrl}}/assets/return-to-the-dunwich-legacy/return-to-the-essex-county-express.svg",
+            "replaces": "The Essex County Express"
+        },
+        {
+            "id": "2-5r",
+            "name": "Return To Blood on the Altar",
+            "icon": "{{baseUrl}}/assets/return-to-the-dunwich-legacy/return-to-blood-on-the-altar.svg",
+            "replaces": "Blood on the Altar"
+        },
+        {
+            "id": "2-6r",
+            "name": "Return To Undimensioned and Unseen",
+            "icon": "{{baseUrl}}/assets/return-to-the-dunwich-legacy/return-to-undimensioned-and-unseen.svg",
+            "replaces": "Undimensioned and Unseen"
+        },
+        {
+            "id": "2-7r",
+            "name": "Return To Where Doom Awaits",
+            "icon": "{{baseUrl}}/assets/return-to-the-dunwich-legacy/return-to-where-doom-awaits.svg",
+            "replaces": "Where Doom Awaits"
+        },
+        {
+            "id": "2-8r",
+            "name": "Return To Lost in Time and Space",
+            "icon": "{{baseUrl}}/assets/return-to-the-dunwich-legacy/return-to-lost-in-time-and-space.svg",
+            "replaces": "Lost in Time and Space"
+        },
+        {
+            "id": "2-9r",
+            "name": "Resurgent Evils",
+            "icon": "{{baseUrl}}/assets/return-to-the-dunwich-legacy/resurgent-evils.svg",
+            "replaces": "Ancient Evils"
+        },
+        {
+            "id": "2-10r",
+            "name": "Erratic Fear",
+            "icon": "{{baseUrl}}/assets/return-to-the-dunwich-legacy/erratic-fear.svg",
+            "replaces": "Striking Fear"
+        },
+        {
+            "id": "2-11r",
+            "name": "Creeping Cold",
+            "icon": "{{baseUrl}}/assets/return-to-the-dunwich-legacy/creeping-cold.svg",
+            "replaces": "Chilling Cold"
+        },
+        {
+            "id": "2-12r",
+            "name": "Secret Doors",
+            "icon": "{{baseUrl}}/assets/return-to-the-dunwich-legacy/secret-doors.svg",
+            "replaces": "Locked Doors"
+        },
+        {
+            "id": "2-13r",
+            "name": "Yog-Sothoth's Emissaries",
+            "icon": "{{baseUrl}}/assets/return-to-the-dunwich-legacy/yog-sothoths-emissaries.svg",
+            "replaces": "Agents of Yog-Sothoth"
+        },
+        {
+            "id": "2-14r",
+            "name": "Beyond the Threshold",
+            "icon": "{{baseUrl}}/assets/return-to-the-dunwich-legacy/beyond-the-threshold.svg",
+            "replaces": "The Beyond"
+        }
+    ],
+    "investigators": []
+}

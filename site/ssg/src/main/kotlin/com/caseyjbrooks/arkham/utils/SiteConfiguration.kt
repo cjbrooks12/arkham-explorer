@@ -7,7 +7,7 @@ class SiteConfiguration(
     val rootDir: Path,
 
     val assetsDir: Path = rootDir / "content/assets",
-    val dataDir: Path = rootDir / "content/data",
+    val expansionsDir: Path = rootDir / "content/expansions",
     val staticDir: Path = rootDir / "content/static",
     val pagesDir: Path = rootDir / "content/pages",
 

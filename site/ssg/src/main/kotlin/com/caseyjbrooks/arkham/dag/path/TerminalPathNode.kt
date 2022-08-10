@@ -9,7 +9,7 @@ import kotlin.io.path.invariantSeparatorsPathString
 data class TerminalPathNode(
     override val baseOutputDir: Path,
     override val outputPath: Path,
-    override val doRender: (List<Node>, OutputStream) -> Unit,
+    override val doRender: suspend (List<Node>, OutputStream) -> Unit,
     val tags: List<String> = emptyList(),
 ) : OutputPathNode {
     override val meta: Node.Meta = Node.Meta(

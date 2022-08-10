@@ -26,6 +26,7 @@ private val MAX_AGE_REGEX = """max-age=(\d+), public""".toRegex()
 val prettyJson = Json {
     prettyPrint = true
     isLenient = true
+    encodeDefaults = true
 }
 
 @OptIn(ExperimentalSerializationApi::class)
@@ -60,7 +61,7 @@ interface InputHttpNode : Node.Input {
         val responseFile = cachedResponseFile(graph)
         val metadataFile = cachedMetadataFile(graph)
 
-        val shouldRefresh = if(responseFile.exists() && metadataFile.exists()) {
+        val shouldRefresh = if (responseFile.exists() && metadataFile.exists()) {
             // check if we are past the max-age of the response
             val metadata = metadataFile.inputStream().use {
                 prettyJson.decodeFromStream(HttpMetadata.serializer(), it)
@@ -72,7 +73,7 @@ interface InputHttpNode : Node.Input {
             true
         }
 
-        if(shouldRefresh) {
+        if (shouldRefresh) {
             val response = httpClient.get(url)
             val bodyJsonString = response.bodyAsText()
             val headers = response.headers
@@ -103,7 +104,7 @@ interface InputHttpNode : Node.Input {
 
                 writeText(metadataJson)
             }
-        } else if(markAsClean) {
+        } else if (markAsClean) {
             // rewrite the same metadata, but mark it as clean
             val metadata = metadataFile.inputStream().use {
                 prettyJson.decodeFromStream(HttpMetadata.serializer(), it)

@@ -1,32 +1,55 @@
 package com.caseyjbrooks.arkham.stages.expansiondata.outputs
 
 import com.caseyjbrooks.arkham.dag.DependencyGraphBuilder
-import com.caseyjbrooks.arkham.dag.http.StartHttpNode
-import com.caseyjbrooks.arkham.dag.path.StartPathNode
+import com.caseyjbrooks.arkham.dag.http.InputHttpNode
+import com.caseyjbrooks.arkham.dag.http.prettyJson
+import com.caseyjbrooks.arkham.dag.path.InputPathNode
 import com.caseyjbrooks.arkham.dag.path.TerminalPathNode
+import com.caseyjbrooks.arkham.stages.expansiondata.inputs.ArkhamDbPacksApi
+import com.caseyjbrooks.arkham.stages.expansiondata.inputs.LocalExpansionFile
+import com.caseyjbrooks.arkham.stages.expansiondata.inputs.models.ArkhamDbPack
+import com.caseyjbrooks.arkham.stages.expansiondata.inputs.models.LocalArkhamHorrorExpansion
+import com.copperleaf.arkham.models.api.ProductList
+import kotlinx.serialization.ExperimentalSerializationApi
+import kotlinx.serialization.json.encodeToStream
 import java.nio.file.Paths
-import kotlin.io.path.div
 
 object ProductsJson {
     public val tags = listOf("FetchExpansionData", "output", "products")
 
+    @OptIn(ExperimentalSerializationApi::class)
     public suspend fun createOutputFile(
         scope: DependencyGraphBuilder.Scope,
-        packsConfigNode: StartPathNode,
-        packsHttpNode: StartHttpNode,
+        local: List<InputPathNode>,
+        packsHttpNode: InputHttpNode,
     ): TerminalPathNode = with(scope) {
-        val node = TerminalPathNode(
+        val productsOutputNode = TerminalPathNode(
             tags = tags,
-            baseOutputDir = graph.config.outputDir / "api",
-            outputPath = Paths.get("scenarios.json"),
+            baseOutputDir = graph.config.outputDir,
+            outputPath = Paths.get("api/products.json"),
             doRender = { nodes, os ->
-                os.write("{}".toByteArray())
+                val localExpansionFiles = LocalExpansionFile.getBodiesForOutput(scope, nodes).map { it.second }
+                val packsApi = ArkhamDbPacksApi.getBodyForOutput(scope, nodes)
+                prettyJson.encodeToStream(
+                    ProductList.serializer(),
+                    createJson(localExpansionFiles, packsApi),
+                    os,
+                )
             },
         )
-        addNode(node)
-        addEdge(packsConfigNode, node)
-        addEdge(packsHttpNode, node)
+        addNode(productsOutputNode)
+        local.forEach { localExpansionNode ->
+            addEdge(localExpansionNode, productsOutputNode)
+        }
+        addEdge(packsHttpNode, productsOutputNode)
 
-        return node
+        return productsOutputNode
+    }
+
+    private fun createJson(
+        localExpansionFiles: List<LocalArkhamHorrorExpansion>,
+        packsApi: List<ArkhamDbPack>,
+    ): ProductList {
+        return ProductList()
     }
 }

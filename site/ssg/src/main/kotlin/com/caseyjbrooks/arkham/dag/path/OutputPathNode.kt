@@ -19,7 +19,7 @@ interface OutputPathNode : Node.Output {
      */
     val outputPath: Path
 
-    val doRender: (List<Node>, OutputStream) -> Unit
+    val doRender: suspend (List<Node>, OutputStream) -> Unit
 
     fun realOutputFile(): Path {
         return baseOutputDir / outputPath

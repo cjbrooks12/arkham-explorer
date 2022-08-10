@@ -1,33 +1,68 @@
 package com.caseyjbrooks.arkham.stages.expansiondata.outputs
 
 import com.caseyjbrooks.arkham.dag.DependencyGraphBuilder
-import com.caseyjbrooks.arkham.dag.http.StartHttpNode
-import com.caseyjbrooks.arkham.dag.path.StartPathNode
+import com.caseyjbrooks.arkham.dag.http.InputHttpNode
+import com.caseyjbrooks.arkham.dag.http.prettyJson
+import com.caseyjbrooks.arkham.dag.path.InputPathNode
 import com.caseyjbrooks.arkham.dag.path.TerminalPathNode
+import com.caseyjbrooks.arkham.stages.expansiondata.inputs.ArkhamDbPacksApi
+import com.caseyjbrooks.arkham.stages.expansiondata.inputs.LocalExpansionFile
+import com.caseyjbrooks.arkham.stages.expansiondata.inputs.models.ArkhamDbPack
+import com.caseyjbrooks.arkham.stages.expansiondata.inputs.models.LocalArkhamHorrorExpansion
+import com.caseyjbrooks.arkham.stages.expansiondata.utils.asFullOutput
+import com.copperleaf.arkham.models.api.Scenario
+import kotlinx.serialization.ExperimentalSerializationApi
+import kotlinx.serialization.json.encodeToStream
 import java.nio.file.Paths
-import kotlin.io.path.div
 
 object ScenarioJson {
     public val tags = listOf("FetchExpansionData", "output", "scenario")
 
+    @OptIn(ExperimentalSerializationApi::class)
     public suspend fun createOutputFile(
         scope: DependencyGraphBuilder.Scope,
-        packsConfigNode: StartPathNode,
-        packsHttpNode: StartHttpNode,
+        localExpansionFiles: List<InputPathNode>,
+        expansionSlug: String,
         scenarioId: String,
+        packsHttpNode: InputHttpNode,
+        packHttpNodes: List<InputHttpNode>,
     ): TerminalPathNode = with(scope) {
-        val node = TerminalPathNode(
+        val scenarioNode = TerminalPathNode(
             tags = tags,
-            baseOutputDir = graph.config.outputDir / "api",
-            outputPath = Paths.get("scenarios/$scenarioId.json"),
+            baseOutputDir = graph.config.outputDir,
+            outputPath = Paths.get("api/scenarios/$scenarioId.json"),
             doRender = { nodes, os ->
-                os.write("{}".toByteArray())
+                val localExpansions = LocalExpansionFile.getBodiesForOutput(scope, nodes).map { it.second }
+                val localExpansion = LocalExpansionFile.getBodyForOutput(scope, nodes, expansionSlug)
+                val packsApi = ArkhamDbPacksApi.getBodyForOutput(scope, nodes)
+                prettyJson.encodeToStream(
+                    Scenario.serializer(),
+                    createJson(
+                        scenarioId,
+                        localExpansions,
+                        localExpansion,
+                        packsApi,
+                    ),
+                    os,
+                )
             },
         )
-        addNode(node)
-        addEdge(packsConfigNode, node)
-        addEdge(packsHttpNode, node)
+        addNode(scenarioNode)
+        localExpansionFiles.forEach { addEdge(it, scenarioNode) }
+        addEdge(packsHttpNode, scenarioNode)
 
-        return node
+        return scenarioNode
+    }
+
+    private fun createJson(
+        scenarioId: String,
+        localExpansions: List<LocalArkhamHorrorExpansion>,
+        localExpansion: LocalArkhamHorrorExpansion,
+        packsApi: List<ArkhamDbPack>,
+    ): Scenario {
+        return localExpansion
+            .scenarios
+            .single { it.id == scenarioId }
+            .asFullOutput(localExpansions)
     }
 }

@@ -1,40 +1,63 @@
 package com.caseyjbrooks.arkham.stages.expansiondata.outputs
 
 import com.caseyjbrooks.arkham.dag.DependencyGraphBuilder
-import com.caseyjbrooks.arkham.dag.http.StartHttpNode
-import com.caseyjbrooks.arkham.dag.path.StartPathNode
+import com.caseyjbrooks.arkham.dag.http.InputHttpNode
+import com.caseyjbrooks.arkham.dag.http.prettyJson
+import com.caseyjbrooks.arkham.dag.path.InputPathNode
 import com.caseyjbrooks.arkham.dag.path.TerminalPathNode
-import com.caseyjbrooks.arkham.utils.destruct2
+import com.caseyjbrooks.arkham.stages.expansiondata.inputs.ArkhamDbPacksApi
+import com.caseyjbrooks.arkham.stages.expansiondata.inputs.LocalExpansionFile
+import com.caseyjbrooks.arkham.stages.expansiondata.inputs.models.ArkhamDbPack
+import com.caseyjbrooks.arkham.stages.expansiondata.inputs.models.LocalArkhamHorrorExpansion
+import com.caseyjbrooks.arkham.stages.expansiondata.utils.asLiteOutput
+import com.copperleaf.arkham.models.api.ExpansionList
+import kotlinx.serialization.ExperimentalSerializationApi
+import kotlinx.serialization.json.encodeToStream
 import java.nio.file.Paths
-import kotlin.io.path.div
-import kotlin.io.path.readBytes
+import kotlin.io.path.nameWithoutExtension
 
 object ExpansionsJson {
     public val tags = listOf("FetchExpansionData", "output", "expansions")
 
-    /**
-     * A local index of packs that weill ultimately serve to tell the SPA which packs are available
-     */
+    @OptIn(ExperimentalSerializationApi::class)
     public suspend fun createOutputFile(
         scope: DependencyGraphBuilder.Scope,
-        packsConfigNode: StartPathNode,
-        packsHttpNode: StartHttpNode,
+        local: List<InputPathNode>,
+        packsHttpNode: InputHttpNode,
     ): TerminalPathNode = with(scope) {
-        val node = TerminalPathNode(
+        val expansionsOutputNode = TerminalPathNode(
             tags = tags,
-            baseOutputDir = graph.config.outputDir / "api",
-            outputPath = Paths.get("expansions.json"),
+            baseOutputDir = graph.config.outputDir,
+            outputPath = Paths.get("api/expansions.json"),
             doRender = { nodes, os ->
-                // TODO: more intelligently map data from both the local file and API response to get more data in the
-                //  rendered index file
-                val (packsConfig, packsHttp) = nodes.destruct2<StartPathNode, StartHttpNode>()
-                os.write(packsConfig.realInputFile().readBytes())
+                val localExpansionFiles = LocalExpansionFile.getBodiesForOutput(scope, nodes)
+                val packsApi = ArkhamDbPacksApi.getBodyForOutput(scope, nodes)
+                prettyJson.encodeToStream(
+                    ExpansionList.serializer(),
+                    createJson(localExpansionFiles, packsApi),
+                    os,
+                )
             },
         )
-        addNode(node)
-        addEdge(packsConfigNode, node)
-        addEdge(packsHttpNode, node)
+        addNode(expansionsOutputNode)
+        local.forEach { localExpansionNode ->
+            addEdge(localExpansionNode, expansionsOutputNode)
+        }
+        addEdge(packsHttpNode, expansionsOutputNode)
 
-        return node
+        return expansionsOutputNode
+    }
+
+    private fun createJson(
+        localExpansions: List<Pair<InputPathNode, LocalArkhamHorrorExpansion>>,
+        packsApi: List<ArkhamDbPack>,
+    ): ExpansionList {
+        return ExpansionList(
+            expansions = localExpansions
+                .map { (node, localExpansion) ->
+                    localExpansion.asLiteOutput(node.inputPath.nameWithoutExtension, localExpansions.map { it.second })
+                }
+                .sortedBy { it.id }
+        )
     }
 }

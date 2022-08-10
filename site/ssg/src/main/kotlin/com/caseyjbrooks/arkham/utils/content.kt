@@ -21,16 +21,16 @@ fun getOutputExtension(extension: String): String {
 }
 
 fun processByExtension(originalText: String, extension: String): String {
-    val preprocessedText = preprocessContent(originalText)
+    val preprocessedText = originalText.preprocessContent()
     return when (extension) {
         "md" -> processMarkdown(preprocessedText)
         else -> processText(preprocessedText)
     }
 }
 
-private fun preprocessContent(inputText: String): String {
+fun String.preprocessContent(): String {
     return replacements
-        .fold(inputText) { acc, (key, value) ->
+        .fold(this) { acc, (key, value) ->
             acc.replace("{{$key}}", value)
         }
 }

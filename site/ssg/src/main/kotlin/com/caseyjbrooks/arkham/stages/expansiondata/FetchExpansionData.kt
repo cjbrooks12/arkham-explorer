@@ -6,7 +6,7 @@ import com.caseyjbrooks.arkham.stages.config.SiteConfigNode
 import com.caseyjbrooks.arkham.stages.expansiondata.inputs.ArkhamDbPackCardsApi
 import com.caseyjbrooks.arkham.stages.expansiondata.inputs.ArkhamDbPacksApi
 import com.caseyjbrooks.arkham.stages.expansiondata.inputs.LocalExpansionFile
-import com.caseyjbrooks.arkham.stages.expansiondata.inputs.LocalExpansionsFile
+import com.caseyjbrooks.arkham.stages.expansiondata.outputs.EncounterSetJson
 import com.caseyjbrooks.arkham.stages.expansiondata.outputs.EncounterSetsJson
 import com.caseyjbrooks.arkham.stages.expansiondata.outputs.ExpansionEncounterSetsJson
 import com.caseyjbrooks.arkham.stages.expansiondata.outputs.ExpansionInvestigatorsJson
@@ -14,10 +14,11 @@ import com.caseyjbrooks.arkham.stages.expansiondata.outputs.ExpansionJson
 import com.caseyjbrooks.arkham.stages.expansiondata.outputs.ExpansionProductsJson
 import com.caseyjbrooks.arkham.stages.expansiondata.outputs.ExpansionScenariosJson
 import com.caseyjbrooks.arkham.stages.expansiondata.outputs.ExpansionsJson
+import com.caseyjbrooks.arkham.stages.expansiondata.outputs.InvestigatorJson
 import com.caseyjbrooks.arkham.stages.expansiondata.outputs.InvestigatorsJson
 import com.caseyjbrooks.arkham.stages.expansiondata.outputs.ProductsJson
+import com.caseyjbrooks.arkham.stages.expansiondata.outputs.ScenarioJson
 import com.caseyjbrooks.arkham.stages.expansiondata.outputs.ScenariosJson
-import com.copperleaf.arkham.models.ArkhamHorrorExpansionsIndex
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.cio.CIO
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
@@ -26,8 +27,7 @@ import io.ktor.client.plugins.logging.Logging
 import io.ktor.client.plugins.logging.SIMPLE
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.ExperimentalSerializationApi
-import kotlinx.serialization.json.decodeFromStream
-import kotlin.io.path.inputStream
+import kotlin.io.path.nameWithoutExtension
 
 @OptIn(ExperimentalSerializationApi::class)
 class FetchExpansionData : DependencyGraphBuilder {
@@ -53,44 +53,46 @@ class FetchExpansionData : DependencyGraphBuilder {
     private suspend fun DependencyGraphBuilder.Scope.loadInputs() {
         val siteConfigNode = graph.getNodeOfType<SiteConfigNode>()
 
-        val localExpansionsFile = LocalExpansionsFile.loadExpansionsFile(this, siteConfigNode)
-        val packsApi = ArkhamDbPacksApi.loadPacksList(this, siteConfigNode, http)
-
-        val expansions = prettyJson.decodeFromStream(
-            ArkhamHorrorExpansionsIndex.serializer(),
-            localExpansionsFile.realInputFile().inputStream()
-        )
-
-        expansions.expansions.forEach { packConfig ->
-            LocalExpansionFile.loadExpansionFile(this, localExpansionsFile, packsApi, packConfig)
-            packConfig.productCodes.forEach { productCode ->
-                ArkhamDbPackCardsApi.loadPacksCards(this, localExpansionsFile, packsApi, packConfig, productCode, http)
+        graph
+            .resourceService
+            .getFilesInDir(graph.config.expansionsDir)
+            .forEach { expansionFile ->
+                LocalExpansionFile.loadExpansionFile(this, siteConfigNode, expansionFile)
             }
+
+        val packsApiNode = ArkhamDbPacksApi.loadPacksList(this, siteConfigNode, http)
+        val packsBody = ArkhamDbPacksApi.getBody(this, packsApiNode)
+        packsBody.forEach { pack ->
+            ArkhamDbPackCardsApi.loadPacksCards(this, packsApiNode, pack.code, http)
         }
     }
 
     private suspend fun DependencyGraphBuilder.Scope.createOutputFiles() {
-        val localExpansionsFile = LocalExpansionsFile.getNode(this)
+        val expansionNodes = LocalExpansionFile.getNodes(this)
         val packsHttpNode = ArkhamDbPacksApi.getNode(this)
+        val packHttpNodes = ArkhamDbPackCardsApi.getNodes(this)
 
-        val expansions = prettyJson.decodeFromStream(
-            ArkhamHorrorExpansionsIndex.serializer(),
-            localExpansionsFile.realInputFile().inputStream()
-        )
+        ExpansionsJson.createOutputFile(this, expansionNodes, packsHttpNode)
+        ScenariosJson.createOutputFile(this, expansionNodes, packsHttpNode)
+        EncounterSetsJson.createOutputFile(this, expansionNodes, packsHttpNode)
+        InvestigatorsJson.createOutputFile(this, expansionNodes, packsHttpNode)
+        ProductsJson.createOutputFile(this, expansionNodes, packsHttpNode)
 
-        ExpansionsJson.createOutputFile(this, localExpansionsFile, packsHttpNode)
-        ScenariosJson.createOutputFile(this, localExpansionsFile, packsHttpNode)
-        EncounterSetsJson.createOutputFile(this, localExpansionsFile, packsHttpNode)
-        InvestigatorsJson.createOutputFile(this, localExpansionsFile, packsHttpNode)
-        ProductsJson.createOutputFile(this, localExpansionsFile, packsHttpNode)
+        expansionNodes.forEach { expansionNode ->
+            val localExpansion = LocalExpansionFile.getBody(expansionNode)
+            val expansionSlug = expansionNode.inputPath.nameWithoutExtension
 
-        expansions.expansions.forEach { packConfig ->
-            val localExpansionFile = LocalExpansionFile.getNode(this, packConfig)
-            ExpansionJson.createOutputFile(this, localExpansionsFile, packsHttpNode, localExpansionFile, packConfig)
-            ExpansionScenariosJson.createOutputFile(this, localExpansionsFile, packsHttpNode, localExpansionFile, packConfig)
-            ExpansionEncounterSetsJson.createOutputFile(this, localExpansionsFile, packsHttpNode, localExpansionFile, packConfig)
-            ExpansionInvestigatorsJson.createOutputFile(this, localExpansionsFile, packsHttpNode, localExpansionFile, packConfig)
-            ExpansionProductsJson.createOutputFile(this, localExpansionsFile, packsHttpNode, localExpansionFile, packConfig)
+            // create files at /api/expansions/{slug}/{type}.json
+            ExpansionJson.createOutputFile(this, expansionNodes, expansionSlug, packsHttpNode, packHttpNodes)
+            ExpansionScenariosJson.createOutputFile(this, expansionNodes, expansionSlug, packsHttpNode, packHttpNodes)
+            ExpansionEncounterSetsJson.createOutputFile(this, expansionNodes, expansionSlug, packsHttpNode, packHttpNodes)
+            ExpansionInvestigatorsJson.createOutputFile(this, expansionNodes, expansionSlug, packsHttpNode, packHttpNodes)
+            ExpansionProductsJson.createOutputFile(this, expansionNodes, expansionSlug, packsHttpNode, packHttpNodes)
+
+            // create files at /api/{type}/{id}.json
+            localExpansion.scenarios.forEach { ScenarioJson.createOutputFile(this, expansionNodes, expansionSlug, it.id, packsHttpNode, packHttpNodes) }
+            localExpansion.encounterSets.forEach { EncounterSetJson.createOutputFile(this, expansionNodes, expansionSlug, it.id, packsHttpNode, packHttpNodes) }
+            localExpansion.investigators.forEach { InvestigatorJson.createOutputFile(this, expansionNodes, expansionSlug, it.id, packsHttpNode, packHttpNodes) }
         }
     }
 }

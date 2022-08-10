@@ -1,45 +1,64 @@
 package com.caseyjbrooks.arkham.stages.expansiondata.outputs
 
 import com.caseyjbrooks.arkham.dag.DependencyGraphBuilder
-import com.caseyjbrooks.arkham.dag.http.StartHttpNode
-import com.caseyjbrooks.arkham.dag.path.StartPathNode
+import com.caseyjbrooks.arkham.dag.http.InputHttpNode
+import com.caseyjbrooks.arkham.dag.http.prettyJson
+import com.caseyjbrooks.arkham.dag.path.InputPathNode
 import com.caseyjbrooks.arkham.dag.path.TerminalPathNode
-import com.caseyjbrooks.arkham.site.BuildConfig
-import com.caseyjbrooks.arkham.utils.destruct3
-import com.copperleaf.arkham.models.ArkhamHorrorExpansionsIndex
+import com.caseyjbrooks.arkham.stages.expansiondata.inputs.ArkhamDbPacksApi
+import com.caseyjbrooks.arkham.stages.expansiondata.inputs.LocalExpansionFile
+import com.caseyjbrooks.arkham.stages.expansiondata.inputs.models.ArkhamDbPack
+import com.caseyjbrooks.arkham.stages.expansiondata.inputs.models.LocalArkhamHorrorExpansion
+import com.caseyjbrooks.arkham.stages.expansiondata.utils.asFullOutput
+import com.copperleaf.arkham.models.api.Expansion
+import kotlinx.serialization.ExperimentalSerializationApi
+import kotlinx.serialization.json.encodeToStream
 import java.nio.file.Paths
-import kotlin.io.path.div
-import kotlin.io.path.readText
 
 object ExpansionJson {
     public val tags = listOf("FetchExpansionData", "output", "expansion")
 
+    @OptIn(ExperimentalSerializationApi::class)
     public suspend fun createOutputFile(
         scope: DependencyGraphBuilder.Scope,
-        packsConfigNode: StartPathNode,
-        packsHttpNode: StartHttpNode,
-        localExpansionFile: StartPathNode,
-        packConfig: ArkhamHorrorExpansionsIndex.ArkhamHorrorExpansionIndex,
+        localExpansionFiles: List<InputPathNode>,
+        expansionSlug: String,
+        packsHttpNode: InputHttpNode,
+        packHttpNodes: List<InputHttpNode>,
     ): TerminalPathNode = with(scope) {
-        val node = TerminalPathNode(
-            baseOutputDir = graph.config.outputDir / "api/expansions",
-            outputPath = Paths.get("${packConfig.slug}.json"),
+        val expansionNode = TerminalPathNode(
+            baseOutputDir = graph.config.outputDir,
+            outputPath = Paths.get("api/expansions/$expansionSlug.json"),
             doRender = { nodes, os ->
-                val (config, http, expansionInput) = nodes.destruct3<StartPathNode, StartHttpNode, StartPathNode>()
-
-                expansionInput
-                    .realInputFile()
-                    .readText()
-                    .replace("{{baseUrl}}", BuildConfig.BASE_URL)
-                    .let { os.write(it.toByteArray()) }
+                val localExpansions = LocalExpansionFile.getBodiesForOutput(scope, nodes).map { it.second }
+                val localExpansion = LocalExpansionFile.getBodyForOutput(scope, nodes, expansionSlug)
+                val packsApi = ArkhamDbPacksApi.getBodyForOutput(scope, nodes)
+                prettyJson.encodeToStream(
+                    Expansion.serializer(),
+                    createJson(
+                        expansionSlug,
+                        localExpansions,
+                        localExpansion,
+                        packsApi,
+                    ),
+                    os,
+                )
             },
-            tags = tags + packConfig.slug
+            tags = tags + expansionSlug
         )
-        addNode(node)
-        addEdge(packsConfigNode, node)
-        addEdge(packsHttpNode, node)
-        addEdge(localExpansionFile, node)
+        addNode(expansionNode)
+        localExpansionFiles.forEach { addEdge(it, expansionNode) }
+        addEdge(packsHttpNode, expansionNode)
 
-        return node
+        return expansionNode
+    }
+
+    private fun createJson(
+        expansionSlug: String,
+        localExpansions: List<LocalArkhamHorrorExpansion>,
+        localExpansion: LocalArkhamHorrorExpansion,
+        packsApi: List<ArkhamDbPack>,
+    ): Expansion {
+        return localExpansion.asFullOutput(expansionSlug, localExpansions)
     }
 }

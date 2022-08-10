@@ -1,15 +1,6 @@
-package com.caseyjbrooks.arkham.stages.expansiondata.models
+package com.caseyjbrooks.arkham.stages.expansiondata.inputs.models
 
-import com.caseyjbrooks.arkham.dag.http.prettyJson
-import kotlinx.serialization.KSerializer
 import kotlinx.serialization.Serializable
-import kotlinx.serialization.builtins.ListSerializer
-import kotlinx.serialization.descriptors.SerialDescriptor
-import kotlinx.serialization.encoding.Decoder
-import kotlinx.serialization.encoding.Encoder
-import kotlinx.serialization.json.JsonArray
-import kotlinx.serialization.json.JsonDecoder
-import kotlinx.serialization.json.JsonPrimitive
 
 @Serializable
 data class ArkhamDbCard(
@@ -60,7 +51,7 @@ data class ArkhamDbCard(
     val real_traits: String? = null,
     val restrictions: Restrictions? = null,
     val deck_requirements: DeckRequirements? = null,
-    @Serializable(with = DeckOptionsSerializer::class)
+    @Serializable(with = ArkhamDbDeckOptionsSerializer::class)
     val deck_options: List<DeckOptions>? = null,
     val flavor: String? = null,
     val illustrator: String? = null,
@@ -121,6 +112,7 @@ data class ArkhamDbCard(
             val value: String? = null,
         )
     }
+
     @Serializable
     data class DeckOptions(
         val faction: List<String>? = null,
@@ -146,38 +138,16 @@ data class ArkhamDbCard(
             val min: Int? = null,
             val max: Int? = null,
         )
+
         @Serializable
         data class AtLeast(
             val factions: Int? = null,
             val min: Int? = null,
         )
     }
+
     @Serializable
     data class Restrictions(
         val investigator: Map<String, String>? = null,
     )
-}
-
-object DeckOptionsSerializer : KSerializer<List<ArkhamDbCard.DeckOptions>> {
-    private val realSerializer = ListSerializer(ArkhamDbCard.DeckOptions.serializer())
-    override val descriptor: SerialDescriptor = realSerializer.descriptor
-
-    override fun deserialize(decoder: Decoder): List<ArkhamDbCard.DeckOptions> {
-        check(decoder is JsonDecoder)
-
-        val element = decoder.decodeJsonElement()
-
-        return if(element is JsonPrimitive && element.isString) {
-            prettyJson.decodeFromString(realSerializer, element.content)
-        } else if(element is JsonArray) {
-            prettyJson.decodeFromJsonElement(realSerializer, element)
-        } else {
-            error("Unknown JSON type: $element")
-        }
-    }
-
-    override fun serialize(encoder: Encoder, value: List<ArkhamDbCard.DeckOptions>) {
-        encoder.encodeSerializableValue(realSerializer, value)
-    }
-
 }
