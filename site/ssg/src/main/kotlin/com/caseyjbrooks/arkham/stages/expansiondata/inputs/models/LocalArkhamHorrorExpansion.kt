@@ -8,6 +8,7 @@ data class LocalArkhamHorrorExpansion(
     val name: String = "",
     val productCodes: List<String> = emptyList(),
     val icon: String = "",
+    val boxArt: String = "",
     val scenarios: List<Scenario> = listOf(),
     val encounterSets: List<EncounterSet> = listOf(),
     val investigators: List<Investigator> = emptyList(),

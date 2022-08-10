@@ -2,6 +2,7 @@
     "id": "1",
     "name": "Night of the Zealot",
     "icon": "{{baseUrl}}/assets/night-of-the-zealot.svg",
+    "boxArt": "{{baseUrl}}/assets/night-of-the-zealot/box-art.png",
     "productCodes": [
         "core",
         "rcore"

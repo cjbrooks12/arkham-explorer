@@ -2,6 +2,7 @@
     "id": "1r",
     "name": "Return To Night of the Zealot",
     "icon": "{{baseUrl}}/assets/return-to-night-of-the-zealot.svg",
+    "boxArt": "{{baseUrl}}/assets/night-of-the-zealot/box-art.png",
     "scenarios": [
         {
             "id": "1-1r",

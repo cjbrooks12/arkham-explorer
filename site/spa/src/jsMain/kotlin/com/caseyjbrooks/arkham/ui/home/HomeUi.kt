@@ -7,6 +7,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import com.caseyjbrooks.arkham.di.ArkhamInjector
 import com.caseyjbrooks.arkham.ui.ArkhamApp
+import com.caseyjbrooks.arkham.utils.CacheReady
 import com.caseyjbrooks.arkham.utils.theme.bulma.Banner
 import com.caseyjbrooks.arkham.utils.theme.bulma.Breadcrumbs
 import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaSection
@@ -47,75 +48,92 @@ object HomeUi {
                 )
             }
             BulmaSection {
-                Row("features") {
-                    Column {
-                        Card(
-                            imageUrl = "https://cf.geekdo-images.com/B5F5ulz0UivNgrI9Ky0euA__imagepage/img/tgpLRvv6AIsClnegErNpAoieeMo=/fit-in/900x600/filters:no_upscale():strip_icc()/pic3122349.jpg",
-                            title = "Core Set",
-                            description = "The boundaries between worlds have drawn perilously thin. Dark forces work in the shadows and call upon unspeakable horrors, strange happenings are discovered all throughout the city of Arkham, Massachusetts, and behind it all an Ancient One manipulates everything from beyond the veil. It is time to revisit that which started it all…"
-                        )
-                    }
-                    Column {
-                        Card(
-                            imageUrl = "https://cf.geekdo-images.com/K-Gm9TAbPmHhA0E7wWvZ8g__imagepage/img/sZnnuH4fsKna5hgrf_SckvBXzec=/fit-in/900x600/filters:no_upscale():strip_icc()/pic3610420.jpg",
-                            title = "The Dunwich Horror",
-                            description = "The boundaries between worlds have drawn perilously thin. Dark forces work in the shadows and call upon unspeakable horrors, strange happenings are discovered all throughout the city of Arkham, Massachusetts, and behind it all an Ancient One manipulates everything from beyond the veil. It is time to revisit that which started it all…"
-                        )
-                    }
-                    Column {
-                        Card(
-                            imageUrl = "https://cf.geekdo-images.com/6rxB9hdtoi0IVLdCXI1IRA__imagepage/img/ok3FIIGnxgWPEbLbBlIC81B4Wn0=/fit-in/900x600/filters:no_upscale():strip_icc()/pic3564115.jpg",
-                            title = "The Path to Carcosa",
-                            description = "The boundaries between worlds have drawn perilously thin. Dark forces work in the shadows and call upon unspeakable horrors, strange happenings are discovered all throughout the city of Arkham, Massachusetts, and behind it all an Ancient One manipulates everything from beyond the veil. It is time to revisit that which started it all…"
-                        )
+                CacheReady(state.layout) { layoutState ->
+                    val expansionsChunks = layoutState.expansions.chunked(3)
+
+                    expansionsChunks.forEach { expansions ->
+                        Row("features") {
+                            expansions.forEach { expansion ->
+                                Column {
+                                    Card(
+                                        imageUrl = expansion.boxArt,
+                                        title = expansion.name,
+                                        description = "The boundaries between worlds have drawn perilously thin. Dark forces work in the shadows and call upon unspeakable horrors, strange happenings are discovered all throughout the city of Arkham, Massachusetts, and behind it all an Ancient One manipulates everything from beyond the veil. It is time to revisit that which started it all…"
+                                    )
+                                }
+                            }
+                        }
                     }
                 }
-                Row("features") {
-                    Column {
-                        Card(
-                            imageUrl = "https://cf.geekdo-images.com/wvpEUh94mIusI1ymG_6NVQ__imagepage/img/ADN3DQvm3oGEdn7JaERCauxFa0k=/fit-in/900x600/filters:no_upscale():strip_icc()/pic4025299.jpg",
-                            title = "The Forgotten Age",
-                            description = "The boundaries between worlds have drawn perilously thin. Dark forces work in the shadows and call upon unspeakable horrors, strange happenings are discovered all throughout the city of Arkham, Massachusetts, and behind it all an Ancient One manipulates everything from beyond the veil. It is time to revisit that which started it all…"
-                        )
-                    }
-                    Column {
-                        Card(
-                            imageUrl = "https://cf.geekdo-images.com/a-yinPN6joGCv4mJ9Wg05w__imagepage/img/zZxPC36PgJhRiZpJ7ZFvpcb8_y0=/fit-in/900x600/filters:no_upscale():strip_icc()/pic4409506.jpg",
-                            title = "The Circle Undone",
-                            description = "The boundaries between worlds have drawn perilously thin. Dark forces work in the shadows and call upon unspeakable horrors, strange happenings are discovered all throughout the city of Arkham, Massachusetts, and behind it all an Ancient One manipulates everything from beyond the veil. It is time to revisit that which started it all…"
-                        )
-                    }
-                    Column {
-                        Card(
-                            imageUrl = "https://cf.geekdo-images.com/noZq6s4KuN8JkiykQI4ToA__imagepage/img/rg_qiJWkcbZXqg6upge9KTQY9xI=/fit-in/900x600/filters:no_upscale():strip_icc()/pic4819000.jpg",
-                            title = "The Dream Eaters",
-                            description = "The boundaries between worlds have drawn perilously thin. Dark forces work in the shadows and call upon unspeakable horrors, strange happenings are discovered all throughout the city of Arkham, Massachusetts, and behind it all an Ancient One manipulates everything from beyond the veil. It is time to revisit that which started it all…"
-                        )
-                    }
-                }
-                Row("features") {
-                    Column {
-                        Card(
-                            imageUrl = "https://cf.geekdo-images.com/Y7engtH3jULhy3X5-R8YEQ__imagepage/img/Z524fsb02xB4KRFa8QQCk5BMjMo=/fit-in/900x600/filters:no_upscale():strip_icc()/pic5384304.png",
-                            title = "The Innsmouth Conspiracy",
-                            description = "The boundaries between worlds have drawn perilously thin. Dark forces work in the shadows and call upon unspeakable horrors, strange happenings are discovered all throughout the city of Arkham, Massachusetts, and behind it all an Ancient One manipulates everything from beyond the veil. It is time to revisit that which started it all…"
-                        )
-                    }
-                    Column {
-                        Card(
-                            imageUrl = "https://cf.geekdo-images.com/zCBeaFMFckzNCwJihcOXLQ__imagepage/img/CquFtTjbCUqBXbJfosqMmF_g6YM=/fit-in/900x600/filters:no_upscale():strip_icc()/pic7003509.png",
-                            title = "Edge of the Earth",
-                            description = "The boundaries between worlds have drawn perilously thin. Dark forces work in the shadows and call upon unspeakable horrors, strange happenings are discovered all throughout the city of Arkham, Massachusetts, and behind it all an Ancient One manipulates everything from beyond the veil. It is time to revisit that which started it all…"
-                        )
-                    }
-                    Column {
-                        Card(
-                            imageUrl = "https://cf.geekdo-images.com/cf9j3UR9GrKL_LK6WExYQA__imagepage/img/xXqnYCWjRcNfBqGR-T-KOHClFtc=/fit-in/900x600/filters:no_upscale():strip_icc()/pic6944629.jpg",
-                            title = "The Scarlet Keys",
-                            description = "The boundaries between worlds have drawn perilously thin. Dark forces work in the shadows and call upon unspeakable horrors, strange happenings are discovered all throughout the city of Arkham, Massachusetts, and behind it all an Ancient One manipulates everything from beyond the veil. It is time to revisit that which started it all…"
-                        )
-                    }
-                }
+//                Row("features") {
+//                    Column {
+//                        Card(
+//                            imageUrl = "https://cf.geekdo-images.com/B5F5ulz0UivNgrI9Ky0euA__imagepage/img/tgpLRvv6AIsClnegErNpAoieeMo=/fit-in/900x600/filters:no_upscale():strip_icc()/pic3122349.jpg",
+//                            title = "Core Set",
+//                            description = "The boundaries between worlds have drawn perilously thin. Dark forces work in the shadows and call upon unspeakable horrors, strange happenings are discovered all throughout the city of Arkham, Massachusetts, and behind it all an Ancient One manipulates everything from beyond the veil. It is time to revisit that which started it all…"
+//                        )
+//                    }
+//                    Column {
+//                        Card(
+//                            imageUrl = "https://cf.geekdo-images.com/K-Gm9TAbPmHhA0E7wWvZ8g__imagepage/img/sZnnuH4fsKna5hgrf_SckvBXzec=/fit-in/900x600/filters:no_upscale():strip_icc()/pic3610420.jpg",
+//                            title = "The Dunwich Horror",
+//                            description = "The boundaries between worlds have drawn perilously thin. Dark forces work in the shadows and call upon unspeakable horrors, strange happenings are discovered all throughout the city of Arkham, Massachusetts, and behind it all an Ancient One manipulates everything from beyond the veil. It is time to revisit that which started it all…"
+//                        )
+//                    }
+//                    Column {
+//                        Card(
+//                            imageUrl = "https://cf.geekdo-images.com/6rxB9hdtoi0IVLdCXI1IRA__imagepage/img/ok3FIIGnxgWPEbLbBlIC81B4Wn0=/fit-in/900x600/filters:no_upscale():strip_icc()/pic3564115.jpg",
+//                            title = "The Path to Carcosa",
+//                            description = "The boundaries between worlds have drawn perilously thin. Dark forces work in the shadows and call upon unspeakable horrors, strange happenings are discovered all throughout the city of Arkham, Massachusetts, and behind it all an Ancient One manipulates everything from beyond the veil. It is time to revisit that which started it all…"
+//                        )
+//                    }
+//                }
+//                Row("features") {
+//                    Column {
+//                        Card(
+//                            imageUrl = "https://cf.geekdo-images.com/wvpEUh94mIusI1ymG_6NVQ__imagepage/img/ADN3DQvm3oGEdn7JaERCauxFa0k=/fit-in/900x600/filters:no_upscale():strip_icc()/pic4025299.jpg",
+//                            title = "The Forgotten Age",
+//                            description = "The boundaries between worlds have drawn perilously thin. Dark forces work in the shadows and call upon unspeakable horrors, strange happenings are discovered all throughout the city of Arkham, Massachusetts, and behind it all an Ancient One manipulates everything from beyond the veil. It is time to revisit that which started it all…"
+//                        )
+//                    }
+//                    Column {
+//                        Card(
+//                            imageUrl = "https://cf.geekdo-images.com/a-yinPN6joGCv4mJ9Wg05w__imagepage/img/zZxPC36PgJhRiZpJ7ZFvpcb8_y0=/fit-in/900x600/filters:no_upscale():strip_icc()/pic4409506.jpg",
+//                            title = "The Circle Undone",
+//                            description = "The boundaries between worlds have drawn perilously thin. Dark forces work in the shadows and call upon unspeakable horrors, strange happenings are discovered all throughout the city of Arkham, Massachusetts, and behind it all an Ancient One manipulates everything from beyond the veil. It is time to revisit that which started it all…"
+//                        )
+//                    }
+//                    Column {
+//                        Card(
+//                            imageUrl = "https://cf.geekdo-images.com/noZq6s4KuN8JkiykQI4ToA__imagepage/img/rg_qiJWkcbZXqg6upge9KTQY9xI=/fit-in/900x600/filters:no_upscale():strip_icc()/pic4819000.jpg",
+//                            title = "The Dream Eaters",
+//                            description = "The boundaries between worlds have drawn perilously thin. Dark forces work in the shadows and call upon unspeakable horrors, strange happenings are discovered all throughout the city of Arkham, Massachusetts, and behind it all an Ancient One manipulates everything from beyond the veil. It is time to revisit that which started it all…"
+//                        )
+//                    }
+//                }
+//                Row("features") {
+//                    Column {
+//                        Card(
+//                            imageUrl = "https://cf.geekdo-images.com/Y7engtH3jULhy3X5-R8YEQ__imagepage/img/Z524fsb02xB4KRFa8QQCk5BMjMo=/fit-in/900x600/filters:no_upscale():strip_icc()/pic5384304.png",
+//                            title = "The Innsmouth Conspiracy",
+//                            description = "The boundaries between worlds have drawn perilously thin. Dark forces work in the shadows and call upon unspeakable horrors, strange happenings are discovered all throughout the city of Arkham, Massachusetts, and behind it all an Ancient One manipulates everything from beyond the veil. It is time to revisit that which started it all…"
+//                        )
+//                    }
+//                    Column {
+//                        Card(
+//                            imageUrl = "https://cf.geekdo-images.com/zCBeaFMFckzNCwJihcOXLQ__imagepage/img/CquFtTjbCUqBXbJfosqMmF_g6YM=/fit-in/900x600/filters:no_upscale():strip_icc()/pic7003509.png",
+//                            title = "Edge of the Earth",
+//                            description = "The boundaries between worlds have drawn perilously thin. Dark forces work in the shadows and call upon unspeakable horrors, strange happenings are discovered all throughout the city of Arkham, Massachusetts, and behind it all an Ancient One manipulates everything from beyond the veil. It is time to revisit that which started it all…"
+//                        )
+//                    }
+//                    Column {
+//                        Card(
+//                            imageUrl = "https://cf.geekdo-images.com/cf9j3UR9GrKL_LK6WExYQA__imagepage/img/xXqnYCWjRcNfBqGR-T-KOHClFtc=/fit-in/900x600/filters:no_upscale():strip_icc()/pic6944629.jpg",
+//                            title = "The Scarlet Keys",
+//                            description = "The boundaries between worlds have drawn perilously thin. Dark forces work in the shadows and call upon unspeakable horrors, strange happenings are discovered all throughout the city of Arkham, Massachusetts, and behind it all an Ancient One manipulates everything from beyond the veil. It is time to revisit that which started it all…"
+//                        )
+//                    }
+//                }
             }
         }
     }

@@ -2,6 +2,7 @@
     "id": "2",
     "name": "The Dunwich Legacy",
     "icon": "{{baseUrl}}/assets/the-dunwich-legacy.svg",
+    "boxArt": "{{baseUrl}}/assets/the-dunwich-legacy/box-art.png",
     "productCodes": [],
     "scenarios": [
         {

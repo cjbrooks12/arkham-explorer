@@ -1,6 +1,7 @@
 package com.caseyjbrooks.arkham.utils.theme.layouts
 
 import androidx.compose.runtime.Composable
+import com.caseyjbrooks.arkham.app.BuildConfig
 import com.caseyjbrooks.arkham.ui.ArkhamApp
 import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaFooter
 import com.caseyjbrooks.arkham.utils.theme.bulma.MainNavBar
@@ -27,7 +28,7 @@ data class MainLayoutState(
 
         fun fromValue(expansions: ExpansionList): MainLayoutState {
             return MainLayoutState(
-                brandImage = "http://arkhamcentral.com/wp-content/uploads/2017/05/ArkhamHorrorlogo.png",
+                brandImage = "${BuildConfig.BASE_URL}/assets/main-logo.png",
                 expansions = expansions.expansions,
                 startNavigation = listOf(
                     NavigationSection(
