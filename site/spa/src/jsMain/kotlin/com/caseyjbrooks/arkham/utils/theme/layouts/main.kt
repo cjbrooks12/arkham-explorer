@@ -61,15 +61,16 @@ data class MainLayoutState(
                 ),
                 endNavigation = listOf(
                     NavigationSection(
-                        "Tools",
+                        "Resources",
+                        NavigationRoute("Community Resources", null, ArkhamApp.StaticPage, "resources"),
                         NavigationRoute("Chaos Bag Simulator", null, ArkhamApp.ChaosBagSimulator),
                         NavigationRoute("Dividers Generator", null, ArkhamApp.DividersGenerator),
                         NavigationRoute("Tuckbox Generator", null, ArkhamApp.TuckboxGenerator),
                         NavigationRoute("Custom Cards Designer", null, ArkhamApp.CustomCards),
                     ),
                     NavigationSection(
-                        "Resources",
-                        NavigationRoute("Resources", null, ArkhamApp.StaticPage, "resources"),
+                        "About",
+                        NavigationRoute("Resources", null, ArkhamApp.StaticPage, "about"),
                     ),
                     NavigationSection(
                         "API",
