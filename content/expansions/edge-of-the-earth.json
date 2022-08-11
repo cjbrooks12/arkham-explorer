@@ -1,0 +1,12 @@
+{
+    "id": "8",
+    "name": "Edge of the Earth",
+    "icon": "{{baseUrl}}/assets/edge-of-the-earth.svg",
+    "boxArt": "{{baseUrl}}/assets/edge-of-the-earth/box-art.webp",
+    "flavorText": "In the far, uncharted reaches of Antarctica, unspeakable horrors dwell on the edge of shadows. They lurk, wait, and watch, and with them comes a secret so ancient and profound that it threatens to tear apart our very understanding of the planet we call home—if it doesn’t tear apart reality itself first. Thus, our intrepid investigators must delve into the mysteries of the great southern ice sheets and, hopefully, uncover the truth before it is too late. Will they save the world? Or will they perish in the icy depths?",
+    "isReturnTo": false,
+    "products": [],
+    "scenarios": [],
+    "encounterSets": [],
+    "investigators": []
+}

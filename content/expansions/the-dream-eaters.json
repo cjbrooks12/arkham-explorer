@@ -1,0 +1,12 @@
+{
+    "id": "6",
+    "name": "The Dream Eaters",
+    "icon": "{{baseUrl}}/assets/the-dream-eaters.svg",
+    "boxArt": "{{baseUrl}}/assets/the-dream-eaters/box-art.webp",
+    "flavorText": "There is a hidden realm outside the world of the waking: a realm of wonder, imagination, and nightmares. After occult author Virgil Gray writes about his adventures in these “Dreamlands,” you decide to set forth and learn the truth for yourself. What is real, and what is fiction? And what secrets await in the dark, forbidden places beyond the gates of sleep?",
+    "isReturnTo": false,
+    "products": [],
+    "scenarios": [],
+    "encounterSets": [],
+    "investigators": []
+}

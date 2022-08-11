@@ -71,13 +71,24 @@ fun LocalArkhamHorrorExpansion.Investigator.asFullOutput(allExpansionData: List<
     )
 }
 
-fun LocalArkhamHorrorExpansion.asFullOutput(expansionSlug: String, allExpansionData: List<LocalArkhamHorrorExpansion>): Expansion {
+fun LocalArkhamHorrorExpansion.asFullOutput(
+    expansionSlug: String,
+    allExpansionData: List<LocalArkhamHorrorExpansion>
+): Expansion {
     return Expansion(
         name = this.name,
         id = ExpansionId(this.id),
         code = expansionSlug,
+        isReturnTo = this.isReturnTo,
+        hasReturnTo = this.returnToName != null,
+        returnToCode = if (this.returnToName != null) {
+            allExpansionData.single { it.isReturnTo && it.name == this.returnToName }.code
+        } else {
+            null
+        },
         icon = this.icon.preprocessContent(),
         boxArt = this.boxArt.preprocessContent(),
+        flavorText = this.flavorText,
         scenarios = this.scenarios.map { it.asFullOutput(allExpansionData) },
         encounterSets = this.encounterSets.map { it.asFullOutput(allExpansionData) },
         investigators = this.investigators.map { it.asFullOutput(allExpansionData) },
@@ -85,13 +96,24 @@ fun LocalArkhamHorrorExpansion.asFullOutput(expansionSlug: String, allExpansionD
     )
 }
 
-fun LocalArkhamHorrorExpansion.asLiteOutput(expansionSlug: String, allExpansionData: List<LocalArkhamHorrorExpansion>): ExpansionLite {
+fun LocalArkhamHorrorExpansion.asLiteOutput(
+    expansionSlug: String,
+    allExpansionData: List<LocalArkhamHorrorExpansion>
+): ExpansionLite {
     return ExpansionLite(
         name = this.name,
         id = ExpansionId(this.id),
         code = expansionSlug,
+        isReturnTo = this.isReturnTo,
+        hasReturnTo = this.returnToName != null,
+        returnToCode = if (this.returnToName != null) {
+            allExpansionData.single { it.isReturnTo && it.name == this.returnToName }.code
+        } else {
+            null
+        },
         icon = this.icon.preprocessContent(),
         boxArt = this.boxArt.preprocessContent(),
+        flavorText = this.flavorText,
         scenarios = this.scenarios.map { it.asFullOutput(allExpansionData).id },
         encounterSets = this.encounterSets.map { it.asFullOutput(allExpansionData).id },
         investigators = this.investigators.map { it.asFullOutput(allExpansionData).id },

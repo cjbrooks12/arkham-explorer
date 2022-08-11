@@ -7,6 +7,7 @@ import com.caseyjbrooks.arkham.dag.path.InputPathNode
 import com.caseyjbrooks.arkham.dag.path.StartPathNode
 import com.caseyjbrooks.arkham.stages.config.SiteConfigNode
 import com.caseyjbrooks.arkham.stages.expansiondata.inputs.models.LocalArkhamHorrorExpansion
+import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.decodeFromStream
 import java.nio.file.Path
 import kotlin.io.path.inputStream
@@ -62,11 +63,14 @@ object LocalExpansionFile {
             .let { getBody(it) }
     }
 
+    @OptIn(ExperimentalSerializationApi::class)
     public suspend fun getBody(
         node: InputPathNode,
     ): LocalArkhamHorrorExpansion {
         return node.realInputFile().inputStream().use {
-            prettyJson.decodeFromStream(LocalArkhamHorrorExpansion.serializer(), it)
+            prettyJson
+                .decodeFromStream(LocalArkhamHorrorExpansion.serializer(), it)
+                .copy(code = node.inputPath.nameWithoutExtension)
         }
     }
 

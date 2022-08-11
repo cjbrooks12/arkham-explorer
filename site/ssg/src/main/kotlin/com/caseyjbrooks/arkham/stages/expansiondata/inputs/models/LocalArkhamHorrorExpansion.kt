@@ -5,10 +5,14 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class LocalArkhamHorrorExpansion(
     val id: String = "",
+    val code: String = "",
     val name: String = "",
-    val productCodes: List<String> = emptyList(),
+    val products: List<String> = emptyList(),
     val icon: String = "",
+    val isReturnTo: Boolean = false,
+    val returnToName: String? = null,
     val boxArt: String = "",
+    val flavorText: String = "",
     val scenarios: List<Scenario> = listOf(),
     val encounterSets: List<EncounterSet> = listOf(),
     val investigators: List<Investigator> = emptyList(),

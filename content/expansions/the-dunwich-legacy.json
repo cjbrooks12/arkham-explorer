@@ -2,8 +2,11 @@
     "id": "2",
     "name": "The Dunwich Legacy",
     "icon": "{{baseUrl}}/assets/the-dunwich-legacy.svg",
-    "boxArt": "{{baseUrl}}/assets/the-dunwich-legacy/box-art.png",
-    "productCodes": [],
+    "boxArt": "{{baseUrl}}/assets/the-dunwich-legacy/box-art.webp",
+    "isReturnTo": false,
+    "returnToName": "Return To The Dunwich Legacy",
+    "flavorText": "A monstrous presence once terrorized the secluded village of Dunwich. The season of horror ended only after three professors from Miskatonic University—Dr. Henry Armitage, Dr. Francis Morgan, and Professor Warren Price—ventured to Dunwich, armed with secret knowledge that enabled them to defeat the creature. Now, several months later, Dr. Armitage’s colleagues have gone missing, and he fears the worst…",
+    "products": [],
     "scenarios": [
         {
             "id": "2-1",

@@ -6,7 +6,7 @@ import com.copperleaf.ballast.repository.cache.getCachedOrThrow
 import com.copperleaf.ballast.repository.cache.isLoading
 
 @Composable
-fun <T1 : Any> CacheReady(
+inline fun <T1 : Any> CacheReady(
     cached1: Cached<T1>,
     onAnyError: @Composable () -> Unit = {},
     onLoading: @Composable () -> Unit = {},

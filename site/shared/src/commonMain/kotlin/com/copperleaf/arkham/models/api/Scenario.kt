@@ -13,13 +13,13 @@ value class ScenarioId(val id: String) : Comparable<ScenarioId> {
 
 @Serializable
 data class Scenario(
-    val name: String = "",
-    val id: ScenarioId = ScenarioId(""),
-    val icon: String = "",
-    val encounterSets: List<ScenarioEncounterSet> = emptyList(),
+    val name: String,
+    val id: ScenarioId,
+    val icon: String,
+    val encounterSets: List<ScenarioEncounterSet>,
 )
 
 @Serializable
 data class ScenarioList(
-    val scenarios: List<Scenario> = emptyList()
+    val scenarios: List<Scenario>,
 )

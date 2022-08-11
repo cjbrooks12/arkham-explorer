@@ -2,7 +2,9 @@
     "id": "2r",
     "name": "Return To The Dunwich Legacy",
     "icon": "{{baseUrl}}/assets/return-to-the-dunwich-legacy.svg",
-    "boxArt": "{{baseUrl}}/assets/the-dunwich-legacy/box-art.png",
+    "boxArt": "{{baseUrl}}/assets/return-to-the-dunwich-legacy/box-art.webp",
+    "isReturnTo": true,
+    "products": [],
     "scenarios": [
         {
             "id": "2-1r",

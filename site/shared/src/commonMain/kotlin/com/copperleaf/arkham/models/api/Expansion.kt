@@ -13,31 +13,39 @@ value class ExpansionId(val id: String) : Comparable<ExpansionId> {
 
 @Serializable
 data class Expansion(
-    val name: String = "",
-    val id: ExpansionId = ExpansionId(""),
+    val name: String,
+    val id: ExpansionId,
     val code: String,
-    val icon: String = "",
-    val boxArt: String = "",
-    val scenarios: List<Scenario> = emptyList(),
-    val encounterSets: List<EncounterSet> = emptyList(),
-    val investigators: List<Investigator> = emptyList(),
-    val products: List<Product> = emptyList(),
+    val isReturnTo: Boolean,
+    val hasReturnTo: Boolean,
+    val returnToCode: String?,
+    val icon: String,
+    val boxArt: String,
+    val flavorText: String,
+    val scenarios: List<Scenario>,
+    val encounterSets: List<EncounterSet>,
+    val investigators: List<Investigator>,
+    val products: List<Product>,
 )
 
 @Serializable
 data class ExpansionLite(
-    val name: String = "",
-    val id: ExpansionId = ExpansionId(""),
+    val name: String,
+    val id: ExpansionId,
     val code: String,
-    val icon: String = "",
-    val boxArt: String = "",
-    val scenarios: List<ScenarioId> = emptyList(),
-    val encounterSets: List<EncounterSetId> = emptyList(),
-    val investigators: List<InvestigatorId> = emptyList(),
-    val products: List<ProductId> = emptyList(),
+    val isReturnTo: Boolean,
+    val hasReturnTo: Boolean,
+    val returnToCode: String?,
+    val icon: String,
+    val boxArt: String,
+    val flavorText: String,
+    val scenarios: List<ScenarioId>,
+    val encounterSets: List<EncounterSetId>,
+    val investigators: List<InvestigatorId>,
+    val products: List<ProductId>,
 )
 
 @Serializable
 data class ExpansionList(
-    val expansions: List<ExpansionLite> = emptyList()
+    val expansions: List<ExpansionLite>
 )

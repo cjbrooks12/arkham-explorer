@@ -10,6 +10,7 @@ import org.jetbrains.compose.web.css.fontFamily
 import org.jetbrains.compose.web.css.fontSize
 import org.jetbrains.compose.web.css.keywords.auto
 import org.jetbrains.compose.web.css.margin
+import org.jetbrains.compose.web.css.marginBottom
 import org.jetbrains.compose.web.css.width
 import org.jetbrains.compose.web.dom.ContentBuilder
 import org.jetbrains.compose.web.dom.Div
@@ -38,6 +39,7 @@ fun Card(
     imageUrl: String,
     title: String,
     description: String,
+    vararg navigationRoutes: NavigationRoute,
 ) {
     Div({ classes("card", "is-shady") }) {
         Div({ classes("card-image") }) {
@@ -45,7 +47,7 @@ fun Card(
                 Img(
                     src = imageUrl,
                     alt = title,
-                    attrs = { classes("modal-button") }
+                    attrs = { classes("modal-button"); style { property("object-fit", "cover") } }
                 )
             }
         }
@@ -53,8 +55,22 @@ fun Card(
             Div({ classes("content") }) {
                 H4({ style { fontFamily("Teutonic") } }) { Text(title) }
                 P({ style { fontFamily("Bolton"); fontSize(1.25.em) } }) { Text(description) }
-                Span({ classes("button", "is-link", "modal-button") }) {
-                    Text("Details")
+
+                navigationRoutes.forEachIndexed { index, navigationRoute ->
+                    Div({
+                        if (index != navigationRoutes.lastIndex) {
+                            style { marginBottom(1.cssRem) }
+                        }
+                    }) {
+                        NavigationLink(
+                            route = navigationRoute.route,
+                            pathParameters = navigationRoute.params,
+                        ) {
+                            Span({ classes("button", "is-link", "modal-button") }) {
+                                Text(navigationRoute.name)
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -79,7 +95,16 @@ fun Panel(
                                 classes = listOf("tag", "is-primary")
                             ) {
                                 if (navigationRoute.iconUrl != null) {
-                                    Span({ classes("icon", "is-small"); style { width(auto); margin(0.cssRem, 1.cssRem, 0.cssRem, 0.cssRem) } }) {
+                                    Span({
+                                        classes("icon", "is-small"); style {
+                                        width(auto); margin(
+                                        0.cssRem,
+                                        1.cssRem,
+                                        0.cssRem,
+                                        0.cssRem
+                                    )
+                                    }
+                                    }) {
                                         Icon(navigationRoute.iconUrl) {
                                             classes("has-text-white")
                                         }

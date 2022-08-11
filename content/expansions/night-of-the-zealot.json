@@ -2,8 +2,11 @@
     "id": "1",
     "name": "Night of the Zealot",
     "icon": "{{baseUrl}}/assets/night-of-the-zealot.svg",
-    "boxArt": "{{baseUrl}}/assets/night-of-the-zealot/box-art.png",
-    "productCodes": [
+    "boxArt": "{{baseUrl}}/assets/night-of-the-zealot/box-art.webp",
+    "isReturnTo": false,
+    "returnToName": "Return To Night of the Zealot",
+    "flavorText": "The boundaries between worlds have drawn perilously thin. Dark forces work in the shadows and call upon unspeakable horrors, strange happenings are discovered all throughout the city of Arkham, Massachusetts, and behind it all an Ancient One manipulates everything from beyond the veil. It is time to revisit that which started it all…",
+    "products": [
         "core",
         "rcore"
     ],

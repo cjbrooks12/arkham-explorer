@@ -97,6 +97,7 @@ class LocalServerRenderer(val port: Int) : Renderer {
     private fun guessContentTypeFromExtension(extension: String?): ContentType? {
         return when {
             extension == "html" -> ContentType.Text.Html
+            extension == "webp" -> ContentType("image", "webp")
             extension == "png" -> ContentType.Image.PNG
             extension == "svg" -> ContentType.Image.SVG
             extension == "json" -> ContentType.Application.Json

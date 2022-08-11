@@ -14,22 +14,22 @@ value class EncounterSetId(val id: String) : Comparable<EncounterSetId> {
 
 @Serializable
 data class EncounterSet(
-    val name: String = "",
-    val id: EncounterSetId = EncounterSetId(""),
-    val icon: String = "",
-    val replaces: EncounterSetId? = null,
+    val name: String,
+    val id: EncounterSetId,
+    val icon: String,
+    val replaces: EncounterSetId?,
 )
 
 @Serializable
 data class EncounterSetList(
-    val encounterSets: List<EncounterSet> = emptyList()
+    val encounterSets: List<EncounterSet>,
 )
 
 @Serializable
 data class ScenarioEncounterSet(
-    val name: String = "",
-    val id: EncounterSetId = EncounterSetId(""),
-    val icon: String = "",
-    val conditional: Boolean = false,
-    val setAside: Boolean = false,
+    val name: String,
+    val id: EncounterSetId,
+    val icon: String,
+    val conditional: Boolean,
+    val setAside: Boolean,
 )
