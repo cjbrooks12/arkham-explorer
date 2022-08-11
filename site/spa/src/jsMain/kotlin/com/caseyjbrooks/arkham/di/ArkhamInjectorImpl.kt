@@ -8,6 +8,9 @@ import com.caseyjbrooks.arkham.repository.main.ArkhamExplorerRepository
 import com.caseyjbrooks.arkham.repository.main.ArkhamExplorerRepositoryImpl
 import com.caseyjbrooks.arkham.ui.ArkhamApp
 import com.caseyjbrooks.arkham.ui.RouterViewModel
+import com.caseyjbrooks.arkham.ui.chaosbag.ChaosBagSimulatorContract
+import com.caseyjbrooks.arkham.ui.chaosbag.ChaosBagSimulatorInputHandler
+import com.caseyjbrooks.arkham.ui.chaosbag.ChaosBagSimulatorViewModel
 import com.caseyjbrooks.arkham.ui.encountersets.detail.EncounterSetDetailsContract
 import com.caseyjbrooks.arkham.ui.encountersets.detail.EncounterSetDetailsInputHandler
 import com.caseyjbrooks.arkham.ui.encountersets.detail.EncounterSetDetailsViewModel
@@ -267,6 +270,28 @@ class ArkhamInjectorImpl(
                     this += BootstrapInterceptor { StaticPageContract.Inputs.Initialize(slug) }
                 },
             inputHandler = StaticPageInputHandler(
+                repository = arkhamExplorerRepository
+            ),
+        )
+    }
+
+    override fun chaosBagSimulatorViewModel(
+        coroutineScope: CoroutineScope,
+        scenarioId: ScenarioId?
+    ): ChaosBagSimulatorViewModel {
+        return ChaosBagSimulatorViewModel(
+            coroutineScope = coroutineScope,
+            configBuilder = defaultConfigBuilder()
+                .apply {
+                    this += BootstrapInterceptor {
+                        if(scenarioId != null) {
+                            ChaosBagSimulatorContract.Inputs.InitializeForScenario(scenarioId)
+                        } else {
+                            ChaosBagSimulatorContract.Inputs.InitializeDefault
+                        }
+                    }
+                },
+            inputHandler = ChaosBagSimulatorInputHandler(
                 repository = arkhamExplorerRepository
             ),
         )

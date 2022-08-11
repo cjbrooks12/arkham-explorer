@@ -113,7 +113,8 @@ fun MainApplication(injector: ArkhamInjector) {
                 }
 
                 ArkhamApp.ChaosBagSimulator -> {
-                    ChaosBagSimulatorUi.Content(injector)
+                    val scenarioId = destination.queryParameters["scenarioId"]?.singleOrNull()?.let { ScenarioId(it) }
+                    ChaosBagSimulatorUi.Content(injector, scenarioId)
                 }
 
                 ArkhamApp.DividersGenerator -> {

@@ -29,7 +29,8 @@ fun LocalArkhamHorrorExpansion.Scenario.asFullOutput(allExpansionData: List<Loca
         icon = this.icon.preprocessContent(),
         encounterSets = this.encounterSets.map {
             it.asFullOutput(allExpansionData)
-        }
+        },
+        chaosBag = this.chaosBag,
     )
 }
 

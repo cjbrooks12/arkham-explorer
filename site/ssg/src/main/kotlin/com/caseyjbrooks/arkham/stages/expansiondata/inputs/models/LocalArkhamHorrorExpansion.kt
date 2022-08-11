@@ -1,5 +1,6 @@
 package com.caseyjbrooks.arkham.stages.expansiondata.inputs.models
 
+import com.copperleaf.arkham.models.api.ScenarioChaosBag
 import kotlinx.serialization.Serializable
 
 @Serializable
@@ -23,6 +24,7 @@ data class LocalArkhamHorrorExpansion(
         val name: String = "",
         val icon: String = "",
         val encounterSets: List<ScenarioEncounterSet> = listOf(),
+        val chaosBag: List<ScenarioChaosBag> = emptyList(),
     ) {
         @Serializable
         data class ScenarioEncounterSet(
