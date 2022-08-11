@@ -15,7 +15,6 @@ class ConstantUpdaterService(private val period: Duration) : UpdaterService {
     override fun watchForChanges(graph: DependencyGraph): Flow<Unit> = flow {
         while (true) {
             emit(Unit)
-            println("emitting change")
             delay(period)
         }
     }

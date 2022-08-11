@@ -80,19 +80,19 @@ class FetchExpansionData : DependencyGraphBuilder {
 
         expansionNodes.forEach { expansionNode ->
             val localExpansion = LocalExpansionFile.getBody(expansionNode)
-            val expansionSlug = expansionNode.inputPath.nameWithoutExtension
+            val expansionCode = expansionNode.inputPath.nameWithoutExtension
 
             // create files at /api/expansions/{slug}/{type}.json
-            ExpansionJson.createOutputFile(this, expansionNodes, expansionSlug, packsHttpNode, packHttpNodes)
-            ExpansionScenariosJson.createOutputFile(this, expansionNodes, expansionSlug, packsHttpNode, packHttpNodes)
-            ExpansionEncounterSetsJson.createOutputFile(this, expansionNodes, expansionSlug, packsHttpNode, packHttpNodes)
-            ExpansionInvestigatorsJson.createOutputFile(this, expansionNodes, expansionSlug, packsHttpNode, packHttpNodes)
-            ExpansionProductsJson.createOutputFile(this, expansionNodes, expansionSlug, packsHttpNode, packHttpNodes)
+            ExpansionJson.createOutputFile(this, expansionNodes, expansionCode, packsHttpNode, packHttpNodes)
+            ExpansionScenariosJson.createOutputFile(this, expansionNodes, expansionCode, packsHttpNode, packHttpNodes)
+            ExpansionEncounterSetsJson.createOutputFile(this, expansionNodes, expansionCode, packsHttpNode, packHttpNodes)
+            ExpansionInvestigatorsJson.createOutputFile(this, expansionNodes, expansionCode, packsHttpNode, packHttpNodes)
+            ExpansionProductsJson.createOutputFile(this, expansionNodes, expansionCode, packsHttpNode, packHttpNodes)
 
             // create files at /api/{type}/{id}.json
-            localExpansion.scenarios.forEach { ScenarioJson.createOutputFile(this, expansionNodes, expansionSlug, it.id, packsHttpNode, packHttpNodes) }
-            localExpansion.encounterSets.forEach { EncounterSetJson.createOutputFile(this, expansionNodes, expansionSlug, it.id, packsHttpNode, packHttpNodes) }
-            localExpansion.investigators.forEach { InvestigatorJson.createOutputFile(this, expansionNodes, expansionSlug, it.id, packsHttpNode, packHttpNodes) }
+            localExpansion.scenarios.forEach { ScenarioJson.createOutputFile(this, expansionNodes, expansionCode, it.id, packsHttpNode, packHttpNodes) }
+            localExpansion.encounterSets.forEach { EncounterSetJson.createOutputFile(this, expansionNodes, expansionCode, it.id, packsHttpNode, packHttpNodes) }
+            localExpansion.investigators.forEach { InvestigatorJson.createOutputFile(this, expansionNodes, expansionCode, it.id, packsHttpNode, packHttpNodes) }
         }
     }
 }

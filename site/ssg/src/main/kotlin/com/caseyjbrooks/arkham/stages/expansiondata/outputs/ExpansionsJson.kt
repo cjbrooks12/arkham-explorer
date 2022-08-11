@@ -14,7 +14,6 @@ import com.copperleaf.arkham.models.api.ExpansionList
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.encodeToStream
 import java.nio.file.Paths
-import kotlin.io.path.nameWithoutExtension
 
 object ExpansionsJson {
     public val tags = listOf("FetchExpansionData", "output", "expansions")
@@ -55,7 +54,7 @@ object ExpansionsJson {
         return ExpansionList(
             expansions = localExpansions
                 .map { (node, localExpansion) ->
-                    localExpansion.asLiteOutput(node.inputPath.nameWithoutExtension, localExpansions.map { it.second })
+                    localExpansion.asLiteOutput(localExpansion.code, localExpansions.map { it.second })
                 }
                 .sortedBy { it.id }
         )

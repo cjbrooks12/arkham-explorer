@@ -22,16 +22,16 @@ object ExpansionEncounterSetsJson {
     public suspend fun createOutputFile(
         scope: DependencyGraphBuilder.Scope,
         localExpansionFiles: List<InputPathNode>,
-        expansionSlug: String,
+        expansionCode: String,
         packsHttpNode: InputHttpNode,
         packHttpNodes: List<InputHttpNode>,
     ): TerminalPathNode = with(scope) {
         val expansionEncounterSetsNode = TerminalPathNode(
             baseOutputDir = graph.config.outputDir,
-            outputPath = Paths.get("api/expansions/$expansionSlug/encounter-sets.json"),
+            outputPath = Paths.get("api/expansions/$expansionCode/encounter-sets.json"),
             doRender = { nodes, os ->
                 val localExpansions = LocalExpansionFile.getBodiesForOutput(scope, nodes).map { it.second }
-                val localExpansion = LocalExpansionFile.getBodyForOutput(scope, nodes, expansionSlug)
+                val localExpansion = LocalExpansionFile.getBodyForOutput(scope, nodes, expansionCode)
                 val packsApi = ArkhamDbPacksApi.getBodyForOutput(scope, nodes)
                 prettyJson.encodeToStream(
                     EncounterSetList.serializer(),
@@ -43,7 +43,7 @@ object ExpansionEncounterSetsJson {
                     os,
                 )
             },
-            tags = ExpansionJson.tags + expansionSlug
+            tags = ExpansionJson.tags + expansionCode
         )
         addNode(expansionEncounterSetsNode)
         localExpansionFiles.forEach { addEdge(it, expansionEncounterSetsNode) }
@@ -60,7 +60,7 @@ object ExpansionEncounterSetsJson {
         return EncounterSetList(
             encounterSets = localExpansion
                 .encounterSets
-                .map { it.asFullOutput(localExpansions) }
+                .map { it.asFullOutput(localExpansion.code, localExpansions) }
                 .sortedBy { it.id }
         )
     }

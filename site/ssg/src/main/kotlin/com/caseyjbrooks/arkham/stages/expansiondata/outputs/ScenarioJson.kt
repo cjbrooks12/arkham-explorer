@@ -22,7 +22,7 @@ object ScenarioJson {
     public suspend fun createOutputFile(
         scope: DependencyGraphBuilder.Scope,
         localExpansionFiles: List<InputPathNode>,
-        expansionSlug: String,
+        expansionCode: String,
         scenarioId: String,
         packsHttpNode: InputHttpNode,
         packHttpNodes: List<InputHttpNode>,
@@ -33,11 +33,12 @@ object ScenarioJson {
             outputPath = Paths.get("api/scenarios/$scenarioId.json"),
             doRender = { nodes, os ->
                 val localExpansions = LocalExpansionFile.getBodiesForOutput(scope, nodes).map { it.second }
-                val localExpansion = LocalExpansionFile.getBodyForOutput(scope, nodes, expansionSlug)
+                val localExpansion = LocalExpansionFile.getBodyForOutput(scope, nodes, expansionCode)
                 val packsApi = ArkhamDbPacksApi.getBodyForOutput(scope, nodes)
                 prettyJson.encodeToStream(
                     Scenario.serializer(),
                     createJson(
+                        expansionCode,
                         scenarioId,
                         localExpansions,
                         localExpansion,
@@ -55,6 +56,7 @@ object ScenarioJson {
     }
 
     private fun createJson(
+        expansionCode: String,
         scenarioId: String,
         localExpansions: List<LocalArkhamHorrorExpansion>,
         localExpansion: LocalArkhamHorrorExpansion,
@@ -63,6 +65,6 @@ object ScenarioJson {
         return localExpansion
             .scenarios
             .single { it.id == scenarioId }
-            .asFullOutput(localExpansions)
+            .asFullOutput(localExpansion.code, localExpansions)
     }
 }

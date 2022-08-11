@@ -29,6 +29,7 @@ class NavigationRoute(
     val iconUrl: String?,
     val route: Route,
     vararg val params: String,
+    val buttonColor: BulmaColor = BulmaColor.Link,
 )
 
 // NavBar

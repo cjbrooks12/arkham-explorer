@@ -22,21 +22,21 @@ object ExpansionJson {
     public suspend fun createOutputFile(
         scope: DependencyGraphBuilder.Scope,
         localExpansionFiles: List<InputPathNode>,
-        expansionSlug: String,
+        expansionCode: String,
         packsHttpNode: InputHttpNode,
         packHttpNodes: List<InputHttpNode>,
     ): TerminalPathNode = with(scope) {
         val expansionNode = TerminalPathNode(
             baseOutputDir = graph.config.outputDir,
-            outputPath = Paths.get("api/expansions/$expansionSlug.json"),
+            outputPath = Paths.get("api/expansions/$expansionCode.json"),
             doRender = { nodes, os ->
                 val localExpansions = LocalExpansionFile.getBodiesForOutput(scope, nodes).map { it.second }
-                val localExpansion = LocalExpansionFile.getBodyForOutput(scope, nodes, expansionSlug)
+                val localExpansion = LocalExpansionFile.getBodyForOutput(scope, nodes, expansionCode)
                 val packsApi = ArkhamDbPacksApi.getBodyForOutput(scope, nodes)
                 prettyJson.encodeToStream(
                     Expansion.serializer(),
                     createJson(
-                        expansionSlug,
+                        expansionCode,
                         localExpansions,
                         localExpansion,
                         packsApi,
@@ -44,7 +44,7 @@ object ExpansionJson {
                     os,
                 )
             },
-            tags = tags + expansionSlug
+            tags = tags + expansionCode
         )
         addNode(expansionNode)
         localExpansionFiles.forEach { addEdge(it, expansionNode) }
@@ -54,11 +54,11 @@ object ExpansionJson {
     }
 
     private fun createJson(
-        expansionSlug: String,
+        expansionCode: String,
         localExpansions: List<LocalArkhamHorrorExpansion>,
         localExpansion: LocalArkhamHorrorExpansion,
         packsApi: List<ArkhamDbPack>,
     ): Expansion {
-        return localExpansion.asFullOutput(expansionSlug, localExpansions)
+        return localExpansion.asFullOutput(expansionCode, localExpansions)
     }
 }

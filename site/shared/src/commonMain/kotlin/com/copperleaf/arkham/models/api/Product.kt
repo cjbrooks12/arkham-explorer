@@ -15,6 +15,7 @@ value class ProductId(val id: String) : Comparable<ProductId> {
 data class Product(
     val name: String,
     val id: ProductId,
+    val expansionId: ExpansionId,
     val photos: List<String>,
 )
 

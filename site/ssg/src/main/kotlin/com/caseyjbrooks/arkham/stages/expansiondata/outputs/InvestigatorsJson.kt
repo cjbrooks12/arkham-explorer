@@ -53,10 +53,10 @@ object InvestigatorsJson {
     ): InvestigatorList {
         return InvestigatorList(
             investigators = localExpansions
-                .flatMap { expansion ->
-                    expansion
+                .flatMap { localExpansion ->
+                    localExpansion
                         .investigators
-                        .map { it.asFullOutput(localExpansions) }
+                        .map { it.asFullOutput(localExpansion.code, localExpansions) }
                         .sortedBy { it.id }
                 }
         )

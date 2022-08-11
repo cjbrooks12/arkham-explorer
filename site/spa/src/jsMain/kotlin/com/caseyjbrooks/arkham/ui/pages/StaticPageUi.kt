@@ -42,14 +42,16 @@ object StaticPageUi {
                     )
                 }
                 BulmaSection {
-                    Card {
-                        Div(attrs = {
-                            ref { element ->
-                                element.innerHTML = page.content
-                                onDispose {}
-                            }
-                        })
-                    }
+                    Card(
+                        content = {
+                            Div(attrs = {
+                                ref { element ->
+                                    element.innerHTML = page.content
+                                    onDispose {}
+                                }
+                            })
+                        }
+                    )
                 }
             }
         }

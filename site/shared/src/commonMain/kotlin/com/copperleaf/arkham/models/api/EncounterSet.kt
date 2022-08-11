@@ -15,6 +15,7 @@ value class EncounterSetId(val id: String) : Comparable<EncounterSetId> {
 @Serializable
 data class EncounterSet(
     val name: String,
+    val expansionCode: String,
     val id: EncounterSetId,
     val icon: String,
     val replaces: EncounterSetId?,

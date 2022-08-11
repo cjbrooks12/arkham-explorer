@@ -41,6 +41,95 @@
                     "conditional": false,
                     "setAside": false
                 }
+            ],
+            "chaosBag": [
+                {
+                    "difficulty": "easy",
+                    "tokens": [
+                        "1",
+                        "1",
+                        "0",
+                        "0",
+                        "0",
+                        "-1",
+                        "-1",
+                        "-1",
+                        "-2",
+                        "-2",
+                        "Skull",
+                        "Skull",
+                        "Cultist",
+                        "Tablet",
+                        "Auto-Fail",
+                        "Elder Sign"
+                    ]
+                },
+                {
+                    "difficulty": "standard",
+                    "tokens": [
+                        "1",
+                        "0",
+                        "0",
+                        "-1",
+                        "-1",
+                        "-1",
+                        "-2",
+                        "-2",
+                        "-3",
+                        "-4",
+                        "Skull",
+                        "Skull",
+                        "Cultist",
+                        "Tablet",
+                        "Auto-Fail",
+                        "Elder Sign"
+                    ]
+                },
+                {
+                    "difficulty": "hard",
+                    "tokens": [
+                        "0",
+                        "0",
+                        "0",
+                        "-1",
+                        "-1",
+                        "-2",
+                        "-2",
+                        "-3",
+                        "-3",
+                        "-4",
+                        "-5",
+                        "Skull",
+                        "Skull",
+                        "Cultist",
+                        "Tablet",
+                        "Auto-Fail",
+                        "Elder Sign"
+                    ]
+                },
+                {
+                    "difficulty": "expert",
+                    "tokens": [
+                        "0",
+                        "-1",
+                        "-1",
+                        "-2",
+                        "-2",
+                        "-3",
+                        "-3",
+                        "-4",
+                        "-4",
+                        "-5",
+                        "-6",
+                        "-8",
+                        "Skull",
+                        "Skull",
+                        "Cultist",
+                        "Tablet",
+                        "Auto-Fail",
+                        "Elder Sign"
+                    ]
+                }
             ]
         },
         {
@@ -77,6 +166,95 @@
                     "name": "Return Cult of Umôrdhoth",
                     "conditional": false,
                     "setAside": true
+                }
+            ],
+            "chaosBag": [
+                {
+                    "difficulty": "easy",
+                    "tokens": [
+                        "1",
+                        "1",
+                        "0",
+                        "0",
+                        "0",
+                        "-1",
+                        "-1",
+                        "-1",
+                        "-2",
+                        "-2",
+                        "Skull",
+                        "Skull",
+                        "Cultist",
+                        "Tablet",
+                        "Auto-Fail",
+                        "Elder Sign"
+                    ]
+                },
+                {
+                    "difficulty": "standard",
+                    "tokens": [
+                        "1",
+                        "0",
+                        "0",
+                        "-1",
+                        "-1",
+                        "-1",
+                        "-2",
+                        "-2",
+                        "-3",
+                        "-4",
+                        "Skull",
+                        "Skull",
+                        "Cultist",
+                        "Tablet",
+                        "Auto-Fail",
+                        "Elder Sign"
+                    ]
+                },
+                {
+                    "difficulty": "hard",
+                    "tokens": [
+                        "0",
+                        "0",
+                        "0",
+                        "-1",
+                        "-1",
+                        "-2",
+                        "-2",
+                        "-3",
+                        "-3",
+                        "-4",
+                        "-5",
+                        "Skull",
+                        "Skull",
+                        "Cultist",
+                        "Tablet",
+                        "Auto-Fail",
+                        "Elder Sign"
+                    ]
+                },
+                {
+                    "difficulty": "expert",
+                    "tokens": [
+                        "0",
+                        "-1",
+                        "-1",
+                        "-2",
+                        "-2",
+                        "-3",
+                        "-3",
+                        "-4",
+                        "-4",
+                        "-5",
+                        "-6",
+                        "-8",
+                        "Skull",
+                        "Skull",
+                        "Cultist",
+                        "Tablet",
+                        "Auto-Fail",
+                        "Elder Sign"
+                    ]
                 }
             ]
         },
@@ -129,6 +307,99 @@
                     "name": "Agenths of Cthulhu",
                     "conditional": true,
                     "setAside": false
+                }
+            ],
+            "chaosBag": [
+                {
+                    "difficulty": "easy",
+                    "tokens": [
+                        "1",
+                        "1",
+                        "0",
+                        "0",
+                        "0",
+                        "-1",
+                        "-1",
+                        "-1",
+                        "-2",
+                        "-2",
+                        "Skull",
+                        "Skull",
+                        "Cultist",
+                        "Tablet",
+                        "Auto-Fail",
+                        "Elder Thing",
+                        "Elder Sign"
+                    ]
+                },
+                {
+                    "difficulty": "standard",
+                    "tokens": [
+                        "1",
+                        "0",
+                        "0",
+                        "-1",
+                        "-1",
+                        "-1",
+                        "-2",
+                        "-2",
+                        "-3",
+                        "-4",
+                        "Skull",
+                        "Skull",
+                        "Cultist",
+                        "Tablet",
+                        "Elder Thing",
+                        "Auto-Fail",
+                        "Elder Sign"
+                    ]
+                },
+                {
+                    "difficulty": "hard",
+                    "tokens": [
+                        "0",
+                        "0",
+                        "0",
+                        "-1",
+                        "-1",
+                        "-2",
+                        "-2",
+                        "-3",
+                        "-3",
+                        "-4",
+                        "-5",
+                        "Skull",
+                        "Skull",
+                        "Cultist",
+                        "Tablet",
+                        "Elder Thing",
+                        "Auto-Fail",
+                        "Elder Sign"
+                    ]
+                },
+                {
+                    "difficulty": "expert",
+                    "tokens": [
+                        "0",
+                        "-1",
+                        "-1",
+                        "-2",
+                        "-2",
+                        "-3",
+                        "-3",
+                        "-4",
+                        "-4",
+                        "-5",
+                        "-6",
+                        "-8",
+                        "Skull",
+                        "Skull",
+                        "Cultist",
+                        "Elder Thing",
+                        "Tablet",
+                        "Auto-Fail",
+                        "Elder Sign"
+                    ]
                 }
             ]
         }

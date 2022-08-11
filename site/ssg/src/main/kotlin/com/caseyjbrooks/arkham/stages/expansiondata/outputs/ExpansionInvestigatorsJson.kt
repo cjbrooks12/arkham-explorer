@@ -22,16 +22,16 @@ object ExpansionInvestigatorsJson {
     public suspend fun createOutputFile(
         scope: DependencyGraphBuilder.Scope,
         localExpansionFiles: List<InputPathNode>,
-        expansionSlug: String,
+        expansionCode: String,
         packsHttpNode: InputHttpNode,
         packHttpNodes: List<InputHttpNode>,
     ): TerminalPathNode = with(scope) {
         val expansionInvestigatorsNode = TerminalPathNode(
             baseOutputDir = graph.config.outputDir,
-            outputPath = Paths.get("api/expansions/$expansionSlug/investigators.json"),
+            outputPath = Paths.get("api/expansions/$expansionCode/investigators.json"),
             doRender = { nodes, os ->
                 val localExpansions = LocalExpansionFile.getBodiesForOutput(scope, nodes).map { it.second }
-                val localExpansion = LocalExpansionFile.getBodyForOutput(scope, nodes, expansionSlug)
+                val localExpansion = LocalExpansionFile.getBodyForOutput(scope, nodes, expansionCode)
                 val packsApi = ArkhamDbPacksApi.getBodyForOutput(scope, nodes)
                 prettyJson.encodeToStream(
                     InvestigatorList.serializer(),
@@ -43,7 +43,7 @@ object ExpansionInvestigatorsJson {
                     os,
                 )
             },
-            tags = ExpansionJson.tags + expansionSlug
+            tags = ExpansionJson.tags + expansionCode
         )
         addNode(expansionInvestigatorsNode)
         localExpansionFiles.forEach { addEdge(it, expansionInvestigatorsNode) }
@@ -60,7 +60,7 @@ object ExpansionInvestigatorsJson {
         return InvestigatorList(
             investigators = localExpansion
                 .investigators
-                .map { it.asFullOutput(localExpansions) }
+                .map { it.asFullOutput(localExpansion.code, localExpansions) }
                 .sortedBy { it.id }
         )
     }

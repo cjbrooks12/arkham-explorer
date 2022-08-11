@@ -22,9 +22,10 @@ fun List<LocalArkhamHorrorExpansion>.getEncounterSetByName(name: String): LocalA
         ?: error("Encounter set with name '$name' not found")
 }
 
-fun LocalArkhamHorrorExpansion.Scenario.asFullOutput(allExpansionData: List<LocalArkhamHorrorExpansion>): Scenario {
+fun LocalArkhamHorrorExpansion.Scenario.asFullOutput(expansionCode: String, allExpansionData: List<LocalArkhamHorrorExpansion>): Scenario {
     return Scenario(
         name = this.name,
+        expansionCode = expansionCode,
         id = ScenarioId(this.id),
         icon = this.icon.preprocessContent(),
         encounterSets = this.encounterSets.map {
@@ -48,9 +49,10 @@ fun LocalArkhamHorrorExpansion.Scenario.ScenarioEncounterSet.asFullOutput(allExp
     )
 }
 
-fun LocalArkhamHorrorExpansion.EncounterSet.asFullOutput(allExpansionData: List<LocalArkhamHorrorExpansion>): EncounterSet {
+fun LocalArkhamHorrorExpansion.EncounterSet.asFullOutput(expansionCode: String, allExpansionData: List<LocalArkhamHorrorExpansion>): EncounterSet {
     return EncounterSet(
         name = this.name,
+        expansionCode = expansionCode,
         id = EncounterSetId(this.id),
         icon = this.icon.preprocessContent(),
         replaces = this.replaces.takeIf { it.isNotBlank() }?.let {
@@ -64,22 +66,23 @@ fun LocalArkhamHorrorExpansion.EncounterSet.asFullOutput(allExpansionData: List<
     )
 }
 
-fun LocalArkhamHorrorExpansion.Investigator.asFullOutput(allExpansionData: List<LocalArkhamHorrorExpansion>): Investigator {
+fun LocalArkhamHorrorExpansion.Investigator.asFullOutput(expansionCode: String, allExpansionData: List<LocalArkhamHorrorExpansion>): Investigator {
     return Investigator(
         name = this.name,
+        expansionCode = expansionCode,
         id = InvestigatorId(this.id),
         portrait = "",
     )
 }
 
 fun LocalArkhamHorrorExpansion.asFullOutput(
-    expansionSlug: String,
+    expansionCode: String,
     allExpansionData: List<LocalArkhamHorrorExpansion>
 ): Expansion {
     return Expansion(
         name = this.name,
         id = ExpansionId(this.id),
-        code = expansionSlug,
+        code = expansionCode,
         isReturnTo = this.isReturnTo,
         hasReturnTo = this.returnToName != null,
         returnToCode = if (this.returnToName != null) {
@@ -90,21 +93,21 @@ fun LocalArkhamHorrorExpansion.asFullOutput(
         icon = this.icon.preprocessContent(),
         boxArt = this.boxArt.preprocessContent(),
         flavorText = this.flavorText,
-        scenarios = this.scenarios.map { it.asFullOutput(allExpansionData) },
-        encounterSets = this.encounterSets.map { it.asFullOutput(allExpansionData) },
-        investigators = this.investigators.map { it.asFullOutput(allExpansionData) },
+        scenarios = this.scenarios.map { it.asFullOutput(expansionCode, allExpansionData) },
+        encounterSets = this.encounterSets.map { it.asFullOutput(expansionCode, allExpansionData) },
+        investigators = this.investigators.map { it.asFullOutput(expansionCode, allExpansionData) },
         products = emptyList(),
     )
 }
 
 fun LocalArkhamHorrorExpansion.asLiteOutput(
-    expansionSlug: String,
+    expansionCode: String,
     allExpansionData: List<LocalArkhamHorrorExpansion>
 ): ExpansionLite {
     return ExpansionLite(
         name = this.name,
         id = ExpansionId(this.id),
-        code = expansionSlug,
+        code = expansionCode,
         isReturnTo = this.isReturnTo,
         hasReturnTo = this.returnToName != null,
         returnToCode = if (this.returnToName != null) {
@@ -115,9 +118,9 @@ fun LocalArkhamHorrorExpansion.asLiteOutput(
         icon = this.icon.preprocessContent(),
         boxArt = this.boxArt.preprocessContent(),
         flavorText = this.flavorText,
-        scenarios = this.scenarios.map { it.asFullOutput(allExpansionData).id },
-        encounterSets = this.encounterSets.map { it.asFullOutput(allExpansionData).id },
-        investigators = this.investigators.map { it.asFullOutput(allExpansionData).id },
+        scenarios = this.scenarios.map { it.asFullOutput(expansionCode, allExpansionData).id },
+        encounterSets = this.encounterSets.map { it.asFullOutput(expansionCode, allExpansionData).id },
+        investigators = this.investigators.map { it.asFullOutput(expansionCode, allExpansionData).id },
         products = emptyList(),
     )
 }

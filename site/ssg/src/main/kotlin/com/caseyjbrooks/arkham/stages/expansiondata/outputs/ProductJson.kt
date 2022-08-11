@@ -9,6 +9,7 @@ import com.caseyjbrooks.arkham.stages.expansiondata.inputs.ArkhamDbPacksApi
 import com.caseyjbrooks.arkham.stages.expansiondata.inputs.LocalExpansionFile
 import com.caseyjbrooks.arkham.stages.expansiondata.inputs.models.ArkhamDbPack
 import com.caseyjbrooks.arkham.stages.expansiondata.inputs.models.LocalArkhamHorrorExpansion
+import com.copperleaf.arkham.models.api.ExpansionId
 import com.copperleaf.arkham.models.api.Product
 import com.copperleaf.arkham.models.api.ProductId
 import kotlinx.serialization.ExperimentalSerializationApi
@@ -22,7 +23,7 @@ object ProductJson {
     public suspend fun createOutputFile(
         scope: DependencyGraphBuilder.Scope,
         localExpansionFiles: List<InputPathNode>,
-        expansionSlug: String,
+        expansionCode: String,
         productId: String,
         packsHttpNode: InputHttpNode,
         packHttpNodes: List<InputHttpNode>,
@@ -33,7 +34,7 @@ object ProductJson {
             outputPath = Paths.get("api/products/$productId.json"),
             doRender = { nodes, os ->
                 val localExpansions = LocalExpansionFile.getBodiesForOutput(scope, nodes).map { it.second }
-                val localExpansion = LocalExpansionFile.getBodyForOutput(scope, nodes, expansionSlug)
+                val localExpansion = LocalExpansionFile.getBodyForOutput(scope, nodes, expansionCode)
                 val packsApi = ArkhamDbPacksApi.getBodyForOutput(scope, nodes)
                 prettyJson.encodeToStream(
                     Product.serializer(),
@@ -60,6 +61,6 @@ object ProductJson {
         localExpansion: LocalArkhamHorrorExpansion,
         packsApi: List<ArkhamDbPack>,
     ): Product {
-        return Product("", ProductId(""), emptyList())
+        return Product("", ProductId(""), ExpansionId(""), emptyList())
     }
 }

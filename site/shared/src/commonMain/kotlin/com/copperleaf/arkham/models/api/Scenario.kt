@@ -15,6 +15,7 @@ value class ScenarioId(val id: String) : Comparable<ScenarioId> {
 data class Scenario(
     val name: String,
     val id: ScenarioId,
+    val expansionCode: String,
     val icon: String,
     val encounterSets: List<ScenarioEncounterSet>,
     val chaosBag: List<ScenarioChaosBag>,

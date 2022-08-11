@@ -21,16 +21,16 @@ object ExpansionProductsJson {
     public suspend fun createOutputFile(
         scope: DependencyGraphBuilder.Scope,
         localExpansionFiles: List<InputPathNode>,
-        expansionSlug: String,
+        expansionCode: String,
         packsHttpNode: InputHttpNode,
         packHttpNodes: List<InputHttpNode>,
     ): TerminalPathNode = with(scope) {
         val expansionProductsNode = TerminalPathNode(
             baseOutputDir = graph.config.outputDir,
-            outputPath = Paths.get("api/expansions/$expansionSlug/products.json"),
+            outputPath = Paths.get("api/expansions/$expansionCode/products.json"),
             doRender = { nodes, os ->
                 val localExpansions = LocalExpansionFile.getBodiesForOutput(scope, nodes).map { it.second }
-                val localExpansion = LocalExpansionFile.getBodyForOutput(scope, nodes, expansionSlug)
+                val localExpansion = LocalExpansionFile.getBodyForOutput(scope, nodes, expansionCode)
                 val packsApi = ArkhamDbPacksApi.getBodyForOutput(scope, nodes)
                 prettyJson.encodeToStream(
                     ProductList.serializer(),
@@ -42,7 +42,7 @@ object ExpansionProductsJson {
                     os,
                 )
             },
-            tags = ExpansionJson.tags + expansionSlug
+            tags = ExpansionJson.tags + expansionCode
         )
         addNode(expansionProductsNode)
         localExpansionFiles.forEach { addEdge(it, expansionProductsNode) }

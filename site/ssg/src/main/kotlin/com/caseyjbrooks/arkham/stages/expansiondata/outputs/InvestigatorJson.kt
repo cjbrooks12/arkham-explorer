@@ -22,7 +22,7 @@ object InvestigatorJson {
     public suspend fun createOutputFile(
         scope: DependencyGraphBuilder.Scope,
         localExpansionFiles: List<InputPathNode>,
-        expansionSlug: String,
+        expansionCode: String,
         investigatorId: String,
         packsHttpNode: InputHttpNode,
         packHttpNodes: List<InputHttpNode>,
@@ -33,7 +33,7 @@ object InvestigatorJson {
             outputPath = Paths.get("api/investigators/$investigatorId.json"),
             doRender = { nodes, os ->
                 val localExpansions = LocalExpansionFile.getBodiesForOutput(scope, nodes).map { it.second }
-                val localExpansion = LocalExpansionFile.getBodyForOutput(scope, nodes, expansionSlug)
+                val localExpansion = LocalExpansionFile.getBodyForOutput(scope, nodes, expansionCode)
                 val packsApi = ArkhamDbPacksApi.getBodyForOutput(scope, nodes)
                 prettyJson.encodeToStream(
                     Investigator.serializer(),
@@ -63,6 +63,6 @@ object InvestigatorJson {
         return localExpansion
             .investigators
             .single { it.id == investigatorId }
-            .asFullOutput(localExpansions)
+            .asFullOutput(localExpansion.code, localExpansions)
     }
 }

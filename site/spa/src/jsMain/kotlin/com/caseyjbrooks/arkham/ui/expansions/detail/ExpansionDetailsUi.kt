@@ -9,12 +9,13 @@ import com.caseyjbrooks.arkham.di.ArkhamInjector
 import com.caseyjbrooks.arkham.ui.ArkhamApp
 import com.caseyjbrooks.arkham.utils.CacheReady
 import com.caseyjbrooks.arkham.utils.theme.bulma.Breadcrumbs
+import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaColor
 import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaSection
 import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaSize
+import com.caseyjbrooks.arkham.utils.theme.bulma.Card
 import com.caseyjbrooks.arkham.utils.theme.bulma.Column
 import com.caseyjbrooks.arkham.utils.theme.bulma.Hero
 import com.caseyjbrooks.arkham.utils.theme.bulma.NavigationRoute
-import com.caseyjbrooks.arkham.utils.theme.bulma.Panel
 import com.caseyjbrooks.arkham.utils.theme.bulma.Row
 import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayout
 import org.jetbrains.compose.web.dom.Text
@@ -36,7 +37,6 @@ object ExpansionDetailsUi {
     @Composable
     fun Content(state: ExpansionDetailsContract.State, postInput: (ExpansionDetailsContract.Inputs) -> Unit) {
         MainLayout(state.layout) {
-
             CacheReady(
                 state.expansion
             ) { expansion ->
@@ -57,32 +57,34 @@ object ExpansionDetailsUi {
                 BulmaSection {
                     Row {
                         Column {
-                            Panel(
+                            Card(
                                 title = "Scenarios",
-                                *expansion
+                                navigationRoutes = expansion
                                     .scenarios
                                     .map { scenario ->
                                         NavigationRoute(
                                             name = scenario.name,
                                             iconUrl = scenario.icon,
                                             route = ArkhamApp.ScenarioDetails,
-                                            params = arrayOf(scenario.id.id)
+                                            params = arrayOf(scenario.id.id),
+                                            buttonColor = BulmaColor.Primary,
                                         )
                                     }
                                     .toTypedArray()
                             )
                         }
                         Column {
-                            Panel(
+                            Card(
                                 title = "Encounter Sets",
-                                *expansion
+                                navigationRoutes = expansion
                                     .encounterSets
                                     .map { encounterSet ->
                                         NavigationRoute(
                                             name = encounterSet.name,
                                             iconUrl = encounterSet.icon,
                                             route = ArkhamApp.EncounterSetDetails,
-                                            params = arrayOf(encounterSet.id.id)
+                                            params = arrayOf(encounterSet.id.id),
+                                            buttonColor = BulmaColor.Primary,
                                         )
                                     }
                                     .toTypedArray()
@@ -91,17 +93,17 @@ object ExpansionDetailsUi {
                     }
                     Row {
                         Column {
-                            Panel(
+                            Card(
                                 title = "Investigators",
                             )
                         }
                         Column {
-                            Panel(
+                            Card(
                                 title = "Products",
                             )
                         }
                         Column {
-                            Panel(
+                            Card(
                                 title = "Tools",
                             )
                         }

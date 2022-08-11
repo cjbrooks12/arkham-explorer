@@ -60,9 +60,6 @@ class LocalServerRenderer(val port: Int) : Renderer {
         val exactPath = Paths.get(path)
         val pathAsIndexHtml = Paths.get(path) / "index.html"
 
-        println("exactPath=$exactPath")
-        println("pathAsIndexHtml=$pathAsIndexHtml")
-
         val entryWithExactName =
             entries.singleOrNull { graph.config.outputDir.relativize(it.realOutputFile()) == exactPath }
         val entryAsIndexHtml =

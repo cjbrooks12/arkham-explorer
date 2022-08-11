@@ -59,7 +59,14 @@ object HomeUi {
                         Row("features") {
                             expansions.forEach { expansion ->
                                 Column("is-4") {
-                                    ExpansionCard(expansion)
+                                    val returnToExpansion = if(expansion.hasReturnTo && expansion.returnToCode != null) {
+                                        layoutState
+                                            .expansions
+                                            .single { it.isReturnTo && it.code == expansion.returnToCode }
+                                    } else {
+                                        null
+                                    }
+                                    ExpansionCard(expansion, returnToExpansion)
                                 }
                             }
                         }
@@ -70,15 +77,28 @@ object HomeUi {
     }
 
     @Composable
-    private fun ExpansionCard(expansion: ExpansionLite) {
+    private fun ExpansionCard(
+        expansion: ExpansionLite,
+        returnToExpansion: ExpansionLite?,
+    ) {
         Card(
             imageUrl = expansion.boxArt,
             title = expansion.name,
             description = expansion.flavorText,
             navigationRoutes = buildList<NavigationRoute> {
-                this += NavigationRoute("Expansion Details", null, ArkhamApp.ExpansionDetails, expansion.code)
-                if (expansion.hasReturnTo) {
-                    this += NavigationRoute("Return To...", null, ArkhamApp.ExpansionDetails, expansion.returnToCode!!)
+                this += NavigationRoute(
+                    "Expansion Details",
+                    expansion.icon,
+                    ArkhamApp.ExpansionDetails,
+                    expansion.code,
+                )
+                if (returnToExpansion != null) {
+                    this += NavigationRoute(
+                        "Return To...",
+                        returnToExpansion.icon,
+                        ArkhamApp.ExpansionDetails,
+                        expansion.code,
+                    )
                 }
             }.toTypedArray()
         )

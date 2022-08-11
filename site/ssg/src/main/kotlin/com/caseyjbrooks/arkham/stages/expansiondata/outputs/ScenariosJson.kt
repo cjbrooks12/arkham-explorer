@@ -53,10 +53,10 @@ object ScenariosJson {
     ): ScenarioList {
         return ScenarioList(
             scenarios = localExpansions
-                .flatMap { expansion ->
-                    expansion
+                .flatMap { localExpansion ->
+                    localExpansion
                         .scenarios
-                        .map { it.asFullOutput(localExpansions) }
+                        .map { it.asFullOutput(localExpansion.code, localExpansions) }
                         .sortedBy { it.id }
                 }
         )

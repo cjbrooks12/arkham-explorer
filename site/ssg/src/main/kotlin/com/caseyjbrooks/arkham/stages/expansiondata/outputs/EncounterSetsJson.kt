@@ -56,7 +56,7 @@ object EncounterSetsJson {
                 .flatMap { expansion ->
                     expansion
                         .encounterSets
-                        .map { it.asFullOutput(localExpansionFiles) }
+                        .map { it.asFullOutput(expansion.code, localExpansionFiles) }
                         .sortedBy { it.id }
                 }
         )

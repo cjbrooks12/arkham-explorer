@@ -21,40 +21,38 @@ import org.jetbrains.compose.web.dom.Span
 import org.jetbrains.compose.web.dom.Text
 import org.w3c.dom.HTMLDivElement
 
-@Composable
-fun Card(
-    content: ContentBuilder<HTMLDivElement>,
-) {
-    Div({ classes("card") }) {
-        Div({ classes("card-content") }) {
-            Content {
-                content()
-            }
-        }
-    }
-}
 
 @Composable
 fun Card(
-    imageUrl: String,
-    title: String,
-    description: String,
+    title: String? = null,
+    imageUrl: String? = null,
+    description: String? = null,
     vararg navigationRoutes: NavigationRoute,
+    content: ContentBuilder<HTMLDivElement>? = null,
 ) {
     Div({ classes("card", "is-shady") }) {
-        Div({ classes("card-image") }) {
-            El("figure", { classes("image", "is-square") }) {
-                Img(
-                    src = imageUrl,
-                    alt = title,
-                    attrs = { classes("modal-button"); style { property("object-fit", "cover") } }
-                )
+        if (imageUrl != null) {
+            Div({ classes("card-image") }) {
+                El("figure", { classes("image", "is-square") }) {
+                    Img(
+                        src = imageUrl,
+                        alt = title ?: "",
+                        attrs = { classes("modal-button"); style { property("object-fit", "cover") } }
+                    )
+                }
             }
         }
         Div({ classes("card-content") }) {
             Div({ classes("content") }) {
-                H4({ style { fontFamily("Teutonic") } }) { Text(title) }
-                P({ style { fontFamily("Bolton"); fontSize(1.25.em) } }) { Text(description) }
+                if (title != null) {
+                    H4({ style { fontFamily("Teutonic") } }) { Text(title) }
+                }
+                if (description != null) {
+                    P({ style { fontFamily("Bolton"); fontSize(1.25.em) } }) { Text(description) }
+                }
+                if (content != null) {
+                    content()
+                }
 
                 navigationRoutes.forEachIndexed { index, navigationRoute ->
                     Div({
@@ -66,53 +64,26 @@ fun Card(
                             route = navigationRoute.route,
                             pathParameters = navigationRoute.params,
                         ) {
-                            Span({ classes("button", "is-link", "modal-button") }) {
-                                Text(navigationRoute.name)
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-@Composable
-fun Panel(
-    title: String,
-    vararg routes: NavigationRoute,
-) {
-    Div({ classes("card", "is-shady") }) {
-        Div({ classes("card-content") }) {
-            Div({ classes("content") }) {
-                H4({ }) { Text(title) }
-                P {
-                    Div({ classes("tags", "are-large") }) {
-                        routes.forEach { navigationRoute ->
-                            NavigationLink(
-                                route = navigationRoute.route,
-                                pathParameters = navigationRoute.params,
-                                classes = listOf("tag", "is-primary")
-                            ) {
+                            Span({ classes("button", navigationRoute.buttonColor.classes, "modal-button"); style { fontFamily("Teutonic") } }) {
                                 if (navigationRoute.iconUrl != null) {
                                     Span({
-                                        classes("icon", "is-small"); style {
-                                        width(auto); margin(
-                                        0.cssRem,
-                                        1.cssRem,
-                                        0.cssRem,
-                                        0.cssRem
-                                    )
-                                    }
+                                        classes("icon", "is-small")
+                                        style {
+                                            width(auto)
+                                            margin(
+                                                0.cssRem,
+                                                1.cssRem,
+                                                0.cssRem,
+                                                0.cssRem
+                                            )
+                                        }
                                     }) {
                                         Icon(navigationRoute.iconUrl) {
                                             classes("has-text-white")
                                         }
                                     }
                                 }
-                                Span({ classes("ml-3"); style { fontFamily("Teutonic") } }) {
-                                    Text(navigationRoute.name)
-                                }
+                                Text(navigationRoute.name)
                             }
                         }
                     }

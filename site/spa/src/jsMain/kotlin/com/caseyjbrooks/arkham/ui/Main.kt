@@ -1,7 +1,6 @@
 package com.caseyjbrooks.arkham.ui
 
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
@@ -36,15 +35,7 @@ fun MainApplication(injector: ArkhamInjector) {
     val routerVm = remember { injector.routerViewModel() }
     val routerVmState by routerVm.observeStates().collectAsState()
 
-    LaunchedEffect(routerVmState) {
-        println("router state changed")
-    }
-    val destination = routerVmState.currentDestinationOrNotFound
-    LaunchedEffect(destination) {
-        println("destination changed")
-    }
-
-    when (destination) {
+    when (val destination = routerVmState.currentDestinationOrNotFound) {
         is Destination -> {
             when (destination.originalRoute) {
                 ArkhamApp.Home -> {

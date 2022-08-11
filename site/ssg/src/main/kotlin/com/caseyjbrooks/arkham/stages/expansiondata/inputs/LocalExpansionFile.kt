@@ -21,13 +21,13 @@ object LocalExpansionFile {
         siteConfigNode: SiteConfigNode,
         localExpansionFile: Path,
     ): InputPathNode = with(scope) {
-        val expansionSlug = localExpansionFile.nameWithoutExtension
+        val expansionCode = localExpansionFile.nameWithoutExtension
         return addNodeAndEdge(
             start = siteConfigNode,
             newEndNode = StartPathNode(
                 baseInputDir = graph.config.expansionsDir,
                 inputPath = localExpansionFile,
-                tags = tags + expansionSlug,
+                tags = tags + expansionCode,
             )
         )
     }
@@ -37,9 +37,9 @@ object LocalExpansionFile {
 
     public suspend fun getNode(
         scope: DependencyGraphBuilder.Scope,
-        expansionSlug: String,
+        expansionCode: String,
     ): InputPathNode = with(scope) {
-        return graph.getNodeOfType<StartPathNode> { it.meta.tags == (tags + expansionSlug) }
+        return graph.getNodeOfType<StartPathNode> { it.meta.tags == (tags + expansionCode) }
     }
 
     public suspend fun getBodiesForOutput(
@@ -55,11 +55,11 @@ object LocalExpansionFile {
     public suspend fun getBodyForOutput(
         scope: DependencyGraphBuilder.Scope,
         nodes: List<Node>,
-        expansionSlug: String,
+        expansionCode: String,
     ): LocalArkhamHorrorExpansion {
         return nodes
             .filterIsInstance<StartPathNode>()
-            .single { it.meta.tags == (tags + expansionSlug) }
+            .single { it.meta.tags == (tags + expansionCode) }
             .let { getBody(it) }
     }
 
@@ -76,9 +76,9 @@ object LocalExpansionFile {
 
     public suspend fun getCachedBody(
         scope: DependencyGraphBuilder.Scope,
-        expansionSlug: String,
+        expansionCode: String,
     ): Pair<InputPathNode, LocalArkhamHorrorExpansion> {
-        val node = getNode(scope, expansionSlug)
+        val node = getNode(scope, expansionCode)
         return node to getBody(node)
     }
 

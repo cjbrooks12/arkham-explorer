@@ -22,7 +22,7 @@ object EncounterSetJson {
     public suspend fun createOutputFile(
         scope: DependencyGraphBuilder.Scope,
         localExpansionFiles: List<InputPathNode>,
-        expansionSlug: String,
+        expansionCode: String,
         encounterSetId: String,
         packsHttpNode: InputHttpNode,
         packHttpNodes: List<InputHttpNode>,
@@ -33,11 +33,12 @@ object EncounterSetJson {
             outputPath = Paths.get("api/encounter-sets/$encounterSetId.json"),
             doRender = { nodes, os ->
                 val localExpansions = LocalExpansionFile.getBodiesForOutput(scope, nodes).map { it.second }
-                val localExpansion = LocalExpansionFile.getBodyForOutput(scope, nodes, expansionSlug)
+                val localExpansion = LocalExpansionFile.getBodyForOutput(scope, nodes, expansionCode)
                 val packsApi = ArkhamDbPacksApi.getBodyForOutput(scope, nodes)
                 prettyJson.encodeToStream(
                     EncounterSet.serializer(),
                     createJson(
+                        expansionCode,
                         encounterSetId,
                         localExpansions,
                         localExpansion,
@@ -55,6 +56,7 @@ object EncounterSetJson {
     }
 
     private fun createJson(
+        expansionCode: String,
         encounterSetId: String,
         localExpansions: List<LocalArkhamHorrorExpansion>,
         localExpansion: LocalArkhamHorrorExpansion,
@@ -63,6 +65,6 @@ object EncounterSetJson {
         return localExpansion
             .encounterSets
             .single { it.id == encounterSetId }
-            .asFullOutput(localExpansions)
+            .asFullOutput(expansionCode, localExpansions)
     }
 }

@@ -19,15 +19,19 @@ fun Icon(
 ) {
     if (src.endsWith(".svg")) {
         // fetch the SVG and insert it directly into the DOM so we can style it with CSS
-        val svgSource: String? by produceState<String?>(null) {
-            val svgText = window.fetch(src).await().text().await()
-            value = svgText
+        val svgSource: Result<String>? by produceState<Result<String>?>(null) {
+            val svgResponse = window.fetch(src).await()
+
+            value = runCatching {
+                check(svgResponse.ok)
+                svgResponse.text().await()
+            }
         }
 
         Div(attrs = {
-            if (svgSource != null) {
+            svgSource?.getOrNull()?.let { svgText ->
                 ref { element ->
-                    element.innerHTML = svgSource!!
+                    element.innerHTML = svgText
                     onDispose {}
                 }
             }

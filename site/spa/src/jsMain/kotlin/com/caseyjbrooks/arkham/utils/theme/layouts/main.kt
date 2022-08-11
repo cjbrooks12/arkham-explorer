@@ -33,7 +33,6 @@ data class MainLayoutState(
                 startNavigation = listOf(
                     NavigationSection(
                         "Expansions",
-                        NavigationRoute("All Expansions", null, ArkhamApp.Expansions),
                         *expansions
                             .expansions
                             .map { expansion ->

@@ -28,9 +28,6 @@ class Favicons : DependencyGraphBuilder {
                             it.inputPath == Paths.get("night-of-the-zealot.svg")
                     }
 
-                val formats = ImageIO.getWriterFormatNames()
-                formats.also { println() }
-
                 // default favicon
                 addNodeAndEdge(
                     start = nightOfTheZealotSvgInputNode,
