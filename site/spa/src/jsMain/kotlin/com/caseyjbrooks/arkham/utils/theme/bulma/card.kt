@@ -60,10 +60,7 @@ fun Card(
                             style { marginBottom(1.cssRem) }
                         }
                     }) {
-                        NavigationLink(
-                            route = navigationRoute.route,
-                            pathParameters = navigationRoute.pathParams,
-                        ) {
+                        NavigationLink(navigationRoute) {
                             Span({ classes("button", navigationRoute.buttonColor.classes, "modal-button"); style { fontFamily("Teutonic") } }) {
                                 if (navigationRoute.iconUrl != null) {
                                     Span({

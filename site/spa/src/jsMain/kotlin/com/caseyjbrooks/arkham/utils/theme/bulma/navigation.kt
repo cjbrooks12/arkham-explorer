@@ -29,7 +29,7 @@ class NavigationRoute(
     val iconUrl: String?,
     val route: Route,
     vararg val pathParams: String,
-    val queryParams: Map<String, String> = emptyMap(),
+    val queryParams: Map<String, List<String>> = emptyMap(),
     val buttonColor: BulmaColor = BulmaColor.Link,
 )
 
@@ -38,7 +38,7 @@ class NavigationRoute(
 
 @Composable
 fun MainNavBar(
-    homeRoute: Route,
+    homeRoute: NavigationRoute,
     brandImageUrl: String,
     startNavigation: List<NavigationSection>,
     endNavigation: List<NavigationSection>
@@ -56,8 +56,8 @@ fun MainNavBar(
             }) {
                 NavigationLink(
                     homeRoute,
-                    classes = listOf("navbar-item"),
                     onClicked = { mobileNavbarOpen = false },
+                    attrs = { classes("navbar-item") },
                 ) {
                     Img(
                         attrs = {
@@ -115,15 +115,14 @@ fun MainNavBar(
 @Composable
 fun NavbarSection(
     sections: List<NavigationSection>,
-    onLinkClicked: ()->Unit,
+    onLinkClicked: () -> Unit,
 ) {
     sections.forEach { section ->
         if (section.routes.size == 1) {
             val navigationRoute = section.routes.single()
             NavigationLink(
-                route = navigationRoute.route,
-                pathParameters = navigationRoute.pathParams,
-                classes = listOf("navbar-item"),
+                navigationRoute = navigationRoute,
+                attrs = { classes("navbar-item") },
                 onClicked = onLinkClicked,
             ) {
 //                if (navigationRoute.iconUrl != null) {
@@ -154,9 +153,8 @@ fun NavbarSection(
                 Div({ classes("navbar-dropdown") }) {
                     section.routes.forEach { navigationRoute ->
                         NavigationLink(
-                            route = navigationRoute.route,
-                            pathParameters = navigationRoute.pathParams,
-                            classes = listOf("navbar-item"),
+                            navigationRoute = navigationRoute,
+                            attrs = { classes("navbar-item") },
                             onClicked = {
                                 isExpanded = false
                                 onLinkClicked()
@@ -184,10 +182,11 @@ fun Breadcrumbs(
                 if (index == routes.lastIndex) {
                     Li({ classes("is-active") }) {
                         NavigationLink(
-                            route = navigationRoute.route,
-                            pathParameters = navigationRoute.pathParams,
-                            attrs = { attr("aria-current", "page") },
-                            classes = listOf("has-text-white"),
+                            navigationRoute = navigationRoute,
+                            attrs = {
+                                attr("aria-current", "page")
+                                classes("has-text-white")
+                            },
                         ) {
                             if (navigationRoute.iconUrl != null) {
                                 Span({ classes("icon", "is-small"); style { width(auto) } }) {
@@ -202,9 +201,8 @@ fun Breadcrumbs(
                 } else {
                     Li {
                         NavigationLink(
-                            route = navigationRoute.route,
-                            pathParameters = navigationRoute.pathParams,
-                            classes = listOf("has-text-success"),
+                            navigationRoute = navigationRoute,
+                            attrs = { classes("has-text-success") },
                         ) {
                             if (navigationRoute.iconUrl != null) {
                                 Span({ classes("icon", "is-small"); style { width(auto) } }) {

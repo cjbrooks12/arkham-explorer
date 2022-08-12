@@ -103,7 +103,7 @@ object ScenarioDetailsUi {
                                 "Chaos Bag",
                                 null,
                                 ArkhamApp.ChaosBagSimulator,
-                                queryParams = mapOf("scenarioId" to scenario.id.id)
+                                queryParams = mapOf("scenarioId" to listOf(scenario.id.id))
                             )
                         }.toTypedArray()
                     )

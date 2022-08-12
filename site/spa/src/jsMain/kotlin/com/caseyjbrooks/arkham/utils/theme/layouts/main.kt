@@ -89,7 +89,7 @@ fun MainLayout(
 ) {
     CacheReady(cached) { layoutState ->
         MainNavBar(
-            homeRoute = ArkhamApp.Home,
+            homeRoute = NavigationRoute("Home", null, ArkhamApp.Home),
             brandImageUrl = layoutState.brandImage,
             startNavigation = layoutState.startNavigation,
             endNavigation = layoutState.endNavigation,
