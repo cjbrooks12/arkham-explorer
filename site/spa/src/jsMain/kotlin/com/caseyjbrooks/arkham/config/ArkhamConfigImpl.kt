@@ -2,7 +2,7 @@ package com.caseyjbrooks.arkham.config
 
 import com.caseyjbrooks.arkham.app.BuildConfig
 
-class ArkhamConfigImpl : ArkhamConfig {
+class ArkhamConfigImpl(override val isPwa: Boolean) : ArkhamConfig {
     override val imageCacheSize: Int = 10
 
     override val debug: Boolean = BuildConfig.DEBUG

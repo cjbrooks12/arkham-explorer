@@ -1,0 +1,14 @@
+{
+    "id": "100",
+    "name": "Standalone Content",
+    "icon": "",
+    "boxArt": "https://images-cdn.fantasyflightgames.com/filer_public/19/0d/190de25c-d8db-4147-bba4-0c7326245051/uahc09_main.png",
+    "flavorText": "",
+    "expansionType": {
+        "type": "standalone"
+    },
+    "products": [],
+    "scenarios": [],
+    "encounterSets": [],
+    "investigators": []
+}

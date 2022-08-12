@@ -17,51 +17,61 @@ import com.caseyjbrooks.arkham.utils.theme.bulma.Hero
 import com.caseyjbrooks.arkham.utils.theme.bulma.NavigationRoute
 import com.caseyjbrooks.arkham.utils.theme.bulma.Row
 import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayout
+import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayoutState
 import com.copperleaf.arkham.models.api.ExpansionLite
 import com.copperleaf.arkham.models.api.Scenario
 import org.jetbrains.compose.web.dom.Text
 
 object ScenariosUi {
     @Composable
-    fun Content(injector: ArkhamInjector) {
+    fun Page(injector: ArkhamInjector) {
         val coroutineScope = rememberCoroutineScope()
         val vm = remember(coroutineScope, injector) { injector.scenariosViewModel(coroutineScope) }
         val vmState by vm.observeStates().collectAsState()
-        Content(vmState) { vm.trySend(it) }
+        Page(vmState) { vm.trySend(it) }
     }
 
     @Composable
-    fun Content(state: ScenariosContract.State, postInput: (ScenariosContract.Inputs) -> Unit) {
-        MainLayout(state.layout) {
-            Hero(
-                title = { Text("Scenarios") },
-                size = BulmaSize.Medium,
-            )
-            BulmaSection {
-                Breadcrumbs(
-                    NavigationRoute("Home", null, ArkhamApp.Home),
-                    NavigationRoute("Scenarios", null, ArkhamApp.Scenarios),
-                )
+    fun Page(state: ScenariosContract.State, postInput: (ScenariosContract.Inputs) -> Unit) {
+        MainLayout(state.layout) { layoutState ->
+            Header()
+            CacheReady(state.scenarios) { scenarios ->
+                Body(layoutState, scenarios.scenarios)
             }
-            BulmaSection {
-                CacheReady(state.layout, state.scenarios) { layoutState, scenarios ->
-                    val regularExpansionsChunks = layoutState
-                        .expansions
-                        .filter { !it.isReturnTo }
-                        .chunked(3)
+        }
+    }
 
-                    regularExpansionsChunks.forEach { expansions ->
-                        Row("features") {
-                            expansions.forEach { expansion ->
-                                Column("is-4") {
-                                    val scenarios = expansion
-                                        .scenarios
-                                        .map { scenarioId ->
-                                            scenarios.scenarios.single { it.id == scenarioId }
-                                        }
-                                    ExpansionCard(expansion, scenarios)
-                                }
-                            }
+    @Composable
+    fun Header() {
+        Hero(
+            title = { Text("Scenarios") },
+            size = BulmaSize.Medium,
+        )
+        BulmaSection {
+            Breadcrumbs(
+                NavigationRoute("Home", null, ArkhamApp.Home),
+                NavigationRoute("Scenarios", null, ArkhamApp.Scenarios),
+            )
+        }
+    }
+
+    @Composable
+    fun Body(layoutState: MainLayoutState, scenarios: List<Scenario>) {
+        BulmaSection {
+            val regularExpansionsChunks = layoutState
+                .expansions
+                .chunked(3)
+
+            regularExpansionsChunks.forEach { expansions ->
+                Row("features") {
+                    expansions.forEach { expansion ->
+                        Column("is-4") {
+                            ExpansionCard(
+                                expansion,
+                                expansion
+                                    .scenarios
+                                    .map { scenarioId -> scenarios.single { it.id == scenarioId } }
+                            )
                         }
                     }
                 }
@@ -80,7 +90,7 @@ object ScenariosUi {
                         name = scenario.name,
                         iconUrl = scenario.icon,
                         route = ArkhamApp.ScenarioDetails,
-                        params = arrayOf(scenario.id.id)
+                        pathParams = arrayOf(scenario.id.id)
                     )
                 }
                 .toTypedArray()

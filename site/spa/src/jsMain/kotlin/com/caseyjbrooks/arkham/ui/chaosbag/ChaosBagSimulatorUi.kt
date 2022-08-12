@@ -27,7 +27,7 @@ import org.jetbrains.compose.web.dom.Text
 
 object ChaosBagSimulatorUi {
     @Composable
-    fun Content(injector: ArkhamInjector, scenarioId: ScenarioId?) {
+    fun Page(injector: ArkhamInjector, scenarioId: ScenarioId?) {
         val coroutineScope = rememberCoroutineScope()
         val vm = remember(coroutineScope, injector, scenarioId) {
             injector.chaosBagSimulatorViewModel(
@@ -36,86 +36,96 @@ object ChaosBagSimulatorUi {
             )
         }
         val vmState by vm.observeStates().collectAsState()
-        Content(vmState) { vm.trySend(it) }
+        Page(vmState) { vm.trySend(it) }
     }
 
     @Composable
-    fun Content(state: ChaosBagSimulatorContract.State, postInput: (ChaosBagSimulatorContract.Inputs) -> Unit) {
-        MainLayout(state.layout) {
-            Hero(
-                title = { Text("Chaos Bag Simulator") },
-                subtitle = { Text("Tools") },
-                size = BulmaSize.Small,
+    fun Page(state: ChaosBagSimulatorContract.State, postInput: (ChaosBagSimulatorContract.Inputs) -> Unit) {
+        MainLayout(state.layout) { layoutState ->
+            Header()
+            Body(state, postInput)
+        }
+    }
+
+    @Composable
+    fun Header() {
+        Hero(
+            title = { Text("Chaos Bag Simulator") },
+            subtitle = { Text("Tools") },
+            size = BulmaSize.Small,
+        )
+        BulmaSection {
+            Breadcrumbs(
+                NavigationRoute("Home", null, ArkhamApp.Home),
+                NavigationRoute("Tools", null, ArkhamApp.Tools),
+                NavigationRoute("Chaos Bag Simulator", null, ArkhamApp.ChaosBagSimulator),
             )
-            BulmaSection {
-                Breadcrumbs(
-                    NavigationRoute("ChaosBagSimulator", null, ArkhamApp.ChaosBagSimulator),
-                    NavigationRoute("Tools", null, ArkhamApp.Tools),
-                    NavigationRoute("Chaos Bag Simulator", null, ArkhamApp.ChaosBagSimulator),
-                )
-            }
-            BulmaSection {
-                Card {
-                    if (state.scenario != null && state.scenario.chaosBag.isNotEmpty()) {
-                        H4 { Text("Difficulty") }
-                        Div({ classes("control") }) {
-                            state.scenario.chaosBag.forEach { difficulty ->
-                                Label(null, { classes("radio") }) {
-                                    Input(type = InputType.Radio) {
-                                        id("scenario-difficulty-${difficulty.difficulty.name}")
-                                        onInput {
-                                            postInput(
-                                                ChaosBagSimulatorContract.Inputs.ChangeScenarioDifficulty(
-                                                    difficulty.difficulty
-                                                )
+        }
+    }
+
+    @Composable
+    fun Body(state: ChaosBagSimulatorContract.State, postInput: (ChaosBagSimulatorContract.Inputs) -> Unit) {
+        BulmaSection {
+            Card {
+                if (state.scenario != null && state.scenario.chaosBag.isNotEmpty()) {
+                    H4 { Text("Difficulty") }
+                    Div({ classes("control") }) {
+                        state.scenario.chaosBag.forEach { difficulty ->
+                            Label(null, { classes("radio") }) {
+                                Input(type = InputType.Radio) {
+                                    id("scenario-difficulty-${difficulty.difficulty.name}")
+                                    onInput {
+                                        postInput(
+                                            ChaosBagSimulatorContract.Inputs.ChangeScenarioDifficulty(
+                                                difficulty.difficulty
                                             )
-                                        }
-                                        name(difficulty.difficulty.name)
-                                        checked(state.selectedDifficulty == difficulty.difficulty)
+                                        )
                                     }
-                                    Text(" ${difficulty.difficulty.name} ")
+                                    name(difficulty.difficulty.name)
+                                    checked(state.selectedDifficulty == difficulty.difficulty)
                                 }
+                                Text(" ${difficulty.difficulty.name} ")
                             }
                         }
                     }
-
-                    H4 { Text("Chaos Bag") }
-                    Div { Text(state.tokens.toString()) }
-
-                    if (state.consumedTokens.isEmpty()) {
-                        Button({
-                            onClick { postInput(ChaosBagSimulatorContract.Inputs.DrawToken) }
-                            classes("button")
-                        }) { Text("Draw Token") }
-                    } else {
-                        Button({
-                            onClick { postInput(ChaosBagSimulatorContract.Inputs.PutTokenBack(state.consumedTokens.last())) }
-                            classes("button")
-                        }) { Text("Put Back") }
-                        Button({
-                            onClick { postInput(ChaosBagSimulatorContract.Inputs.DrawToken) }
-                            classes("button")
-                        }) { Text("Draw Another Token") }
-                        Button({
-                            onClick { postInput(ChaosBagSimulatorContract.Inputs.PutAllTokensBack) }
-                            classes("button")
-                        }) { Text("Reset Bag") }
-                    }
-                    Hr { }
-
-                    H4 { Text("Drawn Tokens") }
-                    state.consumedTokens.forEach { token ->
-                        Button({
-                            onClick { postInput(ChaosBagSimulatorContract.Inputs.PutTokenBack(token)) }
-                            classes("button")
-                        }) { Text(token.toString()) }
-                    }
-                    Hr { }
-
-                    H4 { Text("Remaining Tokens") }
-                    Div { Text(state.remainingTokens.toString()) }
-                    Hr { }
                 }
+
+                H4 { Text("Chaos Bag") }
+                Div { Text(state.tokens.toString()) }
+
+                if (state.consumedTokens.isEmpty()) {
+                    Button({
+                        onClick { postInput(ChaosBagSimulatorContract.Inputs.DrawToken) }
+                        classes("button")
+                    }) { Text("Draw Token") }
+                } else {
+                    Button({
+                        onClick { postInput(ChaosBagSimulatorContract.Inputs.PutTokenBack(state.consumedTokens.last())) }
+                        classes("button")
+                    }) { Text("Put Back") }
+                    Button({
+                        onClick { postInput(ChaosBagSimulatorContract.Inputs.DrawToken) }
+                        classes("button")
+                    }) { Text("Draw Another Token") }
+                    Button({
+                        onClick { postInput(ChaosBagSimulatorContract.Inputs.PutAllTokensBack) }
+                        classes("button")
+                    }) { Text("Reset Bag") }
+                }
+                Hr { }
+
+                H4 { Text("Drawn Tokens") }
+                state.consumedTokens.forEach { token ->
+                    Button({
+                        onClick { postInput(ChaosBagSimulatorContract.Inputs.PutTokenBack(token)) }
+                        classes("button")
+                    }) { Text(token.toString()) }
+                }
+                Hr { }
+
+                H4 { Text("Remaining Tokens") }
+                Div { Text(state.remainingTokens.toString()) }
+                Hr { }
             }
         }
     }

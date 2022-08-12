@@ -18,26 +18,37 @@ import org.jetbrains.compose.web.dom.Text
 
 object ToolsUi {
     @Composable
-    fun Content(injector: ArkhamInjector) {
+    fun Page(injector: ArkhamInjector) {
         val coroutineScope = rememberCoroutineScope()
         val vm = remember(coroutineScope, injector) { injector.homeViewModel(coroutineScope) }
         val vmState by vm.observeStates().collectAsState()
-        Content(vmState) { vm.trySend(it) }
+        Page(vmState) { vm.trySend(it) }
     }
 
     @Composable
-    fun Content(state: HomeContract.State, postInput: (HomeContract.Inputs) -> Unit) {
+    fun Page(state: HomeContract.State, postInput: (HomeContract.Inputs) -> Unit) {
         MainLayout(state.layout) {
-            Hero(
-                title = { Text("Tools") },
-                size = BulmaSize.Medium,
-            )
-            BulmaSection {
-                Breadcrumbs(
-                    NavigationRoute("Home", null, ArkhamApp.Home),
-                    NavigationRoute("Tools", null, ArkhamApp.Tools),
-                )
-            }
+            Header()
+            Body()
         }
+    }
+
+    @Composable
+    fun Header() {
+        Hero(
+            title = { Text("Tools") },
+            size = BulmaSize.Medium,
+        )
+        BulmaSection {
+            Breadcrumbs(
+                NavigationRoute("Home", null, ArkhamApp.Home),
+                NavigationRoute("Tools", null, ArkhamApp.Tools),
+            )
+        }
+    }
+
+    @Composable
+    fun Body() {
+
     }
 }

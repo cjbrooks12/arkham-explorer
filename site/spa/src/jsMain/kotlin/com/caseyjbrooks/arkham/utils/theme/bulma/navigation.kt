@@ -28,7 +28,8 @@ class NavigationRoute(
     val name: String,
     val iconUrl: String?,
     val route: Route,
-    vararg val params: String,
+    vararg val pathParams: String,
+    val queryParams: Map<String, String> = emptyMap(),
     val buttonColor: BulmaColor = BulmaColor.Link,
 )
 
@@ -121,7 +122,7 @@ fun NavbarSection(
             val navigationRoute = section.routes.single()
             NavigationLink(
                 route = navigationRoute.route,
-                pathParameters = navigationRoute.params,
+                pathParameters = navigationRoute.pathParams,
                 classes = listOf("navbar-item"),
                 onClicked = onLinkClicked,
             ) {
@@ -154,7 +155,7 @@ fun NavbarSection(
                     section.routes.forEach { navigationRoute ->
                         NavigationLink(
                             route = navigationRoute.route,
-                            pathParameters = navigationRoute.params,
+                            pathParameters = navigationRoute.pathParams,
                             classes = listOf("navbar-item"),
                             onClicked = {
                                 isExpanded = false
@@ -184,7 +185,7 @@ fun Breadcrumbs(
                     Li({ classes("is-active") }) {
                         NavigationLink(
                             route = navigationRoute.route,
-                            pathParameters = navigationRoute.params,
+                            pathParameters = navigationRoute.pathParams,
                             attrs = { attr("aria-current", "page") },
                             classes = listOf("has-text-white"),
                         ) {
@@ -202,7 +203,7 @@ fun Breadcrumbs(
                     Li {
                         NavigationLink(
                             route = navigationRoute.route,
-                            pathParameters = navigationRoute.params,
+                            pathParameters = navigationRoute.pathParams,
                             classes = listOf("has-text-success"),
                         ) {
                             if (navigationRoute.iconUrl != null) {

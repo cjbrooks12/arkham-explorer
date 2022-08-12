@@ -56,7 +56,15 @@ object ExpansionsJson {
                 .map { (node, localExpansion) ->
                     localExpansion.asLiteOutput(localExpansion.code, localExpansions.map { it.second })
                 }
-                .sortedBy { it.id }
+                .sortedBy {
+                    val intValue = if (it.id.id.endsWith("r")) {
+                        (it.id.id.removeSuffix("r").toInt() * 10) + 1
+                    } else {
+                        (it.id.id.toInt() * 10)
+                    }
+
+                    intValue
+                }
         )
     }
 }

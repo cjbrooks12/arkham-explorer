@@ -1,6 +1,8 @@
 package com.copperleaf.arkham.models.api
 
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
+import kotlinx.serialization.json.JsonElement
 import kotlin.jvm.JvmInline
 
 @Serializable
@@ -16,9 +18,7 @@ data class Expansion(
     val name: String,
     val id: ExpansionId,
     val code: String,
-    val isReturnTo: Boolean,
-    val hasReturnTo: Boolean,
-    val returnToCode: String?,
+    val expansionType: ExpansionType,
     val icon: String,
     val boxArt: String,
     val flavorText: String,
@@ -26,6 +26,7 @@ data class Expansion(
     val encounterSets: List<EncounterSet>,
     val investigators: List<Investigator>,
     val products: List<Product>,
+    val campaignLogSchema: JsonElement,
 )
 
 @Serializable
@@ -33,9 +34,7 @@ data class ExpansionLite(
     val name: String,
     val id: ExpansionId,
     val code: String,
-    val isReturnTo: Boolean,
-    val hasReturnTo: Boolean,
-    val returnToCode: String?,
+    val expansionType: ExpansionType,
     val icon: String,
     val boxArt: String,
     val flavorText: String,
@@ -49,3 +48,18 @@ data class ExpansionLite(
 data class ExpansionList(
     val expansions: List<ExpansionLite>
 )
+
+@Serializable
+sealed class ExpansionType {
+    @Serializable
+    @SerialName("cycle")
+    object Cycle : ExpansionType()
+
+    @Serializable
+    @SerialName("return to")
+    data class ReturnTo(val forCycle: String) : ExpansionType()
+
+    @Serializable
+    @SerialName("standalone")
+    object Standalone : ExpansionType()
+}

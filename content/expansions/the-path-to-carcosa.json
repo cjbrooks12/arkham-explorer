@@ -4,8 +4,9 @@
     "icon": "{{baseUrl}}/assets/the-path-to-carcosa.svg",
     "boxArt": "{{baseUrl}}/assets/the-path-to-carcosa/box-art.webp",
     "flavorText": "A new theater production is coming to Arkham all the way from Paris. Unsurprisingly, it's been all the rage in conversations among Arkham's socialites. But in your efforts to learn more about the play, you've uncovered a darker history. Disappearances. Suicides. Delusions. Insanity. Wherever The King in Yellow is performed, madness follows close behind…",
-    "isReturnTo": false,
-    "returnToName": "Return To The Path to Carcosa",
+    "expansionType": {
+        "type": "cycle"
+    },
     "products": [],
     "scenarios": [],
     "encounterSets": [],

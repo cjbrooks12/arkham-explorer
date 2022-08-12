@@ -4,8 +4,9 @@
     "icon": "{{baseUrl}}/assets/the-forgotten-age.svg",
     "boxArt": "{{baseUrl}}/assets/the-forgotten-age/box-art.webp",
     "flavorText": "We think we know the history of the Earth, but there are secrets that lie beyond our reckoning and truths that could undo our entire understanding of the universe. When renowned historian Alejandro Vela discovers one of these secrets, the ruins of an ancient and forgotten Aztec city, it sets into motion a plot that could unravel the very fabric of time.",
-    "isReturnTo": false,
-    "returnToName": "Return To The Forgotten Age",
+    "expansionType": {
+        "type": "cycle"
+    },
     "products": [],
     "scenarios": [],
     "encounterSets": [],

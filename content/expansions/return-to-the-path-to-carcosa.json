@@ -3,7 +3,10 @@
     "name": "Return To The Path to Carcosa",
     "icon": "{{baseUrl}}/assets/return-to-the-path-to-carcosa.svg",
     "boxArt": "{{baseUrl}}/assets/return-to-the-path-to-carcosa/box-art.webp",
-    "isReturnTo": true,
+    "expansionType": {
+        "type": "return to",
+        "forCycle": "The Path to Carcosa"
+    },
     "products": [],
     "scenarios": [],
     "encounterSets": [],

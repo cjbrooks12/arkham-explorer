@@ -7,6 +7,7 @@ import com.copperleaf.arkham.models.api.EncounterSetId
 import com.copperleaf.arkham.models.api.Expansion
 import com.copperleaf.arkham.models.api.ExpansionId
 import com.copperleaf.arkham.models.api.ExpansionLite
+import com.copperleaf.arkham.models.api.ExpansionType
 import com.copperleaf.arkham.models.api.Investigator
 import com.copperleaf.arkham.models.api.InvestigatorId
 import com.copperleaf.arkham.models.api.Scenario
@@ -22,7 +23,10 @@ fun List<LocalArkhamHorrorExpansion>.getEncounterSetByName(name: String): LocalA
         ?: error("Encounter set with name '$name' not found")
 }
 
-fun LocalArkhamHorrorExpansion.Scenario.asFullOutput(expansionCode: String, allExpansionData: List<LocalArkhamHorrorExpansion>): Scenario {
+fun LocalArkhamHorrorExpansion.Scenario.asFullOutput(
+    expansionCode: String,
+    allExpansionData: List<LocalArkhamHorrorExpansion>
+): Scenario {
     return Scenario(
         name = this.name,
         expansionCode = expansionCode,
@@ -46,10 +50,14 @@ fun LocalArkhamHorrorExpansion.Scenario.ScenarioEncounterSet.asFullOutput(allExp
         icon = matchingEncounterSet.icon.preprocessContent(),
         conditional = this.conditional,
         setAside = this.setAside,
+        partial = this.partial,
     )
 }
 
-fun LocalArkhamHorrorExpansion.EncounterSet.asFullOutput(expansionCode: String, allExpansionData: List<LocalArkhamHorrorExpansion>): EncounterSet {
+fun LocalArkhamHorrorExpansion.EncounterSet.asFullOutput(
+    expansionCode: String,
+    allExpansionData: List<LocalArkhamHorrorExpansion>
+): EncounterSet {
     return EncounterSet(
         name = this.name,
         expansionCode = expansionCode,
@@ -66,7 +74,10 @@ fun LocalArkhamHorrorExpansion.EncounterSet.asFullOutput(expansionCode: String, 
     )
 }
 
-fun LocalArkhamHorrorExpansion.Investigator.asFullOutput(expansionCode: String, allExpansionData: List<LocalArkhamHorrorExpansion>): Investigator {
+fun LocalArkhamHorrorExpansion.Investigator.asFullOutput(
+    expansionCode: String,
+    allExpansionData: List<LocalArkhamHorrorExpansion>
+): Investigator {
     return Investigator(
         name = this.name,
         expansionCode = expansionCode,
@@ -83,12 +94,15 @@ fun LocalArkhamHorrorExpansion.asFullOutput(
         name = this.name,
         id = ExpansionId(this.id),
         code = expansionCode,
-        isReturnTo = this.isReturnTo,
-        hasReturnTo = this.returnToName != null,
-        returnToCode = if (this.returnToName != null) {
-            allExpansionData.single { it.isReturnTo && it.name == this.returnToName }.code
-        } else {
-            null
+        expansionType = when (this.expansionType) {
+            is ExpansionType.Cycle -> this.expansionType
+            is ExpansionType.Standalone -> this.expansionType
+            is ExpansionType.ReturnTo -> {
+                val returnToCode = allExpansionData
+                    .single { it.expansionType is ExpansionType.Cycle && it.name == this.expansionType.forCycle }
+                    .code
+                ExpansionType.ReturnTo(returnToCode)
+            }
         },
         icon = this.icon.preprocessContent(),
         boxArt = this.boxArt.preprocessContent(),
@@ -97,6 +111,7 @@ fun LocalArkhamHorrorExpansion.asFullOutput(
         encounterSets = this.encounterSets.map { it.asFullOutput(expansionCode, allExpansionData) },
         investigators = this.investigators.map { it.asFullOutput(expansionCode, allExpansionData) },
         products = emptyList(),
+        campaignLogSchema = this.campaignLogSchema,
     )
 }
 
@@ -108,12 +123,15 @@ fun LocalArkhamHorrorExpansion.asLiteOutput(
         name = this.name,
         id = ExpansionId(this.id),
         code = expansionCode,
-        isReturnTo = this.isReturnTo,
-        hasReturnTo = this.returnToName != null,
-        returnToCode = if (this.returnToName != null) {
-            allExpansionData.single { it.isReturnTo && it.name == this.returnToName }.code
-        } else {
-            null
+        expansionType = when (this.expansionType) {
+            is ExpansionType.Cycle -> this.expansionType
+            is ExpansionType.Standalone -> this.expansionType
+            is ExpansionType.ReturnTo -> {
+                val returnToCode = allExpansionData
+                    .single { it.expansionType is ExpansionType.Cycle && it.name == this.expansionType.forCycle }
+                    .code
+                ExpansionType.ReturnTo(returnToCode)
+            }
         },
         icon = this.icon.preprocessContent(),
         boxArt = this.boxArt.preprocessContent(),

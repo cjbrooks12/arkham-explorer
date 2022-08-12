@@ -3,7 +3,10 @@
     "name": "Return To The Forgotten Age",
     "icon": "{{baseUrl}}/assets/return-to-the-forgotten-age.svg",
     "boxArt": "{{baseUrl}}/assets/return-to-the-forgotten-age/box-art.webp",
-    "isReturnTo": true,
+    "expansionType": {
+        "type": "return to",
+        "forCycle": "The Forgotten Age"
+    },
     "products": [],
     "scenarios": [],
     "encounterSets": [],

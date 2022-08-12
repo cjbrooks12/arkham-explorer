@@ -18,96 +18,122 @@ import com.caseyjbrooks.arkham.utils.theme.bulma.Hero
 import com.caseyjbrooks.arkham.utils.theme.bulma.NavigationRoute
 import com.caseyjbrooks.arkham.utils.theme.bulma.Row
 import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayout
+import com.copperleaf.arkham.models.api.Expansion
+import kotlinx.serialization.json.JsonNull
 import org.jetbrains.compose.web.dom.Text
 
 object ExpansionDetailsUi {
     @Composable
-    fun Content(injector: ArkhamInjector, expansionId: String) {
+    fun Page(injector: ArkhamInjector, expansionCode: String) {
         val coroutineScope = rememberCoroutineScope()
-        val vm = remember(coroutineScope, injector, expansionId) {
+        val vm = remember(coroutineScope, injector, expansionCode) {
             injector.expansionDetailsViewModel(
                 coroutineScope,
-                expansionId
+                expansionCode
             )
         }
         val vmState by vm.observeStates().collectAsState()
-        Content(vmState) { vm.trySend(it) }
+        Page(vmState) { vm.trySend(it) }
     }
 
     @Composable
-    fun Content(state: ExpansionDetailsContract.State, postInput: (ExpansionDetailsContract.Inputs) -> Unit) {
+    fun Page(state: ExpansionDetailsContract.State, postInput: (ExpansionDetailsContract.Inputs) -> Unit) {
         MainLayout(state.layout) {
-            CacheReady(
-                state.expansion
-            ) { expansion ->
-                Hero(
-                    title = { Text(expansion.name) },
-                    subtitle = { Text("Expansion") },
-                    size = BulmaSize.Small,
-                    classes = listOf("special"),
-                )
-                BulmaSection {
-                    Breadcrumbs(
-                        NavigationRoute("Home", null, ArkhamApp.Home),
-                        NavigationRoute("Expansions", null, ArkhamApp.Expansions),
-                        NavigationRoute(expansion.name, expansion.icon, ArkhamApp.ExpansionDetails, expansion.code),
+            CacheReady(state.expansion) { expansion ->
+                Header(expansion)
+                Body(expansion)
+            }
+        }
+    }
+
+    @Composable
+    fun Header(expansion: Expansion) {
+        Hero(
+            title = { Text(expansion.name) },
+            subtitle = { Text("Expansion") },
+            size = BulmaSize.Small,
+            classes = listOf("special"),
+        )
+        BulmaSection {
+            Breadcrumbs(
+                NavigationRoute("Home", null, ArkhamApp.Home),
+                NavigationRoute("Expansions", null, ArkhamApp.Expansions),
+                NavigationRoute(expansion.name, expansion.icon, ArkhamApp.ExpansionDetails, expansion.code),
+            )
+        }
+    }
+
+    @Composable
+    fun Body(expansion: Expansion) {
+        BulmaSection {
+            Row("features", "is-centered") {
+                Column("is-4") {
+                    Card(
+                        title = "Scenarios",
+                        navigationRoutes = expansion
+                            .scenarios
+                            .map { scenario ->
+                                NavigationRoute(
+                                    name = scenario.name,
+                                    iconUrl = scenario.icon,
+                                    route = ArkhamApp.ScenarioDetails,
+                                    pathParams = arrayOf(scenario.id.id),
+                                    buttonColor = BulmaColor.Primary,
+                                )
+                            }
+                            .toTypedArray()
                     )
                 }
-
-                BulmaSection {
-                    Row {
-                        Column {
-                            Card(
-                                title = "Scenarios",
-                                navigationRoutes = expansion
-                                    .scenarios
-                                    .map { scenario ->
-                                        NavigationRoute(
-                                            name = scenario.name,
-                                            iconUrl = scenario.icon,
-                                            route = ArkhamApp.ScenarioDetails,
-                                            params = arrayOf(scenario.id.id),
-                                            buttonColor = BulmaColor.Primary,
-                                        )
-                                    }
-                                    .toTypedArray()
-                            )
-                        }
-                        Column {
-                            Card(
-                                title = "Encounter Sets",
-                                navigationRoutes = expansion
-                                    .encounterSets
-                                    .map { encounterSet ->
-                                        NavigationRoute(
-                                            name = encounterSet.name,
-                                            iconUrl = encounterSet.icon,
-                                            route = ArkhamApp.EncounterSetDetails,
-                                            params = arrayOf(encounterSet.id.id),
-                                            buttonColor = BulmaColor.Primary,
-                                        )
-                                    }
-                                    .toTypedArray()
-                            )
-                        }
-                    }
-                    Row {
-                        Column {
-                            Card(
-                                title = "Investigators",
-                            )
-                        }
-                        Column {
-                            Card(
-                                title = "Products",
-                            )
-                        }
-                        Column {
-                            Card(
-                                title = "Tools",
-                            )
-                        }
-                    }
+                Column("is-4") {
+                    Card(
+                        title = "Encounter Sets",
+                        navigationRoutes = expansion
+                            .encounterSets
+                            .map { encounterSet ->
+                                NavigationRoute(
+                                    name = encounterSet.name,
+                                    iconUrl = encounterSet.icon,
+                                    route = ArkhamApp.EncounterSetDetails,
+                                    pathParams = arrayOf(encounterSet.id.id),
+                                    buttonColor = BulmaColor.Primary,
+                                )
+                            }
+                            .toTypedArray()
+                    )
+                }
+            }
+            Row("features", "is-centered") {
+                Column("is-4") {
+                    Card(
+                        title = "Investigators",
+                        navigationRoutes = expansion
+                            .investigators
+                            .map { investigator ->
+                                NavigationRoute(
+                                    name = investigator.name,
+                                    iconUrl = null,
+                                    route = ArkhamApp.InvestigatorDetails,
+                                    pathParams = arrayOf(investigator.id.id),
+                                    buttonColor = BulmaColor.Primary,
+                                )
+                            }
+                            .toTypedArray()
+                    )
+                }
+                Column("is-4") {
+                    Card(
+                        title = "Products",
+                    )
+                }
+                Column("is-4") {
+                    Card(
+                        title = "Tools",
+                        navigationRoutes = buildList<NavigationRoute> {
+                            if (expansion.campaignLogSchema != JsonNull) {
+                                this += NavigationRoute("Campaign log", null, ArkhamApp.CreateCampaignLog, expansion.code)
+                            }
+                        }.toTypedArray()
+                    )
                 }
             }
         }

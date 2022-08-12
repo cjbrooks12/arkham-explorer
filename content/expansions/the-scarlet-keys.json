@@ -4,7 +4,9 @@
     "icon": "{{baseUrl}}/assets/the-scarlet-keys.svg",
     "boxArt": "{{baseUrl}}/assets/the-scarlet-keys/box-art.webp",
     "flavorText": "Strange disappearances haunt the city of Arkham, Massachusetts. With each object, building, or person that vanishes, they are erased not just from physical existence, but from history and memory as well. Only a select few investigators remember those that disappeared–or so they believe. Before long, the mystery unravels into an international conspiracy, and our wary investigators find themselves recruited by a shadowy government agency whose sole purpose is the collection and research of paradimensional implements they call “Keys.” However, they aren’t the only ones searching for them…",
-    "isReturnTo": false,
+    "expansionType": {
+        "type": "cycle"
+    },
     "products": [],
     "scenarios": [],
     "encounterSets": [],

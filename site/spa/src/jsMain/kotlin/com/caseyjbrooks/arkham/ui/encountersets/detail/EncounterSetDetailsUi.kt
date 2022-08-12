@@ -14,40 +14,53 @@ import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaSize
 import com.caseyjbrooks.arkham.utils.theme.bulma.Hero
 import com.caseyjbrooks.arkham.utils.theme.bulma.NavigationRoute
 import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayout
+import com.copperleaf.arkham.models.api.EncounterSet
 import com.copperleaf.arkham.models.api.EncounterSetId
+import com.copperleaf.arkham.models.api.ExpansionLite
 import org.jetbrains.compose.web.dom.Text
 
 object EncounterSetDetailsUi {
     @Composable
-    fun Content(injector: ArkhamInjector, encounterSetId: EncounterSetId) {
+    fun Page(injector: ArkhamInjector, encounterSetId: EncounterSetId) {
         val coroutineScope = rememberCoroutineScope()
         val vm = remember(coroutineScope, injector, encounterSetId) { injector.encounterSetDetailsViewModel(coroutineScope, encounterSetId) }
         val vmState by vm.observeStates().collectAsState()
-        Content(vmState) { vm.trySend(it) }
+        Page(vmState) { vm.trySend(it) }
     }
 
     @Composable
-    fun Content(state: EncounterSetDetailsContract.State, postInput: (EncounterSetDetailsContract.Inputs) -> Unit) {
+    fun Page(state: EncounterSetDetailsContract.State, postInput: (EncounterSetDetailsContract.Inputs) -> Unit) {
         MainLayout(state.layout) {
             CacheReady(
                 state.parentExpansion,
                 state.encounterSet,
             ) { expansion, encounterSet ->
-                Hero(
-                    title = { Text(encounterSet.name) },
-                    subtitle = { Text(expansion.name) },
-                    size = BulmaSize.Small,
-                    classes = listOf("special"),
-                )
-                BulmaSection {
-                    Breadcrumbs(
-                        NavigationRoute("Home", null, ArkhamApp.Home),
-                        NavigationRoute("Expansions", null, ArkhamApp.Expansions),
-                        NavigationRoute(expansion.name, expansion.icon, ArkhamApp.ExpansionDetails, expansion.code),
-                        NavigationRoute(encounterSet.name, encounterSet.icon, ArkhamApp.EncounterSetDetails, encounterSet.id.id),
-                    )
-                }
+                Header(expansion, encounterSet)
+                Body()
             }
         }
+    }
+
+    @Composable
+    fun Header(expansion: ExpansionLite, encounterSet: EncounterSet) {
+        Hero(
+            title = { Text(encounterSet.name) },
+            subtitle = { Text(expansion.name) },
+            size = BulmaSize.Small,
+            classes = listOf("special"),
+        )
+        BulmaSection {
+            Breadcrumbs(
+                NavigationRoute("Home", null, ArkhamApp.Home),
+                NavigationRoute("Expansions", null, ArkhamApp.Expansions),
+                NavigationRoute(expansion.name, expansion.icon, ArkhamApp.ExpansionDetails, expansion.code),
+                NavigationRoute(encounterSet.name, encounterSet.icon, ArkhamApp.EncounterSetDetails, encounterSet.id.id),
+            )
+        }
+    }
+
+    @Composable
+    fun Body() {
+
     }
 }

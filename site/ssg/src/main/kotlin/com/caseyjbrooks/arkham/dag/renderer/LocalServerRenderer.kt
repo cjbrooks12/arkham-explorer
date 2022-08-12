@@ -98,6 +98,7 @@ class LocalServerRenderer(val port: Int) : Renderer {
             extension == "png" -> ContentType.Image.PNG
             extension == "svg" -> ContentType.Image.SVG
             extension == "json" -> ContentType.Application.Json
+            extension == "map" -> ContentType.Application.Json // sourcemap files
             extension == "js" -> ContentType.Text.JavaScript
             extension == "txt" -> ContentType.Text.Any
             extension == "xml" -> ContentType.Text.Xml

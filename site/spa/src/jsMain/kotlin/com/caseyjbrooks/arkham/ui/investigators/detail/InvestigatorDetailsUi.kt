@@ -14,12 +14,14 @@ import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaSize
 import com.caseyjbrooks.arkham.utils.theme.bulma.Hero
 import com.caseyjbrooks.arkham.utils.theme.bulma.NavigationRoute
 import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayout
+import com.copperleaf.arkham.models.api.ExpansionLite
+import com.copperleaf.arkham.models.api.Investigator
 import com.copperleaf.arkham.models.api.InvestigatorId
 import org.jetbrains.compose.web.dom.Text
 
 object InvestigatorDetailsUi {
     @Composable
-    fun Content(injector: ArkhamInjector, investigatorId: InvestigatorId) {
+    fun Page(injector: ArkhamInjector, investigatorId: InvestigatorId) {
         val coroutineScope = rememberCoroutineScope()
         val vm = remember(coroutineScope, injector, investigatorId) {
             injector.investigatorDetailsViewModel(
@@ -28,31 +30,42 @@ object InvestigatorDetailsUi {
             )
         }
         val vmState by vm.observeStates().collectAsState()
-        Content(vmState) { vm.trySend(it) }
+        Page(vmState) { vm.trySend(it) }
     }
 
     @Composable
-    fun Content(state: InvestigatorDetailsContract.State, postInput: (InvestigatorDetailsContract.Inputs) -> Unit) {
+    fun Page(state: InvestigatorDetailsContract.State, postInput: (InvestigatorDetailsContract.Inputs) -> Unit) {
         MainLayout(state.layout) {
             CacheReady(
                 state.parentExpansion,
                 state.investigator,
             ) { expansion, investigator ->
-                Hero(
-                    title = { Text(investigator.name) },
-                    subtitle = { Text(expansion.name) },
-                    size = BulmaSize.Small,
-                    classes = listOf("special"),
-                )
-                BulmaSection {
-                    Breadcrumbs(
-                        NavigationRoute("Home", null, ArkhamApp.Home),
-                        NavigationRoute("Expansions", null, ArkhamApp.Expansions),
-                        NavigationRoute(expansion.name, expansion.icon, ArkhamApp.ExpansionDetails, expansion.code),
-                        NavigationRoute(investigator.name, null, ArkhamApp.InvestigatorDetails, investigator.id.id),
-                    )
-                }
+                Header(expansion, investigator)
+                Body()
             }
         }
+    }
+
+    @Composable
+    fun Header(expansion: ExpansionLite, investigator: Investigator) {
+        Hero(
+            title = { Text(investigator.name) },
+            subtitle = { Text(expansion.name) },
+            size = BulmaSize.Small,
+            classes = listOf("special"),
+        )
+        BulmaSection {
+            Breadcrumbs(
+                NavigationRoute("Home", null, ArkhamApp.Home),
+                NavigationRoute("Expansions", null, ArkhamApp.Expansions),
+                NavigationRoute(expansion.name, expansion.icon, ArkhamApp.ExpansionDetails, expansion.code),
+                NavigationRoute(investigator.name, null, ArkhamApp.InvestigatorDetails, investigator.id.id),
+            )
+        }
+    }
+
+    @Composable
+    fun Body() {
+
     }
 }

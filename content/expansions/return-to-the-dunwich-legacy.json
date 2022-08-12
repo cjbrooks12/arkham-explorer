@@ -3,7 +3,10 @@
     "name": "Return To The Dunwich Legacy",
     "icon": "{{baseUrl}}/assets/return-to-the-dunwich-legacy.svg",
     "boxArt": "{{baseUrl}}/assets/return-to-the-dunwich-legacy/box-art.webp",
-    "isReturnTo": true,
+    "expansionType": {
+        "type": "return to",
+        "forCycle": "The Dunwich Legacy"
+    },
     "products": [],
     "scenarios": [
         {

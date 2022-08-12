@@ -62,7 +62,7 @@ fun Card(
                     }) {
                         NavigationLink(
                             route = navigationRoute.route,
-                            pathParameters = navigationRoute.params,
+                            pathParameters = navigationRoute.pathParams,
                         ) {
                             Span({ classes("button", navigationRoute.buttonColor.classes, "modal-button"); style { fontFamily("Teutonic") } }) {
                                 if (navigationRoute.iconUrl != null) {

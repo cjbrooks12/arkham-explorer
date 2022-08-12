@@ -3,9 +3,11 @@ package com.caseyjbrooks.arkham.di
 import com.caseyjbrooks.arkham.config.ArkhamConfig
 import com.caseyjbrooks.arkham.repository.main.ArkhamExplorerRepository
 import com.caseyjbrooks.arkham.ui.RouterViewModel
+import com.caseyjbrooks.arkham.ui.campaignlog.CampaignLogViewModel
 import com.caseyjbrooks.arkham.ui.chaosbag.ChaosBagSimulatorViewModel
 import com.caseyjbrooks.arkham.ui.encountersets.detail.EncounterSetDetailsViewModel
 import com.caseyjbrooks.arkham.ui.encountersets.list.EncounterSetsViewModel
+import com.caseyjbrooks.arkham.ui.error.NavigationErrorViewModel
 import com.caseyjbrooks.arkham.ui.expansions.detail.ExpansionDetailsViewModel
 import com.caseyjbrooks.arkham.ui.expansions.list.ExpansionsViewModel
 import com.caseyjbrooks.arkham.ui.home.HomeViewModel
@@ -27,6 +29,7 @@ interface ArkhamInjector {
     fun routerViewModel(): RouterViewModel
     fun arkhamExplorerRepository(): ArkhamExplorerRepository
 
+    fun navigationErrorViewModel(coroutineScope: CoroutineScope): NavigationErrorViewModel
     fun homeViewModel(coroutineScope: CoroutineScope): HomeViewModel
 
     fun expansionsViewModel(coroutineScope: CoroutineScope): ExpansionsViewModel
@@ -44,4 +47,5 @@ interface ArkhamInjector {
     fun staticPageViewModel(coroutineScope: CoroutineScope, slug: String): StaticPageViewModel
 
     fun chaosBagSimulatorViewModel(coroutineScope: CoroutineScope, scenarioId: ScenarioId?): ChaosBagSimulatorViewModel
+    fun campaignLogViewModel(coroutineScope: CoroutineScope, expansionCode: String?, campaignLogId: String?): CampaignLogViewModel
 }

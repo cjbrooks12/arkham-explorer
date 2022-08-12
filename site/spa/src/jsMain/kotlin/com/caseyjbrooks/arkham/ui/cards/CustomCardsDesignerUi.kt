@@ -18,28 +18,39 @@ import org.jetbrains.compose.web.dom.Text
 
 object CustomCardsDesignerUi {
     @Composable
-    fun Content(injector: ArkhamInjector) {
+    fun Page(injector: ArkhamInjector) {
         val coroutineScope = rememberCoroutineScope()
         val vm = remember(coroutineScope, injector) { injector.homeViewModel(coroutineScope) }
         val vmState by vm.observeStates().collectAsState()
-        Content(vmState) { vm.trySend(it) }
+        Page(vmState) { vm.trySend(it) }
     }
 
     @Composable
-    fun Content(state: HomeContract.State, postInput: (HomeContract.Inputs) -> Unit) {
+    fun Page(state: HomeContract.State, postInput: (HomeContract.Inputs) -> Unit) {
         MainLayout(state.layout) {
-            Hero(
-                title = { Text("Custom Cards Designer") },
-                subtitle = { Text("Tools") },
-                size = BulmaSize.Small,
-            )
-            BulmaSection {
-                Breadcrumbs(
-                    NavigationRoute("Home", null, ArkhamApp.Home),
-                    NavigationRoute("Tools", null, ArkhamApp.Tools),
-                    NavigationRoute("Custom Card Designer", null, ArkhamApp.CustomCards),
-                )
-            }
+            Header()
+            Body()
         }
+    }
+
+    @Composable
+    fun Header() {
+        Hero(
+            title = { Text("Custom Cards Designer") },
+            subtitle = { Text("Tools") },
+            size = BulmaSize.Small,
+        )
+        BulmaSection {
+            Breadcrumbs(
+                NavigationRoute("Home", null, ArkhamApp.Home),
+                NavigationRoute("Tools", null, ArkhamApp.Tools),
+                NavigationRoute("Custom Card Designer", null, ArkhamApp.CustomCards),
+            )
+        }
+    }
+
+    @Composable
+    fun Body() {
+
     }
 }

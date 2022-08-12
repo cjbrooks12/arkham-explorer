@@ -1,16 +1,19 @@
 package com.caseyjbrooks.arkham.ui
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.staticCompositionLocalOf
 import com.caseyjbrooks.arkham.di.ArkhamInjector
+import com.caseyjbrooks.arkham.ui.campaignlog.CampaignLogUi
 import com.caseyjbrooks.arkham.ui.cards.CustomCardsDesignerUi
 import com.caseyjbrooks.arkham.ui.chaosbag.ChaosBagSimulatorUi
 import com.caseyjbrooks.arkham.ui.dividers.DividersGeneratorUi
 import com.caseyjbrooks.arkham.ui.encountersets.detail.EncounterSetDetailsUi
 import com.caseyjbrooks.arkham.ui.encountersets.list.EncounterSetsUi
+import com.caseyjbrooks.arkham.ui.error.NavigationErrorUi
 import com.caseyjbrooks.arkham.ui.expansions.detail.ExpansionDetailsUi
 import com.caseyjbrooks.arkham.ui.expansions.list.ExpansionsUi
 import com.caseyjbrooks.arkham.ui.home.HomeUi
@@ -21,113 +24,145 @@ import com.caseyjbrooks.arkham.ui.scenarios.detail.ScenarioDetailsUi
 import com.caseyjbrooks.arkham.ui.scenarios.list.ScenariosUi
 import com.caseyjbrooks.arkham.ui.tools.ToolsUi
 import com.caseyjbrooks.arkham.ui.tuckbox.TuckboxGeneratorUi
+import com.caseyjbrooks.arkham.utils.theme.ArkhamTheme
 import com.copperleaf.arkham.models.api.EncounterSetId
 import com.copperleaf.arkham.models.api.InvestigatorId
 import com.copperleaf.arkham.models.api.ScenarioId
 import com.copperleaf.ballast.navigation.routing.Destination
 import com.copperleaf.ballast.navigation.routing.MissingDestination
 import com.copperleaf.ballast.navigation.routing.currentDestinationOrNotFound
+import org.jetbrains.compose.web.dom.Text
 
 val LocalInjector = staticCompositionLocalOf<ArkhamInjector> { error("LocalInjector not provided") }
 
 @Composable
 fun MainApplication(injector: ArkhamInjector) {
-    val routerVm = remember { injector.routerViewModel() }
-    val routerVmState by routerVm.observeStates().collectAsState()
+    ArkhamTheme(injector) {
+        val routerVm = remember(injector) { injector.routerViewModel() }
+        val routerVmState by routerVm.observeStates().collectAsState()
 
-    when (val destination = routerVmState.currentDestinationOrNotFound) {
-        is Destination -> {
-            when (destination.originalRoute) {
-                ArkhamApp.Home -> {
-                    HomeUi.Content(injector)
-                }
+        val destination = routerVmState.currentDestinationOrNotFound
+        LaunchedEffect(destination) {
+            println("destination=$destination")
+            println(destination)
+        }
 
-                ArkhamApp.Expansions -> {
-                    ExpansionsUi.Content(injector)
-                }
+        when (destination) {
+            is Destination -> {
+                when (destination.originalRoute) {
+                    ArkhamApp.Home -> {
+                        HomeUi.Page(injector)
+                    }
 
-                ArkhamApp.ExpansionDetails -> {
-                    ExpansionDetailsUi.Content(
-                        injector,
-                        destination.pathParameters["expansionId"]!!.single(),
-                    )
-                }
+                    ArkhamApp.Expansions -> {
+                        ExpansionsUi.Page(injector)
+                    }
 
-                ArkhamApp.Scenarios -> {
-                    ScenariosUi.Content(injector)
-                }
-
-                ArkhamApp.ScenarioDetails -> {
-                    ScenarioDetailsUi.Content(
-                        injector,
-                        ScenarioId(
-                            destination.pathParameters["scenarioId"]!!.single(),
+                    ArkhamApp.ExpansionDetails -> {
+                        ExpansionDetailsUi.Page(
+                            injector,
+                            destination.pathParameters["expansionCode"]!!.single(),
                         )
-                    )
-                }
+                    }
 
-                ArkhamApp.EncounterSets -> {
-                    EncounterSetsUi.Content(injector)
-                }
+                    ArkhamApp.Scenarios -> {
+                        ScenariosUi.Page(injector)
+                    }
 
-                ArkhamApp.EncounterSetDetails -> {
-                    EncounterSetDetailsUi.Content(
-                        injector,
-                        EncounterSetId(
-                            destination.pathParameters["encounterSetId"]!!.single()
-                        ),
-                    )
-                }
-
-                ArkhamApp.Investigators -> {
-                    InvestigatorsUi.Content(injector)
-                }
-
-                ArkhamApp.InvestigatorDetails -> {
-                    InvestigatorDetailsUi.Content(
-                        injector,
-                        InvestigatorId(
-                            destination.pathParameters["investigatorId"]!!.single(),
+                    ArkhamApp.ScenarioDetails -> {
+                        ScenarioDetailsUi.Page(
+                            injector,
+                            ScenarioId(
+                                destination.pathParameters["scenarioId"]!!.single(),
+                            )
                         )
-                    )
-                }
+                    }
 
-                ArkhamApp.StaticPage -> {
-                    StaticPageUi.Content(
-                        injector,
-                        destination.pathParameters["slug"]!!.single(),
-                    )
-                }
+                    ArkhamApp.EncounterSets -> {
+                        EncounterSetsUi.Page(injector)
+                    }
 
-                ArkhamApp.Tools -> {
-                    ToolsUi.Content(injector)
-                }
+                    ArkhamApp.EncounterSetDetails -> {
+                        EncounterSetDetailsUi.Page(
+                            injector,
+                            EncounterSetId(
+                                destination.pathParameters["encounterSetId"]!!.single()
+                            ),
+                        )
+                    }
 
-                ArkhamApp.ChaosBagSimulator -> {
-                    val scenarioId = destination.queryParameters["scenarioId"]?.singleOrNull()?.let { ScenarioId(it) }
-                    ChaosBagSimulatorUi.Content(injector, scenarioId)
-                }
+                    ArkhamApp.Investigators -> {
+                        InvestigatorsUi.Page(injector)
+                    }
 
-                ArkhamApp.DividersGenerator -> {
-                    DividersGeneratorUi.Content(injector)
-                }
+                    ArkhamApp.InvestigatorDetails -> {
+                        InvestigatorDetailsUi.Page(
+                            injector,
+                            InvestigatorId(
+                                destination.pathParameters["investigatorId"]!!.single(),
+                            )
+                        )
+                    }
 
-                ArkhamApp.TuckboxGenerator -> {
-                    TuckboxGeneratorUi.Content(injector)
-                }
+                    ArkhamApp.StaticPage -> {
+                        StaticPageUi.Page(
+                            injector,
+                            destination.pathParameters["slug"]!!.single(),
+                        )
+                    }
 
-                ArkhamApp.CustomCards -> {
-                    CustomCardsDesignerUi.Content(injector)
+                    ArkhamApp.Tools -> {
+                        ToolsUi.Page(injector)
+                    }
+
+                    ArkhamApp.ChaosBagSimulator -> {
+                        val scenarioId = destination.queryParameters["scenarioId"]?.singleOrNull()?.let { ScenarioId(it) }
+                        ChaosBagSimulatorUi.Page(injector, scenarioId)
+                    }
+
+                    ArkhamApp.AboutCampaignLog -> {
+                        LaunchedEffect(Unit) { println("AboutCampaignLog") }
+                        CampaignLogUi.Page(injector)
+                    }
+
+                    ArkhamApp.CreateCampaignLog -> {
+                        LaunchedEffect(Unit) { println("CreateCampaignLog") }
+                        val expansionCode = destination.pathParameters["expansionCode"]!!.single()
+                        CampaignLogUi.Page(injector, expansionCode)
+                    }
+
+                    ArkhamApp.ViewCampaignLog -> {
+                        LaunchedEffect(Unit) { println("ViewCampaignLog") }
+                        val expansionCode = destination.pathParameters["expansionCode"]!!.single()
+                        val campaignLogId = destination.pathParameters["campaignLogId"]!!.single()
+                        CampaignLogUi.Page(injector, expansionCode, campaignLogId)
+                    }
+
+                    ArkhamApp.DividersGenerator -> {
+                        DividersGeneratorUi.Page(injector)
+                    }
+
+                    ArkhamApp.TuckboxGenerator -> {
+                        TuckboxGeneratorUi.Page(injector)
+                    }
+
+                    ArkhamApp.CustomCards -> {
+                        CustomCardsDesignerUi.Page(injector)
+                    }
                 }
             }
-        }
 
-        is MissingDestination -> {
-            HomeUi.NotFound(destination.originalUrl)
-        }
+            is MissingDestination -> {
+                NavigationErrorUi.Page(injector) {
+                    Text("${destination.originalUrl} not found")
+                }
+            }
 
-        else -> {
-            HomeUi.UnknownError()
+            else -> {
+                NavigationErrorUi.Page(injector) {
+                    Text("An unknown error occurred")
+                }
+            }
         }
     }
 }

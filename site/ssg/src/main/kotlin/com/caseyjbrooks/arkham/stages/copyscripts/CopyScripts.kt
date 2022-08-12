@@ -4,11 +4,12 @@ import com.caseyjbrooks.arkham.dag.DependencyGraphBuilder
 import com.caseyjbrooks.arkham.dag.path.InputPathNode
 import com.caseyjbrooks.arkham.dag.path.StartPathNode
 import com.caseyjbrooks.arkham.dag.path.TerminalPathNode
+import com.caseyjbrooks.arkham.site.BuildConfig
 import com.caseyjbrooks.arkham.stages.config.SiteConfigNode
 import com.caseyjbrooks.arkham.utils.destruct1
 import kotlin.io.path.div
 import kotlin.io.path.name
-import kotlin.io.path.readBytes
+import kotlin.io.path.readText
 
 @Suppress("BlockingMethodInNonBlockingContext")
 class CopyScripts : DependencyGraphBuilder {
@@ -58,7 +59,13 @@ class CopyScripts : DependencyGraphBuilder {
                         outputPath = relativeOutputPath,
                         doRender = { inputNodes, os ->
                             val (sourceContentFile) = inputNodes.destruct1<InputPathNode>()
-                            os.write(sourceContentFile.realInputFile().readBytes())
+                            os.write(
+                                sourceContentFile
+                                    .realInputFile()
+                                    .readText()
+                                    .replace("sourceMappingURL=spa.js.map", "sourceMappingURL=${BuildConfig.BASE_URL}/spa.js.map")
+                                    .toByteArray()
+                            )
                         },
                     ),
                 )

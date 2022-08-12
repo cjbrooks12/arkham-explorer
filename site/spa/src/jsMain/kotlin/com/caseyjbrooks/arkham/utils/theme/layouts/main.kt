@@ -3,6 +3,7 @@ package com.caseyjbrooks.arkham.utils.theme.layouts
 import androidx.compose.runtime.Composable
 import com.caseyjbrooks.arkham.app.BuildConfig
 import com.caseyjbrooks.arkham.ui.ArkhamApp
+import com.caseyjbrooks.arkham.utils.CacheReady
 import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaFooter
 import com.caseyjbrooks.arkham.utils.theme.bulma.MainNavBar
 import com.caseyjbrooks.arkham.utils.theme.bulma.NavigationRoute
@@ -10,8 +11,6 @@ import com.caseyjbrooks.arkham.utils.theme.bulma.NavigationSection
 import com.copperleaf.arkham.models.api.ExpansionList
 import com.copperleaf.arkham.models.api.ExpansionLite
 import com.copperleaf.ballast.repository.cache.Cached
-import com.copperleaf.ballast.repository.cache.getCachedOrThrow
-import com.copperleaf.ballast.repository.cache.isLoading
 import com.copperleaf.ballast.repository.cache.map
 import org.jetbrains.compose.web.dom.Text
 
@@ -33,6 +32,7 @@ data class MainLayoutState(
                 startNavigation = listOf(
                     NavigationSection(
                         "Expansions",
+                        NavigationRoute("All Expansions", null, ArkhamApp.Expansions),
                         *expansions
                             .expansions
                             .map { expansion ->
@@ -63,6 +63,7 @@ data class MainLayoutState(
                         "Resources",
                         NavigationRoute("Community Resources", null, ArkhamApp.StaticPage, "resources"),
                         NavigationRoute("Chaos Bag Simulator", null, ArkhamApp.ChaosBagSimulator),
+                        NavigationRoute("Campaign Log", null, ArkhamApp.AboutCampaignLog),
                         NavigationRoute("Dividers Generator", null, ArkhamApp.DividersGenerator),
                         NavigationRoute("Tuckbox Generator", null, ArkhamApp.TuckboxGenerator),
                         NavigationRoute("Custom Cards Designer", null, ArkhamApp.CustomCards),
@@ -84,23 +85,16 @@ data class MainLayoutState(
 @Composable
 fun MainLayout(
     cached: Cached<MainLayoutState>,
-    content: @Composable () -> Unit
+    content: @Composable (MainLayoutState) -> Unit
 ) {
-    if (cached.isLoading()) {
-        // show a loader
-
-    } else if (cached is Cached.FetchingFailed<*>) {
-        // show an error message
-
-    } else {
-        val state = cached.getCachedOrThrow()
+    CacheReady(cached) { layoutState ->
         MainNavBar(
             homeRoute = ArkhamApp.Home,
-            brandImageUrl = state.brandImage,
-            startNavigation = state.startNavigation,
-            endNavigation = state.endNavigation,
+            brandImageUrl = layoutState.brandImage,
+            startNavigation = layoutState.startNavigation,
+            endNavigation = layoutState.endNavigation,
         )
-        content()
+        content(layoutState)
         BulmaFooter {
             Text("The information presented on this site about Arkham Horror: The Card Game, both literal and graphical, is copyrighted by Fantasy Flight Games. This website is not produced, endorsed, supported, or affiliated with Fantasy Flight Games.")
         }

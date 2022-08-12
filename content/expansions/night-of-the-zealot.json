@@ -3,8 +3,9 @@
     "name": "Night of the Zealot",
     "icon": "{{baseUrl}}/assets/night-of-the-zealot.svg",
     "boxArt": "{{baseUrl}}/assets/night-of-the-zealot/box-art.webp",
-    "isReturnTo": false,
-    "returnToName": "Return To Night of the Zealot",
+    "expansionType": {
+        "type": "cycle"
+    },
     "flavorText": "The boundaries between worlds have drawn perilously thin. Dark forces work in the shadows and call upon unspeakable horrors, strange happenings are discovered all throughout the city of Arkham, Massachusetts, and behind it all an Ancient One manipulates everything from beyond the veil. It is time to revisit that which started it all…",
     "products": [
         "core",
@@ -517,5 +518,122 @@
             "name": "Wendy Adams",
             "mainClass": "Survivor"
         }
-    ]
+    ],
+    "campaignLogSchema": {
+        "type": "object",
+        "properties": {
+            "investigators": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "string"
+                        },
+                        "investigatorId": {
+                            "type": "string"
+                        },
+                        "totalExperience": {
+                            "type": "integer"
+                        },
+                        "spentExperience": {
+                            "type": "integer"
+                        },
+                        "physicalTrauma": {
+                            "type": "integer"
+                        },
+                        "mentalTrauma": {
+                            "type": "integer"
+                        },
+                        "earnedStoryCards": {
+                            "type": "string"
+                        },
+                        "status": {
+                            "type": "string",
+                            "enum": [
+                                "Alive",
+                                "Killed",
+                                "Insane"
+                            ]
+                        },
+                        "notes": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "scenarios": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "string",
+                            "enum": [
+                                "1-1",
+                                "1-2",
+                                "1-3"
+                            ]
+                        },
+                        "victoryDisplay": {
+                            "type": "integer"
+                        },
+                        "resolution": {
+                            "type": "integer"
+                        },
+                        "notes": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "cultists": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "string",
+                            "enum": [
+                                "The Masked Hunter",
+                                "\"Wolf-Man\" Drew",
+                                "Herman Collins",
+                                "Peter Warren",
+                                "Victoria Devereux",
+                                "Ruth Turner"
+                            ]
+                        },
+                        "status": {
+                            "type": "string",
+                            "enum": [
+                                "Interrogated",
+                                "Got Away"
+                            ]
+                        }
+                    }
+                }
+            },
+            "statements": {
+                "type": "array",
+                "items": {
+                    "type": "string",
+                    "uniqueItems": true,
+                    "enum": [
+                        "Your house is still standing",
+                        "Your house has burned to the ground",
+                        "Lita was forced to find others to help her cause",
+                        "The Ghoul Priest is still alive",
+                        "It is past midnight",
+                        "Arkham succumbed to Umôrdhoth’s terrible vengeance",
+                        "The ritual to summon Umôrdhoth was broken",
+                        "The investigators repelled Umôrdhoth",
+                        "The investigators sacrificed Lita Chantler to Umôrdhoth"
+                    ]
+                }
+            },
+            "notes": {
+                "type": "string"
+            }
+        }
+    }
 }

@@ -3,7 +3,10 @@
     "name": "Return To Night of the Zealot",
     "icon": "{{baseUrl}}/assets/return-to-night-of-the-zealot.svg",
     "boxArt": "{{baseUrl}}/assets/return-to-night-of-the-zealot/box-art.webp",
-    "isReturnTo": true,
+    "expansionType": {
+        "type": "return to",
+        "forCycle": "Night of the Zealot"
+    },
     "products": [],
     "scenarios": [
         {
@@ -442,5 +445,125 @@
             "replaces": "Dark Cult"
         }
     ],
-    "investigators": []
+    "investigators": [],
+    "campaignLogSchema": {
+        "type": "object",
+        "properties": {
+            "investigators": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "string"
+                        },
+                        "investigatorId": {
+                            "type": "string"
+                        },
+                        "totalExperience": {
+                            "type": "integer"
+                        },
+                        "spentExperience": {
+                            "type": "integer"
+                        },
+                        "physicalTrauma": {
+                            "type": "integer"
+                        },
+                        "mentalTrauma": {
+                            "type": "integer"
+                        },
+                        "earnedStoryCards": {
+                            "type": "string"
+                        },
+                        "status": {
+                            "type": "string",
+                            "enum": [
+                                "Alive",
+                                "Killed",
+                                "Insane"
+                            ]
+                        },
+                        "notes": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "scenarios": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "string",
+                            "enum": [
+                                "1-1",
+                                "1-2",
+                                "1-3"
+                            ]
+                        },
+                        "victoryDisplay": {
+                            "type": "integer"
+                        },
+                        "resolution": {
+                            "type": "integer"
+                        },
+                        "notes": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "cultists": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "string",
+                            "enum": [
+                                "The Masked Hunter",
+                                "\"Wolf-Man\" Drew",
+                                "Herman Collins",
+                                "Peter Warren",
+                                "Victoria Devereux",
+                                "Ruth Turner",
+                                "Jeremiah Pierce",
+                                "Billy Cooper",
+                                "Alma Hill"
+                            ]
+                        },
+                        "status": {
+                            "type": "string",
+                            "enum": [
+                                "Interrogated",
+                                "Got Away"
+                            ]
+                        }
+                    }
+                }
+            },
+            "statements": {
+                "type": "array",
+                "items": {
+                    "type": "string",
+                    "uniqueItems": true,
+                    "enum": [
+                        "Your house is still standing",
+                        "Your house has burned to the ground",
+                        "Lita was forced to find others to help her cause",
+                        "The Ghoul Priest is still alive",
+                        "It is past midnight",
+                        "Arkham succumbed to Umôrdhoth’s terrible vengeance",
+                        "The ritual to summon Umôrdhoth was broken",
+                        "The investigators repelled Umôrdhoth",
+                        "The investigators sacrificed Lita Chantler to Umôrdhoth"
+                    ]
+                }
+            },
+            "notes": {
+                "type": "string"
+            }
+        }
+    }
 }

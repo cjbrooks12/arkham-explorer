@@ -17,51 +17,61 @@ import com.caseyjbrooks.arkham.utils.theme.bulma.Hero
 import com.caseyjbrooks.arkham.utils.theme.bulma.NavigationRoute
 import com.caseyjbrooks.arkham.utils.theme.bulma.Row
 import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayout
+import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayoutState
 import com.copperleaf.arkham.models.api.ExpansionLite
 import com.copperleaf.arkham.models.api.Investigator
 import org.jetbrains.compose.web.dom.Text
 
 object InvestigatorsUi {
     @Composable
-    fun Content(injector: ArkhamInjector) {
+    fun Page(injector: ArkhamInjector) {
         val coroutineScope = rememberCoroutineScope()
         val vm = remember(coroutineScope, injector) { injector.investigatorsViewModel(coroutineScope) }
         val vmState by vm.observeStates().collectAsState()
-        Content(vmState) { vm.trySend(it) }
+        Page(vmState) { vm.trySend(it) }
     }
 
     @Composable
-    fun Content(state: InvestigatorsContract.State, postInput: (InvestigatorsContract.Inputs) -> Unit) {
+    fun Page(state: InvestigatorsContract.State, postInput: (InvestigatorsContract.Inputs) -> Unit) {
         MainLayout(state.layout) {
-            Hero(
-                title = { Text("Investigators") },
-                size = BulmaSize.Medium,
-            )
-            BulmaSection {
-                Breadcrumbs(
-                    NavigationRoute("Home", null, ArkhamApp.Home),
-                    NavigationRoute("Investigators", null, ArkhamApp.Investigators),
-                )
+            Header()
+            CacheReady(state.layout, state.investigators) { layoutState, investigators ->
+                Body(layoutState, investigators.investigators)
             }
-            BulmaSection {
-                CacheReady(state.layout, state.investigators) { layoutState, investigators ->
-                    val regularExpansionsChunks = layoutState
-                        .expansions
-                        .filter { !it.isReturnTo }
-                        .chunked(3)
+        }
+    }
 
-                    regularExpansionsChunks.forEach { expansions ->
-                        Row("features") {
-                            expansions.forEach { expansion ->
-                                Column("is-4") {
-                                    val investigators = expansion
-                                        .investigators
-                                        .map { investigatorId ->
-                                            investigators.investigators.single { it.id == investigatorId }
-                                        }
-                                    ExpansionCard(expansion, investigators)
+    @Composable
+    fun Header() {
+        Hero(
+            title = { Text("Investigators") },
+            size = BulmaSize.Medium,
+        )
+        BulmaSection {
+            Breadcrumbs(
+                NavigationRoute("Home", null, ArkhamApp.Home),
+                NavigationRoute("Investigators", null, ArkhamApp.Investigators),
+            )
+        }
+    }
+
+    @Composable
+    fun Body(layoutState: MainLayoutState, investigators: List<Investigator>) {
+        BulmaSection {
+            val regularExpansionsChunks = layoutState
+                .expansions
+                .chunked(3)
+
+            regularExpansionsChunks.forEach { expansions ->
+                Row("features") {
+                    expansions.forEach { expansion ->
+                        Column("is-4") {
+                            val investigators = expansion
+                                .investigators
+                                .map { investigatorId ->
+                                    investigators.single { it.id == investigatorId }
                                 }
-                            }
+                            ExpansionCard(expansion, investigators)
                         }
                     }
                 }
@@ -80,7 +90,7 @@ object InvestigatorsUi {
                         name = investigator.name,
                         iconUrl = null,
                         route = ArkhamApp.InvestigatorDetails,
-                        params = arrayOf(investigator.id.id)
+                        pathParams = arrayOf(investigator.id.id)
                     )
                 }
                 .toTypedArray()

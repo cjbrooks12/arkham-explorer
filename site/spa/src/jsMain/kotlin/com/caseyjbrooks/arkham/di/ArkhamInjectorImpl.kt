@@ -8,6 +8,9 @@ import com.caseyjbrooks.arkham.repository.main.ArkhamExplorerRepository
 import com.caseyjbrooks.arkham.repository.main.ArkhamExplorerRepositoryImpl
 import com.caseyjbrooks.arkham.ui.ArkhamApp
 import com.caseyjbrooks.arkham.ui.RouterViewModel
+import com.caseyjbrooks.arkham.ui.campaignlog.CampaignLogContract
+import com.caseyjbrooks.arkham.ui.campaignlog.CampaignLogInputHandler
+import com.caseyjbrooks.arkham.ui.campaignlog.CampaignLogViewModel
 import com.caseyjbrooks.arkham.ui.chaosbag.ChaosBagSimulatorContract
 import com.caseyjbrooks.arkham.ui.chaosbag.ChaosBagSimulatorInputHandler
 import com.caseyjbrooks.arkham.ui.chaosbag.ChaosBagSimulatorViewModel
@@ -17,6 +20,9 @@ import com.caseyjbrooks.arkham.ui.encountersets.detail.EncounterSetDetailsViewMo
 import com.caseyjbrooks.arkham.ui.encountersets.list.EncounterSetsContract
 import com.caseyjbrooks.arkham.ui.encountersets.list.EncounterSetsInputHandler
 import com.caseyjbrooks.arkham.ui.encountersets.list.EncounterSetsViewModel
+import com.caseyjbrooks.arkham.ui.error.NavigationErrorContract
+import com.caseyjbrooks.arkham.ui.error.NavigationErrorInputHandler
+import com.caseyjbrooks.arkham.ui.error.NavigationErrorViewModel
 import com.caseyjbrooks.arkham.ui.expansions.detail.ExpansionDetailsContract
 import com.caseyjbrooks.arkham.ui.expansions.detail.ExpansionDetailsInputHandler
 import com.caseyjbrooks.arkham.ui.expansions.detail.ExpansionDetailsViewModel
@@ -66,9 +72,11 @@ import kotlinx.serialization.json.Json
 
 class ArkhamInjectorImpl(
     private val applicationCoroutineScope: CoroutineScope,
-    private val isPwa: Boolean,
+    isPwa: Boolean,
 ) : ArkhamInjector {
-    override val config: ArkhamConfig = ArkhamConfigImpl()
+    override val config: ArkhamConfig = ArkhamConfigImpl(
+        isPwa = isPwa,
+    )
     private val eventBus = EventBusImpl()
     private val httpClient = HttpClient(Js) {
         install(ContentNegotiation) {
@@ -118,6 +126,21 @@ class ArkhamInjectorImpl(
 
     override fun arkhamExplorerRepository(): ArkhamExplorerRepository {
         return arkhamExplorerRepository
+    }
+
+    override fun navigationErrorViewModel(
+        coroutineScope: CoroutineScope
+    ): NavigationErrorViewModel {
+        return NavigationErrorViewModel(
+            coroutineScope = coroutineScope,
+            configBuilder = defaultConfigBuilder()
+                .apply {
+                    this += BootstrapInterceptor { NavigationErrorContract.Inputs.Initialize }
+                },
+            inputHandler = NavigationErrorInputHandler(
+                repository = arkhamExplorerRepository
+            ),
+        )
     }
 
     override fun homeViewModel(
@@ -284,7 +307,7 @@ class ArkhamInjectorImpl(
             configBuilder = defaultConfigBuilder()
                 .apply {
                     this += BootstrapInterceptor {
-                        if(scenarioId != null) {
+                        if (scenarioId != null) {
                             ChaosBagSimulatorContract.Inputs.InitializeForScenario(scenarioId)
                         } else {
                             ChaosBagSimulatorContract.Inputs.InitializeDefault
@@ -292,6 +315,24 @@ class ArkhamInjectorImpl(
                     }
                 },
             inputHandler = ChaosBagSimulatorInputHandler(
+                repository = arkhamExplorerRepository
+            ),
+        )
+    }
+
+
+    override fun campaignLogViewModel(
+        coroutineScope: CoroutineScope,
+        expansionCode: String?,
+        campaignLogId: String?,
+    ): CampaignLogViewModel {
+        return CampaignLogViewModel(
+            coroutineScope = coroutineScope,
+            configBuilder = defaultConfigBuilder()
+                .apply {
+                    this += BootstrapInterceptor { CampaignLogContract.Inputs.Initialize(expansionCode, campaignLogId) }
+                },
+            inputHandler = CampaignLogInputHandler(
                 repository = arkhamExplorerRepository
             ),
         )

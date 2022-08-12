@@ -33,4 +33,5 @@ data class ScenarioEncounterSet(
     val icon: String,
     val conditional: Boolean,
     val setAside: Boolean,
+    val partial: Boolean,
 )
