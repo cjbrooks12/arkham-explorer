@@ -85,7 +85,7 @@ class ArkhamInjectorImpl(
         isPwa = isPwa,
     )
     private val eventBus = EventBusImpl()
-    private val httpClient = HttpClient(Js) {
+    override val httpClient = HttpClient(Js) {
         install(ContentNegotiation) {
             json(Json {
                 prettyPrint = true

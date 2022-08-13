@@ -1,8 +1,8 @@
 {
     "id": "7",
     "name": "The Innsmouth Conspiracy",
-    "icon": "{{baseUrl}}/assets/the-innnsmouth-conspiracy.svg",
-    "boxArt": "{{baseUrl}}/assets/the-innnsmouth-conspiracy/box-art.webp",
+    "icon": "{{baseUrl}}/assets/the-innsmouth-conspiracy.svg",
+    "boxArt": "{{baseUrl}}/assets/the-innsmouth-conspiracy/box-art.webp",
     "flavorText": "Not far from Arkham, the stooped and weathered town of Innsmouth squats on the Atlantic coast. An aura of decrepitude and decay hangs over the city like the ocean fog, from the weirdly glowing windows of the Gilman House to the deserted and toppling Fish Street bridge. Beyond the city limits, the Innsmouth shoreline is pocked with half-flooded tidal tunnels and unnatural coves. Who knows what strange, abyssal trinkets you might find, among the skeletons of fish and rotting seaweed?",
     "expansionType": {
         "type": "cycle"

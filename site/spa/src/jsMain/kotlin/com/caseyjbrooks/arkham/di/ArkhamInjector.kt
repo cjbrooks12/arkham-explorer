@@ -23,11 +23,13 @@ import com.copperleaf.arkham.models.api.EncounterSetId
 import com.copperleaf.arkham.models.api.InvestigatorId
 import com.copperleaf.arkham.models.api.ProductId
 import com.copperleaf.arkham.models.api.ScenarioId
+import io.ktor.client.HttpClient
 import kotlinx.coroutines.CoroutineScope
 
 interface ArkhamInjector {
     val config: ArkhamConfig
     val navigationLinkStrategy: NavigationLinkStrategy
+    val httpClient: HttpClient
 
     fun routerViewModel(): RouterViewModel
     fun arkhamExplorerRepository(): ArkhamExplorerRepository

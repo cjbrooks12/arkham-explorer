@@ -3,8 +3,10 @@ package com.caseyjbrooks.arkham.utils.navigation
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.produceState
-import kotlinx.browser.window
-import kotlinx.coroutines.await
+import com.caseyjbrooks.arkham.ui.LocalInjector
+import io.ktor.client.request.get
+import io.ktor.client.statement.bodyAsText
+import io.ktor.http.isSuccess
 import org.jetbrains.compose.web.css.height
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.AttrBuilderContext
@@ -17,14 +19,14 @@ fun Icon(
     alt: String = "",
     attrs: AttrBuilderContext<*>? = null
 ) {
+    val httpClient = LocalInjector.current.httpClient
     if (src.endsWith(".svg")) {
         // fetch the SVG and insert it directly into the DOM so we can style it with CSS
         val svgSource: Result<String>? by produceState<Result<String>?>(null) {
-            val svgResponse = window.fetch(src).await()
-
             value = runCatching {
-                check(svgResponse.ok)
-                svgResponse.text().await()
+                val response = httpClient.get(src)
+                check(response.status.isSuccess())
+                response.bodyAsText()
             }
         }
 
