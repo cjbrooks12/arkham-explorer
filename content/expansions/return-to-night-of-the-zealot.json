@@ -7,7 +7,6 @@
         "type": "return to",
         "forCycle": "Night of the Zealot"
     },
-    "products": [],
     "scenarios": [
         {
             "id": "1-1r",
@@ -446,6 +445,13 @@
         }
     ],
     "investigators": [],
+    "products": [
+        {
+            "id": "1-1r",
+            "arkhamDbCode": "rtnotz",
+            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/return-night-zealot/"
+        }
+    ],
     "campaignLogSchema": {
         "type": "object",
         "properties": {

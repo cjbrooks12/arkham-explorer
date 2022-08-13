@@ -7,7 +7,6 @@
         "type": "return to",
         "forCycle": "The Dunwich Legacy"
     },
-    "products": [],
     "scenarios": [
         {
             "id": "2-1r",
@@ -397,5 +396,12 @@
             "replaces": "The Beyond"
         }
     ],
-    "investigators": []
+    "investigators": [],
+    "products": [
+        {
+            "id": "2-1r",
+            "arkhamDbCode": "rtdwl",
+            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/return-dunwich-legacy/"
+        }
+    ]
 }

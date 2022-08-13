@@ -9,9 +9,8 @@ import com.caseyjbrooks.arkham.stages.expansiondata.inputs.ArkhamDbPacksApi
 import com.caseyjbrooks.arkham.stages.expansiondata.inputs.LocalExpansionFile
 import com.caseyjbrooks.arkham.stages.expansiondata.inputs.models.ArkhamDbPack
 import com.caseyjbrooks.arkham.stages.expansiondata.inputs.models.LocalArkhamHorrorExpansion
-import com.copperleaf.arkham.models.api.ExpansionId
+import com.caseyjbrooks.arkham.stages.expansiondata.utils.asFullOutput
 import com.copperleaf.arkham.models.api.Product
-import com.copperleaf.arkham.models.api.ProductId
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.encodeToStream
 import java.nio.file.Paths
@@ -61,6 +60,9 @@ object ProductJson {
         localExpansion: LocalArkhamHorrorExpansion,
         packsApi: List<ArkhamDbPack>,
     ): Product {
-        return Product("", ProductId(""), ExpansionId(""), emptyList())
+        return localExpansion
+            .products
+            .single { it.id == productId }
+            .asFullOutput(localExpansion.code, packsApi)
     }
 }

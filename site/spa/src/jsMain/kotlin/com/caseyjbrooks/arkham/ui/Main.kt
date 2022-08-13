@@ -1,7 +1,6 @@
 package com.caseyjbrooks.arkham.ui
 
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
@@ -20,6 +19,8 @@ import com.caseyjbrooks.arkham.ui.home.HomeUi
 import com.caseyjbrooks.arkham.ui.investigators.detail.InvestigatorDetailsUi
 import com.caseyjbrooks.arkham.ui.investigators.list.InvestigatorsUi
 import com.caseyjbrooks.arkham.ui.pages.StaticPageUi
+import com.caseyjbrooks.arkham.ui.products.detail.ProductDetailsUi
+import com.caseyjbrooks.arkham.ui.products.list.ProductsUi
 import com.caseyjbrooks.arkham.ui.scenarios.detail.ScenarioDetailsUi
 import com.caseyjbrooks.arkham.ui.scenarios.list.ScenariosUi
 import com.caseyjbrooks.arkham.ui.tools.ToolsUi
@@ -27,6 +28,7 @@ import com.caseyjbrooks.arkham.ui.tuckbox.TuckboxGeneratorUi
 import com.caseyjbrooks.arkham.utils.theme.ArkhamTheme
 import com.copperleaf.arkham.models.api.EncounterSetId
 import com.copperleaf.arkham.models.api.InvestigatorId
+import com.copperleaf.arkham.models.api.ProductId
 import com.copperleaf.arkham.models.api.ScenarioId
 import com.copperleaf.ballast.navigation.routing.Destination
 import com.copperleaf.ballast.navigation.routing.MissingDestination
@@ -41,13 +43,7 @@ fun MainApplication(injector: ArkhamInjector) {
         val routerVm = remember(injector) { injector.routerViewModel() }
         val routerVmState by routerVm.observeStates().collectAsState()
 
-        val destination = routerVmState.currentDestinationOrNotFound
-        LaunchedEffect(destination) {
-            println("destination=$destination")
-            println(destination)
-        }
-
-        when (destination) {
+        when (val destination = routerVmState.currentDestinationOrNotFound) {
             is Destination -> {
                 when (destination.originalRoute) {
                     ArkhamApp.Home -> {
@@ -104,6 +100,19 @@ fun MainApplication(injector: ArkhamInjector) {
                         )
                     }
 
+                    ArkhamApp.Products -> {
+                        ProductsUi.Page(injector)
+                    }
+
+                    ArkhamApp.ProductDetails -> {
+                        ProductDetailsUi.Page(
+                            injector,
+                            ProductId(
+                                destination.pathParameters["productId"]!!.single(),
+                            )
+                        )
+                    }
+
                     ArkhamApp.StaticPage -> {
                         StaticPageUi.Page(
                             injector,
@@ -116,26 +125,28 @@ fun MainApplication(injector: ArkhamInjector) {
                     }
 
                     ArkhamApp.ChaosBagSimulator -> {
-                        val scenarioId = destination.queryParameters["scenarioId"]?.singleOrNull()?.let { ScenarioId(it) }
+                        val scenarioId =
+                            destination.queryParameters["scenarioId"]?.singleOrNull()?.let { ScenarioId(it) }
                         ChaosBagSimulatorUi.Page(injector, scenarioId)
                     }
 
                     ArkhamApp.AboutCampaignLog -> {
-                        LaunchedEffect(Unit) { println("AboutCampaignLog") }
                         CampaignLogUi.Page(injector)
                     }
 
                     ArkhamApp.CreateCampaignLog -> {
-                        LaunchedEffect(Unit) { println("CreateCampaignLog") }
-                        val expansionCode = destination.pathParameters["expansionCode"]!!.single()
-                        CampaignLogUi.Page(injector, expansionCode)
+                        CampaignLogUi.Page(
+                            injector,
+                            destination.pathParameters["expansionCode"]!!.single(),
+                        )
                     }
 
                     ArkhamApp.ViewCampaignLog -> {
-                        LaunchedEffect(Unit) { println("ViewCampaignLog") }
-                        val expansionCode = destination.pathParameters["expansionCode"]!!.single()
-                        val campaignLogId = destination.pathParameters["campaignLogId"]!!.single()
-                        CampaignLogUi.Page(injector, expansionCode, campaignLogId)
+                        CampaignLogUi.Page(
+                            injector,
+                            destination.pathParameters["expansionCode"]!!.single(),
+                            destination.pathParameters["campaignLogId"]!!.single(),
+                        )
                     }
 
                     ArkhamApp.DividersGenerator -> {

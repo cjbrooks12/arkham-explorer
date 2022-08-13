@@ -1,16 +1,12 @@
 {
     "id": "1",
     "name": "Night of the Zealot",
-    "icon": "{{baseUrl}}/assets/night-of-the-zealot.svg",
-    "boxArt": "{{baseUrl}}/assets/night-of-the-zealot/box-art.webp",
     "expansionType": {
         "type": "cycle"
     },
+    "icon": "{{baseUrl}}/assets/night-of-the-zealot.svg",
+    "boxArt": "{{baseUrl}}/assets/night-of-the-zealot/box-art.webp",
     "flavorText": "The boundaries between worlds have drawn perilously thin. Dark forces work in the shadows and call upon unspeakable horrors, strange happenings are discovered all throughout the city of Arkham, Massachusetts, and behind it all an Ancient One manipulates everything from beyond the veil. It is time to revisit that which started it all…",
-    "products": [
-        "core",
-        "rcore"
-    ],
     "scenarios": [
         {
             "id": "1-1",
@@ -517,6 +513,18 @@
             "id": "1-5",
             "name": "Wendy Adams",
             "mainClass": "Survivor"
+        }
+    ],
+    "products": [
+        {
+            "id": "1-1",
+            "arkhamDbCode": "core",
+            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/arkham-horror-card-game/https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/arkham-horror-card-game/"
+        },
+        {
+            "id": "1-2",
+            "arkhamDbCode": "rcore",
+            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/arkham-horror-card-game-revised-core-set/"
         }
     ],
     "campaignLogSchema": {

@@ -41,6 +41,12 @@ import com.caseyjbrooks.arkham.ui.investigators.list.InvestigatorsViewModel
 import com.caseyjbrooks.arkham.ui.pages.StaticPageContract
 import com.caseyjbrooks.arkham.ui.pages.StaticPageInputHandler
 import com.caseyjbrooks.arkham.ui.pages.StaticPageViewModel
+import com.caseyjbrooks.arkham.ui.products.detail.ProductDetailsContract
+import com.caseyjbrooks.arkham.ui.products.detail.ProductDetailsInputHandler
+import com.caseyjbrooks.arkham.ui.products.detail.ProductDetailsViewModel
+import com.caseyjbrooks.arkham.ui.products.list.ProductsContract
+import com.caseyjbrooks.arkham.ui.products.list.ProductsInputHandler
+import com.caseyjbrooks.arkham.ui.products.list.ProductsViewModel
 import com.caseyjbrooks.arkham.ui.scenarios.detail.ScenarioDetailsContract
 import com.caseyjbrooks.arkham.ui.scenarios.detail.ScenarioDetailsInputHandler
 import com.caseyjbrooks.arkham.ui.scenarios.detail.ScenarioDetailsViewModel
@@ -52,6 +58,7 @@ import com.caseyjbrooks.arkham.utils.navigation.HistoryNavigationLinkStrategy
 import com.caseyjbrooks.arkham.utils.navigation.NavigationLinkStrategy
 import com.copperleaf.arkham.models.api.EncounterSetId
 import com.copperleaf.arkham.models.api.InvestigatorId
+import com.copperleaf.arkham.models.api.ProductId
 import com.copperleaf.arkham.models.api.ScenarioId
 import com.copperleaf.ballast.BallastLogger
 import com.copperleaf.ballast.BallastViewModelConfiguration
@@ -189,37 +196,6 @@ class ArkhamInjectorImpl(
         )
     }
 
-    override fun investigatorsViewModel(
-        coroutineScope: CoroutineScope
-    ): InvestigatorsViewModel {
-        return InvestigatorsViewModel(
-            coroutineScope = coroutineScope,
-            configBuilder = defaultConfigBuilder()
-                .apply {
-                    this += BootstrapInterceptor { InvestigatorsContract.Inputs.Initialize }
-                },
-            inputHandler = InvestigatorsInputHandler(
-                repository = arkhamExplorerRepository
-            ),
-        )
-    }
-
-    override fun investigatorDetailsViewModel(
-        coroutineScope: CoroutineScope,
-        investigatorId: InvestigatorId
-    ): InvestigatorDetailsViewModel {
-        return InvestigatorDetailsViewModel(
-            coroutineScope = coroutineScope,
-            configBuilder = defaultConfigBuilder()
-                .apply {
-                    this += BootstrapInterceptor { InvestigatorDetailsContract.Inputs.Initialize(investigatorId) }
-                },
-            inputHandler = InvestigatorDetailsInputHandler(
-                repository = arkhamExplorerRepository
-            ),
-        )
-    }
-
     override fun scenariosViewModel(
         coroutineScope: CoroutineScope
     ): ScenariosViewModel {
@@ -282,6 +258,68 @@ class ArkhamInjectorImpl(
         )
     }
 
+    override fun investigatorsViewModel(
+        coroutineScope: CoroutineScope
+    ): InvestigatorsViewModel {
+        return InvestigatorsViewModel(
+            coroutineScope = coroutineScope,
+            configBuilder = defaultConfigBuilder()
+                .apply {
+                    this += BootstrapInterceptor { InvestigatorsContract.Inputs.Initialize }
+                },
+            inputHandler = InvestigatorsInputHandler(
+                repository = arkhamExplorerRepository
+            ),
+        )
+    }
+
+    override fun investigatorDetailsViewModel(
+        coroutineScope: CoroutineScope,
+        investigatorId: InvestigatorId
+    ): InvestigatorDetailsViewModel {
+        return InvestigatorDetailsViewModel(
+            coroutineScope = coroutineScope,
+            configBuilder = defaultConfigBuilder()
+                .apply {
+                    this += BootstrapInterceptor { InvestigatorDetailsContract.Inputs.Initialize(investigatorId) }
+                },
+            inputHandler = InvestigatorDetailsInputHandler(
+                repository = arkhamExplorerRepository
+            ),
+        )
+    }
+
+    override fun productsViewModel(
+        coroutineScope: CoroutineScope
+    ): ProductsViewModel {
+        return ProductsViewModel(
+            coroutineScope = coroutineScope,
+            configBuilder = defaultConfigBuilder()
+                .apply {
+                    this += BootstrapInterceptor { ProductsContract.Inputs.Initialize }
+                },
+            inputHandler = ProductsInputHandler(
+                repository = arkhamExplorerRepository
+            ),
+        )
+    }
+
+    override fun productDetailsViewModel(
+        coroutineScope: CoroutineScope,
+        productId: ProductId,
+    ): ProductDetailsViewModel {
+        return ProductDetailsViewModel(
+            coroutineScope = coroutineScope,
+            configBuilder = defaultConfigBuilder()
+                .apply {
+                    this += BootstrapInterceptor { ProductDetailsContract.Inputs.Initialize(productId) }
+                },
+            inputHandler = ProductDetailsInputHandler(
+                repository = arkhamExplorerRepository
+            ),
+        )
+    }
+
     override fun staticPageViewModel(
         coroutineScope: CoroutineScope,
         slug: String,
@@ -319,7 +357,6 @@ class ArkhamInjectorImpl(
             ),
         )
     }
-
 
     override fun campaignLogViewModel(
         coroutineScope: CoroutineScope,

@@ -1,5 +1,6 @@
 package com.caseyjbrooks.arkham.stages.expansiondata.utils
 
+import com.caseyjbrooks.arkham.stages.expansiondata.inputs.models.ArkhamDbPack
 import com.caseyjbrooks.arkham.stages.expansiondata.inputs.models.LocalArkhamHorrorExpansion
 import com.caseyjbrooks.arkham.utils.preprocessContent
 import com.copperleaf.arkham.models.api.EncounterSet
@@ -10,9 +11,12 @@ import com.copperleaf.arkham.models.api.ExpansionLite
 import com.copperleaf.arkham.models.api.ExpansionType
 import com.copperleaf.arkham.models.api.Investigator
 import com.copperleaf.arkham.models.api.InvestigatorId
+import com.copperleaf.arkham.models.api.Product
+import com.copperleaf.arkham.models.api.ProductId
 import com.copperleaf.arkham.models.api.Scenario
 import com.copperleaf.arkham.models.api.ScenarioEncounterSet
 import com.copperleaf.arkham.models.api.ScenarioId
+import kotlinx.datetime.LocalDate
 
 fun List<LocalArkhamHorrorExpansion>.getEncounterSetByName(name: String): LocalArkhamHorrorExpansion.EncounterSet {
     return this
@@ -88,7 +92,8 @@ fun LocalArkhamHorrorExpansion.Investigator.asFullOutput(
 
 fun LocalArkhamHorrorExpansion.asFullOutput(
     expansionCode: String,
-    allExpansionData: List<LocalArkhamHorrorExpansion>
+    allExpansionData: List<LocalArkhamHorrorExpansion>,
+    packsApi: List<ArkhamDbPack>,
 ): Expansion {
     return Expansion(
         name = this.name,
@@ -110,7 +115,7 @@ fun LocalArkhamHorrorExpansion.asFullOutput(
         scenarios = this.scenarios.map { it.asFullOutput(expansionCode, allExpansionData) },
         encounterSets = this.encounterSets.map { it.asFullOutput(expansionCode, allExpansionData) },
         investigators = this.investigators.map { it.asFullOutput(expansionCode, allExpansionData) },
-        products = emptyList(),
+        products = this.products.map { it.asFullOutput(expansionCode, packsApi) },
         campaignLogSchema = this.campaignLogSchema,
     )
 }
@@ -140,5 +145,29 @@ fun LocalArkhamHorrorExpansion.asLiteOutput(
         encounterSets = this.encounterSets.map { it.asFullOutput(expansionCode, allExpansionData).id },
         investigators = this.investigators.map { it.asFullOutput(expansionCode, allExpansionData).id },
         products = emptyList(),
+    )
+}
+
+fun LocalArkhamHorrorExpansion.Product.asFullOutput(
+    expansionCode: String,
+    packsApi: List<ArkhamDbPack>,
+): Product {
+    val arkhamDbEntry = if (this.arkhamDbCode != null) {
+        packsApi.single { it.code == this.arkhamDbCode }
+    } else {
+        null
+    }
+
+    return Product(
+        name = this.name ?: arkhamDbEntry?.name ?: error("name (expansion=$expansionCode, product=${this.id})"),
+        id = ProductId(this.id),
+        expansionCode = expansionCode,
+        releaseDate = this.releaseDate
+            ?: arkhamDbEntry
+                ?.available
+                ?.takeIf { it.isNotBlank() }
+                ?.let { LocalDate.parse(it) }
+            ?: error("releaseDate (expansion=$expansionCode, product=${this.id})"),
+        officialProductUrl = this.officialProductUrl,
     )
 }

@@ -16,6 +16,7 @@ import com.caseyjbrooks.arkham.stages.expansiondata.outputs.ExpansionScenariosJs
 import com.caseyjbrooks.arkham.stages.expansiondata.outputs.ExpansionsJson
 import com.caseyjbrooks.arkham.stages.expansiondata.outputs.InvestigatorJson
 import com.caseyjbrooks.arkham.stages.expansiondata.outputs.InvestigatorsJson
+import com.caseyjbrooks.arkham.stages.expansiondata.outputs.ProductJson
 import com.caseyjbrooks.arkham.stages.expansiondata.outputs.ProductsJson
 import com.caseyjbrooks.arkham.stages.expansiondata.outputs.ScenarioJson
 import com.caseyjbrooks.arkham.stages.expansiondata.outputs.ScenariosJson
@@ -93,6 +94,7 @@ class FetchExpansionData : DependencyGraphBuilder {
             localExpansion.scenarios.forEach { ScenarioJson.createOutputFile(this, expansionNodes, expansionCode, it.id, packsHttpNode, packHttpNodes) }
             localExpansion.encounterSets.forEach { EncounterSetJson.createOutputFile(this, expansionNodes, expansionCode, it.id, packsHttpNode, packHttpNodes) }
             localExpansion.investigators.forEach { InvestigatorJson.createOutputFile(this, expansionNodes, expansionCode, it.id, packsHttpNode, packHttpNodes) }
+            localExpansion.products.forEach { ProductJson.createOutputFile(this, expansionNodes, expansionCode, it.id, packsHttpNode, packHttpNodes) }
         }
     }
 }

@@ -7,7 +7,6 @@
         "type": "cycle"
     },
     "flavorText": "A monstrous presence once terrorized the secluded village of Dunwich. The season of horror ended only after three professors from Miskatonic University—Dr. Henry Armitage, Dr. Francis Morgan, and Professor Warren Price—ventured to Dunwich, armed with secret knowledge that enabled them to defeat the creature. Now, several months later, Dr. Armitage’s colleagues have gone missing, and he fears the worst…",
-    "products": [],
     "scenarios": [
         {
             "id": "2-1",
@@ -428,6 +427,56 @@
             "id": "2-5",
             "name": "\"Ashcan\" Pete",
             "mainClass": "Survivor"
+        }
+    ],
+    "products": [
+        {
+            "id": "2-1",
+            "arkhamDbCode": "dwl",
+            "name": "The Dunwich Legacy: Deluxe Expansion",
+            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/dunwich-legacy/"
+        },
+        {
+            "id": "2-2",
+            "arkhamDbCode": "tmm",
+            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/miskatonic-museum/"
+        },
+        {
+            "id": "2-3",
+            "arkhamDbCode": "tece",
+            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/essex-county-express/"
+        },
+        {
+            "id": "2-4",
+            "arkhamDbCode": "bota",
+            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/blood-altar/"
+        },
+        {
+            "id": "2-5",
+            "arkhamDbCode": "uau",
+            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/undimensioned-and-unseen/"
+        },
+        {
+            "id": "2-6",
+            "arkhamDbCode": "wda",
+            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/where-doom-awaits/"
+        },
+        {
+            "id": "2-7",
+            "arkhamDbCode": "litas",
+            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/lost-time-and-space/"
+        },
+        {
+            "id": "2-8",
+            "name": "The Dunwich Legacy: Campaign Expansion",
+            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/dunwich-legacy-campaign-expansion/",
+            "releaseDate": "2022-03-18"
+        },
+        {
+            "id": "2-9",
+            "name": "The Dunwich Legacy: Investigator Expansion",
+            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/dunwich-legacy-investigator-expansion/",
+            "releaseDate": "2022-03-18"
         }
     ]
 }

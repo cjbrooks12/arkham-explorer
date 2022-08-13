@@ -59,6 +59,6 @@ object ExpansionJson {
         localExpansion: LocalArkhamHorrorExpansion,
         packsApi: List<ArkhamDbPack>,
     ): Expansion {
-        return localExpansion.asFullOutput(expansionCode, localExpansions)
+        return localExpansion.asFullOutput(expansionCode, localExpansions, packsApi)
     }
 }

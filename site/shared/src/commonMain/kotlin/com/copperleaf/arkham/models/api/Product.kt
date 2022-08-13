@@ -1,5 +1,6 @@
 package com.copperleaf.arkham.models.api
 
+import kotlinx.datetime.LocalDate
 import kotlinx.serialization.Serializable
 import kotlin.jvm.JvmInline
 
@@ -13,10 +14,11 @@ value class ProductId(val id: String) : Comparable<ProductId> {
 
 @Serializable
 data class Product(
-    val name: String,
     val id: ProductId,
-    val expansionId: ExpansionId,
-    val photos: List<String>,
+    val name: String,
+    val expansionCode: String,
+    val releaseDate: LocalDate,
+    val officialProductUrl: String,
 )
 
 @Serializable

@@ -123,6 +123,18 @@ object ExpansionDetailsUi {
                 Column("is-4") {
                     Card(
                         title = "Products",
+                        navigationRoutes = expansion
+                            .products
+                            .map { product ->
+                                NavigationRoute(
+                                    name = product.name,
+                                    iconUrl = null,
+                                    route = ArkhamApp.ProductDetails,
+                                    pathParams = arrayOf(product.id.id),
+                                    buttonColor = BulmaColor.Primary,
+                                )
+                            }
+                            .toTypedArray()
                     )
                 }
                 Column("is-4") {
