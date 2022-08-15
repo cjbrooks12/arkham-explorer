@@ -9,8 +9,8 @@ import com.caseyjbrooks.arkham.stages.api.inputs.ArkhamDbPacksApi
 import com.caseyjbrooks.arkham.stages.api.inputs.LocalExpansionFile
 import com.caseyjbrooks.arkham.stages.api.inputs.models.ArkhamDbPack
 import com.caseyjbrooks.arkham.stages.api.inputs.models.LocalArkhamHorrorExpansion
-import com.caseyjbrooks.arkham.stages.api.utils.asFullOutput
-import com.copperleaf.arkham.models.api.EncounterSet
+import com.caseyjbrooks.arkham.stages.api.outputs.utils.asFullOutput
+import com.copperleaf.arkham.models.api.EncounterSetDetails
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.encodeToStream
 import java.nio.file.Paths
@@ -36,7 +36,7 @@ object EncounterSetJson {
                 val localExpansion = LocalExpansionFile.getBodyForOutput(scope, nodes, expansionCode)
                 val packsApi = ArkhamDbPacksApi.getBodyForOutput(scope, nodes)
                 prettyJson.encodeToStream(
-                    EncounterSet.serializer(),
+                    EncounterSetDetails.serializer(),
                     createJson(
                         expansionCode,
                         encounterSetId,
@@ -61,7 +61,7 @@ object EncounterSetJson {
         localExpansions: List<LocalArkhamHorrorExpansion>,
         localExpansion: LocalArkhamHorrorExpansion,
         packsApi: List<ArkhamDbPack>,
-    ): EncounterSet {
+    ): EncounterSetDetails {
         return localExpansion
             .encounterSets
             .single { it.id == encounterSetId }

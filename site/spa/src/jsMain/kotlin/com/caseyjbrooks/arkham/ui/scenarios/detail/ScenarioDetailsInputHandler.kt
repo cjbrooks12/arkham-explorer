@@ -5,7 +5,6 @@ import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayoutState
 import com.copperleaf.ballast.InputHandler
 import com.copperleaf.ballast.InputHandlerScope
 import com.copperleaf.ballast.observeFlows
-import com.copperleaf.ballast.repository.cache.map
 import kotlinx.coroutines.flow.map
 
 class ScenarioDetailsInputHandler(
@@ -32,16 +31,7 @@ class ScenarioDetailsInputHandler(
         }
 
         is ScenarioDetailsContract.Inputs.ExpansionsUpdated -> {
-            updateState { state ->
-                state.copy(
-                    layout = MainLayoutState.fromCached(input.expansions),
-                    parentExpansion = input.expansions.map { expansions ->
-                        expansions.expansions.single { expansion ->
-                            expansion.scenarios.any { it == state.scenarioId }
-                        }
-                    }
-                )
-            }
+            updateState { it.copy(layout = MainLayoutState.fromCached(input.expansions)) }
         }
 
         is ScenarioDetailsContract.Inputs.ScenarioUpdated -> {

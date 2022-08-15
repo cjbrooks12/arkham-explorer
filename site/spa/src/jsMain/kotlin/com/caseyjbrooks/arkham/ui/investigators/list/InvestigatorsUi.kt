@@ -19,7 +19,7 @@ import com.caseyjbrooks.arkham.utils.theme.bulma.NavigationRoute
 import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayout
 import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayoutState
 import com.copperleaf.arkham.models.api.ExpansionLite
-import com.copperleaf.arkham.models.api.Investigator
+import com.copperleaf.arkham.models.api.InvestigatorDetails
 import org.jetbrains.compose.web.dom.Text
 
 object InvestigatorsUi {
@@ -56,24 +56,23 @@ object InvestigatorsUi {
     }
 
     @Composable
-    fun Body(layoutState: MainLayoutState, investigators: List<Investigator>) {
+    fun Body(layoutState: MainLayoutState, investigators: List<InvestigatorDetails>) {
         DynamicGrid(
             layoutState
                 .expansions.map { expansion ->
                     GridItem {
-                        val investigatorsInExpansion = expansion
-                            .investigators
-                            .map { investigatorId ->
-                                investigators.single { it.id == investigatorId }
-                            }
-                        ExpansionCard(expansion, investigatorsInExpansion)
+                        ExpansionCard(
+                            expansion,
+                            investigators
+                                .filter { it.expansionCode == expansion.expansionCode }
+                        )
                     }
                 }
         )
     }
 
     @Composable
-    private fun ExpansionCard(expansion: ExpansionLite, investigators: List<Investigator>) {
+    private fun ExpansionCard(expansion: ExpansionLite, investigators: List<InvestigatorDetails>) {
         Card(
             imageUrl = expansion.boxArt,
             title = expansion.name,

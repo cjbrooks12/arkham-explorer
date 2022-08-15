@@ -1,4 +1,4 @@
-package com.caseyjbrooks.arkham.stages.api.utils
+package com.caseyjbrooks.arkham.stages.api.outputs.utils
 
 import com.caseyjbrooks.arkham.stages.api.inputs.models.ArkhamDbPack
 import com.caseyjbrooks.arkham.stages.api.inputs.models.LocalArkhamHorrorExpansion
@@ -14,9 +14,10 @@ fun LocalArkhamHorrorExpansion.asFullOutput(
     packsApi: List<ArkhamDbPack>,
 ): Expansion {
     return Expansion(
-        name = this.name,
         id = ExpansionId(this.id),
-        code = expansionCode,
+        name = this.name,
+        expansionCode = expansionCode,
+        icon = this.icon.preprocessContent(),
         expansionType = when (this.expansionType) {
             is ExpansionType.Cycle -> this.expansionType
             is ExpansionType.Standalone -> this.expansionType
@@ -27,12 +28,11 @@ fun LocalArkhamHorrorExpansion.asFullOutput(
                 ExpansionType.ReturnTo(returnToCode)
             }
         },
-        icon = this.icon.preprocessContent(),
         boxArt = this.boxArt.preprocessContent(),
         flavorText = this.flavorText,
-        scenarios = this.scenarios.map { it.asFullOutput(expansionCode, allExpansionData, packsApi) },
-        encounterSets = this.encounterSets.map { it.asFullOutput(expansionCode, allExpansionData, packsApi) },
-        investigators = this.investigators.map { it.asFullOutput(expansionCode, allExpansionData, packsApi) },
+        scenarios = this.scenarios.map { it.asLiteOutput(expansionCode, allExpansionData, packsApi) },
+        encounterSets = this.encounterSets.map { it.asLiteOutput(expansionCode, allExpansionData, packsApi) },
+        investigators = this.investigators.map { it.asLiteOutput(expansionCode, allExpansionData, packsApi) },
         products = this.products.map { it.asLiteOutput(expansionCode, packsApi) },
         campaignLogSchema = this.campaignLogSchema,
     )
@@ -46,7 +46,7 @@ fun LocalArkhamHorrorExpansion.asLiteOutput(
     return ExpansionLite(
         name = this.name,
         id = ExpansionId(this.id),
-        code = expansionCode,
+        expansionCode = expansionCode,
         expansionType = when (this.expansionType) {
             is ExpansionType.Cycle -> this.expansionType
             is ExpansionType.Standalone -> this.expansionType
@@ -60,9 +60,5 @@ fun LocalArkhamHorrorExpansion.asLiteOutput(
         icon = this.icon.preprocessContent(),
         boxArt = this.boxArt.preprocessContent(),
         flavorText = this.flavorText,
-        scenarios = this.scenarios.map { it.asFullOutput(expansionCode, allExpansionData, packsApi).id },
-        encounterSets = this.encounterSets.map { it.asFullOutput(expansionCode, allExpansionData, packsApi).id },
-        investigators = this.investigators.map { it.asFullOutput(expansionCode, allExpansionData, packsApi).id },
-        products = this.products.map { it.asLiteOutput(expansionCode, packsApi) },
     )
 }

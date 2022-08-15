@@ -18,7 +18,7 @@ import com.caseyjbrooks.arkham.utils.theme.bulma.Hero
 import com.caseyjbrooks.arkham.utils.theme.bulma.NavigationRoute
 import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayout
 import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayoutState
-import com.copperleaf.arkham.models.api.EncounterSet
+import com.copperleaf.arkham.models.api.EncounterSetDetails
 import com.copperleaf.arkham.models.api.ExpansionLite
 import com.copperleaf.arkham.models.api.ExpansionType
 import org.jetbrains.compose.web.dom.Text
@@ -57,7 +57,7 @@ object EncounterSetsUi {
     }
 
     @Composable
-    fun Body(layoutState: MainLayoutState, encounterSets: List<EncounterSet>) {
+    fun Body(layoutState: MainLayoutState, encounterSets: List<EncounterSetDetails>) {
         DynamicGrid(
             layoutState
                 .expansions
@@ -66,11 +66,8 @@ object EncounterSetsUi {
                     GridItem {
                         ExpansionCard(
                             expansion,
-                            expansion
-                                .encounterSets
-                                .map { encounterSetId ->
-                                    encounterSets.single { it.id == encounterSetId }
-                                },
+                            encounterSets
+                                .filter { it.expansionCode == expansion.expansionCode }
                         )
                     }
                 }
@@ -78,7 +75,7 @@ object EncounterSetsUi {
     }
 
     @Composable
-    private fun ExpansionCard(expansion: ExpansionLite, encounterSets: List<EncounterSet>) {
+    private fun ExpansionCard(expansion: ExpansionLite, encounterSets: List<EncounterSetDetails>) {
         Card(
             imageUrl = expansion.boxArt,
             title = expansion.name,

@@ -2,18 +2,18 @@ package com.caseyjbrooks.arkham.api
 
 import com.caseyjbrooks.arkham.config.ArkhamConfig
 import com.copperleaf.arkham.models.ArkhamExplorerStaticPage
-import com.copperleaf.arkham.models.api.EncounterSet
+import com.copperleaf.arkham.models.api.EncounterSetDetails
 import com.copperleaf.arkham.models.api.EncounterSetId
 import com.copperleaf.arkham.models.api.EncounterSetList
 import com.copperleaf.arkham.models.api.Expansion
 import com.copperleaf.arkham.models.api.ExpansionList
-import com.copperleaf.arkham.models.api.Investigator
+import com.copperleaf.arkham.models.api.InvestigatorDetails
 import com.copperleaf.arkham.models.api.InvestigatorId
 import com.copperleaf.arkham.models.api.InvestigatorList
-import com.copperleaf.arkham.models.api.Product
+import com.copperleaf.arkham.models.api.ProductDetails
 import com.copperleaf.arkham.models.api.ProductId
 import com.copperleaf.arkham.models.api.ProductList
-import com.copperleaf.arkham.models.api.Scenario
+import com.copperleaf.arkham.models.api.ScenarioDetails
 import com.copperleaf.arkham.models.api.ScenarioId
 import com.copperleaf.arkham.models.api.ScenarioList
 import io.ktor.client.HttpClient
@@ -42,7 +42,7 @@ class ArkhamExplorerApiImpl(
             .body()
     }
 
-    override suspend fun getScenario(scenarioId: ScenarioId): Scenario {
+    override suspend fun getScenario(scenarioId: ScenarioId): ScenarioDetails {
         return httpClient
             .get("api/scenarios/${scenarioId.id}.json")
             .body()
@@ -54,7 +54,7 @@ class ArkhamExplorerApiImpl(
             .body()
     }
 
-    override suspend fun getEncounterSet(encounterSetId: EncounterSetId): EncounterSet {
+    override suspend fun getEncounterSet(encounterSetId: EncounterSetId): EncounterSetDetails {
         return httpClient
             .get("api/encounter-sets/${encounterSetId.id}.json")
             .body()
@@ -66,7 +66,7 @@ class ArkhamExplorerApiImpl(
             .body()
     }
 
-    override suspend fun getInvestigator(investigatorId: InvestigatorId): Investigator {
+    override suspend fun getInvestigator(investigatorId: InvestigatorId): InvestigatorDetails {
         return httpClient
             .get("api/investigators/${investigatorId.id}.json")
             .body()
@@ -78,7 +78,7 @@ class ArkhamExplorerApiImpl(
             .body()
     }
 
-    override suspend fun getProduct(productId: ProductId): Product {
+    override suspend fun getProduct(productId: ProductId): ProductDetails {
         return httpClient
             .get("api/products/${productId.id}.json")
             .body()

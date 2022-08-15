@@ -1,25 +1,25 @@
-package com.caseyjbrooks.arkham.stages.api.utils
+package com.caseyjbrooks.arkham.stages.api.outputs.utils
 
 import com.caseyjbrooks.arkham.stages.api.inputs.models.ArkhamDbPack
 import com.caseyjbrooks.arkham.stages.api.inputs.models.LocalArkhamHorrorExpansion
 import com.caseyjbrooks.arkham.utils.preprocessContent
-import com.copperleaf.arkham.models.api.EncounterSetId
-import com.copperleaf.arkham.models.api.Scenario
+import com.copperleaf.arkham.models.api.ScenarioDetails
 import com.copperleaf.arkham.models.api.ScenarioEncounterSet
 import com.copperleaf.arkham.models.api.ScenarioId
+import com.copperleaf.arkham.models.api.ScenarioLite
 
 fun LocalArkhamHorrorExpansion.Scenario.asFullOutput(
     expansionCode: String,
     allExpansionData: List<LocalArkhamHorrorExpansion>,
     packsApi: List<ArkhamDbPack>,
-): Scenario {
-    return Scenario(
+): ScenarioDetails {
+    return ScenarioDetails(
+        id = ScenarioId(this.id),
         name = this.name,
         expansionCode = expansionCode,
-        id = ScenarioId(this.id),
         icon = this.icon.preprocessContent(),
         encounterSets = this.encounterSets.map {
-            it.asFullOutput(allExpansionData)
+            it.asFullOutput(expansionCode, allExpansionData, packsApi)
         },
         chaosBag = this.chaosBag,
         products = allExpansionData
@@ -29,18 +29,31 @@ fun LocalArkhamHorrorExpansion.Scenario.asFullOutput(
 }
 
 fun LocalArkhamHorrorExpansion.Scenario.ScenarioEncounterSet.asFullOutput(
-    allExpansionData: List<LocalArkhamHorrorExpansion>
+    expansionCode: String,
+    allExpansionData: List<LocalArkhamHorrorExpansion>,
+    packsApi: List<ArkhamDbPack>,
 ): ScenarioEncounterSet {
-    val matchingEncounterSet = allExpansionData
-        .getEncounterSetByName(
-            name = this.name
-        )
     return ScenarioEncounterSet(
-        name = this.name,
-        id = EncounterSetId(matchingEncounterSet.id),
-        icon = matchingEncounterSet.icon.preprocessContent(),
+        encounterSet = allExpansionData
+            .getEncounterSetByName(
+                name = this.name
+            )
+            .asLiteOutput(expansionCode, allExpansionData, packsApi),
         conditional = this.conditional,
         setAside = this.setAside,
         partial = this.partial,
+    )
+}
+
+fun LocalArkhamHorrorExpansion.Scenario.asLiteOutput(
+    expansionCode: String,
+    allExpansionData: List<LocalArkhamHorrorExpansion>,
+    packsApi: List<ArkhamDbPack>,
+): ScenarioLite {
+    return ScenarioLite(
+        id = ScenarioId(this.id),
+        name = this.name,
+        expansionCode = expansionCode,
+        icon = this.icon.preprocessContent(),
     )
 }

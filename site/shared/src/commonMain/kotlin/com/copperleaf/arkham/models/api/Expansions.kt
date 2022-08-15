@@ -15,33 +15,29 @@ value class ExpansionId(val id: String) : Comparable<ExpansionId> {
 
 @Serializable
 data class Expansion(
-    val name: String,
     val id: ExpansionId,
-    val code: String,
-    val expansionType: ExpansionType,
+    val name: String,
+    val expansionCode: String,
     val icon: String,
+    val expansionType: ExpansionType,
     val boxArt: String,
     val flavorText: String,
-    val scenarios: List<Scenario>,
-    val encounterSets: List<EncounterSet>,
-    val investigators: List<Investigator>,
+    val scenarios: List<ScenarioLite>,
+    val encounterSets: List<EncounterSetLite>,
+    val investigators: List<InvestigatorLite>,
     val products: List<ProductLite>,
     val campaignLogSchema: JsonElement,
 )
 
 @Serializable
 data class ExpansionLite(
-    val name: String,
     val id: ExpansionId,
-    val code: String,
-    val expansionType: ExpansionType,
+    val name: String,
+    val expansionCode: String,
     val icon: String,
+    val expansionType: ExpansionType,
     val boxArt: String,
     val flavorText: String,
-    val scenarios: List<ScenarioId>,
-    val encounterSets: List<EncounterSetId>,
-    val investigators: List<InvestigatorId>,
-    val products: List<ProductLite>,
 )
 
 @Serializable

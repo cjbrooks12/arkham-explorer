@@ -9,7 +9,7 @@ import com.caseyjbrooks.arkham.stages.api.inputs.ArkhamDbPacksApi
 import com.caseyjbrooks.arkham.stages.api.inputs.LocalExpansionFile
 import com.caseyjbrooks.arkham.stages.api.inputs.models.ArkhamDbPack
 import com.caseyjbrooks.arkham.stages.api.inputs.models.LocalArkhamHorrorExpansion
-import com.caseyjbrooks.arkham.stages.api.utils.asFullOutput
+import com.caseyjbrooks.arkham.stages.api.outputs.utils.asFullOutput
 import com.copperleaf.arkham.models.api.EncounterSetList
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.encodeToStream

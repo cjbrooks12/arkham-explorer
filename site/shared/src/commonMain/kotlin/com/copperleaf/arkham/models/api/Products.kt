@@ -13,24 +13,25 @@ value class ProductId(val id: String) : Comparable<ProductId> {
 }
 
 @Serializable
-data class Product(
+data class ProductDetails(
     val id: ProductId,
     val name: String,
     val expansionCode: String,
     val releaseDate: LocalDate,
     val officialProductUrl: String,
-    val scenarios: List<Scenario>,
-    val encounterSets: List<EncounterSet>,
-    val investigators: List<Investigator>,
+    val scenarios: List<ScenarioLite>,
+    val encounterSets: List<EncounterSetLite>,
+    val investigators: List<InvestigatorLite>,
 )
 
 @Serializable
 data class ProductLite(
     val id: ProductId,
     val name: String,
+    val expansionCode: String,
 )
 
 @Serializable
 data class ProductList(
-    val products: List<Product>,
+    val products: List<ProductDetails>,
 )

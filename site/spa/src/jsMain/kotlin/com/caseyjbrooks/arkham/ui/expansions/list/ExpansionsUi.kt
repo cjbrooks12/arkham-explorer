@@ -65,7 +65,7 @@ object ExpansionsUi {
                             .expansions
                             .singleOrNull {
                                 it.expansionType is ExpansionType.ReturnTo &&
-                                    expansion.code == (it.expansionType as ExpansionType.ReturnTo).forCycle
+                                    expansion.expansionCode == (it.expansionType as ExpansionType.ReturnTo).forCycle
                             }
                         ExpansionCard(expansion, returnToExpansion)
                     }
@@ -87,14 +87,14 @@ object ExpansionsUi {
                     "Expansion Details",
                     expansion.icon,
                     ArkhamApp.ExpansionDetails,
-                    expansion.code,
+                    expansion.expansionCode,
                 )
                 if (returnToExpansion != null) {
                     this += NavigationRoute(
                         "Return to...",
                         returnToExpansion.icon,
                         ArkhamApp.ExpansionDetails,
-                        expansion.code,
+                        expansion.expansionCode,
                     )
                 }
             }.toTypedArray()

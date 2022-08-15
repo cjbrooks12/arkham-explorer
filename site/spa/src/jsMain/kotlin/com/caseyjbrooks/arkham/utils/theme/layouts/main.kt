@@ -40,7 +40,7 @@ data class MainLayoutState(
                                     expansion.name,
                                     expansion.icon,
                                     ArkhamApp.ExpansionDetails,
-                                    expansion.code,
+                                    expansion.expansionCode,
                                 )
                             }
                             .toTypedArray()

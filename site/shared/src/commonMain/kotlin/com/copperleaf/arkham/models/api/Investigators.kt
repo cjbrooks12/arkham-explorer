@@ -12,15 +12,23 @@ value class InvestigatorId(val id: String) : Comparable<InvestigatorId> {
 }
 
 @Serializable
-data class Investigator(
+data class InvestigatorDetails(
+    val id: InvestigatorId,
     val name: String,
     val expansionCode: String,
-    val id: InvestigatorId,
     val portrait: String,
     val products: List<ProductLite>,
 )
 
 @Serializable
+data class InvestigatorLite(
+    val id: InvestigatorId,
+    val name: String,
+    val expansionCode: String,
+    val portrait: String,
+)
+
+@Serializable
 data class InvestigatorList(
-    val investigators: List<Investigator>,
+    val investigators: List<InvestigatorDetails>,
 )

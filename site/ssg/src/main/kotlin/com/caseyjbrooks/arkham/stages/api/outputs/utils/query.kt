@@ -1,4 +1,4 @@
-package com.caseyjbrooks.arkham.stages.api.utils
+package com.caseyjbrooks.arkham.stages.api.outputs.utils
 
 import com.caseyjbrooks.arkham.stages.api.inputs.models.LocalArkhamHorrorExpansion
 

@@ -2,18 +2,18 @@ package com.caseyjbrooks.arkham.repository.main
 
 import com.caseyjbrooks.arkham.api.ArkhamExplorerApi
 import com.copperleaf.arkham.models.ArkhamExplorerStaticPage
-import com.copperleaf.arkham.models.api.EncounterSet
+import com.copperleaf.arkham.models.api.EncounterSetDetails
 import com.copperleaf.arkham.models.api.EncounterSetId
 import com.copperleaf.arkham.models.api.EncounterSetList
 import com.copperleaf.arkham.models.api.Expansion
 import com.copperleaf.arkham.models.api.ExpansionList
-import com.copperleaf.arkham.models.api.Investigator
+import com.copperleaf.arkham.models.api.InvestigatorDetails
 import com.copperleaf.arkham.models.api.InvestigatorId
 import com.copperleaf.arkham.models.api.InvestigatorList
-import com.copperleaf.arkham.models.api.Product
+import com.copperleaf.arkham.models.api.ProductDetails
 import com.copperleaf.arkham.models.api.ProductId
 import com.copperleaf.arkham.models.api.ProductList
-import com.copperleaf.arkham.models.api.Scenario
+import com.copperleaf.arkham.models.api.ScenarioDetails
 import com.copperleaf.arkham.models.api.ScenarioId
 import com.copperleaf.arkham.models.api.ScenarioList
 import com.copperleaf.ballast.BallastViewModelConfiguration
@@ -68,7 +68,7 @@ class ArkhamExplorerRepositoryImpl(
         ) { api.getScenarios() }
     }
 
-    override fun getScenario(forceRefresh: Boolean, scenarioId: ScenarioId): Flow<Cached<Scenario>> {
+    override fun getScenario(forceRefresh: Boolean, scenarioId: ScenarioId): Flow<Cached<ScenarioDetails>> {
         return flowOfKey(
             forceRefresh,
             SimpleCachedValue.Key("ScenarioList", scenarioId.id)
@@ -82,7 +82,7 @@ class ArkhamExplorerRepositoryImpl(
         ) { api.getEncounterSets() }
     }
 
-    override fun getEncounterSet(forceRefresh: Boolean, encounterSetId: EncounterSetId): Flow<Cached<EncounterSet>> {
+    override fun getEncounterSet(forceRefresh: Boolean, encounterSetId: EncounterSetId): Flow<Cached<EncounterSetDetails>> {
         return flowOfKey(
             forceRefresh,
             SimpleCachedValue.Key("EncounterSetList", encounterSetId.id)
@@ -96,7 +96,7 @@ class ArkhamExplorerRepositoryImpl(
         ) { api.getInvestigators() }
     }
 
-    override fun getInvestigator(forceRefresh: Boolean, investigatorId: InvestigatorId): Flow<Cached<Investigator>> {
+    override fun getInvestigator(forceRefresh: Boolean, investigatorId: InvestigatorId): Flow<Cached<InvestigatorDetails>> {
         return flowOfKey(
             forceRefresh,
             SimpleCachedValue.Key("InvestigatorList", investigatorId.id)
@@ -110,7 +110,7 @@ class ArkhamExplorerRepositoryImpl(
         ) { api.getProducts() }
     }
 
-    override fun getProduct(forceRefresh: Boolean, productId: ProductId): Flow<Cached<Product>> {
+    override fun getProduct(forceRefresh: Boolean, productId: ProductId): Flow<Cached<ProductDetails>> {
         return flowOfKey(
             forceRefresh,
             SimpleCachedValue.Key("ProductList", productId.id)

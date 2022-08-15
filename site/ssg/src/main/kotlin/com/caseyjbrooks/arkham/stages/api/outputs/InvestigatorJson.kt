@@ -9,8 +9,8 @@ import com.caseyjbrooks.arkham.stages.api.inputs.ArkhamDbPacksApi
 import com.caseyjbrooks.arkham.stages.api.inputs.LocalExpansionFile
 import com.caseyjbrooks.arkham.stages.api.inputs.models.ArkhamDbPack
 import com.caseyjbrooks.arkham.stages.api.inputs.models.LocalArkhamHorrorExpansion
-import com.caseyjbrooks.arkham.stages.api.utils.asFullOutput
-import com.copperleaf.arkham.models.api.Investigator
+import com.caseyjbrooks.arkham.stages.api.outputs.utils.asFullOutput
+import com.copperleaf.arkham.models.api.InvestigatorDetails
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.encodeToStream
 import java.nio.file.Paths
@@ -36,7 +36,7 @@ object InvestigatorJson {
                 val localExpansion = LocalExpansionFile.getBodyForOutput(scope, nodes, expansionCode)
                 val packsApi = ArkhamDbPacksApi.getBodyForOutput(scope, nodes)
                 prettyJson.encodeToStream(
-                    Investigator.serializer(),
+                    InvestigatorDetails.serializer(),
                     createJson(
                         investigatorId,
                         localExpansions,
@@ -59,7 +59,7 @@ object InvestigatorJson {
         localExpansions: List<LocalArkhamHorrorExpansion>,
         localExpansion: LocalArkhamHorrorExpansion,
         packsApi: List<ArkhamDbPack>,
-    ): Investigator {
+    ): InvestigatorDetails {
         return localExpansion
             .investigators
             .single { it.id == investigatorId }

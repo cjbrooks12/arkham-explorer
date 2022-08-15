@@ -9,8 +9,8 @@ import com.caseyjbrooks.arkham.stages.api.inputs.ArkhamDbPacksApi
 import com.caseyjbrooks.arkham.stages.api.inputs.LocalExpansionFile
 import com.caseyjbrooks.arkham.stages.api.inputs.models.ArkhamDbPack
 import com.caseyjbrooks.arkham.stages.api.inputs.models.LocalArkhamHorrorExpansion
-import com.caseyjbrooks.arkham.stages.api.utils.asFullOutput
-import com.copperleaf.arkham.models.api.Product
+import com.caseyjbrooks.arkham.stages.api.outputs.utils.asFullOutput
+import com.copperleaf.arkham.models.api.ProductDetails
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.encodeToStream
 import java.nio.file.Paths
@@ -36,7 +36,7 @@ object ProductJson {
                 val localExpansion = LocalExpansionFile.getBodyForOutput(scope, nodes, expansionCode)
                 val packsApi = ArkhamDbPacksApi.getBodyForOutput(scope, nodes)
                 prettyJson.encodeToStream(
-                    Product.serializer(),
+                    ProductDetails.serializer(),
                     createJson(
                         productId,
                         localExpansions,
@@ -59,7 +59,7 @@ object ProductJson {
         localExpansions: List<LocalArkhamHorrorExpansion>,
         localExpansion: LocalArkhamHorrorExpansion,
         packsApi: List<ArkhamDbPack>,
-    ): Product {
+    ): ProductDetails {
         return localExpansion
             .products
             .single { it.id == productId }

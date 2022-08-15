@@ -58,7 +58,7 @@ object ExpansionDetailsUi {
             Breadcrumbs(
                 NavigationRoute("Home", null, ArkhamApp.Home),
                 NavigationRoute("Expansions", null, ArkhamApp.Expansions),
-                NavigationRoute(expansion.name, expansion.icon, ArkhamApp.ExpansionDetails, expansion.code),
+                NavigationRoute(expansion.name, expansion.icon, ArkhamApp.ExpansionDetails, expansion.expansionCode),
             )
         }
     }
@@ -139,7 +139,7 @@ object ExpansionDetailsUi {
                     title = "Tools",
                     navigationRoutes = buildList<NavigationRoute> {
                         if (expansion.campaignLogSchema != JsonNull) {
-                            this += NavigationRoute("Campaign log", null, ArkhamApp.CreateCampaignLog, expansion.code)
+                            this += NavigationRoute("Campaign log", null, ArkhamApp.CreateCampaignLog, expansion.expansionCode)
                         }
                     }.toTypedArray()
                 )

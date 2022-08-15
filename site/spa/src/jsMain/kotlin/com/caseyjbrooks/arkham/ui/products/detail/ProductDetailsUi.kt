@@ -19,7 +19,7 @@ import com.caseyjbrooks.arkham.utils.theme.bulma.Hero
 import com.caseyjbrooks.arkham.utils.theme.bulma.NavigationRoute
 import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayout
 import com.copperleaf.arkham.models.api.ExpansionLite
-import com.copperleaf.arkham.models.api.Product
+import com.copperleaf.arkham.models.api.ProductDetails
 import com.copperleaf.arkham.models.api.ProductId
 import org.jetbrains.compose.web.dom.Text
 
@@ -48,7 +48,7 @@ object ProductDetailsUi {
     }
 
     @Composable
-    fun Header(expansion: ExpansionLite, product: Product) {
+    fun Header(expansion: ExpansionLite, product: ProductDetails) {
         Hero(
             title = { Text(product.name) },
             subtitle = { Text(expansion.name) },
@@ -59,14 +59,14 @@ object ProductDetailsUi {
             Breadcrumbs(
                 NavigationRoute("Home", null, ArkhamApp.Home),
                 NavigationRoute("Products", null, ArkhamApp.Products),
-                NavigationRoute(expansion.name, expansion.icon, ArkhamApp.ExpansionDetails, expansion.code),
+                NavigationRoute(expansion.name, expansion.icon, ArkhamApp.ExpansionDetails, expansion.expansionCode),
                 NavigationRoute(product.name, null, ArkhamApp.ProductDetails, product.id.id),
             )
         }
     }
 
     @Composable
-    fun Body(expansion: ExpansionLite, product: Product) {
+    fun Body(expansion: ExpansionLite, product: ProductDetails) {
         DynamicGrid(
             GridItem {
                 Card(

@@ -17,7 +17,7 @@ import com.caseyjbrooks.arkham.utils.theme.bulma.Card
 import com.caseyjbrooks.arkham.utils.theme.bulma.Hero
 import com.caseyjbrooks.arkham.utils.theme.bulma.NavigationRoute
 import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayout
-import com.copperleaf.arkham.models.api.EncounterSet
+import com.copperleaf.arkham.models.api.EncounterSetDetails
 import com.copperleaf.arkham.models.api.EncounterSetId
 import com.copperleaf.arkham.models.api.ExpansionLite
 import org.jetbrains.compose.web.dom.Text
@@ -45,7 +45,7 @@ object EncounterSetDetailsUi {
     }
 
     @Composable
-    fun Header(expansion: ExpansionLite, encounterSet: EncounterSet) {
+    fun Header(expansion: ExpansionLite, encounterSet: EncounterSetDetails) {
         Hero(
             title = { Text(encounterSet.name) },
             subtitle = { Text(expansion.name) },
@@ -56,14 +56,14 @@ object EncounterSetDetailsUi {
             Breadcrumbs(
                 NavigationRoute("Home", null, ArkhamApp.Home),
                 NavigationRoute("Expansions", null, ArkhamApp.Expansions),
-                NavigationRoute(expansion.name, expansion.icon, ArkhamApp.ExpansionDetails, expansion.code),
+                NavigationRoute(expansion.name, expansion.icon, ArkhamApp.ExpansionDetails, expansion.expansionCode),
                 NavigationRoute(encounterSet.name, encounterSet.icon, ArkhamApp.EncounterSetDetails, encounterSet.id.id),
             )
         }
     }
 
     @Composable
-    fun Body(expansion: ExpansionLite, encounterSet: EncounterSet) {
+    fun Body(expansion: ExpansionLite, encounterSet: EncounterSetDetails) {
         DynamicGrid(
             GridItem {
                 Card(title = "Details")
