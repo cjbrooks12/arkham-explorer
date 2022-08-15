@@ -28,7 +28,11 @@ class CopyScripts : DependencyGraphBuilder {
 
     private suspend fun DependencyGraphBuilder.Scope.loadInputScripts() {
         val siteConfigNode = graph.getNodeOfType<SiteConfigNode>()
-        val spaDistributionDir = graph.config.rootDir / "site/spa/build/distributions"
+        val spaDistributionDir = if(BuildConfig.DEBUG) {
+            graph.config.rootDir / "site/spa/build/developmentExecutable"
+        } else {
+            graph.config.rootDir / "site/spa/build/distributions"
+        }
 
         graph
             .resourceService

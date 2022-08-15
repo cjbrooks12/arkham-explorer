@@ -1,4 +1,4 @@
-package com.caseyjbrooks.arkham.stages.expansiondata.inputs
+package com.caseyjbrooks.arkham.stages.api.inputs
 
 import com.caseyjbrooks.arkham.dag.DependencyGraphBuilder
 import com.caseyjbrooks.arkham.dag.Node
@@ -6,7 +6,7 @@ import com.caseyjbrooks.arkham.dag.http.prettyJson
 import com.caseyjbrooks.arkham.dag.path.InputPathNode
 import com.caseyjbrooks.arkham.dag.path.StartPathNode
 import com.caseyjbrooks.arkham.stages.config.SiteConfigNode
-import com.caseyjbrooks.arkham.stages.expansiondata.inputs.models.LocalArkhamHorrorExpansion
+import com.caseyjbrooks.arkham.stages.api.inputs.models.LocalArkhamHorrorExpansion
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.decodeFromStream
 import java.nio.file.Path

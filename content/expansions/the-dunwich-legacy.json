@@ -434,49 +434,147 @@
             "id": "2-1",
             "arkhamDbCode": "dwl",
             "name": "The Dunwich Legacy: Deluxe Expansion",
-            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/dunwich-legacy/"
+            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/dunwich-legacy/",
+            "scenarios": [
+                "Extracurricular Activity",
+                "The House Always Wins"
+            ],
+            "encounterSets": [
+                "Extracurricular Activity",
+                "The House Always Wins",
+                "Armitage's Fate",
+                "Sorcery",
+                "Bishop's Thralls",
+                "Dunwich",
+                "Whippoorwills",
+                "Bad Luck",
+                "Beast Thralls",
+                "Naomi's Crew",
+                "The Beyond",
+                "Hideous Abominations"
+            ],
+            "investigators": [
+                "Zoey Samaras",
+                "Rex Murphy",
+                "Jenny Barnes",
+                "Jim Culver",
+                "\"Ashcan\" Pete"
+            ]
         },
         {
             "id": "2-2",
             "arkhamDbCode": "tmm",
-            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/miskatonic-museum/"
+            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/miskatonic-museum/",
+            "scenarios": [
+                "The Miskatonic Museum"
+            ],
+            "encounterSets": [
+                "The Miskatonic Museum"
+            ]
         },
         {
             "id": "2-3",
             "arkhamDbCode": "tece",
-            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/essex-county-express/"
+            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/essex-county-express/",
+            "scenarios": [
+                "The Essex County Express"
+            ],
+            "encounterSets": [
+                "The Essex County Express"
+            ]
         },
         {
             "id": "2-4",
             "arkhamDbCode": "bota",
-            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/blood-altar/"
+            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/blood-altar/",
+            "scenarios": [
+                "Blood on the Altar"
+            ],
+            "encounterSets": [
+                "Blood on the Altar"
+            ]
         },
         {
             "id": "2-5",
             "arkhamDbCode": "uau",
-            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/undimensioned-and-unseen/"
+            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/undimensioned-and-unseen/",
+            "scenarios": [
+                "Undimensioned and Unseen"
+            ],
+            "encounterSets": [
+                "Undimensioned and Unseen"
+            ]
         },
         {
             "id": "2-6",
             "arkhamDbCode": "wda",
-            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/where-doom-awaits/"
+            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/where-doom-awaits/",
+            "scenarios": [
+                "Where Doom Awaits"
+            ],
+            "encounterSets": [
+                "Where Doom Awaits"
+            ]
         },
         {
             "id": "2-7",
             "arkhamDbCode": "litas",
-            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/lost-time-and-space/"
+            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/lost-time-and-space/",
+            "scenarios": [
+                "Lost in Time and Space"
+            ],
+            "encounterSets": [
+                "Lost in Time and Space"
+            ]
         },
         {
             "id": "2-8",
             "name": "The Dunwich Legacy: Campaign Expansion",
             "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/dunwich-legacy-campaign-expansion/",
-            "releaseDate": "2022-03-18"
+            "releaseDate": "2022-03-18",
+            "scenarios": [
+                "Extracurricular Activity",
+                "The House Always Wins",
+                "The Miskatonic Museum",
+                "The Essex County Express",
+                "Blood on the Altar",
+                "Undimensioned and Unseen",
+                "Where Doom Awaits",
+                "Lost in Time and Space"
+            ],
+            "encounterSets": [
+                "Extracurricular Activity",
+                "The House Always Wins",
+                "The Miskatonic Museum",
+                "The Essex County Express",
+                "Blood on the Altar",
+                "Undimensioned and Unseen",
+                "Where Doom Awaits",
+                "Lost in Time and Space",
+                "Armitage's Fate",
+                "Sorcery",
+                "Bishop's Thralls",
+                "Dunwich",
+                "Whippoorwills",
+                "Bad Luck",
+                "Beast Thralls",
+                "Naomi's Crew",
+                "The Beyond",
+                "Hideous Abominations"
+            ]
         },
         {
             "id": "2-9",
             "name": "The Dunwich Legacy: Investigator Expansion",
             "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/dunwich-legacy-investigator-expansion/",
-            "releaseDate": "2022-03-18"
+            "releaseDate": "2022-03-18",
+            "investigators": [
+                "Zoey Samaras",
+                "Rex Murphy",
+                "Jenny Barnes",
+                "Jim Culver",
+                "\"Ashcan\" Pete"
+            ]
         }
     ]
 }

@@ -1,22 +1,22 @@
-package com.caseyjbrooks.arkham.stages.expansiondata.outputs
+package com.caseyjbrooks.arkham.stages.api.outputs
 
 import com.caseyjbrooks.arkham.dag.DependencyGraphBuilder
 import com.caseyjbrooks.arkham.dag.http.InputHttpNode
 import com.caseyjbrooks.arkham.dag.http.prettyJson
 import com.caseyjbrooks.arkham.dag.path.InputPathNode
 import com.caseyjbrooks.arkham.dag.path.TerminalPathNode
-import com.caseyjbrooks.arkham.stages.expansiondata.inputs.ArkhamDbPacksApi
-import com.caseyjbrooks.arkham.stages.expansiondata.inputs.LocalExpansionFile
-import com.caseyjbrooks.arkham.stages.expansiondata.inputs.models.ArkhamDbPack
-import com.caseyjbrooks.arkham.stages.expansiondata.inputs.models.LocalArkhamHorrorExpansion
-import com.caseyjbrooks.arkham.stages.expansiondata.utils.asFullOutput
-import com.copperleaf.arkham.models.api.Expansion
+import com.caseyjbrooks.arkham.stages.api.inputs.ArkhamDbPacksApi
+import com.caseyjbrooks.arkham.stages.api.inputs.LocalExpansionFile
+import com.caseyjbrooks.arkham.stages.api.inputs.models.ArkhamDbPack
+import com.caseyjbrooks.arkham.stages.api.inputs.models.LocalArkhamHorrorExpansion
+import com.caseyjbrooks.arkham.stages.api.utils.asFullOutput
+import com.copperleaf.arkham.models.api.InvestigatorList
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.encodeToStream
 import java.nio.file.Paths
 
-object ExpansionJson {
-    public val tags = listOf("FetchExpansionData", "output", "expansion")
+object ExpansionInvestigatorsJson {
+    public val tags = listOf("FetchExpansionData", "output", "expansion", "investigators")
 
     @OptIn(ExperimentalSerializationApi::class)
     public suspend fun createOutputFile(
@@ -26,17 +26,16 @@ object ExpansionJson {
         packsHttpNode: InputHttpNode,
         packHttpNodes: List<InputHttpNode>,
     ): TerminalPathNode = with(scope) {
-        val expansionNode = TerminalPathNode(
+        val expansionInvestigatorsNode = TerminalPathNode(
             baseOutputDir = graph.config.outputDir,
-            outputPath = Paths.get("api/expansions/$expansionCode.json"),
+            outputPath = Paths.get("api/expansions/$expansionCode/investigators.json"),
             doRender = { nodes, os ->
                 val localExpansions = LocalExpansionFile.getBodiesForOutput(scope, nodes).map { it.second }
                 val localExpansion = LocalExpansionFile.getBodyForOutput(scope, nodes, expansionCode)
                 val packsApi = ArkhamDbPacksApi.getBodyForOutput(scope, nodes)
                 prettyJson.encodeToStream(
-                    Expansion.serializer(),
+                    InvestigatorList.serializer(),
                     createJson(
-                        expansionCode,
                         localExpansions,
                         localExpansion,
                         packsApi,
@@ -44,21 +43,25 @@ object ExpansionJson {
                     os,
                 )
             },
-            tags = tags + expansionCode
+            tags = ExpansionJson.tags + expansionCode
         )
-        addNode(expansionNode)
-        localExpansionFiles.forEach { addEdge(it, expansionNode) }
-        addEdge(packsHttpNode, expansionNode)
+        addNode(expansionInvestigatorsNode)
+        localExpansionFiles.forEach { addEdge(it, expansionInvestigatorsNode) }
+        addEdge(packsHttpNode, expansionInvestigatorsNode)
 
-        return expansionNode
+        return expansionInvestigatorsNode
     }
 
     private fun createJson(
-        expansionCode: String,
         localExpansions: List<LocalArkhamHorrorExpansion>,
         localExpansion: LocalArkhamHorrorExpansion,
         packsApi: List<ArkhamDbPack>,
-    ): Expansion {
-        return localExpansion.asFullOutput(expansionCode, localExpansions, packsApi)
+    ): InvestigatorList {
+        return InvestigatorList(
+            investigators = localExpansion
+                .investigators
+                .map { it.asFullOutput(localExpansion.code, localExpansions, packsApi) }
+                .sortedBy { it.id }
+        )
     }
 }

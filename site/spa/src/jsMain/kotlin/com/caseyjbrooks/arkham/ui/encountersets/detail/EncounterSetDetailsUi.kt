@@ -8,9 +8,12 @@ import androidx.compose.runtime.rememberCoroutineScope
 import com.caseyjbrooks.arkham.di.ArkhamInjector
 import com.caseyjbrooks.arkham.ui.ArkhamApp
 import com.caseyjbrooks.arkham.utils.CacheReady
+import com.caseyjbrooks.arkham.utils.DynamicGrid
+import com.caseyjbrooks.arkham.utils.GridItem
 import com.caseyjbrooks.arkham.utils.theme.bulma.Breadcrumbs
 import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaSection
 import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaSize
+import com.caseyjbrooks.arkham.utils.theme.bulma.Card
 import com.caseyjbrooks.arkham.utils.theme.bulma.Hero
 import com.caseyjbrooks.arkham.utils.theme.bulma.NavigationRoute
 import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayout
@@ -36,7 +39,7 @@ object EncounterSetDetailsUi {
                 state.encounterSet,
             ) { expansion, encounterSet ->
                 Header(expansion, encounterSet)
-                Body()
+                Body(expansion, encounterSet)
             }
         }
     }
@@ -60,7 +63,28 @@ object EncounterSetDetailsUi {
     }
 
     @Composable
-    fun Body() {
-
+    fun Body(expansion: ExpansionLite, encounterSet: EncounterSet) {
+        DynamicGrid(
+            GridItem {
+                Card(title = "Details")
+            },
+            GridItem {
+                Card(title = "Tools")
+            },
+            GridItem {
+                Card(
+                    title = "Products",
+                    description = "${encounterSet.name} is available in the following products:",
+                    navigationRoutes = encounterSet.products.map { product ->
+                        NavigationRoute(
+                            name = product.name,
+                            iconUrl = null,
+                            route = ArkhamApp.ProductDetails,
+                            pathParams = arrayOf(product.id.id),
+                        )
+                    }.toTypedArray()
+                )
+            },
+        )
     }
 }

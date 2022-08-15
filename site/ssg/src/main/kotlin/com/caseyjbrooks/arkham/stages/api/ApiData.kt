@@ -1,25 +1,25 @@
-package com.caseyjbrooks.arkham.stages.expansiondata
+package com.caseyjbrooks.arkham.stages.api
 
 import com.caseyjbrooks.arkham.dag.DependencyGraphBuilder
 import com.caseyjbrooks.arkham.dag.http.prettyJson
+import com.caseyjbrooks.arkham.stages.api.inputs.ArkhamDbPackCardsApi
+import com.caseyjbrooks.arkham.stages.api.inputs.ArkhamDbPacksApi
+import com.caseyjbrooks.arkham.stages.api.inputs.LocalExpansionFile
+import com.caseyjbrooks.arkham.stages.api.outputs.EncounterSetJson
+import com.caseyjbrooks.arkham.stages.api.outputs.EncounterSetsJson
+import com.caseyjbrooks.arkham.stages.api.outputs.ExpansionEncounterSetsJson
+import com.caseyjbrooks.arkham.stages.api.outputs.ExpansionInvestigatorsJson
+import com.caseyjbrooks.arkham.stages.api.outputs.ExpansionJson
+import com.caseyjbrooks.arkham.stages.api.outputs.ExpansionProductsJson
+import com.caseyjbrooks.arkham.stages.api.outputs.ExpansionScenariosJson
+import com.caseyjbrooks.arkham.stages.api.outputs.ExpansionsJson
+import com.caseyjbrooks.arkham.stages.api.outputs.InvestigatorJson
+import com.caseyjbrooks.arkham.stages.api.outputs.InvestigatorsJson
+import com.caseyjbrooks.arkham.stages.api.outputs.ProductJson
+import com.caseyjbrooks.arkham.stages.api.outputs.ProductsJson
+import com.caseyjbrooks.arkham.stages.api.outputs.ScenarioJson
+import com.caseyjbrooks.arkham.stages.api.outputs.ScenariosJson
 import com.caseyjbrooks.arkham.stages.config.SiteConfigNode
-import com.caseyjbrooks.arkham.stages.expansiondata.inputs.ArkhamDbPackCardsApi
-import com.caseyjbrooks.arkham.stages.expansiondata.inputs.ArkhamDbPacksApi
-import com.caseyjbrooks.arkham.stages.expansiondata.inputs.LocalExpansionFile
-import com.caseyjbrooks.arkham.stages.expansiondata.outputs.EncounterSetJson
-import com.caseyjbrooks.arkham.stages.expansiondata.outputs.EncounterSetsJson
-import com.caseyjbrooks.arkham.stages.expansiondata.outputs.ExpansionEncounterSetsJson
-import com.caseyjbrooks.arkham.stages.expansiondata.outputs.ExpansionInvestigatorsJson
-import com.caseyjbrooks.arkham.stages.expansiondata.outputs.ExpansionJson
-import com.caseyjbrooks.arkham.stages.expansiondata.outputs.ExpansionProductsJson
-import com.caseyjbrooks.arkham.stages.expansiondata.outputs.ExpansionScenariosJson
-import com.caseyjbrooks.arkham.stages.expansiondata.outputs.ExpansionsJson
-import com.caseyjbrooks.arkham.stages.expansiondata.outputs.InvestigatorJson
-import com.caseyjbrooks.arkham.stages.expansiondata.outputs.InvestigatorsJson
-import com.caseyjbrooks.arkham.stages.expansiondata.outputs.ProductJson
-import com.caseyjbrooks.arkham.stages.expansiondata.outputs.ProductsJson
-import com.caseyjbrooks.arkham.stages.expansiondata.outputs.ScenarioJson
-import com.caseyjbrooks.arkham.stages.expansiondata.outputs.ScenariosJson
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.cio.CIO
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
@@ -31,7 +31,7 @@ import kotlinx.serialization.ExperimentalSerializationApi
 import kotlin.io.path.nameWithoutExtension
 
 @OptIn(ExperimentalSerializationApi::class)
-class FetchExpansionData : DependencyGraphBuilder {
+class ApiData : DependencyGraphBuilder {
     private val http = HttpClient(CIO) {
         install(ContentNegotiation) {
             json(prettyJson)

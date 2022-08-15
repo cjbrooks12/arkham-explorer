@@ -8,9 +8,13 @@ import androidx.compose.runtime.rememberCoroutineScope
 import com.caseyjbrooks.arkham.di.ArkhamInjector
 import com.caseyjbrooks.arkham.ui.ArkhamApp
 import com.caseyjbrooks.arkham.utils.CacheReady
+import com.caseyjbrooks.arkham.utils.DynamicGrid
+import com.caseyjbrooks.arkham.utils.GridItem
 import com.caseyjbrooks.arkham.utils.theme.bulma.Breadcrumbs
+import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaColor
 import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaSection
 import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaSize
+import com.caseyjbrooks.arkham.utils.theme.bulma.Card
 import com.caseyjbrooks.arkham.utils.theme.bulma.Hero
 import com.caseyjbrooks.arkham.utils.theme.bulma.NavigationRoute
 import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayout
@@ -54,7 +58,7 @@ object ProductDetailsUi {
         BulmaSection {
             Breadcrumbs(
                 NavigationRoute("Home", null, ArkhamApp.Home),
-                NavigationRoute("Expansions", null, ArkhamApp.Expansions),
+                NavigationRoute("Products", null, ArkhamApp.Products),
                 NavigationRoute(expansion.name, expansion.icon, ArkhamApp.ExpansionDetails, expansion.code),
                 NavigationRoute(product.name, null, ArkhamApp.ProductDetails, product.id.id),
             )
@@ -63,6 +67,58 @@ object ProductDetailsUi {
 
     @Composable
     fun Body(expansion: ExpansionLite, product: Product) {
-
+        DynamicGrid(
+            GridItem {
+                Card(
+                    title = "Scenarios",
+                    navigationRoutes = product
+                        .scenarios
+                        .map { scenario ->
+                            NavigationRoute(
+                                name = scenario.name,
+                                iconUrl = scenario.icon,
+                                route = ArkhamApp.ScenarioDetails,
+                                pathParams = arrayOf(scenario.id.id),
+                                buttonColor = BulmaColor.Primary,
+                            )
+                        }
+                        .toTypedArray()
+                )
+            },
+            GridItem {
+                Card(
+                    title = "Encounter Sets",
+                    navigationRoutes = product
+                        .encounterSets
+                        .map { encounterSet ->
+                            NavigationRoute(
+                                name = encounterSet.name,
+                                iconUrl = encounterSet.icon,
+                                route = ArkhamApp.EncounterSetDetails,
+                                pathParams = arrayOf(encounterSet.id.id),
+                                buttonColor = BulmaColor.Primary,
+                            )
+                        }
+                        .toTypedArray()
+                )
+            },
+            GridItem {
+                Card(
+                    title = "Investigators",
+                    navigationRoutes = product
+                        .investigators
+                        .map { investigator ->
+                            NavigationRoute(
+                                name = investigator.name,
+                                iconUrl = null,
+                                route = ArkhamApp.InvestigatorDetails,
+                                pathParams = arrayOf(investigator.id.id),
+                                buttonColor = BulmaColor.Primary,
+                            )
+                        }
+                        .toTypedArray()
+                )
+            },
+        )
     }
 }

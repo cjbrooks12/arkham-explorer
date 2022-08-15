@@ -7,6 +7,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import com.caseyjbrooks.arkham.di.ArkhamInjector
 import com.caseyjbrooks.arkham.ui.ArkhamApp
+import com.caseyjbrooks.arkham.utils.DynamicGrid
+import com.caseyjbrooks.arkham.utils.GridItem
 import com.caseyjbrooks.arkham.utils.theme.bulma.Breadcrumbs
 import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaSection
 import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaSize
@@ -74,10 +76,17 @@ object CampaignLogUi {
 
     @Composable
     fun Body(state: CampaignLogContract.State, postInput: (CampaignLogContract.Inputs) -> Unit) {
-        BulmaSection {
-            Card {
+        DynamicGrid(
+            GridItem {
+                Card(title = "Configuration") {
 
-            }
-        }
+                }
+            },
+            GridItem {
+                Card(title = "Campaign Log") {
+
+                }
+            },
+        )
     }
 }

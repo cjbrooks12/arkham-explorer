@@ -1,15 +1,15 @@
-package com.caseyjbrooks.arkham.stages.expansiondata.outputs
+package com.caseyjbrooks.arkham.stages.api.outputs
 
 import com.caseyjbrooks.arkham.dag.DependencyGraphBuilder
 import com.caseyjbrooks.arkham.dag.http.InputHttpNode
 import com.caseyjbrooks.arkham.dag.http.prettyJson
 import com.caseyjbrooks.arkham.dag.path.InputPathNode
 import com.caseyjbrooks.arkham.dag.path.TerminalPathNode
-import com.caseyjbrooks.arkham.stages.expansiondata.inputs.ArkhamDbPacksApi
-import com.caseyjbrooks.arkham.stages.expansiondata.inputs.LocalExpansionFile
-import com.caseyjbrooks.arkham.stages.expansiondata.inputs.models.ArkhamDbPack
-import com.caseyjbrooks.arkham.stages.expansiondata.inputs.models.LocalArkhamHorrorExpansion
-import com.caseyjbrooks.arkham.stages.expansiondata.utils.asFullOutput
+import com.caseyjbrooks.arkham.stages.api.inputs.ArkhamDbPacksApi
+import com.caseyjbrooks.arkham.stages.api.inputs.LocalExpansionFile
+import com.caseyjbrooks.arkham.stages.api.inputs.models.ArkhamDbPack
+import com.caseyjbrooks.arkham.stages.api.inputs.models.LocalArkhamHorrorExpansion
+import com.caseyjbrooks.arkham.stages.api.utils.asFullOutput
 import com.copperleaf.arkham.models.api.ProductList
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.encodeToStream
@@ -56,7 +56,7 @@ object ProductsJson {
                 .flatMap { localExpansion ->
                     localExpansion
                         .products
-                        .map { it.asFullOutput(localExpansion.code, packsApi) }
+                        .map { it.asFullOutput(localExpansion.code, localExpansions, packsApi) }
                         .sortedBy { it.id }
                 }
         )

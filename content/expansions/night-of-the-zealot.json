@@ -519,12 +519,72 @@
         {
             "id": "1-1",
             "arkhamDbCode": "core",
-            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/arkham-horror-card-game/https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/arkham-horror-card-game/"
+            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/arkham-horror-card-game/https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/arkham-horror-card-game/",
+            "scenarios": [
+                "The Gathering",
+                "The Midnight Masks",
+                "The Devourer Below"
+            ],
+            "encounterSets": [
+                "The Gathering",
+                "The Midnight Masks",
+                "The Devourer Below",
+                "Cult of Umôrdhoth",
+                "Rats",
+                "Ghouls",
+                "Striking Fear",
+                "Ancient Evils",
+                "Chilling Cold",
+                "Dark Cult",
+                "Nightgaunts",
+                "Locked Doors",
+                "Agents of Hastur",
+                "Agents of Yog-Sothoth",
+                "Agents of Shub Niggurath",
+                "Agenths of Cthulhu"
+            ],
+            "investigators": [
+                "Roland Banks",
+                "Daisy Walker",
+                "\"Skids\" O-Toole",
+                "Agnes Baker",
+                "Wendy Adams"
+            ]
         },
         {
             "id": "1-2",
             "arkhamDbCode": "rcore",
-            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/arkham-horror-card-game-revised-core-set/"
+            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/arkham-horror-card-game-revised-core-set/",
+            "scenarios": [
+                "The Gathering",
+                "The Midnight Masks",
+                "The Devourer Below"
+            ],
+            "encounterSets": [
+                "The Gathering",
+                "The Midnight Masks",
+                "The Devourer Below",
+                "Cult of Umôrdhoth",
+                "Rats",
+                "Ghouls",
+                "Striking Fear",
+                "Ancient Evils",
+                "Chilling Cold",
+                "Dark Cult",
+                "Nightgaunts",
+                "Locked Doors",
+                "Agents of Hastur",
+                "Agents of Yog-Sothoth",
+                "Agents of Shub Niggurath",
+                "Agenths of Cthulhu"
+            ],
+            "investigators": [
+                "Roland Banks",
+                "Daisy Walker",
+                "\"Skids\" O-Toole",
+                "Agnes Baker",
+                "Wendy Adams"
+            ]
         }
     ],
     "campaignLogSchema": {
@@ -645,3 +705,11 @@
         }
     }
 }
+
+
+
+
+
+
+
+

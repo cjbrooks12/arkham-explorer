@@ -25,7 +25,7 @@ data class Expansion(
     val scenarios: List<Scenario>,
     val encounterSets: List<EncounterSet>,
     val investigators: List<Investigator>,
-    val products: List<Product>,
+    val products: List<ProductLite>,
     val campaignLogSchema: JsonElement,
 )
 
@@ -41,7 +41,7 @@ data class ExpansionLite(
     val scenarios: List<ScenarioId>,
     val encounterSets: List<EncounterSetId>,
     val investigators: List<InvestigatorId>,
-    val products: List<ProductId>,
+    val products: List<ProductLite>,
 )
 
 @Serializable

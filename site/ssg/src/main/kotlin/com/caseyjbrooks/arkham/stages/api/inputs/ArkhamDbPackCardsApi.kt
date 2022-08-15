@@ -1,10 +1,10 @@
-package com.caseyjbrooks.arkham.stages.expansiondata.inputs
+package com.caseyjbrooks.arkham.stages.api.inputs
 
 import com.caseyjbrooks.arkham.dag.DependencyGraphBuilder
 import com.caseyjbrooks.arkham.dag.Node
 import com.caseyjbrooks.arkham.dag.http.InputHttpNode
 import com.caseyjbrooks.arkham.dag.http.StartHttpNode
-import com.caseyjbrooks.arkham.stages.expansiondata.inputs.models.ArkhamDbCard
+import com.caseyjbrooks.arkham.stages.api.inputs.models.ArkhamDbCard
 import io.ktor.client.HttpClient
 import kotlinx.serialization.builtins.ListSerializer
 

@@ -19,6 +19,7 @@ data class EncounterSet(
     val id: EncounterSetId,
     val icon: String,
     val replaces: EncounterSetId?,
+    val products: List<ProductLite>,
 )
 
 @Serializable

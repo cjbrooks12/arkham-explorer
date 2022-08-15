@@ -8,15 +8,15 @@ import androidx.compose.runtime.rememberCoroutineScope
 import com.caseyjbrooks.arkham.di.ArkhamInjector
 import com.caseyjbrooks.arkham.ui.ArkhamApp
 import com.caseyjbrooks.arkham.utils.CacheReady
+import com.caseyjbrooks.arkham.utils.DynamicGrid
+import com.caseyjbrooks.arkham.utils.GridItem
 import com.caseyjbrooks.arkham.utils.theme.bulma.Breadcrumbs
 import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaColor
 import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaSection
 import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaSize
 import com.caseyjbrooks.arkham.utils.theme.bulma.Card
-import com.caseyjbrooks.arkham.utils.theme.bulma.Column
 import com.caseyjbrooks.arkham.utils.theme.bulma.Hero
 import com.caseyjbrooks.arkham.utils.theme.bulma.NavigationRoute
-import com.caseyjbrooks.arkham.utils.theme.bulma.Row
 import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayout
 import com.copperleaf.arkham.models.api.Expansion
 import kotlinx.serialization.json.JsonNull
@@ -65,89 +65,85 @@ object ExpansionDetailsUi {
 
     @Composable
     fun Body(expansion: Expansion) {
-        BulmaSection {
-            Row("features", "is-centered") {
-                Column("is-4") {
-                    Card(
-                        title = "Scenarios",
-                        navigationRoutes = expansion
-                            .scenarios
-                            .map { scenario ->
-                                NavigationRoute(
-                                    name = scenario.name,
-                                    iconUrl = scenario.icon,
-                                    route = ArkhamApp.ScenarioDetails,
-                                    pathParams = arrayOf(scenario.id.id),
-                                    buttonColor = BulmaColor.Primary,
-                                )
-                            }
-                            .toTypedArray()
-                    )
-                }
-                Column("is-4") {
-                    Card(
-                        title = "Encounter Sets",
-                        navigationRoutes = expansion
-                            .encounterSets
-                            .map { encounterSet ->
-                                NavigationRoute(
-                                    name = encounterSet.name,
-                                    iconUrl = encounterSet.icon,
-                                    route = ArkhamApp.EncounterSetDetails,
-                                    pathParams = arrayOf(encounterSet.id.id),
-                                    buttonColor = BulmaColor.Primary,
-                                )
-                            }
-                            .toTypedArray()
-                    )
-                }
-            }
-            Row("features", "is-centered") {
-                Column("is-4") {
-                    Card(
-                        title = "Investigators",
-                        navigationRoutes = expansion
-                            .investigators
-                            .map { investigator ->
-                                NavigationRoute(
-                                    name = investigator.name,
-                                    iconUrl = null,
-                                    route = ArkhamApp.InvestigatorDetails,
-                                    pathParams = arrayOf(investigator.id.id),
-                                    buttonColor = BulmaColor.Primary,
-                                )
-                            }
-                            .toTypedArray()
-                    )
-                }
-                Column("is-4") {
-                    Card(
-                        title = "Products",
-                        navigationRoutes = expansion
-                            .products
-                            .map { product ->
-                                NavigationRoute(
-                                    name = product.name,
-                                    iconUrl = null,
-                                    route = ArkhamApp.ProductDetails,
-                                    pathParams = arrayOf(product.id.id),
-                                    buttonColor = BulmaColor.Primary,
-                                )
-                            }
-                            .toTypedArray()
-                    )
-                }
-                Column("is-4") {
-                    Card(
-                        title = "Tools",
-                        navigationRoutes = buildList<NavigationRoute> {
-                            if (expansion.campaignLogSchema != JsonNull) {
-                                this += NavigationRoute("Campaign log", null, ArkhamApp.CreateCampaignLog, expansion.code)
-                            }
-                        }.toTypedArray()
-                    )
-                }
-            }
-        }
+        DynamicGrid(
+            GridItem {
+                Card(
+                    title = "Scenarios",
+                    navigationRoutes = expansion
+                        .scenarios
+                        .map { scenario ->
+                            NavigationRoute(
+                                name = scenario.name,
+                                iconUrl = scenario.icon,
+                                route = ArkhamApp.ScenarioDetails,
+                                pathParams = arrayOf(scenario.id.id),
+                                buttonColor = BulmaColor.Primary,
+                            )
+                        }
+                        .toTypedArray()
+                )
+            },
+            GridItem {
+                Card(
+                    title = "Encounter Sets",
+                    navigationRoutes = expansion
+                        .encounterSets
+                        .map { encounterSet ->
+                            NavigationRoute(
+                                name = encounterSet.name,
+                                iconUrl = encounterSet.icon,
+                                route = ArkhamApp.EncounterSetDetails,
+                                pathParams = arrayOf(encounterSet.id.id),
+                                buttonColor = BulmaColor.Primary,
+                            )
+                        }
+                        .toTypedArray()
+                )
+            },
+            GridItem {
+                Card(
+                    title = "Investigators",
+                    navigationRoutes = expansion
+                        .investigators
+                        .map { investigator ->
+                            NavigationRoute(
+                                name = investigator.name,
+                                iconUrl = null,
+                                route = ArkhamApp.InvestigatorDetails,
+                                pathParams = arrayOf(investigator.id.id),
+                                buttonColor = BulmaColor.Primary,
+                            )
+                        }
+                        .toTypedArray()
+                )
+            },
+            GridItem {
+                Card(
+                    title = "Products",
+                    navigationRoutes = expansion
+                        .products
+                        .map { product ->
+                            NavigationRoute(
+                                name = product.name,
+                                iconUrl = null,
+                                route = ArkhamApp.ProductDetails,
+                                pathParams = arrayOf(product.id.id),
+                                buttonColor = BulmaColor.Primary,
+                            )
+                        }
+                        .toTypedArray()
+                )
+            },
+            GridItem {
+                Card(
+                    title = "Tools",
+                    navigationRoutes = buildList<NavigationRoute> {
+                        if (expansion.campaignLogSchema != JsonNull) {
+                            this += NavigationRoute("Campaign log", null, ArkhamApp.CreateCampaignLog, expansion.code)
+                        }
+                    }.toTypedArray()
+                )
+            },
+        )
     }
 }

@@ -1,4 +1,4 @@
-package com.caseyjbrooks.arkham.stages.expansiondata.inputs.models
+package com.caseyjbrooks.arkham.stages.api.inputs.models
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

@@ -7,6 +7,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import com.caseyjbrooks.arkham.di.ArkhamInjector
 import com.caseyjbrooks.arkham.ui.ArkhamApp
+import com.caseyjbrooks.arkham.utils.DynamicGrid
+import com.caseyjbrooks.arkham.utils.GridItem
 import com.caseyjbrooks.arkham.utils.theme.bulma.Breadcrumbs
 import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaSection
 import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaSize
@@ -65,68 +67,73 @@ object ChaosBagSimulatorUi {
 
     @Composable
     fun Body(state: ChaosBagSimulatorContract.State, postInput: (ChaosBagSimulatorContract.Inputs) -> Unit) {
-        BulmaSection {
-            Card {
-                if (state.scenario != null && state.scenario.chaosBag.isNotEmpty()) {
-                    H4 { Text("Difficulty") }
-                    Div({ classes("control") }) {
-                        state.scenario.chaosBag.forEach { difficulty ->
-                            Label(null, { classes("radio") }) {
-                                Input(type = InputType.Radio) {
-                                    id("scenario-difficulty-${difficulty.difficulty.name}")
-                                    onInput {
-                                        postInput(
-                                            ChaosBagSimulatorContract.Inputs.ChangeScenarioDifficulty(
-                                                difficulty.difficulty
+        DynamicGrid(
+            GridItem {
+                Card {
+                    if (state.scenario != null && state.scenario.chaosBag.isNotEmpty()) {
+                        H4 { Text("Difficulty") }
+                        Div({ classes("control") }) {
+                            state.scenario.chaosBag.forEach { difficulty ->
+                                Label(null, { classes("radio") }) {
+                                    Input(type = InputType.Radio) {
+                                        id("scenario-difficulty-${difficulty.difficulty.name}")
+                                        onInput {
+                                            postInput(
+                                                ChaosBagSimulatorContract.Inputs.ChangeScenarioDifficulty(
+                                                    difficulty.difficulty
+                                                )
                                             )
-                                        )
+                                        }
+                                        name(difficulty.difficulty.name)
+                                        checked(state.selectedDifficulty == difficulty.difficulty)
                                     }
-                                    name(difficulty.difficulty.name)
-                                    checked(state.selectedDifficulty == difficulty.difficulty)
+                                    Text(" ${difficulty.difficulty.name} ")
                                 }
-                                Text(" ${difficulty.difficulty.name} ")
                             }
                         }
                     }
+
+                    H4 { Text("Chaos Bag") }
+                    Div { Text(state.tokens.toString()) }
                 }
+            },
+            GridItem {
+                Card {
+                    if (state.consumedTokens.isEmpty()) {
+                        Button({
+                            onClick { postInput(ChaosBagSimulatorContract.Inputs.DrawToken) }
+                            classes("button")
+                        }) { Text("Draw Token") }
+                    } else {
+                        Button({
+                            onClick { postInput(ChaosBagSimulatorContract.Inputs.PutTokenBack(state.consumedTokens.last())) }
+                            classes("button")
+                        }) { Text("Put Back") }
+                        Button({
+                            onClick { postInput(ChaosBagSimulatorContract.Inputs.DrawToken) }
+                            classes("button")
+                        }) { Text("Draw Another Token") }
+                        Button({
+                            onClick { postInput(ChaosBagSimulatorContract.Inputs.PutAllTokensBack) }
+                            classes("button")
+                        }) { Text("Reset Bag") }
+                    }
+                    Hr { }
 
-                H4 { Text("Chaos Bag") }
-                Div { Text(state.tokens.toString()) }
+                    H4 { Text("Drawn Tokens") }
+                    state.consumedTokens.forEach { token ->
+                        Button({
+                            onClick { postInput(ChaosBagSimulatorContract.Inputs.PutTokenBack(token)) }
+                            classes("button")
+                        }) { Text(token.toString()) }
+                    }
+                    Hr { }
 
-                if (state.consumedTokens.isEmpty()) {
-                    Button({
-                        onClick { postInput(ChaosBagSimulatorContract.Inputs.DrawToken) }
-                        classes("button")
-                    }) { Text("Draw Token") }
-                } else {
-                    Button({
-                        onClick { postInput(ChaosBagSimulatorContract.Inputs.PutTokenBack(state.consumedTokens.last())) }
-                        classes("button")
-                    }) { Text("Put Back") }
-                    Button({
-                        onClick { postInput(ChaosBagSimulatorContract.Inputs.DrawToken) }
-                        classes("button")
-                    }) { Text("Draw Another Token") }
-                    Button({
-                        onClick { postInput(ChaosBagSimulatorContract.Inputs.PutAllTokensBack) }
-                        classes("button")
-                    }) { Text("Reset Bag") }
+                    H4 { Text("Remaining Tokens") }
+                    Div { Text(state.remainingTokens.toString()) }
+                    Hr { }
                 }
-                Hr { }
-
-                H4 { Text("Drawn Tokens") }
-                state.consumedTokens.forEach { token ->
-                    Button({
-                        onClick { postInput(ChaosBagSimulatorContract.Inputs.PutTokenBack(token)) }
-                        classes("button")
-                    }) { Text(token.toString()) }
-                }
-                Hr { }
-
-                H4 { Text("Remaining Tokens") }
-                Div { Text(state.remainingTokens.toString()) }
-                Hr { }
-            }
-        }
+            },
+        )
     }
 }

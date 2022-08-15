@@ -19,6 +19,15 @@ data class Product(
     val expansionCode: String,
     val releaseDate: LocalDate,
     val officialProductUrl: String,
+    val scenarios: List<Scenario>,
+    val encounterSets: List<EncounterSet>,
+    val investigators: List<Investigator>,
+)
+
+@Serializable
+data class ProductLite(
+    val id: ProductId,
+    val name: String,
 )
 
 @Serializable

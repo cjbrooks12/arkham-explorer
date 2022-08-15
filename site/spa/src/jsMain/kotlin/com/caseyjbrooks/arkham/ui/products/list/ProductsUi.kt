@@ -8,9 +8,12 @@ import androidx.compose.runtime.rememberCoroutineScope
 import com.caseyjbrooks.arkham.di.ArkhamInjector
 import com.caseyjbrooks.arkham.ui.ArkhamApp
 import com.caseyjbrooks.arkham.utils.CacheReady
+import com.caseyjbrooks.arkham.utils.DynamicGrid
+import com.caseyjbrooks.arkham.utils.GridItem
 import com.caseyjbrooks.arkham.utils.theme.bulma.Breadcrumbs
 import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaSection
 import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaSize
+import com.caseyjbrooks.arkham.utils.theme.bulma.Card
 import com.caseyjbrooks.arkham.utils.theme.bulma.Hero
 import com.caseyjbrooks.arkham.utils.theme.bulma.NavigationRoute
 import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayout
@@ -52,7 +55,23 @@ object ProductsUi {
     }
 
     @Composable
-    fun Body(layoutState: MainLayoutState, product: List<Product>) {
-
+    fun Body(layoutState: MainLayoutState, products: List<Product>) {
+        DynamicGrid(
+            products.map { product ->
+                GridItem {
+                    Card(
+                        title = product.name,
+                        navigationRoutes = arrayOf(
+                            NavigationRoute(
+                                name = "Details",
+                                iconUrl = null,
+                                route = ArkhamApp.ProductDetails,
+                                pathParams = arrayOf(product.id.id),
+                            )
+                        )
+                    )
+                }
+            }
+        )
     }
 }

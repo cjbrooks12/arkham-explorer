@@ -1,4 +1,4 @@
-package com.caseyjbrooks.arkham.stages.expansiondata.inputs.models
+package com.caseyjbrooks.arkham.stages.api.inputs.models
 
 import com.caseyjbrooks.arkham.dag.http.prettyJson
 import kotlinx.serialization.KSerializer

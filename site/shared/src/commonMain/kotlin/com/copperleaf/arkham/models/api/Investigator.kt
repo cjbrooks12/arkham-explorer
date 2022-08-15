@@ -17,6 +17,7 @@ data class Investigator(
     val expansionCode: String,
     val id: InvestigatorId,
     val portrait: String,
+    val products: List<ProductLite>,
 )
 
 @Serializable

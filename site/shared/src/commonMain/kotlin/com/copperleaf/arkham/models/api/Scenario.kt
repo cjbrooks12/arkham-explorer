@@ -19,6 +19,7 @@ data class Scenario(
     val icon: String,
     val encounterSets: List<ScenarioEncounterSet>,
     val chaosBag: List<ScenarioChaosBag>,
+    val products: List<ProductLite>,
 )
 
 @Serializable

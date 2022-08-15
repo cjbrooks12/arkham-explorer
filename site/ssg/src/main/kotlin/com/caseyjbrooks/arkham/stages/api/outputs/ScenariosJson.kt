@@ -1,22 +1,22 @@
-package com.caseyjbrooks.arkham.stages.expansiondata.outputs
+package com.caseyjbrooks.arkham.stages.api.outputs
 
 import com.caseyjbrooks.arkham.dag.DependencyGraphBuilder
 import com.caseyjbrooks.arkham.dag.http.InputHttpNode
 import com.caseyjbrooks.arkham.dag.http.prettyJson
 import com.caseyjbrooks.arkham.dag.path.InputPathNode
 import com.caseyjbrooks.arkham.dag.path.TerminalPathNode
-import com.caseyjbrooks.arkham.stages.expansiondata.inputs.ArkhamDbPacksApi
-import com.caseyjbrooks.arkham.stages.expansiondata.inputs.LocalExpansionFile
-import com.caseyjbrooks.arkham.stages.expansiondata.inputs.models.ArkhamDbPack
-import com.caseyjbrooks.arkham.stages.expansiondata.inputs.models.LocalArkhamHorrorExpansion
-import com.caseyjbrooks.arkham.stages.expansiondata.utils.asFullOutput
-import com.copperleaf.arkham.models.api.InvestigatorList
+import com.caseyjbrooks.arkham.stages.api.inputs.ArkhamDbPacksApi
+import com.caseyjbrooks.arkham.stages.api.inputs.LocalExpansionFile
+import com.caseyjbrooks.arkham.stages.api.inputs.models.ArkhamDbPack
+import com.caseyjbrooks.arkham.stages.api.inputs.models.LocalArkhamHorrorExpansion
+import com.caseyjbrooks.arkham.stages.api.utils.asFullOutput
+import com.copperleaf.arkham.models.api.ScenarioList
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.encodeToStream
 import java.nio.file.Paths
 
-object InvestigatorsJson {
-    public val tags = listOf("FetchExpansionData", "output", "investigators")
+object ScenariosJson {
+    public val tags = listOf("FetchExpansionData", "output", "scenarios")
 
     @OptIn(ExperimentalSerializationApi::class)
     public suspend fun createOutputFile(
@@ -24,39 +24,39 @@ object InvestigatorsJson {
         local: List<InputPathNode>,
         packsHttpNode: InputHttpNode,
     ): TerminalPathNode = with(scope) {
-        val investigatorsOutputNode = TerminalPathNode(
+        val scenariosOutputNode = TerminalPathNode(
             tags = tags,
             baseOutputDir = graph.config.outputDir,
-            outputPath = Paths.get("api/investigators.json"),
+            outputPath = Paths.get("api/scenarios.json"),
             doRender = { nodes, os ->
                 val localExpansionFiles = LocalExpansionFile.getBodiesForOutput(scope, nodes).map { it.second }
                 val packsApi = ArkhamDbPacksApi.getBodyForOutput(scope, nodes)
                 prettyJson.encodeToStream(
-                    InvestigatorList.serializer(),
+                    ScenarioList.serializer(),
                     createJson(localExpansionFiles, packsApi),
                     os,
                 )
             },
         )
-        addNode(investigatorsOutputNode)
+        addNode(scenariosOutputNode)
         local.forEach { localExpansionNode ->
-            addEdge(localExpansionNode, investigatorsOutputNode)
+            addEdge(localExpansionNode, scenariosOutputNode)
         }
-        addEdge(packsHttpNode, investigatorsOutputNode)
+        addEdge(packsHttpNode, scenariosOutputNode)
 
-        return investigatorsOutputNode
+        return scenariosOutputNode
     }
 
     private fun createJson(
         localExpansions: List<LocalArkhamHorrorExpansion>,
         packsApi: List<ArkhamDbPack>,
-    ): InvestigatorList {
-        return InvestigatorList(
-            investigators = localExpansions
+    ): ScenarioList {
+        return ScenarioList(
+            scenarios = localExpansions
                 .flatMap { localExpansion ->
                     localExpansion
-                        .investigators
-                        .map { it.asFullOutput(localExpansion.code, localExpansions) }
+                        .scenarios
+                        .map { it.asFullOutput(localExpansion.code, localExpansions, packsApi) }
                         .sortedBy { it.id }
                 }
         )

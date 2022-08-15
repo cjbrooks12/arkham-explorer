@@ -1,45 +1,44 @@
-package com.caseyjbrooks.arkham.stages.expansiondata.outputs
+package com.caseyjbrooks.arkham.stages.api.outputs
 
 import com.caseyjbrooks.arkham.dag.DependencyGraphBuilder
 import com.caseyjbrooks.arkham.dag.http.InputHttpNode
 import com.caseyjbrooks.arkham.dag.http.prettyJson
 import com.caseyjbrooks.arkham.dag.path.InputPathNode
 import com.caseyjbrooks.arkham.dag.path.TerminalPathNode
-import com.caseyjbrooks.arkham.stages.expansiondata.inputs.ArkhamDbPacksApi
-import com.caseyjbrooks.arkham.stages.expansiondata.inputs.LocalExpansionFile
-import com.caseyjbrooks.arkham.stages.expansiondata.inputs.models.ArkhamDbPack
-import com.caseyjbrooks.arkham.stages.expansiondata.inputs.models.LocalArkhamHorrorExpansion
-import com.caseyjbrooks.arkham.stages.expansiondata.utils.asFullOutput
-import com.copperleaf.arkham.models.api.EncounterSet
+import com.caseyjbrooks.arkham.stages.api.inputs.ArkhamDbPacksApi
+import com.caseyjbrooks.arkham.stages.api.inputs.LocalExpansionFile
+import com.caseyjbrooks.arkham.stages.api.inputs.models.ArkhamDbPack
+import com.caseyjbrooks.arkham.stages.api.inputs.models.LocalArkhamHorrorExpansion
+import com.caseyjbrooks.arkham.stages.api.utils.asFullOutput
+import com.copperleaf.arkham.models.api.Product
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.encodeToStream
 import java.nio.file.Paths
 
-object EncounterSetJson {
-    public val tags = listOf("FetchExpansionData", "output", "encounter set")
+object ProductJson {
+    public val tags = listOf("FetchExpansionData", "output", "product")
 
     @OptIn(ExperimentalSerializationApi::class)
     public suspend fun createOutputFile(
         scope: DependencyGraphBuilder.Scope,
         localExpansionFiles: List<InputPathNode>,
         expansionCode: String,
-        encounterSetId: String,
+        productId: String,
         packsHttpNode: InputHttpNode,
         packHttpNodes: List<InputHttpNode>,
     ): TerminalPathNode = with(scope) {
-        val encounterSetNode = TerminalPathNode(
+        val productNode = TerminalPathNode(
             tags = tags,
             baseOutputDir = graph.config.outputDir,
-            outputPath = Paths.get("api/encounter-sets/$encounterSetId.json"),
+            outputPath = Paths.get("api/products/$productId.json"),
             doRender = { nodes, os ->
                 val localExpansions = LocalExpansionFile.getBodiesForOutput(scope, nodes).map { it.second }
                 val localExpansion = LocalExpansionFile.getBodyForOutput(scope, nodes, expansionCode)
                 val packsApi = ArkhamDbPacksApi.getBodyForOutput(scope, nodes)
                 prettyJson.encodeToStream(
-                    EncounterSet.serializer(),
+                    Product.serializer(),
                     createJson(
-                        expansionCode,
-                        encounterSetId,
+                        productId,
                         localExpansions,
                         localExpansion,
                         packsApi,
@@ -48,23 +47,22 @@ object EncounterSetJson {
                 )
             },
         )
-        addNode(encounterSetNode)
-        localExpansionFiles.forEach { addEdge(it, encounterSetNode) }
-        addEdge(packsHttpNode, encounterSetNode)
+        addNode(productNode)
+        localExpansionFiles.forEach { addEdge(it, productNode) }
+        addEdge(packsHttpNode, productNode)
 
-        return encounterSetNode
+        return productNode
     }
 
     private fun createJson(
-        expansionCode: String,
-        encounterSetId: String,
+        productId: String,
         localExpansions: List<LocalArkhamHorrorExpansion>,
         localExpansion: LocalArkhamHorrorExpansion,
         packsApi: List<ArkhamDbPack>,
-    ): EncounterSet {
+    ): Product {
         return localExpansion
-            .encounterSets
-            .single { it.id == encounterSetId }
-            .asFullOutput(expansionCode, localExpansions)
+            .products
+            .single { it.id == productId }
+            .asFullOutput(localExpansion.code, localExpansions, packsApi)
     }
 }

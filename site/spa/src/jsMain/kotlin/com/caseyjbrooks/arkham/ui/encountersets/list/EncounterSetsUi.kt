@@ -8,14 +8,14 @@ import androidx.compose.runtime.rememberCoroutineScope
 import com.caseyjbrooks.arkham.di.ArkhamInjector
 import com.caseyjbrooks.arkham.ui.ArkhamApp
 import com.caseyjbrooks.arkham.utils.CacheReady
+import com.caseyjbrooks.arkham.utils.DynamicGrid
+import com.caseyjbrooks.arkham.utils.GridItem
 import com.caseyjbrooks.arkham.utils.theme.bulma.Breadcrumbs
 import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaSection
 import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaSize
 import com.caseyjbrooks.arkham.utils.theme.bulma.Card
-import com.caseyjbrooks.arkham.utils.theme.bulma.Column
 import com.caseyjbrooks.arkham.utils.theme.bulma.Hero
 import com.caseyjbrooks.arkham.utils.theme.bulma.NavigationRoute
-import com.caseyjbrooks.arkham.utils.theme.bulma.Row
 import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayout
 import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayoutState
 import com.copperleaf.arkham.models.api.EncounterSet
@@ -58,29 +58,23 @@ object EncounterSetsUi {
 
     @Composable
     fun Body(layoutState: MainLayoutState, encounterSets: List<EncounterSet>) {
-        BulmaSection {
-            val regularExpansionsChunks = layoutState
+        DynamicGrid(
+            layoutState
                 .expansions
                 .filter { it.expansionType is ExpansionType.Cycle }
-                .chunked(3)
-
-            regularExpansionsChunks.forEach { expansions ->
-                Row("features", "is-centered") {
-                    expansions.forEach { expansion ->
-                        Column("is-4") {
-                            ExpansionCard(
-                                expansion,
-                                expansion
-                                    .encounterSets
-                                    .map { encounterSetId ->
-                                        encounterSets.single { it.id == encounterSetId }
-                                    },
-                            )
-                        }
+                .map { expansion ->
+                    GridItem {
+                        ExpansionCard(
+                            expansion,
+                            expansion
+                                .encounterSets
+                                .map { encounterSetId ->
+                                    encounterSets.single { it.id == encounterSetId }
+                                },
+                        )
                     }
                 }
-            }
-        }
+        )
     }
 
     @Composable

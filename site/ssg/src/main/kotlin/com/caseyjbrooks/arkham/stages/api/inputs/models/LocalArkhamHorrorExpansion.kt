@@ -1,4 +1,4 @@
-package com.caseyjbrooks.arkham.stages.expansiondata.inputs.models
+package com.caseyjbrooks.arkham.stages.api.inputs.models
 
 import com.copperleaf.arkham.models.api.ExpansionType
 import com.copperleaf.arkham.models.api.ScenarioChaosBag
@@ -61,5 +61,8 @@ data class LocalArkhamHorrorExpansion(
         val arkhamDbCode: String? = null,
         val releaseDate: LocalDate? = null,
         val officialProductUrl: String = "",
+        val scenarios: List<String> = emptyList(),
+        val encounterSets: List<String> = emptyList(),
+        val investigators: List<String> = emptyList(),
     )
 }
