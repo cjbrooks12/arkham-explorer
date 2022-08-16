@@ -32,5 +32,5 @@ data class ScenarioLite(
 
 @Serializable
 data class ScenarioList(
-    val scenarios: List<ScenarioDetails>,
+    val scenarios: List<ScenarioLite>,
 )

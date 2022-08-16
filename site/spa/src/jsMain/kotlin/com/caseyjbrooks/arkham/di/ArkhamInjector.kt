@@ -3,8 +3,6 @@ package com.caseyjbrooks.arkham.di
 import com.caseyjbrooks.arkham.config.ArkhamConfig
 import com.caseyjbrooks.arkham.repository.main.ArkhamExplorerRepository
 import com.caseyjbrooks.arkham.ui.RouterViewModel
-import com.caseyjbrooks.arkham.ui.tools.campaignlog.CampaignLogViewModel
-import com.caseyjbrooks.arkham.ui.tools.chaosbag.ChaosBagSimulatorViewModel
 import com.caseyjbrooks.arkham.ui.encountersets.detail.EncounterSetDetailsViewModel
 import com.caseyjbrooks.arkham.ui.encountersets.list.EncounterSetsViewModel
 import com.caseyjbrooks.arkham.ui.error.NavigationErrorViewModel
@@ -18,6 +16,9 @@ import com.caseyjbrooks.arkham.ui.products.detail.ProductDetailsViewModel
 import com.caseyjbrooks.arkham.ui.products.list.ProductsViewModel
 import com.caseyjbrooks.arkham.ui.scenarios.detail.ScenarioDetailsViewModel
 import com.caseyjbrooks.arkham.ui.scenarios.list.ScenariosViewModel
+import com.caseyjbrooks.arkham.ui.tools.campaignlog.CampaignLogViewModel
+import com.caseyjbrooks.arkham.ui.tools.chaosbag.ChaosBagSimulatorViewModel
+import com.caseyjbrooks.arkham.ui.tools.investigatortracker.InvestigatorTrackerViewModel
 import com.caseyjbrooks.arkham.utils.navigation.NavigationLinkStrategy
 import com.copperleaf.arkham.models.api.EncounterSetId
 import com.copperleaf.arkham.models.api.InvestigatorId
@@ -56,4 +57,5 @@ interface ArkhamInjector {
 
     fun chaosBagSimulatorViewModel(coroutineScope: CoroutineScope, scenarioId: ScenarioId?): ChaosBagSimulatorViewModel
     fun campaignLogViewModel(coroutineScope: CoroutineScope, expansionCode: String?, campaignLogId: String?): CampaignLogViewModel
+    fun investigatorTrackerViewModel(coroutineScope: CoroutineScope, investigatorId: InvestigatorId?): InvestigatorTrackerViewModel
 }

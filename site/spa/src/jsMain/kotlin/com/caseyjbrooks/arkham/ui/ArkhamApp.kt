@@ -24,6 +24,7 @@ object ArkhamApp : RoutingTable() {
 
     val Tools = route("/tools")
     val ChaosBagSimulator = route("/tools/chaos")
+    val InvestigatorTracker = route("/tools/investigator")
     val AboutCampaignLog = route("/tools/campaign-log")
     val CreateCampaignLog = route("/tools/campaign-log/{expansionCode}")
     val ViewCampaignLog = route("/tools/campaign-log/{expansionCode}/{campaignLogId}")

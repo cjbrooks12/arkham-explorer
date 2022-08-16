@@ -6,10 +6,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.staticCompositionLocalOf
 import com.caseyjbrooks.arkham.di.ArkhamInjector
-import com.caseyjbrooks.arkham.ui.tools.campaignlog.CampaignLogUi
-import com.caseyjbrooks.arkham.ui.tools.cards.CustomCardsDesignerUi
-import com.caseyjbrooks.arkham.ui.tools.chaosbag.ChaosBagSimulatorUi
-import com.caseyjbrooks.arkham.ui.tools.dividers.DividersGeneratorUi
 import com.caseyjbrooks.arkham.ui.encountersets.detail.EncounterSetDetailsUi
 import com.caseyjbrooks.arkham.ui.encountersets.list.EncounterSetsUi
 import com.caseyjbrooks.arkham.ui.error.NavigationErrorUi
@@ -23,6 +19,11 @@ import com.caseyjbrooks.arkham.ui.products.detail.ProductDetailsUi
 import com.caseyjbrooks.arkham.ui.products.list.ProductsUi
 import com.caseyjbrooks.arkham.ui.scenarios.detail.ScenarioDetailsUi
 import com.caseyjbrooks.arkham.ui.scenarios.list.ScenariosUi
+import com.caseyjbrooks.arkham.ui.tools.campaignlog.CampaignLogUi
+import com.caseyjbrooks.arkham.ui.tools.cards.CustomCardsDesignerUi
+import com.caseyjbrooks.arkham.ui.tools.chaosbag.ChaosBagSimulatorUi
+import com.caseyjbrooks.arkham.ui.tools.dividers.DividersGeneratorUi
+import com.caseyjbrooks.arkham.ui.tools.investigatortracker.InvestigatorTrackerUi
 import com.caseyjbrooks.arkham.ui.tools.list.ToolsListUi
 import com.caseyjbrooks.arkham.ui.tools.tuckbox.TuckboxGeneratorUi
 import com.caseyjbrooks.arkham.utils.theme.ArkhamTheme
@@ -128,6 +129,12 @@ fun MainApplication(injector: ArkhamInjector) {
                         val scenarioId =
                             destination.queryParameters["scenarioId"]?.singleOrNull()?.let { ScenarioId(it) }
                         ChaosBagSimulatorUi.Page(injector, scenarioId)
+                    }
+
+                    ArkhamApp.InvestigatorTracker -> {
+                        val investigatorId =
+                            destination.queryParameters["investigatorId"]?.singleOrNull()?.let { InvestigatorId(it) }
+                        InvestigatorTrackerUi.Page(injector, investigatorId)
                     }
 
                     ArkhamApp.AboutCampaignLog -> {

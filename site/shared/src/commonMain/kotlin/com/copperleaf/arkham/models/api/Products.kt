@@ -33,5 +33,5 @@ data class ProductLite(
 
 @Serializable
 data class ProductList(
-    val products: List<ProductDetails>,
+    val products: List<ProductLite>,
 )

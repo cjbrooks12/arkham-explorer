@@ -9,7 +9,7 @@ import com.caseyjbrooks.arkham.stages.api.inputs.ArkhamDbPacksApi
 import com.caseyjbrooks.arkham.stages.api.inputs.LocalExpansionFile
 import com.caseyjbrooks.arkham.stages.api.inputs.models.ArkhamDbPack
 import com.caseyjbrooks.arkham.stages.api.inputs.models.LocalArkhamHorrorExpansion
-import com.caseyjbrooks.arkham.stages.api.outputs.utils.asFullOutput
+import com.caseyjbrooks.arkham.stages.api.outputs.utils.asLiteOutput
 import com.copperleaf.arkham.models.api.InvestigatorList
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.encodeToStream
@@ -60,7 +60,7 @@ object ExpansionInvestigatorsJson {
         return InvestigatorList(
             investigators = localExpansion
                 .investigators
-                .map { it.asFullOutput(localExpansion.code, localExpansions, packsApi) }
+                .map { it.asLiteOutput(localExpansion.code, localExpansions, packsApi) }
                 .sortedBy { it.id }
         )
     }

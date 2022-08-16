@@ -1,6 +1,6 @@
 package com.caseyjbrooks.arkham.api
 
-import com.copperleaf.arkham.models.ArkhamExplorerStaticPage
+import com.copperleaf.arkham.models.api.StaticPage
 import com.copperleaf.arkham.models.api.EncounterSetDetails
 import com.copperleaf.arkham.models.api.EncounterSetId
 import com.copperleaf.arkham.models.api.EncounterSetList
@@ -33,5 +33,5 @@ interface ArkhamExplorerApi {
     suspend fun getProducts(): ProductList
     suspend fun getProduct(productId: ProductId): ProductDetails
 
-    suspend fun getStaticPageContent(slug: String): ArkhamExplorerStaticPage
+    suspend fun getStaticPageContent(slug: String): StaticPage
 }

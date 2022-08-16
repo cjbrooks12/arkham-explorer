@@ -15,7 +15,7 @@ import com.caseyjbrooks.arkham.utils.theme.bulma.Card
 import com.caseyjbrooks.arkham.utils.theme.bulma.Hero
 import com.caseyjbrooks.arkham.utils.theme.bulma.NavigationRoute
 import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayout
-import com.copperleaf.arkham.models.ArkhamExplorerStaticPage
+import com.copperleaf.arkham.models.api.StaticPage
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Text
 
@@ -38,7 +38,7 @@ object StaticPageUi {
     }
 
     @Composable
-    fun Header(page: ArkhamExplorerStaticPage) {
+    fun Header(page: StaticPage) {
         Hero(
             title = { Text(page.title) },
             size = BulmaSize.Medium,
@@ -52,7 +52,7 @@ object StaticPageUi {
     }
 
     @Composable
-    fun Body(page: ArkhamExplorerStaticPage) {
+    fun Body(page: StaticPage) {
         BulmaSection {
             Card(
                 content = {

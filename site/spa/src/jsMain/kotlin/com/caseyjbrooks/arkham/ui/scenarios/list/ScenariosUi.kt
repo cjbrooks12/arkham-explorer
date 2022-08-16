@@ -19,7 +19,7 @@ import com.caseyjbrooks.arkham.utils.theme.bulma.NavigationRoute
 import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayout
 import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayoutState
 import com.copperleaf.arkham.models.api.ExpansionLite
-import com.copperleaf.arkham.models.api.ScenarioDetails
+import com.copperleaf.arkham.models.api.ScenarioLite
 import org.jetbrains.compose.web.dom.Text
 
 object ScenariosUi {
@@ -56,7 +56,7 @@ object ScenariosUi {
     }
 
     @Composable
-    fun Body(layoutState: MainLayoutState, scenarios: List<ScenarioDetails>) {
+    fun Body(layoutState: MainLayoutState, scenarios: List<ScenarioLite>) {
         DynamicGrid(
             layoutState.expansions.map { expansion ->
                 GridItem {
@@ -71,7 +71,7 @@ object ScenariosUi {
     }
 
     @Composable
-    private fun ExpansionCard(expansion: ExpansionLite, scenarios: List<ScenarioDetails>) {
+    private fun ExpansionCard(expansion: ExpansionLite, scenarios: List<ScenarioLite>) {
         Card(
             imageUrl = expansion.boxArt,
             title = expansion.name,

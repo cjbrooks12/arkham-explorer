@@ -1,7 +1,7 @@
 package com.caseyjbrooks.arkham.api
 
 import com.caseyjbrooks.arkham.config.ArkhamConfig
-import com.copperleaf.arkham.models.ArkhamExplorerStaticPage
+import com.copperleaf.arkham.models.api.StaticPage
 import com.copperleaf.arkham.models.api.EncounterSetDetails
 import com.copperleaf.arkham.models.api.EncounterSetId
 import com.copperleaf.arkham.models.api.EncounterSetList
@@ -84,7 +84,7 @@ class ArkhamExplorerApiImpl(
             .body()
     }
 
-    override suspend fun getStaticPageContent(slug: String): ArkhamExplorerStaticPage {
+    override suspend fun getStaticPageContent(slug: String): StaticPage {
         return httpClient
             .get("pages/$slug.json")
             .body()

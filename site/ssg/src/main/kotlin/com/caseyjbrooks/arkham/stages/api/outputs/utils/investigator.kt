@@ -1,6 +1,7 @@
 package com.caseyjbrooks.arkham.stages.api.outputs.utils
 
 import com.caseyjbrooks.arkham.stages.api.inputs.models.ArkhamDbPack
+import com.caseyjbrooks.arkham.stages.api.inputs.models.ArkhamDbPackCards
 import com.caseyjbrooks.arkham.stages.api.inputs.models.LocalArkhamHorrorExpansion
 import com.copperleaf.arkham.models.api.InvestigatorDetails
 import com.copperleaf.arkham.models.api.InvestigatorId
@@ -10,7 +11,13 @@ fun LocalArkhamHorrorExpansion.Investigator.asFullOutput(
     expansionCode: String,
     allExpansionData: List<LocalArkhamHorrorExpansion>,
     packsApi: List<ArkhamDbPack>,
+    packCards: List<ArkhamDbPackCards>,
 ): InvestigatorDetails {
+    val matchingInvestigator = packCards
+        .asSequence()
+        .flatMap { it.cards }
+        .firstOrNull { it.name == this@asFullOutput.name }
+
     return InvestigatorDetails(
         id = InvestigatorId(this.id),
         name = this.name,
@@ -19,6 +26,8 @@ fun LocalArkhamHorrorExpansion.Investigator.asFullOutput(
         products = allExpansionData
             .getProductsContainingInvestigator(this.name)
             .map { it.asLiteOutput(expansionCode, packsApi) },
+        health = matchingInvestigator?.health ?: 0,
+        sanity = matchingInvestigator?.sanity ?: 0,
     )
 }
 

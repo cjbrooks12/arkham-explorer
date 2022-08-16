@@ -5,6 +5,7 @@ import com.caseyjbrooks.arkham.dag.Node
 import com.caseyjbrooks.arkham.dag.http.InputHttpNode
 import com.caseyjbrooks.arkham.dag.http.StartHttpNode
 import com.caseyjbrooks.arkham.stages.api.inputs.models.ArkhamDbCard
+import com.caseyjbrooks.arkham.stages.api.inputs.models.ArkhamDbPackCards
 import io.ktor.client.HttpClient
 import kotlinx.serialization.builtins.ListSerializer
 
@@ -45,6 +46,16 @@ object ArkhamDbPackCardsApi {
         nodes: List<Node>,
     ): List<InputHttpNode> {
         return nodes.filterIsInstance<StartHttpNode>().filter { it.meta.tags.containsAll(tags) }
+    }
+
+    public suspend fun getBodiesForOutput(
+        scope: DependencyGraphBuilder.Scope,
+        nodes: List<Node>,
+    ): List<ArkhamDbPackCards> {
+        return nodes
+            .filterIsInstance<StartHttpNode>()
+            .filter { it.meta.tags.containsAll(tags) }
+            .map { ArkhamDbPackCards(getBody(scope, it)) }
     }
 
     public suspend fun getBody(

@@ -5,9 +5,11 @@ import com.caseyjbrooks.arkham.dag.http.InputHttpNode
 import com.caseyjbrooks.arkham.dag.http.prettyJson
 import com.caseyjbrooks.arkham.dag.path.InputPathNode
 import com.caseyjbrooks.arkham.dag.path.TerminalPathNode
+import com.caseyjbrooks.arkham.stages.api.inputs.ArkhamDbPackCardsApi
 import com.caseyjbrooks.arkham.stages.api.inputs.ArkhamDbPacksApi
 import com.caseyjbrooks.arkham.stages.api.inputs.LocalExpansionFile
 import com.caseyjbrooks.arkham.stages.api.inputs.models.ArkhamDbPack
+import com.caseyjbrooks.arkham.stages.api.inputs.models.ArkhamDbPackCards
 import com.caseyjbrooks.arkham.stages.api.inputs.models.LocalArkhamHorrorExpansion
 import com.caseyjbrooks.arkham.stages.api.outputs.utils.asFullOutput
 import com.copperleaf.arkham.models.api.InvestigatorDetails
@@ -35,6 +37,7 @@ object InvestigatorJson {
                 val localExpansions = LocalExpansionFile.getBodiesForOutput(scope, nodes).map { it.second }
                 val localExpansion = LocalExpansionFile.getBodyForOutput(scope, nodes, expansionCode)
                 val packsApi = ArkhamDbPacksApi.getBodyForOutput(scope, nodes)
+                val packCardsApis = ArkhamDbPackCardsApi.getBodiesForOutput(scope, nodes)
                 prettyJson.encodeToStream(
                     InvestigatorDetails.serializer(),
                     createJson(
@@ -42,6 +45,7 @@ object InvestigatorJson {
                         localExpansions,
                         localExpansion,
                         packsApi,
+                        packCardsApis
                     ),
                     os,
                 )
@@ -50,6 +54,7 @@ object InvestigatorJson {
         addNode(investigatorNode)
         localExpansionFiles.forEach { addEdge(it, investigatorNode) }
         addEdge(packsHttpNode, investigatorNode)
+        packHttpNodes.forEach { addEdge(it, investigatorNode) }
 
         return investigatorNode
     }
@@ -59,10 +64,11 @@ object InvestigatorJson {
         localExpansions: List<LocalArkhamHorrorExpansion>,
         localExpansion: LocalArkhamHorrorExpansion,
         packsApi: List<ArkhamDbPack>,
+        packHttpNodes: List<ArkhamDbPackCards>,
     ): InvestigatorDetails {
         return localExpansion
             .investigators
             .single { it.id == investigatorId }
-            .asFullOutput(localExpansion.code, localExpansions, packsApi)
+            .asFullOutput(localExpansion.code, localExpansions, packsApi, packHttpNodes)
     }
 }

@@ -87,6 +87,19 @@ object InvestigatorDetailsUi {
                     }.toTypedArray()
                 )
             },
+            GridItem {
+                Card(
+                    title = "Tools",
+                    navigationRoutes = buildList<NavigationRoute> {
+                        this += NavigationRoute(
+                            "Tracker",
+                            null,
+                            ArkhamApp.InvestigatorTracker,
+                            queryParams = mapOf("investigatorId" to listOf(investigator.id.id))
+                        )
+                    }.toTypedArray()
+                )
+            },
         )
     }
 }

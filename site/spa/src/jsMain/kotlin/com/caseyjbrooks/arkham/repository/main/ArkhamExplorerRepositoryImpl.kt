@@ -1,7 +1,7 @@
 package com.caseyjbrooks.arkham.repository.main
 
 import com.caseyjbrooks.arkham.api.ArkhamExplorerApi
-import com.copperleaf.arkham.models.ArkhamExplorerStaticPage
+import com.copperleaf.arkham.models.api.StaticPage
 import com.copperleaf.arkham.models.api.EncounterSetDetails
 import com.copperleaf.arkham.models.api.EncounterSetId
 import com.copperleaf.arkham.models.api.EncounterSetList
@@ -117,7 +117,7 @@ class ArkhamExplorerRepositoryImpl(
         ) { api.getProduct(productId) }
     }
 
-    override fun getStaticPageContent(forceRefresh: Boolean, slug: String): Flow<Cached<ArkhamExplorerStaticPage>> {
+    override fun getStaticPageContent(forceRefresh: Boolean, slug: String): Flow<Cached<StaticPage>> {
         return flowOfKey(
             forceRefresh,
             SimpleCachedValue.Key("StaticPage", slug)

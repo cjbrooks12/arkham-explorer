@@ -11,7 +11,7 @@ import com.caseyjbrooks.arkham.utils.getOutputExtension
 import com.caseyjbrooks.arkham.utils.processByExtension
 import com.caseyjbrooks.arkham.utils.withExtension
 import com.caseyjbrooks.arkham.utils.withPrefix
-import com.copperleaf.arkham.models.ArkhamExplorerStaticPage
+import com.copperleaf.arkham.models.api.StaticPage
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.encodeToStream
 import kotlin.io.path.extension
@@ -69,13 +69,13 @@ class StaticPages : DependencyGraphBuilder {
                             val sourceText = sourceContentFile.realInputFile().readText()
                             val outputText = processByExtension(sourceText, sourceContentFile.inputPath.extension)
 
-                            val staticPageJson = ArkhamExplorerStaticPage(
+                            val staticPageJson = StaticPage(
                                 title = sourceContentFile.inputPath.nameWithoutExtension,
                                 slug = sourceContentFile.inputPath.nameWithoutExtension,
                                 content = outputText,
                             )
 
-                            prettyJson.encodeToStream(ArkhamExplorerStaticPage.serializer(), staticPageJson, os)
+                            prettyJson.encodeToStream(StaticPage.serializer(), staticPageJson, os)
                         },
                     ),
                 )

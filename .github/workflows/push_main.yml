@@ -28,6 +28,6 @@ jobs:
       - name: 'Deploy to GitHub Pages'
         uses: 'JamesIves/github-pages-deploy-action@v4.4.0'
         with:
-          folder: 'build/dist'
+          folder: 'build/distributions'
           single-commit: true
           force: true

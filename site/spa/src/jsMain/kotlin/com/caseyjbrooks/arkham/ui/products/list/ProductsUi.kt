@@ -18,7 +18,7 @@ import com.caseyjbrooks.arkham.utils.theme.bulma.Hero
 import com.caseyjbrooks.arkham.utils.theme.bulma.NavigationRoute
 import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayout
 import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayoutState
-import com.copperleaf.arkham.models.api.ProductDetails
+import com.copperleaf.arkham.models.api.ProductLite
 import org.jetbrains.compose.web.dom.Text
 
 object ProductsUi {
@@ -55,7 +55,7 @@ object ProductsUi {
     }
 
     @Composable
-    fun Body(layoutState: MainLayoutState, products: List<ProductDetails>) {
+    fun Body(layoutState: MainLayoutState, products: List<ProductLite>) {
         DynamicGrid(
             products.map { product ->
                 GridItem {

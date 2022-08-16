@@ -31,7 +31,7 @@ data class EncounterSetLite(
 
 @Serializable
 data class EncounterSetList(
-    val encounterSets: List<EncounterSetDetails>,
+    val encounterSets: List<EncounterSetLite>,
 )
 
 @Serializable

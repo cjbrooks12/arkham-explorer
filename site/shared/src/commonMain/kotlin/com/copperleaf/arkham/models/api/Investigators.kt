@@ -17,6 +17,8 @@ data class InvestigatorDetails(
     val name: String,
     val expansionCode: String,
     val portrait: String,
+    val health: Int,
+    val sanity: Int,
     val products: List<ProductLite>,
 )
 
@@ -30,5 +32,5 @@ data class InvestigatorLite(
 
 @Serializable
 data class InvestigatorList(
-    val investigators: List<InvestigatorDetails>,
+    val investigators: List<InvestigatorLite>,
 )

@@ -8,12 +8,6 @@ import com.caseyjbrooks.arkham.repository.main.ArkhamExplorerRepository
 import com.caseyjbrooks.arkham.repository.main.ArkhamExplorerRepositoryImpl
 import com.caseyjbrooks.arkham.ui.ArkhamApp
 import com.caseyjbrooks.arkham.ui.RouterViewModel
-import com.caseyjbrooks.arkham.ui.tools.campaignlog.CampaignLogContract
-import com.caseyjbrooks.arkham.ui.tools.campaignlog.CampaignLogInputHandler
-import com.caseyjbrooks.arkham.ui.tools.campaignlog.CampaignLogViewModel
-import com.caseyjbrooks.arkham.ui.tools.chaosbag.ChaosBagSimulatorContract
-import com.caseyjbrooks.arkham.ui.tools.chaosbag.ChaosBagSimulatorInputHandler
-import com.caseyjbrooks.arkham.ui.tools.chaosbag.ChaosBagSimulatorViewModel
 import com.caseyjbrooks.arkham.ui.encountersets.detail.EncounterSetDetailsContract
 import com.caseyjbrooks.arkham.ui.encountersets.detail.EncounterSetDetailsInputHandler
 import com.caseyjbrooks.arkham.ui.encountersets.detail.EncounterSetDetailsViewModel
@@ -53,6 +47,15 @@ import com.caseyjbrooks.arkham.ui.scenarios.detail.ScenarioDetailsViewModel
 import com.caseyjbrooks.arkham.ui.scenarios.list.ScenariosContract
 import com.caseyjbrooks.arkham.ui.scenarios.list.ScenariosInputHandler
 import com.caseyjbrooks.arkham.ui.scenarios.list.ScenariosViewModel
+import com.caseyjbrooks.arkham.ui.tools.campaignlog.CampaignLogContract
+import com.caseyjbrooks.arkham.ui.tools.campaignlog.CampaignLogInputHandler
+import com.caseyjbrooks.arkham.ui.tools.campaignlog.CampaignLogViewModel
+import com.caseyjbrooks.arkham.ui.tools.chaosbag.ChaosBagSimulatorContract
+import com.caseyjbrooks.arkham.ui.tools.chaosbag.ChaosBagSimulatorInputHandler
+import com.caseyjbrooks.arkham.ui.tools.chaosbag.ChaosBagSimulatorViewModel
+import com.caseyjbrooks.arkham.ui.tools.investigatortracker.InvestigatorTrackerContract
+import com.caseyjbrooks.arkham.ui.tools.investigatortracker.InvestigatorTrackerInputHandler
+import com.caseyjbrooks.arkham.ui.tools.investigatortracker.InvestigatorTrackerViewModel
 import com.caseyjbrooks.arkham.utils.navigation.HashNavigationLinkStrategy
 import com.caseyjbrooks.arkham.utils.navigation.HistoryNavigationLinkStrategy
 import com.caseyjbrooks.arkham.utils.navigation.NavigationLinkStrategy
@@ -375,7 +378,29 @@ class ArkhamInjectorImpl(
         )
     }
 
-// Helpers
+    override fun investigatorTrackerViewModel(
+        coroutineScope: CoroutineScope,
+        investigatorId: InvestigatorId?
+    ): InvestigatorTrackerViewModel {
+        return InvestigatorTrackerViewModel(
+            coroutineScope = coroutineScope,
+            configBuilder = defaultConfigBuilder()
+                .apply {
+                    this += BootstrapInterceptor {
+                        if (investigatorId != null) {
+                            InvestigatorTrackerContract.Inputs.InitializeForInvestigator(investigatorId)
+                        } else {
+                            InvestigatorTrackerContract.Inputs.InitializeDefault
+                        }
+                    }
+                },
+            inputHandler = InvestigatorTrackerInputHandler(
+                repository = arkhamExplorerRepository
+            ),
+        )
+    }
+
+    // Helpers
 // ---------------------------------------------------------------------------------------------------------------------
 
     private fun defaultConfigBuilder(): BallastViewModelConfiguration.Builder {

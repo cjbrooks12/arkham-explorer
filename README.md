@@ -34,5 +34,5 @@ You must make sure to build the SPA first or have it building continuously befor
     to disk. The site will repeatedly check for changes while serving, and always serve you the latest version of any 
     requested output file.
 - Build for production: `./gradlew :site:run -Prelease`
-  - This will generate all the files needed to deploy into `build/dist`. This entire folder should be
+  - This will generate all the files needed to deploy into `build/distributions`. This entire folder should be
     deployed to the webserver.

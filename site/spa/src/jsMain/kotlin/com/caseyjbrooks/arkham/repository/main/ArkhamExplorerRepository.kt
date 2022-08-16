@@ -1,6 +1,6 @@
 package com.caseyjbrooks.arkham.repository.main
 
-import com.copperleaf.arkham.models.ArkhamExplorerStaticPage
+import com.copperleaf.arkham.models.api.StaticPage
 import com.copperleaf.arkham.models.api.EncounterSetDetails
 import com.copperleaf.arkham.models.api.EncounterSetId
 import com.copperleaf.arkham.models.api.EncounterSetList
@@ -35,5 +35,5 @@ interface ArkhamExplorerRepository {
     fun getProducts(forceRefresh: Boolean): Flow<Cached<ProductList>>
     fun getProduct(forceRefresh: Boolean, productId: ProductId): Flow<Cached<ProductDetails>>
 
-    fun getStaticPageContent(forceRefresh: Boolean, slug: String): Flow<Cached<ArkhamExplorerStaticPage>>
+    fun getStaticPageContent(forceRefresh: Boolean, slug: String): Flow<Cached<StaticPage>>
 }
