@@ -1,4 +1,4 @@
-package com.caseyjbrooks.arkham.ui.cards
+package com.caseyjbrooks.arkham.ui.tools.list
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -19,7 +19,7 @@ import com.caseyjbrooks.arkham.utils.theme.bulma.NavigationRoute
 import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayout
 import org.jetbrains.compose.web.dom.Text
 
-object CustomCardsDesignerUi {
+object ToolsListUi {
     @Composable
     fun Page(injector: ArkhamInjector) {
         val coroutineScope = rememberCoroutineScope()
@@ -39,15 +39,13 @@ object CustomCardsDesignerUi {
     @Composable
     fun Header() {
         Hero(
-            title = { Text("Custom Cards Designer") },
-            subtitle = { Text("Tools") },
-            size = BulmaSize.Small,
+            title = { Text("Tools") },
+            size = BulmaSize.Medium,
         )
         BulmaSection {
             Breadcrumbs(
                 NavigationRoute("Home", null, ArkhamApp.Home),
                 NavigationRoute("Tools", null, ArkhamApp.Tools),
-                NavigationRoute("Custom Card Designer", null, ArkhamApp.CustomCards),
             )
         }
     }
@@ -56,13 +54,10 @@ object CustomCardsDesignerUi {
     fun Body() {
         DynamicGrid(
             GridItem {
-                Card(title = "Cards")
+                Card(title = "Chaos Bag")
             },
             GridItem {
-                Card(title = "Card Options")
-            },
-            GridItem {
-                Card(title = "Preview")
+                Card(title = "Campaign Tracker")
             },
         )
     }

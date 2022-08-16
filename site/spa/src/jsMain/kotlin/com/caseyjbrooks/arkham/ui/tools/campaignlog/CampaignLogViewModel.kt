@@ -1,4 +1,4 @@
-package com.caseyjbrooks.arkham.ui.campaignlog
+package com.caseyjbrooks.arkham.ui.tools.campaignlog
 
 import com.copperleaf.ballast.BallastViewModelConfiguration
 import com.copperleaf.ballast.core.BasicViewModel

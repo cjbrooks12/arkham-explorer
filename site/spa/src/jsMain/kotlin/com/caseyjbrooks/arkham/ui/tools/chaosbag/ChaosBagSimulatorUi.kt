@@ -1,4 +1,4 @@
-package com.caseyjbrooks.arkham.ui.chaosbag
+package com.caseyjbrooks.arkham.ui.tools.chaosbag
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState

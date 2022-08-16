@@ -1,4 +1,4 @@
-package com.caseyjbrooks.arkham.ui.campaignlog
+package com.caseyjbrooks.arkham.ui.tools.campaignlog
 
 import com.caseyjbrooks.arkham.repository.main.ArkhamExplorerRepository
 import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayoutState

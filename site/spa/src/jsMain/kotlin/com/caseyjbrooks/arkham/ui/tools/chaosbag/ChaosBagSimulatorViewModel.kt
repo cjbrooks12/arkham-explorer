@@ -1,4 +1,4 @@
-package com.caseyjbrooks.arkham.ui.chaosbag
+package com.caseyjbrooks.arkham.ui.tools.chaosbag
 
 import com.copperleaf.ballast.BallastViewModelConfiguration
 import com.copperleaf.ballast.core.BasicViewModel

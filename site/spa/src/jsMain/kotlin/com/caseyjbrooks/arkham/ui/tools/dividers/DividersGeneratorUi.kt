@@ -1,4 +1,4 @@
-package com.caseyjbrooks.arkham.ui.dividers
+package com.caseyjbrooks.arkham.ui.tools.dividers
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState

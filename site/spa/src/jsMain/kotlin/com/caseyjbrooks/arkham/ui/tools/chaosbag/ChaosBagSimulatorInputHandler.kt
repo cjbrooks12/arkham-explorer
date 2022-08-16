@@ -1,4 +1,4 @@
-package com.caseyjbrooks.arkham.ui.chaosbag
+package com.caseyjbrooks.arkham.ui.tools.chaosbag
 
 import com.caseyjbrooks.arkham.repository.main.ArkhamExplorerRepository
 import com.caseyjbrooks.arkham.utils.removeAllPreservingDuplicates
@@ -142,8 +142,10 @@ class ChaosBagSimulatorInputHandler(
         is ChaosBagSimulatorContract.Inputs.DrawToken -> {
             updateState {
                 val randomToken = it.remainingTokens.randomOrNull(it.random)
+                val nextRandomInstance = it.random.nextRandom()
                 it.copy(
-                    consumedTokens = it.consumedTokens + listOfNotNull(randomToken)
+                    consumedTokens = it.consumedTokens + listOfNotNull(randomToken),
+                    random = nextRandomInstance
                 )
             }
         }

@@ -3,8 +3,8 @@ package com.caseyjbrooks.arkham.di
 import com.caseyjbrooks.arkham.config.ArkhamConfig
 import com.caseyjbrooks.arkham.repository.main.ArkhamExplorerRepository
 import com.caseyjbrooks.arkham.ui.RouterViewModel
-import com.caseyjbrooks.arkham.ui.campaignlog.CampaignLogViewModel
-import com.caseyjbrooks.arkham.ui.chaosbag.ChaosBagSimulatorViewModel
+import com.caseyjbrooks.arkham.ui.tools.campaignlog.CampaignLogViewModel
+import com.caseyjbrooks.arkham.ui.tools.chaosbag.ChaosBagSimulatorViewModel
 import com.caseyjbrooks.arkham.ui.encountersets.detail.EncounterSetDetailsViewModel
 import com.caseyjbrooks.arkham.ui.encountersets.list.EncounterSetsViewModel
 import com.caseyjbrooks.arkham.ui.error.NavigationErrorViewModel

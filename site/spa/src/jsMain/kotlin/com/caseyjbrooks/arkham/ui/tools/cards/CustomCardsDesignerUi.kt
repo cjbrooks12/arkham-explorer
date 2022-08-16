@@ -1,4 +1,4 @@
-package com.caseyjbrooks.arkham.ui.tuckbox
+package com.caseyjbrooks.arkham.ui.tools.cards
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -19,7 +19,7 @@ import com.caseyjbrooks.arkham.utils.theme.bulma.NavigationRoute
 import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayout
 import org.jetbrains.compose.web.dom.Text
 
-object TuckboxGeneratorUi {
+object CustomCardsDesignerUi {
     @Composable
     fun Page(injector: ArkhamInjector) {
         val coroutineScope = rememberCoroutineScope()
@@ -39,7 +39,7 @@ object TuckboxGeneratorUi {
     @Composable
     fun Header() {
         Hero(
-            title = { Text("Tuckbox Generator") },
+            title = { Text("Custom Cards Designer") },
             subtitle = { Text("Tools") },
             size = BulmaSize.Small,
         )
@@ -47,7 +47,7 @@ object TuckboxGeneratorUi {
             Breadcrumbs(
                 NavigationRoute("Home", null, ArkhamApp.Home),
                 NavigationRoute("Tools", null, ArkhamApp.Tools),
-                NavigationRoute("Tuckbox Generator", null, ArkhamApp.TuckboxGenerator),
+                NavigationRoute("Custom Card Designer", null, ArkhamApp.CustomCards),
             )
         }
     }
@@ -56,10 +56,10 @@ object TuckboxGeneratorUi {
     fun Body() {
         DynamicGrid(
             GridItem {
-                Card(title = "Tuckboxes")
+                Card(title = "Cards")
             },
             GridItem {
-                Card(title = "Tuckbox Options")
+                Card(title = "Card Options")
             },
             GridItem {
                 Card(title = "Preview")

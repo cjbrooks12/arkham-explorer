@@ -1,4 +1,4 @@
-package com.caseyjbrooks.arkham.ui.campaignlog
+package com.caseyjbrooks.arkham.ui.tools.campaignlog
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
