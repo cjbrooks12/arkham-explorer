@@ -1,0 +1,15 @@
+{
+    "type": "VerticalLayout",
+    "elements": [
+        {
+            "type": "Control",
+            "scope": "#"
+        },
+        {
+            "type": "Button",
+            "options": {
+                "action": "toggleDebug"
+            }
+        }
+    ]
+}

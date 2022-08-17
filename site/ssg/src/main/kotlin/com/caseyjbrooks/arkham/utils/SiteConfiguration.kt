@@ -10,6 +10,7 @@ class SiteConfiguration(
     val expansionsDir: Path = rootDir / "content/expansions",
     val staticDir: Path = rootDir / "content/static",
     val pagesDir: Path = rootDir / "content/pages",
+    val schemasDir: Path = rootDir / "content/schemas",
 
     val outputDir: Path = rootDir / "build/distributions",
     val hashesDir: Path = rootDir / "build/cache/site",

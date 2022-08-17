@@ -67,6 +67,8 @@ kotlin {
                 implementation(compose.web.svg)
 
                 implementation(libs.ktor.client.js)
+
+                implementation("io.github.copper-leaf:json-forms-compose-bulma:0.5.0-SNAPSHOT")
             }
         }
     }

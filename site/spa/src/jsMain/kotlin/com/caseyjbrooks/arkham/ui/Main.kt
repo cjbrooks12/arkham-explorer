@@ -20,7 +20,7 @@ import com.caseyjbrooks.arkham.ui.products.list.ProductsUi
 import com.caseyjbrooks.arkham.ui.scenarios.detail.ScenarioDetailsUi
 import com.caseyjbrooks.arkham.ui.scenarios.list.ScenariosUi
 import com.caseyjbrooks.arkham.ui.tools.campaignlog.CampaignLogUi
-import com.caseyjbrooks.arkham.ui.tools.cards.CustomCardsDesignerUi
+import com.caseyjbrooks.arkham.ui.tools.cards.CustomCardsUi
 import com.caseyjbrooks.arkham.ui.tools.chaosbag.ChaosBagSimulatorUi
 import com.caseyjbrooks.arkham.ui.tools.dividers.DividersGeneratorUi
 import com.caseyjbrooks.arkham.ui.tools.investigatortracker.InvestigatorTrackerUi
@@ -165,7 +165,7 @@ fun MainApplication(injector: ArkhamInjector) {
                     }
 
                     ArkhamApp.CustomCards -> {
-                        CustomCardsDesignerUi.Page(injector)
+                        CustomCardsUi.Page(injector)
                     }
                 }
             }

@@ -6,7 +6,9 @@ import com.caseyjbrooks.arkham.dag.updater.ImmediateUpdaterService
 import com.caseyjbrooks.arkham.dag.updater.UpdaterService
 import com.caseyjbrooks.arkham.utils.ResourceService
 import com.caseyjbrooks.arkham.utils.SiteConfiguration
+import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.coroutineScope
@@ -16,6 +18,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.conflate
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.job
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import kotlin.time.ExperimentalTime
@@ -60,17 +63,19 @@ class DependencyGraph(
 // Build and execute graph
 // ---------------------------------------------------------------------------------------------------------------------
 
-    suspend fun executeGraph() = withContext(Dispatchers.IO) {
-        renderers.forEach { renderer ->
-            launch { with(renderer) { start(this@DependencyGraph) } }
-        }
+    suspend fun executeGraph() = coroutineScope {
+        withContext(Dispatchers.IO + SupervisorJob(coroutineContext.job) + CoroutineExceptionHandler { _, t -> t.printStackTrace() }) {
+            renderers.forEach { renderer ->
+                launch { with(renderer) { start(this@DependencyGraph) } }
+            }
 
-        launch {
-            updater
-                .watchForChanges(this@DependencyGraph)
-                .conflate()
-                .onEach { buildSiteModel() }
-                .launchIn(this)
+            launch {
+                updater
+                    .watchForChanges(this@DependencyGraph)
+                    .conflate()
+                    .onEach { buildSiteModel() }
+                    .launchIn(this)
+            }
         }
     }
 
@@ -136,7 +141,7 @@ class DependencyGraph(
         }
 
         // cache references to all the outputs that were added this iteration
-        val newOutputs = _temporaryNodes.filterIsInstance<Node.Output>()
+        val (newInputs, newOutputs) = _temporaryNodes.partition { it is Node.Input }
 
         // move all the temporary nodes into the list of actual nodes
         _temporaryNodes.forEach { tempNode ->
@@ -162,10 +167,20 @@ class DependencyGraph(
         }
         _edges.addAll(_temporaryEdges)
 
+        preloadInputs(newInputs as List<Node.Input>)
+
         // check if the new outputs are dirty, and render them if so
-        renderDirtyOutputs(newOutputs)
+        renderDirtyOutputs(newOutputs as List<Node.Output>)
 
         return true
+    }
+
+    private suspend fun preloadInputs(
+        newInputs: List<Node.Input>
+    ) = coroutineScope {
+        newInputs.map { inputNode ->
+            async { inputNode.preload(this@DependencyGraph) }
+        }.awaitAll()
     }
 
     private suspend fun renderDirtyOutputs(

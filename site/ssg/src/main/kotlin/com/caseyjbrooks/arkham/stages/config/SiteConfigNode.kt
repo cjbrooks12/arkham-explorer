@@ -18,6 +18,10 @@ data class SiteConfigNode(
         tags = listOf("ConfigStage", "v$version")
     )
 
+    override suspend fun preload(graph: DependencyGraph) {
+        // nothing to preload
+    }
+
     override suspend fun dirty(graph: DependencyGraph): Boolean {
         val versionFile = graph.config.hashesDir / "siteVersion.txt"
         return if (versionFile.exists()) {

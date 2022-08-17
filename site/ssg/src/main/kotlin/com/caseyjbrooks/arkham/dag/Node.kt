@@ -54,6 +54,7 @@ sealed interface Node {
     val meta: Node.Meta
 
     interface Input : Node {
+        suspend fun preload(graph: DependencyGraph)
         suspend fun dirty(graph: DependencyGraph): Boolean
         suspend fun markClean(graph: DependencyGraph)
     }

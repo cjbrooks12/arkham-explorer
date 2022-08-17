@@ -43,6 +43,10 @@ interface InputHttpNode : Node.Input {
         return graph.config.httpCacheDir / "${url.replace("\\W+".toRegex(), "-")}/${url.md5}/metadata.json"
     }
 
+    override suspend fun preload(graph: DependencyGraph) {
+        fetchAndCache(graph, false)
+    }
+
     override suspend fun dirty(graph: DependencyGraph): Boolean {
         val responseFile = cachedResponseFile(graph)
         val metadataFile = cachedMetadataFile(graph)

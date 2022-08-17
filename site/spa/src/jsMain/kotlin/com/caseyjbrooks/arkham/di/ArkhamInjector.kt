@@ -17,6 +17,7 @@ import com.caseyjbrooks.arkham.ui.products.list.ProductsViewModel
 import com.caseyjbrooks.arkham.ui.scenarios.detail.ScenarioDetailsViewModel
 import com.caseyjbrooks.arkham.ui.scenarios.list.ScenariosViewModel
 import com.caseyjbrooks.arkham.ui.tools.campaignlog.CampaignLogViewModel
+import com.caseyjbrooks.arkham.ui.tools.cards.CustomCardsViewModel
 import com.caseyjbrooks.arkham.ui.tools.chaosbag.ChaosBagSimulatorViewModel
 import com.caseyjbrooks.arkham.ui.tools.investigatortracker.InvestigatorTrackerViewModel
 import com.caseyjbrooks.arkham.utils.navigation.NavigationLinkStrategy
@@ -58,4 +59,5 @@ interface ArkhamInjector {
     fun chaosBagSimulatorViewModel(coroutineScope: CoroutineScope, scenarioId: ScenarioId?): ChaosBagSimulatorViewModel
     fun campaignLogViewModel(coroutineScope: CoroutineScope, expansionCode: String?, campaignLogId: String?): CampaignLogViewModel
     fun investigatorTrackerViewModel(coroutineScope: CoroutineScope, investigatorId: InvestigatorId?): InvestigatorTrackerViewModel
+    fun customCardsViewModel(coroutineScope: CoroutineScope): CustomCardsViewModel
 }

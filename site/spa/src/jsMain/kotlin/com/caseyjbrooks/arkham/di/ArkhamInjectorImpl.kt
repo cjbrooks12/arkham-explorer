@@ -50,6 +50,9 @@ import com.caseyjbrooks.arkham.ui.scenarios.list.ScenariosViewModel
 import com.caseyjbrooks.arkham.ui.tools.campaignlog.CampaignLogContract
 import com.caseyjbrooks.arkham.ui.tools.campaignlog.CampaignLogInputHandler
 import com.caseyjbrooks.arkham.ui.tools.campaignlog.CampaignLogViewModel
+import com.caseyjbrooks.arkham.ui.tools.cards.CustomCardsContract
+import com.caseyjbrooks.arkham.ui.tools.cards.CustomCardsInputHandler
+import com.caseyjbrooks.arkham.ui.tools.cards.CustomCardsViewModel
 import com.caseyjbrooks.arkham.ui.tools.chaosbag.ChaosBagSimulatorContract
 import com.caseyjbrooks.arkham.ui.tools.chaosbag.ChaosBagSimulatorInputHandler
 import com.caseyjbrooks.arkham.ui.tools.chaosbag.ChaosBagSimulatorViewModel
@@ -395,6 +398,19 @@ class ArkhamInjectorImpl(
                     }
                 },
             inputHandler = InvestigatorTrackerInputHandler(
+                repository = arkhamExplorerRepository
+            ),
+        )
+    }
+
+    override fun customCardsViewModel(coroutineScope: CoroutineScope): CustomCardsViewModel {
+        return CustomCardsViewModel(
+            coroutineScope = coroutineScope,
+            configBuilder = defaultConfigBuilder()
+                .apply {
+                    this += BootstrapInterceptor { CustomCardsContract.Inputs.Initialize }
+                },
+            inputHandler = CustomCardsInputHandler(
                 repository = arkhamExplorerRepository
             ),
         )

@@ -28,6 +28,10 @@ interface InputPathNode : Node.Input {
         return graph.config.hashesDir / hash.substring(0, 2) / hash.substring(2, 4) / hash
     }
 
+    override suspend fun preload(graph: DependencyGraph) {
+        // nothing to preload, it's already on file and we don't want to load it into memory yet
+    }
+
     override suspend fun dirty(graph: DependencyGraph): Boolean {
         return !hashFile(graph).exists()
     }

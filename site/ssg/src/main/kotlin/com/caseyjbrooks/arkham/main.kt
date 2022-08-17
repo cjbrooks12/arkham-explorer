@@ -14,6 +14,7 @@ import com.caseyjbrooks.arkham.stages.copyscripts.CopyScripts
 import com.caseyjbrooks.arkham.stages.meta.Favicons
 import com.caseyjbrooks.arkham.stages.meta.RobotsTxt
 import com.caseyjbrooks.arkham.stages.meta.Sitemap
+import com.caseyjbrooks.arkham.stages.schemas.CopySchemas
 import com.caseyjbrooks.arkham.utils.SiteConfiguration
 import kotlinx.coroutines.runBlocking
 import kotlin.io.path.Path
@@ -36,6 +37,7 @@ fun main(): Unit = runBlocking {
         RasterizeSvgs(),
         CopyOtherAssets(),
         CopyScripts(),
+        CopySchemas(),
         ApiData(),
 
         renderers = buildList {
