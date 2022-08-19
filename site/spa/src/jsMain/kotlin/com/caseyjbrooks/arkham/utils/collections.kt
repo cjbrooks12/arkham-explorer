@@ -23,7 +23,8 @@ fun <T> Collection<T>.removeAllPreservingDuplicates(items: Collection<T>): List<
 }
 
 data class GridItem(
-    val content: @Composable () -> Unit
+    val columnWidth: String? = "is-4",
+    val content: @Composable () -> Unit,
 )
 
 @Composable
@@ -43,7 +44,7 @@ fun DynamicGrid(
         chunks.forEach { items ->
             Row("features", "is-centered") {
                 items.forEach { item ->
-                    Column("is-4") {
+                    Column(item.columnWidth) {
                         item.content()
                     }
                 }

@@ -21,6 +21,7 @@ data class LocalArkhamHorrorExpansion(
     val encounterSets: List<EncounterSet> = listOf(),
     val investigators: List<Investigator> = emptyList(),
     val campaignLogSchema: JsonElement = JsonNull,
+    val campaignLogUiSchema: JsonElement = JsonNull,
 ) {
     @Serializable
     data class Scenario(

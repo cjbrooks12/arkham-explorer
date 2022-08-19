@@ -15,7 +15,7 @@ import com.caseyjbrooks.arkham.ui.ArkhamApp
 import com.caseyjbrooks.arkham.ui.LocalInjector
 import com.caseyjbrooks.arkham.utils.DynamicGrid
 import com.caseyjbrooks.arkham.utils.GridItem
-import com.caseyjbrooks.arkham.utils.form.FormDataStore
+import com.caseyjbrooks.arkham.utils.form.CustomCardDataStore
 import com.caseyjbrooks.arkham.utils.form.FormDoubleRegion
 import com.caseyjbrooks.arkham.utils.theme.bulma.Breadcrumbs
 import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaSection
@@ -87,8 +87,9 @@ object CustomCardsUi {
     fun Body() {
         val injector = LocalInjector.current
         val dataStore = remember(injector) {
-            FormDataStore(
+            CustomCardDataStore(
                 injector.httpClient,
+                "assets",
                 "assets"
             )
         }

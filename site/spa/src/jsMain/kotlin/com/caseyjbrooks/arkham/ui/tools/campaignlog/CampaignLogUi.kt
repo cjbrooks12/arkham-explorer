@@ -7,8 +7,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import com.caseyjbrooks.arkham.di.ArkhamInjector
 import com.caseyjbrooks.arkham.ui.ArkhamApp
+import com.caseyjbrooks.arkham.ui.LocalInjector
+import com.caseyjbrooks.arkham.utils.CacheReady
 import com.caseyjbrooks.arkham.utils.DynamicGrid
 import com.caseyjbrooks.arkham.utils.GridItem
+import com.caseyjbrooks.arkham.utils.form.CampaignLogDataStore
 import com.caseyjbrooks.arkham.utils.theme.bulma.Breadcrumbs
 import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaSection
 import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaSize
@@ -17,6 +20,10 @@ import com.caseyjbrooks.arkham.utils.theme.bulma.Hero
 import com.caseyjbrooks.arkham.utils.theme.bulma.NavigationRoute
 import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayout
 import com.copperleaf.ballast.repository.cache.getValueOrNull
+import com.copperleaf.forms.compose.bulma.form.BulmaForm
+import com.copperleaf.forms.core.vm.BasicFormViewModel
+import com.copperleaf.forms.core.vm.FormContract
+import com.copperleaf.forms.core.vm.FormSavedStateAdapter
 import org.jetbrains.compose.web.dom.Text
 
 @Suppress("UNUSED_PARAMETER")
@@ -78,14 +85,33 @@ object CampaignLogUi {
     @Composable
     fun Body(state: CampaignLogContract.State, postInput: (CampaignLogContract.Inputs) -> Unit) {
         DynamicGrid(
-            GridItem {
-                Card(title = "Configuration") {
+            GridItem(null) {
+                CacheReady(state.expansion) { expansion ->
+                    Card(title = "Campaign Log") {
+                        val injector = LocalInjector.current
+                        val dataStore = remember(injector) {
+                            CampaignLogDataStore(
+                                expansion,
+                                "expansion-${expansion.id}"
+                            )
+                        }
 
-                }
-            },
-            GridItem {
-                Card(title = "Campaign Log") {
+                        val coroutineScope = rememberCoroutineScope()
+                        val vm = remember(coroutineScope) {
+                            BasicFormViewModel(
+                                coroutineScope,
+                                FormSavedStateAdapter(dataStore) {
+                                    FormContract.State(
+                                        saveType = FormContract.SaveType.OnAnyChange,
+                                        validationMode = FormContract.ValidationMode.NoValidation,
+                                        debug = false,
+                                    )
+                                }
+                            )
+                        }
 
+                        BulmaForm(vm)
+                    }
                 }
             },
         )

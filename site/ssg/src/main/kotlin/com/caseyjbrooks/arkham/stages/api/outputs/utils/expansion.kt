@@ -35,6 +35,7 @@ fun LocalArkhamHorrorExpansion.asFullOutput(
         investigators = this.investigators.map { it.asLiteOutput(expansionCode, allExpansionData, packsApi) },
         products = this.products.map { it.asLiteOutput(expansionCode, packsApi) },
         campaignLogSchema = this.campaignLogSchema,
+        campaignLogUiSchema = this.campaignLogUiSchema,
     )
 }
 

@@ -43,10 +43,10 @@ fun Row(
 
 @Composable
 fun Column(
-    vararg classes: String,
+    vararg classes: String?,
     content: ContentBuilder<HTMLElement>,
 ) {
-    Div({ classes("column", *classes) }) {
+    Div({ classes("column", *classes.filterNotNull().toTypedArray()) }) {
         content()
     }
 }

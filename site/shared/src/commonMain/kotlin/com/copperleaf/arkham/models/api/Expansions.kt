@@ -27,6 +27,7 @@ data class Expansion(
     val investigators: List<InvestigatorLite>,
     val products: List<ProductLite>,
     val campaignLogSchema: JsonElement,
+    val campaignLogUiSchema: JsonElement,
 )
 
 @Serializable

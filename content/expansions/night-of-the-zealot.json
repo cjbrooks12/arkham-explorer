@@ -703,6 +703,10 @@
                 "type": "string"
             }
         }
+    },
+    "campaignLogUiSchema": {
+        "type": "Control",
+        "scope": "#"
     }
 }
 

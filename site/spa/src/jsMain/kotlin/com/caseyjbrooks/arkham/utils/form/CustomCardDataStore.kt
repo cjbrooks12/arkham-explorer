@@ -11,9 +11,10 @@ import kotlinx.serialization.json.JsonElement
 import org.w3c.dom.get
 import org.w3c.dom.set
 
-class FormDataStore(
+class CustomCardDataStore(
     private val httpClient: HttpClient,
     private val formType: String,
+    private val localStorageKey: String,
 ) : FormSavedStateAdapter.Store {
     override suspend fun loadSchema(): JsonElement {
         return httpClient.get("schemas/$formType/schema.json").body()
@@ -24,12 +25,12 @@ class FormDataStore(
     }
 
     override suspend fun loadInitialData(): JsonElement {
-        return window.localStorage.get(formType)?.parseJson()
+        return window.localStorage.get(localStorageKey)?.parseJson()
             ?: httpClient.get("schemas/$formType/defaultData.json").body()
     }
 
     override suspend fun saveUpdatedData(data: JsonElement) {
-        window.localStorage.set(formType, data.toJsonString())
+        window.localStorage.set(localStorageKey, data.toJsonString())
     }
 
     suspend fun getFormRegions(): Map<String, FormIntRegion> {
