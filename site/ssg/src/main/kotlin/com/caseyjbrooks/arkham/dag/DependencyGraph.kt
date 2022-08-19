@@ -8,7 +8,6 @@ import com.caseyjbrooks.arkham.utils.ResourceService
 import com.caseyjbrooks.arkham.utils.SiteConfiguration
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.coroutineScope
@@ -18,7 +17,6 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.conflate
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
-import kotlinx.coroutines.job
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import kotlin.time.ExperimentalTime
@@ -65,7 +63,7 @@ class DependencyGraph(
 // ---------------------------------------------------------------------------------------------------------------------
 
     suspend fun executeGraph() = coroutineScope {
-        withContext(Dispatchers.IO + SupervisorJob(coroutineContext.job) + CoroutineExceptionHandler { _, t -> t.printStackTrace() }) {
+        withContext(Dispatchers.IO + CoroutineExceptionHandler { _, t -> t.printStackTrace() }) {
             renderers.forEach { renderer ->
                 launch { with(renderer) { start(this@DependencyGraph) } }
             }

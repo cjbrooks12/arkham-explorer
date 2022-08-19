@@ -21,6 +21,12 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: 11
+      - name: "Cache SSG HTTP caches"
+        id: 'cache-http'
+        uses: 'actions/cache@v3'
+        with:
+          path: 'build/cache'
+          key: '${{ runner.os }}-primes'
       - name: 'Build Kotlin Compose/Web SPA'
         run: './gradlew :site:spa:build -Prelease'
       - name: 'Build the rest of the static site'
