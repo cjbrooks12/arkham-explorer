@@ -19,6 +19,7 @@ import com.caseyjbrooks.arkham.utils.theme.bulma.NavigationRoute
 import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayout
 import org.jetbrains.compose.web.dom.Text
 
+@Suppress("UNUSED_PARAMETER")
 object DividersGeneratorUi {
     @Composable
     fun Page(injector: ArkhamInjector) {

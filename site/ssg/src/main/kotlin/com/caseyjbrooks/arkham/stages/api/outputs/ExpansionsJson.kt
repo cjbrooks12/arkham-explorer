@@ -15,6 +15,7 @@ import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.encodeToStream
 import java.nio.file.Paths
 
+@Suppress("UNUSED_PARAMETER")
 object ExpansionsJson {
     public val tags = listOf("FetchExpansionData", "output", "expansions")
 
@@ -53,7 +54,7 @@ object ExpansionsJson {
     ): ExpansionList {
         return ExpansionList(
             expansions = localExpansions
-                .map { (node, localExpansion) ->
+                .map { (_, localExpansion) ->
                     localExpansion.asLiteOutput(localExpansion.code, localExpansions.map { it.second }, packsApi)
                 }
                 .sortedBy {

@@ -22,6 +22,7 @@ import com.copperleaf.arkham.models.api.EncounterSetId
 import com.copperleaf.arkham.models.api.ExpansionLite
 import org.jetbrains.compose.web.dom.Text
 
+@Suppress("UNUSED_PARAMETER")
 object EncounterSetDetailsUi {
     @Composable
     fun Page(injector: ArkhamInjector, encounterSetId: EncounterSetId) {

@@ -24,6 +24,7 @@ import kotlinx.coroutines.withContext
 import kotlin.time.ExperimentalTime
 import kotlin.time.measureTime
 
+@Suppress("UNCHECKED_CAST")
 class DependencyGraph(
     public val config: SiteConfiguration,
     /**

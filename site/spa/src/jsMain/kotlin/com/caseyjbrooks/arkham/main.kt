@@ -17,9 +17,9 @@ fun main() {
 
         browserMain(isPwa = source == "pwa")
     } catch (t: Throwable) {
-        self.addEventListener("install", { event ->
+        self.addEventListener("install", {
         })
-        self.addEventListener("activate", { event ->
+        self.addEventListener("activate", {
         })
 
         serviceWorkerMain()

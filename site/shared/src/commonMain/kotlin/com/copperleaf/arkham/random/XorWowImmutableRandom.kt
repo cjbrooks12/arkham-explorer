@@ -27,13 +27,8 @@ internal class XorWowImmutableRandom internal constructor(
         // From Marsaglia, G. 2003. Xorshift RNGs. J. Statis. Soft. 8, 14, p. 5
         var t = _x
         t = t xor (t ushr 2)
-        val x = _y
-        val y = _z
-        val z = _w
         val v0 = _v
-        val w = v0
         t = (t xor (t shl 1)) xor v0 xor (v0 shl 4)
-        val v = t
         val addend = _addend + 362437
         return t + addend
     }

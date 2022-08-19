@@ -22,6 +22,7 @@ import com.copperleaf.arkham.models.api.Expansion
 import kotlinx.serialization.json.JsonNull
 import org.jetbrains.compose.web.dom.Text
 
+@Suppress("UNUSED_PARAMETER")
 object ExpansionDetailsUi {
     @Composable
     fun Page(injector: ArkhamInjector, expansionCode: String) {

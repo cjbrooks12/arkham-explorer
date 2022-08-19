@@ -15,6 +15,7 @@ import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.encodeToStream
 import java.nio.file.Paths
 
+@Suppress("UNUSED_PARAMETER")
 object ScenarioJson {
     public val tags = listOf("FetchExpansionData", "output", "scenario")
 

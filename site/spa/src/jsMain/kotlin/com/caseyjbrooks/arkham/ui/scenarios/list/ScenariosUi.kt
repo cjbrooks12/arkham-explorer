@@ -22,6 +22,7 @@ import com.copperleaf.arkham.models.api.ExpansionLite
 import com.copperleaf.arkham.models.api.ScenarioLite
 import org.jetbrains.compose.web.dom.Text
 
+@Suppress("UNUSED_PARAMETER")
 object ScenariosUi {
     @Composable
     fun Page(injector: ArkhamInjector) {

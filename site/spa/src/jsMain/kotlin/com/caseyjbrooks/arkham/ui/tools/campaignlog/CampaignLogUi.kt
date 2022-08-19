@@ -19,6 +19,7 @@ import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayout
 import com.copperleaf.ballast.repository.cache.getValueOrNull
 import org.jetbrains.compose.web.dom.Text
 
+@Suppress("UNUSED_PARAMETER")
 object CampaignLogUi {
     @Composable
     fun Page(injector: ArkhamInjector, expansionCode: String? = null, campaignLogId: String? = null) {
@@ -36,7 +37,7 @@ object CampaignLogUi {
 
     @Composable
     fun Page(state: CampaignLogContract.State, postInput: (CampaignLogContract.Inputs) -> Unit) {
-        MainLayout(state.layout) { layoutState ->
+        MainLayout(state.layout) {
             Header(state, postInput)
             Body(state, postInput)
         }

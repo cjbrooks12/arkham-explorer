@@ -49,6 +49,7 @@ import org.w3c.dom.HTMLCanvasElement
 import org.w3c.dom.Image
 import org.w3c.dom.MIDDLE
 
+@Suppress("UNUSED_PARAMETER")
 object CustomCardsUi {
     @Composable
     fun Page(injector: ArkhamInjector) {
@@ -126,7 +127,7 @@ object CustomCardsUi {
                     "${BuildConfig.BASE_URL}/assets/cards/$cardType/$cardClass.jpeg",
                     regions,
                     vmState
-                ) { width, height ->
+                ) { _, _ ->
                     textBaseline = CanvasTextBaseline.MIDDLE
                     textAlign = CanvasTextAlign.CENTER
 

@@ -31,6 +31,7 @@ fun LocalArkhamHorrorExpansion.Investigator.asFullOutput(
     )
 }
 
+@Suppress("UNUSED_PARAMETER")
 fun LocalArkhamHorrorExpansion.Investigator.asLiteOutput(
     expansionCode: String,
     allExpansionData: List<LocalArkhamHorrorExpansion>,

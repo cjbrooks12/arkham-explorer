@@ -21,6 +21,7 @@ import com.copperleaf.arkham.models.api.ExpansionLite
 import com.copperleaf.arkham.models.api.ExpansionType
 import org.jetbrains.compose.web.dom.Text
 
+@Suppress("UNUSED_PARAMETER")
 object ExpansionsUi {
 
     @Composable

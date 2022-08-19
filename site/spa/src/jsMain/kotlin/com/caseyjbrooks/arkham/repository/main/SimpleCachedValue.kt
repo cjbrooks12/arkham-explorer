@@ -1,3 +1,5 @@
+@file:Suppress("UNCHECKED_CAST")
+
 package com.caseyjbrooks.arkham.repository.main
 
 import com.copperleaf.ballast.repository.cache.Cached

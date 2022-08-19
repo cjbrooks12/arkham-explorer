@@ -27,6 +27,7 @@ import org.jetbrains.compose.web.dom.Input
 import org.jetbrains.compose.web.dom.Label
 import org.jetbrains.compose.web.dom.Text
 
+@Suppress("UNUSED_PARAMETER")
 object ChaosBagSimulatorUi {
     @Composable
     fun Page(injector: ArkhamInjector, scenarioId: ScenarioId?) {
@@ -43,7 +44,7 @@ object ChaosBagSimulatorUi {
 
     @Composable
     fun Page(state: ChaosBagSimulatorContract.State, postInput: (ChaosBagSimulatorContract.Inputs) -> Unit) {
-        MainLayout(state.layout) { layoutState ->
+        MainLayout(state.layout) {
             Header()
             Body(state, postInput)
         }

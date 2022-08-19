@@ -28,6 +28,7 @@ object ToolsListUi {
         Page(vmState) { vm.trySend(it) }
     }
 
+    @Suppress("UNUSED_PARAMETER")
     @Composable
     fun Page(state: HomeContract.State, postInput: (HomeContract.Inputs) -> Unit) {
         MainLayout(state.layout) {

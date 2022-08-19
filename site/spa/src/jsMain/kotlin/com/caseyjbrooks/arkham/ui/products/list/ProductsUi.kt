@@ -21,6 +21,7 @@ import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayoutState
 import com.copperleaf.arkham.models.api.ProductLite
 import org.jetbrains.compose.web.dom.Text
 
+@Suppress("UNUSED_PARAMETER")
 object ProductsUi {
     @Composable
     fun Page(injector: ArkhamInjector) {

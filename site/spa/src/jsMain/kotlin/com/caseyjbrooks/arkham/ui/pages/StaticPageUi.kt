@@ -19,6 +19,7 @@ import com.copperleaf.arkham.models.api.StaticPage
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Text
 
+@Suppress("UNUSED_PARAMETER")
 object StaticPageUi {
     @Composable
     fun Page(injector: ArkhamInjector, slug: String) {

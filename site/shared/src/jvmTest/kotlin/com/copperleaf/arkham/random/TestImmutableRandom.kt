@@ -31,7 +31,7 @@ class TestImmutableRandom {
             standardRandom.nextInt()
         }
         val immutableRandomSequence: List<Int> = (0..1000)
-            .runningFold(immutableRandom to 0) { acc, next -> acc.first.nextRandom() to acc.first.nextInt() }
+            .runningFold(immutableRandom to 0) { acc, _ -> acc.first.nextRandom() to acc.first.nextInt() }
             .map { it.second }
             .drop(1)
 

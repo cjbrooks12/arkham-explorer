@@ -1,3 +1,5 @@
+@file:Suppress("UNCHECKED_CAST")
+
 package com.caseyjbrooks.arkham.utils
 
 data class Tuple1<T1>(val t1: T1)

@@ -19,6 +19,7 @@ import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayout
 import org.jetbrains.compose.web.dom.Span
 import org.jetbrains.compose.web.dom.Text
 
+@Suppress("UNUSED_PARAMETER")
 object HomeUi {
     @Composable
     fun Page(injector: ArkhamInjector) {

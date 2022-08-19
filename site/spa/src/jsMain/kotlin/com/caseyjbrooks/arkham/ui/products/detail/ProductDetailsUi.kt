@@ -23,6 +23,7 @@ import com.copperleaf.arkham.models.api.ProductDetails
 import com.copperleaf.arkham.models.api.ProductId
 import org.jetbrains.compose.web.dom.Text
 
+@Suppress("UNUSED_PARAMETER")
 object ProductDetailsUi {
     @Composable
     fun Page(injector: ArkhamInjector, productId: ProductId) {

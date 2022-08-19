@@ -8,6 +8,7 @@ import kotlinx.datetime.TimeZone
 import kotlinx.datetime.todayIn
 import java.nio.file.Paths
 
+@Suppress("BlockingMethodInNonBlockingContext")
 class Sitemap : DependencyGraphBuilder {
 
     override suspend fun DependencyGraphBuilder.Scope.buildGraph() {
@@ -16,7 +17,7 @@ class Sitemap : DependencyGraphBuilder {
                 TerminalPathNode(
                     baseOutputDir = graph.config.outputDir,
                     outputPath = Paths.get("sitemap.xml"),
-                    doRender = { nodes, os ->
+                    doRender = { _, os ->
                         os.write(
                             """|
                             |<sitemapindex 

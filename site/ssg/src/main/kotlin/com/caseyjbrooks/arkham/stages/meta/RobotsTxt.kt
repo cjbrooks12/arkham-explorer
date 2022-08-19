@@ -5,6 +5,7 @@ import com.caseyjbrooks.arkham.dag.path.TerminalPathNode
 import com.caseyjbrooks.arkham.site.BuildConfig
 import java.nio.file.Paths
 
+@Suppress("BlockingMethodInNonBlockingContext")
 class RobotsTxt : DependencyGraphBuilder {
 
     override suspend fun DependencyGraphBuilder.Scope.buildGraph() {
@@ -13,7 +14,7 @@ class RobotsTxt : DependencyGraphBuilder {
                 TerminalPathNode(
                     baseOutputDir = graph.config.outputDir,
                     outputPath = Paths.get("robots.txt"),
-                    doRender = { nodes, os ->
+                    doRender = { _, os ->
                         os.write("""
                             |User-agent: *
                             |Disallow: *

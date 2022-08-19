@@ -37,7 +37,7 @@ object InvestigatorTrackerUi {
 
     @Composable
     fun Page(state: InvestigatorTrackerContract.State, postInput: (InvestigatorTrackerContract.Inputs) -> Unit) {
-        MainLayout(state.layout) { layoutState ->
+        MainLayout(state.layout) { _ ->
             Header()
             Body(state, postInput)
         }

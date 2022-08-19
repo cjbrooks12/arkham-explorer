@@ -1,3 +1,5 @@
+@file:Suppress("OPT_IN_USAGE")
+
 package com.caseyjbrooks.arkham
 
 import com.caseyjbrooks.arkham.app.BuildConfig

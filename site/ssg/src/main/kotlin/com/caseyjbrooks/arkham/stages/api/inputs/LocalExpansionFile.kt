@@ -13,6 +13,7 @@ import java.nio.file.Path
 import kotlin.io.path.inputStream
 import kotlin.io.path.nameWithoutExtension
 
+@Suppress("UNUSED_PARAMETER")
 object LocalExpansionFile {
     public val tags = listOf("FetchExpansionData", "input", "expansion", "local")
 
