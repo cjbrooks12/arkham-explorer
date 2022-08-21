@@ -1,0 +1,45 @@
+{
+    "type": "object",
+    "properties": {
+        "investigators": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "investigatorId": {
+                        "type": "string"
+                    },
+                    "totalExperience": {
+                        "type": "integer"
+                    },
+                    "spentExperience": {
+                        "type": "integer"
+                    },
+                    "physicalTrauma": {
+                        "type": "integer"
+                    },
+                    "mentalTrauma": {
+                        "type": "integer"
+                    },
+                    "earnedStoryCards": {
+                        "type": "string"
+                    },
+                    "status": {
+                        "type": "string",
+                        "enum": [
+                            "Alive",
+                            "Killed",
+                            "Insane"
+                        ]
+                    },
+                    "notes": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}

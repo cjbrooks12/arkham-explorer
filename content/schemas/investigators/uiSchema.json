@@ -1,0 +1,15 @@
+{
+    "type": "Categorization",
+    "elements": [
+        {
+            "type": "Category",
+            "label": "Investigators",
+            "elements": [
+                {
+                    "type": "Control",
+                    "scope": "#/properties/investigators"
+                }
+            ]
+        }
+    ]
+}
