@@ -7,6 +7,9 @@
     "icon": "{{baseUrl}}/assets/night-of-the-zealot.svg",
     "boxArt": "{{baseUrl}}/assets/night-of-the-zealot/box-art.webp",
     "flavorText": "The boundaries between worlds have drawn perilously thin. Dark forces work in the shadows and call upon unspeakable horrors, strange happenings are discovered all throughout the city of Arkham, Massachusetts, and behind it all an Ancient One manipulates everything from beyond the veil. It is time to revisit that which started it all…",
+    "startScenario": [
+        "The Gathering"
+    ],
     "scenarios": [
         {
             "id": "1-1",
@@ -132,7 +135,117 @@
                         "Elder Sign"
                     ]
                 }
-            ]
+            ],
+            "nextScenario": [
+                "The Midnight Masks"
+            ],
+            "campaignLogSchema": {
+                "type": "object",
+                "properties": {
+                    "scenarios": {
+                        "type": "object",
+                        "properties": {
+                            "1-1": {
+                                "type": "object",
+                                "properties": {
+                                    "status": {
+                                        "type": "string",
+                                        "enum": [
+                                            "Not Started",
+                                            "In Progress",
+                                            "Completed"
+                                        ]
+                                    },
+                                    "victoryDisplay": {
+                                        "type": "integer"
+                                    },
+                                    "resolution": {
+                                        "type": "string",
+                                        "enum": [
+                                            "No Resolution",
+                                            "Resolution 1",
+                                            "Resolution 2",
+                                            "Resolution 3"
+                                        ]
+                                    },
+                                    "notes": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "statements": {
+                        "type": "object",
+                        "properties": {
+                            "houseStatus": {
+                                "type": "string",
+                                "enum": [
+                                    "Your house is still standing",
+                                    "Your house has burned to the ground"
+                                ]
+                            },
+                            "ghoulPriest": {
+                                "type": "boolean",
+                                "title": "The Ghoul Priest is still alive"
+                            },
+                            "lita": {
+                                "type": "boolean",
+                                "title": "Lita was forced to find others to help her cause"
+                            }
+                        }
+                    }
+                }
+            },
+            "campaignLogUiSchema": {
+                "type": "VerticalLayout",
+                "elements": [
+                    {
+                        "type": "Control",
+                        "scope": "#/properties/scenarios/properties/1-1/properties/status"
+                    },
+                    {
+                        "type": "Control",
+                        "scope": "#/properties/scenarios/properties/1-1/properties/notes"
+                    },
+                    {
+                        "type": "VerticalLayout",
+                        "elements": [
+                            {
+                                "type": "Control",
+                                "scope": "#/properties/scenarios/properties/1-1/properties/resolution"
+                            },
+                            {
+                                "type": "Control",
+                                "scope": "#/properties/scenarios/properties/1-1/properties/victoryDisplay"
+                            },
+                            {
+                                "type": "Control",
+                                "scope": "#/properties/statements/properties/houseStatus"
+                            },
+                            {
+                                "type": "Control",
+                                "scope": "#/properties/statements/properties/ghoulPriest"
+                            },
+                            {
+                                "type": "Control",
+                                "scope": "#/properties/statements/properties/lita"
+                            }
+                        ],
+                        "rule": {
+                            "effect": "SHOW",
+                            "condition": {
+                                "scope": "#/properties/scenarios/properties/1-1/properties/status",
+                                "schema": {
+                                    "enum": [
+                                        "Completed"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
         },
         {
             "id": "1-2",
@@ -258,7 +371,162 @@
                         "Elder Sign"
                     ]
                 }
-            ]
+            ],
+            "nextScenario": [
+                "The Devourer Below"
+            ],
+            "campaignLogSchema": {
+                "type": "object",
+                "properties": {
+                    "scenarios": {
+                        "type": "object",
+                        "properties": {
+                            "1-2": {
+                                "type": "object",
+                                "properties": {
+                                    "status": {
+                                        "type": "string",
+                                        "enum": [
+                                            "Not Started",
+                                            "In Progress",
+                                            "Completed"
+                                        ]
+                                    },
+                                    "victoryDisplay": {
+                                        "type": "integer"
+                                    },
+                                    "resolution": {
+                                        "type": "string",
+                                        "enum": [
+                                            "No Resolution",
+                                            "Resolution 1",
+                                            "Resolution 2"
+                                        ]
+                                    },
+                                    "notes": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "statements": {
+                        "type": "object",
+                        "properties": {
+                            "ghoulPriest": {
+                                "type": "boolean",
+                                "title": "The Ghoul Priest is still alive"
+                            },
+                            "cultists": {
+                                "type": "object",
+                                "properties": {
+                                    "maskedHunter": {
+                                        "type": "string",
+                                        "title": "The Masked Hunter",
+                                        "enum": [
+                                            "Interrogated",
+                                            "Got Away"
+                                        ]
+                                    },
+                                    "wolfManDrew": {
+                                        "type": "string",
+                                        "title": "\"Wolf-Man\" Drew",
+                                        "enum": [
+                                            "Interrogated",
+                                            "Got Away"
+                                        ]
+                                    },
+                                    "hermanCollins": {
+                                        "type": "string",
+                                        "title": "Herman Collins",
+                                        "enum": [
+                                            "Interrogated",
+                                            "Got Away"
+                                        ]
+                                    },
+                                    "peterWarren": {
+                                        "type": "string",
+                                        "title": "Peter Warren",
+                                        "enum": [
+                                            "Interrogated",
+                                            "Got Away"
+                                        ]
+                                    },
+                                    "victoriaDevereux": {
+                                        "type": "string",
+                                        "title": "Victoria Devereux",
+                                        "enum": [
+                                            "Interrogated",
+                                            "Got Away"
+                                        ]
+                                    },
+                                    "ruthTurner": {
+                                        "type": "string",
+                                        "title": "Ruth Turner",
+                                        "enum": [
+                                            "Interrogated",
+                                            "Got Away"
+                                        ]
+                                    }
+                                }
+                            },
+                            "pastMidnight": {
+                                "type": "boolean",
+                                "title": "It is past midnight"
+                            }
+                        }
+                    }
+                }
+            },
+            "campaignLogUiSchema": {
+                "type": "VerticalLayout",
+                "elements": [
+                    {
+                        "type": "Control",
+                        "scope": "#/properties/scenarios/properties/1-2/properties/status"
+                    },
+                    {
+                        "type": "Control",
+                        "scope": "#/properties/scenarios/properties/1-2/properties/notes"
+                    },
+                    {
+                        "type": "VerticalLayout",
+                        "elements": [
+                            {
+                                "type": "Control",
+                                "scope": "#/properties/scenarios/properties/1-2/properties/resolution"
+                            },
+                            {
+                                "type": "Control",
+                                "scope": "#/properties/scenarios/properties/1-2/properties/victoryDisplay"
+                            },
+                            {
+                                "type": "Control",
+                                "scope": "#/properties/statements/properties/ghoulPriest"
+                            },
+                            {
+                                "type": "Control",
+                                "scope": "#/properties/statements/properties/pastMidnight"
+                            },
+                            {
+                                "type": "Control",
+                                "scope": "#/properties/statements/properties/cultists"
+                            }
+                        ],
+                        "rule": {
+                            "effect": "SHOW",
+                            "condition": {
+                                "scope": "#/properties/scenarios/properties/1-2/properties/status",
+                                "schema": {
+                                    "enum": [
+                                        "Completed"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
         },
         {
             "id": "1-3",
@@ -403,7 +671,104 @@
                         "Elder Sign"
                     ]
                 }
-            ]
+            ],
+            "campaignLogSchema": {
+                "type": "object",
+                "properties": {
+                    "scenarios": {
+                        "type": "object",
+                        "properties": {
+                            "1-3": {
+                                "type": "object",
+                                "properties": {
+                                    "status": {
+                                        "type": "string",
+                                        "enum": [
+                                            "Not Started",
+                                            "In Progress",
+                                            "Completed"
+                                        ]
+                                    },
+                                    "victoryDisplay": {
+                                        "type": "integer"
+                                    },
+                                    "resolution": {
+                                        "type": "string",
+                                        "enum": [
+                                            "No Resolution",
+                                            "Resolution 1",
+                                            "Resolution 2",
+                                            "Resolution 3"
+                                        ]
+                                    },
+                                    "notes": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "statements": {
+                        "type": "object",
+                        "properties": {
+                            "ghoulPriest": {
+                                "type": "boolean",
+                                "title": "The Ghoul Priest is still alive"
+                            },
+                            "umordhoth": {
+                                "type": "string",
+                                "enum": [
+                                    "Arkham succumbed to Umôrdhoth’s terrible vengeance",
+                                    "The ritual to summon Umôrdhoth was broken",
+                                    "The investigators repelled Umôrdhoth",
+                                    "The investigators sacrificed Lita Chantler to Umôrdhoth"
+                                ]
+                            }
+                        }
+                    }
+                }
+            },
+            "campaignLogUiSchema": {
+                "type": "VerticalLayout",
+                "elements": [
+                    {
+                        "type": "Control",
+                        "scope": "#/properties/scenarios/properties/1-3/properties/status"
+                    },
+                    {
+                        "type": "Control",
+                        "scope": "#/properties/scenarios/properties/1-3/properties/notes"
+                    },
+                    {
+                        "type": "VerticalLayout",
+                        "elements": [
+                            {
+                                "type": "Control",
+                                "scope": "#/properties/scenarios/properties/1-3/properties/resolution"
+                            },
+                            {
+                                "type": "Control",
+                                "scope": "#/properties/scenarios/properties/1-3/properties/victoryDisplay"
+                            },
+                            {
+                                "type": "Control",
+                                "scope": "#/properties/statements/properties/umordhoth"
+                            }
+                        ],
+                        "rule": {
+                            "effect": "SHOW",
+                            "condition": {
+                                "scope": "#/properties/scenarios/properties/1-3/properties/status",
+                                "schema": {
+                                    "enum": [
+                                        "Completed"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
         }
     ],
     "encounterSets": [
@@ -586,355 +951,7 @@
                 "Wendy Adams"
             ]
         }
-    ],
-    "campaignLogSchema": {
-        "type": "object",
-        "properties": {
-            "scenarios": {
-                "type": "object",
-                "properties": {
-                    "1-1": {
-                        "type": "object",
-                        "properties": {
-                            "status": {
-                                "type": "string",
-                                "enum": [
-                                    "Not Started",
-                                    "In Progress",
-                                    "Completed"
-                                ]
-                            },
-                            "victoryDisplay": {
-                                "type": "integer"
-                            },
-                            "resolution": {
-                                "type": "string",
-                                "enum": [
-                                    "No Resolution",
-                                    "Resolution 1",
-                                    "Resolution 2",
-                                    "Resolution 3"
-                                ]
-                            },
-                            "notes": {
-                                "type": "string"
-                            }
-                        }
-                    },
-                    "1-2": {
-                        "type": "object",
-                        "properties": {
-                            "status": {
-                                "type": "string",
-                                "enum": [
-                                    "Not Started",
-                                    "In Progress",
-                                    "Completed"
-                                ]
-                            },
-                            "victoryDisplay": {
-                                "type": "integer"
-                            },
-                            "resolution": {
-                                "type": "string",
-                                "enum": [
-                                    "No Resolution",
-                                    "Resolution 1",
-                                    "Resolution 2"
-                                ]
-                            },
-                            "notes": {
-                                "type": "string"
-                            }
-                        }
-                    },
-                    "1-3": {
-                        "type": "object",
-                        "properties": {
-                            "status": {
-                                "type": "string",
-                                "enum": [
-                                    "Not Started",
-                                    "In Progress",
-                                    "Completed"
-                                ]
-                            },
-                            "victoryDisplay": {
-                                "type": "integer"
-                            },
-                            "resolution": {
-                                "type": "string",
-                                "enum": [
-                                    "No Resolution",
-                                    "Resolution 1",
-                                    "Resolution 2",
-                                    "Resolution 3"
-                                ]
-                            },
-                            "notes": {
-                                "type": "string"
-                            }
-                        }
-                    }
-                }
-            },
-            "statements": {
-                "type": "object",
-                "properties": {
-                    "houseStatus": {
-                        "type": "string",
-                        "enum": [
-                            "Your house is still standing",
-                            "Your house has burned to the ground"
-                        ]
-                    },
-                    "ghoulPriest": {
-                        "type": "boolean",
-                        "title": "The Ghoul Priest is still alive"
-                    },
-                    "lita": {
-                        "type": "boolean",
-                        "title": "Lita was forced to find others to help her cause"
-                    },
-                    "cultists": {
-                        "type": "object",
-                        "properties": {
-                            "maskedHunter": {
-                                "type": "string",
-                                "title": "The Masked Hunter",
-                                "enum": [
-                                    "Interrogated",
-                                    "Got Away"
-                                ]
-                            },
-                            "wolfManDrew": {
-                                "type": "string",
-                                "title": "\"Wolf-Man\" Drew",
-                                "enum": [
-                                    "Interrogated",
-                                    "Got Away"
-                                ]
-                            },
-                            "hermanCollins": {
-                                "type": "string",
-                                "title": "Herman Collins",
-                                "enum": [
-                                    "Interrogated",
-                                    "Got Away"
-                                ]
-                            },
-                            "peterWarren": {
-                                "type": "string",
-                                "title": "Peter Warren",
-                                "enum": [
-                                    "Interrogated",
-                                    "Got Away"
-                                ]
-                            },
-                            "victoriaDevereux": {
-                                "type": "string",
-                                "title": "Victoria Devereux",
-                                "enum": [
-                                    "Interrogated",
-                                    "Got Away"
-                                ]
-                            },
-                            "ruthTurner": {
-                                "type": "string",
-                                "title": "Ruth Turner",
-                                "enum": [
-                                    "Interrogated",
-                                    "Got Away"
-                                ]
-                            }
-                        }
-                    },
-                    "pastMidnight": {
-                        "type": "boolean",
-                        "title": "It is past midnight"
-                    },
-                    "umordhoth": {
-                        "type": "string",
-                        "enum": [
-                            "Arkham succumbed to Umôrdhoth’s terrible vengeance",
-                            "The ritual to summon Umôrdhoth was broken",
-                            "The investigators repelled Umôrdhoth",
-                            "The investigators sacrificed Lita Chantler to Umôrdhoth"
-                        ]
-                    }
-                }
-            }
-        }
-    },
-    "campaignLogUiSchema": {
-        "type": "Categorization",
-        "elements": [
-            {
-                "type": "Category",
-                "label": "The Gathering",
-                "elements": [
-                    {
-                        "type": "Control",
-                        "scope": "#/properties/scenarios/properties/1-1/properties/status"
-                    },
-                    {
-                        "type": "Control",
-                        "scope": "#/properties/scenarios/properties/1-1/properties/notes"
-                    },
-                    {
-                        "type": "VerticalLayout",
-                        "elements": [
-                            {
-                                "type": "Control",
-                                "scope": "#/properties/scenarios/properties/1-1/properties/resolution"
-                            },
-                            {
-                                "type": "Control",
-                                "scope": "#/properties/scenarios/properties/1-1/properties/victoryDisplay"
-                            },
-                            {
-                                "type": "Control",
-                                "scope": "#/properties/statements/properties/houseStatus"
-                            },
-                            {
-                                "type": "Control",
-                                "scope": "#/properties/statements/properties/ghoulPriest"
-                            },
-                            {
-                                "type": "Control",
-                                "scope": "#/properties/statements/properties/lita"
-                            }
-                        ],
-                        "rule": {
-                            "effect": "SHOW",
-                            "condition": {
-                                "scope": "#/properties/scenarios/properties/1-1/properties/status",
-                                "schema": {
-                                    "enum": [
-                                        "Completed"
-                                    ]
-                                }
-                            }
-                        }
-                    }
-                ]
-            },
-            {
-                "type": "Category",
-                "label": "The Midnight Masks",
-                "elements": [
-                    {
-                        "type": "Control",
-                        "scope": "#/properties/scenarios/properties/1-2/properties/status"
-                    },
-                    {
-                        "type": "Control",
-                        "scope": "#/properties/scenarios/properties/1-2/properties/notes"
-                    },
-                    {
-                        "type": "VerticalLayout",
-                        "elements": [
-                            {
-                                "type": "Control",
-                                "scope": "#/properties/scenarios/properties/1-2/properties/resolution"
-                            },
-                            {
-                                "type": "Control",
-                                "scope": "#/properties/scenarios/properties/1-2/properties/victoryDisplay"
-                            },
-                            {
-                                "type": "Control",
-                                "scope": "#/properties/statements/properties/ghoulPriest"
-                            },
-                            {
-                                "type": "Control",
-                                "scope": "#/properties/statements/properties/pastMidnight"
-                            },
-                            {
-                                "type": "Control",
-                                "scope": "#/properties/statements/properties/cultists"
-                            }
-                        ],
-                        "rule": {
-                            "effect": "SHOW",
-                            "condition": {
-                                "scope": "#/properties/scenarios/properties/1-2/properties/status",
-                                "schema": {
-                                    "enum": [
-                                        "Completed"
-                                    ]
-                                }
-                            }
-                        }
-                    }
-                ],
-                "rule": {
-                    "effect": "SHOW",
-                    "condition": {
-                        "scope": "#/properties/scenarios/properties/1-1/properties/status",
-                        "schema": {
-                            "enum": [
-                                "Completed"
-                            ]
-                        }
-                    }
-                }
-            },
-            {
-                "type": "Category",
-                "label": "The Devourer Below",
-                "elements": [
-                    {
-                        "type": "Control",
-                        "scope": "#/properties/scenarios/properties/1-3/properties/status"
-                    },
-                    {
-                        "type": "Control",
-                        "scope": "#/properties/scenarios/properties/1-3/properties/notes"
-                    },
-                    {
-                        "type": "VerticalLayout",
-                        "elements": [
-                            {
-                                "type": "Control",
-                                "scope": "#/properties/scenarios/properties/1-3/properties/resolution"
-                            },
-                            {
-                                "type": "Control",
-                                "scope": "#/properties/scenarios/properties/1-3/properties/victoryDisplay"
-                            },
-                            {
-                                "type": "Control",
-                                "scope": "#/properties/statements/properties/umordhoth"
-                            }
-                        ],
-                        "rule": {
-                            "effect": "SHOW",
-                            "condition": {
-                                "scope": "#/properties/scenarios/properties/1-3/properties/status",
-                                "schema": {
-                                    "enum": [
-                                        "Completed"
-                                    ]
-                                }
-                            }
-                        }
-                    }
-                ],
-                "rule": {
-                    "effect": "SHOW",
-                    "condition": {
-                        "scope": "#/properties/scenarios/properties/1-2/properties/status",
-                        "schema": {
-                            "enum": [
-                                "Completed"
-                            ]
-                        }
-                    }
-                }
-            }
-        ]
-    }
+    ]
 }
 
 

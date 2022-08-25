@@ -1,15 +1,15 @@
 {
-    "type": "Categorization",
+    "type": "VerticalLayout",
     "elements": [
         {
-            "type": "Category",
-            "label": "Investigators",
-            "elements": [
-                {
-                    "type": "Control",
-                    "scope": "#/properties/investigators"
-                }
-            ]
+            "type": "Control",
+            "scope": "#/properties/investigators"
+        },
+        {
+            "type": "Button",
+            "options": {
+                "action": "toggleDebug"
+            }
         }
     ]
 }

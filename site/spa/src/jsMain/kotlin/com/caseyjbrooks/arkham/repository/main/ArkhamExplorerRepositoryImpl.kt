@@ -1,7 +1,7 @@
 package com.caseyjbrooks.arkham.repository.main
 
 import com.caseyjbrooks.arkham.api.ArkhamExplorerApi
-import com.copperleaf.arkham.models.api.StaticPage
+import com.caseyjbrooks.arkham.utils.form.FormDefinition
 import com.copperleaf.arkham.models.api.EncounterSetDetails
 import com.copperleaf.arkham.models.api.EncounterSetId
 import com.copperleaf.arkham.models.api.EncounterSetList
@@ -16,6 +16,7 @@ import com.copperleaf.arkham.models.api.ProductList
 import com.copperleaf.arkham.models.api.ScenarioDetails
 import com.copperleaf.arkham.models.api.ScenarioId
 import com.copperleaf.arkham.models.api.ScenarioList
+import com.copperleaf.arkham.models.api.StaticPage
 import com.copperleaf.ballast.BallastViewModelConfiguration
 import com.copperleaf.ballast.forViewModel
 import com.copperleaf.ballast.repository.BallastRepository
@@ -124,6 +125,16 @@ class ArkhamExplorerRepositoryImpl(
         ) { api.getStaticPageContent(slug) }
     }
 
+    override fun getFormDefinition(forceRefresh: Boolean, slug: String): Flow<Cached<FormDefinition>> {
+        return flowOfKey(
+            forceRefresh,
+            SimpleCachedValue.Key("Schema", slug)
+        ) { api.getFormSchema(slug) }
+    }
+
+// Utils
+// ---------------------------------------------------------------------------------------------------------------------
+
     private fun <T : Any> flowOfKey(
         forceRefresh: Boolean,
         key: SimpleCachedValue.Key<T>,
@@ -138,5 +149,4 @@ class ArkhamExplorerRepositoryImpl(
                     ?: emptyFlow()
             }
     }
-
 }

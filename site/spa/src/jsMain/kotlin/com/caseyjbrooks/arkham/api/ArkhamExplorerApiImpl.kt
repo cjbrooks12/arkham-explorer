@@ -1,7 +1,7 @@
 package com.caseyjbrooks.arkham.api
 
 import com.caseyjbrooks.arkham.config.ArkhamConfig
-import com.copperleaf.arkham.models.api.StaticPage
+import com.caseyjbrooks.arkham.utils.form.FormDefinition
 import com.copperleaf.arkham.models.api.EncounterSetDetails
 import com.copperleaf.arkham.models.api.EncounterSetId
 import com.copperleaf.arkham.models.api.EncounterSetList
@@ -16,9 +16,16 @@ import com.copperleaf.arkham.models.api.ProductList
 import com.copperleaf.arkham.models.api.ScenarioDetails
 import com.copperleaf.arkham.models.api.ScenarioId
 import com.copperleaf.arkham.models.api.ScenarioList
+import com.copperleaf.arkham.models.api.StaticPage
+import com.copperleaf.forms.core.ui.UiSchema
+import com.copperleaf.json.schema.JsonSchema
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.request.get
+import kotlinx.coroutines.Deferred
+import kotlinx.coroutines.async
+import kotlinx.coroutines.coroutineScope
+import kotlinx.serialization.json.JsonElement
 
 class ArkhamExplorerApiImpl(
     private val config: ArkhamConfig,
@@ -86,7 +93,28 @@ class ArkhamExplorerApiImpl(
 
     override suspend fun getStaticPageContent(slug: String): StaticPage {
         return httpClient
-            .get("pages/$slug.json")
+            .get("api/pages/$slug.json")
             .body()
+    }
+
+    override suspend fun getFormSchema(slug: String): FormDefinition = coroutineScope {
+        val asyncSchema: Deferred<JsonElement> = async {
+            httpClient.get("api/schemas/$slug/schema.json").body()
+        }
+        val asyncUiSchema: Deferred<JsonElement> = async {
+            httpClient.get("api/schemas/$slug/uiSchema.json").body()
+        }
+        val asyncDefaultData: Deferred<JsonElement> = async {
+            httpClient.get("api/schemas/$slug/defaultData.json").body()
+        }
+
+        val schema = JsonSchema.parse(asyncSchema.await())
+        val uiSchema = UiSchema.parse(schema, asyncUiSchema.await())
+
+        FormDefinition(
+            schema = schema,
+            uiSchema = uiSchema,
+            defaultData = asyncDefaultData.await(),
+        )
     }
 }

@@ -10,10 +10,10 @@ import com.caseyjbrooks.arkham.utils.destruct1
 import com.caseyjbrooks.arkham.utils.getOutputExtension
 import com.caseyjbrooks.arkham.utils.processByExtension
 import com.caseyjbrooks.arkham.utils.withExtension
-import com.caseyjbrooks.arkham.utils.withPrefix
 import com.copperleaf.arkham.models.api.StaticPage
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.encodeToStream
+import kotlin.io.path.div
 import kotlin.io.path.extension
 import kotlin.io.path.nameWithoutExtension
 import kotlin.io.path.readText
@@ -61,8 +61,8 @@ class StaticPages : DependencyGraphBuilder {
                 addNodeAndEdge(
                     start = inputNodeQuery,
                     newEndNode = TerminalPathNode(
-                        baseOutputDir = graph.config.outputDir,
-                        outputPath = outputPath.withPrefix("pages").withExtension("json"),
+                        baseOutputDir = graph.config.outputDir / "api/pages",
+                        outputPath = outputPath.withExtension("json"),
                         tags = listOf("StaticPages", "output"),
                         doRender = { inputNodes, os ->
                             val (sourceContentFile) = inputNodes.destruct1<InputPathNode>()

@@ -50,7 +50,7 @@ class CopySchemas : DependencyGraphBuilder {
                     start = inputNode,
                     newEndNode = TerminalPathNode(
                         tags = listOf("CopySchemas", "output"),
-                        baseOutputDir = graph.config.outputDir / "schemas",
+                        baseOutputDir = graph.config.outputDir / "api/schemas",
                         outputPath = outputPath,
                         doRender = { inputNodes, os ->
                             val (sourceFile) = inputNodes.destruct1<InputPathNode>()

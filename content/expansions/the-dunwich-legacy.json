@@ -7,6 +7,10 @@
         "type": "cycle"
     },
     "flavorText": "A monstrous presence once terrorized the secluded village of Dunwich. The season of horror ended only after three professors from Miskatonic University—Dr. Henry Armitage, Dr. Francis Morgan, and Professor Warren Price—ventured to Dunwich, armed with secret knowledge that enabled them to defeat the creature. Now, several months later, Dr. Armitage’s colleagues have gone missing, and he fears the worst…",
+    "startScenario": [
+        "Extracurricular Activity",
+        "The House Always Wins"
+    ],
     "scenarios": [
         {
             "id": "2-1",
@@ -53,6 +57,10 @@
                     "conditional": false,
                     "setAside": false
                 }
+            ],
+            "nextScenario": [
+                "The House Always Wins",
+                "The Miskatonic Museum"
             ]
         },
         {
@@ -90,6 +98,10 @@
                     "conditional": false,
                     "setAside": true
                 }
+            ],
+            "nextScenario": [
+                "Extracurricular Activity",
+                "The Miskatonic Museum"
             ]
         },
         {
@@ -127,6 +139,9 @@
                     "conditional": false,
                     "setAside": false
                 }
+            ],
+            "nextScenario": [
+                "The Essex County Express"
             ]
         },
         {
@@ -159,6 +174,9 @@
                     "conditional": false,
                     "setAside": false
                 }
+            ],
+            "nextScenario": [
+                "Blood on the Altar"
             ]
         },
         {
@@ -196,6 +214,9 @@
                     "conditional": false,
                     "setAside": true
                 }
+            ],
+            "nextScenario": [
+                "Undimensioned and Unseen"
             ]
         },
         {
@@ -228,6 +249,9 @@
                     "conditional": false,
                     "setAside": false
                 }
+            ],
+            "nextScenario": [
+                "Where Doom Awaits"
             ]
         },
         {
@@ -275,6 +299,9 @@
                     "conditional": false,
                     "setAside": true
                 }
+            ],
+            "nextScenario": [
+                "Lost in Time and Space"
             ]
         },
         {

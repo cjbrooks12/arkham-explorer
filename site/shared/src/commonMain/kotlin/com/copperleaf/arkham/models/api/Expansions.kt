@@ -2,7 +2,6 @@ package com.copperleaf.arkham.models.api
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import kotlinx.serialization.json.JsonElement
 import kotlin.jvm.JvmInline
 
 @Serializable
@@ -26,8 +25,7 @@ data class Expansion(
     val encounterSets: List<EncounterSetLite>,
     val investigators: List<InvestigatorLite>,
     val products: List<ProductLite>,
-    val campaignLogSchema: JsonElement,
-    val campaignLogUiSchema: JsonElement,
+    val startScenario: List<ScenarioId> = emptyList(),
 )
 
 @Serializable
@@ -39,6 +37,7 @@ data class ExpansionLite(
     val expansionType: ExpansionType,
     val boxArt: String,
     val flavorText: String,
+    val startScenario: List<ScenarioLite>,
 )
 
 @Serializable

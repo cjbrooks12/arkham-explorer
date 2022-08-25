@@ -1,6 +1,7 @@
 package com.copperleaf.arkham.models.api
 
 import kotlinx.serialization.Serializable
+import kotlinx.serialization.json.JsonElement
 import kotlin.jvm.JvmInline
 
 @Serializable
@@ -20,6 +21,9 @@ data class ScenarioDetails(
     val encounterSets: List<ScenarioEncounterSet>,
     val chaosBag: List<ScenarioChaosBag>,
     val products: List<ProductLite>,
+    val nextScenario: List<ScenarioId>,
+    val campaignLogSchema: JsonElement,
+    val campaignLogUiSchema: JsonElement,
 )
 
 @Serializable

@@ -68,7 +68,7 @@ kotlin {
 
                 implementation(libs.ktor.client.js)
 
-                implementation("io.github.copper-leaf:json-forms-compose-bulma:0.5.1-SNAPSHOT")
+                implementation("io.github.copper-leaf:json-forms-compose-bulma:0.6.0-SNAPSHOT")
             }
         }
     }

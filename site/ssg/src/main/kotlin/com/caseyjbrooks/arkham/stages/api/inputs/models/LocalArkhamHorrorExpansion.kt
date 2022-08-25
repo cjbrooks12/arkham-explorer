@@ -20,8 +20,7 @@ data class LocalArkhamHorrorExpansion(
     val scenarios: List<Scenario> = listOf(),
     val encounterSets: List<EncounterSet> = listOf(),
     val investigators: List<Investigator> = emptyList(),
-    val campaignLogSchema: JsonElement = JsonNull,
-    val campaignLogUiSchema: JsonElement = JsonNull,
+    val startScenario: List<String> = emptyList(),
 ) {
     @Serializable
     data class Scenario(
@@ -30,6 +29,9 @@ data class LocalArkhamHorrorExpansion(
         val icon: String = "",
         val encounterSets: List<ScenarioEncounterSet> = listOf(),
         val chaosBag: List<ScenarioChaosBag> = emptyList(),
+        val nextScenario: List<String> = emptyList(),
+        val campaignLogSchema: JsonElement = JsonNull,
+        val campaignLogUiSchema: JsonElement = JsonNull,
     ) {
         @Serializable
         data class ScenarioEncounterSet(

@@ -25,6 +25,9 @@ fun LocalArkhamHorrorExpansion.Scenario.asFullOutput(
         products = allExpansionData
             .getProductsContainingScenario(this.name)
             .map { it.asLiteOutput(expansionCode, packsApi) },
+        campaignLogSchema = this.campaignLogSchema,
+        campaignLogUiSchema = this.campaignLogUiSchema,
+        nextScenario = this.nextScenario.map { ScenarioId(allExpansionData.getScenarioByName(it).id) }
     )
 }
 

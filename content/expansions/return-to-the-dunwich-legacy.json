@@ -7,6 +7,10 @@
         "type": "return to",
         "forCycle": "The Dunwich Legacy"
     },
+    "startScenario": [
+        "Return to Extracurricular Activity",
+        "Return to The House Always Wins"
+    ],
     "scenarios": [
         {
             "id": "2-1r",
@@ -53,6 +57,10 @@
                     "conditional": false,
                     "setAside": false
                 }
+            ],
+            "nextScenario": [
+                "Return to The House Always Wins",
+                "Return to The Miskatonic Museum"
             ]
         },
         {
@@ -90,6 +98,10 @@
                     "conditional": false,
                     "setAside": true
                 }
+            ],
+            "nextScenario": [
+                "Return to Extracurricular Activity",
+                "Return to The Miskatonic Museum"
             ]
         },
         {
@@ -127,6 +139,9 @@
                     "conditional": false,
                     "setAside": false
                 }
+            ],
+            "nextScenario": [
+                "Return to The Essex County Express"
             ]
         },
         {
@@ -159,6 +174,9 @@
                     "conditional": false,
                     "setAside": false
                 }
+            ],
+            "nextScenario": [
+                "Return to Blood on the Altar"
             ]
         },
         {
@@ -196,6 +214,9 @@
                     "conditional": false,
                     "setAside": false
                 }
+            ],
+            "nextScenario": [
+                "Return to Undimensioned and Unseen"
             ]
         },
         {
@@ -228,6 +249,9 @@
                     "conditional": false,
                     "setAside": false
                 }
+            ],
+            "nextScenario": [
+                "Return to Where Doom Awaits"
             ]
         },
         {
@@ -275,6 +299,9 @@
                     "conditional": false,
                     "setAside": false
                 }
+            ],
+            "nextScenario": [
+                "Return to Lost in Time and Space"
             ]
         },
         {
@@ -307,6 +334,9 @@
                     "conditional": false,
                     "setAside": false
                 }
+            ],
+            "nextScenario": [
+                "Return to Blood on the Altar"
             ]
         }
     ],

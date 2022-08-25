@@ -7,6 +7,7 @@ import com.copperleaf.arkham.models.api.Expansion
 import com.copperleaf.arkham.models.api.ExpansionId
 import com.copperleaf.arkham.models.api.ExpansionLite
 import com.copperleaf.arkham.models.api.ExpansionType
+import com.copperleaf.arkham.models.api.ScenarioId
 
 fun LocalArkhamHorrorExpansion.asFullOutput(
     expansionCode: String,
@@ -34,8 +35,7 @@ fun LocalArkhamHorrorExpansion.asFullOutput(
         encounterSets = this.encounterSets.map { it.asLiteOutput(expansionCode, allExpansionData, packsApi) },
         investigators = this.investigators.map { it.asLiteOutput(expansionCode, allExpansionData, packsApi) },
         products = this.products.map { it.asLiteOutput(expansionCode, packsApi) },
-        campaignLogSchema = this.campaignLogSchema,
-        campaignLogUiSchema = this.campaignLogUiSchema,
+        startScenario = this.startScenario.map { ScenarioId(allExpansionData.getScenarioByName(it).id) },
     )
 }
 
@@ -62,5 +62,8 @@ fun LocalArkhamHorrorExpansion.asLiteOutput(
         icon = this.icon.preprocessContent(),
         boxArt = this.boxArt.preprocessContent(),
         flavorText = this.flavorText,
+        startScenario = this.startScenario.map {
+            allExpansionData.getScenarioByName(it).asLiteOutput(expansionCode, allExpansionData, packsApi)
+        },
     )
 }

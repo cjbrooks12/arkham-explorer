@@ -1,6 +1,6 @@
 package com.caseyjbrooks.arkham.repository.main
 
-import com.copperleaf.arkham.models.api.StaticPage
+import com.caseyjbrooks.arkham.utils.form.FormDefinition
 import com.copperleaf.arkham.models.api.EncounterSetDetails
 import com.copperleaf.arkham.models.api.EncounterSetId
 import com.copperleaf.arkham.models.api.EncounterSetList
@@ -15,6 +15,7 @@ import com.copperleaf.arkham.models.api.ProductList
 import com.copperleaf.arkham.models.api.ScenarioDetails
 import com.copperleaf.arkham.models.api.ScenarioId
 import com.copperleaf.arkham.models.api.ScenarioList
+import com.copperleaf.arkham.models.api.StaticPage
 import com.copperleaf.ballast.repository.cache.Cached
 import kotlinx.coroutines.flow.Flow
 
@@ -36,4 +37,6 @@ interface ArkhamExplorerRepository {
     fun getProduct(forceRefresh: Boolean, productId: ProductId): Flow<Cached<ProductDetails>>
 
     fun getStaticPageContent(forceRefresh: Boolean, slug: String): Flow<Cached<StaticPage>>
+
+    fun getFormDefinition(forceRefresh: Boolean, slug: String): Flow<Cached<FormDefinition>>
 }

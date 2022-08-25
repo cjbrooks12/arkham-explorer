@@ -19,7 +19,6 @@ import com.caseyjbrooks.arkham.utils.theme.bulma.Hero
 import com.caseyjbrooks.arkham.utils.theme.bulma.NavigationRoute
 import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayout
 import com.copperleaf.arkham.models.api.Expansion
-import kotlinx.serialization.json.JsonNull
 import org.jetbrains.compose.web.dom.Text
 
 @Suppress("UNUSED_PARAMETER")
@@ -139,9 +138,7 @@ object ExpansionDetailsUi {
                 Card(
                     title = "Tools",
                     navigationRoutes = buildList<NavigationRoute> {
-                        if (expansion.campaignLogSchema != JsonNull) {
-                            this += NavigationRoute("Campaign log", null, ArkhamApp.CreateCampaignLog, expansion.expansionCode)
-                        }
+                        this += NavigationRoute("Campaign log", null, ArkhamApp.CreateCampaignLog, expansion.expansionCode)
                     }.toTypedArray()
                 )
             },
