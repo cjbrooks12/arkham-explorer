@@ -47,8 +47,8 @@ import com.caseyjbrooks.arkham.ui.scenarios.detail.ScenarioDetailsViewModel
 import com.caseyjbrooks.arkham.ui.scenarios.list.ScenariosContract
 import com.caseyjbrooks.arkham.ui.scenarios.list.ScenariosInputHandler
 import com.caseyjbrooks.arkham.ui.scenarios.list.ScenariosViewModel
-import com.caseyjbrooks.arkham.ui.tools.campaignlog.CampaignLogContract
 import com.caseyjbrooks.arkham.ui.tools.campaignlog.CampaignLogInputHandler
+import com.caseyjbrooks.arkham.ui.tools.campaignlog.CampaignLogSavedStateAdapter
 import com.caseyjbrooks.arkham.ui.tools.campaignlog.CampaignLogViewModel
 import com.caseyjbrooks.arkham.ui.tools.cards.CustomCardsContract
 import com.caseyjbrooks.arkham.ui.tools.cards.CustomCardsInputHandler
@@ -69,12 +69,14 @@ import com.copperleaf.arkham.models.api.ScenarioId
 import com.copperleaf.ballast.BallastLogger
 import com.copperleaf.ballast.BallastViewModelConfiguration
 import com.copperleaf.ballast.core.BootstrapInterceptor
+import com.copperleaf.ballast.core.FifoInputStrategy
 import com.copperleaf.ballast.core.LoggingInterceptor
 import com.copperleaf.ballast.navigation.routing.BrowserHashNavigationInterceptor
 import com.copperleaf.ballast.navigation.routing.BrowserHistoryNavigationInterceptor
 import com.copperleaf.ballast.navigation.routing.withRouter
 import com.copperleaf.ballast.plusAssign
 import com.copperleaf.ballast.repository.bus.EventBusImpl
+import com.copperleaf.ballast.savedstate.BallastSavedStateInterceptor
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.js.Js
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
@@ -373,7 +375,8 @@ class ArkhamInjectorImpl(
             coroutineScope = coroutineScope,
             configBuilder = defaultConfigBuilder()
                 .apply {
-                    this += BootstrapInterceptor { CampaignLogContract.Inputs.Initialize(expansionCode, campaignLogId) }
+                    this.inputStrategy = FifoInputStrategy()
+                    this += BallastSavedStateInterceptor(CampaignLogSavedStateAdapter(expansionCode, campaignLogId))
                 },
             inputHandler = CampaignLogInputHandler(
                 repository = arkhamExplorerRepository

@@ -26,6 +26,7 @@ object CampaignLogContract {
         val investigatorsFormDefinition: Cached<FormDefinition> = Cached.NotLoaded(),
         val investigatorFormData: JsonElement = JsonObject(emptyMap()),
 
+        val scenarioIds: Set<ScenarioId> = emptySet(),
         val scenarios: List<Pair<ScenarioLite, Cached<ScenarioDetails>>> = emptyList(),
         val currentScenarioId: ScenarioId? = null,
         val scenarioFormData: JsonElement = JsonObject(emptyMap()),

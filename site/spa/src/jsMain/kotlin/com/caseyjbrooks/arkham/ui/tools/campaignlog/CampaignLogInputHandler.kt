@@ -24,7 +24,8 @@ class CampaignLogInputHandler(
         input: CampaignLogContract.Inputs
     ) = when (input) {
         is CampaignLogContract.Inputs.Initialize -> {
-            updateState { it.copy(expansionCode = input.expansionCode, campaignLogId = input.campaignLogId) }
+            val initialState =
+                updateStateAndGet { it.copy(expansionCode = input.expansionCode, campaignLogId = input.campaignLogId) }
 
             observeFlows(
                 "Campaign Log",
@@ -61,7 +62,11 @@ class CampaignLogInputHandler(
                 it.copy(expansion = input.expansion)
             }
 
-            if (currentState.scenarios.isEmpty() && currentState.expansionCode != null && !input.expansion.isLoading()) {
+            if (currentState.scenarios.isEmpty() &&
+                currentState.scenarioIds.isEmpty() &&
+                currentState.expansionCode != null &&
+                !input.expansion.isLoading()
+            ) {
                 // just now loading this scenario, automatically add the start scenario
                 val expansionDetails = input.expansion.getCachedOrThrow()
                 if (expansionDetails.startScenario.size == 1) {
@@ -127,9 +132,8 @@ class CampaignLogInputHandler(
             val currentState = updateStateAndGet {
                 it.copy(
                     currentScenarioId = input.scenario.id,
-                    scenarios = it.scenarios + (
-                        input.scenario to Cached.NotLoaded()
-                        )
+                    scenarioIds = it.scenarioIds + input.scenario.id,
+                    scenarios = it.scenarios + (input.scenario to Cached.NotLoaded())
                 )
             }
 
@@ -154,7 +158,8 @@ class CampaignLogInputHandler(
         is CampaignLogContract.Inputs.RemoveScenario -> {
             updateState {
                 it.copy(
-                    scenarios = it.scenarios.filterNot { it.first.id == input.scenarioId }
+                    scenarioIds = it.scenarioIds.filterNot { it == input.scenarioId }.toSet(),
+                    scenarios = it.scenarios.filterNot { it.first.id == input.scenarioId },
                 )
             }
 
