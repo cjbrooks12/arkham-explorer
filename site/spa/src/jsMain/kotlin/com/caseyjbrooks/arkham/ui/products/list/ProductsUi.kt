@@ -62,6 +62,7 @@ object ProductsUi {
                 GridItem {
                     Card(
                         title = product.name,
+                        description = product.productType.name,
                         navigationRoutes = arrayOf(
                             NavigationRoute(
                                 name = "Details",

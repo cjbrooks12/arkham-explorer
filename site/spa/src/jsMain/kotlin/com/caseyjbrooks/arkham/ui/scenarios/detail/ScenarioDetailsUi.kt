@@ -11,13 +11,14 @@ import com.caseyjbrooks.arkham.utils.CacheReady
 import com.caseyjbrooks.arkham.utils.DynamicGrid
 import com.caseyjbrooks.arkham.utils.GridItem
 import com.caseyjbrooks.arkham.utils.theme.bulma.Breadcrumbs
-import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaColor
 import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaSection
 import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaSize
 import com.caseyjbrooks.arkham.utils.theme.bulma.Card
 import com.caseyjbrooks.arkham.utils.theme.bulma.Hero
 import com.caseyjbrooks.arkham.utils.theme.bulma.NavigationRoute
+import com.caseyjbrooks.arkham.utils.theme.color
 import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayout
+import com.caseyjbrooks.arkham.utils.theme.tooltip
 import com.copperleaf.arkham.models.api.ExpansionLite
 import com.copperleaf.arkham.models.api.ScenarioDetails
 import com.copperleaf.arkham.models.api.ScenarioId
@@ -80,15 +81,8 @@ object ScenarioDetailsUi {
                                 iconUrl = encounterSet.encounterSet.icon,
                                 route = ArkhamApp.EncounterSetDetails,
                                 pathParams = arrayOf(encounterSet.encounterSet.id.id),
-                                buttonColor = if (encounterSet.conditional) {
-                                    BulmaColor.Info
-                                } else if (encounterSet.setAside) {
-                                    BulmaColor.Success
-                                } else if (encounterSet.partial) {
-                                    BulmaColor.Danger
-                                } else {
-                                    BulmaColor.Primary
-                                },
+                                buttonColor = encounterSet.color,
+                                tooltip = encounterSet.tooltip,
                             )
                         }
                         .toTypedArray()
@@ -118,6 +112,8 @@ object ScenarioDetailsUi {
                             iconUrl = null,
                             route = ArkhamApp.ProductDetails,
                             pathParams = arrayOf(product.id.id),
+                            buttonColor = product.productType.color,
+                            tooltip = product.productType.name,
                         )
                     }.toTypedArray()
                 )

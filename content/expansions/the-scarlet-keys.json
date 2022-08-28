@@ -7,8 +7,9 @@
     "expansionType": {
         "type": "cycle"
     },
-    "products": [],
+    "startScenario": [],
     "scenarios": [],
     "encounterSets": [],
-    "investigators": []
+    "investigators": [],
+    "products": []
 }

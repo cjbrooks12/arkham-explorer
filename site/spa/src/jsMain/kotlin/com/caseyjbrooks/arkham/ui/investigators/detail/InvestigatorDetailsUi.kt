@@ -16,6 +16,7 @@ import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaSize
 import com.caseyjbrooks.arkham.utils.theme.bulma.Card
 import com.caseyjbrooks.arkham.utils.theme.bulma.Hero
 import com.caseyjbrooks.arkham.utils.theme.bulma.NavigationRoute
+import com.caseyjbrooks.arkham.utils.theme.color
 import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayout
 import com.copperleaf.arkham.models.api.ExpansionLite
 import com.copperleaf.arkham.models.api.InvestigatorDetails
@@ -84,6 +85,8 @@ object InvestigatorDetailsUi {
                             iconUrl = null,
                             route = ArkhamApp.ProductDetails,
                             pathParams = arrayOf(product.id.id),
+                            buttonColor = product.productType.color,
+                            tooltip = product.productType.name,
                         )
                     }.toTypedArray()
                 )

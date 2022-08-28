@@ -3,12 +3,14 @@
     "name": "Return to the Forgotten Age",
     "icon": "{{baseUrl}}/assets/return-to-the-forgotten-age.svg",
     "boxArt": "{{baseUrl}}/assets/return-to-the-forgotten-age/box-art.webp",
+    "flavorText": "",
     "expansionType": {
         "type": "return to",
         "forCycle": "The Forgotten Age"
     },
-    "products": [],
+    "startScenario": [],
     "scenarios": [],
     "encounterSets": [],
-    "investigators": []
+    "investigators": [],
+    "products": []
 }

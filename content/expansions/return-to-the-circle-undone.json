@@ -3,12 +3,14 @@
     "name": "Return to the Circle Undone",
     "icon": "{{baseUrl}}/assets/return-to-the-circle-undone.svg",
     "boxArt": "{{baseUrl}}/assets/return-to-the-circle-undone/box-art.webp",
+    "flavorText": "",
     "expansionType": {
         "type": "return to",
         "forCycle": "The Circle Undone"
     },
-    "products": [],
+    "startScenario": [],
     "scenarios": [],
     "encounterSets": [],
-    "investigators": []
+    "investigators": [],
+    "products": []
 }

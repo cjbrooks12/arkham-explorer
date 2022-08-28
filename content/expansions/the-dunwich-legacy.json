@@ -3,10 +3,10 @@
     "name": "The Dunwich Legacy",
     "icon": "{{baseUrl}}/assets/the-dunwich-legacy.svg",
     "boxArt": "{{baseUrl}}/assets/the-dunwich-legacy/box-art.webp",
+    "flavorText": "A monstrous presence once terrorized the secluded village of Dunwich. The season of horror ended only after three professors from Miskatonic University—Dr. Henry Armitage, Dr. Francis Morgan, and Professor Warren Price—ventured to Dunwich, armed with secret knowledge that enabled them to defeat the creature. Now, several months later, Dr. Armitage’s colleagues have gone missing, and he fears the worst…",
     "expansionType": {
         "type": "cycle"
     },
-    "flavorText": "A monstrous presence once terrorized the secluded village of Dunwich. The season of horror ended only after three professors from Miskatonic University—Dr. Henry Armitage, Dr. Francis Morgan, and Professor Warren Price—ventured to Dunwich, armed with secret knowledge that enabled them to defeat the creature. Now, several months later, Dr. Armitage’s colleagues have gone missing, and he fears the worst…",
     "startScenario": [
         "Extracurricular Activity",
         "The House Always Wins"
@@ -350,38 +350,38 @@
         },
         {
             "id": "2-3",
-            "name": "Armitage's Fate",
-            "icon": "{{baseUrl}}/assets/the-dunwich-legacy/armitages-fate.svg"
-        },
-        {
-            "id": "2-4",
             "name": "The Miskatonic Museum",
             "icon": "{{baseUrl}}/assets/the-dunwich-legacy/the-miskatonic-museum.svg"
         },
         {
-            "id": "2-5",
+            "id": "2-4",
             "name": "The Essex County Express",
             "icon": "{{baseUrl}}/assets/the-dunwich-legacy/the-essex-county-express.svg"
         },
         {
-            "id": "2-6",
+            "id": "2-5",
             "name": "Blood on the Altar",
             "icon": "{{baseUrl}}/assets/the-dunwich-legacy/blood-on-the-altar.svg"
         },
         {
-            "id": "2-7",
+            "id": "2-6",
             "name": "Undimensioned and Unseen",
             "icon": "{{baseUrl}}/assets/the-dunwich-legacy/undimensioned-and-unseen.svg"
         },
         {
-            "id": "2-8",
+            "id": "2-7",
             "name": "Where Doom Awaits",
             "icon": "{{baseUrl}}/assets/the-dunwich-legacy/where-doom-awaits.svg"
         },
         {
-            "id": "2-9",
+            "id": "2-8",
             "name": "Lost in Time and Space",
             "icon": "{{baseUrl}}/assets/the-dunwich-legacy/lost-in-time-and-space.svg"
+        },
+        {
+            "id": "2-9",
+            "name": "Armitage's Fate",
+            "icon": "{{baseUrl}}/assets/the-dunwich-legacy/armitages-fate.svg"
         },
         {
             "id": "2-10",
@@ -462,6 +462,7 @@
             "arkhamDbCode": "dwl",
             "name": "The Dunwich Legacy: Deluxe Expansion",
             "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/dunwich-legacy/",
+            "productType": "Deluxe Expansion",
             "scenarios": [
                 "Extracurricular Activity",
                 "The House Always Wins"
@@ -492,6 +493,7 @@
             "id": "2-2",
             "arkhamDbCode": "tmm",
             "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/miskatonic-museum/",
+            "productType": "Mythos Pack",
             "scenarios": [
                 "The Miskatonic Museum"
             ],
@@ -503,6 +505,7 @@
             "id": "2-3",
             "arkhamDbCode": "tece",
             "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/essex-county-express/",
+            "productType": "Mythos Pack",
             "scenarios": [
                 "The Essex County Express"
             ],
@@ -514,6 +517,7 @@
             "id": "2-4",
             "arkhamDbCode": "bota",
             "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/blood-altar/",
+            "productType": "Mythos Pack",
             "scenarios": [
                 "Blood on the Altar"
             ],
@@ -525,6 +529,7 @@
             "id": "2-5",
             "arkhamDbCode": "uau",
             "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/undimensioned-and-unseen/",
+            "productType": "Mythos Pack",
             "scenarios": [
                 "Undimensioned and Unseen"
             ],
@@ -536,6 +541,7 @@
             "id": "2-6",
             "arkhamDbCode": "wda",
             "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/where-doom-awaits/",
+            "productType": "Mythos Pack",
             "scenarios": [
                 "Where Doom Awaits"
             ],
@@ -547,6 +553,7 @@
             "id": "2-7",
             "arkhamDbCode": "litas",
             "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/lost-time-and-space/",
+            "productType": "Mythos Pack",
             "scenarios": [
                 "Lost in Time and Space"
             ],
@@ -559,6 +566,7 @@
             "name": "The Dunwich Legacy: Campaign Expansion",
             "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/dunwich-legacy-campaign-expansion/",
             "releaseDate": "2022-03-18",
+            "productType": "Campaign Expansion",
             "scenarios": [
                 "Extracurricular Activity",
                 "The House Always Wins",
@@ -595,6 +603,7 @@
             "name": "The Dunwich Legacy: Investigator Expansion",
             "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/dunwich-legacy-investigator-expansion/",
             "releaseDate": "2022-03-18",
+            "productType": "Investigator Expansion",
             "investigators": [
                 "Zoey Samaras",
                 "Rex Murphy",

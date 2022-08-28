@@ -1,6 +1,7 @@
 package com.caseyjbrooks.arkham.stages.api.inputs.models
 
 import com.copperleaf.arkham.models.api.ExpansionType
+import com.copperleaf.arkham.models.api.ProductType
 import com.copperleaf.arkham.models.api.ScenarioChaosBag
 import kotlinx.datetime.LocalDate
 import kotlinx.serialization.Serializable
@@ -62,6 +63,7 @@ data class LocalArkhamHorrorExpansion(
         val id: String = "",
         val name: String? = null,
         val arkhamDbCode: String? = null,
+        val productType: ProductType? = null,
         val releaseDate: LocalDate? = null,
         val officialProductUrl: String = "",
         val scenarios: List<String> = emptyList(),

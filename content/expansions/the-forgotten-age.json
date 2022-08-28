@@ -7,8 +7,91 @@
     "expansionType": {
         "type": "cycle"
     },
-    "products": [],
-    "scenarios": [],
+    "startScenario": [
+        "The Untamed Wilds"
+    ],
+    "scenarios": [
+        {
+            "id": "4-1",
+            "name": "The Untamed Wilds",
+            "icon": "{{baseUrl}}/assets/the-forgotten-age/the-untamed-wilds.svg",
+            "encounterSets": [],
+            "nextScenario": [
+                "The Doom of Eztli"
+            ]
+        },
+        {
+            "id": "4-2",
+            "name": "The Doom of Eztli",
+            "icon": "{{baseUrl}}/assets/the-forgotten-age/the-doom-of-eztli.svg",
+            "encounterSets": [],
+            "nextScenario": [
+                "Threads of Fate"
+            ]
+        },
+        {
+            "id": "4-3",
+            "name": "Threads of Fate",
+            "icon": "{{baseUrl}}/assets/the-forgotten-age/threads-of-fate.svg",
+            "encounterSets": [],
+            "nextScenario": [
+                "The Boundary Beyond"
+            ]
+        },
+        {
+            "id": "4-4",
+            "name": "The Boundary Beyond",
+            "icon": "{{baseUrl}}/assets/the-forgotten-age/the-boundary-beyond.svg",
+            "encounterSets": [],
+            "nextScenario": [
+                "Heart of the Elders, Part 1"
+            ]
+        },
+        {
+            "id": "4-5",
+            "name": "Heart of the Elders, Part 1",
+            "icon": "{{baseUrl}}/assets/the-forgotten-age/heart-of-the-elders-1.svg",
+            "encounterSets": [],
+            "nextScenario": [
+                "Heart of the Elders, Part 2"
+            ]
+        },
+        {
+            "id": "4-6",
+            "name": "Heart of the Elders, Part 2",
+            "icon": "{{baseUrl}}/assets/the-forgotten-age/heart-of-the-elders-2.svg",
+            "encounterSets": [],
+            "nextScenario": [
+                "The City of Archives"
+            ]
+        },
+        {
+            "id": "4-7",
+            "name": "The City of Archives",
+            "icon": "{{baseUrl}}/assets/the-forgotten-age/the-city-of-archives.svg",
+            "encounterSets": [],
+            "nextScenario": [
+                "The Depths of Yoth"
+            ]
+        },
+        {
+            "id": "4-8",
+            "name": "The Depths of Yoth",
+            "icon": "{{baseUrl}}/assets/the-forgotten-age/the-depths-of-yoth.svg",
+            "encounterSets": [],
+            "nextScenario": [
+                "Shattered Aeons"
+            ]
+        },
+        {
+            "id": "4-9",
+            "name": "Shattered Aeons",
+            "icon": "{{baseUrl}}/assets/the-forgotten-age/shattered-aeons.svg",
+            "encounterSets": [],
+            "nextScenario": []
+        }
+    ],
     "encounterSets": [],
-    "investigators": []
+    "investigators": [],
+    "products": []
 }

@@ -3,6 +3,7 @@
     "name": "Return to the Dunwich Legacy",
     "icon": "{{baseUrl}}/assets/return-to-the-dunwich-legacy.svg",
     "boxArt": "{{baseUrl}}/assets/return-to-the-dunwich-legacy/box-art.webp",
+    "flavorText": "",
     "expansionType": {
         "type": "return to",
         "forCycle": "The Dunwich Legacy"
@@ -432,6 +433,7 @@
             "id": "2-1r",
             "arkhamDbCode": "rtdwl",
             "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/return-dunwich-legacy/",
+            "productType": "Return To",
             "scenarios": [
                 "Return to Extracurricular Activity",
                 "Return to The House Always Wins",

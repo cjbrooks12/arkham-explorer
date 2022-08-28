@@ -15,10 +15,12 @@ import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaSize
 import com.caseyjbrooks.arkham.utils.theme.bulma.Card
 import com.caseyjbrooks.arkham.utils.theme.bulma.Hero
 import com.caseyjbrooks.arkham.utils.theme.bulma.NavigationRoute
+import com.caseyjbrooks.arkham.utils.theme.color
 import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayout
 import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayoutState
 import com.copperleaf.arkham.models.api.ExpansionLite
 import com.copperleaf.arkham.models.api.ExpansionType
+import com.copperleaf.arkham.models.api.ProductType
 import org.jetbrains.compose.web.dom.Text
 
 @Suppress("UNUSED_PARAMETER")
@@ -81,6 +83,12 @@ object ExpansionsUi {
     ) {
         Card(
             imageUrl = expansion.boxArt,
+            imageLinkDestination = NavigationRoute(
+                "Expansion Details",
+                expansion.icon,
+                ArkhamApp.ExpansionDetails,
+                expansion.expansionCode,
+            ),
             title = expansion.name,
             description = expansion.flavorText,
             navigationRoutes = buildList<NavigationRoute> {
@@ -89,6 +97,7 @@ object ExpansionsUi {
                     expansion.icon,
                     ArkhamApp.ExpansionDetails,
                     expansion.expansionCode,
+                    buttonColor = ProductType.DeluxeExpansion.color,
                 )
                 if (returnToExpansion != null) {
                     this += NavigationRoute(
@@ -96,6 +105,7 @@ object ExpansionsUi {
                         returnToExpansion.icon,
                         ArkhamApp.ExpansionDetails,
                         expansion.expansionCode,
+                        buttonColor = ProductType.ReturnTo.color,
                     )
                 }
             }.toTypedArray()

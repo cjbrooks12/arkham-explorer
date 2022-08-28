@@ -3,12 +3,72 @@
     "name": "The Circle Undone",
     "icon": "{{baseUrl}}/assets/the-circle-undone.svg",
     "boxArt": "{{baseUrl}}/assets/the-circle-undone/box-art.webp",
+    "flavorText": "Judgement. Temperance. Justice. The Tower.\n\nThe soothsayer’s tarot wove a tale of a grim future, hard to put out of your mind. But when you learn that four people have disappeared without a trace from an estate in French Hill, you begin to wonder if this cruel fate is meant only for you, or for the entirety of Arkham…\n\n",
     "expansionType": {
         "type": "cycle"
     },
-    "flavorText": "Judgement. Temperance. Justice. The Tower.\n\nThe soothsayer’s tarot wove a tale of a grim future, hard to put out of your mind. But when you learn that four people have disappeared without a trace from an estate in French Hill, you begin to wonder if this cruel fate is meant only for you, or for the entirety of Arkham…\n\n",
-    "products": [],
-    "scenarios": [],
+    "startScenario": [
+        "The Witching Hour"
+    ],
+    "scenarios": [
+        {
+            "id": "5-1",
+            "name": "The Witching Hour",
+            "icon": "{{baseUrl}}/assets/the-forgotten-age/.svg",
+            "encounterSets": [],
+            "nextScenario": []
+        },
+        {
+            "id": "5-2",
+            "name": "At Death's Doorstep",
+            "icon": "{{baseUrl}}/assets/the-forgotten-age/.svg",
+            "encounterSets": [],
+            "nextScenario": []
+        },
+        {
+            "id": "5-3",
+            "name": "The Secret Name",
+            "icon": "{{baseUrl}}/assets/the-forgotten-age/.svg",
+            "encounterSets": [],
+            "nextScenario": []
+        },
+        {
+            "id": "5-4",
+            "name": "The Wages of Sin",
+            "icon": "{{baseUrl}}/assets/the-forgotten-age/.svg",
+            "encounterSets": [],
+            "nextScenario": []
+        },
+        {
+            "id": "5-5",
+            "name": "For the Greater Good",
+            "icon": "{{baseUrl}}/assets/the-forgotten-age/.svg",
+            "encounterSets": [],
+            "nextScenario": []
+        },
+        {
+            "id": "5-6",
+            "name": "Union and Disillusion",
+            "icon": "{{baseUrl}}/assets/the-forgotten-age/.svg",
+            "encounterSets": [],
+            "nextScenario": []
+        },
+        {
+            "id": "5-7",
+            "name": "In the Clutches of Chaos",
+            "icon": "{{baseUrl}}/assets/the-forgotten-age/.svg",
+            "encounterSets": [],
+            "nextScenario": []
+        },
+        {
+            "id": "5-8",
+            "name": "Before the Black Throne",
+            "icon": "{{baseUrl}}/assets/the-forgotten-age/.svg",
+            "encounterSets": [],
+            "nextScenario": []
+        }
+    ],
     "encounterSets": [],
-    "investigators": []
+    "investigators": [],
+    "products": []
 }

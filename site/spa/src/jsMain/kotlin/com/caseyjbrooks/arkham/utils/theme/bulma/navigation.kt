@@ -31,6 +31,7 @@ class NavigationRoute(
     vararg val pathParams: String,
     val queryParams: Map<String, List<String>> = emptyMap(),
     val buttonColor: BulmaColor = BulmaColor.Link,
+    val tooltip: String? = null,
 )
 
 // NavBar

@@ -7,8 +7,99 @@
     "expansionType": {
         "type": "standalone"
     },
-    "products": [],
-    "scenarios": [],
+    "startScenario": [],
+    "scenarios": [
+        {
+            "id": "100-1",
+            "name": "Curse of the Rougarou",
+            "icon": "{{baseUrl}}/assets/standalone/.svg",
+            "encounterSets": [],
+            "nextScenario": []
+        },
+        {
+            "id": "100-2",
+            "name": "Carnevale of Horrors",
+            "icon": "{{baseUrl}}/assets/standalone/.svg",
+            "encounterSets": [],
+            "nextScenario": []
+        },
+        {
+            "id": "100-3",
+            "name": "The Labyrinths of Lunacy",
+            "icon": "{{baseUrl}}/assets/standalone/.svg",
+            "encounterSets": [],
+            "nextScenario": []
+        },
+        {
+            "id": "100-4",
+            "name": "Guardians of the Abyss",
+            "icon": "{{baseUrl}}/assets/standalone/.svg",
+            "encounterSets": [],
+            "nextScenario": []
+        },
+        {
+            "id": "100-5",
+            "name": "Murder at the Excelsior Hotel",
+            "icon": "{{baseUrl}}/assets/standalone/.svg",
+            "encounterSets": [],
+            "nextScenario": []
+        },
+        {
+            "id": "100-6",
+            "name": "The Blob that Ate Everything",
+            "icon": "{{baseUrl}}/assets/standalone/.svg",
+            "encounterSets": [],
+            "nextScenario": []
+        },
+        {
+            "id": "100-7",
+            "name": "War of the Outer Gods",
+            "icon": "{{baseUrl}}/assets/standalone/.svg",
+            "encounterSets": [],
+            "nextScenario": []
+        },
+        {
+            "id": "100-8",
+            "name": "Machinations Through Time",
+            "icon": "{{baseUrl}}/assets/standalone/.svg",
+            "encounterSets": [],
+            "nextScenario": []
+        },
+        {
+            "id": "100-9",
+            "name": "Barkham Horror: The Meddling of Meowlathotep",
+            "icon": "{{baseUrl}}/assets/standalone/.svg",
+            "encounterSets": [],
+            "nextScenario": []
+        }
+    ],
     "encounterSets": [],
-    "investigators": []
+    "investigators": [
+        {
+            "id": "100-1",
+            "name": "Nathaniel Cho",
+            "mainClass": "Guardian"
+        },
+        {
+            "id": "100-2",
+            "name": "Harvey Walters",
+            "mainClass": "Seeker"
+        },
+        {
+            "id": "100-3",
+            "name": "Winifred Habbamock",
+            "mainClass": "Rogue"
+        },
+        {
+            "id": "100-4",
+            "name": "Jacqueline Fine",
+            "mainClass": "Mystic"
+        },
+        {
+            "id": "100-5",
+            "name": "Stella Clark",
+            "mainClass": "Survivor"
+        }
+    ],
+    "products": []
 }

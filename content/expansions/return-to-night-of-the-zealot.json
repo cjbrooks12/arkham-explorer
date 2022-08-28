@@ -3,6 +3,7 @@
     "name": "Return to Night of the Zealot",
     "icon": "{{baseUrl}}/assets/return-to-night-of-the-zealot.svg",
     "boxArt": "{{baseUrl}}/assets/return-to-night-of-the-zealot/box-art.webp",
+    "flavorText": "",
     "expansionType": {
         "type": "return to",
         "forCycle": "Night of the Zealot"
@@ -839,6 +840,7 @@
             "id": "1-1r",
             "arkhamDbCode": "rtnotz",
             "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/return-night-zealot/",
+            "productType": "Return To",
             "scenarios": [
                 "Return to The Gathering",
                 "Return to The Midnight Masks",

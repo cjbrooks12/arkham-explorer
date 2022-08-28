@@ -7,8 +7,77 @@
     "expansionType": {
         "type": "cycle"
     },
-    "products": [],
-    "scenarios": [],
+    "startScenario": [
+        "Beyond the Gates of Sleep",
+        "Waking Nightmare"
+    ],
+    "scenarios": [
+        {
+            "id": "6-1",
+            "name": "Beyond the Gates of Sleep",
+            "icon": "{{baseUrl}}/assets/the-dream-eaters/beyond-the-gates-of-sleep.svg",
+            "encounterSets": [],
+            "nextScenario": [
+                "Waking Nightmare",
+                "The Search for Kadath",
+                "A Thousand Shapes of Horror"
+            ]
+        },
+        {
+            "id": "6-2",
+            "name": "Waking Nightmare",
+            "icon": "{{baseUrl}}/assets/the-dream-eaters/waking-nightmare.svg",
+            "encounterSets": [],
+            "nextScenario": [
+                "Beyond the Gates of Sleep",
+                "The Search for Kadath",
+                "A Thousand Shapes of Horror"
+            ]
+        },
+        {
+            "id": "6-3",
+            "name": "The Search for Kadath",
+            "icon": "{{baseUrl}}/assets/the-dream-eaters/the-search-for-kadath.svg",
+            "encounterSets": [],
+            "nextScenario": []
+        },
+        {
+            "id": "6-4",
+            "name": "A Thousand Shapes of Horror",
+            "icon": "{{baseUrl}}/assets/the-dream-eaters/a-thousand-shapes-of-horror.svg",
+            "encounterSets": [],
+            "nextScenario": []
+        },
+        {
+            "id": "6-5",
+            "name": "Dark Side of the Moon",
+            "icon": "{{baseUrl}}/assets/the-dream-eaters/dark-side-of-the-moon.svg",
+            "encounterSets": [],
+            "nextScenario": []
+        },
+        {
+            "id": "6-6",
+            "name": "Point of No Return",
+            "icon": "{{baseUrl}}/assets/the-dream-eaters/point-of-no-return.svg",
+            "encounterSets": [],
+            "nextScenario": []
+        },
+        {
+            "id": "6-7",
+            "name": "Where the Gods Dwell",
+            "icon": "{{baseUrl}}/assets/the-dream-eaters/where-gods-dwell.svg",
+            "encounterSets": [],
+            "nextScenario": []
+        },
+        {
+            "id": "6-8",
+            "name": "Weaver of the Cosmos",
+            "icon": "{{baseUrl}}/assets/the-dream-eaters/weaver-of-the-cosmos.svg",
+            "encounterSets": [],
+            "nextScenario": []
+        }
+    ],
     "encounterSets": [],
-    "investigators": []
+    "investigators": [],
+    "products": []
 }

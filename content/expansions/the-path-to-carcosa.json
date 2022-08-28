@@ -7,8 +7,629 @@
     "expansionType": {
         "type": "cycle"
     },
-    "products": [],
-    "scenarios": [],
-    "encounterSets": [],
-    "investigators": []
+    "startScenario": [
+        "Curtain Call"
+    ],
+    "scenarios": [
+        {
+            "id": "3-1",
+            "name": "Curtain Call",
+            "icon": "{{baseUrl}}/assets/the-path-to-carcosa/curtain-call.svg",
+            "encounterSets": [
+                {
+                    "name": "Curtain Call",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Evil Portents",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Delusions",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Hauntings",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Cult of the Yellow Sign",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Striking Fear",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Rats",
+                    "conditional": false,
+                    "setAside": false
+                }
+            ],
+            "nextScenario": [
+                "The Last King"
+            ]
+        },
+        {
+            "id": "3-2",
+            "name": "The Last King",
+            "icon": "{{baseUrl}}/assets/the-path-to-carcosa/the-last-king.svg",
+            "encounterSets": [
+                {
+                    "name": "The Last King",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Hastur's Gift",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Decay & Filth",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "The Stranger",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Ancient Evils",
+                    "conditional": false,
+                    "setAside": false
+                }
+            ],
+            "nextScenario": [
+                "Echoes of the Past"
+            ]
+        },
+        {
+            "id": "3-3",
+            "name": "Echoes of the Past",
+            "icon": "{{baseUrl}}/assets/the-path-to-carcosa/echoes-of-the-past.svg",
+            "encounterSets": [
+                {
+                    "name": "Echoes of the Past",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Cult of the Yellow Sign",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Delusions",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "The Midnight Masks",
+                    "conditional": false,
+                    "setAside": false,
+                    "partial": true
+                },
+                {
+                    "name": "Locked Doors",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Dark Cult",
+                    "conditional": false,
+                    "setAside": false
+                }
+            ],
+            "nextScenario": [
+                "The Unspeakable Oath"
+            ]
+        },
+        {
+            "id": "3-4",
+            "name": "The Unspeakable Oath",
+            "icon": "{{baseUrl}}/assets/the-path-to-carcosa/the-unspeakable-oath.svg",
+            "encounterSets": [
+                {
+                    "name": "The Unspeakable Oath",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Hastur's Gift",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Inhabitants of Carcosa",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Delusions",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Decay & Filth",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Agents of Hastur",
+                    "conditional": false,
+                    "setAside": false
+                }
+            ],
+            "nextScenario": [
+                "A Phantom of Truth"
+            ]
+        },
+        {
+            "id": "3-5",
+            "name": "A Phantom of Truth",
+            "icon": "{{baseUrl}}/assets/the-path-to-carcosa/a-phantom-of-truth.svg",
+            "encounterSets": [
+                {
+                    "name": "A Phantom of Truth",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Evil Portents",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Byakhee",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "The Stranger",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Agents of Hastur",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "The Midnight Masks",
+                    "conditional": false,
+                    "setAside": false,
+                    "partial": true
+                }
+            ],
+            "nextScenario": [
+                "The Pallid Mask"
+            ]
+        },
+        {
+            "id": "3-6",
+            "name": "The Pallid Mask",
+            "icon": "{{baseUrl}}/assets/the-path-to-carcosa/the-pallid-mask.svg",
+            "encounterSets": [
+                {
+                    "name": "The Pallid Mask",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Ghouls",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Hauntings",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Chilling Cold",
+                    "conditional": false,
+                    "setAside": false
+                }
+            ],
+            "nextScenario": [
+                "Black Stars Rise"
+            ]
+        },
+        {
+            "id": "3-7",
+            "name": "Black Stars Rise",
+            "icon": "{{baseUrl}}/assets/the-path-to-carcosa/black-stars-rise.svg",
+            "encounterSets": [
+                {
+                    "name": "Black Stars Rise",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Evil Portents",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Byakhee",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Inhabitants of Carcosa",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "The Stranger",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Dark Cult",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Ancient Evils",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "The Vortex Above",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "The Flood Below",
+                    "conditional": false,
+                    "setAside": false
+                }
+            ],
+            "nextScenario": [
+                "Dim Carcosa"
+            ]
+        },
+        {
+            "id": "3-8",
+            "name": "Dim Carcosa",
+            "icon": "{{baseUrl}}/assets/the-path-to-carcosa/dim-carcosa.svg",
+            "encounterSets": [
+                {
+                    "name": "Dim Carcosa",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Delusions",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Cult of the Yellow Sign",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Inhabitants of Carcosa",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Agents of Hastur",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Striking Fear",
+                    "conditional": false,
+                    "setAside": false
+                }
+            ],
+            "nextScenario": []
+        }
+    ],
+    "encounterSets": [
+        {
+            "id": "3-1",
+            "name": "Curtain Call",
+            "icon": "{{baseUrl}}/assets/the-path-to-carcosa/curtain-call.svg"
+        },
+        {
+            "id": "3-2",
+            "name": "The Last King",
+            "icon": "{{baseUrl}}/assets/the-path-to-carcosa/the-last-king.svg"
+        },
+        {
+            "id": "3-3",
+            "name": "Echoes of the Past",
+            "icon": "{{baseUrl}}/assets/the-path-to-carcosa/echoes-of-the-past.svg"
+        },
+        {
+            "id": "3-4",
+            "name": "The Unspeakable Oath",
+            "icon": "{{baseUrl}}/assets/the-path-to-carcosa/the-unspeakable-oath.svg"
+        },
+        {
+            "id": "3-5",
+            "name": "A Phantom of Truth",
+            "icon": "{{baseUrl}}/assets/the-path-to-carcosa/a-phantom-of-truth.svg"
+        },
+        {
+            "id": "3-6",
+            "name": "The Pallid Mask",
+            "icon": "{{baseUrl}}/assets/the-path-to-carcosa/the-pallid-mask.svg"
+        },
+        {
+            "id": "3-7",
+            "name": "Black Stars Rise",
+            "icon": "{{baseUrl}}/assets/the-path-to-carcosa/black-stars-rise.svg"
+        },
+        {
+            "id": "3-8",
+            "name": "Dim Carcosa",
+            "icon": "{{baseUrl}}/assets/the-path-to-carcosa/dim-carcosa.svg"
+        },
+        {
+            "id": "3-9",
+            "name": "Evil Portents",
+            "icon": "{{baseUrl}}/assets/the-path-to-carcosa/evil-portents.svg"
+        },
+        {
+            "id": "3-10",
+            "name": "Delusions",
+            "icon": "{{baseUrl}}/assets/the-path-to-carcosa/delusions.svg"
+        },
+        {
+            "id": "3-11",
+            "name": "Hauntings",
+            "icon": "{{baseUrl}}/assets/the-path-to-carcosa/hauntings.svg"
+        },
+        {
+            "id": "3-12",
+            "name": "Cult of the Yellow Sign",
+            "icon": "{{baseUrl}}/assets/the-path-to-carcosa/cult-of-the-yellow-sign.svg"
+        },
+        {
+            "id": "3-13",
+            "name": "Hastur's Gift",
+            "icon": "{{baseUrl}}/assets/the-path-to-carcosa/hasturs-gift.svg"
+        },
+        {
+            "id": "3-14",
+            "name": "Decay & Filth",
+            "icon": "{{baseUrl}}/assets/the-path-to-carcosa/decay-and-filth.svg"
+        },
+        {
+            "id": "3-15",
+            "name": "The Stranger",
+            "icon": "{{baseUrl}}/assets/the-path-to-carcosa/the-stranger.svg"
+        },
+        {
+            "id": "3-16",
+            "name": "Inhabitants of Carcosa",
+            "icon": "{{baseUrl}}/assets/the-path-to-carcosa/inhabitants-of-carcosa.svg"
+        },
+        {
+            "id": "3-17",
+            "name": "Byakhee",
+            "icon": "{{baseUrl}}/assets/the-path-to-carcosa/byakhee.svg"
+        },
+        {
+            "id": "3-18",
+            "name": "The Vortex Above",
+            "icon": "{{baseUrl}}/assets/the-path-to-carcosa/the-vortex-above.svg"
+        },
+        {
+            "id": "3-19",
+            "name": "The Flood Below",
+            "icon": "{{baseUrl}}/assets/the-path-to-carcosa/the-flood-below.svg"
+        }
+    ],
+    "investigators": [
+        {
+            "id": "3-1",
+            "name": "Mark Harrigan",
+            "mainClass": "Guardian"
+        },
+        {
+            "id": "3-2",
+            "name": "Minh Thi Phan",
+            "mainClass": "Seeker"
+        },
+        {
+            "id": "3-3",
+            "name": "Sefina Rousseau",
+            "mainClass": "Rogue"
+        },
+        {
+            "id": "3-4",
+            "name": "Akachi Onyele",
+            "mainClass": "Mystic"
+        },
+        {
+            "id": "3-5",
+            "name": "William Yorick",
+            "mainClass": "Survivor"
+        }
+    ],
+    "products": [
+        {
+            "id": "3-1",
+            "arkhamDbCode": "ptc",
+            "name": "The Path to Carcosa: Deluxe Expansion",
+            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/path-carcosa",
+            "productType": "Deluxe Expansion",
+            "scenarios": [
+                "Curtain Call",
+                "The Last King"
+            ],
+            "encounterSets": [
+                "Curtain Call",
+                "The Last King",
+                "Delusions",
+                "Byakhee",
+                "Inhabitants of Carcosa",
+                "Evil Portents",
+                "Hauntings",
+                "Hastur's Gift",
+                "Cult of the Yellow Sign",
+                "Decay & Filth",
+                "The Stranger"
+            ],
+            "investigators": [
+                "Mark Harrigan",
+                "Minh Thi Phan",
+                "Sefina Rousseau",
+                "Akachi Onyele",
+                "William Yorick"
+            ]
+        },
+        {
+            "id": "3-2",
+            "arkhamDbCode": "eotp",
+            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/echoes-past/",
+            "productType": "Mythos Pack",
+            "scenarios": [
+                "Echoes of the Past"
+            ],
+            "encounterSets": [
+                "Echoes of the Past"
+            ],
+            "investigators": [
+            ]
+        },
+        {
+            "id": "3-3",
+            "arkhamDbCode": "tuo",
+            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/unspeakable-oath/",
+            "productType": "Mythos Pack",
+            "scenarios": [
+                "The Unspeakable Oath"
+            ],
+            "encounterSets": [
+                "The Unspeakable Oath"
+            ],
+            "investigators": [
+            ]
+        },
+        {
+            "id": "3-4",
+            "arkhamDbCode": "apot",
+            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/phantom-truth/",
+            "productType": "Mythos Pack",
+            "scenarios": [
+                "A Phantom of Truth"
+            ],
+            "encounterSets": [
+                "A Phantom of Truth"
+            ],
+            "investigators": [
+            ]
+        },
+        {
+            "id": "3-5",
+            "arkhamDbCode": "tpm",
+            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/pallid-mask/",
+            "productType": "Mythos Pack",
+            "scenarios": [
+                "The Pallid Mask"
+            ],
+            "encounterSets": [
+                "The Pallid Mask"
+            ],
+            "investigators": [
+            ]
+        },
+        {
+            "id": "3-6",
+            "arkhamDbCode": "bsr",
+            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/black-stars-rise/",
+            "productType": "Mythos Pack",
+            "scenarios": [
+                "Black Stars Rise"
+            ],
+            "encounterSets": [
+                "Black Stars Rise",
+                "The Vortex Above",
+                "The Flood Below"
+            ],
+            "investigators": [
+            ]
+        },
+        {
+            "id": "3-7",
+            "arkhamDbCode": "dca",
+            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/dim-carcosa/",
+            "productType": "Mythos Pack",
+            "scenarios": [
+                "Dim Carcosa"
+            ],
+            "encounterSets": [
+                "Dim Carcosa"
+            ],
+            "investigators": [
+            ]
+        },
+        {
+            "id": "3-8",
+            "name": "The Path to Carcosa: Campaign Expansion",
+            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/path-carcosa-campaign-expansion/",
+            "releaseDate": "2022-05-27",
+            "productType": "Campaign Expansion",
+            "scenarios": [
+                "Curtain Call",
+                "The Last King",
+                "Echoes of the Past",
+                "The Unspeakable Oath",
+                "A Phantom of Truth",
+                "The Pallid Mask",
+                "Black Stars Rise",
+                "Dim Carcosa"
+            ],
+            "encounterSets": [
+                "Curtain Call",
+                "The Last King",
+                "Echoes of the Past",
+                "The Unspeakable Oath",
+                "A Phantom of Truth",
+                "The Pallid Mask",
+                "Black Stars Rise",
+                "Dim Carcosa",
+                "Delusions",
+                "Byakhee",
+                "Inhabitants of Carcosa",
+                "Evil Portents",
+                "Hauntings",
+                "Hastur's Gift",
+                "Cult of the Yellow Sign",
+                "Decay & Filth",
+                "The Stranger",
+                "The Vortex Above",
+                "The Flood Below"
+            ]
+        },
+        {
+            "id": "3-9",
+            "name": "The Path to Carcosa: Investigator Expansion",
+            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/path-carcosa-investigator-expansion/",
+            "releaseDate": "2022-05-27",
+            "productType": "Investigator Expansion",
+            "investigators": [
+                "Mark Harrigan",
+                "Minh Thi Phan",
+                "Sefina Rousseau",
+                "Akachi Onyele",
+                "William Yorick"
+            ]
+        }
+    ]
 }

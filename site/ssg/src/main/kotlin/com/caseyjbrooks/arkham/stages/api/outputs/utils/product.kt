@@ -22,6 +22,7 @@ fun LocalArkhamHorrorExpansion.Product.asFullOutput(
         id = ProductId(this.id),
         name = this.name ?: arkhamDbEntry?.name ?: error("name (expansion=$expansionCode, product=${this.id})"),
         expansionCode = expansionCode,
+        productType = this.productType ?: error("productType (expansion=$expansionCode, product=${this.id})"),
         releaseDate = this.releaseDate
             ?: arkhamDbEntry
                 ?.available
@@ -58,5 +59,6 @@ fun LocalArkhamHorrorExpansion.Product.asLiteOutput(
         id = ProductId(this.id),
         name = this.name ?: arkhamDbEntry?.name ?: error("name (expansion=$expansionCode, product=${this.id})"),
         expansionCode = expansionCode,
+        productType = this.productType ?: error("productType (expansion=$expansionCode, product=${this.id})"),
     )
 }

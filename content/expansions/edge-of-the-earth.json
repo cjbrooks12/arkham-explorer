@@ -7,8 +7,68 @@
     "expansionType": {
         "type": "cycle"
     },
-    "products": [],
-    "scenarios": [],
+    "startScenario": [
+        "The Pit of Despair"
+    ],
+    "scenarios": [
+        {
+            "id": "8-1",
+            "name": "Ice and Death, Part 1",
+            "icon": "{{baseUrl}}/assets/edge-of-the-earth/.svg",
+            "encounterSets": [],
+            "nextScenario": []
+        },
+        {
+            "id": "8-2",
+            "name": "Ice and Death, Part 2",
+            "icon": "{{baseUrl}}/assets/edge-of-the-earth/.svg",
+            "encounterSets": [],
+            "nextScenario": []
+        },
+        {
+            "id": "8-3",
+            "name": "Ice and Death, Part 3",
+            "icon": "{{baseUrl}}/assets/edge-of-the-earth/.svg",
+            "encounterSets": [],
+            "nextScenario": []
+        },
+        {
+            "id": "8-4",
+            "name": "Fatal Mirage",
+            "icon": "{{baseUrl}}/assets/edge-of-the-earth/.svg",
+            "encounterSets": [],
+            "nextScenario": []
+        },
+        {
+            "id": "8-5",
+            "name": "To the Forbidden Peaks",
+            "icon": "{{baseUrl}}/assets/edge-of-the-earth/.svg",
+            "encounterSets": [],
+            "nextScenario": []
+        },
+        {
+            "id": "8-6",
+            "name": "City of the Elder Things",
+            "icon": "{{baseUrl}}/assets/edge-of-the-earth/.svg",
+            "encounterSets": [],
+            "nextScenario": []
+        },
+        {
+            "id": "8-7",
+            "name": "The Heart of Madness, Part 1",
+            "icon": "{{baseUrl}}/assets/edge-of-the-earth/.svg",
+            "encounterSets": [],
+            "nextScenario": []
+        },
+        {
+            "id": "8-8",
+            "name": "The Heart of Madness, Part 2",
+            "icon": "{{baseUrl}}/assets/edge-of-the-earth/.svg",
+            "encounterSets": [],
+            "nextScenario": []
+        }
+    ],
     "encounterSets": [],
-    "investigators": []
+    "investigators": [],
+    "products": []
 }
