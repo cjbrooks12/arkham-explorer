@@ -65,7 +65,7 @@
         {
             "id": "6-7",
             "name": "Where the Gods Dwell",
-            "icon": "{{baseUrl}}/assets/the-dream-eaters/where-gods-dwell.svg",
+            "icon": "{{baseUrl}}/assets/the-dream-eaters/where-the-gods-dwell.svg",
             "encounterSets": [],
             "nextScenario": []
         },

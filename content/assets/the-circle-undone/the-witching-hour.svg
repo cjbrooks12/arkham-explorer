@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="23.99894"
+   height="24"
+   viewBox="0 0 6.3497194 6.35"
+   version="1.1"
+   id="svg55811"
+   inkscape:version="1.2.1 (9c6d41e4, 2022-07-14)"
+   sodipodi:docname="the-witching-hour.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview55813"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.7046647"
+     inkscape:cx="185.90402"
+     inkscape:cy="200.80472"
+     inkscape:window-width="1390"
+     inkscape:window-height="941"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs55808">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath7369">
+      <path
+         d="m 330.786,189.861 h 24.699 v 24.699 h -24.699 z"
+         id="path7367" />
+    </clipPath>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-56.082408,-95.882495)">
+    <g
+       id="g7363"
+       transform="matrix(0.28046464,0,0,-0.28046464,-36.979967,155.77039)">
+      <g
+         id="g7365"
+         clip-path="url(#clipPath7369)">
+        <g
+           id="g7371"
+           transform="translate(343.135,191.919)">
+          <path
+             d="m 0,0 c -5.684,0 -10.291,4.608 -10.291,10.291 0,5.684 4.607,10.292 10.291,10.292 1.013,0 1.991,-0.149 2.916,-0.422 -4.263,-1.258 -7.376,-5.199 -7.376,-9.87 0,-4.67 3.113,-8.612 7.376,-9.869 C 1.991,0.149 1.013,0 0,0 M 4.825,20.533 C 3.361,21.224 1.726,21.612 0,21.612 c -6.252,0 -11.32,-5.069 -11.32,-11.321 0,-6.252 5.068,-11.32 11.32,-11.32 1.726,0 3.361,0.388 4.825,1.079 3.838,1.811 6.495,5.715 6.495,10.241 0,4.526 -2.657,8.43 -6.495,10.242"
+             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="path7373" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -50,7 +50,7 @@
         {
             "id": "4-5",
             "name": "Heart of the Elders, Part 1",
-            "icon": "{{baseUrl}}/assets/the-forgotten-age/heart-of-the-elders-1.svg",
+            "icon": "{{baseUrl}}/assets/the-forgotten-age/heart-of-the-elders.svg",
             "encounterSets": [],
             "nextScenario": [
                 "Heart of the Elders, Part 2"
@@ -59,7 +59,7 @@
         {
             "id": "4-6",
             "name": "Heart of the Elders, Part 2",
-            "icon": "{{baseUrl}}/assets/the-forgotten-age/heart-of-the-elders-2.svg",
+            "icon": "{{baseUrl}}/assets/the-forgotten-age/heart-of-the-elders.svg",
             "encounterSets": [],
             "nextScenario": [
                 "The City of Archives"
@@ -87,6 +87,13 @@
             "id": "4-9",
             "name": "Shattered Aeons",
             "icon": "{{baseUrl}}/assets/the-forgotten-age/shattered-aeons.svg",
+            "encounterSets": [],
+            "nextScenario": []
+        },
+        {
+            "id": "4-10",
+            "name": "Turn Back Time",
+            "icon": "{{baseUrl}}/assets/the-forgotten-age/turn-back-time.svg",
             "encounterSets": [],
             "nextScenario": []
         }

@@ -13,57 +13,64 @@
     "scenarios": [
         {
             "id": "5-1",
-            "name": "The Witching Hour",
-            "icon": "{{baseUrl}}/assets/the-forgotten-age/.svg",
+            "name": "Disappearance at the Twilight Estate",
+            "icon": "{{baseUrl}}/assets/the-circle-undone/disappearance-at-the-twilight-estate.svg",
             "encounterSets": [],
             "nextScenario": []
         },
         {
             "id": "5-2",
-            "name": "At Death's Doorstep",
-            "icon": "{{baseUrl}}/assets/the-forgotten-age/.svg",
+            "name": "The Witching Hour",
+            "icon": "{{baseUrl}}/assets/the-circle-undone/the-witching-hour.svg",
             "encounterSets": [],
             "nextScenario": []
         },
         {
             "id": "5-3",
-            "name": "The Secret Name",
-            "icon": "{{baseUrl}}/assets/the-forgotten-age/.svg",
+            "name": "At Death's Doorstep",
+            "icon": "{{baseUrl}}/assets/the-circle-undone/at-deaths-doorstep.svg",
             "encounterSets": [],
             "nextScenario": []
         },
         {
             "id": "5-4",
-            "name": "The Wages of Sin",
-            "icon": "{{baseUrl}}/assets/the-forgotten-age/.svg",
+            "name": "The Secret Name",
+            "icon": "{{baseUrl}}/assets/the-circle-undone/the-secret-name.svg",
             "encounterSets": [],
             "nextScenario": []
         },
         {
             "id": "5-5",
-            "name": "For the Greater Good",
-            "icon": "{{baseUrl}}/assets/the-forgotten-age/.svg",
+            "name": "The Wages of Sin",
+            "icon": "{{baseUrl}}/assets/the-circle-undone/the-wages-of-sin.svg",
             "encounterSets": [],
             "nextScenario": []
         },
         {
             "id": "5-6",
-            "name": "Union and Disillusion",
-            "icon": "{{baseUrl}}/assets/the-forgotten-age/.svg",
+            "name": "For the Greater Good",
+            "icon": "{{baseUrl}}/assets/the-circle-undone/for-the-greater-good.svg",
             "encounterSets": [],
             "nextScenario": []
         },
         {
             "id": "5-7",
-            "name": "In the Clutches of Chaos",
-            "icon": "{{baseUrl}}/assets/the-forgotten-age/.svg",
+            "name": "Union and Disillusion",
+            "icon": "{{baseUrl}}/assets/the-circle-undone/union-and-disillusion.svg",
             "encounterSets": [],
             "nextScenario": []
         },
         {
             "id": "5-8",
+            "name": "In the Clutches of Chaos",
+            "icon": "{{baseUrl}}/assets/the-circle-undone/in-the-clutches-of-chaos.svg",
+            "encounterSets": [],
+            "nextScenario": []
+        },
+        {
+            "id": "5-9",
             "name": "Before the Black Throne",
-            "icon": "{{baseUrl}}/assets/the-forgotten-age/.svg",
+            "icon": "{{baseUrl}}/assets/the-circle-undone/before-the-black-throne.svg",
             "encounterSets": [],
             "nextScenario": []
         }

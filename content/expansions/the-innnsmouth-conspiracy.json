@@ -14,56 +14,56 @@
         {
             "id": "7-1",
             "name": "The Pit of Despair",
-            "icon": "{{baseUrl}}/assets/the-innsmouth-conspiracy/.svg",
+            "icon": "{{baseUrl}}/assets/the-innsmouth-conspiracy/the-pit-of-despair.svg",
             "encounterSets": [],
             "nextScenario": []
         },
         {
             "id": "7-2",
             "name": "The Vanishing of Elina Harper",
-            "icon": "{{baseUrl}}/assets/the-innsmouth-conspiracy/.svg",
+            "icon": "{{baseUrl}}/assets/the-innsmouth-conspiracy/the-vanishing-of-elina-harper.svg",
             "encounterSets": [],
             "nextScenario": []
         },
         {
             "id": "7-3",
             "name": "In Too Deep",
-            "icon": "{{baseUrl}}/assets/the-innsmouth-conspiracy/.svg",
+            "icon": "{{baseUrl}}/assets/the-innsmouth-conspiracy/in-too-deep.svg",
             "encounterSets": [],
             "nextScenario": []
         },
         {
             "id": "7-4",
             "name": "Devil Reef",
-            "icon": "{{baseUrl}}/assets/the-innsmouth-conspiracy/.svg",
+            "icon": "{{baseUrl}}/assets/the-innsmouth-conspiracy/devil-reef.svg",
             "encounterSets": [],
             "nextScenario": []
         },
         {
             "id": "7-5",
             "name": "Horror in High Gear",
-            "icon": "{{baseUrl}}/assets/the-innsmouth-conspiracy/.svg",
+            "icon": "{{baseUrl}}/assets/the-innsmouth-conspiracy/horror-in-high-gear.svg",
             "encounterSets": [],
             "nextScenario": []
         },
         {
             "id": "7-6",
             "name": "A Light in the Fog",
-            "icon": "{{baseUrl}}/assets/the-innsmouth-conspiracy/.svg",
+            "icon": "{{baseUrl}}/assets/the-innsmouth-conspiracy/a-light-in-the-fog.svg",
             "encounterSets": [],
             "nextScenario": []
         },
         {
             "id": "7-7",
             "name": "The Lair of Dagon",
-            "icon": "{{baseUrl}}/assets/the-innsmouth-conspiracy/.svg",
+            "icon": "{{baseUrl}}/assets/the-innsmouth-conspiracy/the-lair-of-dagon.svg",
             "encounterSets": [],
             "nextScenario": []
         },
         {
             "id": "7-8",
             "name": "Into the Maelstrom",
-            "icon": "{{baseUrl}}/assets/the-innsmouth-conspiracy/.svg",
+            "icon": "{{baseUrl}}/assets/the-innsmouth-conspiracy/into-the-maelstrom.svg",
             "encounterSets": [],
             "nextScenario": []
         }
