@@ -14,6 +14,10 @@ import com.caseyjbrooks.arkham.stages.copyscripts.CopyScripts
 import com.caseyjbrooks.arkham.stages.meta.Favicons
 import com.caseyjbrooks.arkham.stages.meta.RobotsTxt
 import com.caseyjbrooks.arkham.stages.meta.Sitemap
+import com.caseyjbrooks.arkham.stages.rss.RssFeedAggregator
+import com.caseyjbrooks.arkham.stages.rss.sources.ArkhamCentralFeed
+import com.caseyjbrooks.arkham.stages.rss.sources.FantasyFlightNews
+import com.caseyjbrooks.arkham.stages.rss.sources.MythosBustersFeed
 import com.caseyjbrooks.arkham.stages.schemas.CopySchemas
 import com.caseyjbrooks.arkham.utils.SiteConfiguration
 import kotlinx.coroutines.runBlocking
@@ -39,6 +43,11 @@ fun main(): Unit = runBlocking {
         CopyScripts(),
         CopySchemas(),
         ApiData(),
+        RssFeedAggregator(
+            ArkhamCentralFeed(),
+            FantasyFlightNews(),
+            MythosBustersFeed(),
+        ),
 
         renderers = buildList {
             if (BuildConfig.DEBUG) {

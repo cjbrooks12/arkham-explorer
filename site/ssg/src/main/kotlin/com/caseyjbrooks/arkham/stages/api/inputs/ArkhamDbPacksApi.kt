@@ -4,8 +4,8 @@ import com.caseyjbrooks.arkham.dag.DependencyGraphBuilder
 import com.caseyjbrooks.arkham.dag.Node
 import com.caseyjbrooks.arkham.dag.http.InputHttpNode
 import com.caseyjbrooks.arkham.dag.http.StartHttpNode
-import com.caseyjbrooks.arkham.stages.config.SiteConfigNode
 import com.caseyjbrooks.arkham.stages.api.inputs.models.ArkhamDbPack
+import com.caseyjbrooks.arkham.stages.config.SiteConfigNode
 import io.ktor.client.HttpClient
 import kotlinx.serialization.builtins.ListSerializer
 
@@ -27,6 +27,7 @@ object ArkhamDbPacksApi {
                 httpClient = http,
                 url = "https://arkhamdb.com/api/public/packs",
                 tags = tags,
+                responseFormat = "json",
             )
         )
     }

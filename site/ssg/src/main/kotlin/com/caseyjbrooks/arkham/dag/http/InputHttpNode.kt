@@ -13,7 +13,16 @@ import kotlinx.serialization.KSerializer
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.decodeFromStream
+import org.xml.sax.InputSource
+import java.io.StringReader
+import java.io.StringWriter
 import java.nio.file.Path
+import javax.xml.parsers.DocumentBuilderFactory
+import javax.xml.transform.OutputKeys
+import javax.xml.transform.TransformerFactory
+import javax.xml.transform.dom.DOMSource
+import javax.xml.transform.stream.StreamResult
+import javax.xml.transform.stream.StreamSource
 import kotlin.io.path.createDirectories
 import kotlin.io.path.createFile
 import kotlin.io.path.div
@@ -21,6 +30,7 @@ import kotlin.io.path.exists
 import kotlin.io.path.inputStream
 import kotlin.io.path.writeText
 import kotlin.time.Duration.Companion.seconds
+
 
 private val MAX_AGE_REGEX = """max-age=(\d+), public""".toRegex()
 val prettyJson = Json {
@@ -34,9 +44,10 @@ interface InputHttpNode : Node.Input {
 
     val httpClient: HttpClient
     val url: String
+    val responseFormat: String
 
     private fun cachedResponseFile(graph: DependencyGraph): Path {
-        return graph.config.httpCacheDir / "${url.replace("\\W+".toRegex(), "-")}/${url.md5}/response.json"
+        return graph.config.httpCacheDir / "${url.replace("\\W+".toRegex(), "-")}/${url.md5}/response.$responseFormat"
     }
 
     private fun cachedMetadataFile(graph: DependencyGraph): Path {
@@ -59,6 +70,62 @@ interface InputHttpNode : Node.Input {
         }
 
         return metadata.isExpired() || !metadata.clean
+    }
+
+    private fun prettifyResponse(input: String): String {
+        return when (responseFormat) {
+            "json" -> {
+                val bodyAsJsonElement = prettyJson.decodeFromString(JsonElement.serializer(), input)
+                val bodyAsPrettyJsonString = prettyJson.encodeToString(JsonElement.serializer(), bodyAsJsonElement)
+                bodyAsPrettyJsonString
+            }
+
+            "xml" -> {
+                return StringWriter()
+                    .use { writer ->
+                        val prettyPrintXsl = """
+                            |<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+                            |    <xsl:strip-space elements="*"/>
+                            |    <xsl:output method="xml" encoding="UTF-8"/>
+                            |
+                            |    <xsl:template match="@*|node()">
+                            |        <xsl:copy>
+                            |            <xsl:apply-templates select="@*|node()"/>
+                            |        </xsl:copy>
+                            |    </xsl:template>
+                            |
+                            |</xsl:stylesheet>
+                        """.trimMargin()
+
+                        TransformerFactory
+                            .newInstance()
+                            .newTransformer(
+                                StreamSource(StringReader(prettyPrintXsl))
+                            )
+                            .apply {
+                                setOutputProperty(OutputKeys.ENCODING, "UTF-8")
+                                setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "no")
+                                setOutputProperty(OutputKeys.INDENT, "yes")
+                                setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2")
+                            }
+                            .transform(
+                                DocumentBuilderFactory
+                                    .newInstance()
+                                    .newDocumentBuilder()
+                                    .parse(InputSource(StringReader(input)))
+                                    .let { DOMSource(it) },
+                                StreamResult(writer),
+                            )
+
+                        writer
+                    }
+                    .toString()
+            }
+
+            else -> {
+                input
+            }
+        }
     }
 
     private suspend fun fetchAndCache(graph: DependencyGraph, markAsClean: Boolean) {
@@ -86,10 +153,8 @@ interface InputHttpNode : Node.Input {
                 parent.createDirectories()
                 if (!exists()) createFile()
 
-                val bodyAsJsonElement = prettyJson.decodeFromString(JsonElement.serializer(), bodyJsonString)
-                val bodyAsPrettyJsonString = prettyJson.encodeToString(JsonElement.serializer(), bodyAsJsonElement)
-
-                writeText(bodyAsPrettyJsonString)
+                val bodyAsPrettyString = prettifyResponse(bodyJsonString)
+                writeText(bodyAsPrettyString)
             }
 
             cachedMetadataFile(graph).apply {

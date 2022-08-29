@@ -10,6 +10,7 @@ import kotlinx.serialization.descriptors.SerialDescriptor
 import kotlinx.serialization.encoding.Decoder
 import kotlinx.serialization.encoding.Encoder
 import kotlin.time.Duration
+import kotlin.time.Duration.Companion.hours
 import kotlin.time.Duration.Companion.seconds
 
 @Serializable
@@ -20,15 +21,29 @@ data class HttpMetadata(
     val clean: Boolean,
 ) {
     fun isExpired(): Boolean {
-        val currentTime = Clock.System.now()
+        if (maxAge > 0.seconds) {
+            // we had a max-age header
+            val currentTime = Clock.System.now()
 
-        if (BuildConfig.DEBUG) {
-            // in debug, make the max age last significantly longer, to save on time and protect the target servers from
-            // too much traffic
-            return currentTime > (lastFetched + (maxAge * 10 * 12)) // turns 10 minute cache into 12 hours
+            if (BuildConfig.DEBUG) {
+                // in debug, make the max age last significantly longer, to save on time and protect the target servers from
+                // too much traffic
+                return currentTime > (lastFetched + (maxAge * 6 * 12)) // turns 10 minute cache into 12 hours
+            } else {
+                // in production, obey the max-age header exactly
+                return currentTime > (lastFetched + maxAge)
+            }
         } else {
-            // in production, obey the max-age header exactly
-            return currentTime > (lastFetched + maxAge)
+            // we did not have a max-age header
+            val currentTime = Clock.System.now()
+
+            if (BuildConfig.DEBUG) {
+                // in debug, cache it for 12 hours
+                return currentTime > (lastFetched + 12.hours)
+            } else {
+                // in production, since we did not receive the header, it is always dirty
+                return true
+            }
         }
     }
 }

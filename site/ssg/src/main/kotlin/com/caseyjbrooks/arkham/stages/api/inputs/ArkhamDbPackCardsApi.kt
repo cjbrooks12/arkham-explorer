@@ -22,6 +22,7 @@ object ArkhamDbPackCardsApi {
             httpClient = http,
             url = "https://arkhamdb.com/api/public/cards/${packCode}.json",
             tags = tags + packCode,
+            responseFormat = "json",
         )
         addNode(packCards)
         addEdge(packsApiNode, packCards)

@@ -8,6 +8,7 @@ data class StartHttpNode(
     override val httpClient: HttpClient,
     override val url: String,
     val tags: List<String> = emptyList(),
+    override val responseFormat: String
 ) : InputHttpNode {
     override val meta: Node.Meta = Node.Meta(
         name = url,
