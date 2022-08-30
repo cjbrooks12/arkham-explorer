@@ -23,6 +23,7 @@ fun LocalArkhamHorrorExpansion.Investigator.asFullOutput(
         name = this.name,
         expansionCode = expansionCode,
         portrait = "",
+        mainClass = this.mainClass,
         products = allExpansionData
             .getProductsContainingInvestigator(this.name)
             .map { it.asLiteOutput(expansionCode, packsApi) },
@@ -42,5 +43,6 @@ fun LocalArkhamHorrorExpansion.Investigator.asLiteOutput(
         name = this.name,
         expansionCode = expansionCode,
         portrait = "",
+        mainClass = this.mainClass,
     )
 }

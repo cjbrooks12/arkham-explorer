@@ -75,7 +75,164 @@
             "nextScenario": []
         }
     ],
-    "encounterSets": [],
-    "investigators": [],
+    "encounterSets": [
+        {
+            "id": "5-1",
+            "name": "Agents of Azathoth",
+            "icon": "{{baseUrl}}/assets/the-circle-undone/agents-of-azathoth.svg"
+        },
+        {
+            "id": "5-2",
+            "name": "Anette's Coven",
+            "icon": "{{baseUrl}}/assets/the-circle-undone/anettes-coven.svg"
+        },
+        {
+            "id": "5-3",
+            "name": "At Death's Doorstep",
+            "icon": "{{baseUrl}}/assets/the-circle-undone/at-deaths-doorstep.svg"
+        },
+        {
+            "id": "5-4",
+            "name": "Before the Black Throne",
+            "icon": "{{baseUrl}}/assets/the-circle-undone/before-the-black-throne.svg"
+        },
+        {
+            "id": "5-5",
+            "name": "City of Sins",
+            "icon": "{{baseUrl}}/assets/the-circle-undone/city-of-sins.svg"
+        },
+        {
+            "id": "5-6",
+            "name": "Disappearance at the Twilight Estate",
+            "icon": "{{baseUrl}}/assets/the-circle-undone/disappearance-at-the-twilight-estate.svg"
+        },
+        {
+            "id": "5-7",
+            "name": "For the Greater Good",
+            "icon": "{{baseUrl}}/assets/the-circle-undone/for-the-greater-good.svg"
+        },
+        {
+            "id": "5-8",
+            "name": "In the Clutches of Chaos",
+            "icon": "{{baseUrl}}/assets/the-circle-undone/in-the-clutches-of-chaos.svg"
+        },
+        {
+            "id": "5-9",
+            "name": "Inexorable Fate",
+            "icon": "{{baseUrl}}/assets/the-circle-undone/inexorable-fate.svg"
+        },
+        {
+            "id": "5-10",
+            "name": "Music of the Damned",
+            "icon": "{{baseUrl}}/assets/the-circle-undone/music-of-the-damned.svg"
+        },
+        {
+            "id": "5-11",
+            "name": "Realm of Death",
+            "icon": "{{baseUrl}}/assets/the-circle-undone/realm-of-death.svg"
+        },
+        {
+            "id": "5-12",
+            "name": "Secrets of the Universe",
+            "icon": "{{baseUrl}}/assets/the-circle-undone/secrets-of-the-universe.svg"
+        },
+        {
+            "id": "5-13",
+            "name": "Silver Twilight Lodge",
+            "icon": "{{baseUrl}}/assets/the-circle-undone/silver-twilight-lodge.svg"
+        },
+        {
+            "id": "5-14",
+            "name": "Spectral Predators",
+            "icon": "{{baseUrl}}/assets/the-circle-undone/spectral-predators.svg"
+        },
+        {
+            "id": "5-15",
+            "name": "The Secret Name",
+            "icon": "{{baseUrl}}/assets/the-circle-undone/the-secret-name.svg"
+        },
+        {
+            "id": "5-16",
+            "name": "The Wages of Sin",
+            "icon": "{{baseUrl}}/assets/the-circle-undone/the-wages-of-sin.svg"
+        },
+        {
+            "id": "5-17",
+            "name": "The Watcher",
+            "icon": "{{baseUrl}}/assets/the-circle-undone/the-watcher.svg"
+        },
+        {
+            "id": "5-18",
+            "name": "The Witching Hour",
+            "icon": "{{baseUrl}}/assets/the-circle-undone/the-witching-hour.svg"
+        },
+        {
+            "id": "5-19",
+            "name": "Trapped Spirits",
+            "icon": "{{baseUrl}}/assets/the-circle-undone/trapped-spirits.svg"
+        },
+        {
+            "id": "5-20",
+            "name": "Union and Disillusion",
+            "icon": "{{baseUrl}}/assets/the-circle-undone/union-and-disillusion.svg"
+        },
+        {
+            "id": "5-21",
+            "name": "Witchcraft",
+            "icon": "{{baseUrl}}/assets/the-circle-undone/witchcraft.svg"
+        }
+    ],
+    "investigators": [
+        {
+            "id": "5-1",
+            "name": "Carolyn Fern",
+            "mainClass": "Guardian"
+        },
+        {
+            "id": "5-2",
+            "name": "Joe Diamond",
+            "mainClass": "Seeker"
+        },
+        {
+            "id": "5-3",
+            "name": "Preston Fairmont",
+            "mainClass": "Rogue"
+        },
+        {
+            "id": "5-4",
+            "name": "Diana Stanley",
+            "mainClass": "Mystic"
+        },
+        {
+            "id": "5-5",
+            "name": "Rita Young",
+            "mainClass": "Survivor"
+        },
+        {
+            "id": "5-6",
+            "name": "Marie Lambeau",
+            "mainClass": "Mystic"
+        },
+        {
+            "id": "5-7",
+            "name": "Gavriella Mizrah",
+            "mainClass": "Neutral"
+        },
+        {
+            "id": "5-8",
+            "name": "Jerome Davids",
+            "mainClass": "Neutral"
+        },
+        {
+            "id": "5-9",
+            "name": "Penny White",
+            "mainClass": "Neutral"
+        },
+        {
+            "id": "5-10",
+            "name": "Valentino Rivas",
+            "mainClass": "Neutral"
+        }
+    ],
     "products": []
 }

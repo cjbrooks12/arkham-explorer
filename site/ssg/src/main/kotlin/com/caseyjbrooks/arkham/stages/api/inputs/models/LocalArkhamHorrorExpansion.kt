@@ -1,6 +1,7 @@
 package com.caseyjbrooks.arkham.stages.api.inputs.models
 
 import com.copperleaf.arkham.models.api.ExpansionType
+import com.copperleaf.arkham.models.api.InvestigatorClass
 import com.copperleaf.arkham.models.api.ProductType
 import com.copperleaf.arkham.models.api.ScenarioChaosBag
 import kotlinx.datetime.LocalDate
@@ -55,7 +56,7 @@ data class LocalArkhamHorrorExpansion(
     data class Investigator(
         val id: String = "",
         val name: String = "",
-        val mainClass: String = "",
+        val mainClass: InvestigatorClass,
     )
 
     @Serializable

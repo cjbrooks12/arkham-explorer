@@ -17,6 +17,7 @@ data class InvestigatorDetails(
     val name: String,
     val expansionCode: String,
     val portrait: String,
+    val mainClass: InvestigatorClass,
     val health: Int,
     val sanity: Int,
     val products: List<ProductLite>,
@@ -28,9 +29,15 @@ data class InvestigatorLite(
     val name: String,
     val expansionCode: String,
     val portrait: String,
+    val mainClass: InvestigatorClass,
 )
 
 @Serializable
 data class InvestigatorList(
     val investigators: List<InvestigatorLite>,
 )
+
+@Serializable
+enum class InvestigatorClass {
+    Guardian, Seeker, Rogue, Mystic, Survivor, Neutral
+}

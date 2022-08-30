@@ -10,6 +10,22 @@
     "startScenario": [],
     "scenarios": [],
     "encounterSets": [],
-    "investigators": [],
+    "investigators": [
+        {
+            "id": "9-1",
+            "name": "Kymani Jones",
+            "mainClass": "Rogue"
+        },
+        {
+            "id": "9-2",
+            "name": "Darrell Simmons",
+            "mainClass": "Survivor"
+        },
+        {
+            "id": "9-3",
+            "name": "Charlie Kane",
+            "mainClass": "Survivor"
+        }
+    ],
     "products": []
 }

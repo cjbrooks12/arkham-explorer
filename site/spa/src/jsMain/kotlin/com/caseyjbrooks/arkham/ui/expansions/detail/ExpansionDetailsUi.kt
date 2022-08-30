@@ -10,6 +10,7 @@ import com.caseyjbrooks.arkham.ui.ArkhamApp
 import com.caseyjbrooks.arkham.utils.CacheReady
 import com.caseyjbrooks.arkham.utils.DynamicGrid
 import com.caseyjbrooks.arkham.utils.GridItem
+import com.caseyjbrooks.arkham.utils.theme.DownloadIconsCard
 import com.caseyjbrooks.arkham.utils.theme.bulma.Breadcrumbs
 import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaColor
 import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaSection
@@ -112,7 +113,7 @@ object ExpansionDetailsUi {
                                 iconUrl = null,
                                 route = ArkhamApp.InvestigatorDetails,
                                 pathParams = arrayOf(investigator.id.id),
-                                buttonColor = BulmaColor.Primary,
+                                buttonColor = investigator.color,
                             )
                         }
                         .toTypedArray()
@@ -143,6 +144,9 @@ object ExpansionDetailsUi {
                         this += NavigationRoute("Campaign log", null, ArkhamApp.CreateCampaignLog, expansion.expansionCode)
                     }.toTypedArray()
                 )
+            },
+            GridItem {
+                DownloadIconsCard(expansion.icon)
             },
         )
     }

@@ -50,7 +50,7 @@ fun LocalArkhamHorrorExpansion.Product.asLiteOutput(
     packsApi: List<ArkhamDbPack>,
 ): ProductLite {
     val arkhamDbEntry = if (this.arkhamDbCode != null) {
-        packsApi.single { it.code == this.arkhamDbCode }
+        packsApi.singleOrNull { it.code == this.arkhamDbCode } ?: error("name (expansion=$expansionCode, product=${this.id})")
     } else {
         null
     }

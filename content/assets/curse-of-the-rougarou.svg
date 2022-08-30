@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="20.160547"
+   height="24"
+   viewBox="0 0 5.3341448 6.35"
+   version="1.1"
+   id="svg5607"
+   inkscape:version="1.2.1 (9c6d41e4, 2022-07-14)"
+   sodipodi:docname="curse-of-the-rougarou.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview5609"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.7046647"
+     inkscape:cx="219.96277"
+     inkscape:cy="239.12082"
+     inkscape:window-width="1390"
+     inkscape:window-height="941"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs5604">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3843">
+      <path
+         d="m 153.95,258.98 h 23.25 v 27.705 h -23.25 z"
+         clip-rule="evenodd"
+         id="path3841" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3853">
+      <path
+         d="M 0,0 H 3.8613 V 4.5781 H 0 Z"
+         id="path3851" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3861">
+      <path
+         d="m 0.085029,0.052923 h 3.72 v 4.44 h -3.72 z"
+         clip-rule="evenodd"
+         id="path3859" />
+    </clipPath>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-46.895506,-85.436885)">
+    <g
+       id="g3837"
+       transform="matrix(0.2383756,0,0,-0.2383756,10.075535,153.6609)">
+      <g
+         id="g3839"
+         clip-path="url(#clipPath3843)">
+        <g
+           id="g3845"
+           transform="matrix(0.32292,-3.77e-7,-1.88e-7,0.38542,153.95,258.97)">
+          <g
+             id="g3847"
+             transform="scale(18.647,15.727)">
+            <g
+               id="g3849"
+               clip-path="url(#clipPath3853)">
+              <g
+                 id="g3855">
+                <g
+                   id="g3857"
+                   clip-path="url(#clipPath3861)">
+                  <path
+                     d="M 0.62708,0.24376 C 0.34788,0.55059 0.085029,1.1239 0.085029,1.426 c 0,0.0629 0.048591,0.2682 0.107991,0.4562 0.1064,0.3368 0.10697,0.3452 0.03853,0.5623 -0.06737,0.2137 -0.06689,0.2247 0.016,0.3652 0.06255,0.106 0.08545,0.2161 0.08545,0.4111 0,0.1464 0.01398,0.266 0.03099,0.2657 C 0.38104,3.4864 0.50657,3.451 0.64296,3.4082 0.77933,3.3655 1.0164,3.317 1.1699,3.3006 1.3526,3.2811 1.4488,3.2526 1.4488,3.2181 1.4488,3.1621 1.1643,3.0135 0.96779,2.9669 0.80269,2.9278 0.68508,2.8094 0.62228,2.6191 0.57623,2.4796 0.57828,2.4315 0.63682,2.2782 0.6743,2.1801 0.70496,2.0876 0.70496,2.0727 0.70496,2.0578 0.63118,1.9603 0.54098,1.8561 0.31239,1.592 0.2658,1.3948 0.35069,1.0508 0.42273,0.75886 0.62765,0.28913 0.7344,0.17117 0.77071,0.13104 0.79123,0.098198 0.78,0.098198 0.76874,0.098198 0.69997,0.16371 0.62712,0.24376 Z M 3.0053,0.88342 C 3.1821,1.144 3.3009,1.4285 3.3936,1.8133 3.4994,2.2523 3.4954,2.455 3.3761,2.6928 3.3224,2.8001 3.255,2.9622 3.2263,3.0531 3.1325,3.3501 3.1054,3.363 2.5789,3.363 2.321,3.363 2.11,3.3787 2.11,3.3978 c 0,0.019 0.0555,0.1353 0.1233,0.2583 0.0677,0.1229 0.1235,0.2647 0.1239,0.315 0,0.0502 0.0393,0.1943 0.0864,0.3201 0.0755,0.2019 0.0947,0.2239 0.1636,0.187 C 2.6501,4.4552 2.7213,4.3549 2.7654,4.2552 2.8459,4.0732 2.9731,3.9748 3.4114,3.7553 L 3.5771,3.6722 3.6035,3.3213 C 3.618,3.1283 3.6689,2.8495 3.7166,2.7018 3.8417,2.3144 3.8308,2.1137 3.6659,1.7708 3.4415,1.3039 3.1862,0.93927 2.9578,0.75943 2.9074,0.71973 2.9244,0.76431 3.0053,0.88342 Z M 2.2395,1.3019 C 2.6558,1.702 2.8445,2.014 3.0846,2.6995 3.099,2.7409 3.131,2.7172 3.1891,2.6217 3.2873,2.46 3.2674,2.3882 3.0161,1.9994 2.8006,1.666 2.5966,1.4496 2.323,1.2641 1.9569,1.0159 1.9467,1.0205 2.2395,1.3019 Z M 1.7196,2.3653 c 0.4286,0.16 0.6925,0.3703 0.8499,0.6775 0.0572,0.1115 0.1063,0.1549 0.1751,0.1549 0.0525,0 0.1072,-0.0116 0.1213,-0.0257 C 2.9134,3.1245 2.7389,2.8445 2.5578,2.6776 2.3183,2.4568 2.0589,2.3376 1.7588,2.3101 L 1.5108,2.2874 Z"
+                     style="fill:#000000;fill-opacity:0.99216;fill-rule:nonzero;stroke:none"
+                     id="path3863" />
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

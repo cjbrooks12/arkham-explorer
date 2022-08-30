@@ -12,94 +12,630 @@
         {
             "id": "100-1",
             "name": "Curse of the Rougarou",
-            "icon": "{{baseUrl}}/assets/standalone/.svg",
-            "encounterSets": [],
+            "icon": "{{baseUrl}}/assets/curse-of-the-rougarou.svg",
+            "encounterSets": [
+                {
+                    "name": "Curse of the Rougarou",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "The Bayou",
+                    "conditional": false,
+                    "setAside": false
+                }
+            ],
             "nextScenario": []
         },
         {
             "id": "100-2",
             "name": "Carnevale of Horrors",
-            "icon": "{{baseUrl}}/assets/standalone/.svg",
-            "encounterSets": [],
+            "icon": "{{baseUrl}}/assets/carnevale-of-horrors.svg",
+            "encounterSets": [
+                {
+                    "name": "Carnevale of Horrors",
+                    "conditional": false,
+                    "setAside": false
+                }
+            ],
             "nextScenario": []
         },
         {
             "id": "100-3",
             "name": "The Labyrinths of Lunacy",
-            "icon": "{{baseUrl}}/assets/standalone/.svg",
-            "encounterSets": [],
+            "icon": "{{baseUrl}}/assets/the-labyrinths-of-lunacy.svg",
+            "encounterSets": [
+                {
+                    "name": "The Labyrinths of Lunacy",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Epic Multiplayer (The Labyrinths of Lunacy)",
+                    "conditional": true,
+                    "setAside": false
+                },
+                {
+                    "name": "Single Group (The Labyrinths of Lunacy)",
+                    "conditional": true,
+                    "setAside": false
+                }
+            ],
             "nextScenario": []
         },
         {
             "id": "100-4",
-            "name": "Guardians of the Abyss",
-            "icon": "{{baseUrl}}/assets/standalone/.svg",
-            "encounterSets": [],
-            "nextScenario": []
+            "name": "The Eternal Slumber",
+            "icon": "{{baseUrl}}/assets/guardians-of-the-abyss.svg",
+            "encounterSets": [
+                {
+                    "name": "The Eternal Slumber",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Sands of Egypt",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Brotherhood of the Beast",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Abyssal Tribute",
+                    "conditional": false,
+                    "setAside": false
+                }
+            ],
+            "nextScenario": [
+                "The Night's Usurper"
+            ]
         },
         {
             "id": "100-5",
-            "name": "Murder at the Excelsior Hotel",
-            "icon": "{{baseUrl}}/assets/standalone/.svg",
-            "encounterSets": [],
+            "name": "The Night's Usurper",
+            "icon": "{{baseUrl}}/assets/guardians-of-the-abyss.svg",
+            "encounterSets": [
+                {
+                    "name": "The Night's Usurper",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Sands of Egypt",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Brotherhood of the Beast",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Abyssal Gifts",
+                    "conditional": false,
+                    "setAside": false
+                }
+            ],
             "nextScenario": []
         },
         {
             "id": "100-6",
-            "name": "The Blob that Ate Everything",
-            "icon": "{{baseUrl}}/assets/standalone/.svg",
-            "encounterSets": [],
+            "name": "Murder at the Excelsior Hotel",
+            "icon": "{{baseUrl}}/assets/murder-at-the-excelsior-hotel.svg",
+            "encounterSets": [
+                {
+                    "name": "Murder at the Excelsior Hotel",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Alien Interference",
+                    "conditional": true,
+                    "setAside": true
+                },
+                {
+                    "name": "Dark Rituals",
+                    "conditional": true,
+                    "setAside": true
+                },
+                {
+                    "name": "Excelsior Management",
+                    "conditional": true,
+                    "setAside": true
+                },
+                {
+                    "name": "Sins of the Past",
+                    "conditional": true,
+                    "setAside": true
+                },
+                {
+                    "name": "Vile Experiments",
+                    "conditional": true,
+                    "setAside": true
+                }
+            ],
             "nextScenario": []
         },
         {
             "id": "100-7",
-            "name": "War of the Outer Gods",
-            "icon": "{{baseUrl}}/assets/standalone/.svg",
-            "encounterSets": [],
+            "name": "The Blob that Ate Everything",
+            "icon": "{{baseUrl}}/assets/the-blob-that-ate-everything.svg",
+            "encounterSets": [
+                {
+                    "name": "The Blob that Ate Everything",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Epic Multiplayer (The Blob that Ate Everything)",
+                    "conditional": true,
+                    "setAside": false
+                },
+                {
+                    "name": "Single Group (The Blob that Ate Everything)",
+                    "conditional": true,
+                    "setAside": false
+                },
+                {
+                    "name": "Mi-Go Incursion",
+                    "conditional": false,
+                    "setAside": false
+                }
+            ],
             "nextScenario": []
         },
         {
             "id": "100-8",
-            "name": "Machinations Through Time",
-            "icon": "{{baseUrl}}/assets/standalone/.svg",
-            "encounterSets": [],
+            "name": "War of the Outer Gods",
+            "icon": "{{baseUrl}}/assets/war-of-the-outer-gods.svg",
+            "encounterSets": [
+                {
+                    "name": "The Blob that Ate Everything",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Children of Paradise",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Swarm of Assimilation",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Death of Stars",
+                    "conditional": false,
+                    "setAside": false
+                }
+            ],
             "nextScenario": []
         },
         {
             "id": "100-9",
-            "name": "Barkham Horror: The Meddling of Meowlathotep",
-            "icon": "{{baseUrl}}/assets/standalone/.svg",
-            "encounterSets": [],
+            "name": "Machinations Through Time",
+            "icon": "{{baseUrl}}/assets/machinations-through-time.svg",
+            "encounterSets": [
+                {
+                    "name": "Machinations Through Time",
+                    "conditional": false,
+                    "setAside": false
+                },
+                {
+                    "name": "Epic Multiplayer (Machinations Through Time)",
+                    "conditional": true,
+                    "setAside": false
+                },
+                {
+                    "name": "Single Group (Machinations Through Time)",
+                    "conditional": true,
+                    "setAside": false
+                }
+            ],
+            "nextScenario": []
+        },
+        {
+            "id": "100-10",
+            "name": "The Meddling of Meowlathotep",
+            "icon": "{{baseUrl}}/assets/barkham-horror.svg",
+            "encounterSets": [
+                {
+                    "name": "The Meddling of Meowlathotep",
+                    "conditional": false,
+                    "setAside": false
+                }
+            ],
             "nextScenario": []
         }
     ],
-    "encounterSets": [],
-    "investigators": [
+    "encounterSets": [
         {
             "id": "100-1",
+            "name": "Curse of the Rougarou",
+            "icon": "{{baseUrl}}/assets/curse-of-the-rougarou/curse-of-the-rougarou.svg"
+        },
+        {
+            "id": "100-2",
+            "name": "The Bayou",
+            "icon": "{{baseUrl}}/assets/curse-of-the-rougarou/the-bayou.svg"
+        },
+        {
+            "id": "100-3",
+            "name": "Carnevale of Horrors",
+            "icon": "{{baseUrl}}/assets/carnevale-of-horrors/carnevale-of-horrors.svg"
+        },
+        {
+            "id": "100-4",
+            "name": "The Labyrinths of Lunacy",
+            "icon": "{{baseUrl}}/assets/the-labyrinths-of-lunacy/the-labyrinths-of-lunacy.svg"
+        },
+        {
+            "id": "100-5",
+            "name": "Epic Multiplayer (The Labyrinths of Lunacy)",
+            "icon": "{{baseUrl}}/assets/the-labyrinths-of-lunacy/epic-multiplayer.svg"
+        },
+        {
+            "id": "100-6",
+            "name": "Single Group (The Labyrinths of Lunacy)",
+            "icon": "{{baseUrl}}/assets/the-labyrinths-of-lunacy/single-group.svg"
+        },
+        {
+            "id": "100-7",
+            "name": "Abyssal Gifts",
+            "icon": "{{baseUrl}}/assets/guardians-of-the-abyss/abyssal-gifts.svg"
+        },
+        {
+            "id": "100-8",
+            "name": "Abyssal Tribute",
+            "icon": "{{baseUrl}}/assets/guardians-of-the-abyss/abyssal-tribute.svg"
+        },
+        {
+            "id": "100-9",
+            "name": "Brotherhood of the Beast",
+            "icon": "{{baseUrl}}/assets/guardians-of-the-abyss/brotherhood-of-the-beast.svg"
+        },
+        {
+            "id": "100-10",
+            "name": "Sands of Egypt",
+            "icon": "{{baseUrl}}/assets/guardians-of-the-abyss/sands-of-egypt.svg"
+        },
+        {
+            "id": "100-11",
+            "name": "The Eternal Slumber",
+            "icon": "{{baseUrl}}/assets/guardians-of-the-abyss/the-eternal-slumber.svg"
+        },
+        {
+            "id": "100-12",
+            "name": "The Night's Usurper",
+            "icon": "{{baseUrl}}/assets/guardians-of-the-abyss/the-nights-usurper.svg"
+        },
+        {
+            "id": "100-13",
+            "name": "Murder at the Excelsior Hotel",
+            "icon": "{{baseUrl}}/assets/murder-at-the-excelsior-hotel/murder-at-the-excelsior-hotel.svg"
+        },
+        {
+            "id": "100-14",
+            "name": "Alien Interference",
+            "icon": "{{baseUrl}}/assets/murder-at-the-excelsior-hotel/alien-interference.svg"
+        },
+        {
+            "id": "100-15",
+            "name": "Dark Rituals",
+            "icon": "{{baseUrl}}/assets/murder-at-the-excelsior-hotel/dark-rituals.svg"
+        },
+        {
+            "id": "100-16",
+            "name": "Excelsior Management",
+            "icon": "{{baseUrl}}/assets/murder-at-the-excelsior-hotel/excelsior-management.svg"
+        },
+        {
+            "id": "100-17",
+            "name": "Sins of the Past",
+            "icon": "{{baseUrl}}/assets/murder-at-the-excelsior-hotel/sins-of-the-past.svg"
+        },
+        {
+            "id": "100-18",
+            "name": "Vile Experiments",
+            "icon": "{{baseUrl}}/assets/murder-at-the-excelsior-hotel/vile-experiments.svg"
+        },
+        {
+            "id": "100-19",
+            "name": "The Blob that Ate Everything",
+            "icon": "{{baseUrl}}/assets/the-blob-that-ate-everything/the-blob-that-ate-everything.svg"
+        },
+        {
+            "id": "100-20",
+            "name": "Epic Multiplayer (The Blob that Ate Everything)",
+            "icon": "{{baseUrl}}/assets/the-blob-that-ate-everything/epic-multiplayer.svg"
+        },
+        {
+            "id": "100-21",
+            "name": "Single Group (The Blob that Ate Everything)",
+            "icon": "{{baseUrl}}/assets/the-blob-that-ate-everything/single-group.svg"
+        },
+        {
+            "id": "100-22",
+            "name": "Mi-Go Incursion",
+            "icon": "{{baseUrl}}/assets/the-blob-that-ate-everything/mi-go-incursion.svg"
+        },
+        {
+            "id": "100-23",
+            "name": "War of the Outer Gods",
+            "icon": "{{baseUrl}}/assets/war-of-the-outer-gods/war-of-the-outer-gods.svg"
+        },
+        {
+            "id": "100-24",
+            "name": "Children of Paradise",
+            "icon": "{{baseUrl}}/assets/war-of-the-outer-gods/children-of-paradise.svg"
+        },
+        {
+            "id": "100-25",
+            "name": "Swarm of Assimilation",
+            "icon": "{{baseUrl}}/assets/war-of-the-outer-gods/swarm-of-assimilation.svg"
+        },
+        {
+            "id": "100-26",
+            "name": "Death of Stars",
+            "icon": "{{baseUrl}}/assets/war-of-the-outer-gods/death-of-stars.svg"
+        },
+        {
+            "id": "100-27",
+            "name": "Machinations Through Time",
+            "icon": "{{baseUrl}}/assets/machinations-through-time/machinations-through-time.svg"
+        },
+        {
+            "id": "100-28",
+            "name": "Epic Multiplayer (Machinations Through Time)",
+            "icon": "{{baseUrl}}/assets/machinations-through-time/epic-multiplayer.svg"
+        },
+        {
+            "id": "100-29",
+            "name": "Single Group (Machinations Through Time)",
+            "icon": "{{baseUrl}}/assets/machinations-through-time/single-group.svg"
+        },
+        {
+            "id": "100-30",
+            "name": "The Meddling of Meowlathotep",
+            "icon": "{{baseUrl}}/assets/barkham-horror/the-meddling-of-meowlathotep.svg"
+        }
+    ],
+    "investigators": [
+        {
+            "id": "101-1",
             "name": "Nathaniel Cho",
             "mainClass": "Guardian"
         },
         {
-            "id": "100-2",
+            "id": "101-2",
             "name": "Harvey Walters",
             "mainClass": "Seeker"
         },
         {
-            "id": "100-3",
+            "id": "101-3",
             "name": "Winifred Habbamock",
             "mainClass": "Rogue"
         },
         {
-            "id": "100-4",
+            "id": "101-4",
             "name": "Jacqueline Fine",
             "mainClass": "Mystic"
         },
         {
-            "id": "100-5",
+            "id": "101-5",
             "name": "Stella Clark",
             "mainClass": "Survivor"
         }
     ],
-    "products": []
+    "products": [
+        {
+            "id": "100-1",
+            "arkhamDbCode": "cotr",
+            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/curse-rougarou/",
+            "productType": "Scenario Pack",
+            "scenarios": [
+                "Curse of the Rougarou"
+            ],
+            "encounterSets": [
+                "Curse of the Rougarou",
+                "The Bayou"
+            ],
+            "investigators": [
+            ]
+        },
+        {
+            "id": "100-2",
+            "arkhamDbCode": "coh",
+            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/carnevale-horrors/",
+            "productType": "Scenario Pack",
+            "scenarios": [
+                "Carnevale of Horrors"
+            ],
+            "encounterSets": [
+                "Carnevale of Horrors"
+            ],
+            "investigators": [
+            ]
+        },
+        {
+            "id": "100-3",
+            "arkhamDbCode": "lol",
+            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/labyrinths-lunacy/",
+            "productType": "Scenario Pack",
+            "scenarios": [
+                "The Labyrinths of Lunacy"
+            ],
+            "encounterSets": [
+                "The Labyrinths of Lunacy",
+                "Epic Multiplayer (The Labyrinths of Lunacy)",
+                "Single Group (The Labyrinths of Lunacy)"
+            ],
+            "investigators": [
+            ]
+        },
+        {
+            "id": "100-4",
+            "arkhamDbCode": "guardians",
+            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/guardians-abyss/",
+            "productType": "Scenario Pack",
+            "scenarios": [
+                "The Eternal Slumber",
+                "The Night's Usurper"
+            ],
+            "encounterSets": [
+                "Abyssal Gifts",
+                "Abyssal Tribute",
+                "Brotherhood of the Beast",
+                "Sands of Egypt",
+                "The Eternal Slumber",
+                "The Night's Usurper"
+            ],
+            "investigators": [
+            ]
+        },
+        {
+            "id": "100-5",
+            "arkhamDbCode": "hotel",
+            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/murder-excelsior-hotel/",
+            "productType": "Scenario Pack",
+            "scenarios": [
+                "Murder at the Excelsior Hotel"
+            ],
+            "encounterSets": [
+                "Murder at the Excelsior Hotel",
+                "Alien Interference",
+                "Dark Rituals",
+                "Excelsior Management",
+                "Sins of the Past",
+                "Vile Experiments"
+            ],
+            "investigators": [
+            ]
+        },
+        {
+            "id": "100-6",
+            "arkhamDbCode": "blob",
+            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/blob-ate-everything/",
+            "productType": "Scenario Pack",
+            "scenarios": [
+                "The Blob that Ate Everything"
+            ],
+            "encounterSets": [
+                "The Blob that Ate Everything",
+                "Epic Multiplayer (The Blob that Ate Everything)",
+                "Single Group (The Blob that Ate Everything)",
+                "Mi-Go Incursion"
+            ],
+            "investigators": [
+            ]
+        },
+        {
+            "id": "100-7",
+            "arkhamDbCode": "wog",
+            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/war-outer-gods/",
+            "productType": "Scenario Pack",
+            "scenarios": [
+                "War of the Outer Gods"
+            ],
+            "encounterSets": [
+                "War of the Outer Gods",
+                "Children of Paradise",
+                "Swarm of Assimilation",
+                "Death of Stars"
+            ],
+            "investigators": [
+            ]
+        },
+        {
+            "id": "100-8",
+            "arkhamDbCode": "mtt",
+            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/machinations-through-time/",
+            "productType": "Scenario Pack",
+            "releaseDate": "2022-02-10",
+            "scenarios": [
+                "Machinations Through Time"
+            ],
+            "encounterSets": [
+                "Machinations Through Time",
+                "Epic Multiplayer (Machinations Through Time)",
+                "Single Group (Machinations Through Time)"
+            ],
+            "investigators": [
+            ]
+        },
+        {
+            "id": "100-9",
+            "name": "Barkham Horror: The Meddling of Meowlathotep",
+            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/barkham-horror-meddling-meowlathotep/",
+            "productType": "Scenario Pack",
+            "releaseDate": "2020-10-16",
+            "scenarios": [
+                "The Meddling of Meowlathotep"
+            ],
+            "encounterSets": [
+                "The Meddling of Meowlathotep"
+            ],
+            "investigators": [
+            ]
+        },
+        {
+            "id": "101-1",
+            "arkhamDbCode": "nat",
+            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/nathaniel-cho-investigator-starter-deck/",
+            "productType": "Investigator Starter Deck",
+            "scenarios": [],
+            "encounterSets": [],
+            "investigators": [
+                "Nathaniel Cho"
+            ]
+        },
+        {
+            "id": "101-2",
+            "arkhamDbCode": "har",
+            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/harvey-walters-investigator-starter-deck/",
+            "productType": "Investigator Starter Deck",
+            "scenarios": [],
+            "encounterSets": [],
+            "investigators": [
+                "Harvey Walters"
+            ]
+        },
+        {
+            "id": "101-3",
+            "arkhamDbCode": "win",
+            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/winifred-habbamock-investigator-starter-deck/",
+            "productType": "Investigator Starter Deck",
+            "scenarios": [],
+            "encounterSets": [],
+            "investigators": [
+                "Winifred Habbamock"
+            ]
+        },
+        {
+            "id": "101-4",
+            "arkhamDbCode": "jac",
+            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/jacqueline-fine-investigator-starter-deck/",
+            "productType": "Investigator Starter Deck",
+            "scenarios": [],
+            "encounterSets": [],
+            "investigators": [
+                "Jacqueline Fine"
+            ]
+        },
+        {
+            "id": "101-5",
+            "arkhamDbCode": "ste",
+            "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/stella-clark-investigator-starter-deck/",
+            "productType": "Investigator Starter Deck",
+            "scenarios": [],
+            "encounterSets": [],
+            "investigators": [
+                "Stella Clark"
+            ]
+        }
+    ]
 }

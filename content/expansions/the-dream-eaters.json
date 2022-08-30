@@ -77,7 +77,134 @@
             "nextScenario": []
         }
     ],
-    "encounterSets": [],
-    "investigators": [],
+    "encounterSets": [
+        {
+            "id": "6-1",
+            "name": "A Thousand Shapes of Horror",
+            "icon": "{{baseUrl}}/assets/the-dream-eaters/a-thousand-shapes-of-horror.svg"
+        },
+        {
+            "id": "6-2",
+            "name": "Agents of Atlach-Nacha",
+            "icon": "{{baseUrl}}/assets/the-dream-eaters/agents-of-atlach-nacha.svg"
+        },
+        {
+            "id": "6-3",
+            "name": "Agents of Nyarlathotep",
+            "icon": "{{baseUrl}}/assets/the-dream-eaters/agents-of-nyarlathotep.svg"
+        },
+        {
+            "id": "6-4",
+            "name": "Beyond the Gates of Sleep",
+            "icon": "{{baseUrl}}/assets/the-dream-eaters/beyond-the-gates-of-sleep.svg"
+        },
+        {
+            "id": "6-5",
+            "name": "Corsairs",
+            "icon": "{{baseUrl}}/assets/the-dream-eaters/corsairs.svg"
+        },
+        {
+            "id": "6-6",
+            "name": "Creatures of the Underworld",
+            "icon": "{{baseUrl}}/assets/the-dream-eaters/creatures-of-the-underworld.svg"
+        },
+        {
+            "id": "6-7",
+            "name": "Dark Side of the Moon",
+            "icon": "{{baseUrl}}/assets/the-dream-eaters/dark-side-of-the-moon.svg"
+        },
+        {
+            "id": "6-8",
+            "name": "Descent into the Pitch",
+            "icon": "{{baseUrl}}/assets/the-dream-eaters/descent-into-the-pitch.svg"
+        },
+        {
+            "id": "6-9",
+            "name": "Dreamer's Curse",
+            "icon": "{{baseUrl}}/assets/the-dream-eaters/dreamers-curse.svg"
+        },
+        {
+            "id": "6-10",
+            "name": "Dreamlands",
+            "icon": "{{baseUrl}}/assets/the-dream-eaters/dreamlands.svg"
+        },
+        {
+            "id": "6-11",
+            "name": "Merging Realities",
+            "icon": "{{baseUrl}}/assets/the-dream-eaters/merging-realities.svg"
+        },
+        {
+            "id": "6-12",
+            "name": "Point of No Return",
+            "icon": "{{baseUrl}}/assets/the-dream-eaters/point-of-no-return.svg"
+        },
+        {
+            "id": "6-13",
+            "name": "Spiders",
+            "icon": "{{baseUrl}}/assets/the-dream-eaters/spiders.svg"
+        },
+        {
+            "id": "6-14",
+            "name": "Terror of the Vale",
+            "icon": "{{baseUrl}}/assets/the-dream-eaters/terror-of-the-vale.svg"
+        },
+        {
+            "id": "6-15",
+            "name": "The Search for Kadath",
+            "icon": "{{baseUrl}}/assets/the-dream-eaters/the-search-for-kadath.svg"
+        },
+        {
+            "id": "6-16",
+            "name": "Waking Nightmare",
+            "icon": "{{baseUrl}}/assets/the-dream-eaters/waking-nightmare.svg"
+        },
+        {
+            "id": "6-17",
+            "name": "Weaver of the Cosmos",
+            "icon": "{{baseUrl}}/assets/the-dream-eaters/weaver-of-the-cosmos.svg"
+        },
+        {
+            "id": "6-18",
+            "name": "Where the Gods Dwell",
+            "icon": "{{baseUrl}}/assets/the-dream-eaters/where-the-gods-dwell.svg"
+        },
+        {
+            "id": "6-19",
+            "name": "Whispers of Hypnos",
+            "icon": "{{baseUrl}}/assets/the-dream-eaters/whispers-of-hypnos.svg"
+        },
+        {
+            "id": "6-20",
+            "name": "Zoogs",
+            "icon": "{{baseUrl}}/assets/the-dream-eaters/zoogs.svg"
+        }
+    ],
+    "investigators": [
+        {
+            "id": "6-1",
+            "name": "Tommy Muldoon",
+            "mainClass": "Guardian"
+        },
+        {
+            "id": "6-2",
+            "name": "Mandy Thompson",
+            "mainClass": "Seeker"
+        },
+        {
+            "id": "6-3",
+            "name": "Tony Morgan",
+            "mainClass": "Rogue"
+        },
+        {
+            "id": "6-4",
+            "name": "Luke Robinson",
+            "mainClass": "Mystic"
+        },
+        {
+            "id": "6-5",
+            "name": "Patrice Hathaway",
+            "mainClass": "Survivor"
+        }
+    ],
     "products": []
 }

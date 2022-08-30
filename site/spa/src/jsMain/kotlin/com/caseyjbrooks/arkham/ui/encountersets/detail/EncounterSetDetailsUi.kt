@@ -10,6 +10,7 @@ import com.caseyjbrooks.arkham.ui.ArkhamApp
 import com.caseyjbrooks.arkham.utils.CacheReady
 import com.caseyjbrooks.arkham.utils.DynamicGrid
 import com.caseyjbrooks.arkham.utils.GridItem
+import com.caseyjbrooks.arkham.utils.theme.DownloadIconsCard
 import com.caseyjbrooks.arkham.utils.theme.bulma.Breadcrumbs
 import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaSection
 import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaSize
@@ -71,9 +72,6 @@ object EncounterSetDetailsUi {
                 Card(title = "Details")
             },
             GridItem {
-                Card(title = "Tools")
-            },
-            GridItem {
                 Card(
                     title = "Products",
                     description = "${encounterSet.name} is available in the following products:",
@@ -88,6 +86,12 @@ object EncounterSetDetailsUi {
                         )
                     }.toTypedArray()
                 )
+            },
+            GridItem {
+                Card(title = "Tools")
+            },
+            GridItem {
+                DownloadIconsCard(encounterSet.icon)
             },
         )
     }

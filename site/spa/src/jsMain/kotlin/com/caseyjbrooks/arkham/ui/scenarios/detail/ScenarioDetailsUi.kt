@@ -10,6 +10,7 @@ import com.caseyjbrooks.arkham.ui.ArkhamApp
 import com.caseyjbrooks.arkham.utils.CacheReady
 import com.caseyjbrooks.arkham.utils.DynamicGrid
 import com.caseyjbrooks.arkham.utils.GridItem
+import com.caseyjbrooks.arkham.utils.theme.DownloadIconsCard
 import com.caseyjbrooks.arkham.utils.theme.bulma.Breadcrumbs
 import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaSection
 import com.caseyjbrooks.arkham.utils.theme.bulma.BulmaSize
@@ -90,20 +91,6 @@ object ScenarioDetailsUi {
             },
             GridItem {
                 Card(
-                    title = "Tools",
-                    navigationRoutes = buildList<NavigationRoute> {
-                        this += NavigationRoute("Campaign log", null, ArkhamApp.CreateCampaignLog, expansion.expansionCode)
-                        this += NavigationRoute(
-                            "Chaos Bag",
-                            null,
-                            ArkhamApp.ChaosBagSimulator,
-                            queryParams = mapOf("scenarioId" to listOf(scenario.id.id))
-                        )
-                    }.toTypedArray()
-                )
-            },
-            GridItem {
-                Card(
                     title = "Products",
                     description = "${scenario.name} is available in the following products:",
                     navigationRoutes = scenario.products.map { product ->
@@ -117,6 +104,23 @@ object ScenarioDetailsUi {
                         )
                     }.toTypedArray()
                 )
+            },
+            GridItem {
+                Card(
+                    title = "Tools",
+                    navigationRoutes = buildList<NavigationRoute> {
+                        this += NavigationRoute("Campaign log", null, ArkhamApp.CreateCampaignLog, expansion.expansionCode)
+                        this += NavigationRoute(
+                            "Chaos Bag",
+                            null,
+                            ArkhamApp.ChaosBagSimulator,
+                            queryParams = mapOf("scenarioId" to listOf(scenario.id.id))
+                        )
+                    }.toTypedArray()
+                )
+            },
+            GridItem {
+                DownloadIconsCard(expansion.icon)
             },
         )
     }
