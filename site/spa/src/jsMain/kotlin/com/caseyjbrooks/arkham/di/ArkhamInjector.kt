@@ -20,6 +20,7 @@ import com.caseyjbrooks.arkham.ui.tools.campaignlog.CampaignLogViewModel
 import com.caseyjbrooks.arkham.ui.tools.cards.CustomCardsViewModel
 import com.caseyjbrooks.arkham.ui.tools.chaosbag.ChaosBagSimulatorViewModel
 import com.caseyjbrooks.arkham.ui.tools.investigatortracker.InvestigatorTrackerViewModel
+import com.caseyjbrooks.arkham.utils.canvas.CanvasViewModel
 import com.caseyjbrooks.arkham.utils.navigation.NavigationLinkStrategy
 import com.copperleaf.arkham.models.api.EncounterSetId
 import com.copperleaf.arkham.models.api.InvestigatorId
@@ -60,4 +61,5 @@ interface ArkhamInjector {
     fun campaignLogViewModel(coroutineScope: CoroutineScope, expansionCode: String?, campaignLogId: String?): CampaignLogViewModel
     fun investigatorTrackerViewModel(coroutineScope: CoroutineScope, investigatorId: InvestigatorId?): InvestigatorTrackerViewModel
     fun customCardsViewModel(coroutineScope: CoroutineScope): CustomCardsViewModel
+    fun canvasViewModel(coroutineScope: CoroutineScope): CanvasViewModel
 }

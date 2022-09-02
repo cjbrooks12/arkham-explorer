@@ -43,6 +43,9 @@
         },
         "cost": {
             "type": "integer"
+        },
+        "debug": {
+            "type": "boolean"
         }
     },
     "required": []

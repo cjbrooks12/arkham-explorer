@@ -1,5 +1,6 @@
 package com.caseyjbrooks.arkham.api
 
+import com.caseyjbrooks.arkham.utils.canvas.CanvasDefinition
 import com.caseyjbrooks.arkham.utils.form.FormDefinition
 import com.copperleaf.arkham.models.api.EncounterSetDetails
 import com.copperleaf.arkham.models.api.EncounterSetId
@@ -36,5 +37,6 @@ interface ArkhamExplorerApi {
 
     suspend fun getStaticPageContent(slug: String): StaticPage
 
-    suspend fun getFormSchema(slug: String): FormDefinition
+    suspend fun getFormDefinition(slug: String): FormDefinition
+    suspend fun getCanvasDefinition(slug: String): CanvasDefinition
 }

@@ -1,6 +1,7 @@
 package com.caseyjbrooks.arkham.api
 
 import com.caseyjbrooks.arkham.config.ArkhamConfig
+import com.caseyjbrooks.arkham.utils.canvas.CanvasDefinition
 import com.caseyjbrooks.arkham.utils.form.FormDefinition
 import com.copperleaf.arkham.models.api.EncounterSetDetails
 import com.copperleaf.arkham.models.api.EncounterSetId
@@ -97,7 +98,7 @@ class ArkhamExplorerApiImpl(
             .body()
     }
 
-    override suspend fun getFormSchema(slug: String): FormDefinition = coroutineScope {
+    override suspend fun getFormDefinition(slug: String): FormDefinition = coroutineScope {
         val asyncSchema: Deferred<JsonElement> = async {
             httpClient.get("api/schemas/$slug/schema.json").body()
         }
@@ -116,5 +117,9 @@ class ArkhamExplorerApiImpl(
             uiSchema = uiSchema,
             defaultData = asyncDefaultData.await(),
         )
+    }
+
+    override suspend fun getCanvasDefinition(slug: String): CanvasDefinition = coroutineScope {
+        httpClient.get("api/schemas/$slug/canvas.json").body()
     }
 }

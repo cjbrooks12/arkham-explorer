@@ -1,5 +1,6 @@
 package com.caseyjbrooks.arkham.repository.main
 
+import com.caseyjbrooks.arkham.utils.canvas.CanvasDefinition
 import com.caseyjbrooks.arkham.utils.form.FormDefinition
 import com.copperleaf.arkham.models.api.EncounterSetDetails
 import com.copperleaf.arkham.models.api.EncounterSetId
@@ -39,4 +40,5 @@ interface ArkhamExplorerRepository {
     fun getStaticPageContent(forceRefresh: Boolean, slug: String): Flow<Cached<StaticPage>>
 
     fun getFormDefinition(forceRefresh: Boolean, slug: String): Flow<Cached<FormDefinition>>
+    fun getCanvasDefinition(forceRefresh: Boolean, slug: String): Flow<Cached<CanvasDefinition>>
 }

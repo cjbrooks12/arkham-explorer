@@ -59,6 +59,9 @@ import com.caseyjbrooks.arkham.ui.tools.chaosbag.ChaosBagSimulatorViewModel
 import com.caseyjbrooks.arkham.ui.tools.investigatortracker.InvestigatorTrackerContract
 import com.caseyjbrooks.arkham.ui.tools.investigatortracker.InvestigatorTrackerInputHandler
 import com.caseyjbrooks.arkham.ui.tools.investigatortracker.InvestigatorTrackerViewModel
+import com.caseyjbrooks.arkham.utils.canvas.CanvasInputHandler
+import com.caseyjbrooks.arkham.utils.canvas.CanvasSavedStateAdapter
+import com.caseyjbrooks.arkham.utils.canvas.CanvasViewModel
 import com.caseyjbrooks.arkham.utils.navigation.HashNavigationLinkStrategy
 import com.caseyjbrooks.arkham.utils.navigation.HistoryNavigationLinkStrategy
 import com.caseyjbrooks.arkham.utils.navigation.NavigationLinkStrategy
@@ -415,6 +418,22 @@ class ArkhamInjectorImpl(
                 },
             inputHandler = CustomCardsInputHandler(
                 repository = arkhamExplorerRepository
+            ),
+        )
+    }
+
+    override fun canvasViewModel(coroutineScope: CoroutineScope): CanvasViewModel {
+        return CanvasViewModel(
+            coroutineScope = coroutineScope,
+            configBuilder = defaultConfigBuilder()
+                .apply {
+                    this += BallastSavedStateInterceptor(
+                        CanvasSavedStateAdapter("Custom Cards")
+                    )
+                },
+            inputHandler = CanvasInputHandler(
+                loadFormDefinition = { arkhamExplorerRepository.getFormDefinition(false, "assets") },
+                loadCanvasDefinition = { arkhamExplorerRepository.getCanvasDefinition(false, "assets") },
             ),
         )
     }

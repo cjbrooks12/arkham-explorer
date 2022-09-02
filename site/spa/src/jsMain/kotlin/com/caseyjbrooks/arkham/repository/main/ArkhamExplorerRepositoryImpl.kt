@@ -1,6 +1,7 @@
 package com.caseyjbrooks.arkham.repository.main
 
 import com.caseyjbrooks.arkham.api.ArkhamExplorerApi
+import com.caseyjbrooks.arkham.utils.canvas.CanvasDefinition
 import com.caseyjbrooks.arkham.utils.form.FormDefinition
 import com.copperleaf.arkham.models.api.EncounterSetDetails
 import com.copperleaf.arkham.models.api.EncounterSetId
@@ -128,11 +129,18 @@ class ArkhamExplorerRepositoryImpl(
     override fun getFormDefinition(forceRefresh: Boolean, slug: String): Flow<Cached<FormDefinition>> {
         return flowOfKey(
             forceRefresh,
-            SimpleCachedValue.Key("Schema", slug)
-        ) { api.getFormSchema(slug) }
+            SimpleCachedValue.Key("Form Definition", slug)
+        ) { api.getFormDefinition(slug) }
     }
 
-// Utils
+    override fun getCanvasDefinition(forceRefresh: Boolean, slug: String): Flow<Cached<CanvasDefinition>> {
+        return flowOfKey(
+            forceRefresh,
+            SimpleCachedValue.Key("Canvas Definition", slug)
+        ) { api.getCanvasDefinition(slug) }
+    }
+
+    // Utils
 // ---------------------------------------------------------------------------------------------------------------------
 
     private fun <T : Any> flowOfKey(
