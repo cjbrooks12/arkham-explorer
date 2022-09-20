@@ -1,6 +1,7 @@
 package com.caseyjbrooks.arkham.ui
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
@@ -46,6 +47,30 @@ fun MainApplication(injector: ArkhamInjector) {
 
         when (val destination = routerVmState.currentDestinationOrNotFound) {
             is Destination -> {
+                LaunchedEffect(destination.originalRoute) {
+                    console.log(destination)
+                    console.log(
+                        buildString {
+                            appendLine("${destination.path} (matches ${destination.originalRoute.originalRoute})")
+                            appendLine("----------")
+                            appendLine("Original URL")
+                            appendLine("    ${destination.originalUrl}")
+                            if (destination.pathParameters.isNotEmpty()) {
+                                appendLine("Path Parameters")
+                                destination.pathParameters.forEach { (key, values) ->
+                                    appendLine("  - ${key}: ${values.singleOrNull() ?: values}")
+                                }
+                            }
+                            if (destination.queryParameters.isNotEmpty()) {
+                                appendLine("Query Parameters")
+                                destination.queryParameters.forEach { (key, values) ->
+                                    appendLine("  - ${key}: ${values.singleOrNull() ?: values}")
+                                }
+                            }
+                        }
+                    )
+                }
+
                 when (destination.originalRoute) {
                     ArkhamApp.Home -> {
                         HomeUi.Page(injector)

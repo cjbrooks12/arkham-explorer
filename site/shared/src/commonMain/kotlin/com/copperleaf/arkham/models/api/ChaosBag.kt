@@ -9,9 +9,21 @@ import kotlinx.serialization.encoding.Decoder
 import kotlinx.serialization.encoding.Encoder
 
 @Serializable(with = ChaosTokenSerializer::class)
-sealed interface ChaosToken
+sealed interface ChaosToken {
+    fun modifierValue(
+        referenceCard: ScenarioReferenceCard?,
+        variableValues: Map<String, Int>,
+    ): Int?
+}
 
-data class NumberToken(val value: Int) : ChaosToken {
+data class NumberToken(private val value: Int) : ChaosToken {
+    override fun modifierValue(
+        referenceCard: ScenarioReferenceCard?,
+        variableValues: Map<String, Int>,
+    ): Int? {
+        return value
+    }
+
     override fun toString(): String {
         return when {
             value > 0 -> "+${value}"
@@ -24,45 +36,156 @@ data class NumberToken(val value: Int) : ChaosToken {
 
 object Skull : ChaosToken {
     override fun toString(): String = "Skull"
+
+    override fun modifierValue(
+        referenceCard: ScenarioReferenceCard?,
+        variableValues: Map<String, Int>,
+    ): Int? {
+        return referenceCard?.tokens?.single { it.token == this }?.modifierValue?.let {
+            when(it) {
+                is ChaosTokenModifierValue.Static -> it.value
+                is ChaosTokenModifierValue.Variable -> variableValues[it.key]?.times(-1)
+            }
+        }
+    }
 }
 
 object Cultist : ChaosToken {
     override fun toString(): String = "Cultist"
+
+    override fun modifierValue(
+        referenceCard: ScenarioReferenceCard?,
+        variableValues: Map<String, Int>,
+    ): Int? {
+        return referenceCard?.tokens?.single { it.token == this }?.modifierValue?.let {
+            when(it) {
+                is ChaosTokenModifierValue.Static -> it.value
+                is ChaosTokenModifierValue.Variable -> variableValues[it.key]?.times(-1)
+            }
+        }
+    }
 }
 
 object Tablet : ChaosToken {
     override fun toString(): String = "Tablet"
+
+    override fun modifierValue(
+        referenceCard: ScenarioReferenceCard?,
+        variableValues: Map<String, Int>,
+    ): Int? {
+        return referenceCard?.tokens?.single { it.token == this }?.modifierValue?.let {
+            when(it) {
+                is ChaosTokenModifierValue.Static -> it.value
+                is ChaosTokenModifierValue.Variable -> variableValues[it.key]?.times(-1)
+            }
+        }
+    }
 }
 
 object ElderThing : ChaosToken {
     override fun toString(): String = "Elder Thing"
+
+    override fun modifierValue(
+        referenceCard: ScenarioReferenceCard?,
+        variableValues: Map<String, Int>,
+    ): Int? {
+        return referenceCard?.tokens?.single { it.token == this }?.modifierValue?.let {
+            when(it) {
+                is ChaosTokenModifierValue.Static -> it.value
+                is ChaosTokenModifierValue.Variable -> variableValues[it.key]?.times(-1)
+            }
+        }
+    }
 }
 
 object AutoFail : ChaosToken {
     override fun toString(): String = "Auto-Fail"
+
+    override fun modifierValue(
+        referenceCard: ScenarioReferenceCard?,
+        variableValues: Map<String, Int>,
+    ): Int? {
+        return Int.MIN_VALUE
+    }
 }
 
 object ElderSign : ChaosToken {
     override fun toString(): String = "Elder Sign"
+
+    override fun modifierValue(
+        referenceCard: ScenarioReferenceCard?,
+        variableValues: Map<String, Int>,
+    ): Int? {
+        return 0
+    }
 }
 
 object Bless : ChaosToken {
     override fun toString(): String = "Bless"
+
+    override fun modifierValue(
+        referenceCard: ScenarioReferenceCard?,
+        variableValues: Map<String, Int>,
+    ): Int? {
+        return 0
+    }
 }
 
 object Curse : ChaosToken {
     override fun toString(): String = "Curse"
+
+    override fun modifierValue(
+        referenceCard: ScenarioReferenceCard?,
+        variableValues: Map<String, Int>,
+    ): Int? {
+        return 0
+    }
 }
 
-@Serializable(with = ChaosBagDifficultySerializer::class)
-enum class ChaosBagDifficulty(val value: String) {
+object Frost : ChaosToken {
+    override fun toString(): String = "Frost"
+
+    override fun modifierValue(
+        referenceCard: ScenarioReferenceCard?,
+        variableValues: Map<String, Int>,
+    ): Int? {
+        return 0
+    }
+}
+
+@Serializable(with = ScenarioDifficultySerializer::class)
+enum class ScenarioDifficulty(val value: String) {
     Easy("easy"), Standard("standard"), Hard("hard"), Expert("expert")
 }
 
 @Serializable
 data class ScenarioChaosBag(
-    val difficulty: ChaosBagDifficulty,
+    val difficulty: ScenarioDifficulty,
     val tokens: List<ChaosToken>,
+)
+
+@Serializable
+data class ScenarioReferenceCard(
+    val difficulties: Set<ScenarioDifficulty>,
+    val tokens: List<ScenarioReferenceChaosTokenValue>,
+)
+
+@Serializable(with = ChaosTokenModifierValueSerializer::class)
+sealed interface ChaosTokenModifierValue {
+    data class Static(
+        val value: Int
+    ) : ChaosTokenModifierValue
+
+    data class Variable(
+        val key: String
+    ) : ChaosTokenModifierValue
+}
+
+@Serializable
+data class ScenarioReferenceChaosTokenValue(
+    val token: ChaosToken,
+    val text: String,
+    val modifierValue: ChaosTokenModifierValue,
 )
 
 object ChaosTokenSerializer : KSerializer<ChaosToken> {
@@ -92,18 +215,44 @@ object ChaosTokenSerializer : KSerializer<ChaosToken> {
 }
 
 
-object ChaosBagDifficultySerializer : KSerializer<ChaosBagDifficulty> {
+object ScenarioDifficultySerializer : KSerializer<ScenarioDifficulty> {
     override val descriptor: SerialDescriptor = PrimitiveSerialDescriptor("ChaosBagDifficulty", PrimitiveKind.STRING)
 
-    override fun serialize(encoder: Encoder, value: ChaosBagDifficulty) {
+    override fun serialize(encoder: Encoder, value: ScenarioDifficulty) {
         encoder.encodeString(value.value)
     }
 
-    override fun deserialize(decoder: Decoder): ChaosBagDifficulty {
+    override fun deserialize(decoder: Decoder): ScenarioDifficulty {
         val stringValue = decoder.decodeString()
-        return ChaosBagDifficulty
+        return ScenarioDifficulty
             .values()
             .singleOrNull { it.value == stringValue }
             ?: error("${stringValue} is not a valid Chaos Bag difficulty")
+    }
+}
+
+
+object ChaosTokenModifierValueSerializer : KSerializer<ChaosTokenModifierValue> {
+    override val descriptor: SerialDescriptor =
+        PrimitiveSerialDescriptor("ChaosTokenModifierValue", PrimitiveKind.STRING)
+
+    override fun serialize(encoder: Encoder, value: ChaosTokenModifierValue) {
+        when (value) {
+            is ChaosTokenModifierValue.Static -> {
+                encoder.encodeString(value.value.toString())
+            }
+
+            is ChaosTokenModifierValue.Variable -> {
+                encoder.encodeString(value.key)
+            }
+        }
+    }
+
+    override fun deserialize(decoder: Decoder): ChaosTokenModifierValue {
+        val stringValue = decoder.decodeString()
+        return stringValue
+            .toIntOrNull()
+            ?.let { ChaosTokenModifierValue.Static(it) }
+            ?: ChaosTokenModifierValue.Variable(stringValue)
     }
 }

@@ -92,6 +92,11 @@ data class ArkhamDbCard(
     val duplicate_of_name: String? = null,
     val alternate_of_code: String? = null,
     val alternate_of_name: String? = null,
+
+    // customizable cards
+    val customization_text: String? = null,
+    val customization_change: String? = null,
+    val customization_options: String? = null,
 ) {
     @Serializable
     data class ErrataDate(

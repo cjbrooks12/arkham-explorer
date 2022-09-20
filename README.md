@@ -72,3 +72,4 @@ not be possible.
   - Some data was transcribed manually from official rulebooks
 - Box art is from the respective photo galleries on BoardGameGeek, credited to those original posters
 - 
+

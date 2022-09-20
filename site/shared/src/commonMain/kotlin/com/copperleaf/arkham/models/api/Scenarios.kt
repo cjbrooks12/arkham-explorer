@@ -20,6 +20,7 @@ data class ScenarioDetails(
     val icon: String,
     val encounterSets: List<ScenarioEncounterSet>,
     val chaosBag: List<ScenarioChaosBag>,
+    val referenceCard: List<ScenarioReferenceCard>,
     val products: List<ProductLite>,
     val nextScenario: List<ScenarioId>,
     val campaignLogSchema: JsonElement,

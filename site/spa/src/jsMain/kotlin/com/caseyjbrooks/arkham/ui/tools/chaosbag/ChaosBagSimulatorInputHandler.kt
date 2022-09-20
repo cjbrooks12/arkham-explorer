@@ -4,10 +4,10 @@ import com.caseyjbrooks.arkham.repository.main.ArkhamExplorerRepository
 import com.caseyjbrooks.arkham.utils.removeAllPreservingDuplicates
 import com.caseyjbrooks.arkham.utils.theme.layouts.MainLayoutState
 import com.copperleaf.arkham.models.api.AutoFail
-import com.copperleaf.arkham.models.api.ChaosBagDifficulty
 import com.copperleaf.arkham.models.api.Cultist
 import com.copperleaf.arkham.models.api.ElderSign
 import com.copperleaf.arkham.models.api.NumberToken
+import com.copperleaf.arkham.models.api.ScenarioDifficulty
 import com.copperleaf.arkham.models.api.Skull
 import com.copperleaf.arkham.models.api.Tablet
 import com.copperleaf.ballast.InputHandler
@@ -51,8 +51,8 @@ class ChaosBagSimulatorInputHandler(
                 it.copy(
                     scenarioId = null,
                     scenario = null,
-                    selectedDifficulty = ChaosBagDifficulty.Standard,
-                    tokens = defaultInitialTokens,
+                    selectedDifficulty = ScenarioDifficulty.Standard,
+                    allTokens = defaultInitialTokens,
                     consumedTokens = emptyList(),
                 )
             }
@@ -68,26 +68,30 @@ class ChaosBagSimulatorInputHandler(
         is ChaosBagSimulatorContract.Inputs.InitializeForScenario -> {
             val scenario = repository.getScenario(false, input.scenarioId).awaitValue().getCachedOrThrow()
             val initialDifficulty = if (scenario.chaosBag.isNotEmpty()) {
-                if (scenario.chaosBag.any { it.difficulty == ChaosBagDifficulty.Standard }) {
-                    ChaosBagDifficulty.Standard
+                if (scenario.chaosBag.any { it.difficulty == ScenarioDifficulty.Standard }) {
+                    ScenarioDifficulty.Standard
                 } else {
                     scenario.chaosBag.first().difficulty
                 }
             } else {
-                ChaosBagDifficulty.Standard
+                ScenarioDifficulty.Standard
             }
             val initialChaosBag = scenario
                 .chaosBag
                 .singleOrNull { it.difficulty == initialDifficulty }
                 ?.tokens
                 ?: defaultInitialTokens
+            val referenceCards = scenario.referenceCard
+            val referenceCard = scenario.referenceCard.singleOrNull { initialDifficulty in it.difficulties }
 
             updateState {
                 it.copy(
                     scenarioId = input.scenarioId,
                     scenario = scenario,
                     selectedDifficulty = initialDifficulty,
-                    tokens = initialChaosBag,
+                    referenceCards = referenceCards,
+                    referenceCard = referenceCard,
+                    allTokens = initialChaosBag,
                     consumedTokens = emptyList(),
                 )
             }
@@ -110,21 +114,31 @@ class ChaosBagSimulatorInputHandler(
                     .chaosBag
                     .single { it.difficulty == input.difficulty }
                     .tokens
+                val referenceCard = currentState.referenceCards.singleOrNull { input.difficulty in it.difficulties }
 
                 updateState {
                     it.copy(
                         selectedDifficulty = input.difficulty,
-                        tokens = newChaosBag,
+                        referenceCard = referenceCard,
+                        allTokens = newChaosBag,
                         consumedTokens = emptyList(),
                     )
                 }
             }
         }
 
+        is ChaosBagSimulatorContract.Inputs.UpdateTokenModifierValue -> {
+            updateState {
+                it.copy(
+                    chaosBagVariableModifierValues = it.chaosBagVariableModifierValues + (input.key to input.value)
+                )
+            }
+        }
+
         is ChaosBagSimulatorContract.Inputs.AddTokenToBag -> {
             updateState {
                 it.copy(
-                    tokens = it.tokens + input.token,
+                    allTokens = it.allTokens + input.token,
                     consumedTokens = emptyList(),
                 )
             }
@@ -133,7 +147,7 @@ class ChaosBagSimulatorInputHandler(
         is ChaosBagSimulatorContract.Inputs.RemoveTokenFromBag -> {
             updateState {
                 it.copy(
-                    tokens = it.tokens - input.token,
+                    allTokens = it.allTokens - input.token,
                     consumedTokens = emptyList(),
                 )
             }

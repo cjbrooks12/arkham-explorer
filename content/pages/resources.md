@@ -11,8 +11,10 @@ playing _Arkham Horror: The Card Game_.
 - Utilities and Game Info
   - [Arkham Cards App](https://arkhamcards.com/)
   - [ArkhamDB](https://arkhamdb.com/)
+  - [ArkhamRec](https://www.arkhrec.com/)
   - [Encounter Sets Google Doc](https://docs.google.com/spreadsheets/d/1nNLXLzIEQ4nxQqgOlGV8rsp26qAC437c88pmC5izCaQ/edit#gid=1034825012): I am working to migrate the info in this doc into an API for scriptable consumption, as well as a more user-friendly interface
   - [Chaos Bag/Skill Test Calculator](https://boardgamegeek.com/filepage/142352/skill-test-chaos-bag-calculator)
+  - [Official FFG Marketing Images](http://assets.asmodee.ca/fichiers.php?url=fichiers%2FFantasy+Flight+Games%2FArkham+Horror%2FArkham+Horror+-+LCG)
 - Atmosphere and Premium Components
   - [Dissonant Voices Narration](https://mythosbusters.com/2021/01/13/dissonant-voices-now-on-arkham-cards/)
   - [Arkham Horror: The Soundtrack](https://itswritingitself.wordpress.com/2020/01/28/ahlcg-arkham-horror-the-card-game-the-soundtrack/)

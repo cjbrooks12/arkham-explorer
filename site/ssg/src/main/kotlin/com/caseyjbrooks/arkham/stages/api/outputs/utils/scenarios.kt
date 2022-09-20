@@ -22,6 +22,7 @@ fun LocalArkhamHorrorExpansion.Scenario.asFullOutput(
             it.asFullOutput(expansionCode, allExpansionData, packsApi)
         },
         chaosBag = this.chaosBag,
+        referenceCard = this.referenceCard,
         products = allExpansionData
             .getProductsContainingScenario(this.name)
             .map { it.asLiteOutput(expansionCode, packsApi) },

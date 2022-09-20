@@ -136,6 +136,48 @@
                     ]
                 }
             ],
+            "referenceCard": [
+                {
+                    "difficulties": ["easy", "standard"],
+                    "tokens": [
+                        {
+                            "token": "Skull",
+                            "text": "-X. X is the number of [[Ghoul]] enemies at your location.",
+                            "modifierValue": "Ghouls"
+                        },
+                        {
+                            "token": "Cultist",
+                            "text": "-1. If you fail, take 1 horror.",
+                            "modifierValue": -1
+                        },
+                        {
+                            "token": "Tablet",
+                            "text": "-2. If there is a [[Ghoul]] enemy at your location, take 1 damage.",
+                            "modifierValue": -2
+                        }
+                    ]
+                },
+                {
+                    "difficulties": ["hard", "expert"],
+                    "tokens": [
+                        {
+                            "token": "Skull",
+                            "text": "-2. If you fail, after this skill test, search the encounter deck and discard pile for a [[Ghoul]] enemy, and draw it. Shuffle the encounter deck.",
+                            "modifierValue": -2
+                        },
+                        {
+                            "token": "Cultist",
+                            "text": "Reveal another token. If you fail, take 2 horror.",
+                            "modifierValue": 0
+                        },
+                        {
+                            "token": "Tablet",
+                            "text": "-4. If there is a [[Ghoul]] enemy at your location, take 1 damage and 1 horror.",
+                            "modifierValue": -4
+                        }
+                    ]
+                }
+            ],
             "nextScenario": [
                 "The Midnight Masks"
             ],
@@ -369,6 +411,48 @@
                         "Tablet",
                         "Auto-Fail",
                         "Elder Sign"
+                    ]
+                }
+            ],
+            "referenceCard": [
+                {
+                    "difficulties": ["easy", "standard"],
+                    "tokens": [
+                        {
+                            "token": "Skull",
+                            "text": "-X. X is the highest number of doom on a [[Cultist]] enemy in play.",
+                            "modifierValue": "Cultists"
+                        },
+                        {
+                            "token": "Cultist",
+                            "text": "-2. Place 1 doom on the nearest [[Cultist]] enemy.",
+                            "modifierValue": -2
+                        },
+                        {
+                            "token": "Tablet",
+                            "text": "-3. If you fail, place 1 of your clues on your location.",
+                            "modifierValue": -3
+                        }
+                    ]
+                },
+                {
+                    "difficulties": ["hard", "expert"],
+                    "tokens": [
+                        {
+                            "token": "Skull",
+                            "text": "-X. X is the total number of doom in play.",
+                            "modifierValue": "Doom"
+                        },
+                        {
+                            "token": "Cultist",
+                            "text": "-2. Place 1 doom on each [[Cultist]] enemy in play. If there are no [[Cultist]] enemies in play, reveal another token.",
+                            "modifierValue": -2
+                        },
+                        {
+                            "token": "Tablet",
+                            "text": "-4. If you fail, place all your clues on your location.",
+                            "modifierValue": -4
+                        }
                     ]
                 }
             ],
@@ -669,6 +753,58 @@
                         "Elder Thing",
                         "Auto-Fail",
                         "Elder Sign"
+                    ]
+                }
+            ],
+            "referenceCard": [
+                {
+                    "difficulties": ["easy", "standard"],
+                    "tokens": [
+                        {
+                            "token": "Skull",
+                            "text": "-X. X is the number of [[Monster]] enemies in play.",
+                            "modifierValue": "Monsters"
+                        },
+                        {
+                            "token": "Cultist",
+                            "text": "-2. Place 1 doom on the nearest enemy.",
+                            "modifierValue": -2
+                        },
+                        {
+                            "token": "Tablet",
+                            "text": "-3. If there is a [[Monster]] enemy at your location, take 1 damage.",
+                            "modifierValue": -3
+                        },
+                        {
+                            "token": "Elder Thing",
+                            "text": "-5. If there is an [[Ancient One]] enemy in play, reveal another token.",
+                            "modifierValue": -5
+                        }
+                    ]
+                },
+                {
+                    "difficulties": ["hard", "expert"],
+                    "tokens": [
+                        {
+                            "token": "Skull",
+                            "text": "-3. If you fail, after this skill test, search the encounter deck and discard pile for a [[Monster]] enemy, and draw it. Shuffle the encounter deck.",
+                            "modifierValue": -3
+                        },
+                        {
+                            "token": "Cultist",
+                            "text": "-4. Place 2 doom on the nearest enemy.",
+                            "modifierValue": -4
+                        },
+                        {
+                            "token": "Tablet",
+                            "text": "-5. If there is a [[Monster]] enemy at your location, take 1 damage and 1 horror.",
+                            "modifierValue": -5
+                        },
+                        {
+                            "token": "Elder Thing",
+                            "text": "-7. If there is an [[Ancient One]] enemy in play, reveal another token.",
+                            "modifierValue": -7
+                        }
                     ]
                 }
             ],

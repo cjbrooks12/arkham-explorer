@@ -4,6 +4,7 @@ import com.copperleaf.arkham.models.api.ExpansionType
 import com.copperleaf.arkham.models.api.InvestigatorClass
 import com.copperleaf.arkham.models.api.ProductType
 import com.copperleaf.arkham.models.api.ScenarioChaosBag
+import com.copperleaf.arkham.models.api.ScenarioReferenceCard
 import kotlinx.datetime.LocalDate
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.JsonElement
@@ -31,6 +32,7 @@ data class LocalArkhamHorrorExpansion(
         val icon: String = "",
         val encounterSets: List<ScenarioEncounterSet> = listOf(),
         val chaosBag: List<ScenarioChaosBag> = emptyList(),
+        val referenceCard: List<ScenarioReferenceCard> = emptyList(),
         val nextScenario: List<String> = emptyList(),
         val campaignLogSchema: JsonElement = JsonNull,
         val campaignLogUiSchema: JsonElement = JsonNull,
