@@ -40,10 +40,11 @@ kotlin {
             dependencies {
                 implementation(project(":site:shared"))
 
-                implementation("io.github.copper-leaf:ballast-core:3.0.0-SNAPSHOT")
-                implementation("io.github.copper-leaf:ballast-repository:3.0.0-SNAPSHOT")
-                implementation("io.github.copper-leaf:ballast-saved-state:3.0.0-SNAPSHOT")
-                implementation("io.github.copper-leaf:ballast-navigation:3.0.0-SNAPSHOT")
+                implementation("io.github.copper-leaf:ballast-core:2.1.1-SNAPSHOT")
+                implementation("io.github.copper-leaf:ballast-repository:2.1.1-SNAPSHOT")
+                implementation("io.github.copper-leaf:ballast-saved-state:2.1.1-SNAPSHOT")
+                implementation("io.github.copper-leaf:ballast-navigation:2.1.1-SNAPSHOT")
+                implementation("io.github.copper-leaf:ballast-debugger:2.1.1-SNAPSHOT")
 
                 implementation("io.github.copper-leaf:trellis-core:3.0.0")
                 implementation("io.github.copper-leaf:trellis-dsl:3.0.0")

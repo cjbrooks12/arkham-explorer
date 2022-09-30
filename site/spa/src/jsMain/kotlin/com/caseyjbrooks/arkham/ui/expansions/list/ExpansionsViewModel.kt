@@ -1,25 +1,8 @@
 package com.caseyjbrooks.arkham.ui.expansions.list
 
-import com.copperleaf.ballast.BallastViewModelConfiguration
-import com.copperleaf.ballast.core.BasicViewModel
-import com.copperleaf.ballast.eventHandler
-import com.copperleaf.ballast.forViewModel
-import kotlinx.coroutines.CoroutineScope
+import com.copperleaf.ballast.BallastViewModel
 
-class ExpansionsViewModel(
-    coroutineScope: CoroutineScope,
-    configBuilder: BallastViewModelConfiguration.Builder,
-    inputHandler: ExpansionsInputHandler,
-) : BasicViewModel<
+typealias ExpansionsViewModel = BallastViewModel<
     ExpansionsContract.Inputs,
     ExpansionsContract.Events,
-    ExpansionsContract.State>(
-    coroutineScope = coroutineScope,
-    config = configBuilder
-        .forViewModel(
-            inputHandler = inputHandler,
-            initialState = ExpansionsContract.State(),
-            name = "Arkham Explorer",
-        ),
-    eventHandler = eventHandler {  },
-)
+    ExpansionsContract.State>

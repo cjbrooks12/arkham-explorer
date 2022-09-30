@@ -20,7 +20,7 @@ fun NavigationLink(
     val injector = LocalInjector.current
     val route = navigationRoute.route
     val router = remember(injector) { injector.routerViewModel() }
-    val navLink = remember(injector, navigationRoute, route) {
+    val href = remember(injector, navigationRoute, route) {
         val parameterPiecesInRoute = route.matcher.path.filterIsInstance<PathSegment.Parameter>()
 
         check(navigationRoute.pathParams.size == parameterPiecesInRoute.size) {
@@ -33,7 +33,26 @@ fun NavigationLink(
             }
             .toMap()
 
-        injector.navigationLinkStrategy.createLink(
+        injector.navigationLinkStrategy.createHref(
+            route = route,
+            pathParameters = pathParams,
+            queryParameters = navigationRoute.queryParams,
+        )
+    }
+    val destination = remember(injector, navigationRoute, route) {
+        val parameterPiecesInRoute = route.matcher.path.filterIsInstance<PathSegment.Parameter>()
+
+        check(navigationRoute.pathParams.size == parameterPiecesInRoute.size) {
+            "Must have exactly ${parameterPiecesInRoute.size} path parameters to create link for route '${route.originalRoute}', had ${navigationRoute.pathParams.size} (${navigationRoute.pathParams})"
+        }
+
+        val pathParams = parameterPiecesInRoute
+            .mapIndexed { index, piece ->
+                piece.name to listOf(navigationRoute.pathParams[index])
+            }
+            .toMap()
+
+        injector.navigationLinkStrategy.getDestination(
             route = route,
             pathParameters = pathParams,
             queryParameters = navigationRoute.queryParams,
@@ -41,15 +60,16 @@ fun NavigationLink(
     }
 
     A(
-        href = "${injector.config.baseUrl.trimEnd('/')}$navLink",
+        href = "${injector.config.baseUrl.trimEnd('/')}$href",
         attrs = {
             onClick {
                 if (it.ctrlKey || it.metaKey) {
                     // let it propagate normally, don't handle it with the router
                 } else {
                     it.preventDefault()
+                    it.stopImmediatePropagation()
                     it.stopPropagation()
-                    router.trySend(RouterContract.Inputs.GoToDestination(navLink))
+                    router.trySend(destination)
                 }
                 onClicked()
             }

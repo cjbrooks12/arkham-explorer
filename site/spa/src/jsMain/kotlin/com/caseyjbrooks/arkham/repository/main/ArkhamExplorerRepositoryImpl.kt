@@ -19,11 +19,9 @@ import com.copperleaf.arkham.models.api.ScenarioId
 import com.copperleaf.arkham.models.api.ScenarioList
 import com.copperleaf.arkham.models.api.StaticPage
 import com.copperleaf.ballast.BallastViewModelConfiguration
-import com.copperleaf.ballast.forViewModel
 import com.copperleaf.ballast.repository.BallastRepository
 import com.copperleaf.ballast.repository.bus.EventBus
 import com.copperleaf.ballast.repository.cache.Cached
-import com.copperleaf.ballast.repository.withRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.emptyFlow
@@ -31,21 +29,17 @@ import kotlinx.coroutines.flow.flatMapLatest
 
 class ArkhamExplorerRepositoryImpl(
     coroutineScope: CoroutineScope,
-    configBuilder: BallastViewModelConfiguration.Builder,
-    inputHandler: ArkhamExplorerInputHandler,
+    config: BallastViewModelConfiguration<
+        ArkhamExplorerContract.Inputs,
+        Any,
+        ArkhamExplorerContract.State>,
     eventBus: EventBus,
     private val api: ArkhamExplorerApi,
 ) : BallastRepository<
     ArkhamExplorerContract.Inputs,
     ArkhamExplorerContract.State>(
     coroutineScope = coroutineScope,
-    config = configBuilder
-        .withRepository()
-        .forViewModel(
-            inputHandler = inputHandler,
-            initialState = ArkhamExplorerContract.State(),
-            name = "Arkham Explorer",
-        ),
+    config = config,
     eventBus = eventBus,
 ), ArkhamExplorerRepository {
 
@@ -84,7 +78,10 @@ class ArkhamExplorerRepositoryImpl(
         ) { api.getEncounterSets() }
     }
 
-    override fun getEncounterSet(forceRefresh: Boolean, encounterSetId: EncounterSetId): Flow<Cached<EncounterSetDetails>> {
+    override fun getEncounterSet(
+        forceRefresh: Boolean,
+        encounterSetId: EncounterSetId
+    ): Flow<Cached<EncounterSetDetails>> {
         return flowOfKey(
             forceRefresh,
             SimpleCachedValue.Key("EncounterSetList", encounterSetId.id)
@@ -98,7 +95,10 @@ class ArkhamExplorerRepositoryImpl(
         ) { api.getInvestigators() }
     }
 
-    override fun getInvestigator(forceRefresh: Boolean, investigatorId: InvestigatorId): Flow<Cached<InvestigatorDetails>> {
+    override fun getInvestigator(
+        forceRefresh: Boolean,
+        investigatorId: InvestigatorId
+    ): Flow<Cached<InvestigatorDetails>> {
         return flowOfKey(
             forceRefresh,
             SimpleCachedValue.Key("InvestigatorList", investigatorId.id)

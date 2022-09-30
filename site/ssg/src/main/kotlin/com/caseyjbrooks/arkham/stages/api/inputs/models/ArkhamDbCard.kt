@@ -1,6 +1,7 @@
 package com.caseyjbrooks.arkham.stages.api.inputs.models
 
 import kotlinx.serialization.Serializable
+import kotlinx.serialization.json.JsonObject
 
 @Serializable
 data class ArkhamDbCard(
@@ -96,7 +97,9 @@ data class ArkhamDbCard(
     // customizable cards
     val customization_text: String? = null,
     val customization_change: String? = null,
-    val customization_options: String? = null,
+    val customization_options: List<JsonObject>? = null,
+
+    val tags: String? = null,
 ) {
     @Serializable
     data class ErrataDate(
@@ -129,6 +132,7 @@ data class ArkhamDbCard(
         val uses: List<String>? = null,
         val atleast: AtLeast? = null,
         val text: List<String>? = null,
+        val tag: List<String>? = null,
         val name: String? = null,
         val deck_size_select: List<String>? = null,
         val faction_select: List<String>? = null,
@@ -155,4 +159,17 @@ data class ArkhamDbCard(
     data class Restrictions(
         val investigator: Map<String, String>? = null,
     )
+
+//    @Serializable
+//    data class CustomizationOption(
+//        val xp: Int? = null,
+//        val real_traits: String? = null,
+//        val real_slot: String? = null,
+//        val text_change: String? = null,
+//        val health: Int? = null,
+//        val sanity: Int? = null,
+//        val cost: Int? = null,
+//        val tags: String? = null,
+//        val position: Int? = null,
+//    )
 }

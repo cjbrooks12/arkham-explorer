@@ -65,7 +65,6 @@ fun serviceWorkerMain() {
                 "${BuildConfig.BASE_URL}/bulmaswatch-lux.min.css",
                 "${BuildConfig.BASE_URL}/bulmaswatch-lux.min.css.map",
                 "${BuildConfig.BASE_URL}/spa.js",
-                "${BuildConfig.BASE_URL}/spa.js.map",
                 "${BuildConfig.BASE_URL}/api/expansions.json",
             )
         ).await()
