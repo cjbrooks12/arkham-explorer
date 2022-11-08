@@ -4,8 +4,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import com.caseyjbrooks.arkham.ui.LocalInjector
 import com.caseyjbrooks.arkham.utils.theme.bulma.NavigationRoute
-import com.copperleaf.ballast.navigation.routing.PathSegment
-import com.copperleaf.ballast.navigation.routing.RouterContract
+import com.copperleaf.ballast.navigation.routing.route.PathSegment
+import com.copperleaf.ballast.navigation.vm.RouterContract
 import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.AttrBuilderContext
 import org.w3c.dom.HTMLAnchorElement
@@ -24,7 +24,7 @@ fun NavigationLink(
         val parameterPiecesInRoute = route.matcher.path.filterIsInstance<PathSegment.Parameter>()
 
         check(navigationRoute.pathParams.size == parameterPiecesInRoute.size) {
-            "Must have exactly ${parameterPiecesInRoute.size} path parameters to create link for route '${route.originalRoute}', had ${navigationRoute.pathParams.size} (${navigationRoute.pathParams})"
+            "Must have exactly ${parameterPiecesInRoute.size} path parameters to create link for route '$route', had ${navigationRoute.pathParams.size} (${navigationRoute.pathParams})"
         }
 
         val pathParams = parameterPiecesInRoute
@@ -43,7 +43,7 @@ fun NavigationLink(
         val parameterPiecesInRoute = route.matcher.path.filterIsInstance<PathSegment.Parameter>()
 
         check(navigationRoute.pathParams.size == parameterPiecesInRoute.size) {
-            "Must have exactly ${parameterPiecesInRoute.size} path parameters to create link for route '${route.originalRoute}', had ${navigationRoute.pathParams.size} (${navigationRoute.pathParams})"
+            "Must have exactly ${parameterPiecesInRoute.size} path parameters to create link for route '$route', had ${navigationRoute.pathParams.size} (${navigationRoute.pathParams})"
         }
 
         val pathParams = parameterPiecesInRoute

@@ -33,6 +33,5 @@ fun browserMain(isPwa: Boolean) {
     } catch (e: Throwable) {
         println(e.message)
         console.error(e)
-//        e.printStackTrace()
     }
 }

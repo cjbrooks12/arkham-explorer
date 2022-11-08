@@ -13,7 +13,6 @@ import io.ktor.server.engine.embeddedServer
 import io.ktor.server.plugins.callloging.CallLogging
 import io.ktor.server.request.path
 import io.ktor.server.response.respondOutputStream
-import io.ktor.server.response.respondText
 import io.ktor.server.routing.get
 import io.ktor.server.routing.routing
 import io.ktor.util.pipeline.PipelineInterceptor
@@ -69,11 +68,17 @@ class LocalServerRenderer(val port: Int) : Renderer {
         val contentType = guessContentType(path, entry)
 
         if (entry == null) {
-            call.respondText(
-                status = HttpStatusCode.NotFound,
-                contentType = ContentType.Text.Html
-            ) {
-                "$path not found"
+//            call.respondText(
+//                status = HttpStatusCode.NotFound,
+//                contentType = ContentType.Text.Html
+//            ) {
+//                "$path not found"
+//            }
+
+            call.respondOutputStream(status = HttpStatusCode.OK, contentType = ContentType.Text.Html) {
+                entries
+                    .singleOrNull { graph.config.outputDir.relativize(it.realOutputFile()) == (Paths.get("index.html")) }!!
+                    .renderOutput(graph, this)
             }
         } else {
             call.respondOutputStream(status = HttpStatusCode.OK, contentType = contentType) {

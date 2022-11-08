@@ -45,6 +45,6 @@ class SingletonScopeImpl(
         Js,
         applicationCoroutineScope,
         host = "127.0.0.1",
-    )
+    ).also { it.connect() }
 }
 

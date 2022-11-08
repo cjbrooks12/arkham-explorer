@@ -1,34 +1,41 @@
 package com.caseyjbrooks.arkham.ui
 
-import com.copperleaf.ballast.navigation.routing.RoutingTable
+import com.copperleaf.ballast.navigation.routing.Route
+import com.copperleaf.ballast.navigation.routing.RouteAnnotation
+import com.copperleaf.ballast.navigation.routing.route.RouteMatcher
 
-object ArkhamApp : RoutingTable() {
-    val Home = route("/")
+enum class ArkhamApp(
+    routeFormat: String,
+    override val annotations: List<RouteAnnotation> = emptyList(),
+) : Route {
+    Home("/"),
 
-    val Expansions = route("/expansions")
-    val ExpansionDetails = route("/expansions/{expansionCode}")
+    Expansions("/expansions"),
+    ExpansionDetails("/expansions/{expansionCode}"),
 
-    val Investigators = route("/investigators")
-    val InvestigatorDetails = route("/investigators/{investigatorId}")
+    Investigators("/investigators"),
+    InvestigatorDetails("/investigators/{investigatorId}"),
 
-    val Scenarios = route("/scenarios")
-    val ScenarioDetails = route("/scenarios/{scenarioId}")
+    Scenarios("/scenarios"),
+    ScenarioDetails("/scenarios/{scenarioId}"),
 
-    val EncounterSets = route("/encounter-sets")
-    val EncounterSetDetails = route("/encounter-sets/{encounterSetId}")
+    EncounterSets("/encounter-sets"),
+    EncounterSetDetails("/encounter-sets/{encounterSetId}"),
 
-    val Products = route("/products")
-    val ProductDetails = route("/products/{productId}")
+    Products("/products"),
+    ProductDetails("/products/{productId}"),
 
-    val StaticPage = route("/pages/{slug}")
+    StaticPage("/pages/{slug}"),
 
-    val Tools = route("/tools")
-    val ChaosBagSimulator = route("/tools/chaos")
-    val InvestigatorTracker = route("/tools/investigator")
-    val AboutCampaignLog = route("/tools/campaign-log")
-    val CreateCampaignLog = route("/tools/campaign-log/{expansionCode}")
-    val ViewCampaignLog = route("/tools/campaign-log/{expansionCode}/{campaignLogId}")
-    val DividersGenerator = route("/tools/dividers")
-    val TuckboxGenerator = route("/tools/tuckbox")
-    val CustomCards = route("/tools/cards")
+    Tools("/tools"),
+    ChaosBagSimulator("/tools/chaos?scenarioId={?}"),
+    InvestigatorTracker("/tools/investigator?investigatorId={?}"),
+    AboutCampaignLog("/tools/campaign-log"),
+    CreateCampaignLog("/tools/campaign-log/{expansionCode}"),
+    ViewCampaignLog("/tools/campaign-log/{expansionCode}/{campaignLogId}"),
+    DividersGenerator("/tools/dividers"),
+    TuckboxGenerator("/tools/tuckbox"),
+    CustomCards("/tools/cards");
+
+    override val matcher: RouteMatcher = RouteMatcher.create(routeFormat)
 }

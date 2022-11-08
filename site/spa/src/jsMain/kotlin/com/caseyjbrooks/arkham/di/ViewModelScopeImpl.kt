@@ -76,12 +76,12 @@ class ViewModelScopeImpl(
     ): NavigationErrorViewModel {
         return BasicViewModel(
             coroutineScope = coroutineScope,
-            config = repositoryScope.singletonScope.defaultConfigBuilder(
+            config = repositoryScope.singletonScope.defaultConfig(
                 initialState = NavigationErrorContract.State(),
                 inputHandler = NavigationErrorInputHandler(
                     repository = repositoryScope.arkhamExplorerRepository()
                 ),
-                name = "Arkham Explorer",
+                name = "Navigation Error",
             ) { NavigationErrorContract.Inputs.Initialize },
             eventHandler = eventHandler { },
         )
@@ -92,12 +92,12 @@ class ViewModelScopeImpl(
     ): HomeViewModel {
         return BasicViewModel(
             coroutineScope = coroutineScope,
-            config = repositoryScope.singletonScope.defaultConfigBuilder(
+            config = repositoryScope.singletonScope.defaultConfig(
                 inputHandler = HomeInputHandler(
                     repository = repositoryScope.arkhamExplorerRepository()
                 ),
                 initialState = HomeContract.State(),
-                name = "Arkham Explorer",
+                name = "Home",
             ) { HomeContract.Inputs.Initialize },
             eventHandler = eventHandler { },
         )
@@ -108,12 +108,12 @@ class ViewModelScopeImpl(
     ): ExpansionsViewModel {
         return BasicViewModel(
             coroutineScope = coroutineScope,
-            config = repositoryScope.singletonScope.defaultConfigBuilder(
+            config = repositoryScope.singletonScope.defaultConfig(
                 inputHandler = ExpansionsInputHandler(
                     repository = repositoryScope.arkhamExplorerRepository()
                 ),
                 initialState = ExpansionsContract.State(),
-                name = "Arkham Explorer",
+                name = "Expansions",
             ) { ExpansionsContract.Inputs.Initialize },
             eventHandler = eventHandler { },
         )
@@ -125,12 +125,12 @@ class ViewModelScopeImpl(
     ): ExpansionDetailsViewModel {
         return BasicViewModel(
             coroutineScope = coroutineScope,
-            config = repositoryScope.singletonScope.defaultConfigBuilder(
+            config = repositoryScope.singletonScope.defaultConfig(
                 inputHandler = ExpansionDetailsInputHandler(
                     repository = repositoryScope.arkhamExplorerRepository()
                 ),
                 initialState = ExpansionDetailsContract.State(),
-                name = "Arkham Explorer",
+                name = "Expansion Details",
             ) { ExpansionDetailsContract.Inputs.Initialize(expansionCode) },
             eventHandler = eventHandler { },
         )
@@ -141,12 +141,12 @@ class ViewModelScopeImpl(
     ): ScenariosViewModel {
         return BasicViewModel(
             coroutineScope = coroutineScope,
-            config = repositoryScope.singletonScope.defaultConfigBuilder(
+            config = repositoryScope.singletonScope.defaultConfig(
                 inputHandler = ScenariosInputHandler(
                     repository = repositoryScope.arkhamExplorerRepository()
                 ),
                 initialState = ScenariosContract.State(),
-                name = "Arkham Explorer",
+                name = "Scenarios",
             ) { ScenariosContract.Inputs.Initialize },
             eventHandler = eventHandler { },
         )
@@ -158,12 +158,12 @@ class ViewModelScopeImpl(
     ): ScenarioDetailsViewModel {
         return BasicViewModel(
             coroutineScope = coroutineScope,
-            config = repositoryScope.singletonScope.defaultConfigBuilder(
+            config = repositoryScope.singletonScope.defaultConfig(
                 inputHandler = ScenarioDetailsInputHandler(
                     repository = repositoryScope.arkhamExplorerRepository()
                 ),
                 initialState = ScenarioDetailsContract.State(),
-                name = "Arkham Explorer",
+                name = "Scenario Details",
             ) { ScenarioDetailsContract.Inputs.Initialize(scenarioId) },
             eventHandler = eventHandler { },
         )
@@ -174,12 +174,12 @@ class ViewModelScopeImpl(
     ): EncounterSetsViewModel {
         return BasicViewModel(
             coroutineScope = coroutineScope,
-            config = repositoryScope.singletonScope.defaultConfigBuilder(
+            config = repositoryScope.singletonScope.defaultConfig(
                 inputHandler = EncounterSetsInputHandler(
                     repository = repositoryScope.arkhamExplorerRepository(),
                 ),
                 initialState = EncounterSetsContract.State(),
-                name = "Arkham Explorer",
+                name = "Encounter Sets",
             ) { EncounterSetsContract.Inputs.Initialize },
             eventHandler = eventHandler { },
         )
@@ -191,12 +191,12 @@ class ViewModelScopeImpl(
     ): EncounterSetDetailsViewModel {
         return BasicViewModel(
             coroutineScope = coroutineScope,
-            config = repositoryScope.singletonScope.defaultConfigBuilder(
+            config = repositoryScope.singletonScope.defaultConfig(
                 inputHandler = EncounterSetDetailsInputHandler(
                     repository = repositoryScope.arkhamExplorerRepository()
                 ),
                 initialState = EncounterSetDetailsContract.State(),
-                name = "Arkham Explorer",
+                name = "Encounter Set Details",
             ) { EncounterSetDetailsContract.Inputs.Initialize(encounterSetId) },
             eventHandler = eventHandler { },
         )
@@ -207,12 +207,12 @@ class ViewModelScopeImpl(
     ): InvestigatorsViewModel {
         return BasicViewModel(
             coroutineScope = coroutineScope,
-            config = repositoryScope.singletonScope.defaultConfigBuilder(
+            config = repositoryScope.singletonScope.defaultConfig(
                 inputHandler = InvestigatorsInputHandler(
                     repository = repositoryScope.arkhamExplorerRepository()
                 ),
                 initialState = InvestigatorsContract.State(),
-                name = "Arkham Explorer",
+                name = "Investigators",
             ) { InvestigatorsContract.Inputs.Initialize },
             eventHandler = eventHandler { },
         )
@@ -224,12 +224,12 @@ class ViewModelScopeImpl(
     ): InvestigatorDetailsViewModel {
         return BasicViewModel(
             coroutineScope = coroutineScope,
-            config = repositoryScope.singletonScope.defaultConfigBuilder(
+            config = repositoryScope.singletonScope.defaultConfig(
                 inputHandler = InvestigatorDetailsInputHandler(
                     repository = repositoryScope.arkhamExplorerRepository()
                 ),
                 initialState = InvestigatorDetailsContract.State(),
-                name = "Arkham Explorer",
+                name = "Investigator Details",
             ) { InvestigatorDetailsContract.Inputs.Initialize(investigatorId) },
             eventHandler = eventHandler { },
         )
@@ -240,7 +240,7 @@ class ViewModelScopeImpl(
     ): ProductsViewModel {
         return BasicViewModel(
             coroutineScope = coroutineScope,
-            config = repositoryScope.singletonScope.defaultConfigBuilder(
+            config = repositoryScope.singletonScope.defaultConfig(
                 inputHandler = ProductsInputHandler(
                     repository = repositoryScope.arkhamExplorerRepository()
                 ),
@@ -257,12 +257,12 @@ class ViewModelScopeImpl(
     ): ProductDetailsViewModel {
         return BasicViewModel(
             coroutineScope = coroutineScope,
-            config = repositoryScope.singletonScope.defaultConfigBuilder(
+            config = repositoryScope.singletonScope.defaultConfig(
                 inputHandler = ProductDetailsInputHandler(
                     repository = repositoryScope.arkhamExplorerRepository()
                 ),
                 initialState = ProductDetailsContract.State(),
-                name = "Arkham Explorer",
+                name = "Product Details",
             ) { ProductDetailsContract.Inputs.Initialize(productId) },
             eventHandler = eventHandler { },
         )
@@ -274,7 +274,7 @@ class ViewModelScopeImpl(
     ): StaticPageViewModel {
         return BasicViewModel(
             coroutineScope = coroutineScope,
-            config = repositoryScope.singletonScope.defaultConfigBuilder(
+            config = repositoryScope.singletonScope.defaultConfig(
                 inputHandler = StaticPageInputHandler(
                     repository = repositoryScope.arkhamExplorerRepository()
                 ),
@@ -291,7 +291,7 @@ class ViewModelScopeImpl(
     ): ChaosBagSimulatorViewModel {
         return BasicViewModel(
             coroutineScope = coroutineScope,
-            config = repositoryScope.singletonScope.defaultConfigBuilder(
+            config = repositoryScope.singletonScope.defaultConfig(
                 inputHandler = ChaosBagSimulatorInputHandler(
                     repository = repositoryScope.arkhamExplorerRepository()
                 ),
@@ -315,7 +315,7 @@ class ViewModelScopeImpl(
     ): CampaignLogViewModel {
         return BasicViewModel(
             coroutineScope = coroutineScope,
-            config = repositoryScope.singletonScope.defaultConfigBuilder(
+            config = repositoryScope.singletonScope.defaultConfig(
                 inputHandler = CampaignLogInputHandler(
                     repository = repositoryScope.arkhamExplorerRepository()
                 ),
@@ -336,7 +336,7 @@ class ViewModelScopeImpl(
     ): InvestigatorTrackerViewModel {
         return BasicViewModel(
             coroutineScope = coroutineScope,
-            config = repositoryScope.singletonScope.defaultConfigBuilder(
+            config = repositoryScope.singletonScope.defaultConfig(
                 inputHandler = InvestigatorTrackerInputHandler(
                     repository = repositoryScope.arkhamExplorerRepository()
                 ),
@@ -356,7 +356,7 @@ class ViewModelScopeImpl(
     override fun customCardsViewModel(coroutineScope: CoroutineScope): CustomCardsViewModel {
         return BasicViewModel(
             coroutineScope = coroutineScope,
-            config = repositoryScope.singletonScope.defaultConfigBuilder(
+            config = repositoryScope.singletonScope.defaultConfig(
                 inputHandler = CustomCardsInputHandler(
                     repository = repositoryScope.arkhamExplorerRepository()
                 ),
@@ -370,7 +370,7 @@ class ViewModelScopeImpl(
     override fun canvasViewModel(coroutineScope: CoroutineScope): CanvasViewModel {
         return BasicViewModel(
             coroutineScope = coroutineScope,
-            config = repositoryScope.singletonScope.defaultConfigBuilder(
+            config = repositoryScope.singletonScope.defaultConfig(
                 inputHandler = CanvasInputHandler(
                     loadFormDefinition = {
                         repositoryScope.arkhamExplorerRepository().getFormDefinition(false, "assets")
@@ -380,7 +380,7 @@ class ViewModelScopeImpl(
                     },
                 ),
                 initialState = CanvasContract.State(),
-                name = "Custom Cards",
+                name = "Canvas",
                 additionalConfig = {
                     this += BallastSavedStateInterceptor(
                         CanvasSavedStateAdapter(name)

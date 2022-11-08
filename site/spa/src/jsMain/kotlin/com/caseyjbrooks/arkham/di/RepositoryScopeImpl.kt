@@ -6,54 +6,47 @@ import com.caseyjbrooks.arkham.repository.main.ArkhamExplorerInputHandler
 import com.caseyjbrooks.arkham.repository.main.ArkhamExplorerRepository
 import com.caseyjbrooks.arkham.repository.main.ArkhamExplorerRepositoryImpl
 import com.caseyjbrooks.arkham.ui.ArkhamApp
-import com.caseyjbrooks.arkham.ui.RouterViewModel
-import com.copperleaf.ballast.core.BasicViewModel
+import com.copperleaf.ballast.build
 import com.copperleaf.ballast.core.FifoInputStrategy
 import com.copperleaf.ballast.eventHandler
-import com.copperleaf.ballast.navigation.routing.BrowserHashNavigationInterceptor
-import com.copperleaf.ballast.navigation.routing.BrowserHistoryNavigationInterceptor
+import com.copperleaf.ballast.navigation.BasicRouter
+import com.copperleaf.ballast.navigation.Router
+import com.copperleaf.ballast.navigation.browser.BrowserHashNavigationInterceptor
+import com.copperleaf.ballast.navigation.browser.BrowserHistoryNavigationInterceptor
 import com.copperleaf.ballast.navigation.routing.NavGraph
-import com.copperleaf.ballast.navigation.routing.RouterContract
-import com.copperleaf.ballast.navigation.routing.RouterInputHandler
-import com.copperleaf.ballast.navigation.routing.asStartDestinationString
+import com.copperleaf.ballast.navigation.routing.fromEnum
+import com.copperleaf.ballast.navigation.vm.RouterContract
+import com.copperleaf.ballast.navigation.vm.withRouter
 import com.copperleaf.ballast.plusAssign
 
 class RepositoryScopeImpl(
     override val singletonScope: SingletonScope,
 ) : RepositoryScope {
 
-    private val router: RouterViewModel = BasicViewModel(
+    private val router: Router<ArkhamApp> = BasicRouter(
         coroutineScope = singletonScope.applicationCoroutineScope,
-        config = singletonScope.defaultConfigBuilder(
-            inputHandler = RouterInputHandler(),
-            initialState = RouterContract.State(
-                navGraph = NavGraph(ArkhamApp)
-            ),
-            name = "Router",
-            useDebugger = true,
-            additionalConfig = {
-                inputStrategy = FifoInputStrategy()
-
-                if (singletonScope.config.useHistoryApi) {
-                    this += BrowserHistoryNavigationInterceptor(singletonScope.config.basePath)
-                } else {
-                    this += BrowserHashNavigationInterceptor()
-                }
-            }
-        ) {
-            RouterContract.Inputs.GoToDestination(
-                ArkhamApp.initialRoute.asStartDestinationString()
+        config = singletonScope
+            .defaultConfigBuilder<RouterContract.Inputs<ArkhamApp>, RouterContract.Events<ArkhamApp>, RouterContract.State<ArkhamApp>>(
+                additionalConfig = {
+                    if (singletonScope.config.useHistoryApi) {
+                        this += BrowserHistoryNavigationInterceptor(singletonScope.config.basePath, ArkhamApp.Home)
+                    } else {
+                        this += BrowserHashNavigationInterceptor(ArkhamApp.Home)
+                    }
+                },
             )
-        },
-        eventHandler = eventHandler { }
+            .withRouter(NavGraph.fromEnum(ArkhamApp.values()), null)
+            .build(),
+        eventHandler = eventHandler { },
     )
 
     private val arkhamExplorerRepository: ArkhamExplorerRepository = ArkhamExplorerRepositoryImpl(
         coroutineScope = singletonScope.applicationCoroutineScope,
-        config = singletonScope.defaultConfigBuilder(
+        config = singletonScope.defaultConfig(
             initialState = ArkhamExplorerContract.State(),
             inputHandler = ArkhamExplorerInputHandler(),
-            name = "Arkham Explorer",
+            name = "Arkham Explorer Repository",
+            additionalConfig = { inputStrategy = FifoInputStrategy() }
         ),
         eventBus = singletonScope.eventBus,
         api = ArkhamExplorerApiImpl(
@@ -62,7 +55,7 @@ class RepositoryScopeImpl(
         ),
     )
 
-    override fun routerViewModel(): RouterViewModel {
+    override fun routerViewModel(): Router<ArkhamApp> {
         return router
     }
 
