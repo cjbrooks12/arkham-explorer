@@ -1,0 +1,220 @@
+{
+    "products": [
+        {
+            "id": "2-1",
+            "name": "The Dunwich Legacy: Deluxe Expansion",
+            "expansionCode": "the-dunwich-legacy",
+            "productType": "Deluxe Expansion"
+        },
+        {
+            "id": "2-2",
+            "name": "The Miskatonic Museum",
+            "expansionCode": "the-dunwich-legacy",
+            "productType": "Mythos Pack"
+        },
+        {
+            "id": "2-3",
+            "name": "The Essex County Express",
+            "expansionCode": "the-dunwich-legacy",
+            "productType": "Mythos Pack"
+        },
+        {
+            "id": "2-4",
+            "name": "Blood on the Altar",
+            "expansionCode": "the-dunwich-legacy",
+            "productType": "Mythos Pack"
+        },
+        {
+            "id": "2-5",
+            "name": "Undimensioned and Unseen",
+            "expansionCode": "the-dunwich-legacy",
+            "productType": "Mythos Pack"
+        },
+        {
+            "id": "2-6",
+            "name": "Where Doom Awaits",
+            "expansionCode": "the-dunwich-legacy",
+            "productType": "Mythos Pack"
+        },
+        {
+            "id": "2-7",
+            "name": "Lost in Time and Space",
+            "expansionCode": "the-dunwich-legacy",
+            "productType": "Mythos Pack"
+        },
+        {
+            "id": "2-8",
+            "name": "The Dunwich Legacy: Campaign Expansion",
+            "expansionCode": "the-dunwich-legacy",
+            "productType": "Campaign Expansion"
+        },
+        {
+            "id": "2-9",
+            "name": "The Dunwich Legacy: Investigator Expansion",
+            "expansionCode": "the-dunwich-legacy",
+            "productType": "Investigator Expansion"
+        },
+        {
+            "id": "2-1r",
+            "name": "Return to the Dunwich Legacy",
+            "expansionCode": "return-to-the-dunwich-legacy",
+            "productType": "Return To"
+        },
+        {
+            "id": "100-1",
+            "name": "Curse of the Rougarou",
+            "expansionCode": "standalone",
+            "productType": "Scenario Pack"
+        },
+        {
+            "id": "100-2",
+            "name": "Carnevale of Horrors",
+            "expansionCode": "standalone",
+            "productType": "Scenario Pack"
+        },
+        {
+            "id": "100-3",
+            "name": "The Labyrinths of Lunacy",
+            "expansionCode": "standalone",
+            "productType": "Scenario Pack"
+        },
+        {
+            "id": "100-4",
+            "name": "Guardians of the Abyss",
+            "expansionCode": "standalone",
+            "productType": "Scenario Pack"
+        },
+        {
+            "id": "100-5",
+            "name": "Murder at the Excelsior Hotel",
+            "expansionCode": "standalone",
+            "productType": "Scenario Pack"
+        },
+        {
+            "id": "100-6",
+            "name": "The Blob That Ate Everything",
+            "expansionCode": "standalone",
+            "productType": "Scenario Pack"
+        },
+        {
+            "id": "100-7",
+            "name": "War of the Outer Gods",
+            "expansionCode": "standalone",
+            "productType": "Scenario Pack"
+        },
+        {
+            "id": "100-8",
+            "name": "Machinations Through Time",
+            "expansionCode": "standalone",
+            "productType": "Scenario Pack"
+        },
+        {
+            "id": "100-9",
+            "name": "Barkham Horror: The Meddling of Meowlathotep",
+            "expansionCode": "standalone",
+            "productType": "Scenario Pack"
+        },
+        {
+            "id": "101-1",
+            "name": "Nathaniel Cho",
+            "expansionCode": "standalone",
+            "productType": "Investigator Starter Deck"
+        },
+        {
+            "id": "101-2",
+            "name": "Harvey Walters",
+            "expansionCode": "standalone",
+            "productType": "Investigator Starter Deck"
+        },
+        {
+            "id": "101-3",
+            "name": "Winifred Habbamock",
+            "expansionCode": "standalone",
+            "productType": "Investigator Starter Deck"
+        },
+        {
+            "id": "101-4",
+            "name": "Jacqueline Fine",
+            "expansionCode": "standalone",
+            "productType": "Investigator Starter Deck"
+        },
+        {
+            "id": "101-5",
+            "name": "Stella Clark",
+            "expansionCode": "standalone",
+            "productType": "Investigator Starter Deck"
+        },
+        {
+            "id": "1-1r",
+            "name": "Return to the Night of the Zealot",
+            "expansionCode": "return-to-night-of-the-zealot",
+            "productType": "Return To"
+        },
+        {
+            "id": "1-1",
+            "name": "Core Set",
+            "expansionCode": "night-of-the-zealot",
+            "productType": "Core Set"
+        },
+        {
+            "id": "1-2",
+            "name": "Revised Core Set",
+            "expansionCode": "night-of-the-zealot",
+            "productType": "Core Set"
+        },
+        {
+            "id": "3-1",
+            "name": "The Path to Carcosa: Deluxe Expansion",
+            "expansionCode": "the-path-to-carcosa",
+            "productType": "Deluxe Expansion"
+        },
+        {
+            "id": "3-2",
+            "name": "Echoes of the Past",
+            "expansionCode": "the-path-to-carcosa",
+            "productType": "Mythos Pack"
+        },
+        {
+            "id": "3-3",
+            "name": "The Unspeakable Oath",
+            "expansionCode": "the-path-to-carcosa",
+            "productType": "Mythos Pack"
+        },
+        {
+            "id": "3-4",
+            "name": "A Phantom of Truth",
+            "expansionCode": "the-path-to-carcosa",
+            "productType": "Mythos Pack"
+        },
+        {
+            "id": "3-5",
+            "name": "The Pallid Mask",
+            "expansionCode": "the-path-to-carcosa",
+            "productType": "Mythos Pack"
+        },
+        {
+            "id": "3-6",
+            "name": "Black Stars Rise",
+            "expansionCode": "the-path-to-carcosa",
+            "productType": "Mythos Pack"
+        },
+        {
+            "id": "3-7",
+            "name": "Dim Carcosa",
+            "expansionCode": "the-path-to-carcosa",
+            "productType": "Mythos Pack"
+        },
+        {
+            "id": "3-8",
+            "name": "The Path to Carcosa: Campaign Expansion",
+            "expansionCode": "the-path-to-carcosa",
+            "productType": "Campaign Expansion"
+        },
+        {
+            "id": "3-9",
+            "name": "The Path to Carcosa: Investigator Expansion",
+            "expansionCode": "the-path-to-carcosa",
+            "productType": "Investigator Expansion"
+        }
+    ]
+}

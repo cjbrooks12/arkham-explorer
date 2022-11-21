@@ -1,0 +1,15 @@
+{
+    "id": "100-23",
+    "name": "War of the Outer Gods",
+    "expansionCode": "standalone",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/war-of-the-outer-gods/war-of-the-outer-gods.svg",
+    "replaces": null,
+    "products": [
+        {
+            "id": "100-7",
+            "name": "War of the Outer Gods",
+            "expansionCode": "standalone",
+            "productType": "Scenario Pack"
+        }
+    ]
+}

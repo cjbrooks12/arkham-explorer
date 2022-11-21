@@ -1,0 +1,68 @@
+{
+    "id": "100-8",
+    "name": "War of the Outer Gods",
+    "expansionCode": "standalone",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/war-of-the-outer-gods.svg",
+    "encounterSets": [
+        {
+            "encounterSet": {
+                "id": "100-19",
+                "name": "The Blob that Ate Everything",
+                "expansionCode": "standalone",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-blob-that-ate-everything/the-blob-that-ate-everything.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "100-24",
+                "name": "Children of Paradise",
+                "expansionCode": "standalone",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/war-of-the-outer-gods/children-of-paradise.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "100-25",
+                "name": "Swarm of Assimilation",
+                "expansionCode": "standalone",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/war-of-the-outer-gods/swarm-of-assimilation.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "100-26",
+                "name": "Death of Stars",
+                "expansionCode": "standalone",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/war-of-the-outer-gods/death-of-stars.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        }
+    ],
+    "chaosBag": [
+    ],
+    "referenceCard": [
+    ],
+    "products": [
+        {
+            "id": "100-7",
+            "name": "War of the Outer Gods",
+            "expansionCode": "standalone",
+            "productType": "Scenario Pack"
+        }
+    ],
+    "nextScenario": [
+    ],
+    "campaignLogSchema": null,
+    "campaignLogUiSchema": null
+}

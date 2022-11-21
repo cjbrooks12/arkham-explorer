@@ -1,0 +1,39 @@
+{
+    "investigators": [
+        {
+            "id": "101-1",
+            "name": "Nathaniel Cho",
+            "expansionCode": "standalone",
+            "portrait": "",
+            "mainClass": "Guardian"
+        },
+        {
+            "id": "101-2",
+            "name": "Harvey Walters",
+            "expansionCode": "standalone",
+            "portrait": "",
+            "mainClass": "Seeker"
+        },
+        {
+            "id": "101-3",
+            "name": "Winifred Habbamock",
+            "expansionCode": "standalone",
+            "portrait": "",
+            "mainClass": "Rogue"
+        },
+        {
+            "id": "101-4",
+            "name": "Jacqueline Fine",
+            "expansionCode": "standalone",
+            "portrait": "",
+            "mainClass": "Mystic"
+        },
+        {
+            "id": "101-5",
+            "name": "Stella Clark",
+            "expansionCode": "standalone",
+            "portrait": "",
+            "mainClass": "Survivor"
+        }
+    ]
+}

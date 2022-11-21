@@ -1,0 +1,39 @@
+{
+    "investigators": [
+        {
+            "id": "6-1",
+            "name": "Tommy Muldoon",
+            "expansionCode": "the-dream-eaters",
+            "portrait": "",
+            "mainClass": "Guardian"
+        },
+        {
+            "id": "6-2",
+            "name": "Mandy Thompson",
+            "expansionCode": "the-dream-eaters",
+            "portrait": "",
+            "mainClass": "Seeker"
+        },
+        {
+            "id": "6-3",
+            "name": "Tony Morgan",
+            "expansionCode": "the-dream-eaters",
+            "portrait": "",
+            "mainClass": "Rogue"
+        },
+        {
+            "id": "6-4",
+            "name": "Luke Robinson",
+            "expansionCode": "the-dream-eaters",
+            "portrait": "",
+            "mainClass": "Mystic"
+        },
+        {
+            "id": "6-5",
+            "name": "Patrice Hathaway",
+            "expansionCode": "the-dream-eaters",
+            "portrait": "",
+            "mainClass": "Survivor"
+        }
+    ]
+}

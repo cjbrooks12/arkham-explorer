@@ -1,0 +1,60 @@
+{
+    "width": 375,
+    "height": 525,
+    "regions": {
+        "name": {
+            "type": "text",
+            "x": 68,
+            "y": 10,
+            "width": 238,
+            "height": 29,
+            "font": "20px Teutonic",
+            "zIndex": 1
+        },
+        "traits": {
+            "type": "text",
+            "x": 20,
+            "y": 320,
+            "width": 336,
+            "height": 20,
+            "font": "italic bold 12px \"Helvetica Neue\"",
+            "zIndex": 1
+        },
+        "body": {
+            "type": "text",
+            "x": 20,
+            "y": 340,
+            "width": 336,
+            "height": 120,
+            "font": "12px \"Helvetica Neue\"",
+            "zIndex": 1
+        },
+        "cost": {
+            "type": "text",
+            "x": 20,
+            "y": 14,
+            "width": 38,
+            "height": 34,
+            "font": "36px Teutonic",
+            "color": "white",
+            "zIndex": 1
+        },
+        "label": {
+            "type": "text",
+            "x": 20,
+            "y": 62,
+            "width": 38,
+            "height": 14,
+            "font": "12px \"Helvetica Neue\"",
+            "zIndex": 1
+        },
+        "background": {
+            "type": "image",
+            "x": 0,
+            "y": 0,
+            "width": 600,
+            "height": 800,
+            "url": "/assets/cards/asset/guardian.jpeg"
+        }
+    }
+}

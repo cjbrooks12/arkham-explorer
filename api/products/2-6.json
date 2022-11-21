@@ -1,0 +1,26 @@
+{
+    "id": "2-6",
+    "name": "Where Doom Awaits",
+    "expansionCode": "the-dunwich-legacy",
+    "productType": "Mythos Pack",
+    "releaseDate": "2017-06-08",
+    "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/where-doom-awaits/",
+    "scenarios": [
+        {
+            "id": "2-7",
+            "name": "Where Doom Awaits",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/where-doom-awaits.svg"
+        }
+    ],
+    "encounterSets": [
+        {
+            "id": "2-7",
+            "name": "Where Doom Awaits",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/where-doom-awaits.svg"
+        }
+    ],
+    "investigators": [
+    ]
+}

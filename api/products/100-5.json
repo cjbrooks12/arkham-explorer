@@ -1,0 +1,56 @@
+{
+    "id": "100-5",
+    "name": "Murder at the Excelsior Hotel",
+    "expansionCode": "standalone",
+    "productType": "Scenario Pack",
+    "releaseDate": "2019-10-25",
+    "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/murder-excelsior-hotel/",
+    "scenarios": [
+        {
+            "id": "100-6",
+            "name": "Murder at the Excelsior Hotel",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/murder-at-the-excelsior-hotel.svg"
+        }
+    ],
+    "encounterSets": [
+        {
+            "id": "100-13",
+            "name": "Murder at the Excelsior Hotel",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/murder-at-the-excelsior-hotel/murder-at-the-excelsior-hotel.svg"
+        },
+        {
+            "id": "100-14",
+            "name": "Alien Interference",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/murder-at-the-excelsior-hotel/alien-interference.svg"
+        },
+        {
+            "id": "100-15",
+            "name": "Dark Rituals",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/murder-at-the-excelsior-hotel/dark-rituals.svg"
+        },
+        {
+            "id": "100-16",
+            "name": "Excelsior Management",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/murder-at-the-excelsior-hotel/excelsior-management.svg"
+        },
+        {
+            "id": "100-17",
+            "name": "Sins of the Past",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/murder-at-the-excelsior-hotel/sins-of-the-past.svg"
+        },
+        {
+            "id": "100-18",
+            "name": "Vile Experiments",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/murder-at-the-excelsior-hotel/vile-experiments.svg"
+        }
+    ],
+    "investigators": [
+    ]
+}

@@ -1,0 +1,49 @@
+{
+    "id": "2-9",
+    "name": "The Dunwich Legacy: Investigator Expansion",
+    "expansionCode": "the-dunwich-legacy",
+    "productType": "Investigator Expansion",
+    "releaseDate": "2022-03-18",
+    "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/dunwich-legacy-investigator-expansion/",
+    "scenarios": [
+    ],
+    "encounterSets": [
+    ],
+    "investigators": [
+        {
+            "id": "2-1",
+            "name": "Zoey Samaras",
+            "expansionCode": "the-dunwich-legacy",
+            "portrait": "",
+            "mainClass": "Guardian"
+        },
+        {
+            "id": "2-2",
+            "name": "Rex Murphy",
+            "expansionCode": "the-dunwich-legacy",
+            "portrait": "",
+            "mainClass": "Seeker"
+        },
+        {
+            "id": "2-3",
+            "name": "Jenny Barnes",
+            "expansionCode": "the-dunwich-legacy",
+            "portrait": "",
+            "mainClass": "Rogue"
+        },
+        {
+            "id": "2-4",
+            "name": "Jim Culver",
+            "expansionCode": "the-dunwich-legacy",
+            "portrait": "",
+            "mainClass": "Mystic"
+        },
+        {
+            "id": "2-5",
+            "name": "\"Ashcan\" Pete",
+            "expansionCode": "the-dunwich-legacy",
+            "portrait": "",
+            "mainClass": "Survivor"
+        }
+    ]
+}

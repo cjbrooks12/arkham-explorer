@@ -1,0 +1,15 @@
+{
+    "id": "2-13r",
+    "name": "Yog-Sothoth's Emissaries",
+    "expansionCode": "return-to-the-dunwich-legacy",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/yog-sothoths-emissaries.svg",
+    "replaces": "1-14",
+    "products": [
+        {
+            "id": "2-1r",
+            "name": "Return to the Dunwich Legacy",
+            "expansionCode": "return-to-the-dunwich-legacy",
+            "productType": "Return To"
+        }
+    ]
+}

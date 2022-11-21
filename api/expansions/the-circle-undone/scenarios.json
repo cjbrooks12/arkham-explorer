@@ -1,0 +1,58 @@
+{
+    "scenarios": [
+        {
+            "id": "5-1",
+            "name": "Disappearance at the Twilight Estate",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/disappearance-at-the-twilight-estate.svg"
+        },
+        {
+            "id": "5-2",
+            "name": "The Witching Hour",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/the-witching-hour.svg"
+        },
+        {
+            "id": "5-3",
+            "name": "At Death's Doorstep",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/at-deaths-doorstep.svg"
+        },
+        {
+            "id": "5-4",
+            "name": "The Secret Name",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/the-secret-name.svg"
+        },
+        {
+            "id": "5-5",
+            "name": "The Wages of Sin",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/the-wages-of-sin.svg"
+        },
+        {
+            "id": "5-6",
+            "name": "For the Greater Good",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/for-the-greater-good.svg"
+        },
+        {
+            "id": "5-7",
+            "name": "Union and Disillusion",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/union-and-disillusion.svg"
+        },
+        {
+            "id": "5-8",
+            "name": "In the Clutches of Chaos",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/in-the-clutches-of-chaos.svg"
+        },
+        {
+            "id": "5-9",
+            "name": "Before the Black Throne",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/before-the-black-throne.svg"
+        }
+    ]
+}

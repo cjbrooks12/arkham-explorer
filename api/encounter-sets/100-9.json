@@ -1,0 +1,15 @@
+{
+    "id": "100-9",
+    "name": "Brotherhood of the Beast",
+    "expansionCode": "standalone",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/guardians-of-the-abyss/brotherhood-of-the-beast.svg",
+    "replaces": null,
+    "products": [
+        {
+            "id": "100-4",
+            "name": "Guardians of the Abyss",
+            "expansionCode": "standalone",
+            "productType": "Scenario Pack"
+        }
+    ]
+}

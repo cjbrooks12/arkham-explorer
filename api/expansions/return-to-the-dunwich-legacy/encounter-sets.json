@@ -1,0 +1,88 @@
+{
+    "encounterSets": [
+        {
+            "id": "2-10r",
+            "name": "Erratic Fear",
+            "expansionCode": "return-to-the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/erratic-fear.svg"
+        },
+        {
+            "id": "2-11r",
+            "name": "Creeping Cold",
+            "expansionCode": "return-to-the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/creeping-cold.svg"
+        },
+        {
+            "id": "2-12r",
+            "name": "Secret Doors",
+            "expansionCode": "return-to-the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/secret-doors.svg"
+        },
+        {
+            "id": "2-13r",
+            "name": "Yog-Sothoth's Emissaries",
+            "expansionCode": "return-to-the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/yog-sothoths-emissaries.svg"
+        },
+        {
+            "id": "2-14r",
+            "name": "Beyond the Threshold",
+            "expansionCode": "return-to-the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/beyond-the-threshold.svg"
+        },
+        {
+            "id": "2-1r",
+            "name": "Return to Extracurricular Activity",
+            "expansionCode": "return-to-the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/return-to-extracurricular-activity.svg"
+        },
+        {
+            "id": "2-2r",
+            "name": "Return to The House Always Wins",
+            "expansionCode": "return-to-the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/return-to-the-house-always-wins.svg"
+        },
+        {
+            "id": "2-3r",
+            "name": "Return to The Miskatonic Museum",
+            "expansionCode": "return-to-the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/return-to-the-miskatonic-museum.svg"
+        },
+        {
+            "id": "2-4r",
+            "name": "Return to The Essex County Express",
+            "expansionCode": "return-to-the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/return-to-the-essex-county-express.svg"
+        },
+        {
+            "id": "2-5r",
+            "name": "Return to Blood on the Altar",
+            "expansionCode": "return-to-the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/return-to-blood-on-the-altar.svg"
+        },
+        {
+            "id": "2-6r",
+            "name": "Return to Undimensioned and Unseen",
+            "expansionCode": "return-to-the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/return-to-undimensioned-and-unseen.svg"
+        },
+        {
+            "id": "2-7r",
+            "name": "Return to Where Doom Awaits",
+            "expansionCode": "return-to-the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/return-to-where-doom-awaits.svg"
+        },
+        {
+            "id": "2-8r",
+            "name": "Return to Lost in Time and Space",
+            "expansionCode": "return-to-the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/return-to-lost-in-time-and-space.svg"
+        },
+        {
+            "id": "2-9r",
+            "name": "Resurgent Evils",
+            "expansionCode": "return-to-the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/resurgent-evils.svg"
+        }
+    ]
+}

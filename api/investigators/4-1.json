@@ -1,0 +1,11 @@
+{
+    "id": "4-1",
+    "name": "Leo Anderson",
+    "expansionCode": "the-forgotten-age",
+    "portrait": "",
+    "mainClass": "Guardian",
+    "health": 8,
+    "sanity": 6,
+    "products": [
+    ]
+}

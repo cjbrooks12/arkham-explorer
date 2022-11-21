@@ -1,0 +1,19 @@
+{
+    "id": "4-8",
+    "name": "The Depths of Yoth",
+    "expansionCode": "the-forgotten-age",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/the-depths-of-yoth.svg",
+    "encounterSets": [
+    ],
+    "chaosBag": [
+    ],
+    "referenceCard": [
+    ],
+    "products": [
+    ],
+    "nextScenario": [
+        "4-9"
+    ],
+    "campaignLogSchema": null,
+    "campaignLogUiSchema": null
+}

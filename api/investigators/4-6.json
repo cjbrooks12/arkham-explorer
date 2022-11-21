@@ -1,0 +1,11 @@
+{
+    "id": "4-6",
+    "name": "Body of a Yithian",
+    "expansionCode": "the-forgotten-age",
+    "portrait": "",
+    "mainClass": "Neutral",
+    "health": 7,
+    "sanity": 7,
+    "products": [
+    ]
+}

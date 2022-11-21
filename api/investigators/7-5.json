@@ -1,0 +1,11 @@
+{
+    "id": "7-5",
+    "name": "Silas Marsh",
+    "expansionCode": "the-innnsmouth-conspiracy",
+    "portrait": "",
+    "mainClass": "Survivor",
+    "health": 9,
+    "sanity": 5,
+    "products": [
+    ]
+}

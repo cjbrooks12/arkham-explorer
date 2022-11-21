@@ -1,0 +1,49 @@
+{
+    "id": "3-9",
+    "name": "The Path to Carcosa: Investigator Expansion",
+    "expansionCode": "the-path-to-carcosa",
+    "productType": "Investigator Expansion",
+    "releaseDate": "2022-05-27",
+    "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/path-carcosa-investigator-expansion/",
+    "scenarios": [
+    ],
+    "encounterSets": [
+    ],
+    "investigators": [
+        {
+            "id": "3-1",
+            "name": "Mark Harrigan",
+            "expansionCode": "the-path-to-carcosa",
+            "portrait": "",
+            "mainClass": "Guardian"
+        },
+        {
+            "id": "3-2",
+            "name": "Minh Thi Phan",
+            "expansionCode": "the-path-to-carcosa",
+            "portrait": "",
+            "mainClass": "Seeker"
+        },
+        {
+            "id": "3-3",
+            "name": "Sefina Rousseau",
+            "expansionCode": "the-path-to-carcosa",
+            "portrait": "",
+            "mainClass": "Rogue"
+        },
+        {
+            "id": "3-4",
+            "name": "Akachi Onyele",
+            "expansionCode": "the-path-to-carcosa",
+            "portrait": "",
+            "mainClass": "Mystic"
+        },
+        {
+            "id": "3-5",
+            "name": "William Yorick",
+            "expansionCode": "the-path-to-carcosa",
+            "portrait": "",
+            "mainClass": "Survivor"
+        }
+    ]
+}

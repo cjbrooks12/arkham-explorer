@@ -1,0 +1,26 @@
+{
+    "id": "2-5",
+    "name": "Undimensioned and Unseen",
+    "expansionCode": "the-dunwich-legacy",
+    "productType": "Mythos Pack",
+    "releaseDate": "2017-05-11",
+    "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/undimensioned-and-unseen/",
+    "scenarios": [
+        {
+            "id": "2-6",
+            "name": "Undimensioned and Unseen",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/undimensioned-and-unseen.svg"
+        }
+    ],
+    "encounterSets": [
+        {
+            "id": "2-6",
+            "name": "Undimensioned and Unseen",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/undimensioned-and-unseen.svg"
+        }
+    ],
+    "investigators": [
+    ]
+}

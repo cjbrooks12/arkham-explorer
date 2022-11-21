@@ -1,0 +1,46 @@
+{
+    "investigators": [
+        {
+            "id": "4-1",
+            "name": "Leo Anderson",
+            "expansionCode": "the-forgotten-age",
+            "portrait": "",
+            "mainClass": "Guardian"
+        },
+        {
+            "id": "4-2",
+            "name": "Ursula Downs",
+            "expansionCode": "the-forgotten-age",
+            "portrait": "",
+            "mainClass": "Seeker"
+        },
+        {
+            "id": "4-3",
+            "name": "Finn Edwards",
+            "expansionCode": "the-forgotten-age",
+            "portrait": "",
+            "mainClass": "Rogue"
+        },
+        {
+            "id": "4-4",
+            "name": "Father Mateo",
+            "expansionCode": "the-forgotten-age",
+            "portrait": "",
+            "mainClass": "Mystic"
+        },
+        {
+            "id": "4-5",
+            "name": "Calvin Wright",
+            "expansionCode": "the-forgotten-age",
+            "portrait": "",
+            "mainClass": "Survivor"
+        },
+        {
+            "id": "4-6",
+            "name": "Body of a Yithian",
+            "expansionCode": "the-forgotten-age",
+            "portrait": "",
+            "mainClass": "Neutral"
+        }
+    ]
+}

@@ -1,0 +1,52 @@
+{
+    "scenarios": [
+        {
+            "id": "6-1",
+            "name": "Beyond the Gates of Sleep",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/beyond-the-gates-of-sleep.svg"
+        },
+        {
+            "id": "6-2",
+            "name": "Waking Nightmare",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/waking-nightmare.svg"
+        },
+        {
+            "id": "6-3",
+            "name": "The Search for Kadath",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/the-search-for-kadath.svg"
+        },
+        {
+            "id": "6-4",
+            "name": "A Thousand Shapes of Horror",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/a-thousand-shapes-of-horror.svg"
+        },
+        {
+            "id": "6-5",
+            "name": "Dark Side of the Moon",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/dark-side-of-the-moon.svg"
+        },
+        {
+            "id": "6-6",
+            "name": "Point of No Return",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/point-of-no-return.svg"
+        },
+        {
+            "id": "6-7",
+            "name": "Where the Gods Dwell",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/where-the-gods-dwell.svg"
+        },
+        {
+            "id": "6-8",
+            "name": "Weaver of the Cosmos",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/weaver-of-the-cosmos.svg"
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "id": "100-19",
+    "name": "The Blob that Ate Everything",
+    "expansionCode": "standalone",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-blob-that-ate-everything/the-blob-that-ate-everything.svg",
+    "replaces": null,
+    "products": [
+        {
+            "id": "100-6",
+            "name": "The Blob That Ate Everything",
+            "expansionCode": "standalone",
+            "productType": "Scenario Pack"
+        }
+    ]
+}

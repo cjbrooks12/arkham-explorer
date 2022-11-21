@@ -1,0 +1,23 @@
+{
+    "id": "1-1",
+    "name": "Roland Banks",
+    "expansionCode": "night-of-the-zealot",
+    "portrait": "",
+    "mainClass": "Guardian",
+    "health": 9,
+    "sanity": 5,
+    "products": [
+        {
+            "id": "1-1",
+            "name": "Core Set",
+            "expansionCode": "night-of-the-zealot",
+            "productType": "Core Set"
+        },
+        {
+            "id": "1-2",
+            "name": "Revised Core Set",
+            "expansionCode": "night-of-the-zealot",
+            "productType": "Core Set"
+        }
+    ]
+}

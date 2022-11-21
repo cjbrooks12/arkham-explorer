@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: *
+Sitemap: https://cjbrooks12.github.io/arkham-explorer/sitemap.xml

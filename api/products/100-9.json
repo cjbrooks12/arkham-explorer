@@ -1,0 +1,26 @@
+{
+    "id": "100-9",
+    "name": "Barkham Horror: The Meddling of Meowlathotep",
+    "expansionCode": "standalone",
+    "productType": "Scenario Pack",
+    "releaseDate": "2020-10-16",
+    "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/barkham-horror-meddling-meowlathotep/",
+    "scenarios": [
+        {
+            "id": "100-10",
+            "name": "The Meddling of Meowlathotep",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/barkham-horror.svg"
+        }
+    ],
+    "encounterSets": [
+        {
+            "id": "100-30",
+            "name": "The Meddling of Meowlathotep",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/barkham-horror/the-meddling-of-meowlathotep.svg"
+        }
+    ],
+    "investigators": [
+    ]
+}

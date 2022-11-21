@@ -1,0 +1,11 @@
+{
+    "id": "4-2",
+    "name": "Ursula Downs",
+    "expansionCode": "the-forgotten-age",
+    "portrait": "",
+    "mainClass": "Seeker",
+    "health": 7,
+    "sanity": 7,
+    "products": [
+    ]
+}

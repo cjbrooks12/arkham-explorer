@@ -1,0 +1,19 @@
+{
+    "id": "4-2",
+    "name": "The Doom of Eztli",
+    "expansionCode": "the-forgotten-age",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/the-doom-of-eztli.svg",
+    "encounterSets": [
+    ],
+    "chaosBag": [
+    ],
+    "referenceCard": [
+    ],
+    "products": [
+    ],
+    "nextScenario": [
+        "4-3"
+    ],
+    "campaignLogSchema": null,
+    "campaignLogUiSchema": null
+}

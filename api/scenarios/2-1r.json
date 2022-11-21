@@ -1,0 +1,114 @@
+{
+    "id": "2-1r",
+    "name": "Return to Extracurricular Activity",
+    "expansionCode": "return-to-the-dunwich-legacy",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/return-to-extracurricular-activity.svg",
+    "encounterSets": [
+        {
+            "encounterSet": {
+                "id": "2-1r",
+                "name": "Return to Extracurricular Activity",
+                "expansionCode": "return-to-the-dunwich-legacy",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/return-to-extracurricular-activity.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "2-10",
+                "name": "Sorcery",
+                "expansionCode": "return-to-the-dunwich-legacy",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/sorcery.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "2-11",
+                "name": "Bishop's Thralls",
+                "expansionCode": "return-to-the-dunwich-legacy",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/bishops-thralls.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "2-13",
+                "name": "Whippoorwills",
+                "expansionCode": "return-to-the-dunwich-legacy",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/whippoorwills.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "2-14r",
+                "name": "Beyond the Threshold",
+                "expansionCode": "return-to-the-dunwich-legacy",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/beyond-the-threshold.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "2-9r",
+                "name": "Resurgent Evils",
+                "expansionCode": "return-to-the-dunwich-legacy",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/resurgent-evils.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "2-12r",
+                "name": "Secret Doors",
+                "expansionCode": "return-to-the-dunwich-legacy",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/secret-doors.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "2-13r",
+                "name": "Yog-Sothoth's Emissaries",
+                "expansionCode": "return-to-the-dunwich-legacy",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/yog-sothoths-emissaries.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        }
+    ],
+    "chaosBag": [
+    ],
+    "referenceCard": [
+    ],
+    "products": [
+        {
+            "id": "2-1r",
+            "name": "Return to the Dunwich Legacy",
+            "expansionCode": "return-to-the-dunwich-legacy",
+            "productType": "Return To"
+        }
+    ],
+    "nextScenario": [
+        "2-2r",
+        "2-3r"
+    ],
+    "campaignLogSchema": null,
+    "campaignLogUiSchema": null
+}

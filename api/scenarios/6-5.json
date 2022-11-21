@@ -1,0 +1,18 @@
+{
+    "id": "6-5",
+    "name": "Dark Side of the Moon",
+    "expansionCode": "the-dream-eaters",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/dark-side-of-the-moon.svg",
+    "encounterSets": [
+    ],
+    "chaosBag": [
+    ],
+    "referenceCard": [
+    ],
+    "products": [
+    ],
+    "nextScenario": [
+    ],
+    "campaignLogSchema": null,
+    "campaignLogUiSchema": null
+}

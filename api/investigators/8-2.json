@@ -1,0 +1,11 @@
+{
+    "id": "8-2",
+    "name": "Norman Withers",
+    "expansionCode": "edge-of-the-earth",
+    "portrait": "",
+    "mainClass": "Seeker",
+    "health": 6,
+    "sanity": 8,
+    "products": [
+    ]
+}

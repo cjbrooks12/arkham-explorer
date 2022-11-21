@@ -1,0 +1,15 @@
+{
+    "id": "1-3r",
+    "name": "Return to The Devourer Below",
+    "expansionCode": "return-to-night-of-the-zealot",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-night-of-the-zealot/return-to-the-devourer-below.svg",
+    "replaces": "1-3",
+    "products": [
+        {
+            "id": "1-1r",
+            "name": "Return to the Night of the Zealot",
+            "expansionCode": "return-to-night-of-the-zealot",
+            "productType": "Return To"
+        }
+    ]
+}

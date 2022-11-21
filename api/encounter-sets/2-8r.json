@@ -1,0 +1,15 @@
+{
+    "id": "2-8r",
+    "name": "Return to Lost in Time and Space",
+    "expansionCode": "return-to-the-dunwich-legacy",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/return-to-lost-in-time-and-space.svg",
+    "replaces": "2-8",
+    "products": [
+        {
+            "id": "2-1r",
+            "name": "Return to the Dunwich Legacy",
+            "expansionCode": "return-to-the-dunwich-legacy",
+            "productType": "Return To"
+        }
+    ]
+}

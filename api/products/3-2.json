@@ -1,0 +1,26 @@
+{
+    "id": "3-2",
+    "name": "Echoes of the Past",
+    "expansionCode": "the-path-to-carcosa",
+    "productType": "Mythos Pack",
+    "releaseDate": "2017-10-26",
+    "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/echoes-past/",
+    "scenarios": [
+        {
+            "id": "3-3",
+            "name": "Echoes of the Past",
+            "expansionCode": "the-path-to-carcosa",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/echoes-of-the-past.svg"
+        }
+    ],
+    "encounterSets": [
+        {
+            "id": "3-3",
+            "name": "Echoes of the Past",
+            "expansionCode": "the-path-to-carcosa",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/echoes-of-the-past.svg"
+        }
+    ],
+    "investigators": [
+    ]
+}

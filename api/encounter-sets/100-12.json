@@ -1,0 +1,15 @@
+{
+    "id": "100-12",
+    "name": "The Night's Usurper",
+    "expansionCode": "standalone",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/guardians-of-the-abyss/the-nights-usurper.svg",
+    "replaces": null,
+    "products": [
+        {
+            "id": "100-4",
+            "name": "Guardians of the Abyss",
+            "expansionCode": "standalone",
+            "productType": "Scenario Pack"
+        }
+    ]
+}

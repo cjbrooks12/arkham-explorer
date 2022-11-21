@@ -1,0 +1,91 @@
+{
+    "id": "2-5r",
+    "name": "Return to Blood on the Altar",
+    "expansionCode": "return-to-the-dunwich-legacy",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/return-to-blood-on-the-altar.svg",
+    "encounterSets": [
+        {
+            "encounterSet": {
+                "id": "2-5r",
+                "name": "Return to Blood on the Altar",
+                "expansionCode": "return-to-the-dunwich-legacy",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/return-to-blood-on-the-altar.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "1-11",
+                "name": "Nightgaunts",
+                "expansionCode": "return-to-the-dunwich-legacy",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/nightgaunts.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "2-12",
+                "name": "Dunwich",
+                "expansionCode": "return-to-the-dunwich-legacy",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/dunwich.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "2-13",
+                "name": "Whippoorwills",
+                "expansionCode": "return-to-the-dunwich-legacy",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/whippoorwills.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "2-16",
+                "name": "Naomi's Crew",
+                "expansionCode": "return-to-the-dunwich-legacy",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/naomis-crew.svg"
+            },
+            "conditional": false,
+            "setAside": true,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "2-9r",
+                "name": "Resurgent Evils",
+                "expansionCode": "return-to-the-dunwich-legacy",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/resurgent-evils.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        }
+    ],
+    "chaosBag": [
+    ],
+    "referenceCard": [
+    ],
+    "products": [
+        {
+            "id": "2-1r",
+            "name": "Return to the Dunwich Legacy",
+            "expansionCode": "return-to-the-dunwich-legacy",
+            "productType": "Return To"
+        }
+    ],
+    "nextScenario": [
+        "2-6r"
+    ],
+    "campaignLogSchema": null,
+    "campaignLogUiSchema": null
+}

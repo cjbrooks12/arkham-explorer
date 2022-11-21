@@ -1,0 +1,80 @@
+{
+    "id": "2-4r",
+    "name": "Return to The Essex County Express",
+    "expansionCode": "return-to-the-dunwich-legacy",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/return-to-the-essex-county-express.svg",
+    "encounterSets": [
+        {
+            "encounterSet": {
+                "id": "2-4r",
+                "name": "Return to The Essex County Express",
+                "expansionCode": "return-to-the-dunwich-legacy",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/return-to-the-essex-county-express.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "1-10",
+                "name": "Dark Cult",
+                "expansionCode": "return-to-the-dunwich-legacy",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/dark-cult.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "2-14r",
+                "name": "Beyond the Threshold",
+                "expansionCode": "return-to-the-dunwich-legacy",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/beyond-the-threshold.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "2-9r",
+                "name": "Resurgent Evils",
+                "expansionCode": "return-to-the-dunwich-legacy",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/resurgent-evils.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "2-10r",
+                "name": "Erratic Fear",
+                "expansionCode": "return-to-the-dunwich-legacy",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/erratic-fear.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        }
+    ],
+    "chaosBag": [
+    ],
+    "referenceCard": [
+    ],
+    "products": [
+        {
+            "id": "2-1r",
+            "name": "Return to the Dunwich Legacy",
+            "expansionCode": "return-to-the-dunwich-legacy",
+            "productType": "Return To"
+        }
+    ],
+    "nextScenario": [
+        "2-5r"
+    ],
+    "campaignLogSchema": null,
+    "campaignLogUiSchema": null
+}

@@ -1,0 +1,19 @@
+{
+    "id": "4-1",
+    "name": "The Untamed Wilds",
+    "expansionCode": "the-forgotten-age",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/the-untamed-wilds.svg",
+    "encounterSets": [
+    ],
+    "chaosBag": [
+    ],
+    "referenceCard": [
+    ],
+    "products": [
+    ],
+    "nextScenario": [
+        "4-2"
+    ],
+    "campaignLogSchema": null,
+    "campaignLogUiSchema": null
+}

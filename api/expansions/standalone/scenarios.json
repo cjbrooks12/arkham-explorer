@@ -1,0 +1,64 @@
+{
+    "scenarios": [
+        {
+            "id": "100-1",
+            "name": "Curse of the Rougarou",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/curse-of-the-rougarou.svg"
+        },
+        {
+            "id": "100-10",
+            "name": "The Meddling of Meowlathotep",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/barkham-horror.svg"
+        },
+        {
+            "id": "100-2",
+            "name": "Carnevale of Horrors",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/carnevale-of-horrors.svg"
+        },
+        {
+            "id": "100-3",
+            "name": "The Labyrinths of Lunacy",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-labyrinths-of-lunacy.svg"
+        },
+        {
+            "id": "100-4",
+            "name": "The Eternal Slumber",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/guardians-of-the-abyss.svg"
+        },
+        {
+            "id": "100-5",
+            "name": "The Night's Usurper",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/guardians-of-the-abyss.svg"
+        },
+        {
+            "id": "100-6",
+            "name": "Murder at the Excelsior Hotel",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/murder-at-the-excelsior-hotel.svg"
+        },
+        {
+            "id": "100-7",
+            "name": "The Blob that Ate Everything",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-blob-that-ate-everything.svg"
+        },
+        {
+            "id": "100-8",
+            "name": "War of the Outer Gods",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/war-of-the-outer-gods.svg"
+        },
+        {
+            "id": "100-9",
+            "name": "Machinations Through Time",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/machinations-through-time.svg"
+        }
+    ]
+}

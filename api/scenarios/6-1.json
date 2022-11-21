@@ -1,0 +1,21 @@
+{
+    "id": "6-1",
+    "name": "Beyond the Gates of Sleep",
+    "expansionCode": "the-dream-eaters",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/beyond-the-gates-of-sleep.svg",
+    "encounterSets": [
+    ],
+    "chaosBag": [
+    ],
+    "referenceCard": [
+    ],
+    "products": [
+    ],
+    "nextScenario": [
+        "6-2",
+        "6-3",
+        "6-4"
+    ],
+    "campaignLogSchema": null,
+    "campaignLogUiSchema": null
+}

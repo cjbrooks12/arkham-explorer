@@ -1,0 +1,226 @@
+{
+    "id": "6",
+    "name": "The Dream Eaters",
+    "expansionCode": "the-dream-eaters",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters.svg",
+    "expansionType": {
+        "type": "cycle"
+    },
+    "boxArt": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/box-art.webp",
+    "flavorText": "There is a hidden realm outside the world of the waking: a realm of wonder, imagination, and nightmares. After occult author Virgil Gray writes about his adventures in these “Dreamlands,” you decide to set forth and learn the truth for yourself. What is real, and what is fiction? And what secrets await in the dark, forbidden places beyond the gates of sleep?",
+    "scenarios": [
+        {
+            "id": "6-1",
+            "name": "Beyond the Gates of Sleep",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/beyond-the-gates-of-sleep.svg"
+        },
+        {
+            "id": "6-2",
+            "name": "Waking Nightmare",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/waking-nightmare.svg"
+        },
+        {
+            "id": "6-3",
+            "name": "The Search for Kadath",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/the-search-for-kadath.svg"
+        },
+        {
+            "id": "6-4",
+            "name": "A Thousand Shapes of Horror",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/a-thousand-shapes-of-horror.svg"
+        },
+        {
+            "id": "6-5",
+            "name": "Dark Side of the Moon",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/dark-side-of-the-moon.svg"
+        },
+        {
+            "id": "6-6",
+            "name": "Point of No Return",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/point-of-no-return.svg"
+        },
+        {
+            "id": "6-7",
+            "name": "Where the Gods Dwell",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/where-the-gods-dwell.svg"
+        },
+        {
+            "id": "6-8",
+            "name": "Weaver of the Cosmos",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/weaver-of-the-cosmos.svg"
+        }
+    ],
+    "encounterSets": [
+        {
+            "id": "6-1",
+            "name": "A Thousand Shapes of Horror",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/a-thousand-shapes-of-horror.svg"
+        },
+        {
+            "id": "6-2",
+            "name": "Agents of Atlach-Nacha",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/agents-of-atlach-nacha.svg"
+        },
+        {
+            "id": "6-3",
+            "name": "Agents of Nyarlathotep",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/agents-of-nyarlathotep.svg"
+        },
+        {
+            "id": "6-4",
+            "name": "Beyond the Gates of Sleep",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/beyond-the-gates-of-sleep.svg"
+        },
+        {
+            "id": "6-5",
+            "name": "Corsairs",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/corsairs.svg"
+        },
+        {
+            "id": "6-6",
+            "name": "Creatures of the Underworld",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/creatures-of-the-underworld.svg"
+        },
+        {
+            "id": "6-7",
+            "name": "Dark Side of the Moon",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/dark-side-of-the-moon.svg"
+        },
+        {
+            "id": "6-8",
+            "name": "Descent into the Pitch",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/descent-into-the-pitch.svg"
+        },
+        {
+            "id": "6-9",
+            "name": "Dreamer's Curse",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/dreamers-curse.svg"
+        },
+        {
+            "id": "6-10",
+            "name": "Dreamlands",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/dreamlands.svg"
+        },
+        {
+            "id": "6-11",
+            "name": "Merging Realities",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/merging-realities.svg"
+        },
+        {
+            "id": "6-12",
+            "name": "Point of No Return",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/point-of-no-return.svg"
+        },
+        {
+            "id": "6-13",
+            "name": "Spiders",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/spiders.svg"
+        },
+        {
+            "id": "6-14",
+            "name": "Terror of the Vale",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/terror-of-the-vale.svg"
+        },
+        {
+            "id": "6-15",
+            "name": "The Search for Kadath",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/the-search-for-kadath.svg"
+        },
+        {
+            "id": "6-16",
+            "name": "Waking Nightmare",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/waking-nightmare.svg"
+        },
+        {
+            "id": "6-17",
+            "name": "Weaver of the Cosmos",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/weaver-of-the-cosmos.svg"
+        },
+        {
+            "id": "6-18",
+            "name": "Where the Gods Dwell",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/where-the-gods-dwell.svg"
+        },
+        {
+            "id": "6-19",
+            "name": "Whispers of Hypnos",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/whispers-of-hypnos.svg"
+        },
+        {
+            "id": "6-20",
+            "name": "Zoogs",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/zoogs.svg"
+        }
+    ],
+    "investigators": [
+        {
+            "id": "6-1",
+            "name": "Tommy Muldoon",
+            "expansionCode": "the-dream-eaters",
+            "portrait": "",
+            "mainClass": "Guardian"
+        },
+        {
+            "id": "6-2",
+            "name": "Mandy Thompson",
+            "expansionCode": "the-dream-eaters",
+            "portrait": "",
+            "mainClass": "Seeker"
+        },
+        {
+            "id": "6-3",
+            "name": "Tony Morgan",
+            "expansionCode": "the-dream-eaters",
+            "portrait": "",
+            "mainClass": "Rogue"
+        },
+        {
+            "id": "6-4",
+            "name": "Luke Robinson",
+            "expansionCode": "the-dream-eaters",
+            "portrait": "",
+            "mainClass": "Mystic"
+        },
+        {
+            "id": "6-5",
+            "name": "Patrice Hathaway",
+            "expansionCode": "the-dream-eaters",
+            "portrait": "",
+            "mainClass": "Survivor"
+        }
+    ],
+    "products": [
+    ],
+    "startScenario": [
+        "6-1",
+        "6-2"
+    ]
+}

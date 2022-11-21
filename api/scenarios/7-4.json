@@ -1,0 +1,18 @@
+{
+    "id": "7-4",
+    "name": "Devil Reef",
+    "expansionCode": "the-innnsmouth-conspiracy",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/devil-reef.svg",
+    "encounterSets": [
+    ],
+    "chaosBag": [
+    ],
+    "referenceCard": [
+    ],
+    "products": [
+    ],
+    "nextScenario": [
+    ],
+    "campaignLogSchema": null,
+    "campaignLogUiSchema": null
+}

@@ -1,0 +1,371 @@
+{
+    "id": "1-3",
+    "name": "The Devourer Below",
+    "expansionCode": "night-of-the-zealot",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/the-devourer-below.svg",
+    "encounterSets": [
+        {
+            "encounterSet": {
+                "id": "1-3",
+                "name": "The Devourer Below",
+                "expansionCode": "night-of-the-zealot",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/the-devourer-below.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "1-6",
+                "name": "Ghouls",
+                "expansionCode": "night-of-the-zealot",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/ghouls.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "1-7",
+                "name": "Striking Fear",
+                "expansionCode": "night-of-the-zealot",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/striking-fear.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "1-8",
+                "name": "Ancient Evils",
+                "expansionCode": "night-of-the-zealot",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/ancient-evils.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "1-10",
+                "name": "Dark Cult",
+                "expansionCode": "night-of-the-zealot",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/dark-cult.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "1-13",
+                "name": "Agents of Hastur",
+                "expansionCode": "night-of-the-zealot",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/agents-of-hastur.svg"
+            },
+            "conditional": true,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "1-14",
+                "name": "Agents of Yog-Sothoth",
+                "expansionCode": "night-of-the-zealot",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/agents-of-yog-sothoth.svg"
+            },
+            "conditional": true,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "1-15",
+                "name": "Agents of Shub Niggurath",
+                "expansionCode": "night-of-the-zealot",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/agents-of-shub-niggurath.svg"
+            },
+            "conditional": true,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "1-16",
+                "name": "Agenths of Cthulhu",
+                "expansionCode": "night-of-the-zealot",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/agents-of-cthulhu.svg"
+            },
+            "conditional": true,
+            "setAside": false,
+            "partial": false
+        }
+    ],
+    "chaosBag": [
+        {
+            "difficulty": "easy",
+            "tokens": [
+                "+1",
+                "+1",
+                "0",
+                "0",
+                "0",
+                "-1",
+                "-1",
+                "-1",
+                "-2",
+                "-2",
+                "Skull",
+                "Skull",
+                "Cultist",
+                "Tablet",
+                "Auto-Fail",
+                "Elder Thing",
+                "Elder Sign"
+            ]
+        },
+        {
+            "difficulty": "standard",
+            "tokens": [
+                "+1",
+                "0",
+                "0",
+                "-1",
+                "-1",
+                "-1",
+                "-2",
+                "-2",
+                "-3",
+                "-4",
+                "Skull",
+                "Skull",
+                "Cultist",
+                "Tablet",
+                "Elder Thing",
+                "Auto-Fail",
+                "Elder Sign"
+            ]
+        },
+        {
+            "difficulty": "hard",
+            "tokens": [
+                "0",
+                "0",
+                "0",
+                "-1",
+                "-1",
+                "-2",
+                "-2",
+                "-3",
+                "-3",
+                "-4",
+                "-5",
+                "Skull",
+                "Skull",
+                "Cultist",
+                "Tablet",
+                "Elder Thing",
+                "Auto-Fail",
+                "Elder Sign"
+            ]
+        },
+        {
+            "difficulty": "expert",
+            "tokens": [
+                "0",
+                "-1",
+                "-1",
+                "-2",
+                "-2",
+                "-3",
+                "-3",
+                "-4",
+                "-4",
+                "-5",
+                "-6",
+                "-8",
+                "Skull",
+                "Skull",
+                "Cultist",
+                "Tablet",
+                "Elder Thing",
+                "Auto-Fail",
+                "Elder Sign"
+            ]
+        }
+    ],
+    "referenceCard": [
+        {
+            "difficulties": [
+                "easy",
+                "standard"
+            ],
+            "tokens": [
+                {
+                    "token": "Skull",
+                    "text": "-X. X is the number of [[Monster]] enemies in play.",
+                    "modifierValue": "Monsters"
+                },
+                {
+                    "token": "Cultist",
+                    "text": "-2. Place 1 doom on the nearest enemy.",
+                    "modifierValue": "-2"
+                },
+                {
+                    "token": "Tablet",
+                    "text": "-3. If there is a [[Monster]] enemy at your location, take 1 damage.",
+                    "modifierValue": "-3"
+                },
+                {
+                    "token": "Elder Thing",
+                    "text": "-5. If there is an [[Ancient One]] enemy in play, reveal another token.",
+                    "modifierValue": "-5"
+                }
+            ]
+        },
+        {
+            "difficulties": [
+                "hard",
+                "expert"
+            ],
+            "tokens": [
+                {
+                    "token": "Skull",
+                    "text": "-3. If you fail, after this skill test, search the encounter deck and discard pile for a [[Monster]] enemy, and draw it. Shuffle the encounter deck.",
+                    "modifierValue": "-3"
+                },
+                {
+                    "token": "Cultist",
+                    "text": "-4. Place 2 doom on the nearest enemy.",
+                    "modifierValue": "-4"
+                },
+                {
+                    "token": "Tablet",
+                    "text": "-5. If there is a [[Monster]] enemy at your location, take 1 damage and 1 horror.",
+                    "modifierValue": "-5"
+                },
+                {
+                    "token": "Elder Thing",
+                    "text": "-7. If there is an [[Ancient One]] enemy in play, reveal another token.",
+                    "modifierValue": "-7"
+                }
+            ]
+        }
+    ],
+    "products": [
+        {
+            "id": "1-1",
+            "name": "Core Set",
+            "expansionCode": "night-of-the-zealot",
+            "productType": "Core Set"
+        },
+        {
+            "id": "1-2",
+            "name": "Revised Core Set",
+            "expansionCode": "night-of-the-zealot",
+            "productType": "Core Set"
+        }
+    ],
+    "nextScenario": [
+    ],
+    "campaignLogSchema": {
+        "type": "object",
+        "properties": {
+            "scenarios": {
+                "type": "object",
+                "properties": {
+                    "1-3": {
+                        "type": "object",
+                        "properties": {
+                            "status": {
+                                "type": "string",
+                                "enum": [
+                                    "Not Started",
+                                    "In Progress",
+                                    "Completed"
+                                ]
+                            },
+                            "victoryDisplay": {
+                                "type": "integer"
+                            },
+                            "resolution": {
+                                "type": "string",
+                                "enum": [
+                                    "No Resolution",
+                                    "Resolution 1",
+                                    "Resolution 2",
+                                    "Resolution 3"
+                                ]
+                            },
+                            "notes": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "statements": {
+                "type": "object",
+                "properties": {
+                    "ghoulPriest": {
+                        "type": "boolean",
+                        "title": "The Ghoul Priest is still alive"
+                    },
+                    "umordhoth": {
+                        "type": "string",
+                        "enum": [
+                            "Arkham succumbed to Umôrdhoth’s terrible vengeance",
+                            "The ritual to summon Umôrdhoth was broken",
+                            "The investigators repelled Umôrdhoth",
+                            "The investigators sacrificed Lita Chantler to Umôrdhoth"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "campaignLogUiSchema": {
+        "type": "VerticalLayout",
+        "elements": [
+            {
+                "type": "Control",
+                "scope": "#/properties/scenarios/properties/1-3/properties/status"
+            },
+            {
+                "type": "Control",
+                "scope": "#/properties/scenarios/properties/1-3/properties/notes"
+            },
+            {
+                "type": "VerticalLayout",
+                "elements": [
+                    {
+                        "type": "Control",
+                        "scope": "#/properties/scenarios/properties/1-3/properties/resolution"
+                    },
+                    {
+                        "type": "Control",
+                        "scope": "#/properties/scenarios/properties/1-3/properties/victoryDisplay"
+                    },
+                    {
+                        "type": "Control",
+                        "scope": "#/properties/statements/properties/umordhoth"
+                    }
+                ],
+                "rule": {
+                    "effect": "SHOW",
+                    "condition": {
+                        "scope": "#/properties/scenarios/properties/1-3/properties/status",
+                        "schema": {
+                            "enum": [
+                                "Completed"
+                            ]
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}

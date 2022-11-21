@@ -1,0 +1,26 @@
+{
+    "id": "3-4",
+    "name": "A Phantom of Truth",
+    "expansionCode": "the-path-to-carcosa",
+    "productType": "Mythos Pack",
+    "releaseDate": "2017-12-21",
+    "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/phantom-truth/",
+    "scenarios": [
+        {
+            "id": "3-5",
+            "name": "A Phantom of Truth",
+            "expansionCode": "the-path-to-carcosa",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/a-phantom-of-truth.svg"
+        }
+    ],
+    "encounterSets": [
+        {
+            "id": "3-5",
+            "name": "A Phantom of Truth",
+            "expansionCode": "the-path-to-carcosa",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/a-phantom-of-truth.svg"
+        }
+    ],
+    "investigators": [
+    ]
+}

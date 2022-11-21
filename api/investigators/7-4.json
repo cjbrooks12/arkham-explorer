@@ -1,0 +1,11 @@
+{
+    "id": "7-4",
+    "name": "Dexter Drake",
+    "expansionCode": "the-innnsmouth-conspiracy",
+    "portrait": "",
+    "mainClass": "Mystic",
+    "health": 6,
+    "sanity": 8,
+    "products": [
+    ]
+}

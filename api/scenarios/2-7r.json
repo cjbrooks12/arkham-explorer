@@ -1,0 +1,113 @@
+{
+    "id": "2-7r",
+    "name": "Return to Where Doom Awaits",
+    "expansionCode": "return-to-the-dunwich-legacy",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/return-to-where-doom-awaits.svg",
+    "encounterSets": [
+        {
+            "encounterSet": {
+                "id": "2-7r",
+                "name": "Return to Where Doom Awaits",
+                "expansionCode": "return-to-the-dunwich-legacy",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/return-to-where-doom-awaits.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "2-10",
+                "name": "Sorcery",
+                "expansionCode": "return-to-the-dunwich-legacy",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/sorcery.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "2-11",
+                "name": "Bishop's Thralls",
+                "expansionCode": "return-to-the-dunwich-legacy",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/bishops-thralls.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "2-15",
+                "name": "Beast Thralls",
+                "expansionCode": "return-to-the-dunwich-legacy",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/beast-thralls.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "2-18",
+                "name": "Hideous Abominations",
+                "expansionCode": "return-to-the-dunwich-legacy",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/hideous-abominations.svg"
+            },
+            "conditional": false,
+            "setAside": true,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "2-9r",
+                "name": "Resurgent Evils",
+                "expansionCode": "return-to-the-dunwich-legacy",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/resurgent-evils.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "2-10r",
+                "name": "Erratic Fear",
+                "expansionCode": "return-to-the-dunwich-legacy",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/erratic-fear.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "2-11r",
+                "name": "Creeping Cold",
+                "expansionCode": "return-to-the-dunwich-legacy",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/creeping-cold.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        }
+    ],
+    "chaosBag": [
+    ],
+    "referenceCard": [
+    ],
+    "products": [
+        {
+            "id": "2-1r",
+            "name": "Return to the Dunwich Legacy",
+            "expansionCode": "return-to-the-dunwich-legacy",
+            "productType": "Return To"
+        }
+    ],
+    "nextScenario": [
+        "2-8r"
+    ],
+    "campaignLogSchema": null,
+    "campaignLogUiSchema": null
+}

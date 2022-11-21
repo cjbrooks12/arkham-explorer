@@ -1,0 +1,15 @@
+{
+    "id": "2-3r",
+    "name": "Return to The Miskatonic Museum",
+    "expansionCode": "return-to-the-dunwich-legacy",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/return-to-the-miskatonic-museum.svg",
+    "replaces": "2-3",
+    "products": [
+        {
+            "id": "2-1r",
+            "name": "Return to the Dunwich Legacy",
+            "expansionCode": "return-to-the-dunwich-legacy",
+            "productType": "Return To"
+        }
+    ]
+}

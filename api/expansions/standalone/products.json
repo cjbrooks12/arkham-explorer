@@ -1,0 +1,88 @@
+{
+    "products": [
+        {
+            "id": "100-1",
+            "name": "Curse of the Rougarou",
+            "expansionCode": "standalone",
+            "productType": "Scenario Pack"
+        },
+        {
+            "id": "100-2",
+            "name": "Carnevale of Horrors",
+            "expansionCode": "standalone",
+            "productType": "Scenario Pack"
+        },
+        {
+            "id": "100-3",
+            "name": "The Labyrinths of Lunacy",
+            "expansionCode": "standalone",
+            "productType": "Scenario Pack"
+        },
+        {
+            "id": "100-4",
+            "name": "Guardians of the Abyss",
+            "expansionCode": "standalone",
+            "productType": "Scenario Pack"
+        },
+        {
+            "id": "100-5",
+            "name": "Murder at the Excelsior Hotel",
+            "expansionCode": "standalone",
+            "productType": "Scenario Pack"
+        },
+        {
+            "id": "100-6",
+            "name": "The Blob That Ate Everything",
+            "expansionCode": "standalone",
+            "productType": "Scenario Pack"
+        },
+        {
+            "id": "100-7",
+            "name": "War of the Outer Gods",
+            "expansionCode": "standalone",
+            "productType": "Scenario Pack"
+        },
+        {
+            "id": "100-8",
+            "name": "Machinations Through Time",
+            "expansionCode": "standalone",
+            "productType": "Scenario Pack"
+        },
+        {
+            "id": "100-9",
+            "name": "Barkham Horror: The Meddling of Meowlathotep",
+            "expansionCode": "standalone",
+            "productType": "Scenario Pack"
+        },
+        {
+            "id": "101-1",
+            "name": "Nathaniel Cho",
+            "expansionCode": "standalone",
+            "productType": "Investigator Starter Deck"
+        },
+        {
+            "id": "101-2",
+            "name": "Harvey Walters",
+            "expansionCode": "standalone",
+            "productType": "Investigator Starter Deck"
+        },
+        {
+            "id": "101-3",
+            "name": "Winifred Habbamock",
+            "expansionCode": "standalone",
+            "productType": "Investigator Starter Deck"
+        },
+        {
+            "id": "101-4",
+            "name": "Jacqueline Fine",
+            "expansionCode": "standalone",
+            "productType": "Investigator Starter Deck"
+        },
+        {
+            "id": "101-5",
+            "name": "Stella Clark",
+            "expansionCode": "standalone",
+            "productType": "Investigator Starter Deck"
+        }
+    ]
+}

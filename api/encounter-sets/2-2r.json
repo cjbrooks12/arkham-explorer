@@ -1,0 +1,15 @@
+{
+    "id": "2-2r",
+    "name": "Return to The House Always Wins",
+    "expansionCode": "return-to-the-dunwich-legacy",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/return-to-the-house-always-wins.svg",
+    "replaces": "2-2",
+    "products": [
+        {
+            "id": "2-1r",
+            "name": "Return to the Dunwich Legacy",
+            "expansionCode": "return-to-the-dunwich-legacy",
+            "productType": "Return To"
+        }
+    ]
+}

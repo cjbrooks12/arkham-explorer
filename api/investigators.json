@@ -1,0 +1,382 @@
+{
+    "investigators": [
+        {
+            "id": "8-1",
+            "name": "Daniela Reyes",
+            "expansionCode": "edge-of-the-earth",
+            "portrait": "",
+            "mainClass": "Guardian"
+        },
+        {
+            "id": "8-2",
+            "name": "Norman Withers",
+            "expansionCode": "edge-of-the-earth",
+            "portrait": "",
+            "mainClass": "Seeker"
+        },
+        {
+            "id": "8-3",
+            "name": "Monterey Jack",
+            "expansionCode": "edge-of-the-earth",
+            "portrait": "",
+            "mainClass": "Rogue"
+        },
+        {
+            "id": "8-4",
+            "name": "Lily Chen",
+            "expansionCode": "edge-of-the-earth",
+            "portrait": "",
+            "mainClass": "Mystic"
+        },
+        {
+            "id": "8-5",
+            "name": "Bob Jenkins",
+            "expansionCode": "edge-of-the-earth",
+            "portrait": "",
+            "mainClass": "Survivor"
+        },
+        {
+            "id": "2-1",
+            "name": "Zoey Samaras",
+            "expansionCode": "the-dunwich-legacy",
+            "portrait": "",
+            "mainClass": "Guardian"
+        },
+        {
+            "id": "2-2",
+            "name": "Rex Murphy",
+            "expansionCode": "the-dunwich-legacy",
+            "portrait": "",
+            "mainClass": "Seeker"
+        },
+        {
+            "id": "2-3",
+            "name": "Jenny Barnes",
+            "expansionCode": "the-dunwich-legacy",
+            "portrait": "",
+            "mainClass": "Rogue"
+        },
+        {
+            "id": "2-4",
+            "name": "Jim Culver",
+            "expansionCode": "the-dunwich-legacy",
+            "portrait": "",
+            "mainClass": "Mystic"
+        },
+        {
+            "id": "2-5",
+            "name": "\"Ashcan\" Pete",
+            "expansionCode": "the-dunwich-legacy",
+            "portrait": "",
+            "mainClass": "Survivor"
+        },
+        {
+            "id": "5-1",
+            "name": "Carolyn Fern",
+            "expansionCode": "the-circle-undone",
+            "portrait": "",
+            "mainClass": "Guardian"
+        },
+        {
+            "id": "5-10",
+            "name": "Valentino Rivas",
+            "expansionCode": "the-circle-undone",
+            "portrait": "",
+            "mainClass": "Neutral"
+        },
+        {
+            "id": "5-2",
+            "name": "Joe Diamond",
+            "expansionCode": "the-circle-undone",
+            "portrait": "",
+            "mainClass": "Seeker"
+        },
+        {
+            "id": "5-3",
+            "name": "Preston Fairmont",
+            "expansionCode": "the-circle-undone",
+            "portrait": "",
+            "mainClass": "Rogue"
+        },
+        {
+            "id": "5-4",
+            "name": "Diana Stanley",
+            "expansionCode": "the-circle-undone",
+            "portrait": "",
+            "mainClass": "Mystic"
+        },
+        {
+            "id": "5-5",
+            "name": "Rita Young",
+            "expansionCode": "the-circle-undone",
+            "portrait": "",
+            "mainClass": "Survivor"
+        },
+        {
+            "id": "5-6",
+            "name": "Marie Lambeau",
+            "expansionCode": "the-circle-undone",
+            "portrait": "",
+            "mainClass": "Mystic"
+        },
+        {
+            "id": "5-7",
+            "name": "Gavriella Mizrah",
+            "expansionCode": "the-circle-undone",
+            "portrait": "",
+            "mainClass": "Neutral"
+        },
+        {
+            "id": "5-8",
+            "name": "Jerome Davids",
+            "expansionCode": "the-circle-undone",
+            "portrait": "",
+            "mainClass": "Neutral"
+        },
+        {
+            "id": "5-9",
+            "name": "Penny White",
+            "expansionCode": "the-circle-undone",
+            "portrait": "",
+            "mainClass": "Neutral"
+        },
+        {
+            "id": "101-1",
+            "name": "Nathaniel Cho",
+            "expansionCode": "standalone",
+            "portrait": "",
+            "mainClass": "Guardian"
+        },
+        {
+            "id": "101-2",
+            "name": "Harvey Walters",
+            "expansionCode": "standalone",
+            "portrait": "",
+            "mainClass": "Seeker"
+        },
+        {
+            "id": "101-3",
+            "name": "Winifred Habbamock",
+            "expansionCode": "standalone",
+            "portrait": "",
+            "mainClass": "Rogue"
+        },
+        {
+            "id": "101-4",
+            "name": "Jacqueline Fine",
+            "expansionCode": "standalone",
+            "portrait": "",
+            "mainClass": "Mystic"
+        },
+        {
+            "id": "101-5",
+            "name": "Stella Clark",
+            "expansionCode": "standalone",
+            "portrait": "",
+            "mainClass": "Survivor"
+        },
+        {
+            "id": "9-1",
+            "name": "Kymani Jones",
+            "expansionCode": "the-scarlet-keys",
+            "portrait": "",
+            "mainClass": "Rogue"
+        },
+        {
+            "id": "9-2",
+            "name": "Darrell Simmons",
+            "expansionCode": "the-scarlet-keys",
+            "portrait": "",
+            "mainClass": "Survivor"
+        },
+        {
+            "id": "9-3",
+            "name": "Charlie Kane",
+            "expansionCode": "the-scarlet-keys",
+            "portrait": "",
+            "mainClass": "Survivor"
+        },
+        {
+            "id": "4-1",
+            "name": "Leo Anderson",
+            "expansionCode": "the-forgotten-age",
+            "portrait": "",
+            "mainClass": "Guardian"
+        },
+        {
+            "id": "4-2",
+            "name": "Ursula Downs",
+            "expansionCode": "the-forgotten-age",
+            "portrait": "",
+            "mainClass": "Seeker"
+        },
+        {
+            "id": "4-3",
+            "name": "Finn Edwards",
+            "expansionCode": "the-forgotten-age",
+            "portrait": "",
+            "mainClass": "Rogue"
+        },
+        {
+            "id": "4-4",
+            "name": "Father Mateo",
+            "expansionCode": "the-forgotten-age",
+            "portrait": "",
+            "mainClass": "Mystic"
+        },
+        {
+            "id": "4-5",
+            "name": "Calvin Wright",
+            "expansionCode": "the-forgotten-age",
+            "portrait": "",
+            "mainClass": "Survivor"
+        },
+        {
+            "id": "4-6",
+            "name": "Body of a Yithian",
+            "expansionCode": "the-forgotten-age",
+            "portrait": "",
+            "mainClass": "Neutral"
+        },
+        {
+            "id": "1-1",
+            "name": "Roland Banks",
+            "expansionCode": "night-of-the-zealot",
+            "portrait": "",
+            "mainClass": "Guardian"
+        },
+        {
+            "id": "1-2",
+            "name": "Daisy Walker",
+            "expansionCode": "night-of-the-zealot",
+            "portrait": "",
+            "mainClass": "Seeker"
+        },
+        {
+            "id": "1-3",
+            "name": "\"Skids\" O'Toole",
+            "expansionCode": "night-of-the-zealot",
+            "portrait": "",
+            "mainClass": "Rogue"
+        },
+        {
+            "id": "1-4",
+            "name": "Agnes Baker",
+            "expansionCode": "night-of-the-zealot",
+            "portrait": "",
+            "mainClass": "Mystic"
+        },
+        {
+            "id": "1-5",
+            "name": "Wendy Adams",
+            "expansionCode": "night-of-the-zealot",
+            "portrait": "",
+            "mainClass": "Survivor"
+        },
+        {
+            "id": "3-1",
+            "name": "Mark Harrigan",
+            "expansionCode": "the-path-to-carcosa",
+            "portrait": "",
+            "mainClass": "Guardian"
+        },
+        {
+            "id": "3-2",
+            "name": "Minh Thi Phan",
+            "expansionCode": "the-path-to-carcosa",
+            "portrait": "",
+            "mainClass": "Seeker"
+        },
+        {
+            "id": "3-3",
+            "name": "Sefina Rousseau",
+            "expansionCode": "the-path-to-carcosa",
+            "portrait": "",
+            "mainClass": "Rogue"
+        },
+        {
+            "id": "3-4",
+            "name": "Akachi Onyele",
+            "expansionCode": "the-path-to-carcosa",
+            "portrait": "",
+            "mainClass": "Mystic"
+        },
+        {
+            "id": "3-5",
+            "name": "William Yorick",
+            "expansionCode": "the-path-to-carcosa",
+            "portrait": "",
+            "mainClass": "Survivor"
+        },
+        {
+            "id": "6-1",
+            "name": "Tommy Muldoon",
+            "expansionCode": "the-dream-eaters",
+            "portrait": "",
+            "mainClass": "Guardian"
+        },
+        {
+            "id": "6-2",
+            "name": "Mandy Thompson",
+            "expansionCode": "the-dream-eaters",
+            "portrait": "",
+            "mainClass": "Seeker"
+        },
+        {
+            "id": "6-3",
+            "name": "Tony Morgan",
+            "expansionCode": "the-dream-eaters",
+            "portrait": "",
+            "mainClass": "Rogue"
+        },
+        {
+            "id": "6-4",
+            "name": "Luke Robinson",
+            "expansionCode": "the-dream-eaters",
+            "portrait": "",
+            "mainClass": "Mystic"
+        },
+        {
+            "id": "6-5",
+            "name": "Patrice Hathaway",
+            "expansionCode": "the-dream-eaters",
+            "portrait": "",
+            "mainClass": "Survivor"
+        },
+        {
+            "id": "7-1",
+            "name": "Sister Mary",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "portrait": "",
+            "mainClass": "Guardian"
+        },
+        {
+            "id": "7-2",
+            "name": "Amanda Sharpe",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "portrait": "",
+            "mainClass": "Seeker"
+        },
+        {
+            "id": "7-3",
+            "name": "Trish Scarborough",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "portrait": "",
+            "mainClass": "Rogue"
+        },
+        {
+            "id": "7-4",
+            "name": "Dexter Drake",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "portrait": "",
+            "mainClass": "Mystic"
+        },
+        {
+            "id": "7-5",
+            "name": "Silas Marsh",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "portrait": "",
+            "mainClass": "Survivor"
+        }
+    ]
+}

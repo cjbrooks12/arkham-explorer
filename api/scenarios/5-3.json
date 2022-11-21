@@ -1,0 +1,18 @@
+{
+    "id": "5-3",
+    "name": "At Death's Doorstep",
+    "expansionCode": "the-circle-undone",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/at-deaths-doorstep.svg",
+    "encounterSets": [
+    ],
+    "chaosBag": [
+    ],
+    "referenceCard": [
+    ],
+    "products": [
+    ],
+    "nextScenario": [
+    ],
+    "campaignLogSchema": null,
+    "campaignLogUiSchema": null
+}

@@ -1,0 +1,19 @@
+{
+    "id": "4-6",
+    "name": "Heart of the Elders, Part 2",
+    "expansionCode": "the-forgotten-age",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/heart-of-the-elders.svg",
+    "encounterSets": [
+    ],
+    "chaosBag": [
+    ],
+    "referenceCard": [
+    ],
+    "products": [
+    ],
+    "nextScenario": [
+        "4-7"
+    ],
+    "campaignLogSchema": null,
+    "campaignLogUiSchema": null
+}

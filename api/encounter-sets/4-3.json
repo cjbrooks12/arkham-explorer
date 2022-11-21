@@ -1,0 +1,9 @@
+{
+    "id": "4-3",
+    "name": "Expedition",
+    "expansionCode": "the-forgotten-age",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/expedition.svg",
+    "replaces": null,
+    "products": [
+    ]
+}

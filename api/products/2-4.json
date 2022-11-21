@@ -1,0 +1,26 @@
+{
+    "id": "2-4",
+    "name": "Blood on the Altar",
+    "expansionCode": "the-dunwich-legacy",
+    "productType": "Mythos Pack",
+    "releaseDate": "2017-04-13",
+    "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/blood-altar/",
+    "scenarios": [
+        {
+            "id": "2-5",
+            "name": "Blood on the Altar",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/blood-on-the-altar.svg"
+        }
+    ],
+    "encounterSets": [
+        {
+            "id": "2-5",
+            "name": "Blood on the Altar",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/blood-on-the-altar.svg"
+        }
+    ],
+    "investigators": [
+    ]
+}

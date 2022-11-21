@@ -1,0 +1,17 @@
+{
+    "id": "101-4",
+    "name": "Jacqueline Fine",
+    "expansionCode": "standalone",
+    "portrait": "",
+    "mainClass": "Mystic",
+    "health": 6,
+    "sanity": 9,
+    "products": [
+        {
+            "id": "101-4",
+            "name": "Jacqueline Fine",
+            "expansionCode": "standalone",
+            "productType": "Investigator Starter Deck"
+        }
+    ]
+}

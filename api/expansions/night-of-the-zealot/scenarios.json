@@ -1,0 +1,22 @@
+{
+    "scenarios": [
+        {
+            "id": "1-1",
+            "name": "The Gathering",
+            "expansionCode": "night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/the-gathering.svg"
+        },
+        {
+            "id": "1-2",
+            "name": "The Midnight Masks",
+            "expansionCode": "night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/the-midnight-masks.svg"
+        },
+        {
+            "id": "1-3",
+            "name": "The Devourer Below",
+            "expansionCode": "night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/the-devourer-below.svg"
+        }
+    ]
+}

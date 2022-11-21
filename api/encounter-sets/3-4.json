@@ -1,0 +1,21 @@
+{
+    "id": "3-4",
+    "name": "The Unspeakable Oath",
+    "expansionCode": "the-path-to-carcosa",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/the-unspeakable-oath.svg",
+    "replaces": null,
+    "products": [
+        {
+            "id": "3-3",
+            "name": "The Unspeakable Oath",
+            "expansionCode": "the-path-to-carcosa",
+            "productType": "Mythos Pack"
+        },
+        {
+            "id": "3-8",
+            "name": "The Path to Carcosa: Campaign Expansion",
+            "expansionCode": "the-path-to-carcosa",
+            "productType": "Campaign Expansion"
+        }
+    ]
+}

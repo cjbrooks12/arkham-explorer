@@ -1,0 +1,26 @@
+{
+    "id": "3-3",
+    "name": "The Unspeakable Oath",
+    "expansionCode": "the-path-to-carcosa",
+    "productType": "Mythos Pack",
+    "releaseDate": "2017-11-24",
+    "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/unspeakable-oath/",
+    "scenarios": [
+        {
+            "id": "3-4",
+            "name": "The Unspeakable Oath",
+            "expansionCode": "the-path-to-carcosa",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/the-unspeakable-oath.svg"
+        }
+    ],
+    "encounterSets": [
+        {
+            "id": "3-4",
+            "name": "The Unspeakable Oath",
+            "expansionCode": "the-path-to-carcosa",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/the-unspeakable-oath.svg"
+        }
+    ],
+    "investigators": [
+    ]
+}

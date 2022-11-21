@@ -1,0 +1,280 @@
+{
+    "id": "1-1r",
+    "name": "Return to The Gathering",
+    "expansionCode": "return-to-night-of-the-zealot",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-night-of-the-zealot/return-to-the-gathering.svg",
+    "encounterSets": [
+        {
+            "encounterSet": {
+                "id": "1-1r",
+                "name": "Return to The Gathering",
+                "expansionCode": "return-to-night-of-the-zealot",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-night-of-the-zealot/return-to-the-gathering.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "1-5",
+                "name": "Rats",
+                "expansionCode": "return-to-night-of-the-zealot",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/rats.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "1-5r",
+                "name": "Ghouls of Umôrdhoth",
+                "expansionCode": "return-to-night-of-the-zealot",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-night-of-the-zealot/ghouls-of-umordhoth.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "1-7",
+                "name": "Striking Fear",
+                "expansionCode": "return-to-night-of-the-zealot",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/striking-fear.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "1-8",
+                "name": "Ancient Evils",
+                "expansionCode": "return-to-night-of-the-zealot",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/ancient-evils.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "1-9",
+                "name": "Chilling Cold",
+                "expansionCode": "return-to-night-of-the-zealot",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/chilling-cold.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        }
+    ],
+    "chaosBag": [
+        {
+            "difficulty": "easy",
+            "tokens": [
+                "+1",
+                "+1",
+                "0",
+                "0",
+                "0",
+                "-1",
+                "-1",
+                "-1",
+                "-2",
+                "-2",
+                "Skull",
+                "Skull",
+                "Cultist",
+                "Tablet",
+                "Auto-Fail",
+                "Elder Sign"
+            ]
+        },
+        {
+            "difficulty": "standard",
+            "tokens": [
+                "+1",
+                "0",
+                "0",
+                "-1",
+                "-1",
+                "-1",
+                "-2",
+                "-2",
+                "-3",
+                "-4",
+                "Skull",
+                "Skull",
+                "Cultist",
+                "Tablet",
+                "Auto-Fail",
+                "Elder Sign"
+            ]
+        },
+        {
+            "difficulty": "hard",
+            "tokens": [
+                "0",
+                "0",
+                "0",
+                "-1",
+                "-1",
+                "-2",
+                "-2",
+                "-3",
+                "-3",
+                "-4",
+                "-5",
+                "Skull",
+                "Skull",
+                "Cultist",
+                "Tablet",
+                "Auto-Fail",
+                "Elder Sign"
+            ]
+        },
+        {
+            "difficulty": "expert",
+            "tokens": [
+                "0",
+                "-1",
+                "-1",
+                "-2",
+                "-2",
+                "-3",
+                "-3",
+                "-4",
+                "-4",
+                "-5",
+                "-6",
+                "-8",
+                "Skull",
+                "Skull",
+                "Cultist",
+                "Tablet",
+                "Auto-Fail",
+                "Elder Sign"
+            ]
+        }
+    ],
+    "referenceCard": [
+    ],
+    "products": [
+        {
+            "id": "1-1r",
+            "name": "Return to the Night of the Zealot",
+            "expansionCode": "return-to-night-of-the-zealot",
+            "productType": "Return To"
+        }
+    ],
+    "nextScenario": [
+        "1-2r"
+    ],
+    "campaignLogSchema": {
+        "type": "object",
+        "properties": {
+            "scenarios": {
+                "type": "object",
+                "properties": {
+                    "1-1": {
+                        "type": "object",
+                        "properties": {
+                            "status": {
+                                "type": "string",
+                                "enum": [
+                                    "Not Started",
+                                    "In Progress",
+                                    "Completed"
+                                ]
+                            },
+                            "victoryDisplay": {
+                                "type": "integer"
+                            },
+                            "resolution": {
+                                "type": "string",
+                                "enum": [
+                                    "No Resolution",
+                                    "Resolution 1",
+                                    "Resolution 2",
+                                    "Resolution 3"
+                                ]
+                            },
+                            "notes": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "statements": {
+                "type": "object",
+                "properties": {
+                    "houseStatus": {
+                        "type": "string",
+                        "enum": [
+                            "Your house is still standing",
+                            "Your house has burned to the ground"
+                        ]
+                    },
+                    "ghoulPriest": {
+                        "type": "boolean",
+                        "title": "The Ghoul Priest is still alive"
+                    },
+                    "lita": {
+                        "type": "boolean",
+                        "title": "Lita was forced to find others to help her cause"
+                    }
+                }
+            }
+        }
+    },
+    "campaignLogUiSchema": [
+        {
+            "type": "Control",
+            "scope": "#/properties/scenarios/properties/1-1/properties/status"
+        },
+        {
+            "type": "Control",
+            "scope": "#/properties/scenarios/properties/1-1/properties/notes"
+        },
+        {
+            "type": "VerticalLayout",
+            "elements": [
+                {
+                    "type": "Control",
+                    "scope": "#/properties/scenarios/properties/1-1/properties/resolution"
+                },
+                {
+                    "type": "Control",
+                    "scope": "#/properties/scenarios/properties/1-1/properties/victoryDisplay"
+                },
+                {
+                    "type": "Control",
+                    "scope": "#/properties/statements/properties/houseStatus"
+                },
+                {
+                    "type": "Control",
+                    "scope": "#/properties/statements/properties/ghoulPriest"
+                },
+                {
+                    "type": "Control",
+                    "scope": "#/properties/statements/properties/lita"
+                }
+            ],
+            "rule": {
+                "effect": "SHOW",
+                "condition": {
+                    "scope": "#/properties/scenarios/properties/1-1/properties/status",
+                    "schema": {
+                        "enum": [
+                            "Completed"
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

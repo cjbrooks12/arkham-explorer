@@ -1,0 +1,11 @@
+{
+    "id": "7-1",
+    "name": "Sister Mary",
+    "expansionCode": "the-innnsmouth-conspiracy",
+    "portrait": "",
+    "mainClass": "Guardian",
+    "health": 5,
+    "sanity": 9,
+    "products": [
+    ]
+}

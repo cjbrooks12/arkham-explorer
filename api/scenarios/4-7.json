@@ -1,0 +1,19 @@
+{
+    "id": "4-7",
+    "name": "The City of Archives",
+    "expansionCode": "the-forgotten-age",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/the-city-of-archives.svg",
+    "encounterSets": [
+    ],
+    "chaosBag": [
+    ],
+    "referenceCard": [
+    ],
+    "products": [
+    ],
+    "nextScenario": [
+        "4-8"
+    ],
+    "campaignLogSchema": null,
+    "campaignLogUiSchema": null
+}

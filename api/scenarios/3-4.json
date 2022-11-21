@@ -1,0 +1,97 @@
+{
+    "id": "3-4",
+    "name": "The Unspeakable Oath",
+    "expansionCode": "the-path-to-carcosa",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/the-unspeakable-oath.svg",
+    "encounterSets": [
+        {
+            "encounterSet": {
+                "id": "3-4",
+                "name": "The Unspeakable Oath",
+                "expansionCode": "the-path-to-carcosa",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/the-unspeakable-oath.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "3-13",
+                "name": "Hastur's Gift",
+                "expansionCode": "the-path-to-carcosa",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/hasturs-gift.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "3-16",
+                "name": "Inhabitants of Carcosa",
+                "expansionCode": "the-path-to-carcosa",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/inhabitants-of-carcosa.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "3-10",
+                "name": "Delusions",
+                "expansionCode": "the-path-to-carcosa",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/delusions.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "3-14",
+                "name": "Decay & Filth",
+                "expansionCode": "the-path-to-carcosa",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/decay-and-filth.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "1-13",
+                "name": "Agents of Hastur",
+                "expansionCode": "the-path-to-carcosa",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/agents-of-hastur.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        }
+    ],
+    "chaosBag": [
+    ],
+    "referenceCard": [
+    ],
+    "products": [
+        {
+            "id": "3-3",
+            "name": "The Unspeakable Oath",
+            "expansionCode": "the-path-to-carcosa",
+            "productType": "Mythos Pack"
+        },
+        {
+            "id": "3-8",
+            "name": "The Path to Carcosa: Campaign Expansion",
+            "expansionCode": "the-path-to-carcosa",
+            "productType": "Campaign Expansion"
+        }
+    ],
+    "nextScenario": [
+        "3-5"
+    ],
+    "campaignLogSchema": null,
+    "campaignLogUiSchema": null
+}

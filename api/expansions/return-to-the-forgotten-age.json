@@ -1,0 +1,22 @@
+{
+    "id": "4r",
+    "name": "Return to the Forgotten Age",
+    "expansionCode": "return-to-the-forgotten-age",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-forgotten-age.svg",
+    "expansionType": {
+        "type": "return to",
+        "forCycle": "the-forgotten-age"
+    },
+    "boxArt": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-forgotten-age/box-art.webp",
+    "flavorText": "",
+    "scenarios": [
+    ],
+    "encounterSets": [
+    ],
+    "investigators": [
+    ],
+    "products": [
+    ],
+    "startScenario": [
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "id": "4-3",
+    "name": "Threads of Fate",
+    "expansionCode": "the-forgotten-age",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/threads-of-fate.svg",
+    "encounterSets": [
+    ],
+    "chaosBag": [
+    ],
+    "referenceCard": [
+    ],
+    "products": [
+    ],
+    "nextScenario": [
+        "4-4"
+    ],
+    "campaignLogSchema": null,
+    "campaignLogUiSchema": null
+}

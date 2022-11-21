@@ -1,0 +1,68 @@
+{
+    "id": "1-1r",
+    "name": "Return to the Night of the Zealot",
+    "expansionCode": "return-to-night-of-the-zealot",
+    "productType": "Return To",
+    "releaseDate": "2018-06-28",
+    "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/return-night-zealot/",
+    "scenarios": [
+        {
+            "id": "1-1r",
+            "name": "Return to The Gathering",
+            "expansionCode": "return-to-night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-night-of-the-zealot/return-to-the-gathering.svg"
+        },
+        {
+            "id": "1-2r",
+            "name": "Return to The Midnight Masks",
+            "expansionCode": "return-to-night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-night-of-the-zealot/return-to-the-midnight-masks.svg"
+        },
+        {
+            "id": "1-3r",
+            "name": "Return to The Devourer Below",
+            "expansionCode": "return-to-night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-night-of-the-zealot/return-to-the-devourer-below.svg"
+        }
+    ],
+    "encounterSets": [
+        {
+            "id": "1-1r",
+            "name": "Return to The Gathering",
+            "expansionCode": "return-to-night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-night-of-the-zealot/return-to-the-gathering.svg"
+        },
+        {
+            "id": "1-2r",
+            "name": "Return to The Midnight Masks",
+            "expansionCode": "return-to-night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-night-of-the-zealot/return-to-the-midnight-masks.svg"
+        },
+        {
+            "id": "1-3r",
+            "name": "Return to The Devourer Below",
+            "expansionCode": "return-to-night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-night-of-the-zealot/return-to-the-devourer-below.svg"
+        },
+        {
+            "id": "1-4r",
+            "name": "Return Cult of Umôrdhoth",
+            "expansionCode": "return-to-night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-night-of-the-zealot/return-cult-of-umordhoth.svg"
+        },
+        {
+            "id": "1-5r",
+            "name": "Ghouls of Umôrdhoth",
+            "expansionCode": "return-to-night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-night-of-the-zealot/ghouls-of-umordhoth.svg"
+        },
+        {
+            "id": "1-6r",
+            "name": "The Devourer's Cult",
+            "expansionCode": "return-to-night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-night-of-the-zealot/the-devourers-cult.svg"
+        }
+    ],
+    "investigators": [
+    ]
+}

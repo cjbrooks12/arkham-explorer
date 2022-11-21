@@ -1,0 +1,11 @@
+{
+    "id": "5-6",
+    "name": "Marie Lambeau",
+    "expansionCode": "the-circle-undone",
+    "portrait": "",
+    "mainClass": "Mystic",
+    "health": 6,
+    "sanity": 8,
+    "products": [
+    ]
+}

@@ -1,0 +1,52 @@
+{
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string"
+        },
+        "label": {
+            "type": "string"
+        },
+        "class": {
+            "type": "string",
+            "oneOf": [
+                {
+                    "const": "guardian",
+                    "title": "Guardian"
+                },
+                {
+                    "const": "mystic",
+                    "title": "Mystic"
+                },
+                {
+                    "const": "rogue",
+                    "title": "Rogue"
+                },
+                {
+                    "const": "seeker",
+                    "title": "Seeker"
+                },
+                {
+                    "const": "survivor",
+                    "title": "Survivor"
+                }
+            ]
+        },
+        "traits": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "body": {
+            "type": "string"
+        },
+        "cost": {
+            "type": "integer"
+        },
+        "debug": {
+            "type": "boolean"
+        }
+    },
+    "required": []
+}

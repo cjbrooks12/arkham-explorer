@@ -1,0 +1,15 @@
+{
+    "id": "100-1",
+    "name": "Curse of the Rougarou",
+    "expansionCode": "standalone",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/curse-of-the-rougarou/curse-of-the-rougarou.svg",
+    "replaces": null,
+    "products": [
+        {
+            "id": "100-1",
+            "name": "Curse of the Rougarou",
+            "expansionCode": "standalone",
+            "productType": "Scenario Pack"
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "id": "100-24",
+    "name": "Children of Paradise",
+    "expansionCode": "standalone",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/war-of-the-outer-gods/children-of-paradise.svg",
+    "replaces": null,
+    "products": [
+        {
+            "id": "100-7",
+            "name": "War of the Outer Gods",
+            "expansionCode": "standalone",
+            "productType": "Scenario Pack"
+        }
+    ]
+}

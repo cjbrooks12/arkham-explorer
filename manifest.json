@@ -1,0 +1,47 @@
+{
+    "short_name": "Arkham",
+    "name": "Arkham Explorer",
+    "icons": [
+        {
+            "src": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot.svg",
+            "type": "image/svg+xml",
+            "sizes": "24x24"
+        },
+        {
+            "src": "https://cjbrooks12.github.io/arkham-explorer/assets/48/night-of-the-zealot.png",
+            "type": "image/png",
+            "sizes": "48x48"
+        },
+        {
+            "src": "https://cjbrooks12.github.io/arkham-explorer/assets/64/night-of-the-zealot.png",
+            "type": "image/png",
+            "sizes": "64x64"
+        },
+        {
+            "src": "https://cjbrooks12.github.io/arkham-explorer/assets/128/night-of-the-zealot.png",
+            "type": "image/png",
+            "sizes": "128x128"
+        },
+        {
+            "src": "https://cjbrooks12.github.io/arkham-explorer/assets/256/night-of-the-zealot.png",
+            "type": "image/png",
+            "sizes": "256x256"
+        },
+        {
+            "src": "https://cjbrooks12.github.io/arkham-explorer/assets/512/night-of-the-zealot.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        },
+        {
+            "src": "https://cjbrooks12.github.io/arkham-explorer/assets/1024/night-of-the-zealot.png",
+            "type": "image/png",
+            "sizes": "1024x1024"
+        }
+    ],
+    "display": "standalone",
+    "start_url": "https://cjbrooks12.github.io/arkham-explorer/?source=pwa",
+    "id": "https://cjbrooks12.github.io/arkham-explorer/?source=pwa",
+    "scope": "https://cjbrooks12.github.io/arkham-explorer/",
+    "background_color": "#363636",
+    "theme_color": "#4bbf73"
+}

@@ -1,0 +1,15 @@
+{
+    "id": "100-10",
+    "name": "Sands of Egypt",
+    "expansionCode": "standalone",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/guardians-of-the-abyss/sands-of-egypt.svg",
+    "replaces": null,
+    "products": [
+        {
+            "id": "100-4",
+            "name": "Guardians of the Abyss",
+            "expansionCode": "standalone",
+            "productType": "Scenario Pack"
+        }
+    ]
+}

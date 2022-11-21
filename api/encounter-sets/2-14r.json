@@ -1,0 +1,15 @@
+{
+    "id": "2-14r",
+    "name": "Beyond the Threshold",
+    "expansionCode": "return-to-the-dunwich-legacy",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/beyond-the-threshold.svg",
+    "replaces": "2-17",
+    "products": [
+        {
+            "id": "2-1r",
+            "name": "Return to the Dunwich Legacy",
+            "expansionCode": "return-to-the-dunwich-legacy",
+            "productType": "Return To"
+        }
+    ]
+}

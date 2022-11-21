@@ -1,0 +1,17 @@
+{
+    "id": "101-3",
+    "name": "Winifred Habbamock",
+    "expansionCode": "standalone",
+    "portrait": "",
+    "mainClass": "Rogue",
+    "health": 8,
+    "sanity": 7,
+    "products": [
+        {
+            "id": "101-3",
+            "name": "Winifred Habbamock",
+            "expansionCode": "standalone",
+            "productType": "Investigator Starter Deck"
+        }
+    ]
+}

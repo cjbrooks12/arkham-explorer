@@ -1,0 +1,15 @@
+{
+    "id": "100-28",
+    "name": "Epic Multiplayer (Machinations Through Time)",
+    "expansionCode": "standalone",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/machinations-through-time/epic-multiplayer.svg",
+    "replaces": null,
+    "products": [
+        {
+            "id": "100-8",
+            "name": "Machinations Through Time",
+            "expansionCode": "standalone",
+            "productType": "Scenario Pack"
+        }
+    ]
+}

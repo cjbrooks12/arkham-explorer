@@ -1,0 +1,97 @@
+{
+    "id": "3-5",
+    "name": "A Phantom of Truth",
+    "expansionCode": "the-path-to-carcosa",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/a-phantom-of-truth.svg",
+    "encounterSets": [
+        {
+            "encounterSet": {
+                "id": "3-5",
+                "name": "A Phantom of Truth",
+                "expansionCode": "the-path-to-carcosa",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/a-phantom-of-truth.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "3-9",
+                "name": "Evil Portents",
+                "expansionCode": "the-path-to-carcosa",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/evil-portents.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "3-17",
+                "name": "Byakhee",
+                "expansionCode": "the-path-to-carcosa",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/byakhee.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "3-15",
+                "name": "The Stranger",
+                "expansionCode": "the-path-to-carcosa",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/the-stranger.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "1-13",
+                "name": "Agents of Hastur",
+                "expansionCode": "the-path-to-carcosa",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/agents-of-hastur.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "1-2",
+                "name": "The Midnight Masks",
+                "expansionCode": "the-path-to-carcosa",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/the-midnight-masks.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": true
+        }
+    ],
+    "chaosBag": [
+    ],
+    "referenceCard": [
+    ],
+    "products": [
+        {
+            "id": "3-4",
+            "name": "A Phantom of Truth",
+            "expansionCode": "the-path-to-carcosa",
+            "productType": "Mythos Pack"
+        },
+        {
+            "id": "3-8",
+            "name": "The Path to Carcosa: Campaign Expansion",
+            "expansionCode": "the-path-to-carcosa",
+            "productType": "Campaign Expansion"
+        }
+    ],
+    "nextScenario": [
+        "3-6"
+    ],
+    "campaignLogSchema": null,
+    "campaignLogUiSchema": null
+}

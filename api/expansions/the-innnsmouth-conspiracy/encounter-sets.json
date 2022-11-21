@@ -1,0 +1,112 @@
+{
+    "encounterSets": [
+        {
+            "id": "7-1",
+            "name": "A Light in the Fog",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/a-light-in-the-fog.svg"
+        },
+        {
+            "id": "7-10",
+            "name": "Into the Maelstrom",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/into-the-maelstrom.svg"
+        },
+        {
+            "id": "7-11",
+            "name": "Malfunction",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/malfunction.svg"
+        },
+        {
+            "id": "7-12",
+            "name": "Rising Tide",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/rising-tide.svg"
+        },
+        {
+            "id": "7-13",
+            "name": "Shattered Memories",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/shattered-memories.svg"
+        },
+        {
+            "id": "7-14",
+            "name": "Syzygy",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/syzygy.svg"
+        },
+        {
+            "id": "7-15",
+            "name": "The Lair of Dagon",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/the-lair-of-dagon.svg"
+        },
+        {
+            "id": "7-16",
+            "name": "The Locals",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/the-locals.svg"
+        },
+        {
+            "id": "7-17",
+            "name": "The Pit of Despair",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/the-pit-of-despair.svg"
+        },
+        {
+            "id": "7-18",
+            "name": "The Vanishing of Elina Harper",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/the-vanishing-of-elina-harper.svg"
+        },
+        {
+            "id": "7-2",
+            "name": "Agents of Dagon",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/agents-of-dagon.svg"
+        },
+        {
+            "id": "7-3",
+            "name": "Agents of Hydra",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/agents-of-hydra.svg"
+        },
+        {
+            "id": "7-4",
+            "name": "Creatures of the Deep",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/creatures-of-the-deep.svg"
+        },
+        {
+            "id": "7-5",
+            "name": "Devil Reef",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/devil-reef.svg"
+        },
+        {
+            "id": "7-6",
+            "name": "Flooded Caverns",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/flooded-caverns.svg"
+        },
+        {
+            "id": "7-7",
+            "name": "Fog over Innsmouth",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/fog-over-innsmouth.svg"
+        },
+        {
+            "id": "7-8",
+            "name": "Horror in High Gear",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/horror-in-high-gear.svg"
+        },
+        {
+            "id": "7-9",
+            "name": "In Too Deep",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/in-too-deep.svg"
+        }
+    ]
+}

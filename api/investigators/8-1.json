@@ -1,0 +1,11 @@
+{
+    "id": "8-1",
+    "name": "Daniela Reyes",
+    "expansionCode": "edge-of-the-earth",
+    "portrait": "",
+    "mainClass": "Guardian",
+    "health": 8,
+    "sanity": 6,
+    "products": [
+    ]
+}

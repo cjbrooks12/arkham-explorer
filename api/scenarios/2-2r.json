@@ -1,0 +1,92 @@
+{
+    "id": "2-2r",
+    "name": "Return to The House Always Wins",
+    "expansionCode": "return-to-the-dunwich-legacy",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/return-to-the-house-always-wins.svg",
+    "encounterSets": [
+        {
+            "encounterSet": {
+                "id": "2-2r",
+                "name": "Return to The House Always Wins",
+                "expansionCode": "return-to-the-dunwich-legacy",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/return-to-the-house-always-wins.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "1-5",
+                "name": "Rats",
+                "expansionCode": "return-to-the-dunwich-legacy",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/rats.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "2-14",
+                "name": "Bad Luck",
+                "expansionCode": "return-to-the-dunwich-legacy",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/bad-luck.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "2-16",
+                "name": "Naomi's Crew",
+                "expansionCode": "return-to-the-dunwich-legacy",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/naomis-crew.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "2-18",
+                "name": "Hideous Abominations",
+                "expansionCode": "return-to-the-dunwich-legacy",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/hideous-abominations.svg"
+            },
+            "conditional": false,
+            "setAside": true,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "2-10r",
+                "name": "Erratic Fear",
+                "expansionCode": "return-to-the-dunwich-legacy",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/erratic-fear.svg"
+            },
+            "conditional": false,
+            "setAside": true,
+            "partial": false
+        }
+    ],
+    "chaosBag": [
+    ],
+    "referenceCard": [
+    ],
+    "products": [
+        {
+            "id": "2-1r",
+            "name": "Return to the Dunwich Legacy",
+            "expansionCode": "return-to-the-dunwich-legacy",
+            "productType": "Return To"
+        }
+    ],
+    "nextScenario": [
+        "2-1r",
+        "2-3r"
+    ],
+    "campaignLogSchema": null,
+    "campaignLogUiSchema": null
+}

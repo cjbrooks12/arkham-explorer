@@ -1,0 +1,11 @@
+{
+    "id": "6-4",
+    "name": "Luke Robinson",
+    "expansionCode": "the-dream-eaters",
+    "portrait": "",
+    "mainClass": "Mystic",
+    "health": 5,
+    "sanity": 9,
+    "products": [
+    ]
+}

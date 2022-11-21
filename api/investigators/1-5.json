@@ -1,0 +1,23 @@
+{
+    "id": "1-5",
+    "name": "Wendy Adams",
+    "expansionCode": "night-of-the-zealot",
+    "portrait": "",
+    "mainClass": "Survivor",
+    "health": 7,
+    "sanity": 7,
+    "products": [
+        {
+            "id": "1-1",
+            "name": "Core Set",
+            "expansionCode": "night-of-the-zealot",
+            "productType": "Core Set"
+        },
+        {
+            "id": "1-2",
+            "name": "Revised Core Set",
+            "expansionCode": "night-of-the-zealot",
+            "productType": "Core Set"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "id": "7-5",
+    "name": "Horror in High Gear",
+    "expansionCode": "the-innnsmouth-conspiracy",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/horror-in-high-gear.svg",
+    "encounterSets": [
+    ],
+    "chaosBag": [
+    ],
+    "referenceCard": [
+    ],
+    "products": [
+    ],
+    "nextScenario": [
+    ],
+    "campaignLogSchema": null,
+    "campaignLogUiSchema": null
+}

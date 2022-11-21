@@ -1,0 +1,38 @@
+{
+    "id": "100-3",
+    "name": "The Labyrinths of Lunacy",
+    "expansionCode": "standalone",
+    "productType": "Scenario Pack",
+    "releaseDate": "2018-06-07",
+    "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/labyrinths-lunacy/",
+    "scenarios": [
+        {
+            "id": "100-3",
+            "name": "The Labyrinths of Lunacy",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-labyrinths-of-lunacy.svg"
+        }
+    ],
+    "encounterSets": [
+        {
+            "id": "100-4",
+            "name": "The Labyrinths of Lunacy",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-labyrinths-of-lunacy/the-labyrinths-of-lunacy.svg"
+        },
+        {
+            "id": "100-5",
+            "name": "Epic Multiplayer (The Labyrinths of Lunacy)",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-labyrinths-of-lunacy/epic-multiplayer.svg"
+        },
+        {
+            "id": "100-6",
+            "name": "Single Group (The Labyrinths of Lunacy)",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-labyrinths-of-lunacy/single-group.svg"
+        }
+    ],
+    "investigators": [
+    ]
+}

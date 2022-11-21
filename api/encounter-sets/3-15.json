@@ -1,0 +1,21 @@
+{
+    "id": "3-15",
+    "name": "The Stranger",
+    "expansionCode": "the-path-to-carcosa",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/the-stranger.svg",
+    "replaces": null,
+    "products": [
+        {
+            "id": "3-1",
+            "name": "The Path to Carcosa: Deluxe Expansion",
+            "expansionCode": "the-path-to-carcosa",
+            "productType": "Deluxe Expansion"
+        },
+        {
+            "id": "3-8",
+            "name": "The Path to Carcosa: Campaign Expansion",
+            "expansionCode": "the-path-to-carcosa",
+            "productType": "Campaign Expansion"
+        }
+    ]
+}

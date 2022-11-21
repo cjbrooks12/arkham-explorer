@@ -1,0 +1,358 @@
+{
+    "id": "1-2r",
+    "name": "Return to The Midnight Masks",
+    "expansionCode": "return-to-night-of-the-zealot",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-night-of-the-zealot/return-to-the-midnight-masks.svg",
+    "encounterSets": [
+        {
+            "encounterSet": {
+                "id": "1-2r",
+                "name": "Return to The Midnight Masks",
+                "expansionCode": "return-to-night-of-the-zealot",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-night-of-the-zealot/return-to-the-midnight-masks.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "1-9",
+                "name": "Chilling Cold",
+                "expansionCode": "return-to-night-of-the-zealot",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/chilling-cold.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "1-6r",
+                "name": "The Devourer's Cult",
+                "expansionCode": "return-to-night-of-the-zealot",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-night-of-the-zealot/the-devourers-cult.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "1-11",
+                "name": "Nightgaunts",
+                "expansionCode": "return-to-night-of-the-zealot",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/nightgaunts.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "1-12",
+                "name": "Locked Doors",
+                "expansionCode": "return-to-night-of-the-zealot",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/locked-doors.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "1-4r",
+                "name": "Return Cult of Umôrdhoth",
+                "expansionCode": "return-to-night-of-the-zealot",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-night-of-the-zealot/return-cult-of-umordhoth.svg"
+            },
+            "conditional": false,
+            "setAside": true,
+            "partial": false
+        }
+    ],
+    "chaosBag": [
+        {
+            "difficulty": "easy",
+            "tokens": [
+                "+1",
+                "+1",
+                "0",
+                "0",
+                "0",
+                "-1",
+                "-1",
+                "-1",
+                "-2",
+                "-2",
+                "Skull",
+                "Skull",
+                "Cultist",
+                "Tablet",
+                "Auto-Fail",
+                "Elder Sign"
+            ]
+        },
+        {
+            "difficulty": "standard",
+            "tokens": [
+                "+1",
+                "0",
+                "0",
+                "-1",
+                "-1",
+                "-1",
+                "-2",
+                "-2",
+                "-3",
+                "-4",
+                "Skull",
+                "Skull",
+                "Cultist",
+                "Tablet",
+                "Auto-Fail",
+                "Elder Sign"
+            ]
+        },
+        {
+            "difficulty": "hard",
+            "tokens": [
+                "0",
+                "0",
+                "0",
+                "-1",
+                "-1",
+                "-2",
+                "-2",
+                "-3",
+                "-3",
+                "-4",
+                "-5",
+                "Skull",
+                "Skull",
+                "Cultist",
+                "Tablet",
+                "Auto-Fail",
+                "Elder Sign"
+            ]
+        },
+        {
+            "difficulty": "expert",
+            "tokens": [
+                "0",
+                "-1",
+                "-1",
+                "-2",
+                "-2",
+                "-3",
+                "-3",
+                "-4",
+                "-4",
+                "-5",
+                "-6",
+                "-8",
+                "Skull",
+                "Skull",
+                "Cultist",
+                "Tablet",
+                "Auto-Fail",
+                "Elder Sign"
+            ]
+        }
+    ],
+    "referenceCard": [
+    ],
+    "products": [
+        {
+            "id": "1-1r",
+            "name": "Return to the Night of the Zealot",
+            "expansionCode": "return-to-night-of-the-zealot",
+            "productType": "Return To"
+        }
+    ],
+    "nextScenario": [
+        "1-3r"
+    ],
+    "campaignLogSchema": {
+        "type": "object",
+        "properties": {
+            "scenarios": {
+                "type": "object",
+                "properties": {
+                    "1-2": {
+                        "type": "object",
+                        "properties": {
+                            "status": {
+                                "type": "string",
+                                "enum": [
+                                    "Not Started",
+                                    "In Progress",
+                                    "Completed"
+                                ]
+                            },
+                            "victoryDisplay": {
+                                "type": "integer"
+                            },
+                            "resolution": {
+                                "type": "string",
+                                "enum": [
+                                    "No Resolution",
+                                    "Resolution 1",
+                                    "Resolution 2"
+                                ]
+                            },
+                            "notes": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "statements": {
+                "type": "object",
+                "properties": {
+                    "ghoulPriest": {
+                        "type": "boolean",
+                        "title": "The Ghoul Priest is still alive"
+                    },
+                    "cultists": {
+                        "type": "object",
+                        "properties": {
+                            "maskedHunter": {
+                                "type": "string",
+                                "title": "The Masked Hunter",
+                                "enum": [
+                                    "Not Used",
+                                    "Interrogated",
+                                    "Got Away"
+                                ]
+                            },
+                            "wolfManDrew": {
+                                "type": "string",
+                                "title": "\"Wolf-Man\" Drew",
+                                "enum": [
+                                    "Not Used",
+                                    "Interrogated",
+                                    "Got Away"
+                                ]
+                            },
+                            "hermanCollins": {
+                                "type": "string",
+                                "title": "Herman Collins",
+                                "enum": [
+                                    "Not Used",
+                                    "Interrogated",
+                                    "Got Away"
+                                ]
+                            },
+                            "peterWarren": {
+                                "type": "string",
+                                "title": "Peter Warren",
+                                "enum": [
+                                    "Not Used",
+                                    "Interrogated",
+                                    "Got Away"
+                                ]
+                            },
+                            "victoriaDevereux": {
+                                "type": "string",
+                                "title": "Victoria Devereux",
+                                "enum": [
+                                    "Not Used",
+                                    "Interrogated",
+                                    "Got Away"
+                                ]
+                            },
+                            "ruthTurner": {
+                                "type": "string",
+                                "title": "Ruth Turner",
+                                "enum": [
+                                    "Not Used",
+                                    "Interrogated",
+                                    "Got Away"
+                                ]
+                            },
+                            "jeremiahPierce": {
+                                "type": "string",
+                                "title": "Jeremiah Pierce",
+                                "enum": [
+                                    "Not Used",
+                                    "Interrogated",
+                                    "Got Away"
+                                ]
+                            },
+                            "billyCooper": {
+                                "type": "string",
+                                "title": "Billy Cooper",
+                                "enum": [
+                                    "Not Used",
+                                    "Interrogated",
+                                    "Got Away"
+                                ]
+                            },
+                            "almaHill": {
+                                "type": "string",
+                                "title": "Alma Hill",
+                                "enum": [
+                                    "Not Used",
+                                    "Interrogated",
+                                    "Got Away"
+                                ]
+                            }
+                        }
+                    },
+                    "pastMidnight": {
+                        "type": "boolean",
+                        "title": "It is past midnight"
+                    }
+                }
+            }
+        }
+    },
+    "campaignLogUiSchema": [
+        {
+            "type": "Control",
+            "scope": "#/properties/scenarios/properties/1-2/properties/status"
+        },
+        {
+            "type": "Control",
+            "scope": "#/properties/scenarios/properties/1-2/properties/notes"
+        },
+        {
+            "type": "VerticalLayout",
+            "elements": [
+                {
+                    "type": "Control",
+                    "scope": "#/properties/scenarios/properties/1-2/properties/resolution"
+                },
+                {
+                    "type": "Control",
+                    "scope": "#/properties/scenarios/properties/1-2/properties/victoryDisplay"
+                },
+                {
+                    "type": "Control",
+                    "scope": "#/properties/statements/properties/ghoulPriest"
+                },
+                {
+                    "type": "Control",
+                    "scope": "#/properties/statements/properties/pastMidnight"
+                },
+                {
+                    "type": "Control",
+                    "scope": "#/properties/statements/properties/cultists"
+                }
+            ],
+            "rule": {
+                "effect": "SHOW",
+                "condition": {
+                    "scope": "#/properties/scenarios/properties/1-2/properties/status",
+                    "schema": {
+                        "enum": [
+                            "Completed"
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "id": "2-3",
+    "name": "The Essex County Express",
+    "expansionCode": "the-dunwich-legacy",
+    "productType": "Mythos Pack",
+    "releaseDate": "2017-03-16",
+    "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/essex-county-express/",
+    "scenarios": [
+        {
+            "id": "2-4",
+            "name": "The Essex County Express",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/the-essex-county-express.svg"
+        }
+    ],
+    "encounterSets": [
+        {
+            "id": "2-4",
+            "name": "The Essex County Express",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/the-essex-county-express.svg"
+        }
+    ],
+    "investigators": [
+    ]
+}

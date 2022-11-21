@@ -1,0 +1,22 @@
+{
+    "id": "5r",
+    "name": "Return to the Circle Undone",
+    "expansionCode": "return-to-the-circle-undone",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-circle-undone.svg",
+    "expansionType": {
+        "type": "return to",
+        "forCycle": "the-circle-undone"
+    },
+    "boxArt": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-circle-undone/box-art.webp",
+    "flavorText": "",
+    "scenarios": [
+    ],
+    "encounterSets": [
+    ],
+    "investigators": [
+    ],
+    "products": [
+    ],
+    "startScenario": [
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "id": "100-2",
+    "name": "Carnevale of Horrors",
+    "expansionCode": "standalone",
+    "productType": "Scenario Pack",
+    "releaseDate": "2016-12-08",
+    "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/carnevale-horrors/",
+    "scenarios": [
+        {
+            "id": "100-2",
+            "name": "Carnevale of Horrors",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/carnevale-of-horrors.svg"
+        }
+    ],
+    "encounterSets": [
+        {
+            "id": "100-3",
+            "name": "Carnevale of Horrors",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/carnevale-of-horrors/carnevale-of-horrors.svg"
+        }
+    ],
+    "investigators": [
+    ]
+}

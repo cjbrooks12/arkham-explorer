@@ -1,0 +1,282 @@
+{
+    "expansions": [
+        {
+            "id": "1",
+            "name": "Night of the Zealot",
+            "expansionCode": "night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot.svg",
+            "expansionType": {
+                "type": "cycle"
+            },
+            "boxArt": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/box-art.webp",
+            "flavorText": "The boundaries between worlds have drawn perilously thin. Dark forces work in the shadows and call upon unspeakable horrors, strange happenings are discovered all throughout the city of Arkham, Massachusetts, and behind it all an Ancient One manipulates everything from beyond the veil. It is time to revisit that which started it all…",
+            "startScenario": [
+                {
+                    "id": "1-1",
+                    "name": "The Gathering",
+                    "expansionCode": "night-of-the-zealot",
+                    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/the-gathering.svg"
+                }
+            ]
+        },
+        {
+            "id": "1r",
+            "name": "Return to Night of the Zealot",
+            "expansionCode": "return-to-night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-night-of-the-zealot.svg",
+            "expansionType": {
+                "type": "return to",
+                "forCycle": "night-of-the-zealot"
+            },
+            "boxArt": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-night-of-the-zealot/box-art.webp",
+            "flavorText": "",
+            "startScenario": [
+                {
+                    "id": "1-1r",
+                    "name": "Return to The Gathering",
+                    "expansionCode": "return-to-night-of-the-zealot",
+                    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-night-of-the-zealot/return-to-the-gathering.svg"
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "name": "The Dunwich Legacy",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy.svg",
+            "expansionType": {
+                "type": "cycle"
+            },
+            "boxArt": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/box-art.webp",
+            "flavorText": "A monstrous presence once terrorized the secluded village of Dunwich. The season of horror ended only after three professors from Miskatonic University—Dr. Henry Armitage, Dr. Francis Morgan, and Professor Warren Price—ventured to Dunwich, armed with secret knowledge that enabled them to defeat the creature. Now, several months later, Dr. Armitage’s colleagues have gone missing, and he fears the worst…",
+            "startScenario": [
+                {
+                    "id": "2-1",
+                    "name": "Extracurricular Activity",
+                    "expansionCode": "the-dunwich-legacy",
+                    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/extracurricular-activity.svg"
+                },
+                {
+                    "id": "2-2",
+                    "name": "The House Always Wins",
+                    "expansionCode": "the-dunwich-legacy",
+                    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/the-house-always-wins.svg"
+                }
+            ]
+        },
+        {
+            "id": "2r",
+            "name": "Return to the Dunwich Legacy",
+            "expansionCode": "return-to-the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy.svg",
+            "expansionType": {
+                "type": "return to",
+                "forCycle": "the-dunwich-legacy"
+            },
+            "boxArt": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/box-art.webp",
+            "flavorText": "",
+            "startScenario": [
+                {
+                    "id": "2-1r",
+                    "name": "Return to Extracurricular Activity",
+                    "expansionCode": "return-to-the-dunwich-legacy",
+                    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/return-to-extracurricular-activity.svg"
+                },
+                {
+                    "id": "2-2r",
+                    "name": "Return to The House Always Wins",
+                    "expansionCode": "return-to-the-dunwich-legacy",
+                    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/return-to-the-house-always-wins.svg"
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "name": "The Path to Carcosa",
+            "expansionCode": "the-path-to-carcosa",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa.svg",
+            "expansionType": {
+                "type": "cycle"
+            },
+            "boxArt": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/box-art.webp",
+            "flavorText": "A new theater production is coming to Arkham all the way from Paris. Unsurprisingly, it's been all the rage in conversations among Arkham's socialites. But in your efforts to learn more about the play, you've uncovered a darker history. Disappearances. Suicides. Delusions. Insanity. Wherever The King in Yellow is performed, madness follows close behind…",
+            "startScenario": [
+                {
+                    "id": "3-1",
+                    "name": "Curtain Call",
+                    "expansionCode": "the-path-to-carcosa",
+                    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/curtain-call.svg"
+                }
+            ]
+        },
+        {
+            "id": "3r",
+            "name": "Return to the Path to Carcosa",
+            "expansionCode": "return-to-the-path-to-carcosa",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-path-to-carcosa.svg",
+            "expansionType": {
+                "type": "return to",
+                "forCycle": "the-path-to-carcosa"
+            },
+            "boxArt": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-path-to-carcosa/box-art.webp",
+            "flavorText": "",
+            "startScenario": [
+            ]
+        },
+        {
+            "id": "4",
+            "name": "The Forgotten Age",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age.svg",
+            "expansionType": {
+                "type": "cycle"
+            },
+            "boxArt": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/box-art.webp",
+            "flavorText": "We think we know the history of the Earth, but there are secrets that lie beyond our reckoning and truths that could undo our entire understanding of the universe. When renowned historian Alejandro Vela discovers one of these secrets, the ruins of an ancient and forgotten Aztec city, it sets into motion a plot that could unravel the very fabric of time.",
+            "startScenario": [
+                {
+                    "id": "4-1",
+                    "name": "The Untamed Wilds",
+                    "expansionCode": "the-forgotten-age",
+                    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/the-untamed-wilds.svg"
+                }
+            ]
+        },
+        {
+            "id": "4r",
+            "name": "Return to the Forgotten Age",
+            "expansionCode": "return-to-the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-forgotten-age.svg",
+            "expansionType": {
+                "type": "return to",
+                "forCycle": "the-forgotten-age"
+            },
+            "boxArt": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-forgotten-age/box-art.webp",
+            "flavorText": "",
+            "startScenario": [
+            ]
+        },
+        {
+            "id": "5",
+            "name": "The Circle Undone",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone.svg",
+            "expansionType": {
+                "type": "cycle"
+            },
+            "boxArt": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/box-art.webp",
+            "flavorText": "Judgement. Temperance. Justice. The Tower.\n\nThe soothsayer’s tarot wove a tale of a grim future, hard to put out of your mind. But when you learn that four people have disappeared without a trace from an estate in French Hill, you begin to wonder if this cruel fate is meant only for you, or for the entirety of Arkham…\n\n",
+            "startScenario": [
+                {
+                    "id": "5-2",
+                    "name": "The Witching Hour",
+                    "expansionCode": "the-circle-undone",
+                    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/the-witching-hour.svg"
+                }
+            ]
+        },
+        {
+            "id": "5r",
+            "name": "Return to the Circle Undone",
+            "expansionCode": "return-to-the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-circle-undone.svg",
+            "expansionType": {
+                "type": "return to",
+                "forCycle": "the-circle-undone"
+            },
+            "boxArt": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-circle-undone/box-art.webp",
+            "flavorText": "",
+            "startScenario": [
+            ]
+        },
+        {
+            "id": "6",
+            "name": "The Dream Eaters",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters.svg",
+            "expansionType": {
+                "type": "cycle"
+            },
+            "boxArt": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/box-art.webp",
+            "flavorText": "There is a hidden realm outside the world of the waking: a realm of wonder, imagination, and nightmares. After occult author Virgil Gray writes about his adventures in these “Dreamlands,” you decide to set forth and learn the truth for yourself. What is real, and what is fiction? And what secrets await in the dark, forbidden places beyond the gates of sleep?",
+            "startScenario": [
+                {
+                    "id": "6-1",
+                    "name": "Beyond the Gates of Sleep",
+                    "expansionCode": "the-dream-eaters",
+                    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/beyond-the-gates-of-sleep.svg"
+                },
+                {
+                    "id": "6-2",
+                    "name": "Waking Nightmare",
+                    "expansionCode": "the-dream-eaters",
+                    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/waking-nightmare.svg"
+                }
+            ]
+        },
+        {
+            "id": "7",
+            "name": "The Innsmouth Conspiracy",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy.svg",
+            "expansionType": {
+                "type": "cycle"
+            },
+            "boxArt": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/box-art.webp",
+            "flavorText": "Not far from Arkham, the stooped and weathered town of Innsmouth squats on the Atlantic coast. An aura of decrepitude and decay hangs over the city like the ocean fog, from the weirdly glowing windows of the Gilman House to the deserted and toppling Fish Street bridge. Beyond the city limits, the Innsmouth shoreline is pocked with half-flooded tidal tunnels and unnatural coves. Who knows what strange, abyssal trinkets you might find, among the skeletons of fish and rotting seaweed?",
+            "startScenario": [
+                {
+                    "id": "7-1",
+                    "name": "The Pit of Despair",
+                    "expansionCode": "the-innnsmouth-conspiracy",
+                    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/the-pit-of-despair.svg"
+                }
+            ]
+        },
+        {
+            "id": "8",
+            "name": "Edge of the Earth",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth.svg",
+            "expansionType": {
+                "type": "cycle"
+            },
+            "boxArt": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/box-art.webp",
+            "flavorText": "In the far, uncharted reaches of Antarctica, unspeakable horrors dwell on the edge of shadows. They lurk, wait, and watch, and with them comes a secret so ancient and profound that it threatens to tear apart our very understanding of the planet we call home—if it doesn’t tear apart reality itself first. Thus, our intrepid investigators must delve into the mysteries of the great southern ice sheets and, hopefully, uncover the truth before it is too late. Will they save the world? Or will they perish in the icy depths?",
+            "startScenario": [
+                {
+                    "id": "7-1",
+                    "name": "The Pit of Despair",
+                    "expansionCode": "edge-of-the-earth",
+                    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/the-pit-of-despair.svg"
+                }
+            ]
+        },
+        {
+            "id": "9",
+            "name": "The Scarlet Keys",
+            "expansionCode": "the-scarlet-keys",
+            "icon": "",
+            "expansionType": {
+                "type": "cycle"
+            },
+            "boxArt": "https://cjbrooks12.github.io/arkham-explorer/assets/the-scarlet-keys/box-art.webp",
+            "flavorText": "Strange disappearances haunt the city of Arkham, Massachusetts. With each object, building, or person that vanishes, they are erased not just from physical existence, but from history and memory as well. Only a select few investigators remember those that disappeared–or so they believe. Before long, the mystery unravels into an international conspiracy, and our wary investigators find themselves recruited by a shadowy government agency whose sole purpose is the collection and research of paradimensional implements they call “Keys.” However, they aren’t the only ones searching for them…",
+            "startScenario": [
+            ]
+        },
+        {
+            "id": "100",
+            "name": "Standalone Content",
+            "expansionCode": "standalone",
+            "icon": "",
+            "expansionType": {
+                "type": "standalone"
+            },
+            "boxArt": "https://images-cdn.fantasyflightgames.com/filer_public/19/0d/190de25c-d8db-4147-bba4-0c7326245051/uahc09_main.png",
+            "flavorText": "",
+            "startScenario": [
+            ]
+        }
+    ]
+}

@@ -1,0 +1,186 @@
+{
+    "id": "100-6",
+    "name": "Murder at the Excelsior Hotel",
+    "expansionCode": "standalone",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/murder-at-the-excelsior-hotel.svg",
+    "encounterSets": [
+        {
+            "encounterSet": {
+                "id": "100-13",
+                "name": "Murder at the Excelsior Hotel",
+                "expansionCode": "standalone",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/murder-at-the-excelsior-hotel/murder-at-the-excelsior-hotel.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "100-14",
+                "name": "Alien Interference",
+                "expansionCode": "standalone",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/murder-at-the-excelsior-hotel/alien-interference.svg"
+            },
+            "conditional": true,
+            "setAside": true,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "100-15",
+                "name": "Dark Rituals",
+                "expansionCode": "standalone",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/murder-at-the-excelsior-hotel/dark-rituals.svg"
+            },
+            "conditional": true,
+            "setAside": true,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "100-16",
+                "name": "Excelsior Management",
+                "expansionCode": "standalone",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/murder-at-the-excelsior-hotel/excelsior-management.svg"
+            },
+            "conditional": true,
+            "setAside": true,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "100-17",
+                "name": "Sins of the Past",
+                "expansionCode": "standalone",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/murder-at-the-excelsior-hotel/sins-of-the-past.svg"
+            },
+            "conditional": true,
+            "setAside": true,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "100-18",
+                "name": "Vile Experiments",
+                "expansionCode": "standalone",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/murder-at-the-excelsior-hotel/vile-experiments.svg"
+            },
+            "conditional": true,
+            "setAside": true,
+            "partial": false
+        }
+    ],
+    "chaosBag": [
+        {
+            "difficulty": "standard",
+            "tokens": [
+                "+1",
+                "0",
+                "-1",
+                "-1",
+                "-2",
+                "-3",
+                "-3",
+                "-4",
+                "Skull",
+                "Skull",
+                "Cultist",
+                "Tablet",
+                "Elder Thing",
+                "Auto-Fail",
+                "Elder Sign"
+            ]
+        },
+        {
+            "difficulty": "hard",
+            "tokens": [
+                "0",
+                "-1",
+                "-2",
+                "-3",
+                "-4",
+                "-4",
+                "-5",
+                "-6",
+                "Skull",
+                "Skull",
+                "Cultist",
+                "Tablet",
+                "Elder Thing",
+                "Auto-Fail",
+                "Elder Sign"
+            ]
+        }
+    ],
+    "referenceCard": [
+        {
+            "difficulties": [
+                "easy",
+                "standard"
+            ],
+            "tokens": [
+                {
+                    "token": "Skull",
+                    "text": "-X. X is the number of [[Guest]] enemies in play.",
+                    "modifierValue": "Guests"
+                },
+                {
+                    "token": "Cultist",
+                    "text": "-1. If there is an [[Innocent]] enemy in the victory display, reveal another chaos token.",
+                    "modifierValue": "-1"
+                },
+                {
+                    "token": "Tablet",
+                    "text": "-3. You may place one of your clues on your location to treat this as a -1 instead.",
+                    "modifierValue": "-3"
+                },
+                {
+                    "token": "Elder Thing",
+                    "text": "-3. If you fail and there is an [[Innocent]] enemy in the victory display, take 1 horror.",
+                    "modifierValue": "-3"
+                }
+            ]
+        },
+        {
+            "difficulties": [
+                "hard",
+                "expert"
+            ],
+            "tokens": [
+                {
+                    "token": "Skull",
+                    "text": "-X. X is the number of [[Innocent]] enemies in play.",
+                    "modifierValue": "Innocent Enemies"
+                },
+                {
+                    "token": "Cultist",
+                    "text": "-2. If there is an [[Innocent]] enemy in the victory display, reveal another chaos token.",
+                    "modifierValue": "-2"
+                },
+                {
+                    "token": "Tablet",
+                    "text": "-5. You may place one of your clues on your location to treat this as a -2 instead.",
+                    "modifierValue": "-5"
+                },
+                {
+                    "token": "Elder Thing",
+                    "text": "-3. If you fail, take 1 horror for each [[Innocent]] enemy in the victory display.",
+                    "modifierValue": "-3"
+                }
+            ]
+        }
+    ],
+    "products": [
+        {
+            "id": "100-5",
+            "name": "Murder at the Excelsior Hotel",
+            "expansionCode": "standalone",
+            "productType": "Scenario Pack"
+        }
+    ],
+    "nextScenario": [
+    ],
+    "campaignLogSchema": null,
+    "campaignLogUiSchema": null
+}

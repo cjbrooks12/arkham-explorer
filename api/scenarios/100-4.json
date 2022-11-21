@@ -1,0 +1,69 @@
+{
+    "id": "100-4",
+    "name": "The Eternal Slumber",
+    "expansionCode": "standalone",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/guardians-of-the-abyss.svg",
+    "encounterSets": [
+        {
+            "encounterSet": {
+                "id": "100-11",
+                "name": "The Eternal Slumber",
+                "expansionCode": "standalone",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/guardians-of-the-abyss/the-eternal-slumber.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "100-10",
+                "name": "Sands of Egypt",
+                "expansionCode": "standalone",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/guardians-of-the-abyss/sands-of-egypt.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "100-9",
+                "name": "Brotherhood of the Beast",
+                "expansionCode": "standalone",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/guardians-of-the-abyss/brotherhood-of-the-beast.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "100-8",
+                "name": "Abyssal Tribute",
+                "expansionCode": "standalone",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/guardians-of-the-abyss/abyssal-tribute.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        }
+    ],
+    "chaosBag": [
+    ],
+    "referenceCard": [
+    ],
+    "products": [
+        {
+            "id": "100-4",
+            "name": "Guardians of the Abyss",
+            "expansionCode": "standalone",
+            "productType": "Scenario Pack"
+        }
+    ],
+    "nextScenario": [
+        "100-5"
+    ],
+    "campaignLogSchema": null,
+    "campaignLogUiSchema": null
+}

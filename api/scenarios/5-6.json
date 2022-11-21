@@ -1,0 +1,18 @@
+{
+    "id": "5-6",
+    "name": "For the Greater Good",
+    "expansionCode": "the-circle-undone",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/for-the-greater-good.svg",
+    "encounterSets": [
+    ],
+    "chaosBag": [
+    ],
+    "referenceCard": [
+    ],
+    "products": [
+    ],
+    "nextScenario": [
+    ],
+    "campaignLogSchema": null,
+    "campaignLogUiSchema": null
+}

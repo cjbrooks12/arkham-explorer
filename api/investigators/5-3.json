@@ -1,0 +1,11 @@
+{
+    "id": "5-3",
+    "name": "Preston Fairmont",
+    "expansionCode": "the-circle-undone",
+    "portrait": "",
+    "mainClass": "Rogue",
+    "health": 7,
+    "sanity": 7,
+    "products": [
+    ]
+}

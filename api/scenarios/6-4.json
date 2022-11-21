@@ -1,0 +1,18 @@
+{
+    "id": "6-4",
+    "name": "A Thousand Shapes of Horror",
+    "expansionCode": "the-dream-eaters",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/a-thousand-shapes-of-horror.svg",
+    "encounterSets": [
+    ],
+    "chaosBag": [
+    ],
+    "referenceCard": [
+    ],
+    "products": [
+    ],
+    "nextScenario": [
+    ],
+    "campaignLogSchema": null,
+    "campaignLogUiSchema": null
+}

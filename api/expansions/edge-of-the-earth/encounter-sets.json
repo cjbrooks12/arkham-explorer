@@ -1,0 +1,148 @@
+{
+    "encounterSets": [
+        {
+            "id": "8-1",
+            "name": "Agents of the Unknown",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/agents-of-the-unknown.svg"
+        },
+        {
+            "id": "8-10",
+            "name": "Left Behind",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/left-behind.svg"
+        },
+        {
+            "id": "8-11",
+            "name": "Lost in the Night",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/lost-in-the-night.svg"
+        },
+        {
+            "id": "8-12",
+            "name": "Memorials of the Lost",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/memorials-of-the-lost.svg"
+        },
+        {
+            "id": "8-13",
+            "name": "Miasma",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/miasma.svg"
+        },
+        {
+            "id": "8-14",
+            "name": "Nameless Horrors",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/nameless-horrors.svg"
+        },
+        {
+            "id": "8-15",
+            "name": "Penguins",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/penguins.svg"
+        },
+        {
+            "id": "8-16",
+            "name": "Seeping Nightmares",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/seeping-nightmares.svg"
+        },
+        {
+            "id": "8-17",
+            "name": "Shoggoths",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/shoggoths.svg"
+        },
+        {
+            "id": "8-18",
+            "name": "Silence and Mystery",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/silence-and-mystery.svg"
+        },
+        {
+            "id": "8-19",
+            "name": "Stirring in the Deep",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/stirring-in-the-deep.svg"
+        },
+        {
+            "id": "8-2",
+            "name": "City of the Elder Things",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/city-of-the-elder-things.svg"
+        },
+        {
+            "id": "8-20",
+            "name": "Tekeli-li",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/tekeli-li.svg"
+        },
+        {
+            "id": "8-21",
+            "name": "The Crash",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/the-crash.svg"
+        },
+        {
+            "id": "8-22",
+            "name": "The Great Seal",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/the-great-seal.svg"
+        },
+        {
+            "id": "8-23",
+            "name": "The Heart of Madness",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/the-heart-of-madness.svg"
+        },
+        {
+            "id": "8-24",
+            "name": "To the Forbidden Peaks",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/to-the-forbidden-peaks.svg"
+        },
+        {
+            "id": "8-3",
+            "name": "Creatures in the Ice",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/creatures-in-the-ice.svg"
+        },
+        {
+            "id": "8-4",
+            "name": "Deadly Weather",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/deadly-weather.svg"
+        },
+        {
+            "id": "8-5",
+            "name": "Elder Things",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/elder-things.svg"
+        },
+        {
+            "id": "8-6",
+            "name": "Expedition Team",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/expedition-team.svg"
+        },
+        {
+            "id": "8-7",
+            "name": "Fatal Mirage",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/fatal-mirage.svg"
+        },
+        {
+            "id": "8-8",
+            "name": "Hazards of Antarctica",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/hazards-of-antarctica.svg"
+        },
+        {
+            "id": "8-9",
+            "name": "Ice and Death",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/ice-and-death.svg"
+        }
+    ]
+}

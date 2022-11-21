@@ -1,0 +1,64 @@
+{
+    "scenarios": [
+        {
+            "id": "4-1",
+            "name": "The Untamed Wilds",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/the-untamed-wilds.svg"
+        },
+        {
+            "id": "4-10",
+            "name": "Turn Back Time",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/turn-back-time.svg"
+        },
+        {
+            "id": "4-2",
+            "name": "The Doom of Eztli",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/the-doom-of-eztli.svg"
+        },
+        {
+            "id": "4-3",
+            "name": "Threads of Fate",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/threads-of-fate.svg"
+        },
+        {
+            "id": "4-4",
+            "name": "The Boundary Beyond",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/the-boundary-beyond.svg"
+        },
+        {
+            "id": "4-5",
+            "name": "Heart of the Elders, Part 1",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/heart-of-the-elders.svg"
+        },
+        {
+            "id": "4-6",
+            "name": "Heart of the Elders, Part 2",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/heart-of-the-elders.svg"
+        },
+        {
+            "id": "4-7",
+            "name": "The City of Archives",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/the-city-of-archives.svg"
+        },
+        {
+            "id": "4-8",
+            "name": "The Depths of Yoth",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/the-depths-of-yoth.svg"
+        },
+        {
+            "id": "4-9",
+            "name": "Shattered Aeons",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/shattered-aeons.svg"
+        }
+    ]
+}

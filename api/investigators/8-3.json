@@ -1,0 +1,11 @@
+{
+    "id": "8-3",
+    "name": "Monterey Jack",
+    "expansionCode": "edge-of-the-earth",
+    "portrait": "",
+    "mainClass": "Rogue",
+    "health": 8,
+    "sanity": 6,
+    "products": [
+    ]
+}

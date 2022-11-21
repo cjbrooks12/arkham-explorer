@@ -1,0 +1,15 @@
+{
+    "id": "1-6r",
+    "name": "The Devourer's Cult",
+    "expansionCode": "return-to-night-of-the-zealot",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-night-of-the-zealot/the-devourers-cult.svg",
+    "replaces": "1-10",
+    "products": [
+        {
+            "id": "1-1r",
+            "name": "Return to the Night of the Zealot",
+            "expansionCode": "return-to-night-of-the-zealot",
+            "productType": "Return To"
+        }
+    ]
+}

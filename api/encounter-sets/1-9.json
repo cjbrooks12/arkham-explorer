@@ -1,0 +1,21 @@
+{
+    "id": "1-9",
+    "name": "Chilling Cold",
+    "expansionCode": "night-of-the-zealot",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/chilling-cold.svg",
+    "replaces": null,
+    "products": [
+        {
+            "id": "1-1",
+            "name": "Core Set",
+            "expansionCode": "night-of-the-zealot",
+            "productType": "Core Set"
+        },
+        {
+            "id": "1-2",
+            "name": "Revised Core Set",
+            "expansionCode": "night-of-the-zealot",
+            "productType": "Core Set"
+        }
+    ]
+}

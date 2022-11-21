@@ -1,0 +1,15 @@
+{
+    "id": "100-5",
+    "name": "Epic Multiplayer (The Labyrinths of Lunacy)",
+    "expansionCode": "standalone",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-labyrinths-of-lunacy/epic-multiplayer.svg",
+    "replaces": null,
+    "products": [
+        {
+            "id": "100-3",
+            "name": "The Labyrinths of Lunacy",
+            "expansionCode": "standalone",
+            "productType": "Scenario Pack"
+        }
+    ]
+}

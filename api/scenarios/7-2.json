@@ -1,0 +1,18 @@
+{
+    "id": "7-2",
+    "name": "The Vanishing of Elina Harper",
+    "expansionCode": "the-innnsmouth-conspiracy",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/the-vanishing-of-elina-harper.svg",
+    "encounterSets": [
+    ],
+    "chaosBag": [
+    ],
+    "referenceCard": [
+    ],
+    "products": [
+    ],
+    "nextScenario": [
+    ],
+    "campaignLogSchema": null,
+    "campaignLogUiSchema": null
+}

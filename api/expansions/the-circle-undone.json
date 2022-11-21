@@ -1,0 +1,272 @@
+{
+    "id": "5",
+    "name": "The Circle Undone",
+    "expansionCode": "the-circle-undone",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone.svg",
+    "expansionType": {
+        "type": "cycle"
+    },
+    "boxArt": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/box-art.webp",
+    "flavorText": "Judgement. Temperance. Justice. The Tower.\n\nThe soothsayer’s tarot wove a tale of a grim future, hard to put out of your mind. But when you learn that four people have disappeared without a trace from an estate in French Hill, you begin to wonder if this cruel fate is meant only for you, or for the entirety of Arkham…\n\n",
+    "scenarios": [
+        {
+            "id": "5-1",
+            "name": "Disappearance at the Twilight Estate",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/disappearance-at-the-twilight-estate.svg"
+        },
+        {
+            "id": "5-2",
+            "name": "The Witching Hour",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/the-witching-hour.svg"
+        },
+        {
+            "id": "5-3",
+            "name": "At Death's Doorstep",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/at-deaths-doorstep.svg"
+        },
+        {
+            "id": "5-4",
+            "name": "The Secret Name",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/the-secret-name.svg"
+        },
+        {
+            "id": "5-5",
+            "name": "The Wages of Sin",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/the-wages-of-sin.svg"
+        },
+        {
+            "id": "5-6",
+            "name": "For the Greater Good",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/for-the-greater-good.svg"
+        },
+        {
+            "id": "5-7",
+            "name": "Union and Disillusion",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/union-and-disillusion.svg"
+        },
+        {
+            "id": "5-8",
+            "name": "In the Clutches of Chaos",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/in-the-clutches-of-chaos.svg"
+        },
+        {
+            "id": "5-9",
+            "name": "Before the Black Throne",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/before-the-black-throne.svg"
+        }
+    ],
+    "encounterSets": [
+        {
+            "id": "5-1",
+            "name": "Agents of Azathoth",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/agents-of-azathoth.svg"
+        },
+        {
+            "id": "5-2",
+            "name": "Anette's Coven",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/anettes-coven.svg"
+        },
+        {
+            "id": "5-3",
+            "name": "At Death's Doorstep",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/at-deaths-doorstep.svg"
+        },
+        {
+            "id": "5-4",
+            "name": "Before the Black Throne",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/before-the-black-throne.svg"
+        },
+        {
+            "id": "5-5",
+            "name": "City of Sins",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/city-of-sins.svg"
+        },
+        {
+            "id": "5-6",
+            "name": "Disappearance at the Twilight Estate",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/disappearance-at-the-twilight-estate.svg"
+        },
+        {
+            "id": "5-7",
+            "name": "For the Greater Good",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/for-the-greater-good.svg"
+        },
+        {
+            "id": "5-8",
+            "name": "In the Clutches of Chaos",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/in-the-clutches-of-chaos.svg"
+        },
+        {
+            "id": "5-9",
+            "name": "Inexorable Fate",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/inexorable-fate.svg"
+        },
+        {
+            "id": "5-10",
+            "name": "Music of the Damned",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/music-of-the-damned.svg"
+        },
+        {
+            "id": "5-11",
+            "name": "Realm of Death",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/realm-of-death.svg"
+        },
+        {
+            "id": "5-12",
+            "name": "Secrets of the Universe",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/secrets-of-the-universe.svg"
+        },
+        {
+            "id": "5-13",
+            "name": "Silver Twilight Lodge",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/silver-twilight-lodge.svg"
+        },
+        {
+            "id": "5-14",
+            "name": "Spectral Predators",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/spectral-predators.svg"
+        },
+        {
+            "id": "5-15",
+            "name": "The Secret Name",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/the-secret-name.svg"
+        },
+        {
+            "id": "5-16",
+            "name": "The Wages of Sin",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/the-wages-of-sin.svg"
+        },
+        {
+            "id": "5-17",
+            "name": "The Watcher",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/the-watcher.svg"
+        },
+        {
+            "id": "5-18",
+            "name": "The Witching Hour",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/the-witching-hour.svg"
+        },
+        {
+            "id": "5-19",
+            "name": "Trapped Spirits",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/trapped-spirits.svg"
+        },
+        {
+            "id": "5-20",
+            "name": "Union and Disillusion",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/union-and-disillusion.svg"
+        },
+        {
+            "id": "5-21",
+            "name": "Witchcraft",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/witchcraft.svg"
+        }
+    ],
+    "investigators": [
+        {
+            "id": "5-1",
+            "name": "Carolyn Fern",
+            "expansionCode": "the-circle-undone",
+            "portrait": "",
+            "mainClass": "Guardian"
+        },
+        {
+            "id": "5-2",
+            "name": "Joe Diamond",
+            "expansionCode": "the-circle-undone",
+            "portrait": "",
+            "mainClass": "Seeker"
+        },
+        {
+            "id": "5-3",
+            "name": "Preston Fairmont",
+            "expansionCode": "the-circle-undone",
+            "portrait": "",
+            "mainClass": "Rogue"
+        },
+        {
+            "id": "5-4",
+            "name": "Diana Stanley",
+            "expansionCode": "the-circle-undone",
+            "portrait": "",
+            "mainClass": "Mystic"
+        },
+        {
+            "id": "5-5",
+            "name": "Rita Young",
+            "expansionCode": "the-circle-undone",
+            "portrait": "",
+            "mainClass": "Survivor"
+        },
+        {
+            "id": "5-6",
+            "name": "Marie Lambeau",
+            "expansionCode": "the-circle-undone",
+            "portrait": "",
+            "mainClass": "Mystic"
+        },
+        {
+            "id": "5-7",
+            "name": "Gavriella Mizrah",
+            "expansionCode": "the-circle-undone",
+            "portrait": "",
+            "mainClass": "Neutral"
+        },
+        {
+            "id": "5-8",
+            "name": "Jerome Davids",
+            "expansionCode": "the-circle-undone",
+            "portrait": "",
+            "mainClass": "Neutral"
+        },
+        {
+            "id": "5-9",
+            "name": "Penny White",
+            "expansionCode": "the-circle-undone",
+            "portrait": "",
+            "mainClass": "Neutral"
+        },
+        {
+            "id": "5-10",
+            "name": "Valentino Rivas",
+            "expansionCode": "the-circle-undone",
+            "portrait": "",
+            "mainClass": "Neutral"
+        }
+    ],
+    "products": [
+    ],
+    "startScenario": [
+        "5-2"
+    ]
+}

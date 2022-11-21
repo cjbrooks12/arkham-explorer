@@ -1,0 +1,38 @@
+{
+    "id": "100-8",
+    "name": "Machinations Through Time",
+    "expansionCode": "standalone",
+    "productType": "Scenario Pack",
+    "releaseDate": "2022-02-10",
+    "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/machinations-through-time/",
+    "scenarios": [
+        {
+            "id": "100-9",
+            "name": "Machinations Through Time",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/machinations-through-time.svg"
+        }
+    ],
+    "encounterSets": [
+        {
+            "id": "100-27",
+            "name": "Machinations Through Time",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/machinations-through-time/machinations-through-time.svg"
+        },
+        {
+            "id": "100-28",
+            "name": "Epic Multiplayer (Machinations Through Time)",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/machinations-through-time/epic-multiplayer.svg"
+        },
+        {
+            "id": "100-29",
+            "name": "Single Group (Machinations Through Time)",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/machinations-through-time/single-group.svg"
+        }
+    ],
+    "investigators": [
+    ]
+}

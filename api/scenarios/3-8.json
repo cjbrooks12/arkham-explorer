@@ -1,0 +1,96 @@
+{
+    "id": "3-8",
+    "name": "Dim Carcosa",
+    "expansionCode": "the-path-to-carcosa",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/dim-carcosa.svg",
+    "encounterSets": [
+        {
+            "encounterSet": {
+                "id": "3-8",
+                "name": "Dim Carcosa",
+                "expansionCode": "the-path-to-carcosa",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/dim-carcosa.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "3-10",
+                "name": "Delusions",
+                "expansionCode": "the-path-to-carcosa",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/delusions.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "3-12",
+                "name": "Cult of the Yellow Sign",
+                "expansionCode": "the-path-to-carcosa",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/cult-of-the-yellow-sign.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "3-16",
+                "name": "Inhabitants of Carcosa",
+                "expansionCode": "the-path-to-carcosa",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/inhabitants-of-carcosa.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "1-13",
+                "name": "Agents of Hastur",
+                "expansionCode": "the-path-to-carcosa",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/agents-of-hastur.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "1-7",
+                "name": "Striking Fear",
+                "expansionCode": "the-path-to-carcosa",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/striking-fear.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        }
+    ],
+    "chaosBag": [
+    ],
+    "referenceCard": [
+    ],
+    "products": [
+        {
+            "id": "3-7",
+            "name": "Dim Carcosa",
+            "expansionCode": "the-path-to-carcosa",
+            "productType": "Mythos Pack"
+        },
+        {
+            "id": "3-8",
+            "name": "The Path to Carcosa: Campaign Expansion",
+            "expansionCode": "the-path-to-carcosa",
+            "productType": "Campaign Expansion"
+        }
+    ],
+    "nextScenario": [
+    ],
+    "campaignLogSchema": null,
+    "campaignLogUiSchema": null
+}

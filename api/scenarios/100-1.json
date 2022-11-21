@@ -1,0 +1,46 @@
+{
+    "id": "100-1",
+    "name": "Curse of the Rougarou",
+    "expansionCode": "standalone",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/curse-of-the-rougarou.svg",
+    "encounterSets": [
+        {
+            "encounterSet": {
+                "id": "100-1",
+                "name": "Curse of the Rougarou",
+                "expansionCode": "standalone",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/curse-of-the-rougarou/curse-of-the-rougarou.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "100-2",
+                "name": "The Bayou",
+                "expansionCode": "standalone",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/curse-of-the-rougarou/the-bayou.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        }
+    ],
+    "chaosBag": [
+    ],
+    "referenceCard": [
+    ],
+    "products": [
+        {
+            "id": "100-1",
+            "name": "Curse of the Rougarou",
+            "expansionCode": "standalone",
+            "productType": "Scenario Pack"
+        }
+    ],
+    "nextScenario": [
+    ],
+    "campaignLogSchema": null,
+    "campaignLogUiSchema": null
+}

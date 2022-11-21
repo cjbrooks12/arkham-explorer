@@ -1,0 +1,15 @@
+{
+    "id": "100-22",
+    "name": "Mi-Go Incursion",
+    "expansionCode": "standalone",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-blob-that-ate-everything/mi-go-incursion.svg",
+    "replaces": null,
+    "products": [
+        {
+            "id": "100-6",
+            "name": "The Blob That Ate Everything",
+            "expansionCode": "standalone",
+            "productType": "Scenario Pack"
+        }
+    ]
+}

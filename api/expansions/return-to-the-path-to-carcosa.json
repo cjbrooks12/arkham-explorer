@@ -1,0 +1,22 @@
+{
+    "id": "3r",
+    "name": "Return to the Path to Carcosa",
+    "expansionCode": "return-to-the-path-to-carcosa",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-path-to-carcosa.svg",
+    "expansionType": {
+        "type": "return to",
+        "forCycle": "the-path-to-carcosa"
+    },
+    "boxArt": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-path-to-carcosa/box-art.webp",
+    "flavorText": "",
+    "scenarios": [
+    ],
+    "encounterSets": [
+    ],
+    "investigators": [
+    ],
+    "products": [
+    ],
+    "startScenario": [
+    ]
+}

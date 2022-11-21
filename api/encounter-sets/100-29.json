@@ -1,0 +1,15 @@
+{
+    "id": "100-29",
+    "name": "Single Group (Machinations Through Time)",
+    "expansionCode": "standalone",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/machinations-through-time/single-group.svg",
+    "replaces": null,
+    "products": [
+        {
+            "id": "100-8",
+            "name": "Machinations Through Time",
+            "expansionCode": "standalone",
+            "productType": "Scenario Pack"
+        }
+    ]
+}

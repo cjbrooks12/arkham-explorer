@@ -1,0 +1,18 @@
+{
+    "id": "8-4",
+    "name": "Fatal Mirage",
+    "expansionCode": "edge-of-the-earth",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/fatal-mirage.svg",
+    "encounterSets": [
+    ],
+    "chaosBag": [
+    ],
+    "referenceCard": [
+    ],
+    "products": [
+    ],
+    "nextScenario": [
+    ],
+    "campaignLogSchema": null,
+    "campaignLogUiSchema": null
+}

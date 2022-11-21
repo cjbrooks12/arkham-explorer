@@ -1,0 +1,1252 @@
+{
+    "encounterSets": [
+        {
+            "id": "8-1",
+            "name": "Agents of the Unknown",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/agents-of-the-unknown.svg"
+        },
+        {
+            "id": "8-10",
+            "name": "Left Behind",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/left-behind.svg"
+        },
+        {
+            "id": "8-11",
+            "name": "Lost in the Night",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/lost-in-the-night.svg"
+        },
+        {
+            "id": "8-12",
+            "name": "Memorials of the Lost",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/memorials-of-the-lost.svg"
+        },
+        {
+            "id": "8-13",
+            "name": "Miasma",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/miasma.svg"
+        },
+        {
+            "id": "8-14",
+            "name": "Nameless Horrors",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/nameless-horrors.svg"
+        },
+        {
+            "id": "8-15",
+            "name": "Penguins",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/penguins.svg"
+        },
+        {
+            "id": "8-16",
+            "name": "Seeping Nightmares",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/seeping-nightmares.svg"
+        },
+        {
+            "id": "8-17",
+            "name": "Shoggoths",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/shoggoths.svg"
+        },
+        {
+            "id": "8-18",
+            "name": "Silence and Mystery",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/silence-and-mystery.svg"
+        },
+        {
+            "id": "8-19",
+            "name": "Stirring in the Deep",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/stirring-in-the-deep.svg"
+        },
+        {
+            "id": "8-2",
+            "name": "City of the Elder Things",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/city-of-the-elder-things.svg"
+        },
+        {
+            "id": "8-20",
+            "name": "Tekeli-li",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/tekeli-li.svg"
+        },
+        {
+            "id": "8-21",
+            "name": "The Crash",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/the-crash.svg"
+        },
+        {
+            "id": "8-22",
+            "name": "The Great Seal",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/the-great-seal.svg"
+        },
+        {
+            "id": "8-23",
+            "name": "The Heart of Madness",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/the-heart-of-madness.svg"
+        },
+        {
+            "id": "8-24",
+            "name": "To the Forbidden Peaks",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/to-the-forbidden-peaks.svg"
+        },
+        {
+            "id": "8-3",
+            "name": "Creatures in the Ice",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/creatures-in-the-ice.svg"
+        },
+        {
+            "id": "8-4",
+            "name": "Deadly Weather",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/deadly-weather.svg"
+        },
+        {
+            "id": "8-5",
+            "name": "Elder Things",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/elder-things.svg"
+        },
+        {
+            "id": "8-6",
+            "name": "Expedition Team",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/expedition-team.svg"
+        },
+        {
+            "id": "8-7",
+            "name": "Fatal Mirage",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/fatal-mirage.svg"
+        },
+        {
+            "id": "8-8",
+            "name": "Hazards of Antarctica",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/hazards-of-antarctica.svg"
+        },
+        {
+            "id": "8-9",
+            "name": "Ice and Death",
+            "expansionCode": "edge-of-the-earth",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/ice-and-death.svg"
+        },
+        {
+            "id": "2-1",
+            "name": "Extracurricular Activity",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/extracurricular-activity.svg"
+        },
+        {
+            "id": "2-10",
+            "name": "Sorcery",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/sorcery.svg"
+        },
+        {
+            "id": "2-11",
+            "name": "Bishop's Thralls",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/bishops-thralls.svg"
+        },
+        {
+            "id": "2-12",
+            "name": "Dunwich",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/dunwich.svg"
+        },
+        {
+            "id": "2-13",
+            "name": "Whippoorwills",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/whippoorwills.svg"
+        },
+        {
+            "id": "2-14",
+            "name": "Bad Luck",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/bad-luck.svg"
+        },
+        {
+            "id": "2-15",
+            "name": "Beast Thralls",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/beast-thralls.svg"
+        },
+        {
+            "id": "2-16",
+            "name": "Naomi's Crew",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/naomis-crew.svg"
+        },
+        {
+            "id": "2-17",
+            "name": "The Beyond",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/the-beyond.svg"
+        },
+        {
+            "id": "2-18",
+            "name": "Hideous Abominations",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/hideous-abominations.svg"
+        },
+        {
+            "id": "2-2",
+            "name": "The House Always Wins",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/the-house-always-wins.svg"
+        },
+        {
+            "id": "2-3",
+            "name": "The Miskatonic Museum",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/the-miskatonic-museum.svg"
+        },
+        {
+            "id": "2-4",
+            "name": "The Essex County Express",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/the-essex-county-express.svg"
+        },
+        {
+            "id": "2-5",
+            "name": "Blood on the Altar",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/blood-on-the-altar.svg"
+        },
+        {
+            "id": "2-6",
+            "name": "Undimensioned and Unseen",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/undimensioned-and-unseen.svg"
+        },
+        {
+            "id": "2-7",
+            "name": "Where Doom Awaits",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/where-doom-awaits.svg"
+        },
+        {
+            "id": "2-8",
+            "name": "Lost in Time and Space",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/lost-in-time-and-space.svg"
+        },
+        {
+            "id": "2-9",
+            "name": "Armitage's Fate",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/armitages-fate.svg"
+        },
+        {
+            "id": "2-10r",
+            "name": "Erratic Fear",
+            "expansionCode": "return-to-the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/erratic-fear.svg"
+        },
+        {
+            "id": "2-11r",
+            "name": "Creeping Cold",
+            "expansionCode": "return-to-the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/creeping-cold.svg"
+        },
+        {
+            "id": "2-12r",
+            "name": "Secret Doors",
+            "expansionCode": "return-to-the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/secret-doors.svg"
+        },
+        {
+            "id": "2-13r",
+            "name": "Yog-Sothoth's Emissaries",
+            "expansionCode": "return-to-the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/yog-sothoths-emissaries.svg"
+        },
+        {
+            "id": "2-14r",
+            "name": "Beyond the Threshold",
+            "expansionCode": "return-to-the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/beyond-the-threshold.svg"
+        },
+        {
+            "id": "2-1r",
+            "name": "Return to Extracurricular Activity",
+            "expansionCode": "return-to-the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/return-to-extracurricular-activity.svg"
+        },
+        {
+            "id": "2-2r",
+            "name": "Return to The House Always Wins",
+            "expansionCode": "return-to-the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/return-to-the-house-always-wins.svg"
+        },
+        {
+            "id": "2-3r",
+            "name": "Return to The Miskatonic Museum",
+            "expansionCode": "return-to-the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/return-to-the-miskatonic-museum.svg"
+        },
+        {
+            "id": "2-4r",
+            "name": "Return to The Essex County Express",
+            "expansionCode": "return-to-the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/return-to-the-essex-county-express.svg"
+        },
+        {
+            "id": "2-5r",
+            "name": "Return to Blood on the Altar",
+            "expansionCode": "return-to-the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/return-to-blood-on-the-altar.svg"
+        },
+        {
+            "id": "2-6r",
+            "name": "Return to Undimensioned and Unseen",
+            "expansionCode": "return-to-the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/return-to-undimensioned-and-unseen.svg"
+        },
+        {
+            "id": "2-7r",
+            "name": "Return to Where Doom Awaits",
+            "expansionCode": "return-to-the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/return-to-where-doom-awaits.svg"
+        },
+        {
+            "id": "2-8r",
+            "name": "Return to Lost in Time and Space",
+            "expansionCode": "return-to-the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/return-to-lost-in-time-and-space.svg"
+        },
+        {
+            "id": "2-9r",
+            "name": "Resurgent Evils",
+            "expansionCode": "return-to-the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/resurgent-evils.svg"
+        },
+        {
+            "id": "5-1",
+            "name": "Agents of Azathoth",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/agents-of-azathoth.svg"
+        },
+        {
+            "id": "5-10",
+            "name": "Music of the Damned",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/music-of-the-damned.svg"
+        },
+        {
+            "id": "5-11",
+            "name": "Realm of Death",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/realm-of-death.svg"
+        },
+        {
+            "id": "5-12",
+            "name": "Secrets of the Universe",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/secrets-of-the-universe.svg"
+        },
+        {
+            "id": "5-13",
+            "name": "Silver Twilight Lodge",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/silver-twilight-lodge.svg"
+        },
+        {
+            "id": "5-14",
+            "name": "Spectral Predators",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/spectral-predators.svg"
+        },
+        {
+            "id": "5-15",
+            "name": "The Secret Name",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/the-secret-name.svg"
+        },
+        {
+            "id": "5-16",
+            "name": "The Wages of Sin",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/the-wages-of-sin.svg"
+        },
+        {
+            "id": "5-17",
+            "name": "The Watcher",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/the-watcher.svg"
+        },
+        {
+            "id": "5-18",
+            "name": "The Witching Hour",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/the-witching-hour.svg"
+        },
+        {
+            "id": "5-19",
+            "name": "Trapped Spirits",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/trapped-spirits.svg"
+        },
+        {
+            "id": "5-2",
+            "name": "Anette's Coven",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/anettes-coven.svg"
+        },
+        {
+            "id": "5-20",
+            "name": "Union and Disillusion",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/union-and-disillusion.svg"
+        },
+        {
+            "id": "5-21",
+            "name": "Witchcraft",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/witchcraft.svg"
+        },
+        {
+            "id": "5-3",
+            "name": "At Death's Doorstep",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/at-deaths-doorstep.svg"
+        },
+        {
+            "id": "5-4",
+            "name": "Before the Black Throne",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/before-the-black-throne.svg"
+        },
+        {
+            "id": "5-5",
+            "name": "City of Sins",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/city-of-sins.svg"
+        },
+        {
+            "id": "5-6",
+            "name": "Disappearance at the Twilight Estate",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/disappearance-at-the-twilight-estate.svg"
+        },
+        {
+            "id": "5-7",
+            "name": "For the Greater Good",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/for-the-greater-good.svg"
+        },
+        {
+            "id": "5-8",
+            "name": "In the Clutches of Chaos",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/in-the-clutches-of-chaos.svg"
+        },
+        {
+            "id": "5-9",
+            "name": "Inexorable Fate",
+            "expansionCode": "the-circle-undone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/inexorable-fate.svg"
+        },
+        {
+            "id": "100-1",
+            "name": "Curse of the Rougarou",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/curse-of-the-rougarou/curse-of-the-rougarou.svg"
+        },
+        {
+            "id": "100-10",
+            "name": "Sands of Egypt",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/guardians-of-the-abyss/sands-of-egypt.svg"
+        },
+        {
+            "id": "100-11",
+            "name": "The Eternal Slumber",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/guardians-of-the-abyss/the-eternal-slumber.svg"
+        },
+        {
+            "id": "100-12",
+            "name": "The Night's Usurper",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/guardians-of-the-abyss/the-nights-usurper.svg"
+        },
+        {
+            "id": "100-13",
+            "name": "Murder at the Excelsior Hotel",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/murder-at-the-excelsior-hotel/murder-at-the-excelsior-hotel.svg"
+        },
+        {
+            "id": "100-14",
+            "name": "Alien Interference",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/murder-at-the-excelsior-hotel/alien-interference.svg"
+        },
+        {
+            "id": "100-15",
+            "name": "Dark Rituals",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/murder-at-the-excelsior-hotel/dark-rituals.svg"
+        },
+        {
+            "id": "100-16",
+            "name": "Excelsior Management",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/murder-at-the-excelsior-hotel/excelsior-management.svg"
+        },
+        {
+            "id": "100-17",
+            "name": "Sins of the Past",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/murder-at-the-excelsior-hotel/sins-of-the-past.svg"
+        },
+        {
+            "id": "100-18",
+            "name": "Vile Experiments",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/murder-at-the-excelsior-hotel/vile-experiments.svg"
+        },
+        {
+            "id": "100-19",
+            "name": "The Blob that Ate Everything",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-blob-that-ate-everything/the-blob-that-ate-everything.svg"
+        },
+        {
+            "id": "100-2",
+            "name": "The Bayou",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/curse-of-the-rougarou/the-bayou.svg"
+        },
+        {
+            "id": "100-20",
+            "name": "Epic Multiplayer (The Blob that Ate Everything)",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-blob-that-ate-everything/epic-multiplayer.svg"
+        },
+        {
+            "id": "100-21",
+            "name": "Single Group (The Blob that Ate Everything)",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-blob-that-ate-everything/single-group.svg"
+        },
+        {
+            "id": "100-22",
+            "name": "Mi-Go Incursion",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-blob-that-ate-everything/mi-go-incursion.svg"
+        },
+        {
+            "id": "100-23",
+            "name": "War of the Outer Gods",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/war-of-the-outer-gods/war-of-the-outer-gods.svg"
+        },
+        {
+            "id": "100-24",
+            "name": "Children of Paradise",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/war-of-the-outer-gods/children-of-paradise.svg"
+        },
+        {
+            "id": "100-25",
+            "name": "Swarm of Assimilation",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/war-of-the-outer-gods/swarm-of-assimilation.svg"
+        },
+        {
+            "id": "100-26",
+            "name": "Death of Stars",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/war-of-the-outer-gods/death-of-stars.svg"
+        },
+        {
+            "id": "100-27",
+            "name": "Machinations Through Time",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/machinations-through-time/machinations-through-time.svg"
+        },
+        {
+            "id": "100-28",
+            "name": "Epic Multiplayer (Machinations Through Time)",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/machinations-through-time/epic-multiplayer.svg"
+        },
+        {
+            "id": "100-29",
+            "name": "Single Group (Machinations Through Time)",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/machinations-through-time/single-group.svg"
+        },
+        {
+            "id": "100-3",
+            "name": "Carnevale of Horrors",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/carnevale-of-horrors/carnevale-of-horrors.svg"
+        },
+        {
+            "id": "100-30",
+            "name": "The Meddling of Meowlathotep",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/barkham-horror/the-meddling-of-meowlathotep.svg"
+        },
+        {
+            "id": "100-4",
+            "name": "The Labyrinths of Lunacy",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-labyrinths-of-lunacy/the-labyrinths-of-lunacy.svg"
+        },
+        {
+            "id": "100-5",
+            "name": "Epic Multiplayer (The Labyrinths of Lunacy)",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-labyrinths-of-lunacy/epic-multiplayer.svg"
+        },
+        {
+            "id": "100-6",
+            "name": "Single Group (The Labyrinths of Lunacy)",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-labyrinths-of-lunacy/single-group.svg"
+        },
+        {
+            "id": "100-7",
+            "name": "Abyssal Gifts",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/guardians-of-the-abyss/abyssal-gifts.svg"
+        },
+        {
+            "id": "100-8",
+            "name": "Abyssal Tribute",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/guardians-of-the-abyss/abyssal-tribute.svg"
+        },
+        {
+            "id": "100-9",
+            "name": "Brotherhood of the Beast",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/guardians-of-the-abyss/brotherhood-of-the-beast.svg"
+        },
+        {
+            "id": "1-1r",
+            "name": "Return to The Gathering",
+            "expansionCode": "return-to-night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-night-of-the-zealot/return-to-the-gathering.svg"
+        },
+        {
+            "id": "1-2r",
+            "name": "Return to The Midnight Masks",
+            "expansionCode": "return-to-night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-night-of-the-zealot/return-to-the-midnight-masks.svg"
+        },
+        {
+            "id": "1-3r",
+            "name": "Return to The Devourer Below",
+            "expansionCode": "return-to-night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-night-of-the-zealot/return-to-the-devourer-below.svg"
+        },
+        {
+            "id": "1-4r",
+            "name": "Return Cult of Umôrdhoth",
+            "expansionCode": "return-to-night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-night-of-the-zealot/return-cult-of-umordhoth.svg"
+        },
+        {
+            "id": "1-5r",
+            "name": "Ghouls of Umôrdhoth",
+            "expansionCode": "return-to-night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-night-of-the-zealot/ghouls-of-umordhoth.svg"
+        },
+        {
+            "id": "1-6r",
+            "name": "The Devourer's Cult",
+            "expansionCode": "return-to-night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-night-of-the-zealot/the-devourers-cult.svg"
+        },
+        {
+            "id": "4-1",
+            "name": "Agents of Yig",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/agents-of-yig.svg"
+        },
+        {
+            "id": "4-10",
+            "name": "Poison",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/poison.svg"
+        },
+        {
+            "id": "4-11",
+            "name": "Rainforest",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/rainforest.svg"
+        },
+        {
+            "id": "4-12",
+            "name": "Serpents",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/serpents.svg"
+        },
+        {
+            "id": "4-13",
+            "name": "Shattered Aeons",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/shattered-aeons.svg"
+        },
+        {
+            "id": "4-14",
+            "name": "Temporal Flux",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/temporal-flux.svg"
+        },
+        {
+            "id": "4-15",
+            "name": "The Boundary Beyond",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/the-boundary-beyond.svg"
+        },
+        {
+            "id": "4-16",
+            "name": "The City of Archives",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/the-city-of-archives.svg"
+        },
+        {
+            "id": "4-17",
+            "name": "The Depths of Yoth",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/the-depths-of-yoth.svg"
+        },
+        {
+            "id": "4-18",
+            "name": "The Doom of Eztli",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/the-doom-of-eztli.svg"
+        },
+        {
+            "id": "4-19",
+            "name": "The Untamed Wilds",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/the-untamed-wilds.svg"
+        },
+        {
+            "id": "4-2",
+            "name": "Deadly Traps",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/deadly-traps.svg"
+        },
+        {
+            "id": "4-20",
+            "name": "Threads of Fate",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/threads-of-fate.svg"
+        },
+        {
+            "id": "4-21",
+            "name": "Turn Back Time",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/turn-back-time.svg"
+        },
+        {
+            "id": "4-22",
+            "name": "Yig's Venom",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/yigs-venom.svg"
+        },
+        {
+            "id": "4-3",
+            "name": "Expedition",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/expedition.svg"
+        },
+        {
+            "id": "4-4",
+            "name": "Forgotten Ruins",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/forgotten-ruins.svg"
+        },
+        {
+            "id": "4-5",
+            "name": "Guardians of Time",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/guardians-of-time.svg"
+        },
+        {
+            "id": "4-6",
+            "name": "Heart of the Elders",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/heart-of-the-elders.svg"
+        },
+        {
+            "id": "4-7",
+            "name": "K'n-yan",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/kn-yan.svg"
+        },
+        {
+            "id": "4-8",
+            "name": "Pillars of Judgement",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/pillars-of-judgement.svg"
+        },
+        {
+            "id": "4-9",
+            "name": "Pnakotic Brotherhood",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/pnakotic-brotherhood.svg"
+        },
+        {
+            "id": "1-1",
+            "name": "The Gathering",
+            "expansionCode": "night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/the-gathering.svg"
+        },
+        {
+            "id": "1-10",
+            "name": "Dark Cult",
+            "expansionCode": "night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/dark-cult.svg"
+        },
+        {
+            "id": "1-11",
+            "name": "Nightgaunts",
+            "expansionCode": "night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/nightgaunts.svg"
+        },
+        {
+            "id": "1-12",
+            "name": "Locked Doors",
+            "expansionCode": "night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/locked-doors.svg"
+        },
+        {
+            "id": "1-13",
+            "name": "Agents of Hastur",
+            "expansionCode": "night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/agents-of-hastur.svg"
+        },
+        {
+            "id": "1-14",
+            "name": "Agents of Yog-Sothoth",
+            "expansionCode": "night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/agents-of-yog-sothoth.svg"
+        },
+        {
+            "id": "1-15",
+            "name": "Agents of Shub Niggurath",
+            "expansionCode": "night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/agents-of-shub-niggurath.svg"
+        },
+        {
+            "id": "1-16",
+            "name": "Agenths of Cthulhu",
+            "expansionCode": "night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/agents-of-cthulhu.svg"
+        },
+        {
+            "id": "1-2",
+            "name": "The Midnight Masks",
+            "expansionCode": "night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/the-midnight-masks.svg"
+        },
+        {
+            "id": "1-3",
+            "name": "The Devourer Below",
+            "expansionCode": "night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/the-devourer-below.svg"
+        },
+        {
+            "id": "1-4",
+            "name": "Cult of Umôrdhoth",
+            "expansionCode": "night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/cult-of-umordhoth.svg"
+        },
+        {
+            "id": "1-5",
+            "name": "Rats",
+            "expansionCode": "night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/rats.svg"
+        },
+        {
+            "id": "1-6",
+            "name": "Ghouls",
+            "expansionCode": "night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/ghouls.svg"
+        },
+        {
+            "id": "1-7",
+            "name": "Striking Fear",
+            "expansionCode": "night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/striking-fear.svg"
+        },
+        {
+            "id": "1-8",
+            "name": "Ancient Evils",
+            "expansionCode": "night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/ancient-evils.svg"
+        },
+        {
+            "id": "1-9",
+            "name": "Chilling Cold",
+            "expansionCode": "night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/chilling-cold.svg"
+        },
+        {
+            "id": "3-1",
+            "name": "Curtain Call",
+            "expansionCode": "the-path-to-carcosa",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/curtain-call.svg"
+        },
+        {
+            "id": "3-10",
+            "name": "Delusions",
+            "expansionCode": "the-path-to-carcosa",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/delusions.svg"
+        },
+        {
+            "id": "3-11",
+            "name": "Hauntings",
+            "expansionCode": "the-path-to-carcosa",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/hauntings.svg"
+        },
+        {
+            "id": "3-12",
+            "name": "Cult of the Yellow Sign",
+            "expansionCode": "the-path-to-carcosa",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/cult-of-the-yellow-sign.svg"
+        },
+        {
+            "id": "3-13",
+            "name": "Hastur's Gift",
+            "expansionCode": "the-path-to-carcosa",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/hasturs-gift.svg"
+        },
+        {
+            "id": "3-14",
+            "name": "Decay & Filth",
+            "expansionCode": "the-path-to-carcosa",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/decay-and-filth.svg"
+        },
+        {
+            "id": "3-15",
+            "name": "The Stranger",
+            "expansionCode": "the-path-to-carcosa",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/the-stranger.svg"
+        },
+        {
+            "id": "3-16",
+            "name": "Inhabitants of Carcosa",
+            "expansionCode": "the-path-to-carcosa",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/inhabitants-of-carcosa.svg"
+        },
+        {
+            "id": "3-17",
+            "name": "Byakhee",
+            "expansionCode": "the-path-to-carcosa",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/byakhee.svg"
+        },
+        {
+            "id": "3-18",
+            "name": "The Vortex Above",
+            "expansionCode": "the-path-to-carcosa",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/the-vortex-above.svg"
+        },
+        {
+            "id": "3-19",
+            "name": "The Flood Below",
+            "expansionCode": "the-path-to-carcosa",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/the-flood-below.svg"
+        },
+        {
+            "id": "3-2",
+            "name": "The Last King",
+            "expansionCode": "the-path-to-carcosa",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/the-last-king.svg"
+        },
+        {
+            "id": "3-3",
+            "name": "Echoes of the Past",
+            "expansionCode": "the-path-to-carcosa",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/echoes-of-the-past.svg"
+        },
+        {
+            "id": "3-4",
+            "name": "The Unspeakable Oath",
+            "expansionCode": "the-path-to-carcosa",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/the-unspeakable-oath.svg"
+        },
+        {
+            "id": "3-5",
+            "name": "A Phantom of Truth",
+            "expansionCode": "the-path-to-carcosa",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/a-phantom-of-truth.svg"
+        },
+        {
+            "id": "3-6",
+            "name": "The Pallid Mask",
+            "expansionCode": "the-path-to-carcosa",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/the-pallid-mask.svg"
+        },
+        {
+            "id": "3-7",
+            "name": "Black Stars Rise",
+            "expansionCode": "the-path-to-carcosa",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/black-stars-rise.svg"
+        },
+        {
+            "id": "3-8",
+            "name": "Dim Carcosa",
+            "expansionCode": "the-path-to-carcosa",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/dim-carcosa.svg"
+        },
+        {
+            "id": "3-9",
+            "name": "Evil Portents",
+            "expansionCode": "the-path-to-carcosa",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/evil-portents.svg"
+        },
+        {
+            "id": "6-1",
+            "name": "A Thousand Shapes of Horror",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/a-thousand-shapes-of-horror.svg"
+        },
+        {
+            "id": "6-10",
+            "name": "Dreamlands",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/dreamlands.svg"
+        },
+        {
+            "id": "6-11",
+            "name": "Merging Realities",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/merging-realities.svg"
+        },
+        {
+            "id": "6-12",
+            "name": "Point of No Return",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/point-of-no-return.svg"
+        },
+        {
+            "id": "6-13",
+            "name": "Spiders",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/spiders.svg"
+        },
+        {
+            "id": "6-14",
+            "name": "Terror of the Vale",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/terror-of-the-vale.svg"
+        },
+        {
+            "id": "6-15",
+            "name": "The Search for Kadath",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/the-search-for-kadath.svg"
+        },
+        {
+            "id": "6-16",
+            "name": "Waking Nightmare",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/waking-nightmare.svg"
+        },
+        {
+            "id": "6-17",
+            "name": "Weaver of the Cosmos",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/weaver-of-the-cosmos.svg"
+        },
+        {
+            "id": "6-18",
+            "name": "Where the Gods Dwell",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/where-the-gods-dwell.svg"
+        },
+        {
+            "id": "6-19",
+            "name": "Whispers of Hypnos",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/whispers-of-hypnos.svg"
+        },
+        {
+            "id": "6-2",
+            "name": "Agents of Atlach-Nacha",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/agents-of-atlach-nacha.svg"
+        },
+        {
+            "id": "6-20",
+            "name": "Zoogs",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/zoogs.svg"
+        },
+        {
+            "id": "6-3",
+            "name": "Agents of Nyarlathotep",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/agents-of-nyarlathotep.svg"
+        },
+        {
+            "id": "6-4",
+            "name": "Beyond the Gates of Sleep",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/beyond-the-gates-of-sleep.svg"
+        },
+        {
+            "id": "6-5",
+            "name": "Corsairs",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/corsairs.svg"
+        },
+        {
+            "id": "6-6",
+            "name": "Creatures of the Underworld",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/creatures-of-the-underworld.svg"
+        },
+        {
+            "id": "6-7",
+            "name": "Dark Side of the Moon",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/dark-side-of-the-moon.svg"
+        },
+        {
+            "id": "6-8",
+            "name": "Descent into the Pitch",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/descent-into-the-pitch.svg"
+        },
+        {
+            "id": "6-9",
+            "name": "Dreamer's Curse",
+            "expansionCode": "the-dream-eaters",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/dreamers-curse.svg"
+        },
+        {
+            "id": "7-1",
+            "name": "A Light in the Fog",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/a-light-in-the-fog.svg"
+        },
+        {
+            "id": "7-10",
+            "name": "Into the Maelstrom",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/into-the-maelstrom.svg"
+        },
+        {
+            "id": "7-11",
+            "name": "Malfunction",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/malfunction.svg"
+        },
+        {
+            "id": "7-12",
+            "name": "Rising Tide",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/rising-tide.svg"
+        },
+        {
+            "id": "7-13",
+            "name": "Shattered Memories",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/shattered-memories.svg"
+        },
+        {
+            "id": "7-14",
+            "name": "Syzygy",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/syzygy.svg"
+        },
+        {
+            "id": "7-15",
+            "name": "The Lair of Dagon",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/the-lair-of-dagon.svg"
+        },
+        {
+            "id": "7-16",
+            "name": "The Locals",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/the-locals.svg"
+        },
+        {
+            "id": "7-17",
+            "name": "The Pit of Despair",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/the-pit-of-despair.svg"
+        },
+        {
+            "id": "7-18",
+            "name": "The Vanishing of Elina Harper",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/the-vanishing-of-elina-harper.svg"
+        },
+        {
+            "id": "7-2",
+            "name": "Agents of Dagon",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/agents-of-dagon.svg"
+        },
+        {
+            "id": "7-3",
+            "name": "Agents of Hydra",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/agents-of-hydra.svg"
+        },
+        {
+            "id": "7-4",
+            "name": "Creatures of the Deep",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/creatures-of-the-deep.svg"
+        },
+        {
+            "id": "7-5",
+            "name": "Devil Reef",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/devil-reef.svg"
+        },
+        {
+            "id": "7-6",
+            "name": "Flooded Caverns",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/flooded-caverns.svg"
+        },
+        {
+            "id": "7-7",
+            "name": "Fog over Innsmouth",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/fog-over-innsmouth.svg"
+        },
+        {
+            "id": "7-8",
+            "name": "Horror in High Gear",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/horror-in-high-gear.svg"
+        },
+        {
+            "id": "7-9",
+            "name": "In Too Deep",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/in-too-deep.svg"
+        }
+    ]
+}

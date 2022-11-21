@@ -1,0 +1,11 @@
+{
+    "id": "4-5",
+    "name": "Calvin Wright",
+    "expansionCode": "the-forgotten-age",
+    "portrait": "",
+    "mainClass": "Survivor",
+    "health": 6,
+    "sanity": 6,
+    "products": [
+    ]
+}

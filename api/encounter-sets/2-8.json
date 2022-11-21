@@ -1,0 +1,21 @@
+{
+    "id": "2-8",
+    "name": "Lost in Time and Space",
+    "expansionCode": "the-dunwich-legacy",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/lost-in-time-and-space.svg",
+    "replaces": null,
+    "products": [
+        {
+            "id": "2-7",
+            "name": "Lost in Time and Space",
+            "expansionCode": "the-dunwich-legacy",
+            "productType": "Mythos Pack"
+        },
+        {
+            "id": "2-8",
+            "name": "The Dunwich Legacy: Campaign Expansion",
+            "expansionCode": "the-dunwich-legacy",
+            "productType": "Campaign Expansion"
+        }
+    ]
+}

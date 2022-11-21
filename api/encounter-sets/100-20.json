@@ -1,0 +1,15 @@
+{
+    "id": "100-20",
+    "name": "Epic Multiplayer (The Blob that Ate Everything)",
+    "expansionCode": "standalone",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-blob-that-ate-everything/epic-multiplayer.svg",
+    "replaces": null,
+    "products": [
+        {
+            "id": "100-6",
+            "name": "The Blob That Ate Everything",
+            "expansionCode": "standalone",
+            "productType": "Scenario Pack"
+        }
+    ]
+}

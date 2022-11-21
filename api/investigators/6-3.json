@@ -1,0 +1,11 @@
+{
+    "id": "6-3",
+    "name": "Tony Morgan",
+    "expansionCode": "the-dream-eaters",
+    "portrait": "",
+    "mainClass": "Rogue",
+    "health": 9,
+    "sanity": 5,
+    "products": [
+    ]
+}

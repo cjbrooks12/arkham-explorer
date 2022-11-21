@@ -1,0 +1,15 @@
+{
+    "id": "100-15",
+    "name": "Dark Rituals",
+    "expansionCode": "standalone",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/murder-at-the-excelsior-hotel/dark-rituals.svg",
+    "replaces": null,
+    "products": [
+        {
+            "id": "100-5",
+            "name": "Murder at the Excelsior Hotel",
+            "expansionCode": "standalone",
+            "productType": "Scenario Pack"
+        }
+    ]
+}

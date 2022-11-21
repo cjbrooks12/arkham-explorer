@@ -1,0 +1,769 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Arkham Explorer",
+        "version": "1.0",
+        "contact": {
+            "name": "Casey Brooks",
+            "url": "https://github.com/cjbrooks12/arkham-explorer/issues"
+        },
+        "license": {
+            "name": "BSD-3.0",
+            "url": "https://github.com/cjbrooks12/arkham-explorer/blob/main/LICENSE.md"
+        }
+    },
+    "servers": [
+        {
+            "description": "Localhost",
+            "url": "http://localhost:8080"
+        },
+        {
+            "description": "Production",
+            "url": "https://cjbrooks12.github.io/arkham-explorer/"
+        }
+    ],
+    "paths": {
+        "/api/expansions.json": {
+            "parameters": [],
+            "get": {
+                "summary": "List Expansions",
+                "description": "Get a list of Expansions and other similar content for Arkham Horror: The Card Game.",
+                "tags": ["api", "expansions"],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/expansions/{expansionId}.json": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "expansionId",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "Expansion Details",
+                "description": "Get all details for an Expansion.",
+                "tags": ["api", "expansions"],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/expansions/{expansionId}/scenarios.json": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "expansionId",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "Expansion Scenarios",
+                "description": "List Scenarios available for an Expansion.",
+                "tags": ["api", "expansions", "scenarios"],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/expansions/{expansionId}/encounter-sets.json": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "expansionId",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "Expansion Encounter Sets",
+                "description": "List encounter sets for an Expansion",
+                "tags": ["api", "expansions", "encounter sets"],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/expansions/{expansionId}/investigators.json": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "expansionId",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "Expansion Investigators",
+                "description": "List Investigators for an Expansion",
+                "tags": ["api", "expansions", "investigators"],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/expansions/{expansionId}/products.json": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "expansionId",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "Expansion Products",
+                "description": "List the products and variants available for purchasing the content of an Expansion.",
+                "tags": ["api", "expansions", "products"],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+
+        "/api/scenarios.json": {
+            "get": {
+                "summary": "List Scenarios",
+                "description": "List all Scenarios from all Expansions.",
+                "tags": ["api", "scenarios"],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/scenarios/{scenarioId}.json": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "scenarioId",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "Scenario Details",
+                "description": "Get details for a single Scenario.",
+                "tags": ["api", "scenarios"],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+
+        "/api/encounter-sets.json": {
+            "get": {
+                "summary": "List Encounter Sets",
+                "description": "List all Encounter Sets from all Expansions.",
+                "tags": ["api", "encounter sets"],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/encounter-sets/{encounterSetId}.json": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "encounterSetId",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "Encounter Set Details",
+                "description": "Get details for a single Encounter Set.",
+                "tags": ["api", "encounter sets"],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+
+        "/api/investigators.json": {
+            "get": {
+                "summary": "List Investigators",
+                "description": "List all Investigators from all Expansions",
+                "tags": ["api", "investigators"],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/investigators/{investigatorsId}.json": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "investigatorsId",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "Investigator Details",
+                "description": "Get details for a single Investigator.",
+                "tags": ["api", "investigators"],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+
+        "/api/products.json": {
+            "get": {
+                "summary": "List Products",
+                "description": "List all Products from all Expansions.",
+                "tags": ["api", "products"],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/products/{productId}.json": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "productId",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "Product Details",
+                "description": "Get details for a single Product.",
+                "tags": ["api", "products"],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+
+        "/assets/{expansionId}.{format}": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "expansionId",
+                    "in": "path",
+                    "required": true
+                },
+                {
+                    "schema": {
+                        "type": "string",
+                        "enum": ["svg", "png"]
+                    },
+                    "name": "format",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "Expansion Icon",
+                "description": "Get the icon representing an expansion/campaign/cycle.",
+                "tags": ["assets", "expansions"],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/assets/{size}/{expansionId}.png": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "integer",
+                        "enum": [24, 48, 64, 128, 256, 512, 1024]
+                    },
+                    "name": "size",
+                    "in": "path",
+                    "required": true
+                },
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "expansionId",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "Expansion Icon",
+                "description": "Get the icon representing an expansion/campaign/cycle.",
+                "tags": ["assets", "expansions"],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/assets/{expansionId}/{scenarioId}.{format}": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "expansionId",
+                    "in": "path",
+                    "required": true
+                },
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "scenarioId",
+                    "in": "path",
+                    "required": true
+                },
+                {
+                    "schema": {
+                        "type": "string",
+                        "enum": ["svg", "png"]
+                    },
+                    "name": "format",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "Scenario Icon",
+                "description": "Get the icon representing a Scenario.",
+                "tags": ["assets", "scenarios"],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/assets/{size}/{expansionId}/{scenarioId}.png": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "expansionId",
+                    "in": "path",
+                    "required": true
+                },
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "scenarioId",
+                    "in": "path",
+                    "required": true
+                },
+                {
+                    "schema": {
+                        "type": "integer",
+                        "enum": [24, 48, 64, 128, 256, 512, 1024]
+                    },
+                    "name": "size",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "Scenario Icon",
+                "description": "Get the icon representing a Scenario.",
+                "tags": ["assets", "scenarios"],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/assets/{expansionId}/{encounterSetId}.{format}": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "expansionId",
+                    "in": "path",
+                    "required": true
+                },
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "encounterSetId",
+                    "in": "path",
+                    "required": true
+                },
+                {
+                    "schema": {
+                        "type": "string",
+                        "enum": ["svg", "png"]
+                    },
+                    "name": "format",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "Encounter Set Icon",
+                "description": "Get the icon representing n Encounter Set.",
+                "tags": ["assets", "encounter sets"],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/assets/{size}/{expansionId}/{encounterSetId}.png": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "expansionId",
+                    "in": "path",
+                    "required": true
+                },
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "encounterSetId",
+                    "in": "path",
+                    "required": true
+                },
+                {
+                    "schema": {
+                        "type": "integer",
+                        "enum": [24, 48, 64, 128, 256, 512, 1024]
+                    },
+                    "name": "size",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "Encounter Set Icon",
+                "description": "Get the icon representing n Encounter Set.",
+                "tags": ["assets", "encounter sets"],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+
+        "/assets/icons/actions/{action}.{format}": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string",
+                        "enum": ["action", "free-action", "reaction"]
+                    },
+                    "name": "action",
+                    "in": "path",
+                    "required": true
+                },
+                {
+                    "schema": {
+                        "type": "string",
+                        "enum": ["svg", "png"]
+                    },
+                    "name": "format",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "Action Icon",
+                "description": "Get the icon for Actions, Free Actions, or Reactions",
+                "tags": ["assets", "icons"],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/assets/{size}/icons/actions/{action}.png": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string",
+                        "enum": ["action", "free-action", "reaction"]
+                    },
+                    "name": "action",
+                    "in": "path",
+                    "required": true
+                },
+                {
+                    "schema": {
+                        "type": "integer",
+                        "enum": [24, 48, 64, 128, 256, 512, 1024]
+                    },
+                    "name": "size",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "Action Icon",
+                "description": "Get the icon for Actions, Free Actions, or Reactions",
+                "tags": ["assets", "icons"],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+
+        "/assets/icons/chaos/{tokenType}.{format}": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string",
+                        "enum": ["auto-fail", "cultist", "elder-sign", "elder-thing", "skull", "tablet"]
+                    },
+                    "name": "tokenType",
+                    "in": "path",
+                    "required": true
+                },
+                {
+                    "schema": {
+                        "type": "string",
+                        "enum": ["svg", "png"]
+                    },
+                    "name": "format",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "Chaos Token Icon",
+                "description": "Get the icon for special Chaos Tokens",
+                "tags": ["assets", "icons"],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/assets/{size}/icons/chaos/{tokenType}.png": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string",
+                        "enum": ["auto-fail", "cultist", "elder-sign", "elder-thing", "skull", "tablet"]
+                    },
+                    "name": "tokenType",
+                    "in": "path",
+                    "required": true
+                },
+                {
+                    "schema": {
+                        "type": "integer",
+                        "enum": [24, 48, 64, 128, 256, 512, 1024]
+                    },
+                    "name": "size",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "Chaos Token Icon",
+                "description": "Get the icon for special Chaos Tokens",
+                "tags": ["assets", "icons"],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+
+        "/assets/icons/classes/{class}.{format}": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string",
+                        "enum": ["guardian", "mystic", "rogue", "seeker", "survivor"]
+                    },
+                    "name": "class",
+                    "in": "path",
+                    "required": true
+                },
+                {
+                    "schema": {
+                        "type": "string",
+                        "enum": ["svg", "png"]
+                    },
+                    "name": "format",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "Class Icon",
+                "description": "Get the icon for a Class",
+                "tags": ["assets", "icons"],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/assets/{size}/icons/classes/{class}.png": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string",
+                        "enum": ["guardian", "mystic", "rogue", "seeker", "survivor"]
+                    },
+                    "name": "class",
+                    "in": "path",
+                    "required": true
+                },
+                {
+                    "schema": {
+                        "type": "integer",
+                        "enum": [24, 48, 64, 128, 256, 512, 1024]
+                    },
+                    "name": "size",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "Class Icon",
+                "description": "Get the icon for a Class",
+                "tags": ["assets", "icons"],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+
+        "/assets/icons/skills/{skill}.{format}": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string",
+                        "enum": ["willpower", "intellect", "combat", "agility"]
+                    },
+                    "name": "skill",
+                    "in": "path",
+                    "required": true
+                },
+                {
+                    "schema": {
+                        "type": "string",
+                        "enum": ["svg", "png"]
+                    },
+                    "name": "format",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "Skill Icon",
+                "description": "Get the icon for a Skill",
+                "tags": ["assets", "icons"],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/assets/{size}/icons/skills/{skill}.png": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string",
+                        "enum": ["willpower", "intellect", "combat", "agility"]
+                    },
+                    "name": "skill",
+                    "in": "path",
+                    "required": true
+                },
+                {
+                    "schema": {
+                        "type": "integer",
+                        "enum": [24, 48, 64, 128, 256, 512, 1024]
+                    },
+                    "name": "size",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "Skill Icon",
+                "description": "Get the icon for a Skill",
+                "tags": ["assets", "icons"],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        }
+    }
+}

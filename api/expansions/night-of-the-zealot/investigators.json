@@ -1,0 +1,39 @@
+{
+    "investigators": [
+        {
+            "id": "1-1",
+            "name": "Roland Banks",
+            "expansionCode": "night-of-the-zealot",
+            "portrait": "",
+            "mainClass": "Guardian"
+        },
+        {
+            "id": "1-2",
+            "name": "Daisy Walker",
+            "expansionCode": "night-of-the-zealot",
+            "portrait": "",
+            "mainClass": "Seeker"
+        },
+        {
+            "id": "1-3",
+            "name": "\"Skids\" O'Toole",
+            "expansionCode": "night-of-the-zealot",
+            "portrait": "",
+            "mainClass": "Rogue"
+        },
+        {
+            "id": "1-4",
+            "name": "Agnes Baker",
+            "expansionCode": "night-of-the-zealot",
+            "portrait": "",
+            "mainClass": "Mystic"
+        },
+        {
+            "id": "1-5",
+            "name": "Wendy Adams",
+            "expansionCode": "night-of-the-zealot",
+            "portrait": "",
+            "mainClass": "Survivor"
+        }
+    ]
+}

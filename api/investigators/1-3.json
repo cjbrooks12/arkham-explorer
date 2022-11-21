@@ -1,0 +1,23 @@
+{
+    "id": "1-3",
+    "name": "\"Skids\" O'Toole",
+    "expansionCode": "night-of-the-zealot",
+    "portrait": "",
+    "mainClass": "Rogue",
+    "health": 8,
+    "sanity": 6,
+    "products": [
+        {
+            "id": "1-1",
+            "name": "Core Set",
+            "expansionCode": "night-of-the-zealot",
+            "productType": "Core Set"
+        },
+        {
+            "id": "1-2",
+            "name": "Revised Core Set",
+            "expansionCode": "night-of-the-zealot",
+            "productType": "Core Set"
+        }
+    ]
+}

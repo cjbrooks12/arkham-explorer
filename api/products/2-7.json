@@ -1,0 +1,26 @@
+{
+    "id": "2-7",
+    "name": "Lost in Time and Space",
+    "expansionCode": "the-dunwich-legacy",
+    "productType": "Mythos Pack",
+    "releaseDate": "2017-07-06",
+    "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/lost-time-and-space/",
+    "scenarios": [
+        {
+            "id": "2-8",
+            "name": "Lost in Time and Space",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/lost-in-time-and-space.svg"
+        }
+    ],
+    "encounterSets": [
+        {
+            "id": "2-8",
+            "name": "Lost in Time and Space",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/lost-in-time-and-space.svg"
+        }
+    ],
+    "investigators": [
+    ]
+}

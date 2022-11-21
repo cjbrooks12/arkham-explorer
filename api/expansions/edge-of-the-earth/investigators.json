@@ -1,0 +1,39 @@
+{
+    "investigators": [
+        {
+            "id": "8-1",
+            "name": "Daniela Reyes",
+            "expansionCode": "edge-of-the-earth",
+            "portrait": "",
+            "mainClass": "Guardian"
+        },
+        {
+            "id": "8-2",
+            "name": "Norman Withers",
+            "expansionCode": "edge-of-the-earth",
+            "portrait": "",
+            "mainClass": "Seeker"
+        },
+        {
+            "id": "8-3",
+            "name": "Monterey Jack",
+            "expansionCode": "edge-of-the-earth",
+            "portrait": "",
+            "mainClass": "Rogue"
+        },
+        {
+            "id": "8-4",
+            "name": "Lily Chen",
+            "expansionCode": "edge-of-the-earth",
+            "portrait": "",
+            "mainClass": "Mystic"
+        },
+        {
+            "id": "8-5",
+            "name": "Bob Jenkins",
+            "expansionCode": "edge-of-the-earth",
+            "portrait": "",
+            "mainClass": "Survivor"
+        }
+    ]
+}

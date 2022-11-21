@@ -1,0 +1,18 @@
+{
+    "id": "7-1",
+    "name": "The Pit of Despair",
+    "expansionCode": "the-innnsmouth-conspiracy",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/the-pit-of-despair.svg",
+    "encounterSets": [
+    ],
+    "chaosBag": [
+    ],
+    "referenceCard": [
+    ],
+    "products": [
+    ],
+    "nextScenario": [
+    ],
+    "campaignLogSchema": null,
+    "campaignLogUiSchema": null
+}

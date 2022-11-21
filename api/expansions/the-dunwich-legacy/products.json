@@ -1,0 +1,58 @@
+{
+    "products": [
+        {
+            "id": "2-1",
+            "name": "The Dunwich Legacy: Deluxe Expansion",
+            "expansionCode": "the-dunwich-legacy",
+            "productType": "Deluxe Expansion"
+        },
+        {
+            "id": "2-2",
+            "name": "The Miskatonic Museum",
+            "expansionCode": "the-dunwich-legacy",
+            "productType": "Mythos Pack"
+        },
+        {
+            "id": "2-3",
+            "name": "The Essex County Express",
+            "expansionCode": "the-dunwich-legacy",
+            "productType": "Mythos Pack"
+        },
+        {
+            "id": "2-4",
+            "name": "Blood on the Altar",
+            "expansionCode": "the-dunwich-legacy",
+            "productType": "Mythos Pack"
+        },
+        {
+            "id": "2-5",
+            "name": "Undimensioned and Unseen",
+            "expansionCode": "the-dunwich-legacy",
+            "productType": "Mythos Pack"
+        },
+        {
+            "id": "2-6",
+            "name": "Where Doom Awaits",
+            "expansionCode": "the-dunwich-legacy",
+            "productType": "Mythos Pack"
+        },
+        {
+            "id": "2-7",
+            "name": "Lost in Time and Space",
+            "expansionCode": "the-dunwich-legacy",
+            "productType": "Mythos Pack"
+        },
+        {
+            "id": "2-8",
+            "name": "The Dunwich Legacy: Campaign Expansion",
+            "expansionCode": "the-dunwich-legacy",
+            "productType": "Campaign Expansion"
+        },
+        {
+            "id": "2-9",
+            "name": "The Dunwich Legacy: Investigator Expansion",
+            "expansionCode": "the-dunwich-legacy",
+            "productType": "Investigator Expansion"
+        }
+    ]
+}

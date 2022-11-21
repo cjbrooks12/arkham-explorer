@@ -1,0 +1,52 @@
+{
+    "scenarios": [
+        {
+            "id": "2-1",
+            "name": "Extracurricular Activity",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/extracurricular-activity.svg"
+        },
+        {
+            "id": "2-2",
+            "name": "The House Always Wins",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/the-house-always-wins.svg"
+        },
+        {
+            "id": "2-3",
+            "name": "The Miskatonic Museum",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/the-miskatonic-museum.svg"
+        },
+        {
+            "id": "2-4",
+            "name": "The Essex County Express",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/the-essex-county-express.svg"
+        },
+        {
+            "id": "2-5",
+            "name": "Blood on the Altar",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/blood-on-the-altar.svg"
+        },
+        {
+            "id": "2-6",
+            "name": "Undimensioned and Unseen",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/undimensioned-and-unseen.svg"
+        },
+        {
+            "id": "2-7",
+            "name": "Where Doom Awaits",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/where-doom-awaits.svg"
+        },
+        {
+            "id": "2-8",
+            "name": "Lost in Time and Space",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/lost-in-time-and-space.svg"
+        }
+    ]
+}

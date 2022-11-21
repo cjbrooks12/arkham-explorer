@@ -1,0 +1,133 @@
+{
+    "id": "2-1",
+    "name": "The Dunwich Legacy: Deluxe Expansion",
+    "expansionCode": "the-dunwich-legacy",
+    "productType": "Deluxe Expansion",
+    "releaseDate": "2017-01-12",
+    "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/dunwich-legacy/",
+    "scenarios": [
+        {
+            "id": "2-1",
+            "name": "Extracurricular Activity",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/extracurricular-activity.svg"
+        },
+        {
+            "id": "2-2",
+            "name": "The House Always Wins",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/the-house-always-wins.svg"
+        }
+    ],
+    "encounterSets": [
+        {
+            "id": "2-1",
+            "name": "Extracurricular Activity",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/extracurricular-activity.svg"
+        },
+        {
+            "id": "2-2",
+            "name": "The House Always Wins",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/the-house-always-wins.svg"
+        },
+        {
+            "id": "2-9",
+            "name": "Armitage's Fate",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/armitages-fate.svg"
+        },
+        {
+            "id": "2-10",
+            "name": "Sorcery",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/sorcery.svg"
+        },
+        {
+            "id": "2-11",
+            "name": "Bishop's Thralls",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/bishops-thralls.svg"
+        },
+        {
+            "id": "2-12",
+            "name": "Dunwich",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/dunwich.svg"
+        },
+        {
+            "id": "2-13",
+            "name": "Whippoorwills",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/whippoorwills.svg"
+        },
+        {
+            "id": "2-14",
+            "name": "Bad Luck",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/bad-luck.svg"
+        },
+        {
+            "id": "2-15",
+            "name": "Beast Thralls",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/beast-thralls.svg"
+        },
+        {
+            "id": "2-16",
+            "name": "Naomi's Crew",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/naomis-crew.svg"
+        },
+        {
+            "id": "2-17",
+            "name": "The Beyond",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/the-beyond.svg"
+        },
+        {
+            "id": "2-18",
+            "name": "Hideous Abominations",
+            "expansionCode": "the-dunwich-legacy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/hideous-abominations.svg"
+        }
+    ],
+    "investigators": [
+        {
+            "id": "2-1",
+            "name": "Zoey Samaras",
+            "expansionCode": "the-dunwich-legacy",
+            "portrait": "",
+            "mainClass": "Guardian"
+        },
+        {
+            "id": "2-2",
+            "name": "Rex Murphy",
+            "expansionCode": "the-dunwich-legacy",
+            "portrait": "",
+            "mainClass": "Seeker"
+        },
+        {
+            "id": "2-3",
+            "name": "Jenny Barnes",
+            "expansionCode": "the-dunwich-legacy",
+            "portrait": "",
+            "mainClass": "Rogue"
+        },
+        {
+            "id": "2-4",
+            "name": "Jim Culver",
+            "expansionCode": "the-dunwich-legacy",
+            "portrait": "",
+            "mainClass": "Mystic"
+        },
+        {
+            "id": "2-5",
+            "name": "\"Ashcan\" Pete",
+            "expansionCode": "the-dunwich-legacy",
+            "portrait": "",
+            "mainClass": "Survivor"
+        }
+    ]
+}

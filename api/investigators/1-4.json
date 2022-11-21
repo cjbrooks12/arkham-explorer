@@ -1,0 +1,23 @@
+{
+    "id": "1-4",
+    "name": "Agnes Baker",
+    "expansionCode": "night-of-the-zealot",
+    "portrait": "",
+    "mainClass": "Mystic",
+    "health": 6,
+    "sanity": 8,
+    "products": [
+        {
+            "id": "1-1",
+            "name": "Core Set",
+            "expansionCode": "night-of-the-zealot",
+            "productType": "Core Set"
+        },
+        {
+            "id": "1-2",
+            "name": "Revised Core Set",
+            "expansionCode": "night-of-the-zealot",
+            "productType": "Core Set"
+        }
+    ]
+}

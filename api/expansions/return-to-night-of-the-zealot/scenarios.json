@@ -1,0 +1,22 @@
+{
+    "scenarios": [
+        {
+            "id": "1-1r",
+            "name": "Return to The Gathering",
+            "expansionCode": "return-to-night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-night-of-the-zealot/return-to-the-gathering.svg"
+        },
+        {
+            "id": "1-2r",
+            "name": "Return to The Midnight Masks",
+            "expansionCode": "return-to-night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-night-of-the-zealot/return-to-the-midnight-masks.svg"
+        },
+        {
+            "id": "1-3r",
+            "name": "Return to The Devourer Below",
+            "expansionCode": "return-to-night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-night-of-the-zealot/return-to-the-devourer-below.svg"
+        }
+    ]
+}

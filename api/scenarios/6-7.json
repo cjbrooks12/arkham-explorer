@@ -1,0 +1,18 @@
+{
+    "id": "6-7",
+    "name": "Where the Gods Dwell",
+    "expansionCode": "the-dream-eaters",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/where-the-gods-dwell.svg",
+    "encounterSets": [
+    ],
+    "chaosBag": [
+    ],
+    "referenceCard": [
+    ],
+    "products": [
+    ],
+    "nextScenario": [
+    ],
+    "campaignLogSchema": null,
+    "campaignLogUiSchema": null
+}

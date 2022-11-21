@@ -1,0 +1,39 @@
+{
+    "investigators": [
+        {
+            "id": "7-1",
+            "name": "Sister Mary",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "portrait": "",
+            "mainClass": "Guardian"
+        },
+        {
+            "id": "7-2",
+            "name": "Amanda Sharpe",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "portrait": "",
+            "mainClass": "Seeker"
+        },
+        {
+            "id": "7-3",
+            "name": "Trish Scarborough",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "portrait": "",
+            "mainClass": "Rogue"
+        },
+        {
+            "id": "7-4",
+            "name": "Dexter Drake",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "portrait": "",
+            "mainClass": "Mystic"
+        },
+        {
+            "id": "7-5",
+            "name": "Silas Marsh",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "portrait": "",
+            "mainClass": "Survivor"
+        }
+    ]
+}

@@ -1,0 +1,11 @@
+{
+    "id": "9-3",
+    "name": "Charlie Kane",
+    "expansionCode": "the-scarlet-keys",
+    "portrait": "",
+    "mainClass": "Survivor",
+    "health": 6,
+    "sanity": 6,
+    "products": [
+    ]
+}

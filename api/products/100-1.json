@@ -1,0 +1,32 @@
+{
+    "id": "100-1",
+    "name": "Curse of the Rougarou",
+    "expansionCode": "standalone",
+    "productType": "Scenario Pack",
+    "releaseDate": "2016-11-17",
+    "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/curse-rougarou/",
+    "scenarios": [
+        {
+            "id": "100-1",
+            "name": "Curse of the Rougarou",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/curse-of-the-rougarou.svg"
+        }
+    ],
+    "encounterSets": [
+        {
+            "id": "100-1",
+            "name": "Curse of the Rougarou",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/curse-of-the-rougarou/curse-of-the-rougarou.svg"
+        },
+        {
+            "id": "100-2",
+            "name": "The Bayou",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/curse-of-the-rougarou/the-bayou.svg"
+        }
+    ],
+    "investigators": [
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "id": "101-1",
+    "name": "Nathaniel Cho",
+    "expansionCode": "standalone",
+    "portrait": "",
+    "mainClass": "Guardian",
+    "health": 9,
+    "sanity": 6,
+    "products": [
+        {
+            "id": "101-1",
+            "name": "Nathaniel Cho",
+            "expansionCode": "standalone",
+            "productType": "Investigator Starter Deck"
+        }
+    ]
+}

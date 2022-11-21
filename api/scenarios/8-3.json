@@ -1,0 +1,18 @@
+{
+    "id": "8-3",
+    "name": "Ice and Death, Part 3",
+    "expansionCode": "edge-of-the-earth",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/ice-and-death.svg",
+    "encounterSets": [
+    ],
+    "chaosBag": [
+    ],
+    "referenceCard": [
+    ],
+    "products": [
+    ],
+    "nextScenario": [
+    ],
+    "campaignLogSchema": null,
+    "campaignLogUiSchema": null
+}

@@ -1,0 +1,44 @@
+{
+    "id": "100-7",
+    "name": "War of the Outer Gods",
+    "expansionCode": "standalone",
+    "productType": "Scenario Pack",
+    "releaseDate": "2020-07-03",
+    "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/war-outer-gods/",
+    "scenarios": [
+        {
+            "id": "100-8",
+            "name": "War of the Outer Gods",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/war-of-the-outer-gods.svg"
+        }
+    ],
+    "encounterSets": [
+        {
+            "id": "100-23",
+            "name": "War of the Outer Gods",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/war-of-the-outer-gods/war-of-the-outer-gods.svg"
+        },
+        {
+            "id": "100-24",
+            "name": "Children of Paradise",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/war-of-the-outer-gods/children-of-paradise.svg"
+        },
+        {
+            "id": "100-25",
+            "name": "Swarm of Assimilation",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/war-of-the-outer-gods/swarm-of-assimilation.svg"
+        },
+        {
+            "id": "100-26",
+            "name": "Death of Stars",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/war-of-the-outer-gods/death-of-stars.svg"
+        }
+    ],
+    "investigators": [
+    ]
+}

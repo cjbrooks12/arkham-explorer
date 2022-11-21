@@ -1,0 +1,136 @@
+{
+    "encounterSets": [
+        {
+            "id": "4-1",
+            "name": "Agents of Yig",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/agents-of-yig.svg"
+        },
+        {
+            "id": "4-10",
+            "name": "Poison",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/poison.svg"
+        },
+        {
+            "id": "4-11",
+            "name": "Rainforest",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/rainforest.svg"
+        },
+        {
+            "id": "4-12",
+            "name": "Serpents",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/serpents.svg"
+        },
+        {
+            "id": "4-13",
+            "name": "Shattered Aeons",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/shattered-aeons.svg"
+        },
+        {
+            "id": "4-14",
+            "name": "Temporal Flux",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/temporal-flux.svg"
+        },
+        {
+            "id": "4-15",
+            "name": "The Boundary Beyond",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/the-boundary-beyond.svg"
+        },
+        {
+            "id": "4-16",
+            "name": "The City of Archives",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/the-city-of-archives.svg"
+        },
+        {
+            "id": "4-17",
+            "name": "The Depths of Yoth",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/the-depths-of-yoth.svg"
+        },
+        {
+            "id": "4-18",
+            "name": "The Doom of Eztli",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/the-doom-of-eztli.svg"
+        },
+        {
+            "id": "4-19",
+            "name": "The Untamed Wilds",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/the-untamed-wilds.svg"
+        },
+        {
+            "id": "4-2",
+            "name": "Deadly Traps",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/deadly-traps.svg"
+        },
+        {
+            "id": "4-20",
+            "name": "Threads of Fate",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/threads-of-fate.svg"
+        },
+        {
+            "id": "4-21",
+            "name": "Turn Back Time",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/turn-back-time.svg"
+        },
+        {
+            "id": "4-22",
+            "name": "Yig's Venom",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/yigs-venom.svg"
+        },
+        {
+            "id": "4-3",
+            "name": "Expedition",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/expedition.svg"
+        },
+        {
+            "id": "4-4",
+            "name": "Forgotten Ruins",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/forgotten-ruins.svg"
+        },
+        {
+            "id": "4-5",
+            "name": "Guardians of Time",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/guardians-of-time.svg"
+        },
+        {
+            "id": "4-6",
+            "name": "Heart of the Elders",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/heart-of-the-elders.svg"
+        },
+        {
+            "id": "4-7",
+            "name": "K'n-yan",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/kn-yan.svg"
+        },
+        {
+            "id": "4-8",
+            "name": "Pillars of Judgement",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/pillars-of-judgement.svg"
+        },
+        {
+            "id": "4-9",
+            "name": "Pnakotic Brotherhood",
+            "expansionCode": "the-forgotten-age",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/pnakotic-brotherhood.svg"
+        }
+    ]
+}

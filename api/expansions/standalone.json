@@ -1,0 +1,380 @@
+{
+    "id": "100",
+    "name": "Standalone Content",
+    "expansionCode": "standalone",
+    "icon": "",
+    "expansionType": {
+        "type": "standalone"
+    },
+    "boxArt": "https://images-cdn.fantasyflightgames.com/filer_public/19/0d/190de25c-d8db-4147-bba4-0c7326245051/uahc09_main.png",
+    "flavorText": "",
+    "scenarios": [
+        {
+            "id": "100-1",
+            "name": "Curse of the Rougarou",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/curse-of-the-rougarou.svg"
+        },
+        {
+            "id": "100-2",
+            "name": "Carnevale of Horrors",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/carnevale-of-horrors.svg"
+        },
+        {
+            "id": "100-3",
+            "name": "The Labyrinths of Lunacy",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-labyrinths-of-lunacy.svg"
+        },
+        {
+            "id": "100-4",
+            "name": "The Eternal Slumber",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/guardians-of-the-abyss.svg"
+        },
+        {
+            "id": "100-5",
+            "name": "The Night's Usurper",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/guardians-of-the-abyss.svg"
+        },
+        {
+            "id": "100-6",
+            "name": "Murder at the Excelsior Hotel",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/murder-at-the-excelsior-hotel.svg"
+        },
+        {
+            "id": "100-7",
+            "name": "The Blob that Ate Everything",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-blob-that-ate-everything.svg"
+        },
+        {
+            "id": "100-8",
+            "name": "War of the Outer Gods",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/war-of-the-outer-gods.svg"
+        },
+        {
+            "id": "100-9",
+            "name": "Machinations Through Time",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/machinations-through-time.svg"
+        },
+        {
+            "id": "100-10",
+            "name": "The Meddling of Meowlathotep",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/barkham-horror.svg"
+        }
+    ],
+    "encounterSets": [
+        {
+            "id": "100-1",
+            "name": "Curse of the Rougarou",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/curse-of-the-rougarou/curse-of-the-rougarou.svg"
+        },
+        {
+            "id": "100-2",
+            "name": "The Bayou",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/curse-of-the-rougarou/the-bayou.svg"
+        },
+        {
+            "id": "100-3",
+            "name": "Carnevale of Horrors",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/carnevale-of-horrors/carnevale-of-horrors.svg"
+        },
+        {
+            "id": "100-4",
+            "name": "The Labyrinths of Lunacy",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-labyrinths-of-lunacy/the-labyrinths-of-lunacy.svg"
+        },
+        {
+            "id": "100-5",
+            "name": "Epic Multiplayer (The Labyrinths of Lunacy)",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-labyrinths-of-lunacy/epic-multiplayer.svg"
+        },
+        {
+            "id": "100-6",
+            "name": "Single Group (The Labyrinths of Lunacy)",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-labyrinths-of-lunacy/single-group.svg"
+        },
+        {
+            "id": "100-7",
+            "name": "Abyssal Gifts",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/guardians-of-the-abyss/abyssal-gifts.svg"
+        },
+        {
+            "id": "100-8",
+            "name": "Abyssal Tribute",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/guardians-of-the-abyss/abyssal-tribute.svg"
+        },
+        {
+            "id": "100-9",
+            "name": "Brotherhood of the Beast",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/guardians-of-the-abyss/brotherhood-of-the-beast.svg"
+        },
+        {
+            "id": "100-10",
+            "name": "Sands of Egypt",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/guardians-of-the-abyss/sands-of-egypt.svg"
+        },
+        {
+            "id": "100-11",
+            "name": "The Eternal Slumber",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/guardians-of-the-abyss/the-eternal-slumber.svg"
+        },
+        {
+            "id": "100-12",
+            "name": "The Night's Usurper",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/guardians-of-the-abyss/the-nights-usurper.svg"
+        },
+        {
+            "id": "100-13",
+            "name": "Murder at the Excelsior Hotel",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/murder-at-the-excelsior-hotel/murder-at-the-excelsior-hotel.svg"
+        },
+        {
+            "id": "100-14",
+            "name": "Alien Interference",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/murder-at-the-excelsior-hotel/alien-interference.svg"
+        },
+        {
+            "id": "100-15",
+            "name": "Dark Rituals",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/murder-at-the-excelsior-hotel/dark-rituals.svg"
+        },
+        {
+            "id": "100-16",
+            "name": "Excelsior Management",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/murder-at-the-excelsior-hotel/excelsior-management.svg"
+        },
+        {
+            "id": "100-17",
+            "name": "Sins of the Past",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/murder-at-the-excelsior-hotel/sins-of-the-past.svg"
+        },
+        {
+            "id": "100-18",
+            "name": "Vile Experiments",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/murder-at-the-excelsior-hotel/vile-experiments.svg"
+        },
+        {
+            "id": "100-19",
+            "name": "The Blob that Ate Everything",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-blob-that-ate-everything/the-blob-that-ate-everything.svg"
+        },
+        {
+            "id": "100-20",
+            "name": "Epic Multiplayer (The Blob that Ate Everything)",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-blob-that-ate-everything/epic-multiplayer.svg"
+        },
+        {
+            "id": "100-21",
+            "name": "Single Group (The Blob that Ate Everything)",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-blob-that-ate-everything/single-group.svg"
+        },
+        {
+            "id": "100-22",
+            "name": "Mi-Go Incursion",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-blob-that-ate-everything/mi-go-incursion.svg"
+        },
+        {
+            "id": "100-23",
+            "name": "War of the Outer Gods",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/war-of-the-outer-gods/war-of-the-outer-gods.svg"
+        },
+        {
+            "id": "100-24",
+            "name": "Children of Paradise",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/war-of-the-outer-gods/children-of-paradise.svg"
+        },
+        {
+            "id": "100-25",
+            "name": "Swarm of Assimilation",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/war-of-the-outer-gods/swarm-of-assimilation.svg"
+        },
+        {
+            "id": "100-26",
+            "name": "Death of Stars",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/war-of-the-outer-gods/death-of-stars.svg"
+        },
+        {
+            "id": "100-27",
+            "name": "Machinations Through Time",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/machinations-through-time/machinations-through-time.svg"
+        },
+        {
+            "id": "100-28",
+            "name": "Epic Multiplayer (Machinations Through Time)",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/machinations-through-time/epic-multiplayer.svg"
+        },
+        {
+            "id": "100-29",
+            "name": "Single Group (Machinations Through Time)",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/machinations-through-time/single-group.svg"
+        },
+        {
+            "id": "100-30",
+            "name": "The Meddling of Meowlathotep",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/barkham-horror/the-meddling-of-meowlathotep.svg"
+        }
+    ],
+    "investigators": [
+        {
+            "id": "101-1",
+            "name": "Nathaniel Cho",
+            "expansionCode": "standalone",
+            "portrait": "",
+            "mainClass": "Guardian"
+        },
+        {
+            "id": "101-2",
+            "name": "Harvey Walters",
+            "expansionCode": "standalone",
+            "portrait": "",
+            "mainClass": "Seeker"
+        },
+        {
+            "id": "101-3",
+            "name": "Winifred Habbamock",
+            "expansionCode": "standalone",
+            "portrait": "",
+            "mainClass": "Rogue"
+        },
+        {
+            "id": "101-4",
+            "name": "Jacqueline Fine",
+            "expansionCode": "standalone",
+            "portrait": "",
+            "mainClass": "Mystic"
+        },
+        {
+            "id": "101-5",
+            "name": "Stella Clark",
+            "expansionCode": "standalone",
+            "portrait": "",
+            "mainClass": "Survivor"
+        }
+    ],
+    "products": [
+        {
+            "id": "100-1",
+            "name": "Curse of the Rougarou",
+            "expansionCode": "standalone",
+            "productType": "Scenario Pack"
+        },
+        {
+            "id": "100-2",
+            "name": "Carnevale of Horrors",
+            "expansionCode": "standalone",
+            "productType": "Scenario Pack"
+        },
+        {
+            "id": "100-3",
+            "name": "The Labyrinths of Lunacy",
+            "expansionCode": "standalone",
+            "productType": "Scenario Pack"
+        },
+        {
+            "id": "100-4",
+            "name": "Guardians of the Abyss",
+            "expansionCode": "standalone",
+            "productType": "Scenario Pack"
+        },
+        {
+            "id": "100-5",
+            "name": "Murder at the Excelsior Hotel",
+            "expansionCode": "standalone",
+            "productType": "Scenario Pack"
+        },
+        {
+            "id": "100-6",
+            "name": "The Blob That Ate Everything",
+            "expansionCode": "standalone",
+            "productType": "Scenario Pack"
+        },
+        {
+            "id": "100-7",
+            "name": "War of the Outer Gods",
+            "expansionCode": "standalone",
+            "productType": "Scenario Pack"
+        },
+        {
+            "id": "100-8",
+            "name": "Machinations Through Time",
+            "expansionCode": "standalone",
+            "productType": "Scenario Pack"
+        },
+        {
+            "id": "100-9",
+            "name": "Barkham Horror: The Meddling of Meowlathotep",
+            "expansionCode": "standalone",
+            "productType": "Scenario Pack"
+        },
+        {
+            "id": "101-1",
+            "name": "Nathaniel Cho",
+            "expansionCode": "standalone",
+            "productType": "Investigator Starter Deck"
+        },
+        {
+            "id": "101-2",
+            "name": "Harvey Walters",
+            "expansionCode": "standalone",
+            "productType": "Investigator Starter Deck"
+        },
+        {
+            "id": "101-3",
+            "name": "Winifred Habbamock",
+            "expansionCode": "standalone",
+            "productType": "Investigator Starter Deck"
+        },
+        {
+            "id": "101-4",
+            "name": "Jacqueline Fine",
+            "expansionCode": "standalone",
+            "productType": "Investigator Starter Deck"
+        },
+        {
+            "id": "101-5",
+            "name": "Stella Clark",
+            "expansionCode": "standalone",
+            "productType": "Investigator Starter Deck"
+        }
+    ],
+    "startScenario": [
+    ]
+}

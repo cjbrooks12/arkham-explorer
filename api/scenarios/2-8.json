@@ -1,0 +1,85 @@
+{
+    "id": "2-8",
+    "name": "Lost in Time and Space",
+    "expansionCode": "the-dunwich-legacy",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/lost-in-time-and-space.svg",
+    "encounterSets": [
+        {
+            "encounterSet": {
+                "id": "2-8",
+                "name": "Lost in Time and Space",
+                "expansionCode": "the-dunwich-legacy",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/lost-in-time-and-space.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "1-14",
+                "name": "Agents of Yog-Sothoth",
+                "expansionCode": "the-dunwich-legacy",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/agents-of-yog-sothoth.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "2-10",
+                "name": "Sorcery",
+                "expansionCode": "the-dunwich-legacy",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/sorcery.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "2-17",
+                "name": "The Beyond",
+                "expansionCode": "the-dunwich-legacy",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/the-beyond.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "2-18",
+                "name": "Hideous Abominations",
+                "expansionCode": "the-dunwich-legacy",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/hideous-abominations.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        }
+    ],
+    "chaosBag": [
+    ],
+    "referenceCard": [
+    ],
+    "products": [
+        {
+            "id": "2-7",
+            "name": "Lost in Time and Space",
+            "expansionCode": "the-dunwich-legacy",
+            "productType": "Mythos Pack"
+        },
+        {
+            "id": "2-8",
+            "name": "The Dunwich Legacy: Campaign Expansion",
+            "expansionCode": "the-dunwich-legacy",
+            "productType": "Campaign Expansion"
+        }
+    ],
+    "nextScenario": [
+    ],
+    "campaignLogSchema": null,
+    "campaignLogUiSchema": null
+}

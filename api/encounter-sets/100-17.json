@@ -1,0 +1,15 @@
+{
+    "id": "100-17",
+    "name": "Sins of the Past",
+    "expansionCode": "standalone",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/murder-at-the-excelsior-hotel/sins-of-the-past.svg",
+    "replaces": null,
+    "products": [
+        {
+            "id": "100-5",
+            "name": "Murder at the Excelsior Hotel",
+            "expansionCode": "standalone",
+            "productType": "Scenario Pack"
+        }
+    ]
+}

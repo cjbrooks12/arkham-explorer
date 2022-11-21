@@ -1,0 +1,25 @@
+{
+    "investigators": [
+        {
+            "id": "9-1",
+            "name": "Kymani Jones",
+            "expansionCode": "the-scarlet-keys",
+            "portrait": "",
+            "mainClass": "Rogue"
+        },
+        {
+            "id": "9-2",
+            "name": "Darrell Simmons",
+            "expansionCode": "the-scarlet-keys",
+            "portrait": "",
+            "mainClass": "Survivor"
+        },
+        {
+            "id": "9-3",
+            "name": "Charlie Kane",
+            "expansionCode": "the-scarlet-keys",
+            "portrait": "",
+            "mainClass": "Survivor"
+        }
+    ]
+}

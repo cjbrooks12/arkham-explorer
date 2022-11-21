@@ -1,0 +1,21 @@
+{
+    "id": "2-4",
+    "name": "The Essex County Express",
+    "expansionCode": "the-dunwich-legacy",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dunwich-legacy/the-essex-county-express.svg",
+    "replaces": null,
+    "products": [
+        {
+            "id": "2-3",
+            "name": "The Essex County Express",
+            "expansionCode": "the-dunwich-legacy",
+            "productType": "Mythos Pack"
+        },
+        {
+            "id": "2-8",
+            "name": "The Dunwich Legacy: Campaign Expansion",
+            "expansionCode": "the-dunwich-legacy",
+            "productType": "Campaign Expansion"
+        }
+    ]
+}

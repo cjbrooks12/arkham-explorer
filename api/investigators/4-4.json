@@ -1,0 +1,11 @@
+{
+    "id": "4-4",
+    "name": "Father Mateo",
+    "expansionCode": "the-forgotten-age",
+    "portrait": "",
+    "mainClass": "Mystic",
+    "health": 6,
+    "sanity": 8,
+    "products": [
+    ]
+}

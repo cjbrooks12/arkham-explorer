@@ -1,0 +1,18 @@
+{
+    "id": "7-3",
+    "name": "In Too Deep",
+    "expansionCode": "the-innnsmouth-conspiracy",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/in-too-deep.svg",
+    "encounterSets": [
+    ],
+    "chaosBag": [
+    ],
+    "referenceCard": [
+    ],
+    "products": [
+    ],
+    "nextScenario": [
+    ],
+    "campaignLogSchema": null,
+    "campaignLogUiSchema": null
+}

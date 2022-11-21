@@ -1,0 +1,21 @@
+{
+    "id": "6-2",
+    "name": "Waking Nightmare",
+    "expansionCode": "the-dream-eaters",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-dream-eaters/waking-nightmare.svg",
+    "encounterSets": [
+    ],
+    "chaosBag": [
+    ],
+    "referenceCard": [
+    ],
+    "products": [
+    ],
+    "nextScenario": [
+        "6-1",
+        "6-3",
+        "6-4"
+    ],
+    "campaignLogSchema": null,
+    "campaignLogUiSchema": null
+}

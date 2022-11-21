@@ -1,0 +1,19 @@
+{
+    "id": "4-4",
+    "name": "The Boundary Beyond",
+    "expansionCode": "the-forgotten-age",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/the-boundary-beyond.svg",
+    "encounterSets": [
+    ],
+    "chaosBag": [
+    ],
+    "referenceCard": [
+    ],
+    "products": [
+    ],
+    "nextScenario": [
+        "4-5"
+    ],
+    "campaignLogSchema": null,
+    "campaignLogUiSchema": null
+}

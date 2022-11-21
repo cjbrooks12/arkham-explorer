@@ -1,0 +1,23 @@
+{
+    "id": "2-1",
+    "name": "Zoey Samaras",
+    "expansionCode": "the-dunwich-legacy",
+    "portrait": "",
+    "mainClass": "Guardian",
+    "health": 9,
+    "sanity": 6,
+    "products": [
+        {
+            "id": "2-1",
+            "name": "The Dunwich Legacy: Deluxe Expansion",
+            "expansionCode": "the-dunwich-legacy",
+            "productType": "Deluxe Expansion"
+        },
+        {
+            "id": "2-9",
+            "name": "The Dunwich Legacy: Investigator Expansion",
+            "expansionCode": "the-dunwich-legacy",
+            "productType": "Investigator Expansion"
+        }
+    ]
+}

@@ -1,0 +1,58 @@
+{
+    "products": [
+        {
+            "id": "3-1",
+            "name": "The Path to Carcosa: Deluxe Expansion",
+            "expansionCode": "the-path-to-carcosa",
+            "productType": "Deluxe Expansion"
+        },
+        {
+            "id": "3-2",
+            "name": "Echoes of the Past",
+            "expansionCode": "the-path-to-carcosa",
+            "productType": "Mythos Pack"
+        },
+        {
+            "id": "3-3",
+            "name": "The Unspeakable Oath",
+            "expansionCode": "the-path-to-carcosa",
+            "productType": "Mythos Pack"
+        },
+        {
+            "id": "3-4",
+            "name": "A Phantom of Truth",
+            "expansionCode": "the-path-to-carcosa",
+            "productType": "Mythos Pack"
+        },
+        {
+            "id": "3-5",
+            "name": "The Pallid Mask",
+            "expansionCode": "the-path-to-carcosa",
+            "productType": "Mythos Pack"
+        },
+        {
+            "id": "3-6",
+            "name": "Black Stars Rise",
+            "expansionCode": "the-path-to-carcosa",
+            "productType": "Mythos Pack"
+        },
+        {
+            "id": "3-7",
+            "name": "Dim Carcosa",
+            "expansionCode": "the-path-to-carcosa",
+            "productType": "Mythos Pack"
+        },
+        {
+            "id": "3-8",
+            "name": "The Path to Carcosa: Campaign Expansion",
+            "expansionCode": "the-path-to-carcosa",
+            "productType": "Campaign Expansion"
+        },
+        {
+            "id": "3-9",
+            "name": "The Path to Carcosa: Investigator Expansion",
+            "expansionCode": "the-path-to-carcosa",
+            "productType": "Investigator Expansion"
+        }
+    ]
+}

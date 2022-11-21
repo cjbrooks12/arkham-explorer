@@ -1,0 +1,15 @@
+{
+    "id": "2-6r",
+    "name": "Return to Undimensioned and Unseen",
+    "expansionCode": "return-to-the-dunwich-legacy",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-the-dunwich-legacy/return-to-undimensioned-and-unseen.svg",
+    "replaces": "2-6",
+    "products": [
+        {
+            "id": "2-1r",
+            "name": "Return to the Dunwich Legacy",
+            "expansionCode": "return-to-the-dunwich-legacy",
+            "productType": "Return To"
+        }
+    ]
+}

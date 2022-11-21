@@ -1,0 +1,9 @@
+{
+    "id": "8-4",
+    "name": "Deadly Weather",
+    "expansionCode": "edge-of-the-earth",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/edge-of-the-earth/deadly-weather.svg",
+    "replaces": null,
+    "products": [
+    ]
+}

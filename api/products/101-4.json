@@ -1,0 +1,21 @@
+{
+    "id": "101-4",
+    "name": "Jacqueline Fine",
+    "expansionCode": "standalone",
+    "productType": "Investigator Starter Deck",
+    "releaseDate": "2020-08-28",
+    "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/jacqueline-fine-investigator-starter-deck/",
+    "scenarios": [
+    ],
+    "encounterSets": [
+    ],
+    "investigators": [
+        {
+            "id": "101-4",
+            "name": "Jacqueline Fine",
+            "expansionCode": "standalone",
+            "portrait": "",
+            "mainClass": "Mystic"
+        }
+    ]
+}

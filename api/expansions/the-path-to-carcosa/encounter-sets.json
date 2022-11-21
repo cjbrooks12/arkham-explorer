@@ -1,0 +1,118 @@
+{
+    "encounterSets": [
+        {
+            "id": "3-1",
+            "name": "Curtain Call",
+            "expansionCode": "the-path-to-carcosa",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/curtain-call.svg"
+        },
+        {
+            "id": "3-10",
+            "name": "Delusions",
+            "expansionCode": "the-path-to-carcosa",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/delusions.svg"
+        },
+        {
+            "id": "3-11",
+            "name": "Hauntings",
+            "expansionCode": "the-path-to-carcosa",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/hauntings.svg"
+        },
+        {
+            "id": "3-12",
+            "name": "Cult of the Yellow Sign",
+            "expansionCode": "the-path-to-carcosa",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/cult-of-the-yellow-sign.svg"
+        },
+        {
+            "id": "3-13",
+            "name": "Hastur's Gift",
+            "expansionCode": "the-path-to-carcosa",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/hasturs-gift.svg"
+        },
+        {
+            "id": "3-14",
+            "name": "Decay & Filth",
+            "expansionCode": "the-path-to-carcosa",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/decay-and-filth.svg"
+        },
+        {
+            "id": "3-15",
+            "name": "The Stranger",
+            "expansionCode": "the-path-to-carcosa",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/the-stranger.svg"
+        },
+        {
+            "id": "3-16",
+            "name": "Inhabitants of Carcosa",
+            "expansionCode": "the-path-to-carcosa",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/inhabitants-of-carcosa.svg"
+        },
+        {
+            "id": "3-17",
+            "name": "Byakhee",
+            "expansionCode": "the-path-to-carcosa",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/byakhee.svg"
+        },
+        {
+            "id": "3-18",
+            "name": "The Vortex Above",
+            "expansionCode": "the-path-to-carcosa",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/the-vortex-above.svg"
+        },
+        {
+            "id": "3-19",
+            "name": "The Flood Below",
+            "expansionCode": "the-path-to-carcosa",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/the-flood-below.svg"
+        },
+        {
+            "id": "3-2",
+            "name": "The Last King",
+            "expansionCode": "the-path-to-carcosa",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/the-last-king.svg"
+        },
+        {
+            "id": "3-3",
+            "name": "Echoes of the Past",
+            "expansionCode": "the-path-to-carcosa",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/echoes-of-the-past.svg"
+        },
+        {
+            "id": "3-4",
+            "name": "The Unspeakable Oath",
+            "expansionCode": "the-path-to-carcosa",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/the-unspeakable-oath.svg"
+        },
+        {
+            "id": "3-5",
+            "name": "A Phantom of Truth",
+            "expansionCode": "the-path-to-carcosa",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/a-phantom-of-truth.svg"
+        },
+        {
+            "id": "3-6",
+            "name": "The Pallid Mask",
+            "expansionCode": "the-path-to-carcosa",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/the-pallid-mask.svg"
+        },
+        {
+            "id": "3-7",
+            "name": "Black Stars Rise",
+            "expansionCode": "the-path-to-carcosa",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/black-stars-rise.svg"
+        },
+        {
+            "id": "3-8",
+            "name": "Dim Carcosa",
+            "expansionCode": "the-path-to-carcosa",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/dim-carcosa.svg"
+        },
+        {
+            "id": "3-9",
+            "name": "Evil Portents",
+            "expansionCode": "the-path-to-carcosa",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/evil-portents.svg"
+        }
+    ]
+}

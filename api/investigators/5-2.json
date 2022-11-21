@@ -1,0 +1,11 @@
+{
+    "id": "5-2",
+    "name": "Joe Diamond",
+    "expansionCode": "the-circle-undone",
+    "portrait": "",
+    "mainClass": "Seeker",
+    "health": 8,
+    "sanity": 6,
+    "products": [
+    ]
+}

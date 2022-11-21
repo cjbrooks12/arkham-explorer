@@ -1,0 +1,11 @@
+{
+    "id": "8-5",
+    "name": "Bob Jenkins",
+    "expansionCode": "edge-of-the-earth",
+    "portrait": "",
+    "mainClass": "Survivor",
+    "health": 6,
+    "sanity": 8,
+    "products": [
+    ]
+}

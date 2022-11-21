@@ -1,0 +1,21 @@
+{
+    "id": "3-19",
+    "name": "The Flood Below",
+    "expansionCode": "the-path-to-carcosa",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-path-to-carcosa/the-flood-below.svg",
+    "replaces": null,
+    "products": [
+        {
+            "id": "3-6",
+            "name": "Black Stars Rise",
+            "expansionCode": "the-path-to-carcosa",
+            "productType": "Mythos Pack"
+        },
+        {
+            "id": "3-8",
+            "name": "The Path to Carcosa: Campaign Expansion",
+            "expansionCode": "the-path-to-carcosa",
+            "productType": "Campaign Expansion"
+        }
+    ]
+}

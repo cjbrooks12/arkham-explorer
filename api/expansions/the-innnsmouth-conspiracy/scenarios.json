@@ -1,0 +1,52 @@
+{
+    "scenarios": [
+        {
+            "id": "7-1",
+            "name": "The Pit of Despair",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/the-pit-of-despair.svg"
+        },
+        {
+            "id": "7-2",
+            "name": "The Vanishing of Elina Harper",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/the-vanishing-of-elina-harper.svg"
+        },
+        {
+            "id": "7-3",
+            "name": "In Too Deep",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/in-too-deep.svg"
+        },
+        {
+            "id": "7-4",
+            "name": "Devil Reef",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/devil-reef.svg"
+        },
+        {
+            "id": "7-5",
+            "name": "Horror in High Gear",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/horror-in-high-gear.svg"
+        },
+        {
+            "id": "7-6",
+            "name": "A Light in the Fog",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/a-light-in-the-fog.svg"
+        },
+        {
+            "id": "7-7",
+            "name": "The Lair of Dagon",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/the-lair-of-dagon.svg"
+        },
+        {
+            "id": "7-8",
+            "name": "Into the Maelstrom",
+            "expansionCode": "the-innnsmouth-conspiracy",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-innsmouth-conspiracy/into-the-maelstrom.svg"
+        }
+    ]
+}

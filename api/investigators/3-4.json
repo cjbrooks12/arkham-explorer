@@ -1,0 +1,23 @@
+{
+    "id": "3-4",
+    "name": "Akachi Onyele",
+    "expansionCode": "the-path-to-carcosa",
+    "portrait": "",
+    "mainClass": "Mystic",
+    "health": 6,
+    "sanity": 8,
+    "products": [
+        {
+            "id": "3-1",
+            "name": "The Path to Carcosa: Deluxe Expansion",
+            "expansionCode": "the-path-to-carcosa",
+            "productType": "Deluxe Expansion"
+        },
+        {
+            "id": "3-9",
+            "name": "The Path to Carcosa: Investigator Expansion",
+            "expansionCode": "the-path-to-carcosa",
+            "productType": "Investigator Expansion"
+        }
+    ]
+}

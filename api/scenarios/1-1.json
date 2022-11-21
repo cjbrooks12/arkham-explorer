@@ -1,0 +1,335 @@
+{
+    "id": "1-1",
+    "name": "The Gathering",
+    "expansionCode": "night-of-the-zealot",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/the-gathering.svg",
+    "encounterSets": [
+        {
+            "encounterSet": {
+                "id": "1-1",
+                "name": "The Gathering",
+                "expansionCode": "night-of-the-zealot",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/the-gathering.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "1-5",
+                "name": "Rats",
+                "expansionCode": "night-of-the-zealot",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/rats.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "1-6",
+                "name": "Ghouls",
+                "expansionCode": "night-of-the-zealot",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/ghouls.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "1-7",
+                "name": "Striking Fear",
+                "expansionCode": "night-of-the-zealot",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/striking-fear.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "1-8",
+                "name": "Ancient Evils",
+                "expansionCode": "night-of-the-zealot",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/ancient-evils.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        },
+        {
+            "encounterSet": {
+                "id": "1-9",
+                "name": "Chilling Cold",
+                "expansionCode": "night-of-the-zealot",
+                "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/chilling-cold.svg"
+            },
+            "conditional": false,
+            "setAside": false,
+            "partial": false
+        }
+    ],
+    "chaosBag": [
+        {
+            "difficulty": "easy",
+            "tokens": [
+                "+1",
+                "+1",
+                "0",
+                "0",
+                "0",
+                "-1",
+                "-1",
+                "-1",
+                "-2",
+                "-2",
+                "Skull",
+                "Skull",
+                "Cultist",
+                "Tablet",
+                "Auto-Fail",
+                "Elder Sign"
+            ]
+        },
+        {
+            "difficulty": "standard",
+            "tokens": [
+                "+1",
+                "0",
+                "0",
+                "-1",
+                "-1",
+                "-1",
+                "-2",
+                "-2",
+                "-3",
+                "-4",
+                "Skull",
+                "Skull",
+                "Cultist",
+                "Tablet",
+                "Auto-Fail",
+                "Elder Sign"
+            ]
+        },
+        {
+            "difficulty": "hard",
+            "tokens": [
+                "0",
+                "0",
+                "0",
+                "-1",
+                "-1",
+                "-2",
+                "-2",
+                "-3",
+                "-3",
+                "-4",
+                "-5",
+                "Skull",
+                "Skull",
+                "Cultist",
+                "Tablet",
+                "Auto-Fail",
+                "Elder Sign"
+            ]
+        },
+        {
+            "difficulty": "expert",
+            "tokens": [
+                "0",
+                "-1",
+                "-1",
+                "-2",
+                "-2",
+                "-3",
+                "-3",
+                "-4",
+                "-4",
+                "-5",
+                "-6",
+                "-8",
+                "Skull",
+                "Skull",
+                "Cultist",
+                "Tablet",
+                "Auto-Fail",
+                "Elder Sign"
+            ]
+        }
+    ],
+    "referenceCard": [
+        {
+            "difficulties": [
+                "easy",
+                "standard"
+            ],
+            "tokens": [
+                {
+                    "token": "Skull",
+                    "text": "-X. X is the number of [[Ghoul]] enemies at your location.",
+                    "modifierValue": "Ghouls"
+                },
+                {
+                    "token": "Cultist",
+                    "text": "-1. If you fail, take 1 horror.",
+                    "modifierValue": "-1"
+                },
+                {
+                    "token": "Tablet",
+                    "text": "-2. If there is a [[Ghoul]] enemy at your location, take 1 damage.",
+                    "modifierValue": "-2"
+                }
+            ]
+        },
+        {
+            "difficulties": [
+                "hard",
+                "expert"
+            ],
+            "tokens": [
+                {
+                    "token": "Skull",
+                    "text": "-2. If you fail, after this skill test, search the encounter deck and discard pile for a [[Ghoul]] enemy, and draw it. Shuffle the encounter deck.",
+                    "modifierValue": "-2"
+                },
+                {
+                    "token": "Cultist",
+                    "text": "Reveal another token. If you fail, take 2 horror.",
+                    "modifierValue": "0"
+                },
+                {
+                    "token": "Tablet",
+                    "text": "-4. If there is a [[Ghoul]] enemy at your location, take 1 damage and 1 horror.",
+                    "modifierValue": "-4"
+                }
+            ]
+        }
+    ],
+    "products": [
+        {
+            "id": "1-1",
+            "name": "Core Set",
+            "expansionCode": "night-of-the-zealot",
+            "productType": "Core Set"
+        },
+        {
+            "id": "1-2",
+            "name": "Revised Core Set",
+            "expansionCode": "night-of-the-zealot",
+            "productType": "Core Set"
+        }
+    ],
+    "nextScenario": [
+        "1-2"
+    ],
+    "campaignLogSchema": {
+        "type": "object",
+        "properties": {
+            "scenarios": {
+                "type": "object",
+                "properties": {
+                    "1-1": {
+                        "type": "object",
+                        "properties": {
+                            "status": {
+                                "type": "string",
+                                "enum": [
+                                    "Not Started",
+                                    "In Progress",
+                                    "Completed"
+                                ]
+                            },
+                            "victoryDisplay": {
+                                "type": "integer"
+                            },
+                            "resolution": {
+                                "type": "string",
+                                "enum": [
+                                    "No Resolution",
+                                    "Resolution 1",
+                                    "Resolution 2",
+                                    "Resolution 3"
+                                ]
+                            },
+                            "notes": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "statements": {
+                "type": "object",
+                "properties": {
+                    "houseStatus": {
+                        "type": "string",
+                        "enum": [
+                            "Your house is still standing",
+                            "Your house has burned to the ground"
+                        ]
+                    },
+                    "ghoulPriest": {
+                        "type": "boolean",
+                        "title": "The Ghoul Priest is still alive"
+                    },
+                    "lita": {
+                        "type": "boolean",
+                        "title": "Lita was forced to find others to help her cause"
+                    }
+                }
+            }
+        }
+    },
+    "campaignLogUiSchema": {
+        "type": "VerticalLayout",
+        "elements": [
+            {
+                "type": "Control",
+                "scope": "#/properties/scenarios/properties/1-1/properties/status"
+            },
+            {
+                "type": "Control",
+                "scope": "#/properties/scenarios/properties/1-1/properties/notes"
+            },
+            {
+                "type": "VerticalLayout",
+                "elements": [
+                    {
+                        "type": "Control",
+                        "scope": "#/properties/scenarios/properties/1-1/properties/resolution"
+                    },
+                    {
+                        "type": "Control",
+                        "scope": "#/properties/scenarios/properties/1-1/properties/victoryDisplay"
+                    },
+                    {
+                        "type": "Control",
+                        "scope": "#/properties/statements/properties/houseStatus"
+                    },
+                    {
+                        "type": "Control",
+                        "scope": "#/properties/statements/properties/ghoulPriest"
+                    },
+                    {
+                        "type": "Control",
+                        "scope": "#/properties/statements/properties/lita"
+                    }
+                ],
+                "rule": {
+                    "effect": "SHOW",
+                    "condition": {
+                        "scope": "#/properties/scenarios/properties/1-1/properties/status",
+                        "schema": {
+                            "enum": [
+                                "Completed"
+                            ]
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}

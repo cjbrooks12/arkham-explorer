@@ -1,0 +1,15 @@
+{
+    "id": "1-1r",
+    "name": "Return to The Gathering",
+    "expansionCode": "return-to-night-of-the-zealot",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/return-to-night-of-the-zealot/return-to-the-gathering.svg",
+    "replaces": "1-1",
+    "products": [
+        {
+            "id": "1-1r",
+            "name": "Return to the Night of the Zealot",
+            "expansionCode": "return-to-night-of-the-zealot",
+            "productType": "Return To"
+        }
+    ]
+}

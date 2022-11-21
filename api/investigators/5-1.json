@@ -1,0 +1,11 @@
+{
+    "id": "5-1",
+    "name": "Carolyn Fern",
+    "expansionCode": "the-circle-undone",
+    "portrait": "",
+    "mainClass": "Guardian",
+    "health": 6,
+    "sanity": 9,
+    "products": [
+    ]
+}

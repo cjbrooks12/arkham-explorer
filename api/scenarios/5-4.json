@@ -1,0 +1,18 @@
+{
+    "id": "5-4",
+    "name": "The Secret Name",
+    "expansionCode": "the-circle-undone",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-circle-undone/the-secret-name.svg",
+    "encounterSets": [
+    ],
+    "chaosBag": [
+    ],
+    "referenceCard": [
+    ],
+    "products": [
+    ],
+    "nextScenario": [
+    ],
+    "campaignLogSchema": null,
+    "campaignLogUiSchema": null
+}

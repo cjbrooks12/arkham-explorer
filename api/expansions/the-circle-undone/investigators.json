@@ -1,0 +1,74 @@
+{
+    "investigators": [
+        {
+            "id": "5-1",
+            "name": "Carolyn Fern",
+            "expansionCode": "the-circle-undone",
+            "portrait": "",
+            "mainClass": "Guardian"
+        },
+        {
+            "id": "5-10",
+            "name": "Valentino Rivas",
+            "expansionCode": "the-circle-undone",
+            "portrait": "",
+            "mainClass": "Neutral"
+        },
+        {
+            "id": "5-2",
+            "name": "Joe Diamond",
+            "expansionCode": "the-circle-undone",
+            "portrait": "",
+            "mainClass": "Seeker"
+        },
+        {
+            "id": "5-3",
+            "name": "Preston Fairmont",
+            "expansionCode": "the-circle-undone",
+            "portrait": "",
+            "mainClass": "Rogue"
+        },
+        {
+            "id": "5-4",
+            "name": "Diana Stanley",
+            "expansionCode": "the-circle-undone",
+            "portrait": "",
+            "mainClass": "Mystic"
+        },
+        {
+            "id": "5-5",
+            "name": "Rita Young",
+            "expansionCode": "the-circle-undone",
+            "portrait": "",
+            "mainClass": "Survivor"
+        },
+        {
+            "id": "5-6",
+            "name": "Marie Lambeau",
+            "expansionCode": "the-circle-undone",
+            "portrait": "",
+            "mainClass": "Mystic"
+        },
+        {
+            "id": "5-7",
+            "name": "Gavriella Mizrah",
+            "expansionCode": "the-circle-undone",
+            "portrait": "",
+            "mainClass": "Neutral"
+        },
+        {
+            "id": "5-8",
+            "name": "Jerome Davids",
+            "expansionCode": "the-circle-undone",
+            "portrait": "",
+            "mainClass": "Neutral"
+        },
+        {
+            "id": "5-9",
+            "name": "Penny White",
+            "expansionCode": "the-circle-undone",
+            "portrait": "",
+            "mainClass": "Neutral"
+        }
+    ]
+}

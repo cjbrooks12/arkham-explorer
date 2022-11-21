@@ -1,0 +1,100 @@
+{
+    "encounterSets": [
+        {
+            "id": "1-1",
+            "name": "The Gathering",
+            "expansionCode": "night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/the-gathering.svg"
+        },
+        {
+            "id": "1-10",
+            "name": "Dark Cult",
+            "expansionCode": "night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/dark-cult.svg"
+        },
+        {
+            "id": "1-11",
+            "name": "Nightgaunts",
+            "expansionCode": "night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/nightgaunts.svg"
+        },
+        {
+            "id": "1-12",
+            "name": "Locked Doors",
+            "expansionCode": "night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/locked-doors.svg"
+        },
+        {
+            "id": "1-13",
+            "name": "Agents of Hastur",
+            "expansionCode": "night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/agents-of-hastur.svg"
+        },
+        {
+            "id": "1-14",
+            "name": "Agents of Yog-Sothoth",
+            "expansionCode": "night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/agents-of-yog-sothoth.svg"
+        },
+        {
+            "id": "1-15",
+            "name": "Agents of Shub Niggurath",
+            "expansionCode": "night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/agents-of-shub-niggurath.svg"
+        },
+        {
+            "id": "1-16",
+            "name": "Agenths of Cthulhu",
+            "expansionCode": "night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/agents-of-cthulhu.svg"
+        },
+        {
+            "id": "1-2",
+            "name": "The Midnight Masks",
+            "expansionCode": "night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/the-midnight-masks.svg"
+        },
+        {
+            "id": "1-3",
+            "name": "The Devourer Below",
+            "expansionCode": "night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/the-devourer-below.svg"
+        },
+        {
+            "id": "1-4",
+            "name": "Cult of Umôrdhoth",
+            "expansionCode": "night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/cult-of-umordhoth.svg"
+        },
+        {
+            "id": "1-5",
+            "name": "Rats",
+            "expansionCode": "night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/rats.svg"
+        },
+        {
+            "id": "1-6",
+            "name": "Ghouls",
+            "expansionCode": "night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/ghouls.svg"
+        },
+        {
+            "id": "1-7",
+            "name": "Striking Fear",
+            "expansionCode": "night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/striking-fear.svg"
+        },
+        {
+            "id": "1-8",
+            "name": "Ancient Evils",
+            "expansionCode": "night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/ancient-evils.svg"
+        },
+        {
+            "id": "1-9",
+            "name": "Chilling Cold",
+            "expansionCode": "night-of-the-zealot",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/night-of-the-zealot/chilling-cold.svg"
+        }
+    ]
+}

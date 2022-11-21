@@ -1,0 +1,9 @@
+{
+    "id": "4-10",
+    "name": "Poison",
+    "expansionCode": "the-forgotten-age",
+    "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-forgotten-age/poison.svg",
+    "replaces": null,
+    "products": [
+    ]
+}

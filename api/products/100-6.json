@@ -1,0 +1,44 @@
+{
+    "id": "100-6",
+    "name": "The Blob That Ate Everything",
+    "expansionCode": "standalone",
+    "productType": "Scenario Pack",
+    "releaseDate": "2020-07-03",
+    "officialProductUrl": "https://www.fantasyflightgames.com/en/products/arkham-horror-the-card-game/products/blob-ate-everything/",
+    "scenarios": [
+        {
+            "id": "100-7",
+            "name": "The Blob that Ate Everything",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-blob-that-ate-everything.svg"
+        }
+    ],
+    "encounterSets": [
+        {
+            "id": "100-19",
+            "name": "The Blob that Ate Everything",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-blob-that-ate-everything/the-blob-that-ate-everything.svg"
+        },
+        {
+            "id": "100-20",
+            "name": "Epic Multiplayer (The Blob that Ate Everything)",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-blob-that-ate-everything/epic-multiplayer.svg"
+        },
+        {
+            "id": "100-21",
+            "name": "Single Group (The Blob that Ate Everything)",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-blob-that-ate-everything/single-group.svg"
+        },
+        {
+            "id": "100-22",
+            "name": "Mi-Go Incursion",
+            "expansionCode": "standalone",
+            "icon": "https://cjbrooks12.github.io/arkham-explorer/assets/the-blob-that-ate-everything/mi-go-incursion.svg"
+        }
+    ],
+    "investigators": [
+    ]
+}
